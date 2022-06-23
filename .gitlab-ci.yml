@@ -532,7 +532,7 @@ clean-pages:
     - review-apps
 
 #
-# Clean up stopped review app environments. Only done in chores pipeline,
+# Clean up stopped review app environments. Done once a month in a scheduled pipeline,
 # only deletes stopped environments that are over 30 days old.
 #
 delete_stopped_environments:
@@ -540,8 +540,8 @@ delete_stopped_environments:
   needs: []
   before_script: []
   dependencies: []
-  extends:
-    - .rules_chores
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TIMING == "monthly"
   stage: test
   script:
     - apk --update add curl jq
