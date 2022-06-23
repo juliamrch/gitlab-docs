@@ -2,51 +2,76 @@
 
 module Nanoc::Helpers
   module EditOnGitLab
-    def edit_on_gitlab(item, editor: :simple)
-      # Make an array out of the content's source path.
-      content_filename_array = item.identifier.to_s.split('/')
-      # remove first empty item
-      content_filename_array.shift
-      # Get the product name.
-      product = content_filename_array.shift
-      # This should be the path from the doc/ directory for a given file.
-      docs_content_filename = content_filename_array.join("/")
+    PRODUCT_REPOS = {
+      "omnibus" => {
+        project: "gitlab-org/omnibus-gitlab",
+        default_branch_name: "master",
+        doc_directory: "doc"
+      },
+      "runner" => {
+        project: "gitlab-org/gitlab-runner",
+        default_branch_name: "main",
+        doc_directory: "docs"
+      },
+      "charts" => {
+        project: "gitlab-org/charts/gitlab",
+        default_branch_name: "master",
+        doc_directory: "doc"
+      },
+      "operator" => {
+        project: "gitlab-org/cloud-native/gitlab-operator",
+        default_branch_name: "master",
+        doc_directory: "doc"
+      },
+      "ee" => {
+        project: "gitlab-org/gitlab",
+        default_branch_name: "master",
+        doc_directory: "doc"
+      }
+    }.freeze
 
-      case product
-      when "omnibus"
-        # omnibus-gitlab repo
-        gitlab_url = "https://gitlab.com/gitlab-org/#{product}-gitlab/blob/master/doc/#{docs_content_filename}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/#{product}-gitlab/edit/master/-/doc/#{docs_content_filename}"
-      when "runner"
-        # gitlab-runner repo
-        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/main/docs/#{docs_content_filename}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab-#{product}/edit/main/-/docs/#{docs_content_filename}"
-      when "charts"
-        # GitLab Helm chart repo
-        gitlab_url = "https://gitlab.com/gitlab-org/#{product}/gitlab/blob/master/doc/#{docs_content_filename}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/#{product}/gitlab/edit/master/-/doc/#{docs_content_filename}"
-      when "operator"
-        # GitLab Operator repo
-        gitlab_url = "https://gitlab.com/gitlab-org/cloud-native/gitlab-#{product}/blob/master/doc/#{docs_content_filename}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/cloud-native/gitlab-#{product}/edit/master/-/doc/#{docs_content_filename}"
-      when "ee"
-        # gitlab-foss and gitlab repos
-        gitlab_url = "https://gitlab.com/gitlab-org/gitlab/blob/master/doc/#{docs_content_filename}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab/edit/master/-/doc/#{docs_content_filename}"
-      else
-        # gitlab-docs pages
-        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-docs/blob/main/#{item[:content_filename]}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab-docs/edit/main/-/#{item[:content_filename]}"
-      end
+    def edit_on_gitlab(item, editor: :simple)
+      resource = resource_from_item(item)
 
       case editor
       when :simple
-        gitlab_url
+        blob_url(resource)
       when :webide
-        gitlab_ide_url
+        ide_url(resource)
       else
         raise "Unknown editor: #{editor}"
       end
+    end
+
+    private
+
+    def resource_from_item(item)
+      # The item identifier is the file path of the current docs page.
+      # Ex: "/ee/user/ssh.md"
+      #
+      # We can use the first path segement to determine which project the docs
+      # reside in. If it's not a known project, then we'll assume that it's a
+      # content file inside gitlab-docs.
+      identifier_path = item.identifier.to_s.delete_prefix("/")
+      product, _, repo_doc_path = identifier_path.partition("/")
+      if repo = PRODUCT_REPOS[product]
+        file_path = "#{repo[:doc_directory]}/#{repo_doc_path}"
+        return repo.merge({ file_path: file_path })
+      end
+
+      {
+        project: "gitlab-org/gitlab-docs",
+        default_branch_name: "main",
+        file_path: item[:content_filename]
+      }
+    end
+
+    def blob_url(resource)
+      "https://gitlab.com/#{resource[:project]}/-/blob/#{resource[:default_branch_name]}/#{resource[:file_path]}"
+    end
+
+    def ide_url(resource)
+      "https://gitlab.com/-/ide/project/#{resource[:project]}/edit/#{resource[:default_branch_name]}/-/#{resource[:file_path]}"
     end
   end
 end
