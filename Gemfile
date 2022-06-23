@@ -22,6 +22,7 @@ end
 group :test, :development do
   gem 'highline', '~> 2.0.0'
   gem 'rspec', '~> 3.11.0'
+  gem 'rspec-parameterized', '~> 0.5.1'
   gem 'pry-byebug', '~> 3.9.0', require: false
   gem 'gitlab-styles', '~> 7.1.0', require: false
 end
