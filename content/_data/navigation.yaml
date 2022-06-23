@@ -2757,6 +2757,8 @@ sections:
                     doc_url: 'ee/development/fe_guide/tooling.html'
                   - doc_title: Troubleshooting
                     doc_url: 'ee/development/fe_guide/troubleshooting.html'
+                  - doc_title: ViewComponent
+                    doc_url: 'ee/development/fe_guide/view_component.html'
                   - doc_title: Vuex
                     doc_url: 'ee/development/fe_guide/vuex.html'
                   - doc_title: Vue
