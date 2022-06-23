@@ -4,7 +4,7 @@
 #
 
 # First use the bootstrap image to build main
-FROM registry.gitlab.com/gitlab-org/gitlab-docs/base:alpine-3.16-ruby-2.7.6-0bc327a4 as builder
+FROM registry.gitlab.com/gitlab-org/gitlab-docs:bootstrap as builder
 
 # Set up needed environment variables that are called with --build-arg when
 # the Docker image is built (see .gitlab-ci.yml).
@@ -15,16 +15,11 @@ ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-main}
 
 # Build the docs from this branch
 COPY . /source/
-# Copy only the Gemfiles and yarn.lock to install the dependencies
-COPY /Gemfile* /source/
-COPY /yarn.lock /source/
-WORKDIR /source
-
 RUN yarn install && \
     bundle install && \
     bundle exec rake setup_git default && \
     bundle exec nanoc compile -VV && \
-    scripts/compress_images.sh public ee # compress images
+    /scripts/compress_images.sh /source/public ee # compress images
 
 # Symlink EE to CE
 # https://gitlab.com/gitlab-org/gitlab-docs/issues/418
@@ -61,16 +56,10 @@ COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.12 ${TARGET} ${TARGET}
 # changes
 COPY --from=builder /source/public ${TARGET}
 
-# Build minifier utility
-# Adapted from https://github.com/docker/docker.github.io/blob/publish-tools/Dockerfile.builder
-#
-FROM golang:1.13-alpine AS minifier
-RUN apk add --no-cache git
-RUN export GO111MODULE=on \
-  && go get -d github.com/tdewolff/minify/v2@latest \
-  && go build -v -o /minify github.com/tdewolff/minify/cmd/minify
-WORKDIR /source
-COPY /scripts/minify* scripts/
+# Since we changed images when we invoked 'FROM nginx:1.12-alpine' above,
+# the minify script and binary are not included. Thus, we copy them from the
+# previous image (aliased as builder).
+COPY --from=builder /scripts/minify* /scripts/
 
 # Serve the site (target), which is now all static HTML
 CMD ["sh", "-c", "echo 'GitLab docs are viewable at: http://0.0.0.0:4000'; exec nginx -g 'daemon off;'"]
