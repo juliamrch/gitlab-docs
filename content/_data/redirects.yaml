@@ -447,3 +447,45 @@ redirects:
   - from: /ee/push_rules/push_rules.html
     to: /ee/user/project/repository/push_rules.html
     remove_date: 2023-02-10
+  - from: /ee/api/feature_flags_legacy.html
+    to: /ee/api/feature_flags.html
+    remove_date: 2023-03-22
+  - from: /ee/api/dora4_project_analytics.html
+    to: /ee/api/dora/metrics.html
+    remove_date: 2023-02-18
+  - from: /ee/raketasks/features.html
+    to: /ee/raketasks/index.html
+    remove_date: 2023-02-24
+  - from: /ee/ci/pipelines/pipelines_for_merged_results.html
+    to: /ee/ci/pipelines/merged_results_pipelines.html
+    remove_date: 2023-01-27
+  - from: /ee/tools/email.html
+    to: /ee/user/admin_area/email_from_gitlab.html
+    remove_date: 2023-03-18
+  - from: /ee/topics/use_gitlab.html
+    to: /ee/user/index.html
+    remove_date: 2023-03-17
+  - from: /ee/user/admin_area/analytics/dev_ops_report.html
+    to: /ee/user/admin_area/analytics/dev_ops_reports.html
+    remove_date: 2023-03-16
+  - from: /ee/user/group/saml_sso/group_managed_accounts.html
+    to: /ee/user/group/saml_sso/index.html
+    remove_date: 2023-03-13
+  - from: /ee/ssh/index.html
+    to: /ee/user/ssh.html
+    remove_date: 2023-03-18
+  - from: /ee/ssh/
+    to: /ee/user/ssh.html
+    remove_date: 2023-03-18
+  - from: /ee/system_hooks/system_hooks.html
+    to: /ee/administration/system_hooks.html
+    remove_date: 2023-03-18
+  - from: /ee/public_access/public_access.html
+    to: /ee/user/public_access.html
+    remove_date: 2023-03-18
+  - from: /ee/development/uploads.html
+    to: /ee/development/uploads/index.html
+    remove_date: 2023-01-30
+  - from: /ee/development/stage_group_dashboards.html
+    to: /ee/development/stage_group_observability/index.html
+    remove_date: 2023-03-15
