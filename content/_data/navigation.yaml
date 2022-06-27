@@ -2264,6 +2264,8 @@ sections:
             doc_url: 'ee/api/merge_requests.html'
           - doc_title: Merge trains
             doc_url: 'ee/api/merge_trains.html'
+          - doc_title: Metadata
+            doc_url: 'ee/api/metadata.html'
           - doc_title: Migrations (bulk imports)
             doc_url: 'ee/api/bulk_imports.html'
           - doc_title: Milestones (project)
