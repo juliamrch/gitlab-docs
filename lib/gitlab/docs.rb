@@ -2,6 +2,8 @@
 
 $LOAD_PATH.unshift(__dir__)
 
+require 'nanoc'
+
 module Gitlab
   module Docs
     autoload :Document, 'docs/document'
