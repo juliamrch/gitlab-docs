@@ -22,6 +22,7 @@ Documentation [for handling the docs release](https://gitlab.com/gitlab-org/gitl
    - [ ] Mark as `Draft` and do not merge.
 1. [ ] [Update the three online versions](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#update-dropdown-for-online-versions),
    so they display the new release on their version dropdown menus.
+   - [ ] Check the review app to make sure the menus display correctly.
 
 After the tasks above are complete, you don't need to do anything for a few days.
 
@@ -35,9 +36,9 @@ After release post is live on the 22nd, or the next Monday morning if the releas
    - [ ] Merge the MRs for updates to the dropdown menus.
    - [ ] Merge the docs-release merge request.
    - [ ] Each merge triggers a new pipeline for each stable branch. Check
-     [the pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules)
+     [the pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines)
      and wait for all the stable branch pipelines to complete before proceeding.
-   - [ ] Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules)
+   - [ ] Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)
      and run the Build Docker images weekly pipeline.
    - [ ] In the scheduled pipeline you just started, manually run the `image:docs-latest`
      job that builds the `:latest` Docker image.
@@ -58,7 +59,7 @@ After the 22nd of each month:
 1. [ ] Create a release issue for the
    [next TW](https://about.gitlab.com/handbook/marketing/blog/release-posts/managers/)
    and assign it to them.
-1. [ ] *Major releases only.* Update
+1. [ ] **Major releases only.** Update
    [OutdatedVersions.yml](https://gitlab.com/gitlab-org/gitlab/-/blob/master/doc/.vale/gitlab/OutdatedVersions.yml)
    with the newly-outdated version.
 1. [ ] Improve this checklist. Continue moving steps from
