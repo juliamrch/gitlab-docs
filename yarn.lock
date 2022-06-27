@@ -1133,15 +1133,15 @@
     stylelint-declaration-strict-value "1.8.0"
     stylelint-scss "4.2.0"
 
-"@gitlab/svgs@^2.21.0":
-  version "2.21.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-2.21.0.tgz#bc71951dc35a61647fb2c0267cca6fb55a04d317"
-  integrity sha512-cVa5cgvVmY2MsRdV61id+rLTsY/tAGPq7Og9ETblUuZXl06ciw8H/g7cYPMxN39DdEfDklzbUnS98OJlMmD9TQ==
+"@gitlab/svgs@^2.22.0":
+  version "2.22.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-2.22.0.tgz#66211ba26418b8dfb3ac796d795a0e3392d22ada"
+  integrity sha512-9Es97o/VByIsCNNfSF28oTYW5XIJ2dZSK0YjSpyy5yBF0QPwEjzRhxapYGz2c8YBFVC9WkoGHjp5PJ9tJgmmuA==
 
-"@gitlab/ui@^42.4.1":
-  version "42.4.1"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-42.4.1.tgz#73749c2c07480678f47876e793bef60c35ce8213"
-  integrity sha512-KFrBIE0Lgba486Ltacsmyw1JNKpdPhHsQASm6yqUIYtLY0+rkw0VRJwCXpui2sj1/jvoInZBtxIqO3kOJhtljw==
+"@gitlab/ui@^42.10.0":
+  version "42.10.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-42.10.0.tgz#987dc5f5c00217b08453f79f62f96bb6347bbf3c"
+  integrity sha512-ECSHAjWHaQQplgig55coe9qeNcOOnvOnW/O1CQyvhPD67DS9YAoHOeWGA888qoFWBvDFsLAWjrnUWYO99asVhg==
   dependencies:
     "@popperjs/core" "^2.11.2"
     bootstrap-vue "2.20.1"
@@ -1458,10 +1458,10 @@
     "@babel/helper-module-imports" "^7.10.4"
     "@rollup/pluginutils" "^3.1.0"
 
-"@rollup/plugin-commonjs@^22.0.0":
-  version "22.0.0"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-22.0.0.tgz#f4d87016e2fbf187a593ab9f46626fe05b59e8bd"
-  integrity sha512-Ktvf2j+bAO+30awhbYoCaXpBcyPmJbaEUYClQns/+6SNCYFURbvBiNbWgHITEsIgDDWCDUclWRKEuf8cwZCFoQ==
+"@rollup/plugin-commonjs@^22.0.1":
+  version "22.0.1"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-22.0.1.tgz#f7cb777d20de3eeeaf994f39080115c336bef810"
+  integrity sha512-dGfEZvdjDHObBiP5IvwTKMVeq/tBZGMBHZFMdIV1ClMM/YoWS34xrHFGfag9SN2ZtMgNZRFruqvxZQEa70O6nQ==
   dependencies:
     "@rollup/pluginutils" "^3.1.0"
     commondir "^1.0.1"
@@ -1853,10 +1853,10 @@ ajv@^8.0.1:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-algoliasearch-helper@^3.8.3:
-  version "3.8.3"
-  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.8.3.tgz#74066a6aa56a6dfa7af1f3ab8c6a545d707d5d5e"
-  integrity sha512-J0H08fQoyhZ2qLi7Uy8EvUeN/NJ4Trtt7NWB8mF1CGLuYpdXPyjZu9+Uoya2eayxQ20RP+QGF9Om/LddPv49vw==
+algoliasearch-helper@^3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.9.0.tgz#1e99d351ecdcff48449644157a8d250c7c592828"
+  integrity sha512-siWWl8QYJ3sh1yzJf9h/cHHpZC8wuPoPdVx5OtQ8X62ruUembTwvsLYoicrL7pF7fsYxdyvJfV9Yb2/nrVGrfg==
   dependencies:
     "@algolia/events" "^4.0.1"
 
@@ -3664,16 +3664,16 @@ instantsearch.css@^7.4.5:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.4.5.tgz#2a521aa634329bf1680f79adf87c79d67669ec8d"
   integrity sha512-iIGBYjCokU93DDB8kbeztKtlu4qVEyTg1xvS6iSO1YvqRwkIZgf0tmsl/GytsLdZhuw8j4wEaeYsCzNbeJ/zEQ==
 
-instantsearch.js@^4.37.2, instantsearch.js@^4.41.2:
-  version "4.41.2"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.41.2.tgz#5f8aa367a00ce828db0b825dac77d4a36ec27336"
-  integrity sha512-YsVd2tOxKPMZQSlqOgVzCYq9zIYqda1p8N6PDKgCdYoLbjngxAdIj7VHxWQEnJjGdAAkGqFPjr+RFx1l6WlwgA==
+instantsearch.js@^4.37.2, instantsearch.js@^4.42.0:
+  version "4.42.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.42.0.tgz#4955beb961c1d346d0a93c4844cb0c4cc1524a6d"
+  integrity sha512-TTrMaINSwx8pB5CDZO9R3sigC/HQOoYeVLmF4tLXWOI1POUAlnItPGV48k4/5C6Pqsg6w6/K9a6X0vwXSNlACA==
   dependencies:
     "@algolia/events" "^4.0.1"
     "@types/google.maps" "^3.45.3"
     "@types/hogan.js" "^3.0.0"
     "@types/qs" "^6.5.3"
-    algoliasearch-helper "^3.8.3"
+    algoliasearch-helper "^3.9.0"
     classnames "^2.2.5"
     hogan.js "^3.0.2"
     preact "^10.6.0"
@@ -5638,10 +5638,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.75.6:
-  version "2.75.6"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.75.6.tgz#ac4dc8600f95942a0180f61c7c9d6200e374b439"
-  integrity sha512-OEf0TgpC9vU6WGROJIk1JA3LR5vk/yvqlzxqdrE2CzzXnqKXNzbAwlWUXis8RS3ZPe7LAq+YUxsRa0l3r27MLA==
+rollup@^2.75.7:
+  version "2.75.7"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.75.7.tgz#221ff11887ae271e37dcc649ba32ce1590aaa0b9"
+  integrity sha512-VSE1iy0eaAYNCxEXaleThdFXqZJ42qDBatAwrfnPlENEZ8erQ+0LYX4JXOLPceWfZpV1VtZwZ3dFCuOZiSyFtQ==
   optionalDependencies:
     fsevents "~2.3.2"
 
