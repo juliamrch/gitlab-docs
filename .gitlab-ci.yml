@@ -395,7 +395,7 @@ test_EOL_whitespace:
     - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
     - bundle install
     - bundle exec rake setup_git default
-    - markdownlint --config tasks/whitespace_task.yml '../gitlab/doc/**/*.md' '../gitlab-runner/doc/**/*.md' '../omnibus-gitlab/doc/**/*.md' '../charts-gitlab/doc/**/*.md'
+    - markdownlint --config tasks/whitespace_task.yml '../gitlab/doc/**/*.md' '../gitlab-runner/doc/**/*.md' '../omnibus-gitlab/doc/**/*.md' '../charts-gitlab/doc/**/*.md' '../gitlab-operator/doc/**/*.md'
 
 test_unlinked_images:
   extends:
