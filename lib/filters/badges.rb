@@ -27,9 +27,9 @@ class BadgesFilter < Nanoc::Filter
 
   BADGES_MARKDOWN_PATTERN = %r{
     (?:^|[^`]) # must be start of the line or anything except backtick
-    \*\*(\[|\()
+    \*\*(?:\[|\()
     (?<tier>CORE|STARTER|PREMIUM|ULTIMATE|FREE|BRONZE|SILVER|GOLD)(?:\s+(?<type>ONLY|SAAS|SELF))
-    ?(\]|\))\*\*
+    ?(?:\]|\))\*\*
     (?:$|[^`]) # must end of line or anything except backtick
   }x.freeze
 

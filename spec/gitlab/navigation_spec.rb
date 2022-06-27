@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require 'nanoc'
+
 require 'gitlab/navigation'
 require 'gitlab/navigation/section'
 
