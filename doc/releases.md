@@ -37,6 +37,9 @@ To minimize problems during the documentation release process, use the following
 - Complete the preparation steps between the 17th and the 20th of the month. **All** of the following steps
   must be completed successfully before proceeding with the publication steps:
 
+  1. If an issue was not already created for you by the TW that handled the last release,
+     [create an issue for the release](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/new?issuable_template=release)
+     to track your progress and ensure completeness.
   1. [Create a stable branch and Docker image](#create-stable-branch-and-docker-image-for-release) for
      the new version.
   1. [Create a release merge request](#create-release-merge-request) for the new version, which
@@ -186,9 +189,9 @@ The merge requests for the dropdowns should now all be merged into their respect
 1. Merge all of the [dropdown merge requests](#update-dropdown-for-online-versions).
 1. Merge the [release merge request](#create-release-merge-request).
 1. Each merge triggers a new pipeline for each stable branch.
-   Check the [pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipelines) and wait
+   Check the [pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines) and wait
    for all the stable branch pipelines to complete.
-1. Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules)
+1. Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)
    and run the `Build docker images weekly` pipeline.
 1. In the scheduled pipeline you just started, manually run the **image:docs-latest** job that builds the `:latest` Docker image.
 1. When the pipeline is complete, run the `Build docs.gitlab.com every 4 hours` scheduled pipeline to deploy all new versions to the public documentation site.
