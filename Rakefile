@@ -230,6 +230,8 @@ namespace :docs do
     mr_title = "Clean up docs redirects - #{today}"
     mr_description = "Monthly cleanup of docs redirects.</br><p>See https://about.gitlab.com/handbook/engineering/ux/technical-writing/#regularly-scheduled-tasks</p></br></hr></br><p>_Created automatically: https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/raketasks.md#clean-up-redirects_</p>"
     redirects_branch = "docs-clean-redirects-#{today}"
+    commit_message = "Update docs redirects #{today}"
+
     # Disable lefthook because it was causing some PATH errors
     # https://docs.gitlab.com/ee/development/contributing/style_guides.html#disable-lefthook-temporarily
     ENV['LEFTHOOK'] = '0'
@@ -275,15 +277,16 @@ namespace :docs do
       next unless Dir.exist?(content_dir)
 
       default_branch = default_branch(product['repo'])
+      origin_default_branch = "origin/#{default_branch}"
       slug = product['slug']
       counter = 0
 
       Dir.chdir(content_dir)
       puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Stashing changes of #{slug} and syncing with upstream default branch..#{COLOR_CODE_RESET}"
-      system("git stash --quiet -u") if git_workdir_dirty?
-      system("git checkout --quiet #{default_branch}")
-      system("git fetch --quiet origin #{default_branch}")
-      system("git reset --quiet --hard origin/#{default_branch}")
+      system("git", "stash", "--quiet", "-u") if git_workdir_dirty?
+      system("git", "checkout", "--quiet", default_branch)
+      system("git", "fetch", "--quiet", "origin", default_branch)
+      system("git", "reset", "--quiet", "--hard", origin_default_branch)
       Dir.chdir(source_dir)
 
       #
@@ -359,10 +362,10 @@ namespace :docs do
 
       Dir.chdir(content_dir)
       puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Creating a new branch for the redirects MR..#{COLOR_CODE_RESET}"
-      system("git checkout --quiet -b #{redirects_branch} origin/#{default_branch}")
+      system("git", "checkout", "--quiet", "-b", redirects_branch, origin_default_branch)
       puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Committing and pushing to create a merge request..#{COLOR_CODE_RESET}"
-      system("git add .")
-      system("git commit --quiet -m 'Update docs redirects #{today}'")
+      system("git", "add", ".")
+      system("git", "commit", "--quiet", "-m", commit_message)
 
       `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement" -o merge_request.label="type::maintenance"` \
         if ENV['SKIP_MR'].nil?
@@ -379,10 +382,10 @@ namespace :docs do
     #   3. Commit and push the branch to create the MR
     #
     puts "\n#{COLOR_CODE_GREEN}INFO: (gitlab-docs): Creating a new branch for the redirects MR..#{COLOR_CODE_RESET}"
-    system("git checkout --quiet -b #{redirects_branch} origin/main")
+    system("git", "checkout", "--quiet", "-b", redirects_branch, "origin/main")
     puts "\n#{COLOR_CODE_GREEN}INFO: (gitlab-docs): Committing and pushing to create a merge request..#{COLOR_CODE_RESET}"
-    system("git add #{redirects_yaml}")
-    system("git commit --quiet -m 'Update docs redirects #{today}'")
+    system("git", "add", redirects_yaml)
+    system("git", "commit", "--quiet", "-m", commit_message)
 
     `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs Site" -o merge_request.label="type::maintenance"` \
       if ENV['SKIP_MR'].nil?
