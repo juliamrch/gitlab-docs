@@ -937,8 +937,6 @@ sections:
                 doc_url: 'ee/raketasks/backup_restore.html'
               - doc_title: Clean up
                 doc_url: 'ee/raketasks/cleanup.html'
-              - doc_title: Enable namespaces
-                doc_url: 'ee/raketasks/features.html'
               - doc_title: General maintenance
                 doc_url: 'ee/administration/raketasks/maintenance.html'
               - doc_title: Geo tasks
@@ -2028,7 +2026,7 @@ sections:
           - doc_title: Contribution analytics
             doc_url: 'ee/user/group/contribution_analytics/'
           - doc_title: DevOps adoption by instance
-            doc_url: 'ee/user/admin_area/analytics/dev_ops_report.html'
+            doc_url: 'ee/user/admin_area/analytics/dev_ops_reports.html'
           - doc_title: DevOps adoption by group
             doc_url: 'ee/user/group/devops_adoption/'
           - doc_title: Insights for projects
