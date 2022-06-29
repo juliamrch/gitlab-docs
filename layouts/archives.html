@@ -24,10 +24,9 @@
     <div class="doc-nav"></div>
   </div>
   <script src="<%= @items['/frontend/shared/global_imports.*'].path %>"></script>
-  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
   <script src="<%= @items['/frontend/search/docsearch.*'].path %>"></script>
   <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
-  <script type="application/javascript" src="<%= @items['/assets/javascripts/clipboardjs.*'].path %>"></script>
+  <script src="<%= @items['/frontend/shared/clipboardjs.*'].path %>"></script>
   <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
   <% if production? %>
   <%# Add analytics only in production %>
