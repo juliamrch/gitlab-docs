@@ -1826,9 +1826,12 @@ sections:
             doc_url: 'ee/user/application_security/security_dashboard/'
           - doc_title: Offline Environments
             doc_url: 'ee/user/application_security/offline_deployments/'
-          - doc_title: Vulnerability Reports
+          - doc_title: Vulnerability Report
             doc_url: 'ee/user/application_security/vulnerability_report/'
-          - doc_title: Vulnerability Pages
+            docs:
+              - doc_title: Generate test vulnerabilities
+                doc_url: 'ee/user/application_security/generate_test_vulnerabilities/'
+          - doc_title: Vulnerability Page
             doc_url: 'ee/user/application_security/vulnerabilities/'
           - doc_title: Vulnerability severity levels
             doc_url: 'ee/user/application_security/vulnerabilities/severities.html'
