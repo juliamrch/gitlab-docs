@@ -1,0 +1,46 @@
+###############################################
+#                  Security                   #
+###############################################
+
+#
+# Security templates included in ../../.gitlab-ci.yml:
+# 
+# - Security/Dependency-Scanning.gitlab-ci.yml
+# - Security/SAST.gitlab-ci.yml
+# 
+# Defaults are overridden below.
+
+#
+# Override Security scanning defaults to ensure specific scanners work in this pipeline
+#
+.security-scanning-overrides:
+  stage: security
+  dependencies: []
+  needs: []
+  before_script: []
+
+#
+# Dependency scanning job overrides
+#
+gemnasium-dependency_scanning:
+  extends:
+    - .ds-analyzer
+    - .security-scanning-overrides
+
+#
+# SAST job overrides
+#
+brakeman-sast:
+  extends:
+    - .sast-analyzer
+    - .security-scanning-overrides
+
+nodejs-scan-sast:
+  extends:
+    - .sast-analyzer
+    - .security-scanning-overrides
+
+semgrep-sast:
+  extends:
+    - .sast-analyzer
+    - .security-scanning-overrides

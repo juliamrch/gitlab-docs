@@ -1,0 +1,209 @@
+###############################################
+#              Test the website               #
+###############################################
+
+#
+# Test the links in the global nav
+#
+test_global_nav_links:
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0bc327a4
+  extends:
+    - .rules_site_tests
+    - .cache_gem
+  stage: test
+  script:
+    # Only check files in top-level directories. This means a much faster and less repetitive check of global navigation links.
+    - echo "  all:" >> nanoc.yaml
+    - echo "    exclude_files:" >> nanoc.yaml
+    - echo "      - '\/(ee|runner|omnibus|charts|operator)\/.*\/.*'" >> nanoc.yaml
+    - "parallel time bundle exec nanoc check ::: internal_links internal_anchors"
+
+#
+# Check the redirect file for duplicates
+#
+check_duplicate_redirects:
+  image: busybox
+  extends:
+    - .rules_site_tests
+  needs: []
+  before_script: []
+  stage: test
+  script:
+    - grep -Ir "  - from:" content/_data/redirects.yaml | sort | uniq -d | tee output.txt
+    - exit $(cat output.txt | wc -l)
+
+#
+# Check for index.html in navigation.yaml
+#
+check_index_html:
+  image: busybox
+  extends:
+    - .rules_site_tests
+  needs: []
+  before_script: []
+  stage: test
+  script:
+    # Check for index.html in navigation.yaml and write the output in output.txt
+    - grep -Ir "/index.html" content/_data/navigation.yaml | sed -e '/^#/d' | tee output.txt
+    - |
+      echo "***************************************************************************"
+      echo "* If this job failed, it is because a navbar entry is using 'index.html'. *"
+      echo "* Link to just '/' instead, For example 'ee/user/'                        *"
+      echo "***************************************************************************"
+    - exit $(cat output.txt | wc -l)
+
+#
+# Run rspec tests
+#
+rspec:
+  extends:
+    - .rules_site_tests
+    - .cache_gem_yarn
+  needs: []
+  stage: test
+  script:
+    - yarn install --cache-folder .yarn-cache
+    - make rspec-tests
+
+#
+# Run JavaScript tests
+#
+jest:
+  extends:
+    - .rules_site_tests
+    - .cache_yarn
+    - .yarn
+  needs: []
+  stage: test
+  script:
+    - make jest-tests
+
+#
+# Lint JavaScript
+#
+js_lint:
+  extends:
+    - .rules_site_tests
+    - .cache_yarn
+    - .yarn
+  needs: []
+  stage: test
+  script:
+    - make eslint-tests
+    - make prettier-tests
+
+#
+# Lint SCSS
+#
+stylelint:
+  extends:
+    - .rules_site_tests
+    - .cache_yarn
+    - .yarn
+  needs: []
+  stage: test
+  script:
+    - make stylelint-tests
+
+#
+# Yamllint of *.yml for .gitlab-ci.yml.
+# This uses rules from project root `.yamllint`.
+#
+yaml_lint:
+  extends:
+    - .rules_site_tests
+  needs: []
+  stage: test
+  image: sdesbure/yamllint:latest
+  before_script: []
+  script:
+    - yamllint .gitlab-ci.yml content/_data
+
+#
+# Run markdownlint tests
+#
+markdownlint:
+  extends:
+    - .rules_site_tests
+    - .cache_yarn
+    - .yarn
+  needs: []
+  stage: test
+  script:
+    - make markdownlint-tests
+
+#
+# Check for broken external links
+#
+test_external_links:
+  extends:
+    - .cache_gem
+    - .rules_chores
+  stage: test
+  script:
+    - bundle exec nanoc check external_links
+
+#
+# Run markdownlint to find EOL whitespace to clean up
+#
+test_EOL_whitespace:
+  extends:
+    - .rules_chores
+    - .cache_gem
+  stage: test
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0bc327a4
+  needs: []
+  before_script: []
+  dependencies: []
+  script:
+    - yarn global add markdownlint-cli@$MARKDOWNLINT_VERSION
+    - apk add jq
+    - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
+    - bundle install
+    - bundle exec rake setup_git default
+    - markdownlint --config tasks/whitespace_task.yml '../gitlab/doc/**/*.md' '../gitlab-runner/doc/**/*.md' '../omnibus-gitlab/doc/**/*.md' '../charts-gitlab/doc/**/*.md' '../gitlab-operator/doc/**/*.md'
+
+test_unlinked_images:
+  extends:
+    - .rules_chores
+    - .cache_gem
+  stage: test
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0bc327a4
+  needs: []
+  before_script: []
+  dependencies: []
+  script:
+    - apk add jq
+    - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
+    - bundle install
+    - bundle exec rake setup_git default
+    - cp tasks/unlinked-images.sh ../gitlab/unlinked-images.sh
+    - cp tasks/unlinked-images.sh ../charts-gitlab/unlinked-images.sh
+    - cp tasks/unlinked-images.sh ../omnibus-gitlab/unlinked-images.sh
+    - cp tasks/unlinked-images.sh ../gitlab-runner/unlinked-images.sh
+    - cd ../omnibus-gitlab
+    - ./unlinked-images.sh doc
+    - cd ../charts-gitlab
+    - ./unlinked-images.sh doc
+    - cd ../gitlab-runner
+    - ./unlinked-images.sh docs
+    - cd ../gitlab
+    - ./unlinked-images.sh doc
+
+lint_dockerfiles:
+  extends:
+    - .rules_site_tests
+  image: hadolint/hadolint:latest-alpine
+  needs: []
+  before_script: []
+  dependencies: []
+  script:
+    - hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile
+
+#
+# eslint-sast scans html too, so run in security stage after html files are generated
+#
+
+eslint-sast:
+  stage: security
+  before_script: []
