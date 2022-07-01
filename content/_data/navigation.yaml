@@ -937,6 +937,11 @@ sections:
             docs:
               - doc_title: Backup and restore
                 doc_url: 'ee/raketasks/backup_restore.html'
+                docs:
+                  - doc_title: Back up GitLab
+                    doc_url: 'ee/raketasks/backup_gitlab.html'
+                  - doc_title: Restore GitLab
+                    doc_url: 'ee/raketasks/restore_gitlab.html'
               - doc_title: Clean up
                 doc_url: 'ee/raketasks/cleanup.html'
               - doc_title: General maintenance
