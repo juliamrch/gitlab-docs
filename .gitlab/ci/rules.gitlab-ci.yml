@@ -1,0 +1,132 @@
+###############################################
+#    Job configuration rules and defaults     #
+###############################################
+
+default:
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/base:alpine-3.16-ruby-2.7.6-0bc327a4
+  tags:
+    - gitlab-org
+  # Check Ruby, RubyGems, and Bundler versions and install gems
+  before_script:
+    - ruby -v
+    - gem -v
+    - bundle -v
+    - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
+    - bundle install --jobs 4
+
+.yarn:
+  before_script:
+    - yarn install --cache-folder .yarn-cache
+
+#
+# Caching keys
+#
+.cache_gem:
+  cache:
+    key:
+      files:
+        - Gemfile.lock
+    paths:
+      - vendor/ruby
+
+.cache_gem_yarn:
+  cache:
+    key:
+      files:
+        - Gemfile.lock
+        - yarn.lock
+    paths:
+      - vendor/ruby
+      - .yarn-cache/
+
+.cache_yarn:
+  cache:
+    key:
+      files:
+        - yarn.lock
+    paths:
+      - .yarn-cache/
+
+#
+# Retry a job automatically if it fails (2 times)
+#
+.retry:
+  retry: 2
+
+#
+# Rules to determine which pipelines jobs will run in.
+#
+.rules_scheduled:
+  rules:
+    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
+      when: never
+    - if: '$CI_PIPELINE_SOURCE != "schedule"'
+      when: never
+    - if: '$PIPELINE_SCHEDULE_TIMING == "weekly"'
+    - if: '$PIPELINE_SCHEDULE_TIMING == "hourly"'
+      when: manual
+      allow_failure: true
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      when: manual
+      allow_failure: true
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: manual
+      allow_failure: true
+
+.rules_scheduled_manual:
+  rules:
+    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: manual
+      allow_failure: true
+
+.rules_chores:
+  rules:
+    - if: '$CLEAN_REVIEW_APPS_DAYS'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
+      when: manual
+      allow_failure: true
+
+.rules_site_tests:
+  rules:
+    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
+      when: never
+    # Don't run site tests for review apps.
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$CI_MERGE_REQUEST_ID'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: '$CI_COMMIT_BRANCH == "main"'
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+
+.rules_prod:
+  rules:
+    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
+      when: never
+    # Don't deploy to production for trigerred pipelines (usually review apps)
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
+      when: never
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+
+.rules_pages:
+  rules:
+    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
+      when: never
+    # Don't deploy to production for trigerred pipelines (usually review apps)
+    - if: '$CI_PIPELINE_SOURCE == "pipeline"|| $CI_PIPELINE_SOURCE == "trigger"'
+      when: never
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+.rules_dev:
+  rules:
+    - if: '$CLEAN_REVIEW_APPS_DAYS'
+      when: never
+    - if: '$CI_MERGE_REQUEST_ID'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
