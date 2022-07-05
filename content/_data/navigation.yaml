@@ -2625,12 +2625,12 @@ sections:
                 doc_url: 'ee/development/shell_scripting_guide/'
               - doc_title: Vue style guide
                 doc_url: 'ee/development/fe_guide/style/vue.html'
-          - doc_title: Feature development guides
+          - doc_title: Feature development
             doc_url: 'ee/development/feature_development.html'
             docs:
-              - doc_title: Approval rules development guide
+              - doc_title: Approval rules development
                 doc_url: 'ee/development/approval_rules.html'
-              - doc_title: Audit Event development guide
+              - doc_title: Audit Event development
                 doc_url: 'ee/development/audit_event_guide/'
               - doc_title: Auto DevOps development
                 doc_url: 'ee/development/auto_devops.html'
@@ -2920,7 +2920,7 @@ sections:
                     doc_url: 'ee/development/uploads/working_with_uploads.html'
               - doc_title: Value Stream Analytics
                 doc_url: 'ee/development/value_stream_analytics.html'
-              - doc_title: Verify stage development guide
+              - doc_title: Verify stage development
                 doc_url: 'ee/development/contributing/verify/'
               - doc_title: Wikis
                 doc_url: 'ee/development/wikis.html'
@@ -2950,9 +2950,6 @@ sections:
           - doc_title: GitLab project pipelines
             doc_url: 'ee/development/pipelines.html'
       # End of GitLab app development documentation
-
-      - category_title: Contribute to GitLab Pages
-        category_url: 'ee/development/pages/'
 
       # Omnibus GitLab development documentation
       - category_title: Contribute to Omnibus GitLab
@@ -3007,8 +3004,12 @@ sections:
             doc_url: 'omnibus/development/broken_master.html'
           - doc_title: Deprecate and remove support for an OS
             doc_url: 'omnibus/development/deprecating-and-removing-support-for-an-os.html'
-
       # End Omnibus GitLab development documentation
+
+      # GitLab Pages development documentation
+      - category_title: Contribute to GitLab Pages
+        category_url: 'ee/development/pages/'
+      # End GitLab Pages development documentation
 
       # GitLab Runner development documentation
       - category_title: Contribute to GitLab Runner
@@ -3018,7 +3019,6 @@ sections:
             doc_url: 'runner/development/reviewing-gitlab-runner.html'
           - doc_title: Add new Windows version support for Docker executor
             doc_url: 'runner/development/add-windows-version.html'
-
       # End GitLab Runner development documentation
 
       # GitLab Helm Charts development documentation
@@ -3044,7 +3044,6 @@ sections:
             doc_url: 'charts/development/style_guide.html'
           - doc_title: Versioning and release
             doc_url: 'charts/development/release.html'
-
       # End GitLab Helm Charts development documentation
 
   # End of development documentation
