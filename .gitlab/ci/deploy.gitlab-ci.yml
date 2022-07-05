@@ -1,0 +1,201 @@
+###############################################
+#        Build and deploy the website         #
+###############################################
+
+.build_base:
+  stage: build
+  extends:
+    - .cache_gem_yarn
+    - .retry
+  script:
+    - yarn install --cache-folder .yarn-cache
+    - bundle exec rake setup_git default
+    - bundle exec nanoc compile -VV
+    # Create _redirects for Pages redirects
+    - bundle exec rake redirects
+    # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
+    - SIZE_BEFORE=$(du -sh public/ | awk '{print $1}')
+    # Minify the assets of the resulting site
+    - ./scripts/minify-assets.sh ./ public/
+    - SIZE_AFTER_MINIFY=$(du -sh public/ | awk '{print $1}')
+    # Use gzip to compress static content for faster web serving
+    # https://docs.gitlab.com/ee/user/project/pages/introduction.html#serving-compressed-assets
+    - find public/ -type f \( -iname "*.html" -o -iname "*.js"  -o -iname "*.css"  -o -iname "*.svg" \) -exec gzip --keep --best --force --verbose {} \;
+    - SIZE_AFTER_GZIP=$(du -sh public/ | awk '{print $1}')
+    # Print size results
+    - echo "Minify and compress the static assets (HTML, CSS, JS)"
+    - echo
+    - echo -e "Size before minifying and gzipping ..... $SIZE_BEFORE\nSize after minifying ................... $SIZE_AFTER_MINIFY\nSize after adding gzipped versions ..... $SIZE_AFTER_GZIP"
+  artifacts:
+    paths:
+      - public
+    expire_in: 1d
+
+#
+# Compile only on the default and stable branches
+#
+compile_prod:
+  extends:
+    - .rules_prod
+    - .build_base
+  variables:
+    NANOC_ENV: 'production'
+
+#
+# Compile on all branches except the default branch
+#
+compile_dev:
+  extends:
+    - .rules_dev
+    - .build_base
+
+
+###############################################
+#               Review Apps                   #
+###############################################
+
+#
+# Deploy the Review App on a dev server
+#
+review:
+  stage: deploy
+  extends:
+    - .retry
+  variables:
+    GIT_STRATEGY: none
+  needs:
+    - compile_dev
+  before_script: []
+  cache: {}
+  script:
+    # Rsync to the Pages dir
+    - rsync -av --delete public /srv/nginx/pages/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
+    # Remove public directory so that the next review app can run in a
+    # clean environment (limitation of the shell executor).
+    - rm -rf public
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
+    url: http://$CI_COMMIT_REF_SLUG$REVIEW_SLUG.$APPS_DOMAIN
+    on_stop: review_stop
+  rules:
+    - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
+      when: manual
+    - if: '$CI_PROJECT_PATH !~ /^gitlab-org/'
+      when: never
+    - if: '$CI_MERGE_REQUEST_ID'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
+  tags:
+    - nginx
+    - review-apps
+
+#
+# Stop the Review App
+#
+review_stop:
+  stage: deploy
+  extends:
+    - .retry
+  variables:
+    GIT_STRATEGY: none
+  needs: []
+  artifacts: {}
+  before_script: []
+  cache: {}
+  script:
+    - rm -rf public /srv/nginx/pages/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
+    action: stop
+  rules:
+    - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
+      allow_failure: true
+      when: manual
+    - if: '$CI_PROJECT_PATH !~ /^gitlab-org/'
+      when: never
+    - if: '$CI_MERGE_REQUEST_ID || $CI_PIPELINE_SOURCE == "pipeline"|| $CI_PIPELINE_SOURCE == "trigger"'
+      allow_failure: true
+      when: manual
+    # TODO: Remove once no projects create such branch
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
+      allow_failure: true
+      when: manual
+  tags:
+    - nginx
+    - review-apps
+
+#
+# Clean up review apps and free disk space
+#
+clean-pages:
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+  needs: []
+  artifacts: {}
+  before_script: []
+  cache: {}
+  script:
+    - /home/gitlab-runner/clean-pages ${CLEAN_REVIEW_APPS_DAYS}
+    - df -h
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CLEAN_REVIEW_APPS_DAYS'
+      when: manual
+      allow_failure: true
+  tags:
+    - nginx
+    - review-apps
+
+#
+# Clean up stopped review app environments. Done once a month in a scheduled pipeline,
+# only deletes stopped environments that are over 30 days old.
+#
+delete_stopped_environments:
+  image: alpine:latest
+  needs: []
+  before_script: []
+  dependencies: []
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TIMING == "monthly"
+  stage: test
+  script:
+    - apk --update add curl jq
+    - curl --request DELETE "https://gitlab.com/api/v4/projects/1794617/environments/review_apps?dry_run=false&private_token=$DELETE_ENVIRONMENTS_TOKEN" | jq
+
+###############################################
+#          GitLab Pages (production)          #
+###############################################
+
+#
+# Deploy to production with GitLab Pages
+#
+pages:
+  resource_group: pages
+  extends:
+    - .rules_pages
+    - .retry
+  image: registry.gitlab.com/gitlab-org/gitlab-docs:latest
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+  before_script: []
+  cache: {}
+  environment:
+    name: production
+    url: https://docs.gitlab.com
+  # We are using dependencies, because we do not want to
+  # re-deploy if the previous stages failed.
+  dependencies:
+    - compile_prod    # Contains the public directory
+  script:
+    #
+    # We want to use the artifacts of the compile_prod job as
+    # the latest docs deployment, and the other versions are
+    # taken from /usr/share/nginx/html which are included in
+    # the image we pull from.
+    #
+    - mv /usr/share/nginx/html/1* public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 1d
