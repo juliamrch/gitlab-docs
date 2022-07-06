@@ -7,7 +7,7 @@ const commonjs = require('@rollup/plugin-commonjs');
 const { babel } = require('@rollup/plugin-babel');
 const importResolver = require('rollup-plugin-import-resolver');
 const css = require('rollup-plugin-import-css');
-const image = require('@rollup/plugin-image');
+const url = require('@rollup/plugin-url');
 const vue = require('rollup-plugin-vue');
 
 function mapDirectory(file) {
@@ -27,7 +27,11 @@ module.exports = glob.sync('content/frontend/**/*.js').map((file) => ({
       requireReturnsDefault: 'preferred',
     }),
     vue(),
-    image(),
+    url({
+      destDir: 'public/assets/images',
+      publicPath: '/assets/images/',
+      fileName: 'icons.svg',
+    }),
     inject({
       exclude: 'node_modules/**',
     }),
