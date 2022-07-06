@@ -152,3 +152,4 @@ checks:
       # Some links require authentication
       - 'https:\/\/dashboards.gitlab.com\/.*'
       - 'https:\/\/ops.gitlab.net\/.*'
+      - 'https:\/\/3PNCFOU757-dsn.algolia.net.*'
