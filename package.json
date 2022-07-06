@@ -6,8 +6,8 @@
     "bundle": "if [ -z $ROLLUP_OPTIONS ]; then echo INFO: ROLLUP_OPTIONS is not set; else echo INFO: ROLLUP_OPTIONS = ${ROLLUP_OPTIONS}; fi && rollup --config rollup.config.js ${ROLLUP_OPTIONS}",
     "test": "jest",
     "eslint": "eslint --max-warnings 0 --ext .js,.vue .",
-    "prettier": "prettier --check '**/*.{js,vue}'",
-    "prettier:fix": "prettier --write '**/*.{js,vue}'"
+    "prettier": "prettier --check '**/*.{js,vue,json}'",
+    "prettier:fix": "prettier --write '**/*.{js,vue,json}'"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
