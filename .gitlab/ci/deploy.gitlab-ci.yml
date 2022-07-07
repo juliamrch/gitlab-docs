@@ -16,7 +16,9 @@
     # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
     - SIZE_BEFORE=$(du -sh public/ | awk '{print $1}')
     # Minify the assets of the resulting site
-    - ./scripts/minify-assets.sh ./ public/
+    - cd public
+    - ../scripts/minify-assets.sh ./ ./
+    - cd ..
     - SIZE_AFTER_MINIFY=$(du -sh public/ | awk '{print $1}')
     # Use gzip to compress static content for faster web serving
     # https://docs.gitlab.com/ee/user/project/pages/introduction.html#serving-compressed-assets
