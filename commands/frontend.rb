@@ -28,17 +28,8 @@ run do |opts, args, cmd|
     ERROR
   end
 
-  puts 'Creating icons.svg ...'
-  root = File.expand_path('../', __dir__)
-  path = 'node_modules/@gitlab/svgs/dist/icons.svg'
-
-  if File.write('public/assets/images/icons.svg', File.read("#{root}/#{path}"))
-    puts 'Done!'
-  else
-    puts 'Failed to create icons.svg!'
-  end
-
   puts 'Copying GitLab UI CSS sourcemaps...'
+  root = File.expand_path('../', __dir__)
   gl_ui_src = 'node_modules/@gitlab/ui/dist'
   gl_ui_dest = 'public/frontend/shared'
 
