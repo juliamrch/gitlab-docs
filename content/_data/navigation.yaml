@@ -771,6 +771,8 @@ sections:
                 doc_url: 'ee/administration/postgresql/database_load_balancing.html'
               - doc_title: External database service
                 doc_url: 'ee/administration/postgresql/external.html'
+              - doc_title: Move instances
+                doc_url: 'ee/administration/postgresql/moving.html'
           - doc_title: Load balancer
             doc_url: 'ee/administration/load_balancer.html'
           - doc_title: NFS
