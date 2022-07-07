@@ -164,7 +164,7 @@ layout '/**/*', :erb
 passthrough '/favicon.ico'
 
 postprocess do
-  system('nanoc frontend')
+  raise "postprocessing error" unless system('nanoc frontend')
 
   Gitlab::SymlinksConverter.run(config, items)
 end
