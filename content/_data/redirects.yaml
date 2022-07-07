@@ -489,3 +489,6 @@ redirects:
   - from: /ee/development/stage_group_dashboards.html
     to: /ee/development/stage_group_observability/index.html
     remove_date: 2023-03-15
+  - from: /ee/gitlab-basics/create-branch.html
+    to: /ee/tutorials/make_your_first_git_commit.html
+    remove_date: 2023-03-26
