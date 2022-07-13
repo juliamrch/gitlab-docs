@@ -3,8 +3,17 @@ import compareVersions from 'compare-versions';
 import DeprecationFilters from './components/deprecation_filters.vue';
 
 /**
- * Builds an ordered array of removal milestones from page content.
+ * Builds an array of removal milestone options from page content.
+ *
+ * Each milestone object contains:
+ *   - A text string, used for labels in the select options list.
+ *     This also appears as a query string value in the URL when filtering.
+ *   - A value string, which is the same as the text string, but without periods.
+ *     This is used to match the query with CSS classes on deprecations.
+ *     CSS classes cannot include periods, so we drop those for this element.
+ *
  * @param {String} showAllText
+ *   Label for default/unselected state.
  * @return {Array}
  */
 const buildMilestonesList = (showAllText) => {

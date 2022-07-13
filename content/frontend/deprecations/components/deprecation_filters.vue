@@ -20,7 +20,41 @@ export default {
       selected: this.showAllText,
     };
   },
+  created() {
+    // Pre-filter the page if the URL includes a valid version parameter.
+    const searchParams = new URLSearchParams(window.location.search);
+    if (!searchParams.has('removal_milestone')) {
+      return;
+    }
+    const version = searchParams.get('removal_milestone').replace(/\./g, '');
+    if (this.isValidVersion(version)) {
+      this.filterDeprecationList(version);
+      this.selected = version;
+    }
+  },
   methods: {
+    isValidVersion(version) {
+      return this.milestonesList.some((e) => e.value === version);
+    },
+    updateURLParams(option) {
+      const item = this.milestonesList.find((x) => x.value === option);
+      const url = new URL(window.location);
+
+      if (item.text.length > 0 && item.text !== this.showAllText) {
+        url.searchParams.set('removal_milestone', item.text);
+      } else {
+        url.searchParams.delete('removal_milestone');
+      }
+      window.history.pushState(null, '', url.toString());
+    },
+    /**
+     * Filters the page down to a specified removal version.
+     *
+     * This method hides all deprecations that do not have the selected version
+     * in their wrapper div's class lists.
+     *
+     * @param {String} option
+     */
     filterDeprecationList(option) {
       const hiddenClass = 'd-none';
 
@@ -30,7 +64,7 @@ export default {
       });
 
       if (option !== this.showAllText) {
-        // If a removal version was selected, hide deprecations with different versions.
+        // Hide deprecations with non-selected versions.
         document
           .querySelectorAll(`.deprecation:not(.removal-${option})`)
           .forEach(function hideDeprecationsAndHeader(el) {
@@ -46,6 +80,9 @@ export default {
             el.parentElement.children[0].classList.remove(hiddenClass);
           });
       }
+
+      // Update the removal_milestone parameter in the URL.
+      this.updateURLParams(option);
     },
   },
 };
