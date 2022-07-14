@@ -9,6 +9,7 @@ const importResolver = require('rollup-plugin-import-resolver');
 const css = require('rollup-plugin-import-css');
 const url = require('@rollup/plugin-url');
 const vue = require('rollup-plugin-vue');
+const { terser } = require('rollup-plugin-terser');
 
 function mapDirectory(file) {
   return file.replace('content/', 'public/');
@@ -50,5 +51,6 @@ module.exports = glob.sync('content/frontend/**/*.js').map((file) => ({
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
+    terser(),
   ],
 }));
