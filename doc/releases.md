@@ -13,8 +13,7 @@ When you've completed the documentation release process:
   - The three most recent minor releases of the current major version. For example 13.9, 13.8, and
     13.7.
   - The most recent minor releases of the last two major versions. For example 12.10, and 11.11.
-- Documentation updates after the 22nd are for the next release. The versions dropdown
-  should have the current milestone with `-pre` appended to it, for example `13.10-pre`.
+- Documentation updates after the 22nd are for the next release.
 
 Each documentation release:
 
@@ -43,9 +42,8 @@ To minimize problems during the documentation release process, use the following
   1. [Create a stable branch and Docker image](#create-stable-branch-and-docker-image-for-release) for
      the new version.
   1. [Create a release merge request](#create-release-merge-request) for the new version, which
-     updates the version dropdown menu for the current documentation and adds the release to the
-     Docker configuration. For example, the
-     [release merge request for 13.9](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/1555).
+     updates the version dropdown menu (`versions.json`) and archives list (`versions.yaml`) for the current documentation,
+     and adds the release to the Docker configuration.
 
      Try to create the MR close to the cutoff for `gitlab` project's stable branch for the release.
      If the `gitlab-docs` MR is too early or late, a mismatch between the `gitlab` project's
@@ -53,9 +51,6 @@ To minimize problems during the documentation release process, use the following
      must be manually fixed. To check the status of the `gitlab` release, go to the `#releases`
      Slack channel and look for the `This is the candidate commit to be released on the 22nd.`
      message.
-
-  1. [Update the three online versions](#update-dropdown-for-online-versions), so that they display the new release on their
-     version dropdown menus.
 
 - Complete the publication steps on the 22nd of the month, after the release post is live:
 
@@ -159,24 +154,6 @@ To create the release merge request for the release:
 
 1. Create the merge request and choose the `Release` description
    template. Set the merge request to _Draft_ status and do not merge it yet.
-
-## Update dropdown for online versions
-
-To update `content/_data/versions.yaml` for all `online` and `previous_majors`
-versions (stable branches `X.Y` of the `gitlab-docs` project):
-
-1. Run the Rake task that creates the merge requests to update the dropdowns for the current major version. For
-   example, for the 14.7 release:
-
-   ```shell
-   git checkout release-14-7
-   ./bin/rake release:dropdowns
-   ```
-
-   For the 14.7 release, the task created [five merge requests](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests?scope=all&state=all&label_name[]=release&milestone_title=14.7&search=update).
-
-1. [Visit the merge requests page](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests?label_name%5B%5D=release)
-   to check that their pipelines pass. Set each merge request to _draft_ status and do not merge them yet.
 
 ## Merge merge requests and run Docker image builds
 

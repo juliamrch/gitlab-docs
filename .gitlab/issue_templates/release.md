@@ -17,12 +17,10 @@ Documentation [for handling the docs release](https://gitlab.com/gitlab-org/gitl
      created a Docker image tagged with the name of the branch. ([If it fails, how do I fix it?](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-latest-job-fails-due-to-broken-links))
 1. [ ] [Create a release merge request](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#create-release-merge-request)
    for the new version,
-   which updates the version dropdown menu for the current documentation, and adds
+   which updates the version dropdown menu for all online versions, updates the archives list, and adds
    the release to the Docker configuration.
    - [ ] Mark as `Draft` and do not merge.
-1. [ ] [Update the three online versions](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#update-dropdown-for-online-versions),
-   so they display the new release on their version dropdown menus.
-   - [ ] Check the review app to make sure the menus display correctly.
+   - [ ] Check the review app to make sure the Versions menu displays correctly.
 
 After the tasks above are complete, you don't need to do anything for a few days.
 
@@ -46,7 +44,7 @@ After release post is live on the 22nd, or the next Monday morning if the releas
      scheduled pipeline to deploy all new versions to the public documentation site.
      No manually-run jobs are needed for this second pipeline.
 1. [ ] After the deployment completes, open `docs.gitlab.com` in a browser. Confirm
-   both the latest version and the correct `pre-` version are listed in the documentation version dropdown.
+   both the latest version and the correct pre-release version are listed in the documentation version dropdown.
 1. [ ] Check all published versions of the docs to ensure they are visible and that their version menus have the latest versions.
 1. [ ] In this issue, create separate _threads_ for the retrospective, and add items as they appear:
    - `## :+1: What went well this release?`
