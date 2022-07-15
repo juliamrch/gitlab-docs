@@ -35,9 +35,9 @@ fi
 # Minify assets
 printf "Optimizing assets..."
 
-printf "HTML..."; $MINIFY_BIN $MINIFY_FLAGS --type=html --match=\.html -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
-printf "CSS..." ; $MINIFY_BIN $MINIFY_FLAGS --type=css  --match=\.css  -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
-printf "JSON..."; $MINIFY_BIN $MINIFY_FLAGS --type=json --match=\.json -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
-printf "SVG..." ; $MINIFY_BIN $MINIFY_FLAGS --type=svg  --match=\.svg  -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
+printf "HTML..."; $MINIFY_BIN $MINIFY_FLAGS --type=html --match="\.html$" -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
+printf "CSS..." ; $MINIFY_BIN $MINIFY_FLAGS --type=css  --match="\.css$"  -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
+printf "JSON..."; $MINIFY_BIN $MINIFY_FLAGS --type=json --match="\.json$" -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
+printf "SVG..." ; $MINIFY_BIN $MINIFY_FLAGS --type=svg  --match="\.svg$"  -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
 
 echo "Done"
