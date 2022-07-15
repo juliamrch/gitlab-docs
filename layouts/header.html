@@ -22,36 +22,9 @@
       <a class="nav-link" href="https://about.gitlab.com/releases/categories/releases/" target="_blank">What's new?</a>
       </li>
     </ul>
-    <ul class="navbar-nav mb-0">
-      <li class="nav-item p-2 dropdown">
-        <button class="btn dropdown-toggle text-white" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= version_dropdown_title %><%= icon('chevron-down') %>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" <%= active_dropdown(ENV['CI_DEFAULT_BRANCH']) %> href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip"><%= dotcom %>
-            <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab, with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i>
-          </a>
-          <% if display_previous_versions? %>
-          <!-- Start of online versions -->
-          <div class="dropdown-divider"></div>
-          <% data_versions[:online].each do |version| %>
-            <%= render '/partials/versions_list.*', version: version %>
-          <% end %>
-          <!-- End of online versions -->
-
-          <!-- Start of last major versions -->
-          <div class="dropdown-divider"></div>
-          <% data_versions[:previous_majors].each do |version| %>
-            <%= render '/partials/versions_list.*', version: version %>
-          <% end %>
-          <!-- End of last major versions -->
-
-          <% end %>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" <%= active_dropdown('archives') %> href='/archives/'>Archives</a>
-        </div>
-      </li>
-      <li class="nav-item p-2">
+    <div class="js-versions-menu"></div>
+    <ul class="navbar-nav gl-mb-3 gl-md-mb-0 gl-md-pr-3">
+      <li class="nav-item">
         <% if @item.identifier.to_s.split('/')[1] == 'omnibus' %>
           <%= render '/cta_omnibus.*' %>
         <% else %>
