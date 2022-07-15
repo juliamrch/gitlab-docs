@@ -673,6 +673,8 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/floc.html'
               - doc_title: Geo nodes
                 doc_url: 'ee/user/admin_area/geo_nodes.html'
+              - doc_title: Git abuse rate limit
+                doc_url: 'ee/user/admin_area/reporting/git_abuse_rate_limit.html'
               - doc_title: Git LFS administration
                 doc_url: 'ee/administration/lfs/'
               - doc_title: GitLab Pages
