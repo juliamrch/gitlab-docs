@@ -2788,6 +2788,8 @@ sections:
                 docs:
                   - doc_title: Geo framework
                     doc_url: 'ee/development/geo/framework.html'
+                  - doc_title: Geo proxying
+                    doc_url: 'ee/development/geo/proxying.html'
               - doc_title: Git LFS
                 doc_url: 'ee/development/lfs.html'
               - doc_title: Gitaly development
