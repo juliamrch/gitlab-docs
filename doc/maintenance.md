@@ -4,9 +4,9 @@ Some of the issues that the GitLab technical writing team handles to maintain
 <https://docs.gitlab.com> include:
 
 - The [deployment process](#deployment-process).
-- [Algolia search](#algolia-search).
+- [Algolia search](docsearch.md).
 - Temporary [event or survey banners](#survey-banner).
-- [CSP headers](#csp-header)
+- [CSP headers](#csp-header).
 
 ## Deployment process
 
