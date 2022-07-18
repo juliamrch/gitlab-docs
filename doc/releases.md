@@ -163,7 +163,6 @@ The merge requests for the dropdowns should now all be merged into their respect
 
 1. Check the [pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipelines)
    and make sure the pipelines in all the MRs are green.
-1. Merge all of the [dropdown merge requests](#update-dropdown-for-online-versions).
 1. Merge the [release merge request](#create-release-merge-request).
 1. Each merge triggers a new pipeline for each stable branch.
    Check the [pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines) and wait
@@ -187,8 +186,7 @@ For example, if you released the 14.1 documentation, the first dropdown entry sh
 
 ### `Could not find remote branch` error
 
-When you create the [stable branch](#create-stable-branch-and-docker-image-for-release)
-or create the MRs to [update the dropdown](#update-dropdown-for-online-versions),
+When you create the [stable branch](#create-stable-branch-and-docker-image-for-release),
 the pipeline fails with an error similar to the following:
 
 ```shell
