@@ -1121,10 +1121,10 @@
   resolved "https://registry.yarnpkg.com/@evilmartians/lefthook/-/lefthook-1.0.4.tgz#6f2c68f7c492ee7f07d24dbda88908232c4582cb"
   integrity sha512-BithCdjVebJ7/4NoU/gyoIUHdAnMvZ/k+HrkXHYag7FAMdGpKCNi0tysywJSSRhFZUrfrhfd7gnxKYZDj+j84A==
 
-"@gitlab/eslint-plugin@^12.3.0":
-  version "12.3.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/eslint-plugin/-/eslint-plugin-12.3.0.tgz#951453556fb3b4f43e3028fead65e083a8b90b0e"
-  integrity sha512-DV84zLLv/wDUjzoVJfpvvAAiaemKUqT1IZf16fEtlw/A4/x48vWJTMHQF7ciQtjz+gVKAnlht67IstSY8W19ZQ==
+"@gitlab/eslint-plugin@^14.0.0":
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/eslint-plugin/-/eslint-plugin-14.0.0.tgz#dc841d83521afdaf86afc943f94ad11d19c37b7c"
+  integrity sha512-idTZojh+0lvKqdPcNlY4w3c9+qCTS0WYBrFkagWRifUYBqXGHbWw8CRfxCMYZSA3GnFRuxXhodpilRFq2YzURw==
   dependencies:
     "@babel/core" "^7.17.0"
     "@babel/eslint-parser" "^7.17.0"
