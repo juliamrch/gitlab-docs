@@ -492,6 +492,8 @@ sections:
             doc_url: 'ee/user/project/integrations/github.html'
           - doc_title: Google Chat
             doc_url: 'ee/user/project/integrations/hangouts_chat.html'
+          - doc_title: Harbor
+            doc_url: 'ee/user/project/integrations/harbor.html'
           - doc_title: Irker
             doc_url: 'ee/user/project/integrations/irker.html'
           - doc_title: Jenkins
