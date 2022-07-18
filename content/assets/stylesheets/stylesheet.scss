@@ -447,7 +447,7 @@ ol {
     font-size: 0.9rem !important;
   }
 
-  rect,
+  rect:not(.branchLabelBkg, .commit-label-bkg),
   polygon {
     fill: $white !important;
     stroke: $gray-300 !important;
