@@ -35,7 +35,7 @@ export default {
     :stalled-search-delay="500"
     class="gl-pb-8"
   >
-    <h1 class="gl-mt-5!">Search</h1>
+    <h1>Search</h1>
     <ais-search-box
       placeholder="Search GitLab Documentation"
       show-loading-indicator
