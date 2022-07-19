@@ -136,18 +136,25 @@ To create the release merge request for the release:
    git checkout -b release-15-0
    ```
 
-1. Edit `content/_data/versions.yaml` and update the lists of versions to reflect the new release:
+1. Edit `content/_data/versions.yaml` and update the lists of versions to reflect the new release on [the Archives page](https://docs.gitlab.com/archives/):
 
    - Add the latest version to the `online:` section.
    - Move the oldest version in `online:` to the `offline:` section. There should now be three
      versions in `online:`.
+
+1. Edit `content/versions.json` and update the lists of versions to reflect the new release in the Versions menu:
+
+   - Move the existing `next` version down to `current`.
+   - Add the upcoming version to the `next` section.
+   - Move the previous `current` down to `last_minor`, replacing the existing version.
+   - If this is a new major release, remove the oldest version from `last_major` and add the previous release here.
 
 1. Edit `latest.Dockerfile` by removing the oldest version, and then adding the newest version to the top of the list.
 
 1. Commit and push to create the merge request. For example:
 
    ```shell
-   git add content/_data/versions.yaml latest.Dockerfile
+   git add content/_data/versions.yaml content/versions.json latest.Dockerfile
    git commit -m "Release 15.0"
    git push origin release-15-0
    ```
