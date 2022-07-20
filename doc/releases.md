@@ -146,7 +146,9 @@ To create the release merge request for the release:
 
    - Move the existing `next` version down to `current`.
    - Add the upcoming version to the `next` section.
-   - Move the previous `current` down to `last_minor`, replacing the existing version.
+   - Move the previous `current` down to `last_minor`.
+     - If there are already two versions listed here, remove the oldest one.
+     - If the previous `current` is now also included in `last_major`, do not duplicate it here.
    - If this is a new major release, remove the oldest version from `last_major` and add the previous release here.
 
 1. Edit `latest.Dockerfile` by removing the oldest version, and then adding the newest version to the top of the list.
