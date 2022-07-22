@@ -1803,9 +1803,7 @@ sections:
           - doc_title: Static Application Security Testing
             doc_url: 'ee/user/application_security/sast/'
             docs:
-              - doc_title: Customize rulesets
-                doc_url: 'ee/user/application_security/sast/customize_rulesets.html'
-              - doc_title: SAST analyzers
+              - doc_title: SAST Analyzers
                 doc_url: 'ee/user/application_security/sast/analyzers.html'
           - doc_title: Infrastructure as Code (IaC) Scanning
             doc_url: 'ee/user/application_security/iac_scanning/'
