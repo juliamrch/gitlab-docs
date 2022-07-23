@@ -9,6 +9,7 @@ previous_majors:
 online:
   - "15.2"
   - "15.1"
+  - "15.0"
 
 # The last version before the next major release. Verify near 14.10 as there may be more 14.X versions.
 last_before_new_major:
@@ -17,7 +18,6 @@ last_before_new_major:
 # Versions not appearing in the dropdown, but available as Docker images
 # https://docs.gitlab.com/archives/#offline-archives
 offline:
-  - "15.0"
   - "14.9"
   - "14.8"
   - "14.7"
