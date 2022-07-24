@@ -169,6 +169,19 @@ sections:
                         doc_url: 'charts/installation/deployment.html'
                       - doc_title: Upgrade
                         doc_url: 'charts/installation/upgrade.html'
+                        docs:
+                          - doc_title: Release notes 6.0
+                            doc_url: 'charts/releases/6_0.html'
+                          - doc_title: Release notes 5.0
+                            doc_url: 'charts/releases/5_0.html'
+                          - doc_title: Release notes 4.0
+                            doc_url: 'charts/releases/4_0.html'
+                          - doc_title: Release notes 3.0
+                            doc_url: 'charts/releases/3_0.html'
+                          - doc_title: Release notes 2.0
+                            doc_url: 'charts/releases/3_0.html'
+                          - doc_title: Release notes 1.0
+                            doc_url: 'charts/releases/3_0.html'
                       - doc_title: Backup and Restore
                         doc_url: 'charts/backup-restore/'
                         docs:
