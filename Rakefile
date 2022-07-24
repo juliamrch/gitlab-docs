@@ -79,6 +79,10 @@ namespace :release do
     version = args.version.to_s
     source_dir = File.expand_path(__dir__)
 
+    # Disable lefthook because it was causing some PATH errors
+    # https://docs.gitlab.com/ee/development/contributing/style_guides.html#disable-lefthook-temporarily
+    ENV['LEFTHOOK'] = '0'
+
     raise 'You need to specify a version, like 10.1' unless version.match?(%r{\A\d+\.\d+\z})
 
     # Check if local branch exists
@@ -130,7 +134,9 @@ namespace :release do
     `git commit -m 'Release cut #{version}'`
 
     puts "\n#{COLOR_CODE_GREEN}INFO: Created new Dockerfile:#{COLOR_CODE_RESET} #{dockerfile}."
-    puts "#{COLOR_CODE_GREEN}INFO: To push the new branch, run:#{COLOR_CODE_RESET} git push origin #{version}."
+    puts "#{COLOR_CODE_GREEN}INFO: Pushing the new branch. Don't create a merge request!#{COLOR_CODE_RESET}"
+
+    `git push origin #{version}`
   end
 end
 
