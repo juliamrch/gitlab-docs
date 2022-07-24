@@ -339,6 +339,8 @@ sections:
                 doc_url: 'ee/update/package/convert_to_ee.html'
               - doc_title: Package signatures
                 doc_url: 'omnibus/update/package_signatures.html'
+              - doc_title: GitLab 15 changes
+                doc_url: 'omnibus/update/gitlab_15_changes.html'
               - doc_title: GitLab 14 changes
                 doc_url: 'omnibus/update/gitlab_14_changes.html'
               - doc_title: GitLab 13 changes
