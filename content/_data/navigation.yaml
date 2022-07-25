@@ -1814,6 +1814,8 @@ sections:
           - doc_title: Static Application Security Testing
             doc_url: 'ee/user/application_security/sast/'
             docs:
+              - doc_title: Customize rulesets
+                doc_url: 'ee/user/application_security/sast/customize_rulesets.html'
               - doc_title: SAST Analyzers
                 doc_url: 'ee/user/application_security/sast/analyzers.html'
           - doc_title: Infrastructure as Code (IaC) Scanning
@@ -2659,6 +2661,8 @@ sections:
                     doc_url: 'ee/development/filtering_by_label.html'
                   - doc_title: Case study - namespaces storage statistics
                     doc_url: 'ee/development/namespaces_storage_statistics.html'
+                  - doc_title: CI mirrored tables
+                    doc_url: 'ee/development/database/ci_mirrored_tables.html'
                   - doc_title: Database Lab and Postgres.ai
                     doc_url: 'ee/development/database/database_lab.html'
                   - doc_title: Database review guidelines
