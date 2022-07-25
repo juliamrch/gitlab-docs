@@ -179,9 +179,9 @@ sections:
                           - doc_title: Release notes 3.0
                             doc_url: 'charts/releases/3_0.html'
                           - doc_title: Release notes 2.0
-                            doc_url: 'charts/releases/3_0.html'
+                            doc_url: 'charts/releases/2_0.html'
                           - doc_title: Release notes 1.0
-                            doc_url: 'charts/releases/3_0.html'
+                            doc_url: 'charts/releases/1_0.html'
                       - doc_title: Backup and Restore
                         doc_url: 'charts/backup-restore/'
                         docs:
