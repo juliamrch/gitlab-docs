@@ -248,10 +248,14 @@ sections:
                       - doc_title: Advanced
                         doc_url: 'charts/advanced/'
                         docs:
+                          - doc_title: Custom Docker images
+                            doc_url: 'charts/advanced/custom-images/'
                           - doc_title: External database
                             doc_url: 'charts/advanced/external-db/'
                           - doc_title: External Gitaly
                             doc_url: 'charts/advanced/external-gitaly/'
+                          - doc_title: External GitLab Pages
+                            doc_url: 'charts/advanced/external-gitlab-pages/'
                           - doc_title: External Mattermost
                             doc_url: 'charts/advanced/external-mattermost/'
                           - doc_title: External Nginx
@@ -260,8 +264,16 @@ sections:
                             doc_url: 'charts/advanced/external-object-storage/'
                           - doc_title: External Redis
                             doc_url: 'charts/advanced/external-redis/'
+                          - doc_title: FIPS-compliant images
+                            doc_url: 'charts/advanced/fips/'
+                          - doc_title: Geo
+                            doc_url: 'charts/advanced/geo/'
+                          - doc_title: Internal TLS between services
+                            doc_url: 'charts/advanced/internal-tls/'
                           - doc_title: Persistent volumes
                             doc_url: 'charts/advanced/persistent-volumes/'
+                          - doc_title: Red Hat UBI-based images
+                            doc_url: 'charts/advanced/ubi/'
 
                   - doc_title: Troubleshoot
                     doc_url: 'charts/troubleshooting/'
