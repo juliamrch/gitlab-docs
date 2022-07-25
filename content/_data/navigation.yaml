@@ -334,8 +334,6 @@ sections:
             doc_url: 'ee/administration/reference_architectures/25k_users.html'
           - doc_title: Up to 50,000 users
             doc_url: 'ee/administration/reference_architectures/50k_users.html'
-          - doc_title: Troubleshooting
-            doc_url: 'ee/administration/reference_architectures/troubleshooting.html'
       - category_title: Steps after installing
         category_url: 'ee/install/next_steps.html'
       - category_title: Upgrade GitLab
