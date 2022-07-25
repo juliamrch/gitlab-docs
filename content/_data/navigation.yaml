@@ -2003,35 +2003,6 @@ sections:
                 doc_url: 'ee/user/clusters/agent/troubleshooting.html'
               - doc_title: Migrate to the agent for Kubernetes
                 doc_url: 'ee/user/infrastructure/clusters/migrate_to_gitlab_agent.html'
-              - doc_title: (DEPRECATED) Certificate-based clusters
-                doc_url: 'ee/user/infrastructure/clusters/'
-                docs:
-                  - doc_title: Create a new cluster
-                    doc_url: 'ee/user/project/clusters/add_remove_clusters.html'
-                  - doc_title: Connect an existing cluster
-                    doc_url: 'ee/user/project/clusters/add_existing_cluster.html'
-                  - doc_title: Access controls
-                    doc_url: 'ee/user/project/clusters/cluster_access.html'
-                  - doc_title: GitLab-Managed Clusters
-                    doc_url: 'ee/user/project/clusters/gitlab_managed_clusters.html'
-                  - doc_title: Management project
-                    doc_url: 'ee/user/clusters/management_project.html'
-                  - doc_title: Cluster integrations
-                    doc_url: 'ee/user/clusters/integrations.html'
-                  - doc_title: Cost management
-                    doc_url: 'ee/user/clusters/cost_management.html'
-                  - doc_title: Deploy applications
-                    doc_url: 'ee/user/project/clusters/deploy_to_cluster.html'
-                  - doc_title: Cluster environments
-                    doc_url: 'ee/user/clusters/environments.html'
-                  - doc_title: 'Clusters health'
-                    doc_url: 'ee/user/infrastructure/clusters/manage/clusters_health.html'
-                  - doc_title: Deploy boards
-                    doc_url: 'ee/user/project/deploy_boards.html'
-                  - doc_title: Pod logs
-                    doc_url: 'ee/user/project/clusters/kubernetes_pod_logs.html'
-                  - doc_title: Web terminals
-                    doc_url: 'ee/administration/integration/terminal.html'
           - doc_title: Runbooks
             doc_url: 'ee/user/project/clusters/runbooks/'
       - category_title: Analyze GitLab usage
