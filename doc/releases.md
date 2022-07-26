@@ -144,12 +144,27 @@ To create the release merge request for the release:
 
 1. Edit `content/versions.json` and update the lists of versions to reflect the new release in the Versions menu:
 
-   - Move the existing `next` version down to `current`.
-   - Add the upcoming version to the `next` section.
-   - Move the previous `current` down to `last_minor`.
-     - If there are already two versions listed here, remove the oldest one.
-     - If the previous `current` is now also included in `last_major`, do not duplicate it here.
-   - If this is a new major release, remove the oldest version from `last_major` and add the previous release here.
+   - Set `next` to the version number of the next release. For example, if you're releasing `15.2`, set `next` to `15.3`.
+   - Set `current` to the version number of the release you're releasing. For example, if you're releasing `15.2`, set
+     `current` to `15.2`.
+   - Ensure `last_major` is set to the latest version numbers of the last two major versions before the major version
+     of the release you're releasing. For example, if you're releasing `15.2`, ensure `last_major` is set to `14.10`
+     and `13.12`.
+   - Set `last_minor` to the last two minor releases before the release you're releasing. For example, if you're
+     releasing `15.2`, set `last_minor` to `15.1` and `15.0`.
+
+   As a complete example, the `content/versions.json` file for the `15.2` release is:
+
+   ```json
+   [
+     {
+       "next": "15.3",
+       "current": "15.2",
+       "last_minor": ["15.1", "15.0"],
+       "last_major": ["14.10", "13.12"]
+     }
+   ]
+   ```
 
 1. Edit `latest.Dockerfile` by removing the oldest version, and then adding the newest version to the top of the list.
 
