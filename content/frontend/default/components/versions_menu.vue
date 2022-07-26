@@ -30,6 +30,14 @@ export default {
   methods: {
     getVersionPath(versionNumber) {
       let path = window.location.pathname;
+
+      // If we're viewing an older version, drop its version prefix when creating links.
+      if (this.activeVersion !== this.versions.next) {
+        const pathArr = window.location.pathname.split('/').filter((n) => n);
+        pathArr.shift();
+        path = `/${pathArr.join('/')}`;
+      }
+
       if (versionNumber) {
         path = `/${versionNumber}${path}`;
       }
@@ -41,9 +49,15 @@ export default {
       // Check if the first item in the URL path is a valid version.
       // If so, that should be the active menu item.
       const versionPath = window.location.pathname.split('/')[1];
-      if (Object.values(this.versions).includes(versionPath)) {
-        activeVersion = versionPath;
-      }
+
+      Object.keys(versions).forEach((key) => {
+        if (
+          versions[key] === versionPath ||
+          (versions[key].constructor === Array && versions[key].includes(versionPath))
+        ) {
+          activeVersion = versionPath;
+        }
+      });
       return activeVersion;
     },
   },
