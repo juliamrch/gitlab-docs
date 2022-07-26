@@ -1,5 +1,5 @@
 ---
-version: 128
+version: 129
 ---
 
 @import 'variables';
@@ -441,6 +441,7 @@ ol {
   z-index: 1;
 
   /* stylelint-disable declaration-no-important */
+  /* stylelint-disable selector-class-pattern */
   .label,
   text {
     font-family: $gl-regular-font !important;
@@ -458,6 +459,7 @@ ol {
     stroke: $gray-50 !important;
   }
   /* stylelint-enable declaration-no-important */
+  /* stylelint-enable selector-class-pattern */
 }
 
 .mermaid:not([data-processed='true']) {
