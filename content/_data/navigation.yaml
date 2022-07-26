@@ -722,7 +722,10 @@ sections:
               - doc_title: Labels
                 doc_url: 'ee/user/admin_area/labels.html'
               - doc_title: Log system
-                doc_url: 'ee/administration/logs.html'
+                doc_url: 'ee/administration/logs/'
+                docs:
+                  - doc_title: Parsing GitLab logs with jq
+                    doc_url: 'ee/administration/logs/log_parsing.html'
               - doc_title: Maintenance Mode
                 doc_url: 'ee/administration/maintenance_mode/'
               - doc_title: Merge request approvals
