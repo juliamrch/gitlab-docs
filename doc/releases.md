@@ -147,10 +147,9 @@ To create the release merge request for the release:
    - Set `next` to the version number of the next release. For example, if you're releasing `15.2`, set `next` to `15.3`.
    - Set `current` to the version number of the release you're releasing. For example, if you're releasing `15.2`, set
      `current` to `15.2`.
-   - Ensure `last_major` is set to the latest version numbers of the last two major versions before the major version
-     of the release you're releasing. For example, if you're releasing `15.2`, ensure `last_major` is set to `14.10`
-     and `13.12`.
-   - Set `last_minor` to the last two minor releases before the release you're releasing. For example, if you're
+   - Ensure `last_major` is set to the two most recent major versions. Do not include the current major version.
+     For example, if you're releasing `15.2`, ensure `last_major` is `14.10` and `13.12`.
+   - Set `last_minor` to the last two most recent minor releases. For example, if you're
      releasing `15.2`, set `last_minor` to `15.1` and `15.0`.
 
    As a complete example, the `content/versions.json` file for the `15.2` release is:
