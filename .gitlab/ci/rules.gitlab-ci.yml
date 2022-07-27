@@ -27,7 +27,7 @@ default:
       files:
         - Gemfile.lock
     paths:
-      - vendor/ruby
+      - vendor/bundle
 
 .cache_gem_yarn:
   cache:
@@ -36,7 +36,7 @@ default:
         - Gemfile.lock
         - yarn.lock
     paths:
-      - vendor/ruby
+      - vendor/bundle
       - .yarn-cache/
 
 .cache_yarn:
