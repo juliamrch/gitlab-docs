@@ -1,16 +1,17 @@
 import docsearch from '@docsearch/js';
 import '@docsearch/css';
-import { getDocsVersion } from './search';
+import { getAlgoliaCredentials, getDocsVersion } from './search';
 
 document.addEventListener('DOMContentLoaded', () => {
   const docsVersion = getDocsVersion();
+  const algoliaCredentials = getAlgoliaCredentials();
 
   // eslint-disable-next-line no-undef
   docsearch({
-    apiKey: '89b85ffae982a7f1adeeed4a90bb0ab1',
-    indexName: 'gitlab',
+    apiKey: algoliaCredentials.apiKey,
+    indexName: algoliaCredentials.index,
     container: '#docsearch',
-    appId: '3PNCFOU757',
+    appId: algoliaCredentials.appId,
     placeholder: 'Search the docs',
     searchParameters: {
       facetFilters: [`version:${docsVersion}`],
