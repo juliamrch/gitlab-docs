@@ -1,6 +1,8 @@
 <script>
 import GlButton from '@gitlab/ui/src/components/base/button/button.vue';
 
+const mediaQuery = window.matchMedia(`(max-width: 1199px`);
+
 export default {
   components: {
     GlButton,
@@ -11,8 +13,21 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      width: null,
+      open: null,
+    };
+  },
+  created() {
+    this.width = window.innerWidth;
+    mediaQuery.addEventListener('change', this.responsiveToggle);
+  },
+  beforeDestroy() {
+    mediaQuery.addEventListener('change', this.responsiveToggle);
+  },
   methods: {
-    toggle() {
+    toggle(direction = '') {
       this.targetSelector.forEach((el) => {
         const target = document.querySelector(el);
 
@@ -20,24 +35,49 @@ export default {
           return;
         }
 
-        target.classList.toggle('active');
+        switch (direction) {
+          case 'open':
+            target.classList.add('active');
+            this.open = true;
+            break;
+          case 'close':
+            target.classList.remove('active');
+            this.open = false;
+            break;
+          default:
+            target.classList.toggle('active');
+            this.open = !this.open;
+        }
       });
+    },
+    /**
+     * Toggle the menu visibility based on a change event.
+     *
+     * @param {*} e
+     *   A media query change event.
+     *   In this method, we use the "matches" property to check
+     *   if the media query returns true or false.
+     */
+    responsiveToggle(e) {
+      const newWidth = window.innerWidth;
+
+      // Browser is less wide than 1199px and has decreased in width.
+      if (e.matches && newWidth < this.width) {
+        this.toggle('close');
+      }
+      // Browser is wider than 1199px and has increased in width.
+      if (!e.matches && newWidth > this.width) {
+        this.toggle('open');
+      }
+
+      this.width = newWidth;
     },
   },
 };
 </script>
 
 <template>
-  <gl-button class="nav-toggle border-right-0" @click="toggle">
-    <!--
-    TODO: Replace arrows with 'angle-double-right' icon using the icon component from gitlab-ui
-          We'll do this once https://gitlab.com/gitlab-org/gitlab-ui/issues/98 is complete.
-          Issue to add gitlab-ui to this project: https://gitlab.com/gitlab-org/gitlab-docs/issues/443
-    -->
-    <div class="d-flex align-items-center">
-      <span class="arrow"></span>
-      <span class="arrow"></span>
-      <div class="label">Collapse sidebar</div>
-    </div>
+  <gl-button class="nav-toggle gl-border-none gl-pl-5!" icon="angle-double-right" @click="toggle">
+    <span class="label gl-ml-2">Collapse sidebar</span>
   </gl-button>
 </template>
