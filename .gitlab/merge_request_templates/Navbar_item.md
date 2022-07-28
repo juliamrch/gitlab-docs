@@ -1,7 +1,8 @@
-- Link to the merge request of the new page: 
+## Add navigation item to global navigation
 
+- [ ] Link to the merge request that introduced the new page:
 - [ ] Give the MR a descriptive title.
-- [ ] Link to the merge request that introduced the new page.
+- [ ] Link to the review app showing the new page:
 
 /label ~"Category:Docs Site" ~"global nav item" ~"Technical Writing" ~"type::maintenance"
 /assign me
