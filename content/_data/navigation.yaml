@@ -938,7 +938,7 @@ sections:
             doc_url: 'ee/administration/issue_closing_pattern.html'
           - doc_title: Snippets
             doc_url: 'ee/administration/snippets/'
-          - doc_title: Self-host the help pages
+          - doc_title: Host the product documentation
             doc_url: 'ee/administration/docs_self_host.html'
 
       # Maintain your install
