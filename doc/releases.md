@@ -175,8 +175,7 @@ To create the release merge request for the release:
    git push origin release-15-0
    ```
 
-1. Create the merge request and choose the `Release` description
-   template. Set the merge request to _Draft_ status and do not merge it yet.
+1. Create the merge request and add the `~release` label. Set the merge request to _Draft_ status but do not merge it yet.
 
 ## Merge merge requests and run Docker image builds
 
