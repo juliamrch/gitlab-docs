@@ -1123,8 +1123,8 @@ sections:
                 docs:
                   - doc_title: SCIM provisioning
                     doc_url: 'ee/user/group/saml_sso/scim_setup.html'
-                  - doc_title: Troubleshooting Group SAML and SCIM
-                    doc_url: 'ee/administration/troubleshooting/group_saml_scim.html'
+                  - doc_title: Example group SAML and SCIM configurations
+                    doc_url: 'ee/user/group/saml_sso/example_saml_config.html'
               - doc_title: Subgroups
                 doc_url: 'ee/user/group/subgroups/'
               - doc_title: Move a personal project to a group
