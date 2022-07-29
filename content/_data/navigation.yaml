@@ -1916,6 +1916,9 @@ sections:
                 doc_url: 'ee/ci/cloud_deployment/ecs/deploy_to_aws_ecs.html'
           - doc_title: Releases
             doc_url: 'ee/user/project/releases/'
+            docs:
+              - doc_title: Install the release CLI
+                doc_url: 'ee/user/project/releases/release_cli.html'
           - doc_title: Review Apps
             doc_url: 'ee/ci/review_apps/'
           - doc_title: Feature flags
