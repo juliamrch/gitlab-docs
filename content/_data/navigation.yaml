@@ -523,8 +523,6 @@ sections:
             doc_url: 'ee/user/project/integrations/irker.html'
           - doc_title: Jenkins
             doc_url: 'ee/integration/jenkins.html'
-          - doc_title: Jenkins (deprecated)
-            doc_url: 'ee/integration/jenkins_deprecated.html'
           - doc_title: Mattermost notifications
             doc_url: 'ee/user/project/integrations/mattermost.html'
           - doc_title: Mattermost slash commands
