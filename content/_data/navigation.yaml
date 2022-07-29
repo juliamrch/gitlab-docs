@@ -2347,6 +2347,9 @@ sections:
             doc_url: 'ee/api/packages/pypi.html'
           - doc_title: Releases
             doc_url: 'ee/api/releases/'
+            docs:
+              - doc_title: Group releases
+                doc_url: 'ee/api/group_releases.html'
           - doc_title: Release links
             doc_url: 'ee/api/releases/links.html'
           - doc_title: Repositories
