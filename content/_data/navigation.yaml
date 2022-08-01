@@ -2549,9 +2549,6 @@ sections:
                 doc_url: 'ee/development/contributing/issue_workflow.html'
               - doc_title: Merge request concepts
                 doc_url: 'ee/development/merge_request_concepts/'
-                docs:
-                  - doc_title: Merge request widget extensions
-                    doc_url: 'ee/development/merge_request_concepts/widget_extensions.html'
               - doc_title: Merge request workflow
                 doc_url: 'ee/development/contributing/merge_request_workflow.html'
               - doc_title: Secure partner onboarding process
