@@ -105,6 +105,10 @@ clean:
 	@printf "\n$(INFO)INFO: Removing tmp and public directories...$(END)\n"
 	@rm -rf tmp public
 
+build-lunr-index:
+	@printf "\n$(INFO)INFO: Building offline search index..$(INFO_END)\n"
+	node scripts/lunr/preindex.js
+
 internal-links-check: clone-all-docs-projects compile
 	@printf "\n$(INFO)INFO: Checking all internal links...$(END)\n"
 	@bundle exec nanoc check internal_links
@@ -157,8 +161,8 @@ markdownlint-tests:
 	@printf "\n$(INFO)INFO: Running markdownlint tests...$(END)\n"
 	@yarn markdownlint doc/**/*.md
 
-test: setup rspec-tests jest-tests eslint-tests prettier-tests stylelint-tests hadolint-tests yamllint-tests markdownlint-tests
+check-global-navigation:
+	@printf "\n$(INFO)INFO: Checking global navigation...$(END)\n"
+	@scripts/check-navigation.sh
 
-build-lunr-index:
-	@printf "\n$(INFO)INFO: Building offline search index..$(INFO_END)\n"
-	node scripts/lunr/preindex.js
+test: setup rspec-tests jest-tests eslint-tests prettier-tests stylelint-tests hadolint-tests yamllint-tests markdownlint-tests check-global-navigation
