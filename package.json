@@ -10,9 +10,9 @@
     "prettier:fix": "prettier --write '**/*.{js,vue,json}'"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.9",
+    "@babel/core": "^7.18.10",
     "@babel/eslint-parser": "^7.18.9",
-    "@babel/preset-env": "^7.18.9",
+    "@babel/preset-env": "^7.18.10",
     "@evilmartians/lefthook": "^1.0.5",
     "@gitlab/eslint-plugin": "^15.0.0",
     "@gitlab/stylelint-config": "^4.1.0",
@@ -26,7 +26,7 @@
     "@vue/test-utils": "^1.3.0",
     "@vue/vue2-jest": "^28.0.1",
     "babel-jest": "^28.1.3",
-    "eslint": "^8.20.0",
+    "eslint": "^8.21.0",
     "flush-promises": "^1.0.2",
     "glob": "^8.0.3",
     "jest": "^28.1.3",
