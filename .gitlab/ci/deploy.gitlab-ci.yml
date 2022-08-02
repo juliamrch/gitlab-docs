@@ -5,10 +5,9 @@
 .build_base:
   stage: build
   extends:
-    - .cache_gem_yarn
     - .retry
+    - .bundle_and_yarn
   script:
-    - yarn install --cache-folder .yarn-cache
     - bundle exec rake setup_git default
     - bundle exec nanoc compile -VV
     # Create _redirects for Pages redirects

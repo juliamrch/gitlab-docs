@@ -6,22 +6,14 @@ default:
   image: registry.gitlab.com/gitlab-org/gitlab-docs/base:alpine-3.16-ruby-2.7.6-0bc327a4
   tags:
     - gitlab-org
-  # Check Ruby, RubyGems, and Bundler versions and install gems
+
+.bundle:
   before_script:
-    - ruby -v
-    - gem -v
-    - bundle -v
-    - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
+    - ruby --version
+    - gem --version
+    - bundle --version
+    - bundle config set --local deployment true  # Install dependencies into ./vendor/bundle
     - bundle install --jobs 4
-
-.yarn:
-  before_script:
-    - yarn install --cache-folder .yarn-cache
-
-#
-# Caching keys
-#
-.cache_gem:
   cache:
     key:
       files:
@@ -29,7 +21,16 @@ default:
     paths:
       - vendor/bundle
 
-.cache_gem_yarn:
+.bundle_and_yarn:
+  before_script:
+    - ruby --version
+    - gem --version
+    - bundle --version
+    - bundle config set --local deployment true  # Install dependencies into ./vendor/bundle
+    - bundle install --jobs 4
+    - node --version
+    - yarn --version
+    - yarn install --frozen-lockfile --cache-folder .yarn-cache
   cache:
     key:
       files:
@@ -39,7 +40,11 @@ default:
       - vendor/bundle
       - .yarn-cache/
 
-.cache_yarn:
+.yarn:
+  before_script:
+    - node --version
+    - yarn --version
+    - yarn install --frozen-lockfile --cache-folder .yarn-cache
   cache:
     key:
       files:
