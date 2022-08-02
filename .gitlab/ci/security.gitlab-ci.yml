@@ -7,7 +7,8 @@
 # 
 # - Security/Dependency-Scanning.gitlab-ci.yml
 # - Security/SAST.gitlab-ci.yml
-# 
+# - Security/Secret-Detection.gitlab-ci.yml
+#
 # Defaults are overridden below.
 
 #
@@ -44,3 +45,20 @@ semgrep-sast:
   extends:
     - .sast-analyzer
     - .security-scanning-overrides
+
+#
+# Secret detection job overrides
+# As per https://docs.gitlab.com/ee/user/application_security/#use-security-scanning-tools-with-merge-request-pipelines,
+# overrides the rules to make it work in MR pipelines too.
+#
+secret_detection:
+  extends:
+    - .secret-analyzer
+    - .security-scanning-overrides
+  rules:
+    - if: $SECRET_DETECTION_DISABLED
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  script:
+    - /analyzer run
