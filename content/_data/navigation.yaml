@@ -2613,8 +2613,6 @@ sections:
                     doc_url: 'ee/development/i18n/proofreader.html'
                   - doc_title: Merging
                     doc_url: 'ee/development/i18n/merging_translations.html'
-              - doc_title: Working with Prometheus metrics
-                doc_url: 'ee/development/prometheus_metrics.html'
           - doc_title: Development style guides
             doc_url: 'ee/development/contributing/style_guides.html'
             docs:
@@ -2962,7 +2960,7 @@ sections:
                     doc_url: 'ee/development/workhorse/gitlab_features.html'
                   - doc_title: Websocket channel support
                     doc_url: 'ee/development/workhorse/channel.html'
-              - doc_title: Working with Prometheus metrics
+              - doc_title: Prometheus metrics
                 doc_url: 'ee/development/prometheus_metrics.html'
               - doc_title: Workspace
                 doc_url: 'ee/development/workspace/'
