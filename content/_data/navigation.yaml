@@ -958,8 +958,6 @@ sections:
             doc_url: 'ee/administration/operations/rails_console.html'
           - doc_title: Sidekiq MemoryKiller
             doc_url: 'ee/administration/operations/sidekiq_memory_killer.html'
-          - doc_title: Switch to Puma
-            doc_url: 'ee/administration/operations/puma.html'
           - doc_title: Use SSH certificates
             doc_url: 'ee/administration/operations/ssh_certificates.html'
           - doc_title: Enable encrypted configuration
