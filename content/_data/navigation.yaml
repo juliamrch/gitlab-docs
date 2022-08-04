@@ -2708,6 +2708,8 @@ sections:
                     doc_url: 'ee/development/database/post_deployment_migrations.html'
                   - doc_title: Query comments with Marginalia
                     doc_url: 'ee/development/database_query_comments.html'
+                  - doc_title: Query Recorder
+                    doc_url: 'ee/development/query_recorder.html'
                   - doc_title: SQL guidelines
                     doc_url: 'ee/development/sql.html'
                   - doc_title: Swapping tables
