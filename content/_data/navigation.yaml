@@ -2423,11 +2423,10 @@ sections:
             doc_url: 'ee/api/vulnerability_exports.html'
           - doc_title: Vulnerability Findings
             doc_url: 'ee/api/vulnerability_findings.html'
-          - doc_title: Wikis
+          - doc_title: Wikis (group)
+            doc_url: 'ee/api/group_wikis.html'
+          - doc_title: Wikis (project)
             doc_url: 'ee/api/wikis.html'
-            docs:
-              - doc_title: Wikis (group)
-                doc_url: 'ee/api/group_wikis.html'
       - category_title: OpenAPI
         category_url: 'ee/api/openapi/openapi_interactive.html'
       - category_title: GraphQL
