@@ -1917,7 +1917,7 @@ sections:
           - doc_title: Releases
             doc_url: 'ee/user/project/releases/'
             docs:
-              - doc_title: Install the release CLI
+              - doc_title: Release CLI tool
                 doc_url: 'ee/user/project/releases/release_cli.html'
               - doc_title: Release fields
                 doc_url: 'ee/user/project/releases/release_fields.html'
