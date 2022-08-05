@@ -2709,7 +2709,7 @@ sections:
                   - doc_title: Post-deployment migrations
                     doc_url: 'ee/development/database/post_deployment_migrations.html'
                   - doc_title: Query comments with Marginalia
-                    doc_url: 'ee/development/database_query_comments.html'
+                    doc_url: 'ee/development/database/database_query_comments.html'
                   - doc_title: Query Recorder
                     doc_url: 'ee/development/query_recorder.html'
                   - doc_title: SQL guidelines
@@ -2719,7 +2719,7 @@ sections:
                   - doc_title: Table partitioning
                     doc_url: 'ee/development/database/table_partitioning.html'
                   - doc_title: Troubleshooting and Debugging Database
-                    doc_url: 'ee/development/database_debugging.html'
+                    doc_url: 'ee/development/database/database_debugging.html'
                   - doc_title: Understanding EXPLAIN plans
                     doc_url: 'ee/development/understanding_explain_plans.html'
                   - doc_title: Multiple databases
