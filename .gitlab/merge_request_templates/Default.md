@@ -30,7 +30,7 @@ This checklist encourages us to confirm any changes have been analyzed to reduce
 
 * [ ] I have evaluated the [MR acceptance checklist](https://docs.gitlab.com/ee/development/code_review.html#acceptance-checklist) for this merge request.
 
-/label ~"Category:Docs Site" ~"type::maintenance"
+/label ~"Category:Docs Site" ~"type::maintenance" ~"maintenance::refactor"
 /assign me
 
 <!-- template sourced from https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/merge_request_templates/Default.md -->
