@@ -2682,9 +2682,9 @@ sections:
                   - doc_title: Background migrations
                     doc_url: 'ee/development/database/background_migrations.html'
                   - doc_title: Case study - filtering by label
-                    doc_url: 'ee/development/filtering_by_label.html'
+                    doc_url: 'ee/development/database/filtering_by_label.html'
                   - doc_title: Case study - namespaces storage statistics
-                    doc_url: 'ee/development/namespaces_storage_statistics.html'
+                    doc_url: 'ee/development/database/namespaces_storage_statistics.html'
                   - doc_title: CI mirrored tables
                     doc_url: 'ee/development/database/ci_mirrored_tables.html'
                   - doc_title: Database Lab and Postgres.ai
@@ -2711,17 +2711,17 @@ sections:
                   - doc_title: Query comments with Marginalia
                     doc_url: 'ee/development/database/database_query_comments.html'
                   - doc_title: Query Recorder
-                    doc_url: 'ee/development/query_recorder.html'
+                    doc_url: 'ee/development/database/query_recorder.html'
                   - doc_title: SQL guidelines
                     doc_url: 'ee/development/sql.html'
                   - doc_title: Swapping tables
-                    doc_url: 'ee/development/swapping_tables.html'
+                    doc_url: 'ee/development/database/swapping_tables.html'
                   - doc_title: Table partitioning
                     doc_url: 'ee/development/database/table_partitioning.html'
                   - doc_title: Troubleshooting and Debugging Database
                     doc_url: 'ee/development/database/database_debugging.html'
                   - doc_title: Understanding EXPLAIN plans
-                    doc_url: 'ee/development/understanding_explain_plans.html'
+                    doc_url: 'ee/development/database/understanding_explain_plans.html'
                   - doc_title: Multiple databases
                     doc_url: 'ee/development/database/multiple_databases.html'
                     docs:
