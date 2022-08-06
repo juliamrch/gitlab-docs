@@ -2,14 +2,14 @@
 banner_raw = @items["/_data/banner.yaml"][:description]
 %>
 <% if show_banner? and !stable_version?(current_branch) %>
-<div class="d-lg-block">
-  <div class="admonition-wrapper note d-none" id="banner-close">
-    <div class="admonition alert alert-banner alert-dismissible fade show text-center mt-2" role="alert">
-      <div class="d-flex justify-content-center align-items-center">
-        <%= icon('tanuki', 12, 'mx-2') %>
+<div class="gl-lg-display-block">
+  <div class="admonition-wrapper note gl-display-none" id="banner-close">
+    <div class="admonition alert alert-banner alert-dismissible fade show text-center gl-mt-3 gl-z-index-1" role="alert">
+      <div class="gl-display-flex gl-justify-content-center gl-align-items-center">
+        <%= icon('tanuki', 12, 'gl-mx-3') %>
         <%= markdown(banner_raw) %>
-        <%= icon('tanuki', 12, 'mx-2') %>
-        <button type="button" class="close mt-n1" data-dismiss="alert" aria-label="Close">
+        <%= icon('tanuki', 12, 'gl-mx-3') %>
+        <button type="button" class="close gl-mt-n2" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

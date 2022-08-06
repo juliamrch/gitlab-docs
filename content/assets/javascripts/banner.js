@@ -26,7 +26,7 @@ function getCookie(cname) {
 (function() {
   const bannerClose = document.querySelector('#banner-close');
   if (getCookie("bannerclose") !== "yes") {
-    bannerClose.classList.remove('d-none');
+    bannerClose.classList.remove('gl-display-none');
     setCookie();
   }
 })();
