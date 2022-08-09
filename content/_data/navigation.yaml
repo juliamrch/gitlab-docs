@@ -1945,6 +1945,9 @@ sections:
                 doc_url: 'ee/operations/incident_management/paging.html'
               - doc_title: Incidents
                 doc_url: 'ee/operations/incident_management/incidents.html'
+                docs:
+                  - doc_title: Linked resources
+                    doc_url: 'ee/operations/incident_management/linked_resources.html'
               - doc_title: Integrations
                 doc_url: 'ee/operations/incident_management/integrations.html'
               - doc_title: Status page
