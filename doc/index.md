@@ -15,6 +15,8 @@ This project can be used to:
 
 If you use GDK, you can also [use GDK for documentation development](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitlab_docs.md).
 
+For more information about the docs site, go to the [architecture page](architecture.md).
+
 ## Technical Writing team member tasks
 
 GitLab [Technical Writing team members](https://about.gitlab.com/handbook/engineering/ux/technical-writing/) perform
