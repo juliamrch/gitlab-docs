@@ -1917,6 +1917,8 @@ sections:
           - doc_title: Releases
             doc_url: 'ee/user/project/releases/'
             docs:
+              - doc_title: Release CI/CD examples
+                doc_url: 'ee/user/project/releases/release_cicd_examples.html'
               - doc_title: Release CLI tool
                 doc_url: 'ee/user/project/releases/release_cli.html'
               - doc_title: Release fields
