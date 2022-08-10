@@ -216,3 +216,44 @@ If the disk space is still running low, you can resize it:
 1. Reboot the VM.
 
 See the [official GCP documentation](https://cloud.google.com/compute/docs/disks/resize-persistent-disk).
+
+### Regenerate tokens
+
+The projects that can generate docs review apps authenticate with the `gitlab-docs` project
+by using two tokens, `DOCS_PROJECT_API_TOKEN` and `DOCS_TRIGGER_TOKEN`. These tokens
+are stored in each project's CI/CD settings as [CI/CD variables](https://docs.gitlab.com/ee/ci/variables/#add-a-cicd-variable-to-a-project).
+
+In the event of a security issue, it might be necessary to immediately secure the project
+by regenerating the tokens, sometimes called "rotating" the tokens:
+
+`DOCS_PROJECT_API_TOKEN`:
+
+1. In `gitlab-docs`, go to **Settings > Access Tokens**.
+1. In **Active project access tokens**, find the entry for `DOCS_PROJECT_API_TOKEN` and
+   select **Revoke**. You probably need to scroll the table to the right to reveal the option.
+1. Under **Add a project access token**, fill in the following values:
+   - **Token name**: `DOCS_PROJECT_API_TOKEN`.
+   - **Expiration date**: None.
+   - **Select a role**: `Maintainer`.
+   - **Select scopes**: `api`.
+1. Select **Create project access token**.
+1. After the token is created, go to **Your new project access token** at the top
+   and copy the token value. It should start with `glpat-`.
+1. In `gitlab`, `gitlab-runner`, `omnibus-gitlab`, and `charts`, go to the
+   [CI/CD variables settings](https://docs.gitlab.com/ee/ci/variables/#add-a-cicd-variable-to-a-project),
+   select **Edit** for the `DOCS_PROJECT_API_TOKEN` CI/CD variable, and update the
+   value with the new token.
+
+`DOCS_TRIGGER_TOKEN`:
+
+1. In `gitlab-docs`, go to **Settings > CI/CD** and expand **Pipeline triggers**.
+1. In the token table, find the entry for `DOCS_TRIGGER_TOKEN` and select **Revoke** (delete icon).
+1. In **Description**, enter `DOCS_TRIGGER_TOKEN` then select **Add trigger**.
+1. After the token is created, copy the token value from the table.
+1. In `gitlab`, `gitlab-runner`, `omnibus-gitlab`, and `charts`, go to the
+   [CI/CD variables settings](https://docs.gitlab.com/ee/ci/variables/#add-a-cicd-variable-to-a-project),
+   select **Edit** for the `DOCS_TRIGGER_TOKEN` CI/CD variable, and update the
+   value with the new token.
+
+In both cases, do not change any other settings for the CI/CD variables. They must remain
+masked, but not protected. Additionally, do not save the token values anywhere else.
