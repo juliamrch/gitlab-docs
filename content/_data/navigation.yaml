@@ -2527,6 +2527,8 @@ sections:
                 doc_url: 'ee/development/dangerbot.html'
               - doc_title: Deprecation guidelines
                 doc_url: 'ee/development/deprecation_guidelines/'
+              - doc_title: FIPS compliance
+                doc_url: 'ee/development/fips_compliance.html'
               - doc_title: Experiments
                 doc_url: 'ee/development/experiment_guide/'
                 docs:
