@@ -821,12 +821,22 @@ sections:
               - doc_title: Troubleshooting
                 doc_url: 'ee/administration/redis/troubleshooting.html'
           - doc_title: Sidekiq
-            doc_url: 'ee/administration/sidekiq.html'
+            doc_url: 'ee/administration/sidekiq/'
             docs:
+              - doc_title: Multiple Sidekiq processes
+                doc_url: 'ee/administration/operations/extra_sidekiq_processes.html'
+              - doc_title: Sidekiq routing rules
+                doc_url: 'ee/administration/operations/extra_sidekiq_routing.html'
+              - doc_title: Sidekiq MemoryKiller
+                doc_url: 'ee/administration/operations/sidekiq_memory_killer.html'
               - doc_title: Sidekiq health check
-                doc_url: 'ee/administration/sidekiq_health_check.html'
+                doc_url: 'ee/administration/sidekiq/sidekiq_health_check.html'
+              - doc_title: Sidekiq job migration
+                doc_url: 'ee/administration/sidekiq/sidekiq_job_migration.html'
               - doc_title: Sidekiq job size limits
                 doc_url: 'ee/user/admin_area/settings/sidekiq_job_limits.html'
+              - doc_title: Troubleshooting Sidekiq
+                doc_url: 'ee/administration/sidekiq/sidekiq_troubleshooting.html'
           - doc_title: S/MIME signing
             doc_url: 'ee/administration/smime_signing_email.html'
           - doc_title: Repository storage
@@ -950,14 +960,8 @@ sections:
             doc_url: 'ee/administration/operations/fast_ssh_key_lookup.html'
           - doc_title: Filesystem benchmarking
             doc_url: 'ee/administration/operations/filesystem_benchmarking.html'
-          - doc_title: Multiple Sidekiq processes
-            doc_url: 'ee/administration/operations/extra_sidekiq_processes.html'
-          - doc_title: Sidekiq routing rules
-            doc_url: 'ee/administration/operations/extra_sidekiq_routing.html'
           - doc_title: Rails console
             doc_url: 'ee/administration/operations/rails_console.html'
-          - doc_title: Sidekiq MemoryKiller
-            doc_url: 'ee/administration/operations/sidekiq_memory_killer.html'
           - doc_title: Use SSH certificates
             doc_url: 'ee/administration/operations/ssh_certificates.html'
           - doc_title: Enable encrypted configuration
@@ -980,8 +984,6 @@ sections:
                 doc_url: 'ee/administration/raketasks/geo.html'
               - doc_title: GitHub import
                 doc_url: 'ee/administration/raketasks/github_import.html'
-              - doc_title: Sidekiq job migration
-                doc_url: 'ee/raketasks/sidekiq_job_migration.html'
               - doc_title: SMTP
                 doc_url: 'ee/administration/raketasks/smtp.html'
               - doc_title: SPDX license list import
