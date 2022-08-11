@@ -15,4 +15,5 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/(?!(@gitlab/(ui|svgs)|bootstrap-vue|vue-instantsearch|instantsearch.js)/)',
   ],
+  setupFilesAfterEnv: ['<rootDir>/spec/frontend/jest.overrides.js'],
 };
