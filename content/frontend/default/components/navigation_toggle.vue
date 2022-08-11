@@ -77,7 +77,11 @@ export default {
 </script>
 
 <template>
-  <gl-button class="nav-toggle gl-border-none gl-pl-5!" icon="angle-double-right" @click="toggle">
+  <gl-button
+    class="nav-toggle gl-border-none gl-pl-5!"
+    icon="chevron-double-lg-right"
+    @click="toggle"
+  >
     <span class="label gl-ml-2">Collapse sidebar</span>
   </gl-button>
 </template>
