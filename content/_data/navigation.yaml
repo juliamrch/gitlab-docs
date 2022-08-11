@@ -722,8 +722,10 @@ sections:
               - doc_title: Log system
                 doc_url: 'ee/administration/logs/'
                 docs:
-                  - doc_title: Parsing GitLab logs with jq
+                  - doc_title: Parse logs with jq
                     doc_url: 'ee/administration/logs/log_parsing.html'
+                  - doc_title: Trace logs based on correlation ID
+                    doc_url: 'ee/administration/logs/tracing_correlation_id.html'
               - doc_title: Maintenance Mode
                 doc_url: 'ee/administration/maintenance_mode/'
               - doc_title: Merge request approvals
