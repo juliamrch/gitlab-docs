@@ -600,7 +600,7 @@ sections:
             docs:
               - doc_title: AliCloud
                 doc_url: 'ee/integration/alicloud.html'
-              - doc_title: Atlassian Crowd
+              - doc_title: Atlassian Crowd (deprecated)
                 doc_url: 'ee/administration/auth/crowd.html'
               - doc_title: Atlassian
                 doc_url: 'ee/administration/auth/atlassian.html'
@@ -614,7 +614,7 @@ sections:
                 doc_url: 'ee/integration/azure.html'
               - doc_title: Bitbucket Cloud
                 doc_url: 'ee/integration/bitbucket.html'
-              - doc_title: CAS
+              - doc_title: CAS (deprecated)
                 doc_url: 'ee/integration/cas.html'
               - doc_title: DingTalk
                 doc_url: 'ee/integration/ding_talk.html'
