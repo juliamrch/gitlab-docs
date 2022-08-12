@@ -405,33 +405,28 @@ sections:
   - section_title: Install GitLab Runner
     section_url: 'runner/install/'
     section_categories:
-      - category_title: Install
-        category_url: 'runner/install/'
-        docs:
-          - doc_title: Docker
-            doc_url: 'runner/install/docker.html'
-          - doc_title: FreeBSD
-            doc_url: 'runner/install/freebsd.html'
-          - doc_title: Kubernetes (Helm Chart)
-            doc_url: 'runner/install/kubernetes.html'
-          - doc_title: Kubernetes (Agent)
-            doc_url: 'runner/install/kubernetes-agent.html'
-          - doc_title: Kubernetes (Operator)
-            doc_url: 'runner/install/operator.html'
-          - doc_title: Linux
-            doc_url: 'runner/install/linux-manually.html'
-          - doc_title: macOS
-            doc_url: 'runner/install/osx.html'
-          - doc_title: Windows
-            doc_url: 'runner/install/windows.html'
-          - doc_title: Bleeding edge releases
-            doc_url: 'runner/install/bleeding-edge.html'
-          - doc_title: Official Linux packages
-            doc_url: 'runner/install/linux-repository.html'
-          - doc_title: Old GitLab Runner URLs
-            doc_url: 'runner/install/old.html'
+      - category_title: Linux
+        category_url: 'runner/install/linux-repository.html'
+      - category_title: Linux manual install
+        category_url: 'runner/install/linux-manually.html'
+      - category_title: FreeBSD
+        category_url: 'runner/install/freebsd.html'
+      - category_title: macOS
+        category_url: 'runner/install/osx.html'
+      - category_title: Windows
+        category_url: 'runner/install/windows.html'
+      - category_title: Docker
+        category_url: 'runner/install/docker.html'
+      - category_title: Helm chart
+        category_url: 'runner/install/kubernetes.html'
+      - category_title: GitLab agent
+        category_url: 'runner/install/kubernetes-agent.html'
+      - category_title: Operator
+        category_url: 'runner/install/operator.html'
+      - category_title: Bleeding edge releases
+        category_url: 'runner/install/bleeding-edge.html'
 
-      - category_title: Configure
+      - category_title: Configure GitLab Runner
         category_url: 'runner/configuration/'
         docs:
           - doc_title: Advanced config
@@ -460,7 +455,7 @@ sections:
             doc_url: 'runner/configuration/init.html'
           - doc_title: Speed up job execution
             doc_url: 'runner/configuration/speed_up_job_execution.html'
-      - category_title: Troubleshoot
+      - category_title: Troubleshoot GitLab Runner
         category_url: 'runner/faq/'
 
   - section_title: Integrate applications
