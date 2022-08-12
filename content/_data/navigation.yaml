@@ -157,14 +157,16 @@ sections:
                       - doc_title: Cloud cluster preparation
                         doc_url: 'charts/installation/cloud/'
                         docs:
-                          - doc_title: AKS
+                          - doc_title: Azure Kubernetes Service
                             doc_url: 'charts/installation/cloud/aks.html'
-                          - doc_title: EKS
+                          - doc_title: Amazon EKS
                             doc_url: 'charts/installation/cloud/eks.html'
-                          - doc_title: GKE
+                          - doc_title: Google Kubernetes Engine
                             doc_url: 'charts/installation/cloud/gke.html'
-                          - doc_title: OpenShift
+                          - doc_title: OpenShift Origin
                             doc_url: 'charts/installation/cloud/openshift.html'
+                          - doc_title: Oracle Container Engine for Kubernetes
+                            doc_url: 'charts/installation/cloud/oke.html'
                       - doc_title: Install with Helm Charts
                         doc_url: 'charts/installation/deployment.html'
                       - doc_title: Upgrade
