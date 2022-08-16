@@ -1822,6 +1822,8 @@ sections:
       - category_title: Secure your application
         category_url: 'ee/user/application_security/'
         docs:
+          - doc_title: Get started
+            doc_url: 'ee/user/application_security/get-started-security.html'
           - doc_title: Security Configuration
             doc_url: 'ee/user/application_security/configuration/'
           - doc_title: Container Scanning
