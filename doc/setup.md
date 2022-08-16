@@ -156,3 +156,35 @@ the GitLab Docs site site. To resolve this error, run:
 ```shell
 make clone-all-docs-projects
 ```
+
+### `requires ruby version >= 2.7.0, which is incompatible with the current version, ruby 2.6.8p205`
+
+You can encounter this error when running `make setup`, even though you installed the required Ruby version with `asdf`. It usually
+means that your shell is pointing to the wrong Ruby installation. macOS comes with versions of Ruby that are too old for `gitlab-docs`.
+
+```shell
+# check system Ruby version
+/usr/bin/ruby --version
+
+# check asdf Ruby version
+/Users/<username>/.asdf/shims/ruby --version
+```
+
+The system and asdf versions of Ruby are likely to match the versions in the error. To solve this error, you must configure your shell to point
+to the `asdf` version instead of the system version.
+
+1. Check the [install `asdf`](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf) instructions, and make sure you used the method
+   that matches the way you [downloaded `asdf`](https://asdf-vm.com/guide/getting-started.html#_2-download-asdf) and the shell you use. If you
+   didn't use the matching instructions, perform the required steps.
+1. Check that `asdf` is configured in your shell's configuration as specified in the asdf instructions. For example, if you use ZSH:
+
+   ```shell
+   cat .zshrc
+   ```
+
+1. Open a new terminal window and check that the shell points to the required Ruby version:
+
+   ```shell
+   which ruby
+   ruby --version
+   ```
