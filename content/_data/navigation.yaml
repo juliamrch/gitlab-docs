@@ -534,6 +534,8 @@ sections:
             doc_url: 'ee/user/project/integrations/pivotal_tracker.html'
           - doc_title: Prometheus
             doc_url: 'ee/user/project/integrations/prometheus.html'
+          - doc_title: Pumble
+            doc_url: 'ee/user/project/integrations/pumble.html'
           - doc_title: ServiceNow
             doc_url: 'ee/user/project/integrations/servicenow.html'
           - doc_title: Slack notifications
