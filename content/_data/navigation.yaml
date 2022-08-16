@@ -1045,7 +1045,7 @@ sections:
             doc_url: 'ee/security/two_factor_authentication.html'
           - doc_title: User email confirmation
             doc_url: 'ee/security/user_email_confirmation.html'
-          - doc_title: Security of running jobs
+          - doc_title: Runners
             doc_url: 'runner/security/'
           - doc_title: Proxying assets
             doc_url: 'ee/security/asset_proxy.html'
@@ -1761,8 +1761,6 @@ sections:
                     doc_url: 'runner/executors/virtualbox.html'
               - doc_title: Configure runners
                 doc_url: 'ee/ci/runners/configure_runners.html'
-              - doc_title: Secure runners
-                doc_url: 'runner/security/'
               - doc_title: Scale a fleet of runners
                 doc_url: 'runner/fleet_scaling/'
               - doc_title: Best practices for large repositories
