@@ -2816,6 +2816,8 @@ sections:
                     doc_url: 'ee/development/geo/proxying.html'
               - doc_title: Git LFS
                 doc_url: 'ee/development/lfs.html'
+              - doc_title: Git object deduplication
+                doc_url: 'ee/development/git_object_deduplication.html'
               - doc_title: Gitaly development
                 doc_url: 'ee/development/gitaly.html'
               - doc_title: GitLab Flavored Markdown (GLFM) developer documentation
