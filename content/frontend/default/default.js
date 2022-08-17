@@ -1,16 +1,20 @@
 import Vue from 'vue';
+import { getNextUntil } from '../shared/dom';
 import NavigationToggle from './components/navigation_toggle.vue';
 import VersionBanner from './components/version_banner.vue';
 import { setupTableOfContents } from './setup_table_of_contents';
 import VersionsMenu from './components/versions_menu.vue';
+import TabsSection from './components/tabs_section.vue';
 
 function fixScrollPosition() {
   if (!window.location.hash || !document.querySelector(window.location.hash)) return;
   const contentBody = document.querySelector('.gl-docs main');
 
   const scrollPositionMutationObserver = new ResizeObserver(() => {
-    document.scrollingElement.scrollTop =
-      document.querySelector(window.location.hash).getBoundingClientRect().top + window.scrollY;
+    if (window.location.hash) {
+      document.scrollingElement.scrollTop =
+        document.querySelector(window.location.hash).getBoundingClientRect().top + window.scrollY;
+    }
   });
 
   scrollPositionMutationObserver.observe(contentBody);
@@ -73,5 +77,34 @@ document.addEventListener('DOMContentLoaded', () => {
     render(createElement) {
       return createElement(VersionsMenu);
     },
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tabsetSelector = '.js-tabs';
+  document.querySelectorAll(tabsetSelector).forEach((tabset) => {
+    const tabTitles = [];
+    const tabContents = [];
+
+    const tabTitleElement = tabset.firstElementChild.tagName;
+    tabset.querySelectorAll(`${tabTitleElement}`).forEach((tab) => {
+      tabTitles.push(tab.innerText);
+      tabContents.push(getNextUntil(tab, tabTitleElement));
+    });
+
+    return new Vue({
+      el: tabsetSelector,
+      components: {
+        TabsSection,
+      },
+      render(createElement) {
+        return createElement(TabsSection, {
+          props: {
+            tabTitles,
+            tabContents,
+          },
+        });
+      },
+    });
   });
 });
