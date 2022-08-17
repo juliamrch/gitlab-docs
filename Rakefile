@@ -8,6 +8,8 @@ COLOR_CODE_RESET = "\e[0m"
 COLOR_CODE_RED = "\e[31m"
 COLOR_CODE_GREEN = "\e[32m"
 
+task_helpers = TaskHelpers.new
+
 task default: [:clone_repositories, :generate_feature_flags]
 
 task :setup_git do
@@ -19,8 +21,8 @@ end
 
 desc 'Clone Git repositories of documentation projects, keeping only the most recent commit'
 task :clone_repositories do
-  products.each_value do |product|
-    branch = retrieve_branch(product['slug'])
+  task_helpers.products.each_value do |product|
+    branch = task_helpers.retrieve_branch(product['slug'])
 
     # Limit the pipeline to pull only the repo where the MR is, not all 4, to save time/space.
     # First we check if the branch on the docs repo is other than the default branch and
@@ -87,12 +89,12 @@ namespace :release do
 
     # Check if local branch exists
     abort("\n#{COLOR_CODE_RED}ERROR: Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.#{COLOR_CODE_RESET}") \
-      if local_branch_exist?(version)
+      if task_helpers.local_branch_exist?(version)
 
     # Stash modified and untracked files so we have "clean" environment
     # without accidentally deleting data
     puts "\n#{COLOR_CODE_GREEN}INFO: Stashing changes..#{COLOR_CODE_RESET}"
-    `git stash -u` if git_workdir_dirty?
+    `git stash -u` if task_helpers.git_workdir_dirty?
 
     # Sync with upstream default branch
     `git checkout #{ENV['CI_DEFAULT_BRANCH']}`
@@ -111,7 +113,7 @@ namespace :release do
     content = File.read('dockerfiles/single.Dockerfile')
     content.gsub!('X.Y', version)
     content.gsub!('X-Y', version.tr('.', '-'))
-    content.gsub!('W-Z', chart_version(version).tr('.', '-'))
+    content.gsub!('W-Z', task_helpers.chart_version(version).tr('.', '-'))
 
     File.open(dockerfile, 'w') do |post|
       post.puts content
@@ -123,7 +125,7 @@ namespace :release do
     ci_yaml_content.gsub!("BRANCH_EE: 'master'", "BRANCH_EE: '#{version.tr('.', '-')}-stable-ee'")
     ci_yaml_content.gsub!("BRANCH_OMNIBUS: 'master'", "BRANCH_OMNIBUS: '#{version.tr('.', '-')}-stable'")
     ci_yaml_content.gsub!("BRANCH_RUNNER: 'main'", "BRANCH_RUNNER: '#{version.tr('.', '-')}-stable'")
-    ci_yaml_content.gsub!("BRANCH_CHARTS: 'master'", "BRANCH_CHARTS: '#{chart_version(version).tr('.', '-')}-stable'")
+    ci_yaml_content.gsub!("BRANCH_CHARTS: 'master'", "BRANCH_CHARTS: '#{task_helpers.chart_version(version).tr('.', '-')}-stable'")
 
     File.open(ci_yaml, 'w') do |post|
       post.puts ci_yaml_content
@@ -181,12 +183,12 @@ namespace :docs do
     abort("\n#{COLOR_CODE_RED}ERROR: jq not found. Install jq and run task again.#{COLOR_CODE_RESET}") if `which jq`.empty?
 
     puts "\n#{COLOR_CODE_GREEN}INFO: (gitlab-docs): Stashing changes of gitlab-docs and syncing with upstream default branch..#{COLOR_CODE_RESET}"
-    system("git stash --quiet -u") if git_workdir_dirty?
+    system("git stash --quiet -u") if task_helpers.git_workdir_dirty?
     system("git checkout --quiet main")
     system("git fetch --quiet origin main")
     system("git reset --quiet --hard origin/main")
 
-    products.each_value do |product|
+    task_helpers.products.each_value do |product|
       #
       # Calculate new path from the redirect URL.
       #
@@ -217,14 +219,14 @@ namespace :docs do
       content_dir = product['content_dir']
       next unless Dir.exist?(content_dir)
 
-      default_branch = default_branch(product['repo'])
+      default_branch = task_helpers.default_branch(product['repo'])
       origin_default_branch = "origin/#{default_branch}"
       slug = product['slug']
       counter = 0
 
       Dir.chdir(content_dir)
       puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Stashing changes of #{slug} and syncing with upstream default branch..#{COLOR_CODE_RESET}"
-      system("git", "stash", "--quiet", "-u") if git_workdir_dirty?
+      system("git", "stash", "--quiet", "-u") if task_helpers.git_workdir_dirty?
       system("git", "checkout", "--quiet", default_branch)
       system("git", "fetch", "--quiet", "origin", default_branch)
       system("git", "reset", "--quiet", "--hard", origin_default_branch)
