@@ -82,6 +82,32 @@ The pipeline in the `gitlab-docs` project:
 - Builds and deploys the docs site itself.
 - Generates the review apps when the `review-docs-deploy` job is triggered.
 
+### Pipeline configuration files
+
+The `gitlab-docs` project pipeline configuration is split into multiple files to
+improve maintainability:
+
+- [`.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab-ci.yml):
+  The base configuration file contains:
+  - Global variables.
+  - [`workflow:rules`](https://docs.gitlab.com/ee/ci/yaml/index.html#workflowrules)
+    to limit which pipelines can run.
+  - External templates imported with [`include`](https://docs.gitlab.com/ee/ci/yaml/index.html#include).
+  - The other configuration files, also imported with `include`.
+- [`.gitlab/ci/build-and-deploy.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/build-and-deploy.gitlab-ci.yml):
+  The jobs that build the docs site before testing, and the jobs that deploy the site
+  or review apps.
+- [`.gitlab/ci/docker-images.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/docker-images.gitlab-ci.yml):
+  The jobs that build and test docker images.
+- [`.gitlab/ci/rules.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/rules.gitlab-ci.yml):
+  The [`rules`](https://docs.gitlab.com/ee/ci/yaml/index.html#rules), [`cache`](https://docs.gitlab.com/ee/ci/yaml/index.html#cache)
+  and other default configuration for most jobs in the pipeline.
+- [`.gitlab/ci/security.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/security.gitlab-ci.yml):
+  Extra configuration for security jobs to override their defaults and make them work
+  better in the pipeline.
+- [`.gitlab/ci/test.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/test.gitlab-ci.yml):
+  Code tests and jobs used for [`gitlab-docs` maintenance](https://about.gitlab.com/handbook/engineering/ux/technical-writing/#regularly-scheduled-tasks).
+
 ### Rebuild the docs site Docker images
 
 Once a week on Mondays, a scheduled pipeline runs and rebuilds the Docker images
