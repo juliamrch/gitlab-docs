@@ -241,10 +241,6 @@ sections:
                         doc_url: 'charts/charts/minio/'
                       - doc_title: Nginx chart
                         doc_url: 'charts/charts/nginx/'
-                      - doc_title: Redis chart
-                        doc_url: 'charts/installation/deployment.html#redis'
-                      - doc_title: Redis HA chart
-                        doc_url: 'charts/installation/deployment.html#redis'
                       - doc_title: Registry chart
                         doc_url: 'charts/charts/registry/'
                       - doc_title: Advanced
