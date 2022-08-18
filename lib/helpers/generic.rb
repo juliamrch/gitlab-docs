@@ -53,5 +53,12 @@ module Nanoc::Helpers
     def show_banner?
       @items['/_data/banner.yaml'][:show_banner]
     end
+
+    #
+    # Check if this environment is set to run Algolia search.
+    #
+    def algolia?
+      ENV['ALGOLIA_SEARCH'] == "true"
+    end
   end
 end

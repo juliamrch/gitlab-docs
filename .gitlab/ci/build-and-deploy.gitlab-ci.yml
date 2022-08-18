@@ -12,6 +12,8 @@
     - bundle exec nanoc compile -VV
     # Create _redirects for Pages redirects
     - bundle exec rake redirects
+    # Build the Lunr.js search index if needed
+    - if [[ "$ALGOLIA_SEARCH" == "false" ]]; then node scripts/lunr/preindex.js; fi
     # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
     - SIZE_BEFORE=$(du -sh public/ | awk '{print $1}')
     # Minify the assets of the resulting site
@@ -21,7 +23,7 @@
     - SIZE_AFTER_MINIFY=$(du -sh public/ | awk '{print $1}')
     # Use gzip to compress static content for faster web serving
     # https://docs.gitlab.com/ee/user/project/pages/introduction.html#serving-compressed-assets
-    - find public/ -type f \( -iname "*.html" -o -iname "*.js"  -o -iname "*.css"  -o -iname "*.svg" \) -exec gzip --keep --best --force --verbose {} \;
+    - find public/ -type f \( -iname "*.html" -o -iname "*.js"  -o -iname "*.css"  -o -iname "*.svg" -o -iname "*.json" \) -exec gzip --keep --best --force --verbose {} \;
     - SIZE_AFTER_GZIP=$(du -sh public/ | awk '{print $1}')
     # Print size results
     - echo "Minify and compress the static assets (HTML, CSS, JS)"
@@ -40,6 +42,7 @@ compile_prod:
     - .rules_prod
     - .build_base
   variables:
+    ALGOLIA_SEARCH: 'true'
     NANOC_ENV: 'production'
 
 #
@@ -49,6 +52,8 @@ compile_dev:
   extends:
     - .rules_dev
     - .build_base
+  variables:
+    ALGOLIA_SEARCH: 'false'
 
 
 ###############################################
