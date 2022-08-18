@@ -158,3 +158,7 @@ markdownlint-tests:
 	@yarn markdownlint doc/**/*.md
 
 test: setup rspec-tests jest-tests eslint-tests prettier-tests stylelint-tests hadolint-tests yamllint-tests markdownlint-tests
+
+build-lunr-index:
+	@printf "\n$(INFO)INFO: Building offline search index..$(INFO_END)\n"
+	node scripts/lunr/preindex.js
