@@ -152,6 +152,8 @@ sections:
                   - doc_title: Install
                     doc_url: 'charts/installation/'
                     docs:
+                      - doc_title: Test the GitLab chart on GKE
+                        doc_url: 'charts/quickstart/'
                       - doc_title: Install prerequisites
                         doc_url: 'charts/installation/tools.html'
                         docs:
