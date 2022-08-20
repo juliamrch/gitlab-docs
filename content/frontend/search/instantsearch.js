@@ -9,7 +9,7 @@ import {
   AisConfigure,
 } from 'vue-instantsearch';
 import SearchPage from './components/search_page.vue';
-import { getDocsVersion } from './search';
+import { getAlgoliaCredentials, getDocsVersion } from './search';
 
 Vue.component(AisInstantSearch.name, AisInstantSearch);
 Vue.component(AisSearchBox.name, AisSearchBox);
@@ -19,6 +19,7 @@ Vue.component(AisPoweredBy.name, AisPoweredBy);
 Vue.component(AisInfiniteHits.name, AisInfiniteHits);
 Vue.component(AisConfigure.name, AisConfigure);
 
+const algoliaCredentials = getAlgoliaCredentials();
 const docsVersion = getDocsVersion();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     render(createElement) {
       return createElement(SearchPage, {
         props: {
+          algoliaCredentials,
           docsVersion,
         },
       });

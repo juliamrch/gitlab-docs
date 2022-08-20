@@ -10,6 +10,10 @@ export default {
     GlIcon,
   },
   props: {
+    algoliaCredentials: {
+      type: Object,
+      required: true,
+    },
     docsVersion: {
       type: String,
       required: true,
@@ -17,10 +21,10 @@ export default {
   },
   data() {
     return {
-      searchClient: algoliasearch('3PNCFOU757', '89b85ffae982a7f1adeeed4a90bb0ab1'),
+      searchClient: algoliasearch(this.algoliaCredentials.appId, this.algoliaCredentials.apiKey),
       routing: {
         router: historyRouter(),
-        stateMapping: singleIndexMapping('gitlab'),
+        stateMapping: singleIndexMapping(this.algoliaCredentials.index),
       },
     };
   },
@@ -30,7 +34,7 @@ export default {
 <template>
   <ais-instant-search
     :search-client="searchClient"
-    index-name="gitlab"
+    :index-name="algoliaCredentials.index"
     :routing="routing"
     :stalled-search-delay="500"
     class="gl-pb-8"

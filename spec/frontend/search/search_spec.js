@@ -5,7 +5,7 @@
 import { mount } from '@vue/test-utils';
 import SearchPage from '../../../content/frontend/search/components/search_page.vue';
 
-const propsData = { docsVersion: 'main' };
+const propsData = { docsVersion: 'main', algoliaCredentials: {} };
 const searchFormSelector = '[data-testid="docs-search"]';
 
 describe('component: Search page', () => {
