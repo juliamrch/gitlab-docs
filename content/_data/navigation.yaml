@@ -1513,7 +1513,7 @@ sections:
                   - doc_title: Squash and merge
                     doc_url: 'ee/user/project/merge_requests/squash_and_merge.html'
               - doc_title: Merge request dependencies
-                doc_url: 'ee/user/project/merge_requests/merge_request_dependencies.html'
+                doc_url: 'ee/user/project/merge_requests/dependencies.html'
               - doc_title: Merge request widgets
                 doc_url: 'ee/user/project/merge_requests/widgets.html'
               - doc_title: Merge when pipeline succeeds
