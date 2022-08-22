@@ -1559,7 +1559,7 @@ sections:
                   - doc_title: Pipeline efficiency
                     doc_url: 'ee/ci/pipelines/pipeline_efficiency.html'
                   - doc_title: Pipeline resource groups
-                    doc_url: ee/ci/resource_groups/
+                    doc_url: 'ee/ci/resource_groups/'
                   - doc_title: Directed acyclic graph (DAG)
                     doc_url: 'ee/ci/directed_acyclic_graph/'
                   - doc_title: Multi-project pipelines
@@ -1592,6 +1592,8 @@ sections:
                     doc_url: 'ee/ci/variables/predefined_variables.html'
                   - doc_title: Where variables can be used
                     doc_url: 'ee/ci/variables/where_variables_can_be_used.html'
+                  - doc_title: Secure Files
+                    doc_url: 'ee/ci/secure_files/'
               - doc_title: Cache and artifacts
                 doc_url: 'ee/ci/caching/'
                 docs:
