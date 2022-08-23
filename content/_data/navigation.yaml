@@ -2701,6 +2701,8 @@ sections:
               - doc_title: Database development
                 doc_url: 'ee/development/database/'
                 docs:
+                  - doc_title: Adding database indexes
+                    doc_url: 'ee/development/database/adding_database_indexes.html'
                   - doc_title: Avoiding downtime in migrations
                     doc_url: 'ee/development/database/avoiding_downtime_in_migrations.html'
                   - doc_title: Background migrations
