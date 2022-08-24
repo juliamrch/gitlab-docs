@@ -34,8 +34,12 @@ task :clone_repositories do
 
     `git clone --branch #{branch} --single-branch #{product['repo']} --depth 1 #{product['project_dir']}`
 
+    latest_commit = `git -C #{product['project_dir']} log --oneline -n 1`
+
+    abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: Failed to clone #{product['repo']}.#{TaskHelpers::COLOR_CODE_RESET}") if latest_commit.empty?
+
     # Print the latest commit from each project so that we can see which commit we're building from.
-    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Latest commit: #{`git -C #{product['project_dir']} log --oneline -n 1`}#{TaskHelpers::COLOR_CODE_RESET}"
+    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Latest commit: #{latest_commit}#{TaskHelpers::COLOR_CODE_RESET}"
   end
 end
 
