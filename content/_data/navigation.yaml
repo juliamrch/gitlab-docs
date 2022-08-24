@@ -59,7 +59,7 @@ sections:
           - doc_title: PostgreSQL extensions
             doc_url: 'ee/install/postgresql_extensions.html'
       - category_title: Installation methods
-        category_url: 'ee/install/'
+        category_url: 'ee/install/install_methods.html'
         docs:
           # Documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
           - doc_title: Linux packages (Omnibus)
@@ -321,7 +321,7 @@ sections:
           - doc_title: Troubleshooting
             doc_url: 'ee/administration/troubleshooting/'
       - category_title: Cloud providers guides
-        category_url: 'ee/install/#install-gitlab-on-cloud-providers'
+        category_url: 'ee/install/install_methods.html#cloud-providers'
         docs:
           - doc_title: Azure
             doc_url: 'ee/install/azure/'
