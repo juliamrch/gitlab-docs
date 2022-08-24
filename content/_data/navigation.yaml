@@ -157,6 +157,8 @@ sections:
                       - doc_title: Install prerequisites
                         doc_url: 'charts/installation/tools.html'
                         docs:
+                          - doc_title: Version mappings
+                            doc_url: 'charts/installation/version_mappings.html'
                           - doc_title: Secrets
                             doc_url: 'charts/installation/secrets.html'
                           - doc_title: RBAC
@@ -220,8 +222,6 @@ sections:
                             doc_url: 'charts/installation/migration/helm.html'
                           - doc_title: Migrate to MinIO
                             doc_url: 'charts/installation/migration/minio.html'
-                      - doc_title: Version mappings
-                        doc_url: 'charts/installation/version_mappings.html'
                   - doc_title: Configure
                     doc_url: 'charts/charts/'
                     docs:
