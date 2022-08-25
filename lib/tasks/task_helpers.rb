@@ -5,6 +5,9 @@ require 'yaml'
 class TaskHelpers
   PRODUCTS = %w[ee omnibus runner charts operator].freeze
   VERSION_FORMAT = %r{^(?<major>\d{1,2})\.(?<minor>\d{1,2})$}.freeze
+  COLOR_CODE_RESET = "\e[0m"
+  COLOR_CODE_RED = "\e[31m"
+  COLOR_CODE_GREEN = "\e[32m"
 
   def config
     # Parse the config file and create a hash.

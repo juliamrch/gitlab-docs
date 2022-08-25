@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'task_helpers'
+require './lib/tasks/task_helpers'
 
 describe TaskHelpers do
   describe '#chart_version' do
