@@ -19,12 +19,12 @@ namespace :release do
     raise 'You need to specify a version, like 10.1' unless version.match?(%r{\A\d+\.\d+\z})
 
     # Check if local branch exists
-    abort("\n#{COLOR_CODE_RED}ERROR: Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.#{COLOR_CODE_RESET}") \
+    abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.#{TaskHelpers::COLOR_CODE_RESET}") \
       if task_helpers.local_branch_exist?(version)
 
     # Stash modified and untracked files so we have "clean" environment
     # without accidentally deleting data
-    puts "\n#{COLOR_CODE_GREEN}INFO: Stashing changes..#{COLOR_CODE_RESET}"
+    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Stashing changes..#{TaskHelpers::COLOR_CODE_RESET}"
     `git stash -u` if task_helpers.git_workdir_dirty?
 
     # Sync with upstream default branch
@@ -66,8 +66,8 @@ namespace :release do
     `git add .gitlab-ci.yml #{version}.Dockerfile`
     `git commit -m 'Release cut #{version}'`
 
-    puts "\n#{COLOR_CODE_GREEN}INFO: Created new Dockerfile:#{COLOR_CODE_RESET} #{dockerfile}."
-    puts "#{COLOR_CODE_GREEN}INFO: Pushing the new branch. Don't create a merge request!#{COLOR_CODE_RESET}"
+    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Created new Dockerfile:#{TaskHelpers::COLOR_CODE_RESET} #{dockerfile}."
+    puts "#{TaskHelpers::COLOR_CODE_GREEN}INFO: Pushing the new branch. Don't create a merge request!#{TaskHelpers::COLOR_CODE_RESET}"
 
     `git push origin #{version}`
   end

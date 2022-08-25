@@ -9,7 +9,7 @@ task_helpers = TaskHelpers.new
 task default: [:clone_repositories, :generate_feature_flags]
 
 task :setup_git do
-  puts "\n#{COLOR_CODE_GREEN}INFO: Setting up dummy user and email in Git..#{COLOR_CODE_RESET}"
+  puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Setting up dummy user and email in Git..#{TaskHelpers::COLOR_CODE_RESET}"
 
   `git config --global user.name "Sidney Jones"`
   `git config --global user.email "sidneyjones@example.com"`
@@ -30,12 +30,12 @@ task :clone_repositories do
       && branch == ENV['CI_DEFAULT_BRANCH'] \
       && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
-    puts "\n#{COLOR_CODE_GREEN}INFO: Cloning #{product['repo']}..#{COLOR_CODE_RESET}"
+    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Cloning #{product['repo']}..#{TaskHelpers::COLOR_CODE_RESET}"
 
     `git clone --branch #{branch} --single-branch #{product['repo']} --depth 1 #{product['project_dir']}`
 
     # Print the latest commit from each project so that we can see which commit we're building from.
-    puts "\n#{COLOR_CODE_GREEN}INFO: Latest commit: #{`git -C #{product['project_dir']} log --oneline -n 1`}#{COLOR_CODE_RESET}"
+    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Latest commit: #{`git -C #{product['project_dir']} log --oneline -n 1`}#{TaskHelpers::COLOR_CODE_RESET}"
   end
 end
 
@@ -44,8 +44,8 @@ task :generate_feature_flags do
   feature_flags_dir = Pathname.new('..').join('gitlab', 'config', 'feature_flags').expand_path
   feature_flags_ee_dir = Pathname.new('..').join('gitlab', 'ee', 'config', 'feature_flags').expand_path
 
-  abort("\n#{COLOR_CODE_RED}ERROR: The feature flags directory #{feature_flags_dir} does not exist.#{COLOR_CODE_RESET}") unless feature_flags_dir.exist?
-  abort("\n#{COLOR_CODE_RED}ERROR: The feature flags EE directory #{feature_flags_ee_dir} does not exist.#{COLOR_CODE_RESET}") unless feature_flags_ee_dir.exist?
+  abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: The feature flags directory #{feature_flags_dir} does not exist.#{TaskHelpers::COLOR_CODE_RESET}") unless feature_flags_dir.exist?
+  abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: The feature flags EE directory #{feature_flags_ee_dir} does not exist.#{TaskHelpers::COLOR_CODE_RESET}") unless feature_flags_ee_dir.exist?
 
   paths = {
     'GitLab Community Edition and Enterprise Edition' => feature_flags_dir.join('**', '*.yml'),
@@ -66,6 +66,6 @@ task :generate_feature_flags do
 
   feature_flags_yaml = File.join('content', '_data', 'feature_flags.yaml')
 
-  puts "\n#{COLOR_CODE_GREEN}INFO: Generating #{feature_flags_yaml}..#{COLOR_CODE_RESET}"
+  puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Generating #{feature_flags_yaml}..#{TaskHelpers::COLOR_CODE_RESET}"
   File.write(feature_flags_yaml, feature_flags.to_yaml)
 end

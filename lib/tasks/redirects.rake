@@ -41,9 +41,9 @@ namespace :docs do
     ENV['LEFTHOOK'] = '0'
 
     # Check jq is available
-    abort("\n#{COLOR_CODE_RED}ERROR: jq not found. Install jq and run task again.#{COLOR_CODE_RESET}") if `which jq`.empty?
+    abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: jq not found. Install jq and run task again.#{TaskHelpers::COLOR_CODE_RESET}") if `which jq`.empty?
 
-    puts "\n#{COLOR_CODE_GREEN}INFO: (gitlab-docs): Stashing changes of gitlab-docs and syncing with upstream default branch..#{COLOR_CODE_RESET}"
+    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (gitlab-docs): Stashing changes of gitlab-docs and syncing with upstream default branch..#{TaskHelpers::COLOR_CODE_RESET}"
     system("git stash --quiet -u") if git_workdir_dirty?
     system("git checkout --quiet main")
     system("git fetch --quiet origin main")
@@ -86,7 +86,7 @@ namespace :docs do
       counter = 0
 
       Dir.chdir(content_dir)
-      puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Stashing changes of #{slug} and syncing with upstream default branch..#{COLOR_CODE_RESET}"
+      puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Stashing changes of #{slug} and syncing with upstream default branch..#{TaskHelpers::COLOR_CODE_RESET}"
       system("git", "stash", "--quiet", "-u") if task_helpers.git_workdir_dirty?
       system("git", "checkout", "--quiet", default_branch)
       system("git", "fetch", "--quiet", "origin", default_branch)
@@ -161,13 +161,13 @@ namespace :docs do
       #   4. Commit and push the branch to create the MR
       #
 
-      puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Found #{counter} redirect(s).#{COLOR_CODE_RESET}"
+      puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Found #{counter} redirect(s).#{TaskHelpers::COLOR_CODE_RESET}"
       next unless counter.positive?
 
       Dir.chdir(content_dir)
-      puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Creating a new branch for the redirects MR..#{COLOR_CODE_RESET}"
+      puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Creating a new branch for the redirects MR..#{TaskHelpers::COLOR_CODE_RESET}"
       system("git", "checkout", "--quiet", "-b", redirects_branch, origin_default_branch)
-      puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Committing and pushing to create a merge request..#{COLOR_CODE_RESET}"
+      puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Committing and pushing to create a merge request..#{TaskHelpers::COLOR_CODE_RESET}"
       system("git", "add", ".")
       system("git", "commit", "--quiet", "-m", commit_message)
 
@@ -185,9 +185,9 @@ namespace :docs do
     #   2. Add the changed files
     #   3. Commit and push the branch to create the MR
     #
-    puts "\n#{COLOR_CODE_GREEN}INFO: (gitlab-docs): Creating a new branch for the redirects MR..#{COLOR_CODE_RESET}"
+    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (gitlab-docs): Creating a new branch for the redirects MR..#{TaskHelpers::COLOR_CODE_RESET}"
     system("git", "checkout", "--quiet", "-b", redirects_branch, "origin/main")
-    puts "\n#{COLOR_CODE_GREEN}INFO: (gitlab-docs): Committing and pushing to create a merge request..#{COLOR_CODE_RESET}"
+    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (gitlab-docs): Committing and pushing to create a merge request..#{TaskHelpers::COLOR_CODE_RESET}"
     system("git", "add", redirects_yaml)
     system("git", "commit", "--quiet", "-m", commit_message)
 
