@@ -86,10 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabTitles = [];
     const tabContents = [];
 
-    const tabTitleElement = tabset.firstElementChild.tagName;
-    tabset.querySelectorAll(`${tabTitleElement}`).forEach((tab) => {
+    tabset.querySelectorAll('.tab-title').forEach((tab) => {
       tabTitles.push(tab.innerText);
-      tabContents.push(getNextUntil(tab, tabTitleElement));
+      tabContents.push(getNextUntil(tab, '.tab-title'));
     });
 
     return new Vue({
