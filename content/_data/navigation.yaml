@@ -286,7 +286,7 @@ sections:
                             doc_url: 'charts/advanced/persistent-volumes/'
                           - doc_title: Red Hat UBI-based images
                             doc_url: 'charts/advanced/ubi/'
-                  - doc_title: Troubleshoot
+                  - doc_title: Troubleshooting the GitLab chart
                     doc_url: 'charts/troubleshooting/'
               # End of documentation from https://gitlab.com/gitlab-org/charts/gitlab
 
