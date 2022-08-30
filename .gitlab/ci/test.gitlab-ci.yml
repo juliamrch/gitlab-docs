@@ -51,6 +51,18 @@ check_index_html:
     - exit $(cat output.txt | wc -l)
 
 #
+# Check for identical duplicate entries in global navigation
+#
+
+check_global_nav_entries:
+  extends:
+    - .rules_site_tests
+  needs: []
+  stage: test
+  script:
+    - make check-global-navigation
+
+#
 # Run rspec tests
 #
 rspec:
