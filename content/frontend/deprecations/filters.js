@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import compareVersions from 'compare-versions';
+import { compareVersions } from 'compare-versions';
 import DeprecationFilters from './components/deprecation_filters.vue';
 
 /**
