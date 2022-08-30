@@ -186,9 +186,6 @@ The merge requests for the dropdowns should now all be merged into their respect
 1. Check the [pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipelines)
    and make sure the pipelines in all the MRs are green.
 1. Merge the [release merge request](#create-release-merge-request).
-1. Each merge triggers a new pipeline for each stable branch.
-   Check the [pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines) and wait
-   for all the stable branch pipelines to complete.
 1. Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)
    and run the `Build docker images weekly` pipeline.
 1. In the scheduled pipeline you just started, manually run the **image:docs-latest** job that builds the `:latest` Docker image.

@@ -13,14 +13,12 @@ Documentation [for handling the docs release](https://gitlab.com/gitlab-org/gitl
 1. [ ] Monitor the `#releases` Slack channel. When the announcement
    `This is the candidate commit to be released on the 22nd` is made, it's time to begin.
 1. [ ] [Create a stable branch and Docker image for release](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#create-stable-branch-and-docker-image-for-release). Do not create a merge request, just push the stable branch.
-   - [ ] Verify that the `image:docs-single` job passed in the new pipeline, and
-     created a Docker image tagged with the name of the branch. ([If it fails, how do I fix it?](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-latest-job-fails-due-to-broken-links))
-1. [ ] [Create a release merge request](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#create-release-merge-request)
-   for the new version,
+   You can expect the `image:docs-single` job to fail initially because often not all stable branches are created yet. Some of the stable
+   branches are created close to the 22nd, which will resolve most issues when you follow the rest of the steps.
+1. [ ] [Create a docs.gitlab.com release merge request](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#create-release-merge-request)
    which updates the version dropdown menu for all online versions, updates the archives list, and adds
    the release to the Docker configuration.
    - [ ] Mark as `Draft` and do not merge.
-   - [ ] Check the review app to make sure the Versions menu displays correctly.
 
 After the tasks above are complete, you don't need to do anything for a few days.
 
@@ -28,21 +26,15 @@ After the tasks above are complete, you don't need to do anything for a few days
 
 After release post is live on the 22nd, or the next Monday morning if the release post happens on a weekend:
 
-1. [ ] [Merge the release merge requests](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#merge-merge-requests-and-run-docker-image-builds)
-  and run the necessary Docker image builds.
-   - [ ] Are all pipelines green?
-   - [ ] Merge the MRs for updates to the dropdown menus.
-   - [ ] Merge the docs-release merge request.
-   - [ ] Each merge triggers a new pipeline for each stable branch. Check
-     [the pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines)
-     and wait for all the stable branch pipelines to complete before proceeding.
-   - [ ] Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)
-     and run the Build Docker images weekly pipeline.
-   - [ ] In the scheduled pipeline you just started, manually run the `image:docs-latest`
-     job that builds the `:latest` Docker image.
-   - [ ] When the pipeline is complete, run the `Build docs.gitlab.com every 4 hours`
-     scheduled pipeline to deploy all new versions to the public documentation site.
-     No manually-run jobs are needed for this second pipeline.
+1. [ ] Verify that the [pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all) for the stable branch
+   has passed and created a [Docker image](https://gitlab.com/gitlab-org/gitlab-docs/container_registry/631635?orderBy=NAME&sort=desc&search[]=)
+   tagged the release version. ([If it fails, how do I fix it?](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-latest-job-fails-due-to-broken-links))
+1. Deploy the versions:
+   1. [ ] Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)
+      and run the `Build Docker images weekly` pipeline.
+   1. [ ] In the scheduled pipeline you just started, cancel the pipeline, and manually run the `image:docs-latest`
+      job that builds the `:latest` Docker image.
+   1. [ ] When the job is complete, merge the docs release merge request.
 1. [ ] After the deployment completes, open `docs.gitlab.com` in a browser. Confirm
    both the latest version and the correct pre-release version are listed in the documentation version dropdown.
 1. [ ] Check all published versions of the docs to ensure they are visible and that their version menus have the latest versions.
@@ -50,7 +42,11 @@ After release post is live on the 22nd, or the next Monday morning if the releas
    - `## :+1: What went well this release?`
    - `## :-1: What didn’t go well this release?`
    - `## :chart_with_upwards_trend: What can we improve going forward?`
-1. [ ] Mention `@gl-docsteam` and invite them to read and participate in the retro threads.
+1. [ ] Mention `@gl-docsteam` in a comment and invite them to read and participate in the retro threads.
+
+   ```markdown
+   @gl-docsteam here's the docs release issue for XX.ZZ with some retro threads, per our [process](#on-the-22nd-or-the-first-business-day-after).
+   ```
 
 After the 22nd of each month:
 
@@ -70,4 +66,4 @@ After the 22nd of each month:
 - [List of upcoming assignees for overall release post](https://about.gitlab.com/handbook/marketing/blog/release-posts/managers/)
 - [Internal docs for handling the docs release](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md)
 
-/label ~"Technical Writing" ~"type::maintenance" ~"Category:Docs Site"
+/label ~"Technical Writing" ~"type::maintenance" ~"maintenance::refactor" ~"Category:Docs Site" ~release
