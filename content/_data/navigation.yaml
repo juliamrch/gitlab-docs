@@ -2898,6 +2898,8 @@ sections:
                 doc_url: 'ee/development/product_qualified_lead_guide/'
               - doc_title: Real-time features
                 doc_url: 'ee/development/real_time.html'
+              - doc_title: Sec section development
+                doc_url: 'ee/development/sec/'
               - doc_title: Service Ping guide
                 doc_url: 'ee/development/service_ping/'
                 docs:
