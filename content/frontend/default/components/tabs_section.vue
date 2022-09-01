@@ -37,13 +37,12 @@ export default {
 </script>
 
 <template>
-  <gl-tabs v-if="hasValidContent" :sync-active-tab-with-query-params="true">
+  <gl-tabs v-if="hasValidContent">
     <gl-tab
       v-for="(title, key) in tabTitles"
       :key="key"
       v-safe-html:[safe_html_config]="tabContents[key]"
       :title="title"
-      :query-param-value="title"
     />
   </gl-tabs>
 </template>

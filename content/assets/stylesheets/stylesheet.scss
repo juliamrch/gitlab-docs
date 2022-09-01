@@ -1,5 +1,5 @@
 ---
-version: 129
+version: 130
 ---
 
 @import 'variables';
@@ -555,6 +555,9 @@ h6[id]::before {
   }
 }
 
+.gl-tabs .gl-tabs-nav {
+  margin-bottom: 0;
+}
 a.gl-tab-nav-item,
 a.gl-tab-nav-item:hover {
   border: 0;
@@ -569,9 +572,25 @@ a.gl-tab-nav-item:hover {
   margin: 0;
 }
 .gl-docs .gl-tab-content {
+  padding-top: 1rem;
   line-height: 1.5em;
+
+  p,
+  ul,
+  ol,
+  code,
+  pre {
+    margin-top: 0;
+  }
 
   .tab-pane p {
     margin-bottom: 1.5em;
+  }
+
+  ol {
+    list-style-type: decimal;
+    ol {
+      list-style-type: lower-alpha;
+    }
   }
 }
