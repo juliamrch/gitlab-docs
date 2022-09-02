@@ -138,7 +138,7 @@ sections:
                 doc_url: 'omnibus/release/'
               - doc_title: Maintain
                 doc_url: 'omnibus/maintenance/'
-              - doc_title: Troubleshoot
+              - doc_title: Troubleshooting
                 doc_url: 'omnibus/troubleshooting.html'
           # End of documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
 
@@ -286,7 +286,7 @@ sections:
                             doc_url: 'charts/advanced/persistent-volumes/'
                           - doc_title: Red Hat UBI-based images
                             doc_url: 'charts/advanced/ubi/'
-                  - doc_title: Troubleshooting the GitLab chart
+                  - doc_title: Troubleshooting
                     doc_url: 'charts/troubleshooting/'
               # End of documentation from https://gitlab.com/gitlab-org/charts/gitlab
 
@@ -464,7 +464,7 @@ sections:
             doc_url: 'runner/configuration/init.html'
           - doc_title: Speed up job execution
             doc_url: 'runner/configuration/speed_up_job_execution.html'
-      - category_title: Troubleshoot GitLab Runner
+      - category_title: Troubleshooting
         category_url: 'runner/faq/'
 
   - section_title: Integrate applications
@@ -479,7 +479,7 @@ sections:
       - category_title: Elasticsearch
         category_url: 'ee/integration/advanced_search/elasticsearch.html'
         docs:
-          - doc_title: Elasticsearch troubleshooting
+          - doc_title: Troubleshooting
             doc_url: 'ee/integration/advanced_search/elasticsearch_troubleshooting.html'
       - category_title: Gitpod
         category_url: 'ee/integration/gitpod.html'
@@ -647,7 +647,7 @@ sections:
                     doc_url: 'ee/administration/auth/ldap/ldap_synchronization.html'
                   - doc_title: LDAP (Google Secure)
                     doc_url: 'ee/administration/auth/ldap/google_secure_ldap.html'
-                  - doc_title: LDAP troubleshooting
+                  - doc_title: Troubleshooting
                     doc_url: 'ee/administration/auth/ldap/ldap-troubleshooting.html'
               - doc_title: OAuth service provider
                 doc_url: 'ee/integration/oauth_provider.html'
@@ -845,7 +845,7 @@ sections:
                 doc_url: 'ee/administration/sidekiq/sidekiq_job_migration.html'
               - doc_title: Sidekiq job size limits
                 doc_url: 'ee/user/admin_area/settings/sidekiq_job_limits.html'
-              - doc_title: Troubleshooting Sidekiq
+              - doc_title: Troubleshooting
                 doc_url: 'ee/administration/sidekiq/sidekiq_troubleshooting.html'
           - doc_title: S/MIME signing
             doc_url: 'ee/administration/smime_signing_email.html'
@@ -1406,7 +1406,7 @@ sections:
                 doc_url: 'ee/topics/git/subtree.html'
               - doc_title: Tags
                 doc_url: 'ee/topics/git/tags.html'
-              - doc_title: Troubleshooting Git
+              - doc_title: Troubleshooting
                 doc_url: 'ee/topics/git/troubleshooting_git.html'
               - doc_title: Undo with Git
                 doc_url: 'ee/topics/git/numerous_undo_possibilities_in_git/'
@@ -1716,7 +1716,7 @@ sections:
                     doc_url: 'ee/ci/examples/deployment/composer-npm-deploy.html'
                   - doc_title: PHP with Laravel and Envoy
                     doc_url: 'ee/ci/examples/laravel_with_gitlab_and_envoy/'
-              - doc_title: Troubleshooting CI/CD
+              - doc_title: Troubleshooting
                 doc_url: 'ee/ci/troubleshooting.html'
 
           - doc_title: Runners
@@ -1868,7 +1868,7 @@ sections:
                     doc_url: 'ee/user/application_security/dast/checks/'
               - doc_title: DAST API
                 doc_url: 'ee/user/application_security/dast_api/'
-              - doc_title: DAST Troubleshooting
+              - doc_title: Troubleshooting
                 doc_url: 'ee/user/application_security/dast/dast_troubleshooting.html'
               - doc_title: Run DAST offline
                 doc_url: 'ee/user/application_security/dast/run_dast_offline.html'
@@ -2025,7 +2025,7 @@ sections:
                 doc_url: 'ee/user/infrastructure/iac/terraform_state.html'
               - doc_title: Terraform integration in merge requests
                 doc_url: 'ee/user/infrastructure/iac/mr_integration.html'
-              - doc_title: Troubleshoot Terraform
+              - doc_title: Troubleshooting
                 doc_url: 'ee/user/infrastructure/iac/troubleshooting.html'
           - doc_title: Create Kubernetes clusters
             doc_url: 'ee/user/clusters/create/'
@@ -2057,7 +2057,7 @@ sections:
                 doc_url: 'ee/user/clusters/agent/work_with_agent.html'
               - doc_title: Operational container scanning
                 doc_url: 'ee/user/clusters/agent/vulnerabilities.html'
-              - doc_title: Troubleshoot the agent for Kubernetes
+              - doc_title: Troubleshooting
                 doc_url: 'ee/user/clusters/agent/troubleshooting.html'
               - doc_title: Migrate to the agent for Kubernetes
                 doc_url: 'ee/user/infrastructure/clusters/migrate_to_gitlab_agent.html'
@@ -2750,7 +2750,7 @@ sections:
                     doc_url: 'ee/development/database/swapping_tables.html'
                   - doc_title: Table partitioning
                     doc_url: 'ee/development/database/table_partitioning.html'
-                  - doc_title: Troubleshooting and Debugging Database
+                  - doc_title: Troubleshooting and debugging
                     doc_url: 'ee/development/database/database_debugging.html'
                   - doc_title: Understanding EXPLAIN plans
                     doc_url: 'ee/development/database/understanding_explain_plans.html'
