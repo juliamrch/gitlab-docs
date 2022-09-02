@@ -219,12 +219,18 @@ See the [official GCP documentation](https://cloud.google.com/compute/docs/disks
 
 ### Regenerate tokens
 
-The projects that can generate docs review apps authenticate with the `gitlab-docs` project
-by using two tokens, `DOCS_PROJECT_API_TOKEN` and `DOCS_TRIGGER_TOKEN`. These tokens
-are stored in each project's CI/CD settings as [CI/CD variables](https://docs.gitlab.com/ee/ci/variables/#add-a-cicd-variable-to-a-project).
+The `gitlab-docs` project has several tokens used to authenticate with the API from
+CI/CD pipelines. These tokens are stored in each project's CI/CD settings as
+[CI/CD variables](https://docs.gitlab.com/ee/ci/variables/#add-a-cicd-variable-to-a-project):
+
+- `DOCS_PROJECT_API_TOKEN` and `DOCS_TRIGGER_TOKEN`: Used by `gitlab`, `gitlab-runner`,
+  `omnibus-gitlab` and `charts` to create docs review apps.
+- `DELETE_ENVIRONMENTS_TOKEN`: Used by `gitlab-docs` to
+  [delete stale review app environments](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/452c30caebd9db6604d34f1fd04ce19c38ff2273/.gitlab/ci/build-and-deploy.gitlab-ci.yml#L155-L169).
 
 In the event of a security issue, it might be necessary to immediately secure the project
-by regenerating the tokens, sometimes called "rotating" the tokens:
+by regenerating the tokens, sometimes called "rotating" the tokens. You must be a
+maintainer in the relevant projects to rotate the tokens.
 
 `DOCS_PROJECT_API_TOKEN`:
 
@@ -255,5 +261,10 @@ by regenerating the tokens, sometimes called "rotating" the tokens:
    select **Edit** for the `DOCS_TRIGGER_TOKEN` CI/CD variable, and update the
    value with the new token.
 
-In both cases, do not change any other settings for the CI/CD variables. They must remain
+`DELETE_ENVIRONMENTS_TOKEN`:
+
+Follow the steps for rotating the `DOCS_PROJECT_API_TOKEN`, except use `DELETE_ENVIRONMENTS_TOKEN` as the
+token name and update the CI/CD variable in the `gitlab-docs` project only.
+
+In all cases, do not change any other settings for the CI/CD variables. They must remain
 masked, but not protected. Additionally, do not save the token values anywhere else.
