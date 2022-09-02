@@ -2042,6 +2042,8 @@ sections:
               - doc_title: GitOps workflow
                 doc_url: 'ee/user/clusters/agent/gitops.html'
                 docs:
+                  - doc_title: Use Helm charts
+                    doc_url: 'ee/user/clusters/agent/gitops/helm.html'
                   - doc_title: Manage Kubernetes secrets
                     doc_url: 'ee/user/clusters/agent/gitops/secrets_management.html'
                   - doc_title: Track cluster resources
