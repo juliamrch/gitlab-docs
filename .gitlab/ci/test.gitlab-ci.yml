@@ -32,28 +32,11 @@ check_duplicate_redirects:
     - exit $(cat output.txt | wc -l)
 
 #
-# Check for index.html in navigation.yaml
+# Check global navigation for:
 #
-check_index_html:
-  image: busybox
-  extends:
-    - .rules_site_tests
-  needs: []
-  stage: test
-  script:
-    # Check for index.html in navigation.yaml and write the output in output.txt
-    - grep -Ir "/index.html" content/_data/navigation.yaml | sed -e '/^#/d' | tee output.txt
-    - |
-      echo "***************************************************************************"
-      echo "* If this job failed, it is because a navbar entry is using 'index.html'. *"
-      echo "* Link to just '/' instead, For example 'ee/user/'                        *"
-      echo "***************************************************************************"
-    - exit $(cat output.txt | wc -l)
-
+# - Identical duplicate entries.
+# - index.html in the entries.
 #
-# Check for identical duplicate entries in global navigation
-#
-
 check_global_nav_entries:
   extends:
     - .rules_site_tests
