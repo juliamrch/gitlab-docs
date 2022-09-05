@@ -24,7 +24,7 @@ group :test, :development do
   gem 'rspec', '~> 3.11.0'
   gem 'rspec-parameterized', '~> 0.5.2'
   gem 'pry-byebug', '~> 3.10.1', require: false
-  gem 'gitlab-styles', '~> 7.1.0', require: false
+  gem 'gitlab-styles', '~> 8.0.0', require: false
 end
 
 group :development, :danger do
