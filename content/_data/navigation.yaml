@@ -1559,10 +1559,8 @@ sections:
                     doc_url: 'ee/ci/resource_groups/'
                   - doc_title: Directed acyclic graph (DAG)
                     doc_url: 'ee/ci/directed_acyclic_graph/'
-                  - doc_title: Multi-project pipelines
-                    doc_url: 'ee/ci/pipelines/multi_project_pipelines.html'
-                  - doc_title: Parent-child pipelines
-                    doc_url: 'ee/ci/pipelines/parent_child_pipelines.html'
+                  - doc_title: Downstream pipelines
+                    doc_url: 'ee/ci/pipelines/downstream_pipelines.html'
                   - doc_title: Merge request pipelines
                     doc_url: 'ee/ci/pipelines/merge_request_pipelines.html'
                   - doc_title: Merged results pipelines
