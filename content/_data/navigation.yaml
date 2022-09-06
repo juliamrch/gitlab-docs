@@ -1137,7 +1137,7 @@ sections:
               - doc_title: SAML SSO for GitLab.com groups
                 doc_url: 'ee/user/group/saml_sso/'
                 docs:
-                  - doc_title: SCIM provisioning
+                  - doc_title: Configure SCIM
                     doc_url: 'ee/user/group/saml_sso/scim_setup.html'
                   - doc_title: Example group SAML and SCIM configurations
                     doc_url: 'ee/user/group/saml_sso/example_saml_config.html'
