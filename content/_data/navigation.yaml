@@ -1960,6 +1960,8 @@ sections:
               - doc_title: Incidents
                 doc_url: 'ee/operations/incident_management/incidents.html'
                 docs:
+                  - doc_title: Timeline events
+                    doc_url: 'ee/operations/incident_management/incident_timeline_events.html'
                   - doc_title: Linked resources
                     doc_url: 'ee/operations/incident_management/linked_resources.html'
               - doc_title: Integrations
