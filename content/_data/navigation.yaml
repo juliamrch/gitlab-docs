@@ -35,6 +35,8 @@ sections:
         category_url: 'ee/subscriptions/self_managed/'
       - category_title: GitLab Dedicated subscriptions
         category_url: 'ee/subscriptions/gitlab_dedicated/'
+      - category_title: Compare self-managed to SaaS
+        category_url: 'ee/install/migrate/compare_sm_to_saas.html'
       - category_title: Quarterly reconciliation
         category_url: 'ee/subscriptions/quarterly_reconciliation.html'
       - category_title: Storage usage quota
