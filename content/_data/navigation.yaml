@@ -2496,46 +2496,6 @@ sections:
         docs:
           - doc_title: Architecture
             doc_url: 'ee/development/architecture.html'
-          - doc_title: Contribute to documentation
-            doc_url: 'ee/development/documentation/'
-            docs:
-              - doc_title: How to update the documentation
-                doc_url: 'ee/development/documentation/workflow.html'
-              - doc_title: Style guide
-                doc_url: 'ee/development/documentation/styleguide/'
-              - doc_title: Recommended word list
-                doc_url: 'ee/development/documentation/styleguide/word_list.html'
-              - doc_title: Topic types
-                doc_url: 'ee/development/documentation/topic_types/'
-                docs:
-                  - doc_title: Concepts
-                    doc_url: 'ee/development/documentation/topic_types/concept.html'
-                  - doc_title: Tasks
-                    doc_url: 'ee/development/documentation/topic_types/task.html'
-                  - doc_title: Reference
-                    doc_url: 'ee/development/documentation/topic_types/reference.html'
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/development/documentation/topic_types/troubleshooting.html'
-              - doc_title: Document product versions
-                doc_url: 'ee/development/documentation/versions.html'
-              - doc_title: Global navigation
-                doc_url: 'ee/development/documentation/site_architecture/global_nav.html'
-              - doc_title: Testing
-                doc_url: 'ee/development/documentation/testing.html'
-              - doc_title: Site architecture
-                doc_url: 'ee/development/documentation/site_architecture/'
-              - doc_title: Folder structure
-                doc_url: 'ee/development/documentation/site_architecture/folder_structure.html'
-              - doc_title: Deployment process
-                doc_url: 'ee/development/documentation/site_architecture/deployment_process.html'
-              - doc_title: Documentation review apps
-                doc_url: 'ee/development/documentation/review_apps.html'
-              - doc_title: Redirects
-                doc_url: 'ee/development/documentation/redirects.html'
-              - doc_title: Create a GraphQL example page
-                doc_url: 'ee/development/documentation/graphql_styleguide.html'
-              - doc_title: RESTful API style guide
-                doc_url: 'ee/development/documentation/restful_api_styleguide.html'
           - doc_title: Development Rake tasks
             doc_url: 'ee/development/rake_tasks.html'
             docs:
@@ -3109,5 +3069,48 @@ sections:
           - doc_title: Versioning and release
             doc_url: 'charts/development/release.html'
       # End GitLab Helm Charts development documentation
+
+      # Contribute to GitLab docs
+      - category_title: Contribute to documentation
+        category_url: 'ee/development/documentation/'
+        docs:
+          - doc_title: How to update the documentation
+            doc_url: 'ee/development/documentation/workflow.html'
+          - doc_title: Style guide
+            doc_url: 'ee/development/documentation/styleguide/'
+          - doc_title: Recommended word list
+            doc_url: 'ee/development/documentation/styleguide/word_list.html'
+          - doc_title: Topic types
+            doc_url: 'ee/development/documentation/topic_types/'
+            docs:
+              - doc_title: Concepts
+                doc_url: 'ee/development/documentation/topic_types/concept.html'
+              - doc_title: Tasks
+                doc_url: 'ee/development/documentation/topic_types/task.html'
+              - doc_title: Reference
+                doc_url: 'ee/development/documentation/topic_types/reference.html'
+              - doc_title: Troubleshooting
+                doc_url: 'ee/development/documentation/topic_types/troubleshooting.html'
+          - doc_title: Document product versions
+            doc_url: 'ee/development/documentation/versions.html'
+          - doc_title: Global navigation
+            doc_url: 'ee/development/documentation/site_architecture/global_nav.html'
+          - doc_title: Testing
+            doc_url: 'ee/development/documentation/testing.html'
+          - doc_title: Site architecture
+            doc_url: 'ee/development/documentation/site_architecture/'
+          - doc_title: Folder structure
+            doc_url: 'ee/development/documentation/site_architecture/folder_structure.html'
+          - doc_title: Deployment process
+            doc_url: 'ee/development/documentation/site_architecture/deployment_process.html'
+          - doc_title: Documentation review apps
+            doc_url: 'ee/development/documentation/review_apps.html'
+          - doc_title: Redirects
+            doc_url: 'ee/development/documentation/redirects.html'
+          - doc_title: Create a GraphQL example page
+            doc_url: 'ee/development/documentation/graphql_styleguide.html'
+          - doc_title: RESTful API style guide
+            doc_url: 'ee/development/documentation/restful_api_styleguide.html'
+      # End of contribute to docs
 
   # End of development documentation
