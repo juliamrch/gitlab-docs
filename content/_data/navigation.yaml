@@ -3085,8 +3085,8 @@ sections:
             doc_url: 'runner/development/add-windows-version.html'
       # End GitLab Runner development documentation
 
-      # GitLab Helm Charts development documentation
-      - category_title: Contribute to GitLab Helm Charts
+      # GitLab Helm charts development documentation
+      - category_title: Contribute to GitLab Helm charts
         category_url: 'charts/development/'
         docs:
           - doc_title: Architecture of Cloud native GitLab Helm charts
