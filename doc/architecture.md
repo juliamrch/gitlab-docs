@@ -134,14 +134,14 @@ a different name first and test it to ensure you do not break the pipelines.
 
 ### Deploy the docs site
 
-Every four hours a scheduled pipeline builds and deploys the docs site. The pipeline
+Every hour a scheduled pipeline builds and deploys the docs site. The pipeline
 fetches the current docs from the main project's main branch, builds it with Nanoc
 and deploys it to <https://docs.gitlab.com>.
 
 To build and deploy the site immediately (must have the Maintainer role):
 
 1. In [`gitlab-docs`](https://gitlab.com/gitlab-org/gitlab-docs), go to **{rocket}** **CI/CD > Schedules**.
-1. For the `Build docs.gitlab.com every 4 hours` scheduled pipeline, select the **play** (**{play}**) button.
+1. For the `Build docs.gitlab.com every hour` scheduled pipeline, select the **play** (**{play}**) button.
 
 Read more about [documentation deployments](https://docs.gitlab.com/ee/development/documentation/site_architecture/deployment_process.html).
 
