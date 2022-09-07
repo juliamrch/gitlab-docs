@@ -16,7 +16,7 @@ host this website.
 The site is built and deployed automatically in GitLab CI/CD jobs.
 See [`.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab-ci.yml)
 for the current configuration. The project has [scheduled pipelines](https://docs.gitlab.com/ee/user/project/pipelines/schedules.html)
-that build and deploy the site once every four hours.
+that build and deploy the site every hour.
 
 ## Survey banner
 
