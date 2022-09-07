@@ -1696,6 +1696,8 @@ sections:
                     doc_url: 'ee/ci/cloud_services/google_cloud/'
               - doc_title: ChatOps
                 doc_url: 'ee/ci/chatops/'
+              - doc_title: Mobile DevOps
+                doc_url: 'ee/ci/mobile_devops/'
               - doc_title: External repository integrations
                 doc_url: 'ee/ci/ci_cd_for_external_repos/'
                 docs:
