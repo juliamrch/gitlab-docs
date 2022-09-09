@@ -1646,6 +1646,8 @@ sections:
                     doc_url: 'ee/topics/autodevops/customize.html'
                   - doc_title: Upgrade PostgreSQL
                     doc_url: 'ee/topics/autodevops/upgrading_postgresql.html'
+                  - doc_title: Prepare for deployment
+                    doc_url: 'ee/topics/autodevops/prepare_deployment.html'
                   - doc_title: Upgrade Auto Deploy dependencies
                     doc_url: 'ee/topics/autodevops/upgrading_auto_deploy_dependencies.html'
                   - doc_title: Deploy to GKE
