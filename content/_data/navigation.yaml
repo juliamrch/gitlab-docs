@@ -1136,6 +1136,8 @@ sections:
                 doc_url: 'ee/user/group/import/'
               - doc_title: SAML Group Sync
                 doc_url: 'ee/user/group/saml_sso/group_sync.html'
+              - doc_title: Troubleshooting SAML
+                doc_url: 'ee/user/group/saml_sso/troubleshooting.html'
               - doc_title: SAML SSO for GitLab.com groups
                 doc_url: 'ee/user/group/saml_sso/'
                 docs:
