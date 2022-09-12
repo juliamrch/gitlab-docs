@@ -144,172 +144,169 @@ sections:
                 doc_url: 'omnibus/troubleshooting.html'
           # End of documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
 
-          - doc_title: Cloud-native GitLab
-            doc_url: 'ee/install/cloud_native/'
+          - doc_title: Helm chart
+            doc_url: 'charts/'
             docs:
               # Documentation from https://gitlab.com/gitlab-org/charts/gitlab
-              - doc_title: Install with a Helm chart
-                doc_url: 'charts/'
+              - doc_title: Install
+                doc_url: 'charts/installation/'
                 docs:
-                  - doc_title: Install
-                    doc_url: 'charts/installation/'
+                  - doc_title: Test the GitLab chart on GKE or EKS
+                    doc_url: 'charts/quickstart/'
+                  - doc_title: Install prerequisites
+                    doc_url: 'charts/installation/tools.html'
                     docs:
-                      - doc_title: Test the GitLab chart on GKE or EKS
-                        doc_url: 'charts/quickstart/'
-                      - doc_title: Install prerequisites
-                        doc_url: 'charts/installation/tools.html'
-                        docs:
-                          - doc_title: Version mappings
-                            doc_url: 'charts/installation/version_mappings.html'
-                          - doc_title: Secrets
-                            doc_url: 'charts/installation/secrets.html'
-                          - doc_title: RBAC
-                            doc_url: 'charts/installation/rbac.html'
-                          - doc_title: Storage
-                            doc_url: 'charts/installation/storage.html'
-                          - doc_title: TLS
-                            doc_url: 'charts/installation/tls.html'
-                      - doc_title: Cloud cluster preparation
-                        doc_url: 'charts/installation/cloud/'
-                        docs:
-                          - doc_title: Azure Kubernetes Service
-                            doc_url: 'charts/installation/cloud/aks.html'
-                          - doc_title: Amazon EKS
-                            doc_url: 'charts/installation/cloud/eks.html'
-                          - doc_title: Google Kubernetes Engine
-                            doc_url: 'charts/installation/cloud/gke.html'
-                          - doc_title: OpenShift Origin
-                            doc_url: 'charts/installation/cloud/openshift.html'
-                          - doc_title: Oracle Container Engine for Kubernetes
-                            doc_url: 'charts/installation/cloud/oke.html'
-                      - doc_title: Deploy the Helm chart
-                        doc_url: 'charts/installation/deployment.html'
-                  - doc_title: Upgrade
-                    doc_url: 'charts/installation/upgrade.html'
+                      - doc_title: Version mappings
+                        doc_url: 'charts/installation/version_mappings.html'
+                      - doc_title: Secrets
+                        doc_url: 'charts/installation/secrets.html'
+                      - doc_title: RBAC
+                        doc_url: 'charts/installation/rbac.html'
+                      - doc_title: Storage
+                        doc_url: 'charts/installation/storage.html'
+                      - doc_title: TLS
+                        doc_url: 'charts/installation/tls.html'
+                  - doc_title: Cloud cluster preparation
+                    doc_url: 'charts/installation/cloud/'
                     docs:
-                      - doc_title: Database upgrade
-                        doc_url: 'charts/installation/database_upgrade.html'
-                      - doc_title: Release notes 6.0
-                        doc_url: 'charts/releases/6_0.html'
-                      - doc_title: Release notes 5.0
-                        doc_url: 'charts/releases/5_0.html'
-                      - doc_title: Release notes 4.0
-                        doc_url: 'charts/releases/4_0.html'
-                      - doc_title: Release notes 3.0
-                        doc_url: 'charts/releases/3_0.html'
-                      - doc_title: Release notes 2.0
-                        doc_url: 'charts/releases/2_0.html'
-                      - doc_title: Release notes 1.0
-                        doc_url: 'charts/releases/1_0.html'
-                      - doc_title: Upgrade old versions
-                        doc_url: 'charts/installation/upgrade_old.html'
-                  - doc_title: Backup and Restore
-                    doc_url: 'charts/backup-restore/'
+                      - doc_title: Azure Kubernetes Service
+                        doc_url: 'charts/installation/cloud/aks.html'
+                      - doc_title: Amazon EKS
+                        doc_url: 'charts/installation/cloud/eks.html'
+                      - doc_title: Google Kubernetes Engine
+                        doc_url: 'charts/installation/cloud/gke.html'
+                      - doc_title: OpenShift Origin
+                        doc_url: 'charts/installation/cloud/openshift.html'
+                      - doc_title: Oracle Container Engine for Kubernetes
+                        doc_url: 'charts/installation/cloud/oke.html'
+                  - doc_title: Deploy the Helm chart
+                    doc_url: 'charts/installation/deployment.html'
+              - doc_title: Upgrade
+                doc_url: 'charts/installation/upgrade.html'
+                docs:
+                  - doc_title: Database upgrade
+                    doc_url: 'charts/installation/database_upgrade.html'
+                  - doc_title: Release notes 6.0
+                    doc_url: 'charts/releases/6_0.html'
+                  - doc_title: Release notes 5.0
+                    doc_url: 'charts/releases/5_0.html'
+                  - doc_title: Release notes 4.0
+                    doc_url: 'charts/releases/4_0.html'
+                  - doc_title: Release notes 3.0
+                    doc_url: 'charts/releases/3_0.html'
+                  - doc_title: Release notes 2.0
+                    doc_url: 'charts/releases/2_0.html'
+                  - doc_title: Release notes 1.0
+                    doc_url: 'charts/releases/1_0.html'
+                  - doc_title: Upgrade old versions
+                    doc_url: 'charts/installation/upgrade_old.html'
+              - doc_title: Backup and Restore
+                doc_url: 'charts/backup-restore/'
+                docs:
+                  - doc_title: Backup
+                    doc_url: 'charts/backup-restore/backup.html'
+                  - doc_title: Restore
+                    doc_url: 'charts/backup-restore/restore.html'
+              - doc_title: Migrate from Omnibus
+                doc_url: 'charts/installation/migration/'
+                docs:
+                  - doc_title: Migrate from the Linux package
+                    doc_url: 'charts/installation/migration/package_to_helm.html'
+                  - doc_title: Migrate to the Linux package
+                    doc_url: 'charts/installation/migration/helm_to_package.html'
+                  - doc_title: Migrate between Helm versions
+                    doc_url: 'charts/installation/migration/helm.html'
+                  - doc_title: Migrate to MinIO
+                    doc_url: 'charts/installation/migration/minio.html'
+              - doc_title: Configure
+                doc_url: 'charts/charts/'
+                docs:
+                  - doc_title: Globals
+                    doc_url: 'charts/charts/globals.html'
+                  - doc_title: GitLab sub-charts
+                    doc_url: 'charts/charts/gitlab/'
                     docs:
-                      - doc_title: Backup
-                        doc_url: 'charts/backup-restore/backup.html'
-                      - doc_title: Restore
-                        doc_url: 'charts/backup-restore/restore.html'
-                  - doc_title: Migrate from Omnibus
-                    doc_url: 'charts/installation/migration/'
+                      - doc_title: Gitaly chart
+                        doc_url: 'charts/charts/gitlab/gitaly/'
+                      - doc_title: GitLab Exporter chart
+                        doc_url: 'charts/charts/gitlab/gitlab-exporter/'
+                      - doc_title: GitLab Grafana chart
+                        doc_url: 'charts/charts/gitlab/gitlab-grafana/'
+                      - doc_title: GitLab Pages chart
+                        doc_url: 'charts/charts/gitlab/gitlab-pages/'
+                      - doc_title: GitLab Runner chart
+                        doc_url: 'charts/charts/gitlab/gitlab-runner/'
+                      - doc_title: GitLab Shell chart
+                        doc_url: 'charts/charts/gitlab/gitlab-shell/'
+                      - doc_title: KAS chart
+                        doc_url: 'charts/charts/gitlab/kas/'
+                      - doc_title: Migrations chart
+                        doc_url: 'charts/charts/gitlab/migrations/'
+                      - doc_title: Praefect chart
+                        doc_url: 'charts/charts/gitlab/praefect/'
+                      - doc_title: Sidekiq chart
+                        doc_url: 'charts/charts/gitlab/sidekiq/'
+                      - doc_title: Toolbox chart
+                        doc_url: 'charts/charts/gitlab/toolbox/'
+                      - doc_title: Webservice chart
+                        doc_url: 'charts/charts/gitlab/webservice/'
+                  - doc_title: Minio chart
+                    doc_url: 'charts/charts/minio/'
+                  - doc_title: Nginx chart
+                    doc_url: 'charts/charts/nginx/'
+                  - doc_title: Registry chart
+                    doc_url: 'charts/charts/registry/'
+                  - doc_title: Advanced
+                    doc_url: 'charts/advanced/'
                     docs:
-                      - doc_title: Migrate from the Linux package
-                        doc_url: 'charts/installation/migration/package_to_helm.html'
-                      - doc_title: Migrate to the Linux package
-                        doc_url: 'charts/installation/migration/helm_to_package.html'
-                      - doc_title: Migrate between Helm versions
-                        doc_url: 'charts/installation/migration/helm.html'
-                      - doc_title: Migrate to MinIO
-                        doc_url: 'charts/installation/migration/minio.html'
-                  - doc_title: Configure
-                    doc_url: 'charts/charts/'
-                    docs:
-                      - doc_title: Globals
-                        doc_url: 'charts/charts/globals.html'
-                      - doc_title: GitLab sub-charts
-                        doc_url: 'charts/charts/gitlab/'
-                        docs:
-                          - doc_title: Gitaly chart
-                            doc_url: 'charts/charts/gitlab/gitaly/'
-                          - doc_title: GitLab Exporter chart
-                            doc_url: 'charts/charts/gitlab/gitlab-exporter/'
-                          - doc_title: GitLab Grafana chart
-                            doc_url: 'charts/charts/gitlab/gitlab-grafana/'
-                          - doc_title: GitLab Pages chart
-                            doc_url: 'charts/charts/gitlab/gitlab-pages/'
-                          - doc_title: GitLab Runner chart
-                            doc_url: 'charts/charts/gitlab/gitlab-runner/'
-                          - doc_title: GitLab Shell chart
-                            doc_url: 'charts/charts/gitlab/gitlab-shell/'
-                          - doc_title: KAS chart
-                            doc_url: 'charts/charts/gitlab/kas/'
-                          - doc_title: Migrations chart
-                            doc_url: 'charts/charts/gitlab/migrations/'
-                          - doc_title: Praefect chart
-                            doc_url: 'charts/charts/gitlab/praefect/'
-                          - doc_title: Sidekiq chart
-                            doc_url: 'charts/charts/gitlab/sidekiq/'
-                          - doc_title: Toolbox chart
-                            doc_url: 'charts/charts/gitlab/toolbox/'
-                          - doc_title: Webservice chart
-                            doc_url: 'charts/charts/gitlab/webservice/'
-                      - doc_title: Minio chart
-                        doc_url: 'charts/charts/minio/'
-                      - doc_title: Nginx chart
-                        doc_url: 'charts/charts/nginx/'
-                      - doc_title: Registry chart
-                        doc_url: 'charts/charts/registry/'
-                      - doc_title: Advanced
-                        doc_url: 'charts/advanced/'
-                        docs:
-                          - doc_title: Custom Docker images
-                            doc_url: 'charts/advanced/custom-images/'
-                          - doc_title: External database
-                            doc_url: 'charts/advanced/external-db/'
-                          - doc_title: External Gitaly
-                            doc_url: 'charts/advanced/external-gitaly/'
-                          - doc_title: External GitLab Pages
-                            doc_url: 'charts/advanced/external-gitlab-pages/'
-                          - doc_title: External Mattermost
-                            doc_url: 'charts/advanced/external-mattermost/'
-                          - doc_title: External Nginx
-                            doc_url: 'charts/advanced/external-nginx/'
-                          - doc_title: External object storage
-                            doc_url: 'charts/advanced/external-object-storage/'
-                          - doc_title: External Redis
-                            doc_url: 'charts/advanced/external-redis/'
-                          - doc_title: FIPS-compliant images
-                            doc_url: 'charts/advanced/fips/'
-                          - doc_title: Geo
-                            doc_url: 'charts/advanced/geo/'
-                          - doc_title: Internal TLS between services
-                            doc_url: 'charts/advanced/internal-tls/'
-                          - doc_title: Persistent volumes
-                            doc_url: 'charts/advanced/persistent-volumes/'
-                          - doc_title: Red Hat UBI-based images
-                            doc_url: 'charts/advanced/ubi/'
-                  - doc_title: Uninstall
-                    doc_url: 'charts/installation/uninstall.html'
-                  - doc_title: Troubleshooting
-                    doc_url: 'charts/troubleshooting/'
+                      - doc_title: Custom Docker images
+                        doc_url: 'charts/advanced/custom-images/'
+                      - doc_title: External database
+                        doc_url: 'charts/advanced/external-db/'
+                      - doc_title: External Gitaly
+                        doc_url: 'charts/advanced/external-gitaly/'
+                      - doc_title: External GitLab Pages
+                        doc_url: 'charts/advanced/external-gitlab-pages/'
+                      - doc_title: External Mattermost
+                        doc_url: 'charts/advanced/external-mattermost/'
+                      - doc_title: External Nginx
+                        doc_url: 'charts/advanced/external-nginx/'
+                      - doc_title: External object storage
+                        doc_url: 'charts/advanced/external-object-storage/'
+                      - doc_title: External Redis
+                        doc_url: 'charts/advanced/external-redis/'
+                      - doc_title: FIPS-compliant images
+                        doc_url: 'charts/advanced/fips/'
+                      - doc_title: Geo
+                        doc_url: 'charts/advanced/geo/'
+                      - doc_title: Internal TLS between services
+                        doc_url: 'charts/advanced/internal-tls/'
+                      - doc_title: Persistent volumes
+                        doc_url: 'charts/advanced/persistent-volumes/'
+                      - doc_title: Red Hat UBI-based images
+                        doc_url: 'charts/advanced/ubi/'
+              - doc_title: Uninstall
+                doc_url: 'charts/installation/uninstall.html'
+              - doc_title: Troubleshooting
+                doc_url: 'charts/troubleshooting/'
               # End of documentation from https://gitlab.com/gitlab-org/charts/gitlab
 
               # Documentation from https://gitlab.com/gitlab-org/cloud-native/gitlab-operator
-              - doc_title: Install with GitLab Operator
-                doc_url: 'operator/'
-                docs:
-                  - doc_title: Install
-                    doc_url: 'operator/installation.html'
-                  - doc_title: Backup and restore
-                    doc_url: 'operator/backup_and_restore.html'
-                  - doc_title: Upgrade GitLab
-                    doc_url: 'operator/gitlab_upgrades.html'
-                  - doc_title: Support for Git over SSH
-                    doc_url: 'operator/git_over_ssh.html'
-                  - doc_title: Upgrade the Operator
-                    doc_url: 'operator/operator_upgrades.html'
-                  - doc_title: Security context constraints
-                    doc_url: 'operator/security_context_constraints.html'
+          - doc_title: Operator
+            doc_url: 'operator/'
+            docs:
+              - doc_title: Install
+                doc_url: 'operator/installation.html'
+              - doc_title: Backup and restore
+                doc_url: 'operator/backup_and_restore.html'
+              - doc_title: Upgrade GitLab
+                doc_url: 'operator/gitlab_upgrades.html'
+              - doc_title: Support for Git over SSH
+                doc_url: 'operator/git_over_ssh.html'
+              - doc_title: Upgrade the Operator
+                doc_url: 'operator/operator_upgrades.html'
+              - doc_title: Security context constraints
+                doc_url: 'operator/security_context_constraints.html'
               # End of documentation from https://gitlab.com/gitlab-org/cloud-native/gitlab-operator
 
           - doc_title: Docker
