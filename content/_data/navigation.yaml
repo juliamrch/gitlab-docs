@@ -1698,6 +1698,8 @@ sections:
                     doc_url: 'ee/ci/examples/authenticating-with-hashicorp-vault/'
                   - doc_title: Configure OpenID Connect in AWS
                     doc_url: 'ee/ci/cloud_services/aws/'
+                  - doc_title: Configure OpenID Connect in Azure
+                    doc_url: 'ee/ci/cloud_services/azure/'
                   - doc_title: Configure OpenID Connect with Google Cloud
                     doc_url: 'ee/ci/cloud_services/google_cloud/'
               - doc_title: ChatOps
@@ -2416,6 +2418,8 @@ sections:
             doc_url: 'ee/api/scim.html'
           - doc_title: Search
             doc_url: 'ee/api/search.html'
+          - doc_title: Secure files
+            doc_url: 'ee/api/secure_files.html'
           - doc_title: Settings (application)
             doc_url: 'ee/api/settings.html'
           - doc_title: Sidekiq metrics
