@@ -147,7 +147,7 @@ test_EOL_whitespace:
     - apk add jq
     - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
     - bundle install
-    - bundle exec rake setup_git default
+    - bundle exec rake default
     - markdownlint --config tasks/whitespace_task.yml '../gitlab/doc/**/*.md' '../gitlab-runner/doc/**/*.md' '../omnibus-gitlab/doc/**/*.md' '../charts-gitlab/doc/**/*.md' '../gitlab-operator/doc/**/*.md'
 
 test_unlinked_images:
@@ -163,7 +163,7 @@ test_unlinked_images:
     - apk add jq
     - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
     - bundle install
-    - bundle exec rake setup_git default
+    - bundle exec rake default
     - cp tasks/unlinked-images.sh ../gitlab/unlinked-images.sh
     - cp tasks/unlinked-images.sh ../charts-gitlab/unlinked-images.sh
     - cp tasks/unlinked-images.sh ../omnibus-gitlab/unlinked-images.sh

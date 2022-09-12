@@ -8,13 +8,6 @@ task_helpers = TaskHelpers.new
 
 task default: [:clone_repositories, :generate_feature_flags]
 
-task :setup_git do
-  puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Setting up dummy user and email in Git..#{TaskHelpers::COLOR_CODE_RESET}"
-
-  `git config --global user.name "Sidney Jones"`
-  `git config --global user.email "sidneyjones@example.com"`
-end
-
 desc 'Clone Git repositories of documentation projects, keeping only the most recent commit'
 task :clone_repositories do
   task_helpers.products.each_value do |product|

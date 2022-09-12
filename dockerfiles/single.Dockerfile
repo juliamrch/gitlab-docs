@@ -75,7 +75,7 @@ RUN yarn install --frozen-lockfile                              \
     && yarn cache clean                                         \
     && bundle config set --local deployment true                \
     && bundle install --jobs 4                                  \
-    && bundle exec rake setup_git default                       \
+    && bundle exec rake default                                 \
     && bundle exec nanoc compile -VV
 
 # Move generated HTML to /site
