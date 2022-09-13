@@ -181,43 +181,6 @@ sections:
                         doc_url: 'charts/installation/cloud/oke.html'
                   - doc_title: Deploy the Helm chart
                     doc_url: 'charts/installation/deployment.html'
-              - doc_title: Upgrade
-                doc_url: 'charts/installation/upgrade.html'
-                docs:
-                  - doc_title: Database upgrade
-                    doc_url: 'charts/installation/database_upgrade.html'
-                  - doc_title: Release notes 6.0
-                    doc_url: 'charts/releases/6_0.html'
-                  - doc_title: Release notes 5.0
-                    doc_url: 'charts/releases/5_0.html'
-                  - doc_title: Release notes 4.0
-                    doc_url: 'charts/releases/4_0.html'
-                  - doc_title: Release notes 3.0
-                    doc_url: 'charts/releases/3_0.html'
-                  - doc_title: Release notes 2.0
-                    doc_url: 'charts/releases/2_0.html'
-                  - doc_title: Release notes 1.0
-                    doc_url: 'charts/releases/1_0.html'
-                  - doc_title: Upgrade old versions
-                    doc_url: 'charts/installation/upgrade_old.html'
-              - doc_title: Backup and Restore
-                doc_url: 'charts/backup-restore/'
-                docs:
-                  - doc_title: Backup
-                    doc_url: 'charts/backup-restore/backup.html'
-                  - doc_title: Restore
-                    doc_url: 'charts/backup-restore/restore.html'
-              - doc_title: Migrate from Omnibus
-                doc_url: 'charts/installation/migration/'
-                docs:
-                  - doc_title: Migrate from the Linux package
-                    doc_url: 'charts/installation/migration/package_to_helm.html'
-                  - doc_title: Migrate to the Linux package
-                    doc_url: 'charts/installation/migration/helm_to_package.html'
-                  - doc_title: Migrate between Helm versions
-                    doc_url: 'charts/installation/migration/helm.html'
-                  - doc_title: Migrate to MinIO
-                    doc_url: 'charts/installation/migration/minio.html'
               - doc_title: Configure
                 doc_url: 'charts/charts/'
                 docs:
@@ -285,6 +248,43 @@ sections:
                         doc_url: 'charts/advanced/persistent-volumes/'
                       - doc_title: Red Hat UBI-based images
                         doc_url: 'charts/advanced/ubi/'
+              - doc_title: Upgrade
+                doc_url: 'charts/installation/upgrade.html'
+                docs:
+                  - doc_title: Database upgrade
+                    doc_url: 'charts/installation/database_upgrade.html'
+                  - doc_title: Release notes 6.0
+                    doc_url: 'charts/releases/6_0.html'
+                  - doc_title: Release notes 5.0
+                    doc_url: 'charts/releases/5_0.html'
+                  - doc_title: Release notes 4.0
+                    doc_url: 'charts/releases/4_0.html'
+                  - doc_title: Release notes 3.0
+                    doc_url: 'charts/releases/3_0.html'
+                  - doc_title: Release notes 2.0
+                    doc_url: 'charts/releases/2_0.html'
+                  - doc_title: Release notes 1.0
+                    doc_url: 'charts/releases/1_0.html'
+                  - doc_title: Upgrade old versions
+                    doc_url: 'charts/installation/upgrade_old.html'
+              - doc_title: Backup and Restore
+                doc_url: 'charts/backup-restore/'
+                docs:
+                  - doc_title: Backup
+                    doc_url: 'charts/backup-restore/backup.html'
+                  - doc_title: Restore
+                    doc_url: 'charts/backup-restore/restore.html'
+              - doc_title: Migrate from Omnibus
+                doc_url: 'charts/installation/migration/'
+                docs:
+                  - doc_title: Migrate from the Linux package
+                    doc_url: 'charts/installation/migration/package_to_helm.html'
+                  - doc_title: Migrate to the Linux package
+                    doc_url: 'charts/installation/migration/helm_to_package.html'
+                  - doc_title: Migrate between Helm versions
+                    doc_url: 'charts/installation/migration/helm.html'
+                  - doc_title: Migrate to MinIO
+                    doc_url: 'charts/installation/migration/minio.html'
               - doc_title: Uninstall
                 doc_url: 'charts/installation/uninstall.html'
               - doc_title: Troubleshooting
