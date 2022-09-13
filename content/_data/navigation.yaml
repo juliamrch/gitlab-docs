@@ -2634,8 +2634,6 @@ sections:
                 doc_url: 'ee/development/fe_guide/style/html.html'
               - doc_title: JavaScript style guide
                 doc_url: 'ee/development/fe_guide/style/javascript.html'
-              - doc_title: Newlines style guide
-                doc_url: 'ee/development/newlines_styleguide.html'
               - doc_title: Python development guidelines
                 doc_url: 'ee/development/python_guide/'
               - doc_title: Ruby style guide
