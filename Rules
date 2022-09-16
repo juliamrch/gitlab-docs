@@ -59,6 +59,8 @@ end
 
 # Do not process Markdown files in ee/doc/drawers/
 ignore '/ee/drawers/*.md'
+# Do not process GitLab Operator's architectural design records
+ignore '/operator/adr/*.md'
 
 compile '/**/*.md' do
   if item[:redirect_to].nil?
