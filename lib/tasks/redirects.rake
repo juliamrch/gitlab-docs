@@ -44,7 +44,7 @@ namespace :docs do
     abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: jq not found. Install jq and run task again.#{TaskHelpers::COLOR_CODE_RESET}") if `which jq`.empty?
 
     puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (gitlab-docs): Stashing changes of gitlab-docs and syncing with upstream default branch..#{TaskHelpers::COLOR_CODE_RESET}"
-    system("git stash --quiet -u") if git_workdir_dirty?
+    system("git stash --quiet -u") if task_helpers.git_workdir_dirty?
     system("git checkout --quiet main")
     system("git fetch --quiet origin main")
     system("git reset --quiet --hard origin/main")
