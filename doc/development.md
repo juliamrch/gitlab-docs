@@ -217,3 +217,10 @@ To add an additional set of product documentation to <https://docs.gitlab.com> f
 1. Edit the [`Rakefile`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/Rakefile#L107-113) and add a line to replace the product's branch variable. If the product doesn't have a stable branch process, omit this step to use the product's default branch.
 1. Edit [`scripts/normalize-links.sh`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/scripts/normalize-links.sh)
    and add the new product to the `Relative URLs` and `Full URLs` sections.
+
+## Exclude a directory
+
+To exclude a directory so the contents aren't published to the docs site:
+
+1. Edit [this `Rules` file](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/Rules).
+1. Add an `ignore` line, like: `ignore '/ee/drawers/*.md'`.
