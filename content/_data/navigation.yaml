@@ -2638,6 +2638,8 @@ sections:
                 doc_url: 'ee/development/python_guide/'
               - doc_title: Ruby style guide
                 doc_url: 'ee/development/backend/ruby_style_guide.html'
+              - doc_title: 'Gemfile guidelines'
+                doc_url: 'ee/development/gemfile.html'
               - doc_title: SCSS style guide
                 doc_url: 'ee/development/fe_guide/style/scss.html'
               - doc_title: Shell scripting standards and style guidelines
