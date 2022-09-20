@@ -166,7 +166,7 @@ sections:
                         doc_url: 'charts/installation/storage.html'
                       - doc_title: TLS
                         doc_url: 'charts/installation/tls.html'
-                  - doc_title: Cloud cluster preparation
+                  - doc_title: Set up cloud resources
                     doc_url: 'charts/installation/cloud/'
                     docs:
                       - doc_title: Azure Kubernetes Service
