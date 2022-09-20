@@ -10,7 +10,6 @@ namespace :release do
   desc 'Creates a single release archive'
   task :single, :version do |t, args|
     version = args.version.to_s
-    source_dir = File.expand_path(__dir__)
 
     # Disable lefthook because it was causing some PATH errors
     # https://docs.gitlab.com/ee/development/contributing/style_guides.html#disable-lefthook-temporarily
@@ -35,7 +34,7 @@ namespace :release do
     `git checkout -b #{version}`
 
     # Replace the branches variables in Dockerfile.X.Y
-    dockerfile = "#{source_dir}/#{version}.Dockerfile"
+    dockerfile = "#{version}.Dockerfile"
 
     if File.exist?(dockerfile)
       abort('rake aborted!') if ask("#{dockerfile} already exists. Do you want to overwrite?", %w[y n]) == 'n'
@@ -51,7 +50,7 @@ namespace :release do
     end
 
     # Replace the branches variables in .gitlab-ci.yml
-    ci_yaml = "#{source_dir}/.gitlab-ci.yml"
+    ci_yaml = ".gitlab-ci.yml"
     ci_yaml_content = File.read(ci_yaml)
     ci_yaml_content.gsub!("BRANCH_EE: 'master'", "BRANCH_EE: '#{version.tr('.', '-')}-stable-ee'")
     ci_yaml_content.gsub!("BRANCH_OMNIBUS: 'master'", "BRANCH_OMNIBUS: '#{version.tr('.', '-')}-stable'")
