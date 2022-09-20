@@ -18,7 +18,7 @@ To set up GitLab Docs:
 1. [Install `asdf`](https://asdf-vm.com/guide/getting-started.html) and its dependencies. To complete the `asdf`
    installation, close the terminal you used to install `asdf` and open a new terminal. That enables `asdf` for later
    steps.
-1. Clone `gitlab-docs` project.
+1. Clone the `gitlab-docs` project.
 1. In the checkout of `gitlab-docs`, run:
 
    ```shell
@@ -37,7 +37,7 @@ An alternative to `make setup` is to follow [Advanced setup for GitLab Docs](adv
 
 To build the full GitLab documentation website locally, you must clone all the documentation projects that provide the
 Nanoc [data sources](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/nanoc.yaml). To clone all documentation
-projects, run:
+projects, run the following in the checkout of `gitlab-docs`:
 
 ```shell
 make clone-all-docs-projects
@@ -48,7 +48,7 @@ they can be previewed.
 
 ## Preview GitLab Docs
 
-To preview GitLab Docs locally, run:
+To preview GitLab Docs locally, run the following in the checkout of `gitlab-docs`:
 
 ```shell
 make view
