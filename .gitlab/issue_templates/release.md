@@ -51,7 +51,7 @@ After release post is live on the 22nd, or the next Monday morning if the releas
 After the 22nd of each month:
 
 1. [ ] Create a release issue for the
-   [next TW](https://about.gitlab.com/handbook/engineering/ux/technical-writing/#regularly-scheduled-tasks)
+   [next TW](https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks)
    and assign it to them.
 1. [ ] **Major releases only.** Update
    [OutdatedVersions.yml](https://gitlab.com/gitlab-org/gitlab/-/blob/master/doc/.vale/gitlab/OutdatedVersions.yml)

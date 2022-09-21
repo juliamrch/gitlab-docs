@@ -32,7 +32,7 @@ namespace :docs do
     redirects_yaml = "#{source_dir}/content/_data/redirects.yaml"
     today = Time.now.utc.to_date
     mr_title = "Clean up docs redirects - #{today}"
-    mr_description = "Monthly cleanup of docs redirects.</br><p>See https://about.gitlab.com/handbook/engineering/ux/technical-writing/#regularly-scheduled-tasks</p></br></hr></br><p>_Created automatically: https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/raketasks.md#clean-up-redirects_</p>"
+    mr_description = "Monthly cleanup of docs redirects.</br><p>See https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks</p></br></hr></br><p>_Created automatically: https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/raketasks.md#clean-up-redirects_</p>"
     redirects_branch = "docs-clean-redirects-#{today}"
     commit_message = "Update docs redirects #{today}"
 

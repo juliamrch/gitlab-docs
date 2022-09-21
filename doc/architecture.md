@@ -106,7 +106,7 @@ improve maintainability:
   Extra configuration for security jobs to override their defaults and make them work
   better in the pipeline.
 - [`.gitlab/ci/test.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/test.gitlab-ci.yml):
-  Code tests and jobs used for [`gitlab-docs` maintenance](https://about.gitlab.com/handbook/engineering/ux/technical-writing/#regularly-scheduled-tasks).
+  Code tests and jobs used for [`gitlab-docs` maintenance](https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks).
 
 ### Rebuild the docs site Docker images
 

@@ -25,7 +25,7 @@ Any time you rebuild the site using `nanoc`, the feature flags tables are popula
 ## Clean up redirects
 
 The `docs:clean_redirects` rake task automates the removal of the expired redirect files,
-which is part of the monthly [scheduled TW tasks](https://about.gitlab.com/handbook/engineering/ux/technical-writing/#regularly-scheduled-tasks)
+which is part of the monthly [scheduled TW tasks](https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks)
 as seen in the "Local tasks" section of the [issue template](https://gitlab.com/gitlab-org/technical-writing/-/blob/main/.gitlab/issue_templates/tw-monthly-tasks.md):
 
 1. Make sure you have `jq` installed. On macOS:

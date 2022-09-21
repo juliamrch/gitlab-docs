@@ -19,7 +19,7 @@ For more information about the docs site, go to the [architecture page](architec
 
 ## Technical Writing team member tasks
 
-GitLab [Technical Writing team members](https://about.gitlab.com/handbook/engineering/ux/technical-writing/) perform
+GitLab [Technical Writing team members](https://about.gitlab.com/handbook/product/ux/technical-writing/) perform
 the following maintenance tasks on the GitLab Docs site:
 
 - Publish [releases](releases.md).
