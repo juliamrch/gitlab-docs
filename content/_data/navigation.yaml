@@ -2704,8 +2704,12 @@ sections:
                     doc_url: 'ee/development/database/deleting_migrations.html'
                   - doc_title: Layout and access patterns
                     doc_url: 'ee/development/database/layout_and_access_patterns.html'
+                  - doc_title: Maintenance operations
+                    doc_url: 'ee/development/database/maintenance_operations.html'
                   - doc_title: Migrations style guide
                     doc_url: 'ee/development/migration_style_guide.html'
+                  - doc_title: Ordering table columns
+                    doc_url: 'ee/development/database/ordering_table_columns.html'
                   - doc_title: Pagination guidelines
                     doc_url: 'ee/development/database/pagination_guidelines.html'
                     docs:
