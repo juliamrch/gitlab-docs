@@ -1142,7 +1142,7 @@ sections:
                     doc_url: 'ee/user/group/saml_sso/scim_setup.html'
                   - doc_title: Example group SAML and SCIM configurations
                     doc_url: 'ee/user/group/saml_sso/example_saml_config.html'
-                  - doc_title: Troubleshooting
+                  - doc_title: Troubleshooting SCIM
                     doc_url: 'ee/user/group/saml_sso/troubleshooting_scim.html'
               - doc_title: Subgroups
                 doc_url: 'ee/user/group/subgroups/'
