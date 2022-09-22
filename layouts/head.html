@@ -15,6 +15,8 @@
 <% if @item[:noindex] or !production_and_default_branch? %>
   <meta name="robots" content="noindex, nofollow">
 <% end %>
+
+<% if @config[:algolia] == "true" %>
 <!--https://community.algolia.com/docsearch/required-configuration.html#introduces-global-information-as-meta-tags-->
 <meta name="docsearch:language" content="en" />
 <% if !ENV['CI_COMMIT_REF_NAME'].nil? and stable_version?(ENV['CI_COMMIT_REF_NAME']) %>
@@ -23,6 +25,10 @@
 <meta name="docsearch:version" content="<%= ENV['CI_DEFAULT_BRANCH'] %>" />
 <% end %>
 <link crossorigin href="https://3PNCFOU757-dsn.algolia.net" rel="preconnect" />
+<!-- Algolia Searching from the URL bar https://www.algolia.com/doc/tutorials/search-ui/ux-patterns/search-from-the-url-bar/ -->
+<link href='/opensearch.xml' rel='search' title='Search through GitLab Docs' type='application/opensearchdescription+xml'>
+<link rel="stylesheet" href="/frontend/search/docsearch.css">
+<% end %>
 
 <!-- Enable CSP headers -->
 <% unless ENV['DISABLE_CSP'] %>
@@ -31,7 +37,6 @@
 <!-- End of CSP headers -->
 
 <link rel="stylesheet" href="/frontend/shared/global_imports.css">
-<link rel="stylesheet" href="/frontend/search/docsearch.css">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/highlight.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/footer.*'].path %>">
@@ -76,8 +81,6 @@
 
 <!-- you don't need to keep this, but it's cool for stats! -->
 <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
-<!-- Algolia Searching from the URL bar https://www.algolia.com/doc/tutorials/search-ui/ux-patterns/search-from-the-url-bar/ -->
-<link href='/opensearch.xml' rel='search' title='Search through GitLab Docs' type='application/opensearchdescription+xml'>
 <!-- Apple Touch Icons and Microsoft Tiles -->
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
 <link rel="manifest" href="/assets/manifests/site.webmanifest">

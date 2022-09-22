@@ -12,7 +12,11 @@
         <% if @item[:searchbar].nil? %>
           <% location = @item.identifier.to_s.split('/')[1] %>
           <% unless %w(search index.erb).any?(location) %>
-            <div id="docsearch" class="my-2 my-lg-0"></div>
+            <% if @config[:algolia] == "true" %>
+              <div id="docsearch" class="gl-my-3 my-lg-0"></div>
+            <% else %>
+              <div class="js-lunr-form"></div>
+            <% end %>
           <% end %>
         <% end %>
       </li>

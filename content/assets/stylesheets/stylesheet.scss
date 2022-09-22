@@ -295,6 +295,12 @@ ol {
       -webkit-mask: url('/assets/images/ellipsis_h.svg') no-repeat center;
     }
   }
+
+  .lunr-search {
+    .input-group-append {
+      background-color: inherit;
+    }
+  }
 }
 
 //badges
@@ -592,5 +598,12 @@ a.gl-tab-nav-item:hover {
     ol {
       list-style-type: lower-alpha;
     }
+  }
+}
+
+.lunr-search {
+  .input-group>.form-control:focus,
+  .gl-search-box-by-click-clear-button {
+    z-index: auto;
   }
 }

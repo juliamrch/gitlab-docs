@@ -5,8 +5,8 @@
  * Creates data files required for Lunr search.
  *
  * This script creates two JSON files:
- *   - lunr-index.js: A serialized search index.
- *   - lunr-map.js: Maps index item IDs to their human-readable titles.
+ *   - lunr-index.json: A serialized search index.
+ *   - lunr-map.json: Maps index item IDs to their human-readable titles.
  *
  * @see https://lunrjs.com/guides/index_prebuilding.html
  */
@@ -68,7 +68,7 @@ buildIndex(htmlSrc, (err, filenames) => {
     if (title.length) {
       pages.push({
         id: filename.slice(htmlSrc.length),
-        h1: title,
+        h1: title.trim(),
         h2: getText($, 'h2'),
         h3: getText($, 'h3'),
       });

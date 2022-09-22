@@ -1,4 +1,8 @@
-# Algolia DocSearch
+# Search
+
+GitLab Docs uses either Algolia DocSearch or Lunr.js as a search backend, depending on where the instance is hosted. The primary production site, docs.gitlab.com, runs Algolia.
+
+## Algolia DocSearch
 
 GitLab is a member of the [Algolia's DocSearch program](https://docsearch.algolia.com/),
 which is a free tier of [Algolia](https://www.algolia.com/). We use
@@ -8,7 +12,7 @@ Algolia [crawls](#configure-the-algolia-crawler) our documentation, pushes the c
 [index](https://www.algolia.com/doc/guides/sending-and-managing-data/manage-your-indices/),
 and DocSearch provides a dropdown search experience on our website.
 
-## DocSearch implementation details
+### DocSearch implementation details
 
 DocSearch layouts are defined in various places:
 
@@ -22,14 +26,14 @@ and an index name that are needed for Algolia to show the results:
 - Dedicated search page under `/search`: [`content/frontend/search/index.js`](../content/frontend/search/index.js)
 - Every other page: [`content/frontend/search/docsearch.js`](../content/frontend/search/docsearch.js)
 
-## Override DocSearch CSS
+### Override DocSearch CSS
 
 DocSearch defines its various classes starting with `DocSearch-`. To override those,
 there's one file to edit:
 
 - [`content/assets/stylesheets/_docsearch.scss`](../content/assets/stylesheets/_docsearch.scss)
 
-## Navigate Algolia as a GitLab member
+### Navigate Algolia as a GitLab member
 
 GitLab members can access Algolia's dashboard with the credentials that are
 stored in 1Password (search for Algolia). After you log in, you can visit:
@@ -37,7 +41,7 @@ stored in 1Password (search for Algolia). After you log in, you can visit:
 - The index dashboard
 - The Algolia crawler
 
-### Browse the index dashboard
+#### Browse the index dashboard
 
 The [index dashboard](https://www.algolia.com/apps/3PNCFOU757/analytics/overview/gitlab)
 provides information about the data that Algolia has extracted from the docs site.
@@ -47,7 +51,7 @@ Useful information:
 - [Sorting](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/)
 - [Custom ranking](https://www.algolia.com/doc/guides/managing-results/must-do/custom-ranking/)
 
-### Configure the Algolia crawler
+#### Configure the Algolia crawler
 
 An Algolia crawler does three things:
 
@@ -74,7 +78,7 @@ Read more about the crawler:
   - Watch this [short video](https://www.youtube.com/watch?v=w84K1cbUbmY) that
     explains what a crawler is and how it works.
 
-### Analytics and weekly reports of the search usage
+#### Analytics and weekly reports of the search usage
 
 You can view the search usage in the
 [analytics dashboard](https://www.algolia.com/apps/3PNCFOU757/analytics/overview/gitlab).
@@ -83,7 +87,7 @@ If you want to receive weekly reports of the search usage, open a new
 [access request](https://about.gitlab.com/handbook/engineering/#access-requests)
 issue and ask that your email is added to the DocSearch alias (the same email as found in 1Password).
 
-## Testing Algolia configuration changes
+### Testing Algolia configuration changes
 
 In order to test configuration changes without impacting docs.gitlab.com, you can create an additional
 crawler via the [Algolia dashboard](https://crawler.algolia.com/admin/crawlers?sort=status&order=ASC&limit=20).
@@ -99,3 +103,29 @@ To use a test index from a review app or locally, update the `apiKey` and `index
 - [InstantSearch config](../content/frontend/search/index.js) (dedicated search page).
 
 You can find the API key under **Crawler > Settings** on the Algolia dashboard. This is a public, read-only key, so you can use it in merge requests.
+
+## Lunr.js Search
+
+Lunr.js is available as an alternative search backend for self-hosted GitLab Docs installations. Lunr search can also be used in offline or air-gapped environments. Lunr search requires an additional build step to create a search index.
+
+Documentation review apps use Lunr search by default.
+
+### Manually generate the Lunr search index
+
+1. `yarn install`
+1. `nanoc compile`
+1. `make build-lunr-index`
+
+Note that compiling the site will remove the index files, so if you recompile the site, you'll need to run the `make` command after to regenerate the required files.
+
+## Toggle the search backend
+
+Production always runs Algolia, but you can build the site with Lunr either locally or in a review app.
+
+### Local environment
+
+You can compile your local Nanoc site to use a specific search backend by setting the `ALGOLIA_SEARCH` environment variable.
+
+- Use Algolia search: `export ALGOLIA_SEARCH="true"` (or leave this undefined)
+- Use Lunr search: `export ALGOLIA_SEARCH="false"`
+- If you do not set this variable before compiling, the build will default to Algolia.

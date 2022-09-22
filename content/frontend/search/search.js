@@ -27,7 +27,10 @@ export const getAlgoliaCredentials = (crawler = 'production') => {
 
 export const getDocsVersion = () => {
   let docsVersion = 'main';
-  if (document.querySelector('meta[name="docsearch:version"]').content.length > 0) {
+  if (
+    document.querySelector('meta[name="docsearch:version"]') &&
+    document.querySelector('meta[name="docsearch:version"]').content.length
+  ) {
     docsVersion = document.querySelector('meta[name="docsearch:version"]').content;
   }
   return docsVersion;
