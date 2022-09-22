@@ -8,12 +8,14 @@ searchbar: false
     <img src="<%= @items['/assets/images/error-404.svg'].path %>" alt="404"/>
     <div id="js-error-message"></div>
     <br>
+    <% if @config[:algolia] == "true" %>
     <div class="card search w-100 text-center">
       <div class="card-body">
         <h3 class="card-title mb-4">Search the docs</h3>
         <div id="docsearch" class="mb-3 d-flex justify-content-center"></div>
       </div>
     </div>
+    <% end %>
     <div class="d-flex justify-content-center my-4">
       <a href="javascript:history.back()" class="btn btn-outline-primary">
         <%= icon('arrow-left') %>

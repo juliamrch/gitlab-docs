@@ -39,6 +39,9 @@ preprocess do
       item[:title_badge] = badges_filter.run_from_markdown(raw_title.match(BadgesFilter::BADGES_MARKDOWN_PATTERN).to_s)
     end
   end
+
+  config[:algolia] = ENV['ALGOLIA_SEARCH'] || 'true'
+
 end
 
 compile '/404.*' do

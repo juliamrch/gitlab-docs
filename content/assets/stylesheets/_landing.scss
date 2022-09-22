@@ -1,5 +1,5 @@
 ---
-version: 12
+version: 13
 ---
 
 @import 'variables';
@@ -163,7 +163,7 @@ version: 12
       color: $gds-purple-900;
     }
 
-    .btn {
+    .btn:not(.gl-search-box-by-click-clear-button, .gl-search-box-by-click-search-button) {
       color: $gds-white;
       background: $landing-gl-purple-500;
       border: 1px solid $landing-gl-purple-600;
@@ -174,6 +174,16 @@ version: 12
       &:hover {
         color: $landing-gl-purple-500;
         background: $gds-white;
+      }
+    }
+
+    .lunr-search {
+      margin-bottom: 2em;
+      .btn:not(.gl-search-box-by-click-clear-button) {
+        background: $landing-gl-purple-500;
+      }
+      svg {
+        fill: $gds-white;
       }
     }
   }

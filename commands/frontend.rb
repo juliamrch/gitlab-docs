@@ -34,6 +34,13 @@ run do |opts, args, cmd|
   gl_ui_dest = 'public/frontend/shared'
 
   Dir.children(gl_ui_src).each do |filename|
-    puts "Copied #{gl_ui_src}/#{filename}" if filename.include?("map") && File.write("#{gl_ui_dest}/#{filename}", File.read("#{root}/#{gl_ui_src}/#{filename}"))
+    puts "- Copied #{gl_ui_src}/#{filename}" if filename.include?("map") && File.write("#{gl_ui_dest}/#{filename}", File.read("#{root}/#{gl_ui_src}/#{filename}"))
   end
+
+  if ENV['ALGOLIA_SEARCH'] == "false"
+    lunr_src = "node_modules/lunr/lunr.min.js"
+    puts 'Copying Lunr.js...'
+    puts "- Copied #{lunr_src}" if File.write('public/assets/javascripts/lunr.min.js', File.read("#{root}/#{lunr_src}"))
+  end
+
 end

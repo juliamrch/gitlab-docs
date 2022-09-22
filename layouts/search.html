@@ -3,7 +3,13 @@
   <head>
     <%= render '/head.*' %>
     <link rel="canonical" href="<%= @config[:base_url] %>/search/">
+    <% if @config[:algolia] == "true" %>
     <link rel="stylesheet" href="/frontend/search/instantsearch.css">
+    <script src="<%= @items['/frontend/search/instantsearch.*'].path %>"></script>
+    <% else %>
+    <script src="/assets/javascripts/lunr.min.js"></script>
+    <script src="<%= @items['/frontend/search/lunrsearch.*'].path %>"></script>
+    <% end %>
   </head>
   <body>
     <%= render '/gtm.*' %>
@@ -12,7 +18,11 @@
       <div class="row">
         <div class="col-12 mt-5">
           <div class="main class pl-lg-4">
+            <% if @config[:algolia] == "true" %>
             <div class="js-instantsearch"></div>
+            <% else %>
+            <div class="js-lunrsearch"></div>
+            <% end %>
             <%= render '/footer.*' %>
           </div>
         </div>
@@ -20,7 +30,6 @@
     </section>
     <script src="<%= @items['/frontend/shared/global_imports.*'].path %>"></script>
     <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
-    <script src="<%= @items['/frontend/search/instantsearch.*'].path %>"></script>
 
     <% if production? %>
     <%# Add analytics only in production %>
