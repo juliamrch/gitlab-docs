@@ -513,7 +513,7 @@ h6[id]::before {
 // external link and footer social links
 [href^='http://'],
 [href^='https://'] {
-  &:not([href*='gitlab.com']):not(.gitlab-social):not(.no-attachment-icon) {
+  &:not([href*='gitlab.com']):not([href*='nip.io']):not(.gitlab-social):not(.no-attachment-icon) {
     &::after {
       content: '\f08e';
       font-family: FontAwesome, sans-serif;

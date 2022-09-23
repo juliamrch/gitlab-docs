@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+use_helper Nanoc::Helpers::AlgoliaRank
 use_helper Nanoc::Helpers::EditOnGitLab
 use_helper Nanoc::Helpers::Generic
 use_helper Nanoc::Helpers::GitLabKramdown
