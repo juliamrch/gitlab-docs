@@ -24,6 +24,8 @@
 <% else %>
 <meta name="docsearch:version" content="<%= ENV['CI_DEFAULT_BRANCH'] %>" />
 <% end %>
+<meta name="docsearch:pageRank" content="<%= algolia_rank(@item).to_s %>" />
+<meta name="docsearch:level" content="<%= algolia_level(@item).to_s %>" />
 <link crossorigin href="https://3PNCFOU757-dsn.algolia.net" rel="preconnect" />
 <!-- Algolia Searching from the URL bar https://www.algolia.com/doc/tutorials/search-ui/ux-patterns/search-from-the-url-bar/ -->
 <link href='/opensearch.xml' rel='search' title='Search through GitLab Docs' type='application/opensearchdescription+xml'>
