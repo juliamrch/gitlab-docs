@@ -188,3 +188,54 @@ to the `asdf` version instead of the system version.
    which ruby
    ruby --version
    ```
+
+### `Address already in use - bind(2) for 127.0.0.1:3000`
+
+You can encounter this error if you run `make view` whilst running the [GitLab Development Kit (GDK)](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/index.md) server on the same port, which is `3000` in this example.
+
+To resolve this error,
+[configure GDK](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/configuration.md#notable-settings)
+to use another port, for example, `3001`:
+
+1. In your local `gitlab-development-kit` repository, add the following line to `gdk.yml`:
+
+   ```yaml
+   port: 3001
+   ```
+
+1. Reconfigure GDK by running:
+
+   ```plaintext
+   gdk reconfigure
+   ```
+
+1. In your local `gitlab-docs` repository, run:
+
+   ```plaintext
+   make view
+   ```
+
+For a temporary solution, stop the GDK server before running `make view`.
+
+1. In your local `gitlab-development-kit` repository:
+   1. Run `gdk stop` to stop the GDK services.
+   1. Run `gdk status` to check if the GDK services are now down. If this is the case, the output is similar to:
+
+   ```shell
+   down: /Users/<username>/Documents/gitlab-development-kit/services/gitlab-docs: 44s; run: log: (pid 15870) 44s
+   down: /Users/<username>/Documents/gitlab-development-kit/services/gitlab-workhorse: 44s; run: log: (pid 15864) 44s
+   down: /Users/<username>/Documents/gitlab-development-kit/services/postgresql: 44s; run: log: (pid 15862) 44s
+   down: /Users/<username>/Documents/gitlab-development-kit/services/praefect: 44s; run: log: (pid 15863) 44s
+   down: /Users/<username>/Documents/gitlab-development-kit/services/praefect-gitaly-0: 44s; run: log: (pid 15861) 44s
+   down: /Users/<username>/Documents/gitlab-development-kit/services/rails-background-jobs: 44s; run: log: (pid 15869) 44s
+   down: /Users/<username>/Documents/gitlab-development-kit/services/rails-web: 44s; run: log: (pid 15865) 44s
+   down: /Users/<username>/Documents/gitlab-development-kit/services/redis: 44s; run: log: (pid 15868) 44s
+   down: /Users/<username>/Documents/gitlab-development-kit/services/sshd: 44s; run: log: (pid 15867) 44s
+   down: /Users/<username>/Documents/gitlab-development-kit/services/webpack: 44s; run: log: (pid 15866) 44s
+   ```
+
+1. In your local `gitlab-docs` repository, run:
+
+   ```plaintext
+   make view
+   ```
