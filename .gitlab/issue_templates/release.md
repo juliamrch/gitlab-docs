@@ -30,11 +30,12 @@ After release post is live on the 22nd, or the next Monday morning if the releas
    has passed and created a [Docker image](https://gitlab.com/gitlab-org/gitlab-docs/container_registry/631635?orderBy=NAME&sort=desc&search[]=)
    tagged the release version. ([If it fails, how do I fix it?](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-latest-job-fails-due-to-broken-links))
 1. Deploy the versions:
+   1. [ ] Merge the docs release merge request.
    1. [ ] Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)
       and run the `Build Docker images weekly` pipeline.
    1. [ ] In the scheduled pipeline you just started, cancel the pipeline, and manually run the `image:docs-latest`
       job that builds the `:latest` Docker image.
-   1. [ ] When the job is complete, merge the docs release merge request.
+   1. [ ] When the job is complete, run the `Build docs.gitlab.com every hour` scheduled pipeline.
 1. [ ] After the deployment completes, open `docs.gitlab.com` in a browser. Confirm
    both the latest version and the correct pre-release version are listed in the documentation version dropdown.
 1. [ ] Check all published versions of the docs to ensure they are visible and that their version menus have the latest versions.
