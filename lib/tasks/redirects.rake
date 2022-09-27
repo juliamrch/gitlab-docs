@@ -28,7 +28,7 @@ end
 namespace :docs do
   desc 'GitLab | Docs | Clean up old redirects'
   task :clean_redirects do
-    source_dir = File.expand_path(__dir__)
+    source_dir = File.expand_path('../../', __dir__)
     redirects_yaml = "#{source_dir}/content/_data/redirects.yaml"
     today = Time.now.utc.to_date
     mr_title = "Clean up docs redirects - #{today}"
