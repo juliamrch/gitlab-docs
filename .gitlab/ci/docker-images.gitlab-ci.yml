@@ -232,22 +232,14 @@ test:image:docs-single:
   stage: test
   variables:
     DOCKERFILE: dockerfiles/single.Dockerfile
-    MAJOR_VERSION_GITLAB: '15'
-    MINOR_VERSION_GITLAB: '0'
-    MAJOR_VERSION_CHARTS: '6'
-    MINOR_VERSION_CHARTS: '0'
+    GITLAB_VERSION: '15.3'
   needs: []
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       changes:
         - $DOCKERFILE
   script:
-    # Update template with version numbers
-    - sed -i "s/X\.Y/${MAJOR_VERSION_GITLAB}\.${MINOR_VERSION_GITLAB}/" $DOCKERFILE
-    - sed -i "s/X-Y/${MAJOR_VERSION_GITLAB}-${MINOR_VERSION_GITLAB}/" $DOCKERFILE
-    - sed -i "s/W-Z/${MAJOR_VERSION_CHARTS}-${MINOR_VERSION_CHARTS}/" $DOCKERFILE
-    # Build the image
-    - docker build --file $DOCKERFILE .
+    - docker build --file $DOCKERFILE --build-arg VER=${GITLAB_VERSION} .
 
 #
 # Build master containing the online archives and latest docs (on schedules)
