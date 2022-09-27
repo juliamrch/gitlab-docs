@@ -33,7 +33,7 @@ namespace :release do
     # Create branch
     `git checkout -b #{version}`
 
-    # Replace the branches variables in Dockerfile.X.Y
+    # Set version variable in X.Y.Dockerfile
     dockerfile = "#{version}.Dockerfile"
 
     if File.exist?(dockerfile)
@@ -41,28 +41,23 @@ namespace :release do
     end
 
     content = File.read('dockerfiles/single.Dockerfile')
-    content.gsub!('X.Y', version)
-    content.gsub!('X-Y', version.tr('.', '-'))
-    content.gsub!('W-Z', task_helpers.chart_version(version).tr('.', '-'))
+    content.gsub!('ARG VER', "ARG VER=#{version}")
 
     File.open(dockerfile, 'w') do |post|
       post.puts content
     end
 
-    # Replace the branches variables in .gitlab-ci.yml
-    ci_yaml = ".gitlab-ci.yml"
+    # Update GitLab version variable in .gitlab/ci/docker-images.gitlab-ci.yml
+    ci_yaml = ".gitlab/ci/docker-images.gitlab-ci.yml"
     ci_yaml_content = File.read(ci_yaml)
-    ci_yaml_content.gsub!("BRANCH_EE: 'master'", "BRANCH_EE: '#{version.tr('.', '-')}-stable-ee'")
-    ci_yaml_content.gsub!("BRANCH_OMNIBUS: 'master'", "BRANCH_OMNIBUS: '#{version.tr('.', '-')}-stable'")
-    ci_yaml_content.gsub!("BRANCH_RUNNER: 'main'", "BRANCH_RUNNER: '#{version.tr('.', '-')}-stable'")
-    ci_yaml_content.gsub!("BRANCH_CHARTS: 'master'", "BRANCH_CHARTS: '#{task_helpers.chart_version(version).tr('.', '-')}-stable'")
+    ci_yaml_content.gsub!(/GITLAB_VERSION: \S+/, "GITLAB_VERSION: '#{version}'")
 
     File.open(ci_yaml, 'w') do |post|
       post.puts ci_yaml_content
     end
 
     # Add and commit
-    `git add .gitlab-ci.yml #{version}.Dockerfile`
+    `git add .gitlab/ci/docker-images.gitlab-ci.yml #{version}.Dockerfile`
     `git commit -m 'Release cut #{version}'`
 
     puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Created new Dockerfile:#{TaskHelpers::COLOR_CODE_RESET} #{dockerfile}."

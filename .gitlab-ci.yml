@@ -18,15 +18,7 @@ stages:
   - deploy
   - post-deploy
 
-#
-# Pick the remote branch, by default master (see the Rakefile for more info)
-#
 variables:
-  BRANCH_EE: 'master'
-  BRANCH_OMNIBUS: 'master'
-  BRANCH_RUNNER: 'main'
-  BRANCH_CHARTS: 'master'
-  BRANCH_OPERATOR: 'master'
   BUNDLE_PATH__SYSTEM: 'false'
   GIT_DEPTH: '20'
   ALPINE_VERSION: '3.16'
