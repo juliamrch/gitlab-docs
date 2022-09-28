@@ -4,12 +4,12 @@
 
 export const algoliaAccounts = {
   production: {
-    apiKey: '89b85ffae982a7f1adeeed4a90bb0ab1',
+    apiKey: 'eef4ee4af5ab6b0d76d1a2f9fc4fab58',
     appId: '3PNCFOU757',
     index: 'gitlab_production',
   },
   testing: {
-    apiKey: '181a86cec565045e1851b68cd9b4a7d3',
+    apiKey: 'eef4ee4af5ab6b0d76d1a2f9fc4fab58',
     appId: '3PNCFOU757',
     index: 'gitlab_testing',
   },
