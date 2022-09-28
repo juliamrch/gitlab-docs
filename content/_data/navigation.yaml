@@ -2644,6 +2644,8 @@ sections:
                 doc_url: 'ee/development/gemfile.html'
               - doc_title: SCSS style guide
                 doc_url: 'ee/development/fe_guide/style/scss.html'
+              - doc_title: Secure coding guidelines
+                doc_url: 'ee/development/secure_coding_guidelines.html'
               - doc_title: Shell scripting standards and style guidelines
                 doc_url: 'ee/development/shell_scripting_guide/'
               - doc_title: Vue style guide
