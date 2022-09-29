@@ -492,3 +492,165 @@ redirects:
   - from: /ee/gitlab-basics/create-branch.html
     to: /ee/tutorials/make_your_first_git_commit.html
     remove_date: 2023-03-26
+  - from: /ee/install/digitaloceandocker.html
+    to: /ee/install/docker.html
+    remove_date: 2023-05-29
+  - from: /ee/development/avoiding_downtime_in_migrations.html
+    to: /ee/development/database/avoiding_downtime_in_migrations.html
+    remove_date: 2023-04-08
+  - from: /ee/development/post_deployment_migrations.html
+    to: /ee/development/database/post_deployment_migrations.html
+    remove_date: 2023-04-08
+  - from: /ee/development/deleting_migrations.html
+    to: /ee/development/database/deleting_migrations.html
+    remove_date: 2023-04-08
+  - from: /ee/development/background_migrations.html
+    to: /ee/development/database/background_migrations.html
+    remove_date: 2023-04-08
+  - from: /ee/development/uploads/implementation.html
+    to: /ee/development/uploads/index.html
+    remove_date: 2023-04-25
+  - from: /ee/development/uploads/background.html
+    to: /ee/development/uploads/index.html
+    remove_date: 2023-04-25
+  - from: /ee/development/experiment_guide/gitlab_experiment.html
+    to: /ee/development/experiment_guide/index.html
+    remove_date: 2023-05-05
+  - from: /ee/development/appsec/index.html
+    to: /ee/development/index.html
+    remove_date: 2023-06-23
+  - from: /ee/development/appsec/
+    to: /ee/development/index.html
+    remove_date: 2023-06-23
+  - from: /ee/development/batched_background_migrations.html
+    to: /ee/development/database/batched_background_migrations.html
+    remove_date: 2023-04-26
+  - from: /ee/development/packages.html
+    to: /ee/development/packages/index.html
+    remove_date: 2023-05-19
+  - from: /ee/ci/cloud_deployment/ecs/quick_start_guide.html
+    to: /ee/ci/cloud_deployment/ecs/deploy_to_aws_ecs.html
+    remove_date: 2023-06-18
+  - from: /ee/ci/unit_test_reports.html
+    to: /ee/ci/testing/unit_test_reports.html
+    remove_date: 2023-05-31
+  - from: /ee/ci/metrics_reports.html
+    to: /ee/ci/testing/metrics_reports.html
+    remove_date: 2023-05-31
+  - from: /ee/integration/elasticsearch.html
+    to: /ee/integration/advanced_search/elasticsearch.html
+    remove_date: 2023-06-13
+  - from: /ee/user/clusters/crossplane.html
+    to: /ee/update/removals.html#managed-cluster-applicationsgitlab-ciyml
+    remove_date: 2023-05-22
+  - from: /ee/user/clusters/agent/repository.html
+    to: /ee/user/clusters/agent/work_with_agent.html
+    remove_date: 2023-04-19
+  - from: /ee/user/clusters/agent/ci_cd_tunnel.html
+    to: /ee/user/clusters/agent/ci_cd_workflow.html
+    remove_date: 2023-04-20
+  - from: /ee/user/clusters/applications.html
+    to: /ee/update/removals.html#managed-cluster-applicationsgitlab-ciyml
+    remove_date: 2023-05-22
+  - from: /ee/user/application_security/cluster_image_scanning/index.html
+    to: /ee/user/clusters/agent/vulnerabilities.html
+    remove_date: 2023-05-19
+  - from: /ee/user/application_security/cluster_image_scanning/
+    to: /ee/user/clusters/agent/vulnerabilities.html
+    remove_date: 2023-05-19
+  - from: /ee/user/project/static_site_editor/index.html
+    to: /ee/user/project/web_ide/index.html
+    remove_date: 2023-05-03
+  - from: /ee/user/project/static_site_editor/
+    to: /ee/user/project/web_ide/index.html
+    remove_date: 2023-05-03
+  - from: /ee/user/project/clusters/serverless/index.html
+    to: /ee/update/removals.html#gitlab-serverless
+    remove_date: 2023-05-22
+  - from: /ee/user/project/clusters/serverless/
+    to: /ee/update/removals.html#gitlab-serverless
+    remove_date: 2023-05-22
+  - from: /ee/user/project/clusters/serverless/aws.html
+    to: /ee/update/removals.html#gitlab-serverless
+    remove_date: 2023-05-22
+  - from: /ee/user/project/merge_requests/code_quality.html
+    to: /ee/ci/testing/code_quality.html
+    remove_date: 2023-05-31
+  - from: /ee/user/project/merge_requests/fast_forward_merge.html
+    to: /ee/user/project/merge_requests/methods/index.html
+    remove_date: 2023-05-09
+  - from: /ee/user/project/merge_requests/accessibility_testing.html
+    to: /ee/ci/testing/accessibility_testing.html
+    remove_date: 2023-05-31
+  - from: /ee/user/project/merge_requests/test_coverage_visualization.html
+    to: /ee/ci/testing/test_coverage_visualization.html
+    remove_date: 2023-05-31
+  - from: /ee/user/project/merge_requests/fail_fast_testing.html
+    to: /ee/ci/testing/fail_fast_testing.html
+    remove_date: 2023-05-31
+  - from: /ee/user/project/merge_requests/load_performance_testing.html
+    to: /ee/ci/testing/load_performance_testing.html
+    remove_date: 2023-05-31
+  - from: /ee/user/project/merge_requests/testing_and_reports_in_merge_requests.html
+    to: /ee/ci/testing/index.html
+    remove_date: 2023-05-31
+  - from: /ee/user/project/merge_requests/browser_performance_testing.html
+    to: /ee/ci/testing/browser_performance_testing.html
+    remove_date: 2023-05-31
+  - from: /ee/user/project/integrations/overview.html
+    to: /ee/user/project/integrations/index.html
+    remove_date: 2023-04-20
+  - from: /ee/user/infrastructure/clusters/manage/management_project_applications/elasticstack.html
+    to: /ee/user/infrastructure/clusters/index.html
+    remove_date: 2023-05-22
+  - from: /ee/gitlab-basics/index.html
+    to: /ee/user/index.html
+    remove_date: 2023-04-08
+  - from: /ee/gitlab-basics/
+    to: /ee/user/index.html
+    remove_date: 2023-04-08
+  - from: /ee/administration/gitaly/faq.html
+    to: /ee/administration/gitaly/index.html
+    remove_date: 2023-05-24
+  - from: /ee/administration/pseudonymizer.html
+    to: /ee/administration/index.html
+    remove_date: 2023-05-22
+  - from: /ee/administration/monitoring/ip_whitelist.html
+    to: /ee/administration/monitoring/ip_allowlist.html
+    remove_date: 2023-05-31
+  - from: /ee/administration/monitoring/prometheus/puma_exporter.html
+    to: /ee/administration/monitoring/prometheus/web_exporter.html
+    remove_date: 2023-06-01
+  - from: /ee/administration/monitoring/performance/request_profiling.html
+    to: /ee/administration/monitoring/performance/index.html
+    remove_date: 2023-04-26
+  - from: /ee/topics/autodevops/quick_start_guide.html
+    to: /ee/topics/autodevops/cloud_deployments/auto_devops_with_gke.html
+    remove_date: 2023-06-18
+  - from: /omnibus/docker/README.html
+    to: /ee/install/docker.html
+    remove_date: 2023-03-28
+  - from: /omnibus/docker/index.html
+    to: /ee/install/docker.html
+    remove_date: 2023-03-28
+  - from: /omnibus/docker/
+    to: /ee/install/docker.html
+    remove_date: 2023-03-28
+  - from: /omnibus/update/README.html
+    to: /ee/update/package/
+    remove_date: 2023-06-14
+  - from: /omnibus/update/index.html
+    to: /ee/update/package/
+    remove_date: 2023-06-14
+  - from: /omnibus/update/
+    to: /ee/update/package/
+    remove_date: 2023-06-14
+  - from: /omnibus/manual_install.html
+    to: /ee/update/package/#upgrade-using-a-manually-downloaded-package
+    remove_date: 2023-06-15
+  - from: /runner/configuration/configuring_runner_openshift.html
+    to: /runner/configuration/configuring_runner_operator.html
+    remove_date: 2023-03-30
+  - from: /runner/install/openshift.html
+    to: /runner/install/operator.html
+    remove_date: 2023-03-29
