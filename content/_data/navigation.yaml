@@ -186,7 +186,7 @@ sections:
                 docs:
                   - doc_title: Globals
                     doc_url: 'charts/charts/globals.html'
-                  - doc_title: GitLab sub-charts
+                  - doc_title: GitLab subcharts
                     doc_url: 'charts/charts/gitlab/'
                     docs:
                       - doc_title: Gitaly chart
@@ -203,12 +203,16 @@ sections:
                         doc_url: 'charts/charts/gitlab/gitlab-shell/'
                       - doc_title: KAS chart
                         doc_url: 'charts/charts/gitlab/kas/'
+                      - doc_title: Mailroom chart
+                        doc_url: 'charts/charts/gitlab/mailroom/'
                       - doc_title: Migrations chart
                         doc_url: 'charts/charts/gitlab/migrations/'
                       - doc_title: Praefect chart
                         doc_url: 'charts/charts/gitlab/praefect/'
                       - doc_title: Sidekiq chart
                         doc_url: 'charts/charts/gitlab/sidekiq/'
+                      - doc_title: Spamcheck chart
+                        doc_url: 'charts/charts/gitlab/spamcheck/'
                       - doc_title: Toolbox chart
                         doc_url: 'charts/charts/gitlab/toolbox/'
                       - doc_title: Webservice chart
