@@ -181,6 +181,9 @@ sections:
                         doc_url: 'charts/installation/cloud/oke.html'
                   - doc_title: Deploy the Helm chart
                     doc_url: 'charts/installation/deployment.html'
+                    docs:
+                      - doc_title: Deployment options
+                        doc_url: 'charts/installation/command-line-options.html'
               - doc_title: Configure
                 doc_url: 'charts/charts/'
                 docs:
