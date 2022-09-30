@@ -2738,6 +2738,8 @@ sections:
                     doc_url: 'ee/development/database/query_recorder.html'
                   - doc_title: SQL guidelines
                     doc_url: 'ee/development/sql.html'
+                  - doc_title: Strings and the Text data type
+                    doc_url: 'ee/development/database/strings_and_the_text_data_type.html'
                   - doc_title: Swapping tables
                     doc_url: 'ee/development/database/swapping_tables.html'
                   - doc_title: Table partitioning
