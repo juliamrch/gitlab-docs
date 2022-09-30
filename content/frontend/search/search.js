@@ -6,7 +6,7 @@ export const algoliaAccounts = {
   production: {
     apiKey: 'eef4ee4af5ab6b0d76d1a2f9fc4fab58',
     appId: '3PNCFOU757',
-    index: 'gitlab_production',
+    index: 'gitlab',
   },
   testing: {
     apiKey: 'eef4ee4af5ab6b0d76d1a2f9fc4fab58',
