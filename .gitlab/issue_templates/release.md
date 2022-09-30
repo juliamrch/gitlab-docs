@@ -12,9 +12,33 @@ Documentation [for handling the docs release](https://gitlab.com/gitlab-org/gitl
    ([Need help finding the MR?](https://gitlab.com/gitlab-com/www-gitlab-com/-/merge_requests?scope=all&state=opened&label_name%5B%5D=release%20post&label_name%5B%5D=blog%20post))
 1. [ ] Monitor the `#releases` Slack channel. When the announcement
    `This is the candidate commit to be released on the 22nd` is made, it's time to begin.
-1. [ ] [Create a stable branch and Docker image for release](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#create-stable-branch-and-docker-image-for-release). Do not create a merge request, just push the stable branch.
-   You can expect the `image:docs-single` job to fail initially because often not all stable branches are created yet. Some of the stable
-   branches are created close to the 22nd, which will resolve most issues when you follow the rest of the steps.
+1. [ ] [Create a stable branch and Docker image for release](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#create-stable-branch-and-docker-image-for-release):
+
+   1. [ ] In the root path of the `gitlab-docs` repository, update your local clone:
+
+      ```shell
+      make update
+      ```
+
+   1. [ ] Run the Rake task to create the single version. For example, to create the 15.0 release branch
+      and perform other tasks:
+
+      ```shell
+      ./bin/rake "release:single[15.0]"
+      ```
+
+      A branch for the release is created, a new `15.0.Dockerfile` is created, and `.gitlab-ci.yml`
+      has branches variables updated into a new branch. These files are automatically committed.
+
+   1. [ ] Push the newly created branch, but **don't create a merge request**.
+
+      After you push, the `image:docs-single` job creates a new Docker image tagged with the name of
+      the branch you created earlier. Go to the `registry` environment at
+      <https://gitlab.com/gitlab-org/gitlab-docs/-/environments/folders/registry> and confirm the image
+      is listed.
+      The `image:docs-single` might fail initially because often not all stable branches are created yet. Some of the stable
+      branches are created close to the 22nd, which will resolve most issues when you follow the rest of the steps.
+
 1. [ ] [Create a docs.gitlab.com release merge request](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#create-release-merge-request)
    which updates the version dropdown menu for all online versions, updates the archives list, and adds
    the release to the Docker configuration.
