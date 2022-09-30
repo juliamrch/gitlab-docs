@@ -31,7 +31,6 @@ namespace :docs do
     source_dir = File.expand_path('../../', __dir__)
     redirects_yaml = "#{source_dir}/content/_data/redirects.yaml"
     today = Time.now.utc.to_date
-    mr_title = "Clean up docs redirects - #{today}"
     mr_description = "Monthly cleanup of docs redirects.</br><p>See https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks</p></br></hr></br><p>_Created automatically: https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/raketasks.md#clean-up-redirects_</p>"
     redirects_branch = "docs-clean-redirects-#{today}"
     commit_message = "Update docs redirects #{today}"
@@ -83,6 +82,7 @@ namespace :docs do
       default_branch = task_helpers.default_branch(product['repo'])
       origin_default_branch = "origin/#{default_branch}"
       slug = product['slug']
+      mr_title = "Clean up docs redirects, #{slug} - #{today}"
       counter = 0
 
       Dir.chdir(content_dir)
@@ -171,7 +171,7 @@ namespace :docs do
       system("git", "add", ".")
       system("git", "commit", "--quiet", "-m", commit_message)
 
-      `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement" -o merge_request.label="type::maintenance"` \
+      `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement" -o merge_request.label="type::maintenance" -o merge_request.label="maintenance::refactor"` \
         if ENV['SKIP_MR'].nil?
 
       Dir.chdir(source_dir)
@@ -191,7 +191,7 @@ namespace :docs do
     system("git", "add", redirects_yaml)
     system("git", "commit", "--quiet", "-m", commit_message)
 
-    `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs Site" -o merge_request.label="type::maintenance"` \
+    `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs Site" -o merge_request.label="type::maintenance" -o merge_request.label="maintenance::refactor"` \
       if ENV['SKIP_MR'].nil?
   end
 end
