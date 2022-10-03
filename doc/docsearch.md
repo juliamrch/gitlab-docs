@@ -78,6 +78,244 @@ Read more about the crawler:
   - Watch this [short video](https://www.youtube.com/watch?v=w84K1cbUbmY) that
     explains what a crawler is and how it works.
 
+#### Crawler and index settings configuration
+
+The current crawler configuration can be found at the
+[Algolia crawler dashboard](https://crawler.algolia.com/admin/crawlers/d46abdc0-bb41-4d50-95b7-a3e1fe6469a4/configuration/edit).
+
+Make sure to keep the following snippet updated with that we use in production:
+
+```js
+new Crawler({
+  appId: "3PNCFOU757",
+  apiKey: "<do-not-expose-this-here>",
+  rateLimit: 8,
+  startUrls: ["https://docs.gitlab.com/"],
+  renderJavaScript: true,
+  sitemaps: ["https://docs.gitlab.com/sitemap.xml"],
+  exclusionPatterns: ["**/index.html", "**/**README.html"],
+  ignoreCanonicalTo: true,
+  ignoreNoIndex: true,
+  discoveryPatterns: ["https://docs.gitlab.com/**"],
+  schedule: "every 1 day at 3:00 pm",
+  actions: [
+    {
+      indexName: "gitlab",
+      pathsToMatch: ["https://docs.gitlab.com/**"],
+      recordExtractor: ({ $, helpers }) => {
+        // Stop if one of those text is found in the DOM.
+        const body = $.text();
+        const toCheck = ["This document was moved to"];
+        const shouldStop = toCheck.some((text) => body.includes(text));
+        if (shouldStop) {
+          return [];
+        } // Removing DOM elements we don't want to crawl
+        const toRemove = "#markdown-toc, .badge-trigger";
+        $(toRemove).remove();
+
+        return helpers.docsearch({
+          recordProps: {
+            lvl1: ".article-content h1",
+            content:
+              ".article-content p, .article-content li, .article-content td:last-child, .article-content pre.highlight code",
+            lvl0: {
+              selectors: ".article-content h1",
+              defaultValue: "Documentation",
+            },
+            lvl2: ".article-content h2",
+            lvl3: ".article-content h3",
+            lvl4: ".article-content h4",
+            lvl5: ".article-content h5, .article-content td:first-child",
+          },
+          indexHeadings: true,
+          aggregateContent: true,
+        });
+      },
+    },
+  ],
+  initialIndexSettings: {
+    gitlab: {
+      attributesForFaceting: ["type", "lang", "tags", "version", "language"],
+      attributesToRetrieve: ["hierarchy", "content", "anchor", "url", "tags"],
+      attributesToHighlight: ["hierarchy", "hierarchy_camel", "content"],
+      attributesToSnippet: ["content:10"],
+      camelCaseAttributes: ["hierarchy", "hierarchy_radio", "content"],
+      searchableAttributes: [
+        "unordered(hierarchy_radio_camel.lvl0)",
+        "unordered(hierarchy_radio.lvl0)",
+        "unordered(hierarchy_radio_camel.lvl1)",
+        "unordered(hierarchy_radio.lvl1)",
+        "unordered(hierarchy_radio_camel.lvl2)",
+        "unordered(hierarchy_radio.lvl2)",
+        "unordered(hierarchy_radio_camel.lvl3)",
+        "unordered(hierarchy_radio.lvl3)",
+        "unordered(hierarchy_radio_camel.lvl4)",
+        "unordered(hierarchy_radio.lvl4)",
+        "unordered(hierarchy_radio_camel.lvl5)",
+        "unordered(hierarchy_radio.lvl5)",
+        "unordered(hierarchy_radio_camel.lvl6)",
+        "unordered(hierarchy_radio.lvl6)",
+        "unordered(hierarchy_camel.lvl0)",
+        "unordered(hierarchy.lvl0)",
+        "unordered(hierarchy_camel.lvl1)",
+        "unordered(hierarchy.lvl1)",
+        "unordered(hierarchy_camel.lvl2)",
+        "unordered(hierarchy.lvl2)",
+        "unordered(hierarchy_camel.lvl3)",
+        "unordered(hierarchy.lvl3)",
+        "unordered(hierarchy_camel.lvl4)",
+        "unordered(hierarchy.lvl4)",
+        "unordered(hierarchy_camel.lvl5)",
+        "unordered(hierarchy.lvl5)",
+        "unordered(hierarchy_camel.lvl6)",
+        "unordered(hierarchy.lvl6)",
+        "content",
+      ],
+      distinct: true,
+      attributeForDistinct: "url",
+      customRanking: [
+        "desc(pageRank)",
+        "asc(level)",
+        "desc(weight.level)",
+        "asc(weight.position)",
+      ],
+      ranking: [
+        "words",
+        "filters",
+        "typo",
+        "attribute",
+        "proximity",
+        "exact",
+        "custom",
+      ],
+      highlightPreTag: '<span class="algolia-docsearch-suggestion--highlight">',
+      highlightPostTag: "</span>",
+      minWordSizefor1Typo: 3,
+      minWordSizefor2Typos: 7,
+      allowTyposOnNumericTokens: false,
+      minProximity: 1,
+      ignorePlurals: true,
+      advancedSyntax: true,
+      attributeCriteriaComputedByMinProximity: true,
+      removeWordsIfNoResults: "allOptional",
+      separatorsToIndex: "_",
+    },
+  },
+  indexPrefix: "",
+});
+```
+
+The index settings configuration can be found under the
+[`gitlab` index dashboard](https://www.algolia.com/apps/3PNCFOU757/explorer/browse/gitlab).
+
+Make sure to keep the following snippet updated with that we use in production:
+
+```json
+{
+  "settings": {
+    "minWordSizefor1Typo": 3,
+    "minWordSizefor2Typos": 7,
+    "hitsPerPage": 20,
+    "maxValuesPerFacet": 100,
+    "minProximity": 1,
+    "searchableAttributes": [
+      "unordered(hierarchy_radio_camel.lvl0)",
+      "unordered(hierarchy_radio.lvl0)",
+      "unordered(hierarchy_radio_camel.lvl1)",
+      "unordered(hierarchy_radio.lvl1)",
+      "unordered(hierarchy_radio_camel.lvl2)",
+      "unordered(hierarchy_radio.lvl2)",
+      "unordered(hierarchy_radio_camel.lvl3)",
+      "unordered(hierarchy_radio.lvl3)",
+      "unordered(hierarchy_radio_camel.lvl4)",
+      "unordered(hierarchy_radio.lvl4)",
+      "unordered(hierarchy_radio_camel.lvl5)",
+      "unordered(hierarchy_radio.lvl5)",
+      "unordered(hierarchy_radio_camel.lvl6)",
+      "unordered(hierarchy_radio.lvl6)",
+      "unordered(hierarchy_camel.lvl0)",
+      "unordered(hierarchy.lvl0)",
+      "unordered(hierarchy_camel.lvl1)",
+      "unordered(hierarchy.lvl1)",
+      "unordered(hierarchy_camel.lvl2)",
+      "unordered(hierarchy.lvl2)",
+      "unordered(hierarchy_camel.lvl3)",
+      "unordered(hierarchy.lvl3)",
+      "unordered(hierarchy_camel.lvl4)",
+      "unordered(hierarchy.lvl4)",
+      "unordered(hierarchy_camel.lvl5)",
+      "unordered(hierarchy.lvl5)",
+      "unordered(hierarchy_camel.lvl6)",
+      "unordered(hierarchy.lvl6)",
+      "content"
+    ],
+    "numericAttributesToIndex": null,
+    "attributesToRetrieve": [
+      "hierarchy",
+      "content",
+      "anchor",
+      "url",
+      "tags"
+    ],
+    "allowTyposOnNumericTokens": false,
+    "ignorePlurals": true,
+    "camelCaseAttributes": [
+      "hierarchy",
+      "hierarchy_radio",
+      "content"
+    ],
+    "advancedSyntax": true,
+    "attributeCriteriaComputedByMinProximity": true,
+    "distinct": true,
+    "unretrievableAttributes": null,
+    "optionalWords": null,
+    "attributesForFaceting": [
+      "lang",
+      "language",
+      "tags",
+      "type",
+      "filterOnly(version)"
+    ],
+    "attributesToSnippet": [
+      "content:10"
+    ],
+    "attributesToHighlight": [
+      "hierarchy",
+      "hierarchy_camel",
+      "content"
+    ],
+    "paginationLimitedTo": 1000,
+    "attributeForDistinct": "url",
+    "exactOnSingleWordQuery": "attribute",
+    "ranking": [
+      "typo",
+      "words",
+      "filters",
+      "proximity",
+      "attribute",
+      "exact",
+      "custom"
+    ],
+    "customRanking": [
+      "asc(pageRank)",
+      "asc(level)"
+    ],
+    "separatorsToIndex": "_",
+    "removeWordsIfNoResults": "allOptional",
+    "queryType": "prefixLast",
+    "highlightPreTag": "<span class=\"algolia-docsearch-suggestion--highlight\">",
+    "highlightPostTag": "</span>",
+    "snippetEllipsisText": "",
+    "alternativesAsExact": [
+      "ignorePlurals",
+      "singleWordSynonym"
+    ]
+  },
+  "rules": [],
+  "synonyms": []
+}
+```
+
 #### Analytics and weekly reports of the search usage
 
 You can view the search usage in the
