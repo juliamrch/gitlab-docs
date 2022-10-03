@@ -30,7 +30,7 @@ topics:
   - title: Elasticsearch integration
     description: Enable advanced search by integrating Elasticsearch with GitLab
     icon: search
-    url: /ee/integration/elasticsearch.html
+    url: /ee/integration/advanced_search/elasticsearch.html
   - title: GitLab policies
     description: Review release and maintenance policies, and upgrade recommendations
     icon: documents
