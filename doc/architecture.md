@@ -145,38 +145,6 @@ To build and deploy the site immediately (must have the Maintainer role):
 
 Read more about [documentation deployments](https://docs.gitlab.com/ee/development/documentation/site_architecture/deployment_process.html).
 
-## Using YAML data files
-
-The easiest way to achieve something similar to
-[Jekyll's data files](https://jekyllrb.com/docs/datafiles/) in Nanoc is by
-using the [`@items`](https://nanoc.app/doc/reference/variables/#items-and-layouts)
-variable.
-
-The data file must be placed inside the `content/` directory and then it can
-be referenced in an ERB template.
-
-Suppose we have the `content/_data/versions.yaml` file with the content:
-
-```yaml
-versions:
-  - 10.6
-  - 10.5
-  - 10.4
-```
-
-We can then loop over the `versions` array with something like:
-
-```erb
-<% @items['/_data/versions.yaml'][:versions].each do | version | %>
-
-<h3><%= version %></h3>
-
-<% end &>
-```
-
-Note that the data file must have the `yaml` extension (not `yml`) and that
-we reference the array with a symbol (`:versions`).
-
 ## Archived documentation banner
 
 A banner is displayed on archived documentation pages with the text `This is archived documentation for
