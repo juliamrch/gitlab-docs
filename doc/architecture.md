@@ -150,28 +150,32 @@ Read more about [documentation deployments](https://docs.gitlab.com/ee/developme
 A banner is displayed on archived documentation pages with the text `This is archived documentation for
 GitLab. Go to the latest.` when either:
 
-- The version of the documentation displayed is not the first version entry in `online` in
-  `content/_data/versions.yaml`.
+- The version of the documentation displayed is not the entry for `current` in
+  `content/versions.json`.
 - The documentation was built from the default branch (`main`).
 
-For example, if the `online` entries for `content/_data/versions.yaml` are:
+For example, if the entries for `content/versions.json` are:
 
-```yaml
-online:
-  - "14.4"
-  - "14.3"
-  - "14.2"
+```json
+[
+  {
+    "next": "15.5",
+    "current": "15.4",
+    "last_minor": ["15.3", "15.2"],
+    "last_major": ["14.10", "13.12"]
+  }
+]
 ```
 
 In this case, the archived documentation banner isn't displayed:
 
-- For 14.4, the docs built from the `14.4` branch. The branch name is the first entry in `online`.
-- For 14.5-pre, the docs built from the default project branch (`main`).
+- For 15.4, the docs built from the `15.4` branch. The branch name is the entry in `current`.
+- For 15.5, the docs built from the default project branch (`main`).
 
 The archived documentation banner is displayed:
 
-- For 14.3.
-- For 14.2.
+- For 15.3.
+- For 14.10.
 - For any other version.
 
 ## Bumping versions of CSS and JavaScript

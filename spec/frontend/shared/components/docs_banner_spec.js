@@ -24,7 +24,7 @@ describe('component: Banner', () => {
   });
 
   it('renders a close button', () => {
-    expect(wrapper.exists('.btn-close')).toBe(true);
+    expect(wrapper.exists('[data-testid="close-icon"]')).toBe(true);
   });
 
   it('emits a toggle event on mount', () => {
@@ -32,7 +32,7 @@ describe('component: Banner', () => {
   });
 
   it('emits a toggle event when the close button is clicked', () => {
-    const closeBtn = wrapper.find('.btn-close');
+    const closeBtn = wrapper.find('[data-testid="close-icon"]');
     closeBtn.trigger('click');
     expect(wrapper.emitted('toggle')[1]).toEqual([false]);
   });
