@@ -2699,8 +2699,8 @@ sections:
                     doc_url: 'ee/development/database/adding_database_indexes.html'
                   - doc_title: Avoiding downtime in migrations
                     doc_url: 'ee/development/database/avoiding_downtime_in_migrations.html'
-                  - doc_title: Background migrations
-                    doc_url: 'ee/development/database/background_migrations.html'
+                  - doc_title: Batched background migrations
+                    doc_url: 'ee/development/database/batched_background_migrations.html'
                   - doc_title: Case study - filtering by label
                     doc_url: 'ee/development/database/filtering_by_label.html'
                   - doc_title: Case study - namespaces storage statistics
