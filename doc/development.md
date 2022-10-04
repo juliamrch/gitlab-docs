@@ -207,16 +207,26 @@ To add an additional set of product documentation to <https://docs.gitlab.com> f
    that takes care of that. Otherwise, if the product doesn't have a stable
    branch at all, you can omit this and the default branch will be always pulled.
 
-1. Edit [`.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/.gitlab-ci.yml#L30-34) and set the default branch variable for the new product. For example:
+1. Edit ['lib/edit_on_gitlab.rb'](../lib/edit_on_gitlab.rb) and add the product and its attributes to the `PRODUCT_REPOS` object, then add 1-2 test cases in [`spec/lib/helpers/edit_on_gitlab_spec.rb`](../spec/lib/helpers/edit_on_gitlab_spec.rb).
 
-   ```yaml
-   variables:
-     BRANCH_PRODUCT: main
-   ```
+1. Edit [`.test.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/test.gitlab-ci.yml) and add the new product to the following tests, following the same pattern as existing products:
 
-1. Edit the [`Rakefile`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/Rakefile#L107-113) and add a line to replace the product's branch variable. If the product doesn't have a stable branch process, omit this step to use the product's default branch.
+- `test_global_nav_links`
+- `test_EOL_whitespace`
+- `test_unlinked_images`
+
 1. Edit [`scripts/normalize-links.sh`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/scripts/normalize-links.sh)
    and add the new product to the `Relative URLs` and `Full URLs` sections.
+
+1. Edit the ['Makefile'](../Makefile):
+
+   - Add a command to clone the repository, and add it to `clone-all-docs-projects` (see `../gitlab-operator/.git` as an example).
+   - Add a command to update the repository, and add it to `update-all-docs-projects` (see `update-gitlab-operator`) as an example).
+
+1. Update `gitlab-docs` documentation:
+
+   - Add the new product to the list in [`doc/index.md`](../doc/index.md).
+   - Add the new product to the diagram in [`doc/architecture.md`](../doc/architecture.md).
 
 ## Exclude a directory
 
