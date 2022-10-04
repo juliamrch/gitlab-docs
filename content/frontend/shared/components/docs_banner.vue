@@ -1,5 +1,10 @@
 <script>
+import { GlButton } from '@gitlab/ui';
+
 export default {
+  components: {
+    GlButton,
+  },
   props: {
     text: {
       type: String,
@@ -30,10 +35,16 @@ export default {
 </script>
 
 <template>
-  <div v-if="isVisible" class="banner position-fixed w-100 text-center">
+  <div
+    v-if="isVisible"
+    class="gl-z-index-3 gl-left-0 gl-bg-gray-50 gl-border-b-gray-200 gl-fixed gl-w-full gl-text-center"
+  >
     <span v-if="text">{{ text }}</span>
     <slot></slot>
-    <!-- TODO: Replace the 'x' below with a gl-icon component once gitlab-ui becomes available in the docs -->
-    <button class="btn btn-close pull-right" @click="toggleBanner(false)">x</button>
+    <gl-button
+      icon="close"
+      class="gl-shadow-none! gl-bg-transparent!"
+      @click="toggleBanner(false)"
+    />
   </div>
 </template>

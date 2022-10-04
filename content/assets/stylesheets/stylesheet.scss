@@ -241,7 +241,6 @@ ol {
   min-height: $header-height;
   background-color: $header-background-color;
   z-index: 3;
-  padding: 0.5rem 1rem;
 
   .navbar-brand {
     font-size: 1rem;
@@ -440,15 +439,6 @@ ol {
 
 .mermaid:not([data-processed='true']) {
   display: none;
-}
-
-.banner {
-  z-index: 5;
-  line-height: 2;
-  top: $page-header-height;
-  height: $banner-height;
-  background: $gds-gray-50;
-  border-bottom: 1px solid $gds-gray-200;
 }
 
 .gl-icon {

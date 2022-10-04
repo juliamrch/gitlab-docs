@@ -13,7 +13,7 @@
           <% location = @item.identifier.to_s.split('/')[1] %>
           <% unless %w(search index.erb).any?(location) %>
             <% if @config[:algolia] == "true" %>
-              <div id="docsearch" class="gl-my-3 my-lg-0"></div>
+              <div id="docsearch" class="gl-my-3 gl-md-mt-0 gl-md-mb-0"></div>
             <% else %>
               <div class="js-lunr-form"></div>
             <% end %>

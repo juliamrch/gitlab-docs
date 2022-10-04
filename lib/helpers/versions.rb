@@ -18,7 +18,9 @@ module Nanoc::Helpers
     # Check if the current version is the latest.
     #
     def latest?
-      latest_version = @items['/_data/versions.yaml'][:online][0]
+      file = File.read('./content/versions.json')
+      parsed = JSON.parse(file)
+      latest_version = parsed[0]['current']
       ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] || ENV['CI_COMMIT_REF_NAME'] == latest_version
     end
 
