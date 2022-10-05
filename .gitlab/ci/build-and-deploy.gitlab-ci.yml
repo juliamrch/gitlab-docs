@@ -8,7 +8,7 @@
     - .retry
     - .bundle_and_yarn
   script:
-    - bundle exec rake setup_git default
+    - bundle exec rake default
     - bundle exec nanoc compile -VV
     # Create _redirects for Pages redirects
     - bundle exec rake redirects

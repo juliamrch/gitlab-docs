@@ -17,7 +17,7 @@ ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-main}
 COPY . /source/
 RUN yarn install && \
     bundle install && \
-    bundle exec rake setup_git default && \
+    bundle exec rake default && \
     bundle exec nanoc compile -VV && \
     /scripts/compress_images.sh /source/public ee # compress images
 

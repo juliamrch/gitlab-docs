@@ -10,7 +10,7 @@ ONBUILD ARG CI_COMMIT_REF_NAME
 ONBUILD COPY . /source/
 ONBUILD RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
 ONBUILD RUN yarn install && yarn cache clean
-ONBUILD RUN bundle exec rake setup_git default
+ONBUILD RUN bundle exec rake default
 ONBUILD RUN bundle exec nanoc compile -VV
 ## For 13.9 and later, there's a raketask that is run instead of the
 ## manual READMEs symlinking that is defined in scripts/normalize-links.sh.
