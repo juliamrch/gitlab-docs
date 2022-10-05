@@ -47,17 +47,8 @@ namespace :release do
       post.puts content
     end
 
-    # Update GitLab version variable in .gitlab/ci/docker-images.gitlab-ci.yml
-    ci_yaml = ".gitlab/ci/docker-images.gitlab-ci.yml"
-    ci_yaml_content = File.read(ci_yaml)
-    ci_yaml_content.gsub!(/GITLAB_VERSION: \S+/, "GITLAB_VERSION: '#{version}'")
-
-    File.open(ci_yaml, 'w') do |post|
-      post.puts ci_yaml_content
-    end
-
     # Add and commit
-    `git add .gitlab/ci/docker-images.gitlab-ci.yml #{version}.Dockerfile`
+    `git add #{version}.Dockerfile`
     `git commit -m 'Release cut #{version}'`
 
     puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Created new Dockerfile:#{TaskHelpers::COLOR_CODE_RESET} #{dockerfile}."
