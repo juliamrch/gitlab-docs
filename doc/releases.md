@@ -166,11 +166,14 @@ To create the release merge request for the release:
    ```
 
 1. Edit `latest.Dockerfile` by removing the oldest version, and then adding the newest version to the top of the list.
+1. Open [`.gitlab/ci/docker-images.gitlab-ci.yml`](../.gitlab/ci/docker-images.gitlab-ci.yml)
+   and edit the `test:image:docs-single:` job to change the `GITLAB_VERSION` variable.
+   Set it to the version number of the release you're releasing.
 
 1. Commit and push to create the merge request. For example:
 
    ```shell
-   git add content/_data/versions.yaml content/versions.json latest.Dockerfile
+   git add .gitlab/ci/docker-images.gitlab-ci.yml content/_data/versions.yaml content/versions.json latest.Dockerfile
    git commit -m "Release 15.0"
    git push origin release-15-0
    ```
