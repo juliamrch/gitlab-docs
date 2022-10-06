@@ -8,7 +8,7 @@ task_helpers = TaskHelpers.new
 
 desc 'Create the _redirects file'
 task :redirects do
-  redirects_yaml = YAML.load_file('content/_data/redirects.yaml', permitted_classes: [Date])
+  redirects_yaml = YAML.load_file("#{task_helpers.project_root}/content/_data/redirects.yaml", permitted_classes: [Date])
   redirects_file = 'public/_redirects'
 
   # Remove _redirects before populating it
@@ -28,8 +28,7 @@ end
 namespace :docs do
   desc 'GitLab | Docs | Clean up old redirects'
   task :clean_redirects do
-    source_dir = File.expand_path('../../', __dir__)
-    redirects_yaml = "#{source_dir}/content/_data/redirects.yaml"
+    redirects_yaml = "#{task_helpers.project_root}/content/_data/redirects.yaml"
     today = Time.now.utc.to_date
     mr_description = "Monthly cleanup of docs redirects.</br><p>See https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks</p></br></hr></br><p>_Created automatically: https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/raketasks.md#clean-up-redirects_</p>"
     redirects_branch = "docs-clean-redirects-#{today}"
@@ -85,13 +84,13 @@ namespace :docs do
       mr_title = "Clean up docs redirects, #{slug} - #{today}"
       counter = 0
 
-      Dir.chdir(content_dir)
-      puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Stashing changes of #{slug} and syncing with upstream default branch..#{TaskHelpers::COLOR_CODE_RESET}"
-      system("git", "stash", "--quiet", "-u") if task_helpers.git_workdir_dirty?
-      system("git", "checkout", "--quiet", default_branch)
-      system("git", "fetch", "--quiet", "origin", default_branch)
-      system("git", "reset", "--quiet", "--hard", origin_default_branch)
-      Dir.chdir(source_dir)
+      Dir.chdir(content_dir) do
+        puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Stashing changes of #{slug} and syncing with upstream default branch..#{TaskHelpers::COLOR_CODE_RESET}"
+        system("git", "stash", "--quiet", "-u") if task_helpers.git_workdir_dirty?
+        system("git", "checkout", "--quiet", default_branch)
+        system("git", "fetch", "--quiet", "origin", default_branch)
+        system("git", "reset", "--quiet", "--hard", origin_default_branch)
+      end
 
       #
       # Find the files to be deleted.
@@ -164,17 +163,16 @@ namespace :docs do
       puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Found #{counter} redirect(s).#{TaskHelpers::COLOR_CODE_RESET}"
       next unless counter.positive?
 
-      Dir.chdir(content_dir)
-      puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Creating a new branch for the redirects MR..#{TaskHelpers::COLOR_CODE_RESET}"
-      system("git", "checkout", "--quiet", "-b", redirects_branch, origin_default_branch)
-      puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Committing and pushing to create a merge request..#{TaskHelpers::COLOR_CODE_RESET}"
-      system("git", "add", ".")
-      system("git", "commit", "--quiet", "-m", commit_message)
+      Dir.chdir(content_dir) do
+        puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Creating a new branch for the redirects MR..#{TaskHelpers::COLOR_CODE_RESET}"
+        system("git", "checkout", "--quiet", "-b", redirects_branch, origin_default_branch)
+        puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Committing and pushing to create a merge request..#{TaskHelpers::COLOR_CODE_RESET}"
+        system("git", "add", ".")
+        system("git", "commit", "--quiet", "-m", commit_message)
 
-      `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement" -o merge_request.label="type::maintenance" -o merge_request.label="maintenance::refactor"` \
-        if ENV['SKIP_MR'].nil?
-
-      Dir.chdir(source_dir)
+        `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement" -o merge_request.label="type::maintenance" -o merge_request.label="maintenance::refactor"` \
+          if ENV['SKIP_MR'].nil?
+      end
       puts
     end
 

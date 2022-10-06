@@ -3,6 +3,16 @@
 require './lib/tasks/task_helpers'
 
 describe TaskHelpers do
+  describe '#project_root' do
+    it 'returns project checkout root' do
+      expect(
+        described_class.new.project_root
+      ).to eq(
+        File.expand_path(__dir__+'/../..')
+      )
+    end
+  end
+
   describe '#chart_version' do
     let(:gitlab_version) { nil }
 
