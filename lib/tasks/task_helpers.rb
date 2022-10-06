@@ -14,6 +14,10 @@ class TaskHelpers
     @config ||= YAML.load_file('./nanoc.yaml')
   end
 
+  def project_root
+    @project_root ||= File.expand_path('../../', __dir__)
+  end
+
   def products
     @products ||= begin
       # Pull products data from the config.
