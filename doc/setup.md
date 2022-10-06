@@ -48,13 +48,31 @@ they can be previewed.
 
 ## Preview GitLab Docs
 
-To preview GitLab Docs locally, run the following in the checkout of `gitlab-docs`:
+To preview GitLab Docs locally:
 
-```shell
-make view
-```
+1. Run the following in the checkout of `gitlab-docs`:
 
-If you make changes to any of the documentation in any of the documentation projects, rerun `make view` to see an
+   ```shell
+   make view
+   ```
+
+   The preview loads in your terminal. When the preview has finished loading,
+   your terminal outputs the following or something similar:
+
+   ```shell
+   INFO: Starting GitLab documentation site...
+   View the site at http://127.0.0.1:3000/
+   ```
+
+1. To open your preview, go to the URL from your terminal output in your browser.
+   For this example, go to `http://127.0.0.1:3000/`.
+
+1. From your preview homepage, use the docs site navigation to go to the page you
+   want to preview.
+
+   Do not use the search box, as search results take you to the live docs site.
+
+1. If you make changes to any of the documentation in any of the documentation projects, rerun `make view` to see an
 updated preview.
 
 ### Preview on mobile
