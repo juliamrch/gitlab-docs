@@ -4,14 +4,10 @@ This project generates and deploys the GitLab documentation website to <https://
 
 For information on:
 
-- This project, see the [GitLab Docs site](doc/index.md).
-- Contributing to GitLab documentation content, see [GitLab Documentation guidelines](https://docs.gitlab.com/ee/development/documentation/).
+- The build and deployment process, see [doc/index.md](doc/index.md).
+- Editing GitLab documentation, see [GitLab Documentation guidelines](https://docs.gitlab.com/ee/development/documentation/).
 
-## Contributing agreement
+See also:
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) for an overview of the Developer
-Certificate of Origin + License.
-
-## License
-
-See [LICENSE](LICENSE).
+  * [CONTRIBUTING.md](CONTRIBUTING.md): information about the Developer Certificate of Origin and rights licensing.
+  * [LICENSE](LICENSE): MIT License.

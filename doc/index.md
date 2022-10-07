@@ -5,8 +5,8 @@ The GitLab Docs site comprises documentation from the following projects:
 - [GitLab](https://gitlab.com/gitlab-org/gitlab)
 - [Omnibus GitLab](https://gitlab.com/gitlab-org/omnibus-gitlab)
 - [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner)
-- [GitLab Chart](https://gitlab.com/gitlab-org/charts/gitlab)
-- [GitLab Operator](https://gitlab.com/gitlab-org/gitlab-operator)
+- [GitLab Helm chart](https://gitlab.com/gitlab-org/charts/gitlab)
+- [GitLab Operator](https://gitlab.com/gitlab-org/cloud-native/gitlab-operator)
 
 This project can be used to:
 
