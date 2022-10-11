@@ -2897,6 +2897,8 @@ sections:
                     doc_url: 'ee/development/packages/new_format_development.html'
                   - doc_title: Debian repository
                     doc_url: 'ee/development/packages/debian_repository.html'
+                  - doc_title: Dependency proxy
+                    doc_url: 'ee/development/packages/dependency_proxy.html'
               - doc_title: Permissions
                 doc_url: 'ee/development/permissions.html'
               - doc_title: Product Qualified Lead (PQL) guide
