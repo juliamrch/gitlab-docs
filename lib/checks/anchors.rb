@@ -5,7 +5,7 @@ Nanoc::Check.define(:internal_anchors) do
     Gitlab::Docs::Page.new(file).links.each do |link|
       next unless link.internal?
       next unless link.to_anchor?
-      next if link.anchor_name == 'markdown-toc'
+      next if %w(markdown-toc, offline-archives).include? link.anchor_name
 
       next unless link.destination_anchor_not_found?
 
