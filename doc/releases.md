@@ -42,7 +42,7 @@ To minimize problems during the documentation release process, use the following
   1. [Create a stable branch and Docker image](#create-stable-branch-and-docker-image-for-release) for
      the new version.
   1. [Create a release merge request](#create-release-merge-request) for the new version, which
-     updates the version dropdown menu (`versions.json`) and archives list (`versions.yaml`) for the current documentation,
+     updates the versions list (`versions.json`) for the current documentation,
      and adds the release to the Docker configuration.
 
      Try to create the MR close to the cutoff for `gitlab` project's stable branch for the release.
@@ -136,12 +136,6 @@ To create the release merge request for the release:
    git checkout -b release-15-0
    ```
 
-1. Edit `content/_data/versions.yaml` and update the lists of versions to reflect the new release on [the Archives page](https://docs.gitlab.com/archives/):
-
-   - Add the latest version to the `online:` section.
-   - Move the oldest version in `online:` to the `offline:` section. There should now be three
-     versions in `online:`.
-
 1. Edit `content/versions.json` and update the lists of versions to reflect the new release in the Versions menu:
 
    - Set `next` to the version number of the next release. For example, if you're releasing `15.2`, set `next` to `15.3`.
@@ -173,7 +167,7 @@ To create the release merge request for the release:
 1. Commit and push to create the merge request. For example:
 
    ```shell
-   git add .gitlab/ci/docker-images.gitlab-ci.yml content/_data/versions.yaml content/versions.json latest.Dockerfile
+   git add .gitlab/ci/docker-images.gitlab-ci.yml content/versions.json latest.Dockerfile
    git commit -m "Release 15.0"
    git push origin release-15-0
    ```
@@ -202,7 +196,7 @@ Open site `docs.gitlab.com` in a browser and confirm both the latest version and
 version are listed in the documentation version dropdown.
 
 For example, if you released the 14.1 documentation, the first dropdown entry should be
-`GitLab.com (14.2-pre)`, followed by `14.1`.
+`14.2`, followed by `14.1`.
 
 ## Troubleshooting
 

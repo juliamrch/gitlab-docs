@@ -6,15 +6,10 @@ import { mount } from '@vue/test-utils';
 import flushPromises from 'flush-promises';
 import VersionsMenu from '../../../../content/frontend/default/components/versions_menu.vue';
 import { getVersions } from '../../../../content/frontend/services/fetch_versions';
+import { mockVersions } from '../../__mocks__/versions_mock';
 import { setWindowPath } from './helpers/versions_menu_helper';
 
 jest.mock('../../../../content/frontend/services/fetch_versions');
-const mockVersions = {
-  next: '15.3',
-  current: '15.2',
-  last_minor: ['15.1', '15.0'],
-  last_major: ['14.10', '13.12'],
-};
 
 beforeEach(() => {
   jest.clearAllMocks();

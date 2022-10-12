@@ -50,12 +50,6 @@ compile '/404.*' do
   write '/404.html'
 end
 
-compile '/archives/index.*' do
-  filter :erb
-  layout '/archives.*'
-  write '/archives/index.html'
-end
-
 compile '/**/*.html' do
   layout '/default.*'
 end
