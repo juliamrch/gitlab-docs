@@ -1,6 +1,8 @@
 redirects:
   - from: /ce/*
     to: /ee/:splat
+  - from: /15.1/*
+    to: https://archives.docs.gitlab.com/15.1/:splat
   - from: /cookies-policy/
     to: /cookies/
   - from: /administration/git_annex.html
