@@ -1,2 +1,3 @@
-show_banner: false
+show_banner: true
 description: |
+  If you are interested in migrating packages from your private registry to the GitLab Package Registry, [take our survey](https://gitlab.fra1.qualtrics.com/jfe/form/SV_cHomH9FPzOaiDTU) and tell us more about your needs!
