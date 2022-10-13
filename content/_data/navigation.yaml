@@ -2424,6 +2424,8 @@ sections:
             doc_url: 'ee/api/packages/rubygems.html'
           - doc_title: Runners
             doc_url: 'ee/api/runners.html'
+          - doc_title: SAML
+            doc_url: 'ee/api/saml.html'
           - doc_title: SCIM
             doc_url: 'ee/api/scim.html'
           - doc_title: Search
