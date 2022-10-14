@@ -36,6 +36,7 @@ task :clone_repositories do
     #
     if Dir.exist?(product['project_dir'])
       if ENV['CI'] || ENV['REMOVE_BEFORE_CLONE']
+        puts "#{product['project_dir']} already exists. Removing it..."
         FileUtils.rm_rf(product['project_dir'])
       else
         abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: Failed to remove #{product['repo']}. To force remove it, use REMOVE_BEFORE_CLONE=true#{TaskHelpers::COLOR_CODE_RESET}")
