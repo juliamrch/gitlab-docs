@@ -56,6 +56,12 @@ rspec:
   stage: test
   script:
     - make rspec-tests
+  coverage: '/\(\d+.\d+\%\) covered/'
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/coverage.xml
 
 #
 # Run JavaScript tests

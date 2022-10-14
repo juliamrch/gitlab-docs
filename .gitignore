@@ -31,3 +31,4 @@ tmp/
 .yarn-cache/
 vendor/
 node_modules/
+coverage/
