@@ -23,6 +23,8 @@ group :test, :development do
   gem 'highline', '~> 2.0.3'
   gem 'rspec', '~> 3.11.0'
   gem 'rspec-parameterized', '~> 0.5.2'
+  gem 'simplecov', '~> 0.21.2', require: false
+  gem 'simplecov-cobertura', '~> 2.1', require: false
   gem 'pry-byebug', '~> 3.10.1', require: false
   gem 'gitlab-styles', '~> 9.0.0', require: false
 end
