@@ -25,6 +25,23 @@ task :clone_repositories do
 
     puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Cloning #{product['repo']}..#{TaskHelpers::COLOR_CODE_RESET}"
 
+    #
+    # Handle the cases where we land on a runner that already ran a docs build,
+    # to make sure we're not reusing an old version of the docs, or a review
+    # app's content.
+    #
+    # Remove the cloned repository if it already exists and either the
+    # CI (when run in the runner context) or REMOVE_BEFORE_CLONE (when run localy)
+    # variables are set.
+    #
+    if Dir.exist?(product['project_dir'])
+      if ENV['CI'] || ENV['REMOVE_BEFORE_CLONE']
+        FileUtils.rm_rf(product['project_dir'])
+      else
+        abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: Failed to remove #{product['repo']}. To force remove it, use REMOVE_BEFORE_CLONE=true#{TaskHelpers::COLOR_CODE_RESET}")
+      end
+    end
+
     `git clone --branch #{branch} --single-branch #{product['repo']} --depth 1 #{product['project_dir']}`
 
     latest_commit = `git -C #{product['project_dir']} log --oneline -n 1`
