@@ -2,7 +2,9 @@
 
 You can set up, compile, update, and preview the GitLab Docs site locally.
 
-## Set up GitLab Docs
+Alternatively, you can use [GitPod](#using-gitpod).
+
+## Set up GitLab Docs locally
 
 GitLab Docs requires [Git](https://git-scm.com) and Make (for example, [GNU Make](https://www.gnu.org/software/make/)).
 To check they are installed, run:
@@ -33,7 +35,7 @@ for GDK.
 
 An alternative to `make setup` is to follow [Advanced setup for GitLab Docs](advanced_setup.md).
 
-## Clone all documentation repositories
+### Clone all documentation repositories
 
 To build the full GitLab documentation website locally, you must clone all the documentation projects that provide the
 Nanoc [data sources](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/nanoc.yaml). To clone all documentation
@@ -46,26 +48,24 @@ make clone-all-docs-projects
 The documentation projects are cloned into the parent directory. If you make documentation changes in these projects,
 they can be previewed.
 
-## Preview GitLab Docs
+### Preview GitLab Docs
 
-To preview GitLab Docs locally:
-
-1. Run the following in the checkout of `gitlab-docs`:
+1. In the checkout of `gitlab-docs`, run the following command:
 
    ```shell
    make view
    ```
 
-   The preview loads in your terminal. When the preview has finished loading,
-   your terminal outputs the following or something similar:
+   When the preview preparation process finishes, you should see
+   the following output in the terminal:
 
    ```shell
    INFO: Starting GitLab documentation site...
    View the site at http://127.0.0.1:3000/
    ```
 
-1. To open your preview, go to the URL from your terminal output in your browser.
-   For this example, go to `http://127.0.0.1:3000/`.
+1. To open the preview, in your browser, go to the URL in the terminal output.
+   For this example, go to <http://127.0.0.1:3000/>.
 
 1. From your preview homepage, use the docs site navigation to go to the page you
    want to preview.
@@ -100,7 +100,7 @@ network as your computer:
    You should be able to navigate through the GitLab Docs site. This process applies to previewing the GitLab Docs site
    on every device connected to your network.
 
-## Update GitLab Docs
+### Update GitLab Docs
 
 To update GitLab Docs itself, run:
 
@@ -116,11 +116,10 @@ make update-all-projects
 
 ## Using Gitpod
 
-An alternative to building and maintaining a local environment for running the GitLab Docs site, is to use
-[Gitpod](https://www.gitpod.io) to deploy a pre-configured GitLab Docs site for your development use.
+[Gitpod](https://www.gitpod.io) is a online environment with pre-configured GitLab Docs site ready for
+development. You can use Gitpod as an alternative to building and maintaining a local environment for running the GitLab Docs site.
 
-For additional information, see the
-[GDK Gitpod docs](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitpod.md).
+For more information, see the [GDK Gitpod docs](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitpod.md).
 
 ### Set up Gitpod
 
