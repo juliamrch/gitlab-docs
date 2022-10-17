@@ -1086,8 +1086,6 @@ sections:
             doc_url: 'ee/security/unlock_user.html'
           - doc_title: Review abuse reports
             doc_url: 'ee/user/admin_area/review_abuse_reports.html'
-          - doc_title: Unknown sign-ins, email notification
-            doc_url: 'ee/user/profile/unknown_sign_in_notification.html'
           - doc_title: User file uploads
             doc_url: 'ee/security/user_file_uploads.html'
           - doc_title: Password storage
