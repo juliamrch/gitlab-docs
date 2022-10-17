@@ -114,6 +114,8 @@ sections:
                     doc_url: 'omnibus/roles/'
                   - doc_title: Logs
                     doc_url: 'omnibus/settings/logs.html'
+                  - doc_title: Microsoft Graph Mailer
+                    doc_url: 'omnibus/settings/microsoft_graph_mailer.html'
                   - doc_title: NGINX
                     doc_url: 'omnibus/settings/nginx.html'
                   - doc_title: Gitaly Cluster
