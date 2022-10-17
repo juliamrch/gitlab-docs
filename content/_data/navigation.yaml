@@ -2701,6 +2701,8 @@ sections:
                 docs:
                   - doc_title: Adding database indexes
                     doc_url: 'ee/development/database/adding_database_indexes.html'
+                  - doc_title: Add a foreign key constraint to an existing column
+                    doc_url: 'ee/development/database/add_foreign_key_to_existing_column.html'
                   - doc_title: Avoiding downtime in migrations
                     doc_url: 'ee/development/database/avoiding_downtime_in_migrations.html'
                   - doc_title: Batched background migrations
@@ -2719,6 +2721,8 @@ sections:
                     doc_url: 'ee/development/database/dbcheck-migrations-job.html'
                   - doc_title: Delete existing migrations
                     doc_url: 'ee/development/database/deleting_migrations.html'
+                  - doc_title: Foreign keys and associations
+                    doc_url: 'ee/development/database/foreign_keys.html'
                   - doc_title: Layout and access patterns
                     doc_url: 'ee/development/database/layout_and_access_patterns.html'
                   - doc_title: Maintenance operations
