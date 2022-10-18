@@ -2883,6 +2883,8 @@ sections:
                 doc_url: 'ee/development/integrations/jenkins.html'
               - doc_title: Jira development environment
                 doc_url: 'ee/development/integrations/jira_connect.html'
+              - doc_title: JSON guidelines
+                doc_url: 'ee/development/json.html'
               - doc_title: Kubernetes integration
                 doc_url: 'ee/development/kubernetes.html'
               - doc_title: Observability for stage groups
