@@ -18,5 +18,4 @@ class TabsFilter < Nanoc::Filter
   def generateWrapper(content)
     %(<div class="js-tabs">#{content}</div>)
   end
-
 end

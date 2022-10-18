@@ -42,5 +42,4 @@ run do |opts, args, cmd|
     puts 'Copying Lunr.js...'
     puts "- Copied #{lunr_src}" if File.write('public/assets/javascripts/lunr.min.js', File.read("#{root}/#{lunr_src}"))
   end
-
 end

@@ -7,6 +7,7 @@ unless ENV['SIMPLECOV'] == '0'
   SimpleCov.start
   SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 end
+
 $LOAD_PATH << 'lib/'
 
 require 'rspec-parameterized'
