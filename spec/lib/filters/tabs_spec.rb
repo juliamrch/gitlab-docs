@@ -23,6 +23,5 @@ describe TabsFilter do
         expect(run).to eq("<div class=\"js-tabs\">Tabs content</div>")
       end
     end
-
   end
 end

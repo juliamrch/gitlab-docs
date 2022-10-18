@@ -32,6 +32,5 @@ module Nanoc::Helpers
     def stable_version?(version)
       version.match?(STABLE_VERSIONS_REGEX)
     end
-
   end
 end
