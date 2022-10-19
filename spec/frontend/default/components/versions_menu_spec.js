@@ -13,6 +13,12 @@ jest.mock('../../../../content/frontend/services/fetch_versions');
 
 beforeEach(() => {
   jest.clearAllMocks();
+
+  const meta = document.createElement('meta');
+  meta.setAttribute('name', 'gitlab-docs-version');
+  meta.setAttribute('content', '15.5');
+  document.head.appendChild(meta);
+
   getVersions.mockResolvedValueOnce(mockVersions);
 });
 
@@ -71,12 +77,5 @@ describe('component: Versions menu', () => {
         expect(wrapper.vm.getVersionPath(v)).toBe(`/${v}/runner`);
       },
     );
-  });
-
-  it('Detects the active version from the page URL', async () => {
-    setWindowPath('/14.10/runner');
-    const wrapper = mount(VersionsMenu);
-    await flushPromises();
-    expect(wrapper.vm.getActiveVersion(mockVersions)).toBe('14.10');
   });
 });
