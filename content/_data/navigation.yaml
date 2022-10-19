@@ -1658,6 +1658,9 @@ sections:
                     doc_url: 'ee/topics/autodevops/stages.html'
                   - doc_title: Customize
                     doc_url: 'ee/topics/autodevops/customize.html'
+                    docs:
+                      - doc_title: Multiple Kubernetes clusters
+                        doc_url: 'ee/topics/autodevops/multiple_clusters_auto_devops.html'
                   - doc_title: Upgrade PostgreSQL
                     doc_url: 'ee/topics/autodevops/upgrading_postgresql.html'
                   - doc_title: Prepare for deployment
