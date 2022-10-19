@@ -26,11 +26,10 @@ module Nanoc::Helpers
     }.freeze
 
     def algolia_rank(item)
-      if result = CUSTOM_PAGERANKS.keys.find { |k| item.identifier.to_s.include? k }
-        return CUSTOM_PAGERANKS[result]
-      else
-        return DEFAULT_PAGERANK
-      end
+      result = CUSTOM_PAGERANKS.keys.find { |k| item.identifier.to_s.include? k }
+      return CUSTOM_PAGERANKS[result] if result
+
+      DEFAULT_PAGERANK
     end
 
     ###
@@ -40,12 +39,9 @@ module Nanoc::Helpers
     def algolia_level(item)
       path = item.identifier.to_s
       level = path.scan("/").count
+      return level -= 1 if path.include? "index.md"
 
-      if path.include? "index.md"
-        level -= 1
-      end
-
-      return level
+      level
     end
   end
 end
