@@ -21,7 +21,7 @@ export default {
     if (isGitLabHosted()) {
       try {
         this.versions = await getVersions();
-        this.activeVersion = document.querySelector('meta[name="gitlab-docs-version"]').content;
+        this.activeVersion = this.getActiveVersion(this.versions);
       } catch (err) {
         console.error(`Failed to fetch versions.json: ${err}`); // eslint-disable-line no-console
       }
@@ -42,6 +42,23 @@ export default {
         path = `/${versionNumber}${path}`;
       }
       return path;
+    },
+    getActiveVersion(versions) {
+      let activeVersion = versions.next;
+
+      // Check if the first item in the URL path is a valid version.
+      // If so, that should be the active menu item.
+      const versionPath = window.location.pathname.split('/')[1];
+
+      Object.keys(versions).forEach((key) => {
+        if (
+          versions[key] === versionPath ||
+          (versions[key].constructor === Array && versions[key].includes(versionPath))
+        ) {
+          activeVersion = versionPath;
+        }
+      });
+      return activeVersion;
     },
   },
 };
