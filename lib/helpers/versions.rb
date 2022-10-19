@@ -13,15 +13,37 @@ module Nanoc::Helpers
     def show_version_banner?
       production? && !latest?
     end
-
+    
     #
-    # Check if the current version is the latest.
+    # Get online versions from the JSON file.
     #
-    def latest?
+    def get_versions
       file = File.read('./content/versions.json')
       parsed = JSON.parse(file)
-      latest_version = parsed[0]['current']
-      ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] || ENV['CI_COMMIT_REF_NAME'] == latest_version
+      parsed[0]
+    end
+
+    #
+    # Returns the site version using the branch or tag from the CI build.
+    #
+    def site_version
+      if !ENV['CI_COMMIT_REF_NAME'].nil? and stable_version?(ENV['CI_COMMIT_REF_NAME'])
+        ENV['CI_COMMIT_REF_NAME']
+      else
+        # If this wasn't built on CI, this is a local site that can default to the pre-release version.
+        get_versions["next"]
+      end
+    end
+
+    #
+    # Check if this site version is the latest.
+    #
+    # We consider two versions to be "latest":
+    # 1) The main branch (CI_DEFAULT_BRANCH), which are pre-release docs for the next version.
+    # 2) The most recent stable release, which is "current" in versions.json.
+    #
+    def latest?
+      ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] || ENV['CI_COMMIT_REF_NAME'] == get_versions["current"]
     end
 
     #
