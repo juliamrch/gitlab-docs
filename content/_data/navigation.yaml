@@ -3117,6 +3117,8 @@ sections:
             doc_url: 'charts/development/style_guide.html'
           - doc_title: Versioning and release
             doc_url: 'charts/development/release.html'
+          - doc_title: Troubleshooting
+            doc_url: 'charts/development/troubleshooting.html'
       # End GitLab Helm Charts development documentation
 
       # Contribute to GitLab docs
