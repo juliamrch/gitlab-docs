@@ -51,7 +51,7 @@ gcp_bucket=$GCP_BUCKET_REVIEW_APPS
 gcp_service_account_key=$GCP_SERVICE_ACCOUNT_KEY_REVIEW_APPS
 cache_control_max_age='60'
 src='public/'
-dest="gs://$gcp_bucket/$CI_COMMIT_REF_SLUG"
+dest="gs://$gcp_bucket/$CI_COMMIT_REF_SLUG$REVIEW_SLUG"
 
 echo "$gcp_service_account_key" > key.json
 gcloud auth activate-service-account --key-file key.json
