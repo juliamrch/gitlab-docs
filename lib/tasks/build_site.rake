@@ -6,8 +6,6 @@ require 'pathname'
 
 task_helpers = TaskHelpers.new
 
-task default: [:clone_repositories, :generate_feature_flags]
-
 desc 'Clone Git repositories of documentation projects, keeping only the most recent commit'
 task :clone_repositories do
   task_helpers.products.each_value do |product|
