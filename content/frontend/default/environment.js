@@ -9,7 +9,7 @@ export const GlHosts = [
   },
   {
     environment: 'review',
-    host: 'docs.gitlab-review.app',
+    host: '35.193.151.162.nip.io',
   },
   {
     environment: 'local',
