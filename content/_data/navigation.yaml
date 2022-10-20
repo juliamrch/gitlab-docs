@@ -510,6 +510,8 @@ sections:
             doc_url: 'ee/integration/jira/jira_cloud_configuration.html'
           - doc_title: Jira integration issue management
             doc_url: 'ee/integration/jira/issues.html'
+          - doc_title: Troubleshooting
+            doc_url: 'ee/integration/jira/troubleshooting.html'
       - category_title: Kroki diagrams
         category_url: 'ee/administration/integration/kroki.html'
       - category_title: Mailgun
