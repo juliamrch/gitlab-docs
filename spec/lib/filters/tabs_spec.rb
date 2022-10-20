@@ -8,7 +8,7 @@ describe TabsFilter do
 
     subject(:run) { described_class.new.run(content) }
 
-    context 'Tab titles' do
+    context 'when Tab title' do
       let(:content) { '<p>:::TabTitle Cats</p>' }
 
       it 'returns correct HTML' do
@@ -16,7 +16,7 @@ describe TabsFilter do
       end
     end
 
-    context 'Tab wrapper' do
+    context 'when Tab wrapper' do
       let(:content) { '<p>::Tabs</p>Tabs content<p>::EndTabs</p>' }
 
       it 'returns correct HTML' do

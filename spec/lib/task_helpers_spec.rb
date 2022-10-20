@@ -8,7 +8,7 @@ describe TaskHelpers do
       expect(
         described_class.new.project_root
       ).to eq(
-        File.expand_path(__dir__+'/../..')
+        File.expand_path(File.join(__dir__, '/../..'))
       )
     end
   end
