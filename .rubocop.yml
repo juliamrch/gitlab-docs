@@ -18,6 +18,9 @@ Naming/FileName:
 Rails/RakeEnvironment:
   Enabled: false
 
+RSpec/FilePath:
+  SpecSuffixOnly: true
+
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
 
