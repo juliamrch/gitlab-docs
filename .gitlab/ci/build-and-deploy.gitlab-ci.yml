@@ -34,6 +34,15 @@
       - public
     expire_in: 1d
 
+# Common setup for review apps
+.review-environment:
+  image: registry.gitlab.com/gitlab-org/gitlab-build-images:www-gitlab-com-debian-bullseye-ruby-3.0-node-16
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
+    url: https://$CI_COMMIT_REF_SLUG$REVIEW_SLUG.docs.gitlab-review.app
+    on_stop: review_stop
+    auto_stop_in: 30 days
+
 #
 # Compile only on the default and stable branches
 #
@@ -60,28 +69,20 @@ compile_dev:
 ###############################################
 
 #
-# Deploy the Review App on a dev server
+# Deploy the Review App on a GCS bucket.
 #
 review:
   stage: deploy
   extends:
     - .retry
-  variables:
-    GIT_STRATEGY: none
+    - .review-environment
   needs:
     - compile_dev
   before_script: []
   cache: {}
   script:
-    # Rsync to the Pages dir
-    - rsync -av --delete public /srv/nginx/pages/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
-    # Remove public directory so that the next review app can run in a
-    # clean environment (limitation of the shell executor).
-    - rm -rf public
-  environment:
-    name: review/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
-    url: http://$CI_COMMIT_REF_SLUG$REVIEW_SLUG.$APPS_DOMAIN
-    on_stop: review_stop
+    - scripts/review-replace-urls
+    - scripts/deploy-review-app
   rules:
     - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
       when: manual
@@ -90,9 +91,6 @@ review:
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
     - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
-  tags:
-    - nginx
-    - review-apps
 
 #
 # Stop the Review App
@@ -101,17 +99,17 @@ review_stop:
   stage: deploy
   extends:
     - .retry
+    - .review-environment
   variables:
-    GIT_STRATEGY: none
+    DEPLOY_DELETE_APP: 'true'
+  environment:
+    action: stop
   needs: []
   artifacts: {}
   before_script: []
   cache: {}
   script:
-    - rm -rf public /srv/nginx/pages/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
-  environment:
-    name: review/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
-    action: stop
+    - scripts/deploy-review-app
   rules:
     - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
       allow_failure: true
@@ -125,31 +123,6 @@ review_stop:
     - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
       allow_failure: true
       when: manual
-  tags:
-    - nginx
-    - review-apps
-
-#
-# Clean up review apps and free disk space
-#
-clean-pages:
-  stage: deploy
-  variables:
-    GIT_STRATEGY: none
-  needs: []
-  artifacts: {}
-  before_script: []
-  cache: {}
-  script:
-    - /home/gitlab-runner/clean-pages ${CLEAN_REVIEW_APPS_DAYS}
-    - df -h
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CLEAN_REVIEW_APPS_DAYS'
-      when: manual
-      allow_failure: true
-  tags:
-    - nginx
-    - review-apps
 
 #
 # Clean up stopped review app environments. Done once a month in a scheduled pipeline,
