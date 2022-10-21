@@ -2,13 +2,13 @@
 
 require './lib/tasks/task_helpers'
 require 'fileutils'
-require "highline/import"
 
 task_helpers = TaskHelpers.new
 
 namespace :release do
   desc 'Creates a single release archive'
   task :single, :version do |t, args|
+    require "highline/import"
     version = args.version.to_s
 
     # Disable lefthook because it was causing some PATH errors
