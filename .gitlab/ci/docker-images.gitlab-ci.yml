@@ -200,6 +200,24 @@ image:nginx-onbuild:
     name: registry/nginx-onbuild
 
 #
+# Test the nginx-onbuild Docker image if changes made to its Dockerfile
+#
+test:image:nginx-onbuild:
+  extends:
+    - .docker_prepare
+  stage: test
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:nginx-onbuild
+    DOCKERFILE: dockerfiles/nginx.onbuild.Dockerfile
+  needs: []
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - $DOCKERFILE
+  script:
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+
+#
 # Final Docker image containing a single version
 # It is based on single.Dockerfile for each branch
 #
@@ -261,3 +279,22 @@ image:docs-latest:
   script:
     - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
+
+#
+# Test the GitLab docs latest Docker image if changes made to its Dockerfile
+#
+test:image:docs-latest:
+  extends:
+    - .docker_prepare
+  stage: test
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
+    DOCKERFILE: latest.Dockerfile
+  needs: []
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - $DOCKERFILE
+  script:
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker run --rm $IMAGE_NAME ls -l /usr/share/nginx/html

@@ -2,7 +2,7 @@
 # This image uses "ONBUILD" to perform all required steps in the archives
 # and relies upon its parent image having a layer called `builder`.
 
-FROM nginx:alpine
+FROM nginx:1.23.1-alpine
 
 # Make the version accessible to this build-stage, and copy it to an ENV so
 # that it persists in the final image.
