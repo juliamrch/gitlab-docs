@@ -8,6 +8,10 @@ export const GlHosts = [
     host: 'docs.gitlab.com',
   },
   {
+    environment: 'archives',
+    host: 'archives.docs.gitlab.com',
+  },
+  {
     environment: 'review',
     host: 'docs.gitlab-review.app',
   },
@@ -19,4 +23,8 @@ export const GlHosts = [
 
 export function isGitLabHosted() {
   return GlHosts.some((e) => window.location.host.includes(e.host));
+}
+
+export function isArchives() {
+  return window.location.host === GlHosts.find((x) => x.environment === 'archives').host;
 }
