@@ -78,4 +78,10 @@ describe('component: Versions menu', () => {
       },
     );
   });
+
+  it('Shows simplified menu on non-production sites', async () => {
+    const wrapper = mount(VersionsMenu);
+    await wrapper.setData({ activeVersion: '14.10', versions: {} });
+    expect(wrapper.find('[data-testid="versions-menu"] a:nth-child(2)').exists()).toBe(false);
+  });
 });
