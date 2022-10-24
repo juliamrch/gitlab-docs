@@ -104,14 +104,14 @@ stylelint:
 # Yamllint of *.yml for .gitlab-ci.yml.
 # This uses rules from project root `.yamllint`.
 #
-yaml_lint:
+yamllint:
   extends:
     - .rules_site_tests
   needs: []
   stage: test
-  image: sdesbure/yamllint:latest
   script:
-    - yamllint .gitlab-ci.yml content/_data
+    - apk add yamllint
+    - make yamllint-tests
 
 #
 # Run markdownlint tests
