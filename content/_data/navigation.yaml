@@ -2787,6 +2787,8 @@ sections:
                     doc_url: 'ee/development/fe_guide/axios.html'
                   - doc_title: Content Editor
                     doc_url: 'ee/development/fe_guide/content_editor.html'
+                  - doc_title: Customizable dashboards
+                    doc_url: 'ee/development/fe_guide/customizable_dashboards.html'
                   - doc_title: Dark mode
                     doc_url: 'ee/development/fe_guide/dark_mode.html'
                   - doc_title: Dependencies
