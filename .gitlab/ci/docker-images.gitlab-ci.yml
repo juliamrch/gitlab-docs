@@ -250,7 +250,7 @@ test:image:docs-single:
   stage: test
   variables:
     DOCKERFILE: dockerfiles/single.Dockerfile
-    GITLAB_VERSION: '15.3'
+    GITLAB_VERSION: '15.5'
   needs: []
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
