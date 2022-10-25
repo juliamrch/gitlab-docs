@@ -27,8 +27,8 @@ namespace :release do
     `git stash -u` if task_helpers.git_workdir_dirty?
 
     # Sync with upstream default branch
-    `git checkout #{ENV['CI_DEFAULT_BRANCH']}`
-    `git pull origin #{ENV['CI_DEFAULT_BRANCH']}`
+    `git checkout #{ENV.fetch('CI_DEFAULT_BRANCH', nil)}`
+    `git pull origin #{ENV.fetch('CI_DEFAULT_BRANCH', nil)}`
 
     # Create branch
     `git checkout -b #{version}`
