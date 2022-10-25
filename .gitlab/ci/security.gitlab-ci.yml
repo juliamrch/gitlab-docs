@@ -4,7 +4,7 @@
 
 #
 # Security templates included in ../../.gitlab-ci.yml:
-# 
+#
 # - Security/Dependency-Scanning.gitlab-ci.yml
 # - Security/SAST.gitlab-ci.yml
 # - Security/Secret-Detection.gitlab-ci.yml
