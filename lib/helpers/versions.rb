@@ -27,8 +27,9 @@ module Nanoc::Helpers
     # Returns the site version using the branch or tag from the CI build.
     #
     def site_version
-      if !ENV['CI_COMMIT_REF_NAME'].nil? && stable_version?(ENV['CI_COMMIT_REF_NAME'])
-        ENV['CI_COMMIT_REF_NAME']
+      version_tag = ENV.fetch('CI_COMMIT_REF_NAME', nil)
+      if !version_tag.nil? && stable_version?(version_tag)
+        version_tag
       else
         # If this wasn't built on CI, this is a local site that can default to the pre-release version.
         get_versions["next"]
@@ -43,7 +44,7 @@ module Nanoc::Helpers
     #
     def docsearch_version
       if get_versions["next"] == site_version
-        ENV['CI_DEFAULT_BRANCH']
+        ENV.fetch('CI_DEFAULT_BRANCH', nil)
       else
         site_version
       end

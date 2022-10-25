@@ -47,7 +47,7 @@ class TaskHelpers
       # Charts don't use the same version scheme as GitLab, we need to
       # deduct their version from the GitLab equivalent one.
       when 'charts'
-        chart = chart_version(ENV["CI_COMMIT_REF_NAME"]).match(VERSION_FORMAT)
+        chart = chart_version(ENV.fetch('CI_COMMIT_REF_NAME', nil)).match(VERSION_FORMAT)
         "#{chart[:major]}-#{chart[:minor]}-stable"
 
       # If the upstream product doesn't follow a stable branch scheme, set the
