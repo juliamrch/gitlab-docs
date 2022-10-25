@@ -6,7 +6,7 @@
 # Test the links in the global nav
 #
 test_global_nav_links:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0bc327a4
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0088e238
   extends:
     - .rules_site_tests
     - .bundle
@@ -144,7 +144,7 @@ test_EOL_whitespace:
     - .rules_chores
     - .bundle
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0bc327a4
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0088e238
   needs: []
   before_script: []
   dependencies: []
@@ -161,7 +161,7 @@ test_unlinked_images:
     - .rules_chores
     - .bundle
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0bc327a4
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0088e238
   needs: []
   before_script: []
   dependencies: []
