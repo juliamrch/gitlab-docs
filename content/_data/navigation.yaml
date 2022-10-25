@@ -1975,8 +1975,6 @@ sections:
         docs:
           - doc_title: Error Tracking
             doc_url: 'ee/operations/error_tracking.html'
-          - doc_title: Tracing
-            doc_url: 'ee/operations/tracing.html'
           - doc_title: Incident management
             doc_url: 'ee/operations/incident_management/'
             docs:
