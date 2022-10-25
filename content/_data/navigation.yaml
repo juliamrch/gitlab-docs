@@ -2912,6 +2912,8 @@ sections:
                     doc_url: 'ee/development/packages/structure.html'
                   - doc_title: Support new formats
                     doc_url: 'ee/development/packages/new_format_development.html'
+                  - doc_title: Cleanup policies
+                    doc_url: 'ee/development/packages/cleanup_policies.html'
                   - doc_title: Debian repository
                     doc_url: 'ee/development/packages/debian_repository.html'
                   - doc_title: Dependency proxy
