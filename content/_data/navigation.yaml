@@ -848,11 +848,11 @@ sections:
             doc_url: 'ee/administration/sidekiq/'
             docs:
               - doc_title: Multiple Sidekiq processes
-                doc_url: 'ee/administration/operations/extra_sidekiq_processes.html'
+                doc_url: 'ee/administration/sidekiq/extra_sidekiq_processes.html'
               - doc_title: Sidekiq routing rules
-                doc_url: 'ee/administration/operations/extra_sidekiq_routing.html'
+                doc_url: 'ee/administration/sidekiq/extra_sidekiq_routing.html'
               - doc_title: Sidekiq MemoryKiller
-                doc_url: 'ee/administration/operations/sidekiq_memory_killer.html'
+                doc_url: 'ee/administration/sidekiq/sidekiq_memory_killer.html'
               - doc_title: Sidekiq health check
                 doc_url: 'ee/administration/sidekiq/sidekiq_health_check.html'
               - doc_title: Sidekiq job migration
