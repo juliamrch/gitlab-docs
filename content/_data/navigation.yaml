@@ -131,7 +131,10 @@ sections:
                   - doc_title: SMTP
                     doc_url: 'omnibus/settings/smtp.html'
                   - doc_title: SSL
-                    doc_url: 'omnibus/settings/ssl.html'
+                    doc_url: 'omnibus/settings/ssl/'
+                    docs:
+                      - doc_title: Troubleshooting SSL
+                        doc_url: 'omnibus/settings/ssl/ssl_troubleshooting.html'
                   - doc_title: DNS
                     doc_url: 'omnibus/settings/dns.html'
                   - doc_title: Image scaling
