@@ -138,7 +138,7 @@ delete_stopped_environments:
   stage: test
   script:
     - apk --update add curl jq
-    - curl --request DELETE "https://gitlab.com/api/v4/projects/1794617/environments/review_apps?dry_run=false&private_token=$DELETE_ENVIRONMENTS_TOKEN" | jq
+    - curl --request DELETE "https://gitlab.com/api/v4/projects/1794617/environments/review_apps?limit=1000&dry_run=false&private_token=$DELETE_ENVIRONMENTS_TOKEN" | jq
 
 ###############################################
 #          GitLab Pages (production)          #
