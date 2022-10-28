@@ -10,9 +10,6 @@ ARG VALE_VERSION
 ARG MARKDOWNLINT_VERSION
 ARG MARKDOWNLINT2_VERSION
 
-# Set NODE_PATH to allow custom markdownlint rules to use global packages
-ENV NODE_PATH="/usr/local/share/.config/yarn/global/node_modules"
-
 # Install dependencies
 RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cache -U \
     bash         \
