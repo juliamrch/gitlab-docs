@@ -62,10 +62,7 @@ if [ "$DEPLOY_DELETE_APP" = 'true' ]; then
   echo "gsutil -m rm -r \"$dest\""
   gsutil -m rm -r "$dest"
 else
-  echo "Making sure review app environment in ${dest} is empty..."
-  echo "gsutil -m rm -r \"$dest\""
-  gsutil -m rm -r "$dest"
   echo "Deploying review app to ${dest}..."
-  echo "gsutil -h \"Cache-Control:public, max-age=$cache_control_max_age\" -m cp -z css,html,js,txt -c -r \"$src\" \"$dest\""
-  with_backoff gsutil -h "Cache-Control:public, max-age=$cache_control_max_age" -m cp -z css,html,js,txt -c -r "$src" "$dest"
+  echo "gsutil -h \"Cache-Control:public, max-age=$cache_control_max_age\" -m rsync -j css,html,js,txt -C -r -d \"$src\" \"$dest\""
+  with_backoff gsutil -h "Cache-Control:public, max-age=$cache_control_max_age" -m rsync -j css,html,js,txt -C -r -d "$src" "$dest"
 fi
