@@ -2929,6 +2929,9 @@ sections:
                 doc_url: 'ee/development/real_time.html'
               - doc_title: Sec section development
                 doc_url: 'ee/development/sec/'
+                docs:
+                  - doc_title: Security report ingestion
+                    doc_url: 'ee/development/sec/security_report_ingestion_overview.html'
               - doc_title: Service Ping guide
                 doc_url: 'ee/development/service_ping/'
                 docs:
