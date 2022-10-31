@@ -3152,6 +3152,8 @@ sections:
                 doc_url: 'ee/development/documentation/topic_types/reference.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/development/documentation/topic_types/troubleshooting.html'
+              - doc_title: Tutorials
+                doc_url: 'ee/development/documentation/topic_types/tutorial.html'
           - doc_title: Document product versions
             doc_url: 'ee/development/documentation/versions.html'
           - doc_title: Global navigation
