@@ -21,7 +21,7 @@ end
 
 group :test, :development do
   gem 'highline', '~> 2.0.3'
-  gem 'rspec', '~> 3.11.0'
+  gem 'rspec', '~> 3.12.0'
   gem 'rspec-parameterized', '~> 0.5.2'
   gem 'simplecov', '~> 0.21.2', require: false
   gem 'simplecov-cobertura', '~> 2.1.0', require: false
