@@ -656,3 +656,48 @@ redirects:
   - from: /runner/install/openshift.html
     to: /runner/install/operator.html
     remove_date: 2023-03-29
+  - from: /ee/development/merge_request_concepts/widget_extensions.html
+    to: /ee/development/fe_guide/merge_request_widget_extensions.html
+    remove_date: 2023-07-27
+  - from: /ee/development/licensed_feature_availability.html
+    to: /ee/development/ee_features.html
+    remove_date: 2023-07-08
+  - from: /ee/integration/jenkins_deprecated.html
+    to: /ee/integration/jenkins.html
+    remove_date: 2023-07-29
+  - from: /ee/user/admin_area/geo_nodes.html
+    to: /ee/user/admin_area/geo_sites.html
+    remove_date: 2023-07-05
+  - from: /ee/user/project/clusters/kubernetes_pod_logs.html
+    to: /ee/user/clusters/agent/index.html
+    remove_date: 2023-07-18
+  - from: /ee/user/feature_highlight.html
+    to: /ee/user/index.html
+    remove_date: 2023-07-29
+  - from: /ee/administration/logs.html
+    to: /ee/administration/logs/index.html
+    remove_date: 2023-07-23
+  - from: /ee/administration/reference_architectures/troubleshooting.html
+    to: /ee/administration/configure.html
+    remove_date: 2023-07-24
+  - from: /ee/administration/geo/replication/docker_registry.html
+    to: /ee/administration/geo/replication/container_registry.html
+    remove_date: 2023-07-29
+  - from: /ee/administration/troubleshooting/log_parsing.html
+    to: /ee/administration/logs/log_parsing.html
+    remove_date: 2023-07-24
+  - from: /ee/administration/troubleshooting/debug.html
+    to: /ee/administration/reference_architectures/troubleshooting.html
+    remove_date: 2023-07-19
+  - from: /ee/administration/troubleshooting/navigating_gitlab_via_rails_console.html
+    to: /ee/administration/operations/rails_console.html
+    remove_date: 2023-07-05
+  - from: /ee/administration/troubleshooting/kubernetes_cheat_sheet.html
+    to: /charts/troubleshooting/kubernetes_cheat_sheet.html
+    remove_date: 2023-07-05
+  - from: /ee/administration/troubleshooting/defcon.html
+    to: /ee/ci/troubleshooting.html#disaster-recovery
+    remove_date: 2023-07-04
+  - from: /ee/administration/troubleshooting/group_saml_scim.html
+    to: /ee/user/group/saml_sso/example_saml_config.html
+    remove_date: 2023-07-29
