@@ -917,8 +917,8 @@ sections:
                 doc_url: 'ee/administration/geo/replication/version_specific_upgrades.html'
               - doc_title: Using object storage
                 doc_url: 'ee/administration/geo/replication/object_storage.html'
-              - doc_title: Using Docker Registry
-                doc_url: 'ee/administration/geo/replication/docker_registry.html'
+              - doc_title: Container registry for a secondary site
+                doc_url: 'ee/administration/geo/replication/container_registry.html'
               - doc_title: Geo for multiple servers
                 doc_url: 'ee/administration/geo/replication/multiple_servers.html'
               - doc_title: Geo security review
