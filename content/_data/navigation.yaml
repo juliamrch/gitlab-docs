@@ -1417,8 +1417,6 @@ sections:
                 doc_url: 'ee/topics/git/git_log.html'
               - doc_title: Git stash
                 doc_url: 'ee/topics/git/stash.html'
-              - doc_title: Merge conflicts
-                doc_url: 'ee/topics/git/merge_conflicts.html'
               - doc_title: Partial clone
                 doc_url: 'ee/topics/git/partial_clone.html'
               - doc_title: Rebase, force-push, merge conflicts
