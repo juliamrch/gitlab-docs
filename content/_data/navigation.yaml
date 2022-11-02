@@ -1202,8 +1202,6 @@ sections:
             docs:
               - doc_title: Advanced Search
                 doc_url: 'ee/user/search/advanced_search.html'
-              - doc_title: Advanced Search syntax
-                doc_url: 'ee/user/search/global_search/advanced_search_syntax.html'
           - doc_title: Badges
             doc_url: 'ee/user/project/badges.html'
           - doc_title: Code intelligence
