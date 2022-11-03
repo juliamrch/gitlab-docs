@@ -1,7 +1,7 @@
 <script>
 import { GlDropdown, GlDropdownItem, GlDropdownDivider } from '@gitlab/ui';
 import { getVersions } from '../../services/fetch_versions';
-import { isGitLabHosted, isArchives } from '../environment';
+import { isGitLabHosted, isArchivesSite } from '../environment';
 
 export default {
   components: {
@@ -15,10 +15,17 @@ export default {
       activeVersion: '',
     };
   },
+  computed: {
+    // Do not render this menu on pages that aren't version-specific.
+    showMenu() {
+      const excludePaths = ['/archives/'];
+      return !excludePaths.includes(window.location.pathname);
+    },
+  },
   async created() {
     // Only fetch version lists for the production site.
     // Archives and self-hosted docs will only include one version, so they don't need this.
-    if (isGitLabHosted() && !isArchives()) {
+    if (isGitLabHosted() && !isArchivesSite()) {
       try {
         this.versions = await getVersions();
       } catch (err) {
@@ -49,6 +56,7 @@ export default {
 
 <template>
   <gl-dropdown
+    v-if="showMenu"
     :text="activeVersion"
     class="gl-mb-4 gl-md-mb-0 gl-md-mr-5 gl-md-ml-3 gl-display-flex"
     data-testid="versions-menu"

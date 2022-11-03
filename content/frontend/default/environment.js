@@ -25,6 +25,6 @@ export function isGitLabHosted() {
   return GlHosts.some((e) => window.location.host.includes(e.host));
 }
 
-export function isArchives() {
+export function isArchivesSite() {
   return window.location.host === GlHosts.find((x) => x.environment === 'archives').host;
 }
