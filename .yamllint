@@ -1,13 +1,9 @@
 ---
-
 extends: default
-
-ignore: |
+ignore:
   content/_data/feature_flags.yaml
-
 rules:
   comments-indentation:
     ignore: content/_data/navigation.yaml
-
   document-start: disable
   line-length: disable
