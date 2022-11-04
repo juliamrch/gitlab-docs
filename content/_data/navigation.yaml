@@ -799,6 +799,8 @@ sections:
                 doc_url: 'ee/administration/uploads.html'
               - doc_title: User Cohorts
                 doc_url: 'ee/user/admin_area/user_cohorts.html'
+              - doc_title: User and IP rate limits
+                doc_url: 'ee/user/admin_area/settings/user_and_ip_rate_limits.html'
               - doc_title: Visibility and access controls
                 doc_url: 'ee/user/admin_area/settings/visibility_and_access_controls.html'
           - doc_title: Consul
