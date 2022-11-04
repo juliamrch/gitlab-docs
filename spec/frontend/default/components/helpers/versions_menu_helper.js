@@ -12,3 +12,14 @@ export const setWindowPath = (pathname) => {
     value: location,
   });
 };
+
+/**
+ * Creates a mock gitlab-docs-version metatag.
+ * @param {String} pathname
+ */
+export const setVersionMetatag = (version) => {
+  const meta = document.createElement('meta');
+  meta.setAttribute('name', 'gitlab-docs-version');
+  meta.setAttribute('content', version);
+  document.head.appendChild(meta);
+};
