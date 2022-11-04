@@ -1132,7 +1132,7 @@ sections:
             doc_url: 'ee/user/group/'
             docs:
               - doc_title: Compliance frameworks
-              - docs_url: 'ee/user/group/compliance_frameworks.html'
+                docs_url: 'ee/user/group/compliance_frameworks.html'
               - doc_title: Manage groups
                 doc_url: 'ee/user/group/manage.html'
               - doc_title: Group access and permissions
