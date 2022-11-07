@@ -183,6 +183,7 @@ namespace :docs do
     #   2. Add the changed files
     #   3. Commit and push the branch to create the MR
     #
+    mr_title = "Clean up docs redirects - #{today}"
     puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (gitlab-docs): Creating a new branch for the redirects MR..#{TaskHelpers::COLOR_CODE_RESET}"
     system("git", "checkout", "--quiet", "-b", redirects_branch, "origin/main")
     puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (gitlab-docs): Committing and pushing to create a merge request..#{TaskHelpers::COLOR_CODE_RESET}"
