@@ -1352,6 +1352,9 @@ sections:
             doc_url: 'ee/user/crm/'
           - doc_title: Iterations
             doc_url: 'ee/user/group/iterations/'
+            docs:
+              - doc_title: Use GitLab to run an Agile iteration
+                doc_url: 'ee/tutorials/agile_sprint.html'
           - doc_title: Milestones
             doc_url: 'ee/user/project/milestones/'
             docs:
