@@ -91,7 +91,7 @@ GEM
     gitlab (4.19.0)
       httparty (~> 0.20)
       terminal-table (>= 1.5.1)
-    gitlab-dangerfiles (3.6.1)
+    gitlab-dangerfiles (3.6.2)
       danger (>= 8.4.5)
       danger-gitlab (>= 8.0.0)
       rake
@@ -299,7 +299,7 @@ PLATFORMS
 
 DEPENDENCIES
   builder (~> 3.2.4)
-  gitlab-dangerfiles (~> 3.6.1)
+  gitlab-dangerfiles (~> 3.6.2)
   gitlab-styles (~> 9.0.0)
   gitlab_kramdown (~> 0.22.0)
   highline (~> 2.0.3)
