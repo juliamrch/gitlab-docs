@@ -1,4 +1,4 @@
-# GitLab docs rake tasks
+# GitLab Docs rake tasks and scripts
 
 The GitLab Docs project has some raketasks that automate various things. You
 can see the list of rake tasks with:
@@ -67,3 +67,27 @@ To omit the automatic merge request creation:
 ```shell
 SKIP_MR=true bundle exec rake docs:clean_redirects
 ```
+
+## Find pages that are not included in the global navigation
+
+Run this command to check for pages that are missing from the global navigation:
+
+```shell
+make check-pages-not-in-nav
+```
+
+This invokes a [Node.js script](../scripts/pages_not_in_nav.js) that outputs JSON containing matching page URL paths and the associated Section and Group to the console.
+
+Before running the script, you may want to run `make update-all-docs-projects` to pull down the latest content from each source project.
+
+You can use `jq` on the command line to extract specific fields. For example, to return a list of only URLs:
+
+```shell
+make check-pages-not-in-nav | jq '.[] | .url'
+```
+
+The script intentionally omits:
+
+- Sections referenced in the ["Pages you don’t need to add"](https://docs.gitlab.com/ee/development/documentation/site_architecture/global_nav.html#pages-you-dont-need-to-add) section of our docs.
+- Redirects.
+- Markdown files that are not compiled to HTML pages (see the `ignore` paths in Nanoc's [Rules](../Rules) file).
