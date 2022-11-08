@@ -90,8 +90,7 @@ install-ruby-dependencies:
 	@bundle install
 
 install-nodejs-dependencies:
-	@printf "\n$(INFO)INFO: Installing Node.js dependencies...$(END)\n"
-	@yarn install --frozen-lockfile
+	@yarn install --frozen-lockfile --silent
 
 setup: brew-bundle setup-asdf install-asdf-dependencies install-ruby-dependencies install-nodejs-dependencies
 
@@ -164,5 +163,8 @@ markdownlint-tests:
 check-global-navigation:
 	@printf "\n$(INFO)INFO: Checking global navigation...$(END)\n"
 	@scripts/check-navigation.sh
+
+check-pages-not-in-nav: install-nodejs-dependencies
+	@scripts/pages_not_in_nav.js | jq
 
 test: setup rspec-tests jest-tests eslint-tests prettier-tests stylelint-tests hadolint-tests yamllint-tests markdownlint-tests check-global-navigation
