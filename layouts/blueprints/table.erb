@@ -1,0 +1,53 @@
+<% @summary ||= false %>
+
+<table>
+  <caption>List of GitLab Architecture Blueprints</caption>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <% unless @summary %>
+      <th>Title</th>
+      <% end %>
+      <th>Author(s)</th>
+      <th>Coach</th>
+      <% if @summary %>
+      <th>Approver(s)</th>
+      <% end %>
+      <th>Owning Stage</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @blueprints.each do |b| %>
+      <tr>
+        <td>
+          <%= gl_label(b[:status])%>
+        </td>
+        <% unless @summary %>
+        <td>
+          <%= link_to(b[:title], b.path) %>
+        </td>
+        <% end %>
+        <td>
+          <% b[:authors]&.each do |a| %>
+            <code><%= author_link(a) %></code>
+          <% end %>
+        </td>
+        <td>
+          <% if b[:coach] %>
+            <code><%= author_link(b[:coach]) %></code>
+          <% end %>
+        </td>
+        <% if @summary %>
+        <td>
+          <% b[:approvers]&.each do |a| %>
+            <code><%= author_link(a) %></code>
+          <% end %>
+        </td>
+        <% end %>
+        <td><%= gl_label(b[:'owning-stage']) %></td>
+        <td><%= blueprint_creation_date(b) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
