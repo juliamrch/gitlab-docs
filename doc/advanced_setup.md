@@ -3,8 +3,7 @@
 Instead of relying on `make setup` in the [basic setup instructions](setup.md), you can install GitLab Docs
 dependencies yourself. The dependencies are:
 
-- System dependencies. The list of required software is in `Brewfile`. Linux distributions should have all of those
-  available as packages.
+- System dependencies. The list of required software is in [Brewfile](/Brewfile). On Linux, install these packages manually.
 - Ruby.
 - Node.js and Yarn.
 
