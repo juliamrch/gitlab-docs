@@ -1,0 +1,26 @@
+.gl-label {  
+  --label-inset-border: inset 0 0 0 2px var(--label-background-color);
+  color: var(--white);
+  font-size: .75rem;
+  line-height: 1rem;
+  
+  &.devops {
+    --label-background-color: var(--orange);
+  }
+
+  &.proposed {
+    --label-background-color: var(--gray);
+  }
+  &.accepted {
+    --label-background-color: var(--cyan);
+  }
+  &.ready {
+    --label-background-color: var(--green);
+  }
+  &.implemented {
+    --label-background-color: var(--blue);
+  }
+  &.rejected {
+    --label-background-color: var(--red);
+  }
+}

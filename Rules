@@ -6,6 +6,9 @@ TITLE_FILTER_REGEXP = /(#\s|#{BadgesFilter::BADGES_MARKDOWN_PATTERN})/.freeze
 preprocess do
   badges_filter = BadgesFilter.new
 
+  # Do not process Markdown files with an underscore prefix
+  @items.delete_if { |i| i.identifier.match?('/**/_*.md') }
+
   @items.each do |item|
     if item.identifier.to_s.end_with?(".md") && !item.binary?
       # If there isn't already a 'redirect_to' defined in the yaml frontmatter,
@@ -37,6 +40,14 @@ preprocess do
 
       # Run badges filter with title fragment
       item[:title_badge] = badges_filter.run_from_markdown(raw_title.match(BadgesFilter::BADGES_MARKDOWN_PATTERN).to_s)
+    end
+
+    if item.identifier.match?('/ee/architecture/**/*.md')
+      item[:layout] = 'blueprints/index'
+      item[:feedback] = false
+      item[:comments] = false
+
+      item[:status] ||= 'proposed'
     end
   end
 

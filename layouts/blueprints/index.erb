@@ -1,0 +1,15 @@
+<% render '/default.*' do %>
+  <% if @item.identifier.match?('/ee/architecture/blueprints/**/*.md') %>
+    <%= render '/blueprints/table.*', { :blueprints => [ @item ], :summary => true } %>
+    <%= yield %>
+  <% else %>
+    <%= yield %>
+    
+    <div class="gl-display-flex gl-justify-content-space-around">
+      <% all_blueprints.group_by{ |b| b[:status] }.each do |k,c| %>
+        <gl-label title="<%= "#{k}::#{c.size.to_s}" %>" />
+      <% end %>
+    </div>
+    <%= render '/blueprints/table.*', :blueprints => all_blueprints %>
+  <% end %>
+<% end %>
