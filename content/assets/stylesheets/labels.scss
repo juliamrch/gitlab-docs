@@ -1,9 +1,13 @@
-.gl-label {  
+---
+version: 1
+---
+
+.gl-label {
   --label-inset-border: inset 0 0 0 2px var(--label-background-color);
   color: var(--white);
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1rem;
-  
+
   &.devops {
     --label-background-color: var(--orange);
   }
