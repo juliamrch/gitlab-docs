@@ -2115,6 +2115,8 @@ sections:
             doc_url: 'ee/user/admin_area/analytics/dev_ops_reports.html'
           - doc_title: DevOps adoption by group
             doc_url: 'ee/user/group/devops_adoption/'
+          - doc_title: DORA metrics
+            doc_url: 'ee/user/analytics/dora_metrics.html'
           - doc_title: Insights for projects
             doc_url: 'ee/user/project/insights/'
           - doc_title: Insights for groups
