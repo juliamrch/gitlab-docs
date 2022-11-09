@@ -1316,7 +1316,7 @@ sections:
             docs:
               - doc_title: Manage issues
                 doc_url: 'ee/user/project/issues/managing_issues.html'
-              - doc_title: Award emoji
+              - doc_title: Award emojis
                 doc_url: 'ee/user/award_emojis.html'
               - doc_title: Confidential issues
                 doc_url: 'ee/user/project/issues/confidential_issues.html'
@@ -2208,7 +2208,7 @@ sections:
             doc_url: 'ee/api/audit_events.html'
           - doc_title: Avatar
             doc_url: 'ee/api/avatar.html'
-          - doc_title: Award emoji
+          - doc_title: Award emojis
             doc_url: 'ee/api/award_emoji.html'
           - doc_title: Badges (project)
             doc_url: 'ee/api/project_badges.html'
