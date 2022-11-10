@@ -230,9 +230,9 @@ image:docs-single:
   cache: {}
   dependencies: []
   variables:
-    NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
     DOCKERFILE: $CI_COMMIT_REF_NAME.Dockerfile
+    NANOC_ENV: production
   environment:
     name: registry/$CI_COMMIT_REF_SLUG
   script:
@@ -250,15 +250,78 @@ test:image:docs-single:
     - .docker_prepare
   stage: test
   variables:
-    DOCKERFILE: dockerfiles/single.Dockerfile
     GITLAB_VERSION: '15.5'
+    DOCKERFILE: dockerfiles/single.Dockerfile
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:$GITLAB_VERSION
+    NANOC_ENV: test
   needs: []
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       changes:
         - $DOCKERFILE
   script:
-    - docker build --file $DOCKERFILE --build-arg VER=${GITLAB_VERSION} .
+    - docker build
+             --build-arg NANOC_ENV=${NANOC_ENV}
+             --build-arg VER=${GITLAB_VERSION}
+             --build-arg ALGOLIA_SEARCH="true"
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
+#
+# Final Docker image containing a single version with lunr.js enabled
+# It is based on single.Dockerfile for each branch
+#
+image:docs-single-lunrjs:
+  extends:
+    - .docker_prepare
+  stage: pre-deploy
+  artifacts: {}
+  cache: {}
+  dependencies: []
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/archives:$CI_COMMIT_REF_NAME
+    DOCKERFILE: $CI_COMMIT_REF_NAME.Dockerfile
+    NANOC_ENV: production
+  environment:
+    name: registry-archives/$CI_COMMIT_REF_SLUG
+  script:
+    - docker build
+             --build-arg NANOC_ENV=${NANOC_ENV}
+             --build-arg VER=${CI_COMMIT_REF_NAME}
+             --build-arg ALGOLIA_SEARCH="false"
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
+    - docker push $IMAGE_NAME
+  # Only branches with versions like 10.4
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+
+#
+# Test the GitLab docs single version Docker image with lunr.js enabled
+# if changes made to its Dockerfile
+#
+test:image:docs-single-lunrjs:
+  extends:
+    - .docker_prepare
+  stage: test
+  variables:
+    GITLAB_VERSION: '15.5'
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/archives:$GITLAB_VERSION
+    DOCKERFILE: dockerfiles/single.Dockerfile
+    NANOC_ENV: test
+  needs: []
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - $DOCKERFILE
+  script:
+    - apk add --no-cache -U make bash
+    - docker build
+             --build-arg NANOC_ENV=${NANOC_ENV}
+             --build-arg VER=${GITLAB_VERSION}
+             --build-arg ALGOLIA_SEARCH="false"
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
+    - make check-lunr-index
 
 #
 # Build master containing the online archives and latest docs (on schedules)

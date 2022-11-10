@@ -105,8 +105,12 @@ clean:
 	@rm -rf tmp public
 
 build-lunr-index:
-	@printf "\n$(INFO)INFO: Building offline search index..$(INFO_END)\n"
+	@printf "\n$(INFO)INFO: Building offline search index..$(END)\n"
 	node scripts/lunr/preindex.js
+
+check-lunr-index:
+	@printf "\n$(INFO)INFO: Checking if lunr.js is enabled...$(END)\n"
+	@scripts/check-lunr-index.sh
 
 internal-links-check: clone-all-docs-projects compile
 	@printf "\n$(INFO)INFO: Checking all internal links...$(END)\n"
