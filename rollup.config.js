@@ -53,4 +53,16 @@ module.exports = glob.sync('content/frontend/**/*.js').map((file) => ({
     }),
     terser(),
   ],
+  onwarn(warning, warn) {
+    // Ignore specified circular dependency warnings.
+    // https://github.com/d3/d3-selection/issues/168
+    const ignoreCircular = ['d3-selection', 'd3-interpolate', 'd3-transition', 'd3-voronoi'];
+    if (
+      warning.code === 'CIRCULAR_DEPENDENCY' &&
+      ignoreCircular.some((d) => warning.message.includes(d))
+    ) {
+      return;
+    }
+    warn(warning);
+  },
 }));
