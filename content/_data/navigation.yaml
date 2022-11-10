@@ -1235,7 +1235,7 @@ sections:
           - doc_title: GitLab Pages
             doc_url: 'ee/user/project/pages/'
             docs:
-              - doc_title: Create from scratch
+              - doc_title: "Tutorial: Create a GitLab Pages website from scratch"
                 doc_url: 'ee/user/project/pages/getting_started/pages_from_scratch.html'
               - doc_title: Create using a CI/CD template
                 doc_url: 'ee/user/project/pages/getting_started/pages_ci_cd_template.html'
