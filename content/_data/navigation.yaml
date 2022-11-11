@@ -1235,13 +1235,13 @@ sections:
           - doc_title: GitLab Pages
             doc_url: 'ee/user/project/pages/'
             docs:
-              - doc_title: "Tutorial: Create a GitLab Pages website from scratch"
+              - doc_title: "Tutorial: Create a GitLab Pages website"
                 doc_url: 'ee/user/project/pages/getting_started/pages_from_scratch.html'
-              - doc_title: Create using a CI/CD template
+              - doc_title: Create by using a CI/CD template
                 doc_url: 'ee/user/project/pages/getting_started/pages_ci_cd_template.html'
-              - doc_title: Create using a forked sample project
+              - doc_title: Create by using a forked sample project
                 doc_url: 'ee/user/project/pages/getting_started/pages_forked_sample_project.html'
-              - doc_title: Create using a project template
+              - doc_title: Create by using a project template
                 doc_url: 'ee/user/project/pages/getting_started/pages_new_project_template.html'
               - doc_title: Default domains, URLs, and baseurls
                 doc_url: 'ee/user/project/pages/getting_started_part_one.html'
@@ -1353,7 +1353,7 @@ sections:
           - doc_title: Iterations
             doc_url: 'ee/user/group/iterations/'
             docs:
-              - doc_title: Use GitLab to run an Agile iteration
+              - doc_title: "Tutorial: Use GitLab to run an Agile iteration"
                 doc_url: 'ee/tutorials/agile_sprint.html'
           - doc_title: Milestones
             doc_url: 'ee/user/project/milestones/'
@@ -1394,7 +1394,7 @@ sections:
           - doc_title: Using Git
             doc_url: 'ee/topics/git/'
             docs:
-              - doc_title: Get started
+              - doc_title: "Tutorial: Make your first Git commit"
                 doc_url: 'ee/tutorials/make_your_first_git_commit.html'
               - doc_title: Terminology
                 doc_url: 'ee/topics/git/terminology.html'
@@ -1561,7 +1561,7 @@ sections:
           - doc_title: CI/CD
             doc_url: 'ee/ci/'
             docs:
-              - doc_title: Get started
+              - doc_title: "Tutorial: Create your first pipeline"
                 doc_url: 'ee/ci/quick_start/'
                 docs:
                   - doc_title: CI/CD concepts
