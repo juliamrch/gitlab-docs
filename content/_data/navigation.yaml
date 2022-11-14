@@ -1292,12 +1292,15 @@ sections:
                 doc_url: 'ee/user/project/import/svn.html'
               - doc_title: TFVC
                 doc_url: 'ee/user/project/import/tfvc.html'
-          - doc_title: Project import/export
+          - doc_title: Migrate projects using file exports
             doc_url: 'ee/user/project/settings/import_export.html'
-          - doc_title: Project/Group import/export rate limits
-            doc_url: 'ee/user/admin_area/settings/import_export_rate_limits.html'
-          - doc_title: Project import achive size limits
-            doc_url: 'ee/security/project_import_decompressed_archive_size_limits.html'
+            docs:
+              - doc_title: Troubleshooting
+                doc_url: 'ee/user/project/settings/import_export_troubleshooting.html'
+              - doc_title: Rate limits for project and group imports and exports
+                doc_url: 'ee/user/admin_area/settings/import_export_rate_limits.html'
+              - doc_title: Decompressed archive size limits
+                doc_url: 'ee/security/project_import_decompressed_archive_size_limits.html'
 
       - category_title: Plan and track work
         category_url: 'ee/topics/plan_and_track.html'
