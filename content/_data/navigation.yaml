@@ -2380,6 +2380,8 @@ sections:
             doc_url: 'ee/api/pipelines.html'
           - doc_title: Plan limits
             doc_url: 'ee/api/plan_limits.html'
+          - doc_title: Product analytics
+            doc_url: 'ee/api/product_analytics.html'
           - doc_title: Project access tokens
             doc_url: 'ee/api/project_access_tokens.html'
           - doc_title: Project aliases
