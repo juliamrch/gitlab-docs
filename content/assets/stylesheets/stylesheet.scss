@@ -415,29 +415,7 @@ ol {
   overflow: auto;
   position: relative;
   z-index: 1;
-
-  /* stylelint-disable declaration-no-important */
-  /* stylelint-disable selector-class-pattern */
-  .label,
-  text {
-    font-family: $gl-regular-font !important;
-    font-size: 0.9rem !important;
-  }
-
-  rect:not(.branchLabelBkg, .commit-label-bkg),
-  polygon {
-    fill: $white !important;
-    stroke: $gray-300 !important;
-  }
-
-  .note {
-    fill: $gray-50 !important;
-    stroke: $gray-50 !important;
-  }
-  /* stylelint-enable declaration-no-important */
-  /* stylelint-enable selector-class-pattern */
 }
-
 .mermaid:not([data-processed='true']) {
   display: none;
 }

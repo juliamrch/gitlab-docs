@@ -16,6 +16,6 @@ class ConvertMermaidHtml < Nanoc::Filter
       .gsub('>', '&gt;')
       .gsub('"', '&quot;')
 
-    %(<div class="mermaid">#{fixed_content}</div>)
+    %(<div class="mermaid load-mermaid">#{fixed_content}</div>)
   end
 end
