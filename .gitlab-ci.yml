@@ -26,6 +26,7 @@ variables:
   MARKDOWNLINT_VERSION: '0.32.2'
   MARKDOWNLINT2_VERSION: '0.5.1'
   RUBY_VERSION: '2.7.6'
+  APPS_DOMAIN: 'docs.gitlab-review.app'
 
 #
 # workflow:rules to prevent duplicate pipelines when pushing to a branch with an open MR.
