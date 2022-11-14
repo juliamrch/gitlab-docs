@@ -102,13 +102,11 @@
     <script src="<%= @items['/assets/javascripts/toggle_popover.*'].path %>"></script>
     <script src="<%= @items['/frontend/shared/clipboardjs.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
-    <script>
-      if (document.querySelector('.mermaid') !== null) {
-        let script = document.createElement('script');
-        script.src = '/frontend/default/mermaid.js';
-        document.head.appendChild(script);
-      }
-    </script>
+
+    <% if @item.compiled_content.include? "load-mermaid" %>
+      <script src="<%= @items['/frontend/default/mermaid.*'].path %>"></script>
+    <% end %>
+
     <% if production? %>
     <%# Add analytics only in production %>
       <%= render '/analytics.*' %>
