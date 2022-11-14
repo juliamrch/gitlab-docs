@@ -104,7 +104,16 @@ default:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-    - if: '$CI_COMMIT_BRANCH == "main"'
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+
+.rules_global_nav_test:
+  rules:
+    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$CI_MERGE_REQUEST_ID'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
 
 .rules_prod:
@@ -125,7 +134,6 @@ default:
     - if: '$CI_PIPELINE_SOURCE == "pipeline"|| $CI_PIPELINE_SOURCE == "trigger"'
       when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-    - if: '$CI_COMMIT_BRANCH == "main"'
 
 .rules_dev:
   rules:

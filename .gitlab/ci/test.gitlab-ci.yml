@@ -39,7 +39,7 @@ check_duplicate_redirects:
 #
 check_global_nav_entries:
   extends:
-    - .rules_site_tests
+    - .rules_global_nav_test
   needs: []
   stage: test
   script:
