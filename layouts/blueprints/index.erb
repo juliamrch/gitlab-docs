@@ -1,5 +1,6 @@
 <% render '/default.*' do %>
   <% if @item.identifier.match?('/ee/architecture/blueprints/**/*.md') %>
+    <%= legal_disclaimer %>
     <%= render '/blueprints/table.*', { :blueprints => [ @item ], :summary => true } %>
     <%= yield %>
   <% else %>

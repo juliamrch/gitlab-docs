@@ -4,22 +4,6 @@
 class AdmonitionFilter < Nanoc::Filter
   identifier :admonition
 
-  BOOTSTRAP_MAPPING = {
-    'note' => 'note',
-    'warning' => 'warning',
-    'flag' => 'flag',
-    'info' => 'info',
-    'disclaimer' => 'disclaimer'
-  }.freeze
-
-  GITLAB_SVGS_MAPPING = {
-    'note' => 'information-o',
-    'warning' => 'warning',
-    'flag' => 'flag',
-    'info' => 'tanuki',
-    'disclaimer' => 'review-warning'
-  }.freeze
-
   def run(content, params = {})
     # `#dup` is necessary because `.fragment` modifies the incoming string. Ew!
     # See https://github.com/sparklemotion/nokogiri/issues/1077
@@ -29,15 +13,9 @@ class AdmonitionFilter < Nanoc::Filter
       match = content.match(%r{\A(?<type>NOTE|WARNING|FLAG|INFO|DISCLAIMER):\s?(?<content>.*)\Z}m)
       next unless match
 
-      new_content = generate(match[:type].downcase, match[:content])
+      new_content = admonition(match[:type].downcase, match[:content])
       para.replace(new_content)
     end
     doc.to_s
-  end
-
-  def generate(kind, content)
-    %(<div class="mt-3 admonition-wrapper #{kind}">) +
-      %(<div class="admonition admonition-non-dismissable alert alert-#{BOOTSTRAP_MAPPING[kind]}">) +
-      %(<div>#{icon(GITLAB_SVGS_MAPPING[kind], 16, 'alert-icon')}<div role="alert"><div class="alert-body">#{content}</div></div></div></div></div>)
   end
 end
