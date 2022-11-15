@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'nanoc', '~> 4.12.10'
+gem 'nanoc', '~> 4.12.12'
 gem 'sassc', '~> 2.4.0'
 gem 'rake', '~> 13.0.6'
 
@@ -26,7 +26,7 @@ group :test, :development do
   gem 'simplecov', '~> 0.21.2', require: false
   gem 'simplecov-cobertura', '~> 2.1.0', require: false
   gem 'pry-byebug', '~> 3.10.1', require: false
-  gem 'gitlab-styles', '~> 9.0.0', require: false
+  gem 'gitlab-styles', '~> 9.1.0', require: false
 end
 
 group :development, :danger do
