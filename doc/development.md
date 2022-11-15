@@ -74,9 +74,9 @@ Libraries that are not specific to individual components (e.g, jQuery) are bundl
 
 This is a pattern to avoid going forward -- ideally third-party libraries are only loaded from components that require them -- but this allows us to utilize yarn for package management and avoid external CDNs while the site is still only partially component-driven.
 
-## Bump versions of CSS and JavaScript
+## Bump versions of JavaScript
 
-Whenever the custom CSS and JavaScript files under `content/assets/` change,
+Whenever the JavaScript files under `content/assets/` change,
 make sure to bump their version in the front matter. This method guarantees that
 your changes take effect by clearing the cache of previous files.
 
@@ -85,8 +85,6 @@ layouts. For example use:
 
 ```js
 <script async type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
-
-<link rel="stylesheet" href="<%= @items['/assets/stylesheets/toc.*'].path %>">
 ```
 
 The links pointing to the files should be similar to:
