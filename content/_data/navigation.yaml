@@ -1972,6 +1972,8 @@ sections:
                 doc_url: 'ee/ci/cloud_deployment/'
               - doc_title: Deploy to Amazon ECS
                 doc_url: 'ee/ci/cloud_deployment/ecs/deploy_to_aws_ecs.html'
+              - doc_title: Deploy to Heroku
+                doc_url: 'ee/ci/cloud_deployment/heroku.html'
           - doc_title: Releases
             doc_url: 'ee/user/project/releases/'
             docs:
