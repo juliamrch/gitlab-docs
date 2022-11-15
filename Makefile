@@ -150,7 +150,7 @@ prettier-tests:
 
 stylelint-tests:
 	@printf "\n$(INFO)INFO: Running Stylelint tests...$(END)\n"
-	@scripts/run-stylelint.sh
+	@yarn stylelint content/assets/stylesheets
 
 hadolint-tests:
 	@printf "\n$(INFO)INFO: Running hadolint tests...$(END)\n"

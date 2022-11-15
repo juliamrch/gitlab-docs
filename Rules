@@ -125,7 +125,7 @@ compile '/**/*.scss' do
   filter :sass,
          syntax: :scss,
          style: :compressed
-  write "#{item.identifier.without_ext}-v#{rep.item[:version]}.css"
+  write "#{item.identifier.without_ext}.css"
 end
 
 # Do not compile minified assets
