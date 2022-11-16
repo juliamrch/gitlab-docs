@@ -572,3 +572,14 @@ a.gl-tab-nav-item:hover {
     z-index: auto;
   }
 }
+
+.four-oh-four {
+  a.back-btn:hover {
+    text-decoration: none;
+    color: $gds-white;
+    background-color: $purple-500;
+  }
+  .search-card {
+    box-shadow: 0 0 0.125rem $landing-gl-black-50, 0 0.25rem 1.5rem $landing-gl-blue-950;
+  }
+}

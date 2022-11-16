@@ -4,7 +4,6 @@
     <%= render '/head.*' %>
     <meta name="robots" content="noindex">
     <link rel="canonical" href="<%= @config[:base_url] %>/404.html">
-    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/404.*'].path %>">
   </head>
   <body>
     <%= render '/header.*' %>
@@ -17,8 +16,11 @@
     </div>
   </section>
   <script src="<%= @items['/frontend/shared/global_imports.*'].path %>"></script>
+
+  <% if @config[:algolia] == "true" %>
   <script src="<%= @items['/frontend/search/docsearch.*'].path %>"></script>
-  <script src="<%= @items['/frontend/404/404.*'].path %>"></script>
+  <% end %>
+
   <% if production? %>
   <%# Add analytics only in production %>
     <%= render '/analytics.*' %>
