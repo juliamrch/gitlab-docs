@@ -15,11 +15,12 @@ which git && which make
 
 If they aren't installed, use Homebrew or your Linux distribution's package manager to install them.
 
+Homebrew is also useful for installing other packages you might be missing. To install Homebrew, follow the guide at [https://brew.sh](brew.sh).
+
 To set up GitLab Docs:
 
-1. [Install `asdf`](https://asdf-vm.com/guide/getting-started.html) and its dependencies. To complete the `asdf`
-   installation, close the terminal you used to install `asdf` and open a new terminal. That enables `asdf` for later
-   steps.
+1. [Install `asdf`](https://asdf-vm.com/guide/getting-started.html) and its dependencies. To complete the `asdf` installation, close the
+   terminal you used to install `asdf` and open a new terminal. That enables `asdf` for later steps.
 1. Clone the `gitlab-docs` project.
 1. In the checkout of `gitlab-docs`, run:
 
@@ -45,8 +46,7 @@ projects, run the following in the checkout of `gitlab-docs`:
 make clone-all-docs-projects
 ```
 
-The documentation projects are cloned into the parent directory. If you make documentation changes in these projects,
-they can be previewed.
+The documentation projects are cloned into the parent directory. If you make documentation changes in these projects, they can be previewed.
 
 ### Preview GitLab Docs
 
@@ -67,8 +67,7 @@ they can be previewed.
 1. To open the preview, in your browser, go to the URL in the terminal output.
    For this example, go to <http://127.0.0.1:3000/>.
 
-1. From your preview homepage, use the docs site navigation to go to the page you
-   want to preview.
+1. From your preview homepage, use the docs site navigation to go to the page you want to preview.
 
    Do not use the search box, as search results take you to the live docs site.
 
@@ -116,8 +115,8 @@ make update-all-projects
 
 ## Using Gitpod
 
-[Gitpod](https://www.gitpod.io) is a online environment with pre-configured GitLab Docs site ready for
-development. You can use Gitpod as an alternative to building and maintaining a local environment for running the GitLab Docs site.
+[Gitpod](https://www.gitpod.io) is a online environment with pre-configured GitLab Docs site ready for development. You can use Gitpod as
+an alternative to building and maintaining a local environment for running the GitLab Docs site.
 
 For more information, see the [GDK Gitpod docs](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitpod.md).
 
@@ -159,16 +158,15 @@ To commit and push changes:
 1. Enter a commit message in the text area.
 1. Select the checkmark icon at the top of the **Source Control** section to
    commit your changes.
-1. Push your changes by selecting the **Synchronize changes** action in the
-   bottom blue toolbar. If Gitpod asks you how you want to synchronize your
-   changes, select **Push and pull**.
+1. Push your changes by selecting the **Synchronize changes** action in the bottom blue toolbar. If Gitpod asks you how you want to
+   synchronize your changes, select **Push and pull**.
 
 ## Troubleshooting
 
 ### `realpath: No such file or directory @ rb_check_realpath_internal`
 
-If you run into this error, it means you're missing one of the projects `gitlab-docs` relies on to build the content of
-the GitLab Docs site site. To resolve this error, run:
+If you run into this error, it means you're missing one of the projects `gitlab-docs` relies on to build the content of the GitLab Docs site.
+To resolve this error, run:
 
 ```shell
 make clone-all-docs-projects
@@ -187,12 +185,12 @@ means that your shell is pointing to the wrong Ruby installation. macOS comes wi
 /Users/<username>/.asdf/shims/ruby --version
 ```
 
-The system and asdf versions of Ruby are likely to match the versions in the error. To solve this error, you must configure your shell to point
-to the `asdf` version instead of the system version.
+The system and asdf versions of Ruby are likely to match the versions in the error. To solve this error, you must configure your shell to
+point to the `asdf` version instead of the system version.
 
 1. Check the [install `asdf`](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf) instructions, and make sure you used the method
-   that matches the way you [downloaded `asdf`](https://asdf-vm.com/guide/getting-started.html#_2-download-asdf) and the shell you use. If you
-   didn't use the matching instructions, perform the required steps.
+   that matches the way you [downloaded `asdf`](https://asdf-vm.com/guide/getting-started.html#_2-download-asdf) and the shell you use. If
+   you didn't use the matching instructions, perform the required steps.
 1. Check that `asdf` is configured in your shell's configuration as specified in the asdf instructions. For example, if you use ZSH:
 
    ```shell
@@ -204,6 +202,19 @@ to the `asdf` version instead of the system version.
    ```shell
    which ruby
    ruby --version
+   ```
+
+### `An error occurred while installing eventmachine (1.2.7), and Bundler cannot continue`
+
+You can encounter this error if you run `make view` and don't have OpenSSL installed on your machine. To resolve this
+error for macOS:
+
+1. Optional. Install [Brew](https://brew.sh/) if required.
+1. Run `make brew-bundle`.
+1. Install EventMachine:
+
+   ```plaintext
+   gem install eventmachine -- --with-openssl-dir=$(brew --prefix)/opt/openssl@1.1
    ```
 
 ### `Address already in use - bind(2) for 127.0.0.1:3000`
