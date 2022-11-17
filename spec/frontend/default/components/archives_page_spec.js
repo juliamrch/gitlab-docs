@@ -4,12 +4,13 @@
 
 import { shallowMount } from '@vue/test-utils';
 import ArchivesPage from '../../../../content/frontend/default/components/archives_page.vue';
-import { getVersions } from '../../../../content/frontend/services/fetch_versions';
-import { getArchiveImages } from '../../../../content/frontend/services/fetch_archive_images';
+import {
+  getVersions,
+  getArchiveImages,
+} from '../../../../content/frontend/services/fetch_versions';
 import { mockVersions, mockArchiveImages } from '../../__mocks__/versions_mock';
 
 jest.mock('../../../../content/frontend/services/fetch_versions');
-jest.mock('../../../../content/frontend/services/fetch_archive_images');
 
 beforeEach(() => {
   jest.clearAllMocks();
