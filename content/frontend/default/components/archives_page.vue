@@ -1,6 +1,5 @@
 <script>
-import { getVersions } from '../../services/fetch_versions';
-import { getArchiveImages } from '../../services/fetch_archive_images';
+import { getVersions, getArchiveImages } from '../../services/fetch_versions';
 import HeaderPermalink from '../../shared/components/header_permalink.vue';
 
 export default {
