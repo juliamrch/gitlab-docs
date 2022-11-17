@@ -494,6 +494,8 @@ sections:
         docs:
           - doc_title: Troubleshooting
             doc_url: 'ee/integration/advanced_search/elasticsearch_troubleshooting.html'
+      - category_title: GitLab CLI (`glab`)
+        category_url: 'ee/integration/glab/'
       - category_title: Gitpod
         category_url: 'ee/integration/gitpod.html'
       - category_title: Jira integrations
@@ -1235,7 +1237,7 @@ sections:
           - doc_title: GitLab Pages
             doc_url: 'ee/user/project/pages/'
             docs:
-              - doc_title: "Tutorial: Create a GitLab Pages website"
+              - doc_title: 'Tutorial: Create a GitLab Pages website'
                 doc_url: 'ee/user/project/pages/getting_started/pages_from_scratch.html'
               - doc_title: Create by using a CI/CD template
                 doc_url: 'ee/user/project/pages/getting_started/pages_ci_cd_template.html'
@@ -1358,7 +1360,7 @@ sections:
           - doc_title: Iterations
             doc_url: 'ee/user/group/iterations/'
             docs:
-              - doc_title: "Tutorial: Use GitLab to run an Agile iteration"
+              - doc_title: 'Tutorial: Use GitLab to run an Agile iteration'
                 doc_url: 'ee/tutorials/agile_sprint.html'
           - doc_title: Milestones
             doc_url: 'ee/user/project/milestones/'
@@ -1399,7 +1401,7 @@ sections:
           - doc_title: Using Git
             doc_url: 'ee/topics/git/'
             docs:
-              - doc_title: "Tutorial: Make your first Git commit"
+              - doc_title: 'Tutorial: Make your first Git commit'
                 doc_url: 'ee/tutorials/make_your_first_git_commit.html'
               - doc_title: Terminology
                 doc_url: 'ee/topics/git/terminology.html'
@@ -1566,7 +1568,7 @@ sections:
           - doc_title: CI/CD
             doc_url: 'ee/ci/'
             docs:
-              - doc_title: "Tutorial: Create your first pipeline"
+              - doc_title: 'Tutorial: Create your first pipeline'
                 doc_url: 'ee/ci/quick_start/'
                 docs:
                   - doc_title: CI/CD concepts
