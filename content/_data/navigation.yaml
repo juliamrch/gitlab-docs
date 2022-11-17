@@ -856,8 +856,8 @@ sections:
             docs:
               - doc_title: Multiple Sidekiq processes
                 doc_url: 'ee/administration/sidekiq/extra_sidekiq_processes.html'
-              - doc_title: Sidekiq routing rules
-                doc_url: 'ee/administration/sidekiq/extra_sidekiq_routing.html'
+              - doc_title: Processing specific job classes
+                doc_url: 'ee/administration/sidekiq/processing_specific_job_classes.html'
               - doc_title: Sidekiq MemoryKiller
                 doc_url: 'ee/administration/sidekiq/sidekiq_memory_killer.html'
               - doc_title: Sidekiq health check
