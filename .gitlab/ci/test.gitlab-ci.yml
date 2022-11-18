@@ -8,7 +8,7 @@
 test_global_nav_links:
   image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0088e238
   extends:
-    - .rules_site_tests
+    - .rules_global_nav_test
     - .bundle
   stage: test
   script:
@@ -39,7 +39,7 @@ check_duplicate_redirects:
 #
 check_global_nav_entries:
   extends:
-    - .rules_global_nav_test
+    - .rules_site_tests
   needs: []
   stage: test
   script:
