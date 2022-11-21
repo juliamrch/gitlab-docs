@@ -64,7 +64,7 @@ sections:
         category_url: 'ee/install/install_methods.html'
         docs:
           # Documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
-          - doc_title: Linux packages (Omnibus)
+          - doc_title: Linux package (Omnibus)
             doc_url: 'omnibus/'
             docs:
               - doc_title: Architecture
@@ -149,7 +149,7 @@ sections:
                 doc_url: 'omnibus/troubleshooting.html'
           # End of documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
 
-          - doc_title: Helm chart
+          - doc_title: Helm chart (Kubernetes)
             doc_url: 'charts/'
             docs:
               # Documentation from https://gitlab.com/gitlab-org/charts/gitlab
@@ -304,7 +304,7 @@ sections:
               # End of documentation from https://gitlab.com/gitlab-org/charts/gitlab
 
               # Documentation from https://gitlab.com/gitlab-org/cloud-native/gitlab-operator
-          - doc_title: Operator
+          - doc_title: Operator (Kubernetes)
             doc_url: 'operator/'
             docs:
               - doc_title: Install
@@ -323,7 +323,7 @@ sections:
 
           - doc_title: Docker
             doc_url: 'ee/install/docker.html'
-          - doc_title: From source
+          - doc_title: Self-compiled (source)
             doc_url: 'ee/install/installation.html'
             docs:
               - doc_title: Install under a relative URL
