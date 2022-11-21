@@ -1135,8 +1135,6 @@ sections:
           - doc_title: Groups
             doc_url: 'ee/user/group/'
             docs:
-              - doc_title: Compliance frameworks
-                doc_url: 'ee/user/group/compliance_frameworks.html'
               - doc_title: Manage groups
                 doc_url: 'ee/user/group/manage.html'
               - doc_title: Group access and permissions
@@ -1151,6 +1149,8 @@ sections:
                 doc_url: 'ee/user/group/import/'
               - doc_title: SAML Group Sync
                 doc_url: 'ee/user/group/saml_sso/group_sync.html'
+              - doc_title: Compliance frameworks
+                doc_url: 'ee/user/group/compliance_frameworks.html'
               - doc_title: Troubleshooting SAML
                 doc_url: 'ee/user/group/saml_sso/troubleshooting.html'
               - doc_title: SAML SSO for GitLab.com groups
