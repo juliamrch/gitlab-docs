@@ -1143,10 +1143,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@evilmartians/lefthook@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@evilmartians/lefthook/-/lefthook-1.2.0.tgz#48698a0f6bf01c94f23e1306a8fd8a658c1c1b1b"
-  integrity sha512-mvrv8oy9f0//R+I27kXl9PlBilhmcwO736vpFM0t359KqG0FN99rVw58rgCcu08XuOZ58mjjh9/vfdD4sbnn7g==
+"@evilmartians/lefthook@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@evilmartians/lefthook/-/lefthook-1.2.1.tgz#722b44726bd5b469ffe4bab12e15de22ce8b0955"
+  integrity sha512-MZT40t0WY1Oz0xYJTBryanmvyXblqmbAI/pHNBI6Q2415NpISqDVHBrffVEXcjAOXBeGl2TPXQr4S/Dh0ckjTg==
 
 "@gitlab/eslint-plugin@^18.1.0":
   version "18.1.0"
@@ -1175,19 +1175,19 @@
     stylelint-declaration-strict-value "1.8.0"
     stylelint-scss "4.2.0"
 
-"@gitlab/svgs@^3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-3.7.0.tgz#1257b69fb9898ea5614f992aa6b6dc3619c3c38c"
-  integrity sha512-6vTqWZzY63ZUTUqk0dmMDcfU27qtkAu0WmlK4e3FMWmISvTxNhAk2j11c/YlLauf6okE4W2T2fnhvXp1mzcPgA==
+"@gitlab/svgs@^3.9.0":
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-3.9.0.tgz#3187629ccca7ba3bf8aa05b9d72e5bbfcf056292"
+  integrity sha512-o/iB5YqPaVeHw5dE4pKTM4R7J48rXCrDVCEr66MXJ8rcwKREzyVf8DN9PwTogNYx4W5+NyBghG93JgeJbtlqUg==
 
-"@gitlab/ui@^49.8.0":
-  version "49.8.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-49.8.0.tgz#100e3646ec0bbee66e0be3b9b1617d72586de583"
-  integrity sha512-lV4sh3zY0i7mkrA2Ll3fhFk26eFhMwN2rsB9Y0Xgc5lgdl2Y7pgO6qOkREo3W9DbhVDoaTwxr7cIeCjW/Tdjpg==
+"@gitlab/ui@^49.11.2":
+  version "49.11.2"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-49.11.2.tgz#290bba7a3d4682365ad81747cf54a2f9927526c1"
+  integrity sha512-qu5qcl+4niYBCPIZS9ZU0i1h/IGL4ZOp4hDsEAIUFGJg9Sp0TBmwdjwKJQbvnexDS3xs1eSBzi+kQ57H+c9wQQ==
   dependencies:
     "@popperjs/core" "^2.11.2"
-    bootstrap-vue "2.23.1"
-    dompurify "^2.4.0"
+    bootstrap-vue "2.20.1"
+    dompurify "^2.4.1"
     echarts "^5.3.2"
     iframe-resizer "^4.3.2"
     lodash "^4.17.20"
@@ -2212,21 +2212,21 @@ boolbase@^1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==
 
-bootstrap-vue@2.23.1:
-  version "2.23.1"
-  resolved "https://registry.yarnpkg.com/bootstrap-vue/-/bootstrap-vue-2.23.1.tgz#8f866f7cda27eb0e7e13a0bea8d55d8fc7a82199"
-  integrity sha512-SEWkG4LzmMuWjQdSYmAQk1G/oOKm37dtNfjB5kxq0YafnL2W6qUAmeDTcIZVbPiQd2OQlIkWOMPBRGySk/zGsg==
+bootstrap-vue@2.20.1:
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/bootstrap-vue/-/bootstrap-vue-2.20.1.tgz#1b6cd4368632c1a6dd4a5ed161242baa131c3cd5"
+  integrity sha512-s+w83q0T2mo/RbFwTM8gExbLJMEOYpdTUqmyFaHv2Ir+TFprMvTWpeAzeNuawJ130W1gePZ3LW3cNp1t/tZbOw==
   dependencies:
     "@nuxt/opencollective" "^0.3.2"
-    bootstrap "^4.6.1"
+    bootstrap ">=4.5.3 <5.0.0"
     popper.js "^1.16.1"
     portal-vue "^2.1.7"
     vue-functional-data-merge "^3.1.0"
 
-bootstrap@^4.6.1:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.6.1.tgz#bc25380c2c14192374e8dec07cf01b2742d222a2"
-  integrity sha512-0dj+VgI9Ecom+rvvpNZ4MUZJz8dcX7WCX+eTID9+/8HgOkv3dsRzi8BGeZJCQU6flWQVYxwTQnEZFrmJSEO7og==
+"bootstrap@>=4.5.3 <5.0.0", bootstrap@^4.6.1:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.6.2.tgz#8e0cd61611728a5bf65a3a2b8d6ff6c77d5d7479"
+  integrity sha512-51Bbp/Uxr9aTuy6ca/8FbFloBUJZLHwnhTcnjIeRn2suQWsWzcuJhGjKDB5eppVte/8oCdOL3VuwxvZDUggwGQ==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -3394,10 +3394,15 @@ domhandler@^5.0.1, domhandler@^5.0.2, domhandler@^5.0.3:
   dependencies:
     domelementtype "^2.3.0"
 
-dompurify@2.4.0, dompurify@^2.4.0:
+dompurify@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.4.0.tgz#c9c88390f024c2823332615c9e20a453cf3825dd"
   integrity sha512-Be9tbQMZds4a3C6xTmz68NlMfeONA//4dOavl/1rNw50E+/QO0KVpbcU0PcaW0nsQxurXls9ZocqFxk8R2mWEA==
+
+dompurify@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.4.1.tgz#f9cb1a275fde9af6f2d0a2644ef648dd6847b631"
+  integrity sha512-ewwFzHzrrneRjxzmK6oVz/rZn9VWspGFRDb4/rRtIsM1n36t9AKma/ye8syCpcw+XJ25kOK/hOG7t1j2I2yBqA==
 
 domutils@^3.0.1:
   version "3.0.1"
@@ -3704,10 +3709,10 @@ eslint-visitor-keys@^3.3.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz#f6480fa6b1f30efe2d1968aa8ac745b862469826"
   integrity sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==
 
-eslint@^8.27.0:
-  version "8.27.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.27.0.tgz#d547e2f7239994ad1faa4bb5d84e5d809db7cf64"
-  integrity sha512-0y1bfG2ho7mty+SiILVf9PfuRA49ek4Nc60Wmmu62QlobNR+CeXa4xXIJgcuwSQgZiWaPH+5BDsctpIW0PR/wQ==
+eslint@^8.28.0:
+  version "8.28.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.28.0.tgz#81a680732634677cc890134bcdd9fdfea8e63d6e"
+  integrity sha512-S27Di+EVyMxcHiwDrFzk8dJYAaD+/5SoWKxL1ri/71CRHsnJnRDPNt2Kzj24+MT9FDupf4aqqyqPrvI8MvQ4VQ==
   dependencies:
     "@eslint/eslintrc" "^1.3.3"
     "@humanwhocodes/config-array" "^0.11.6"
