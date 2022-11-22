@@ -2681,6 +2681,8 @@ sections:
                 doc_url: 'ee/development/fe_guide/style/javascript.html'
               - doc_title: Python development guidelines
                 doc_url: 'ee/development/python_guide/'
+              - doc_title: RuboCop rule development guide
+                doc_url: 'ee/development/rubocop_development_guide.html'
               - doc_title: Ruby style guide
                 doc_url: 'ee/development/backend/ruby_style_guide.html'
               - doc_title: 'Gemfile guidelines'
