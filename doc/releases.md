@@ -240,27 +240,6 @@ Solution: revert the navigation menu change in the `gitlab-docs` stable branch:
    for the `gitlab-docs` repository
 1. In the **Overview** tab, select **Revert** and target the `gitlab-docs` stable branch.
 
-### image:docs-latest job fails with `GemNotFound` error
-
-When you start the **Build docker images weekly** scheduled pipeline and
-[run the **image:docs-latest** job](#merge-merge-requests-and-run-docker-image-builds),
-the job fails with an error similar to the following:
-
-```shell
-bundler: failed to load command: rake (/usr/local/bundle/bin/rake)
-Bundler::GemNotFound: Could not find <some gem>
-```
-
-This error can occur when there was a recent update to
-dependencies in the [`Gemfile.lock`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/Gemfile.lock)
-file, but the dependencies are missing from
-the latest [`gitlab-docs:bootstrap`](https://docs.gitlab.com/ee/development/documentation/site_architecture/deployment_process.html) image.
-
-1. Start a new **Build docker images weekly** pipeline.
-1. Run the **image:bootstrap** job. This job creates a new bootstrap image
-   and adds it to the container registry.
-1. After the **Build** and **Test** stages are complete, run the **image:docs-latest** job.
-
 ### `Gem::FilePermissionError: You don't have write permissions for the /usr/local/bundle directory`
 
 To build the Docker images, we use [Docker-in-Docker (dind)](https://hub.docker.com/_/docker/)

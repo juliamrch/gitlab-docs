@@ -128,9 +128,6 @@ a different name first and test it to ensure you do not break the pipelines.
    graph, or select the first (`build-images`) stage in the mini pipeline graph to
    expose the jobs that build the images.
 1. Select the **play** (**{play}**) button next to the images you want to rebuild.
-   - Normally, you do not need to rebuild the `image:gitlab-docs-base` image, as it
-     rarely changes. If it does need to be rebuilt, be sure to only run `image:docs-lint`
-     after it is finished rebuilding.
 
 ### Deploy the docs site
 
