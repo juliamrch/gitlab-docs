@@ -701,3 +701,150 @@ redirects:
   - from: /ee/administration/troubleshooting/group_saml_scim.html
     to: /ee/user/group/saml_sso/example_saml_config.html
     remove_date: 2023-07-29
+  - from: /ee/development/swapping_tables.html
+    to: /ee/development/database/swapping_tables.html
+    remove_date: 2023-08-04
+  - from: /ee/development/documentation/structure.html
+    to: /ee/development/documentation/topic_types/index.html
+    remove_date: 2023-08-16
+  - from: /ee/development/foreign_keys.html
+    to: /ee/development/database/foreign_keys.html
+    remove_date: 2023-08-05
+  - from: /ee/development/verifying_database_capabilities.html
+    to: /ee/development/database/verifying_database_capabilities.html
+    remove_date: 2023-08-06
+  - from: /ee/development/db_dump.html
+    to: /ee/development/database/db_dump.html
+    remove_date: 2023-08-06
+  - from: /ee/development/filtering_by_label.html
+    to: /ee/development/database/filtering_by_label.html
+    remove_date: 2023-08-05
+  - from: /ee/development/adding_database_indexes.html
+    to: /ee/development/database/adding_database_indexes.html
+    remove_date: 2023-08-05
+  - from: /ee/development/serializing_data.html
+    to: /ee/development/database/serializing_data.html
+    remove_date: 2023-08-06
+  - from: /ee/development/sha1_as_binary.html
+    to: /ee/development/database/sha1_as_binary.html
+    remove_date: 2023-08-06
+  - from: /ee/development/single_table_inheritance.html
+    to: /ee/development/database/single_table_inheritance.html
+    remove_date: 2023-08-06
+  - from: /ee/development/polymorphic_associations.html
+    to: /ee/development/database/polymorphic_associations.html
+    remove_date: 2023-08-04
+  - from: /ee/development/ordering_table_columns.html
+    to: /ee/development/database/ordering_table_columns.html
+    remove_date: 2023-08-04
+  - from: /ee/development/database_debugging.html
+    to: /ee/development/database/database_debugging.html
+    remove_date: 2023-08-06
+  - from: /ee/development/namespaces_storage_statistics.html
+    to: /ee/development/database/namespaces_storage_statistics.html
+    remove_date: 2023-08-05
+  - from: /ee/development/query_count_limits.html
+    to: /ee/development/database/query_count_limits.html
+    remove_date: 2023-08-06
+  - from: /ee/development/iterating_tables_in_batches.html
+    to: /ee/development/database/iterating_tables_in_batches.html
+    remove_date: 2023-08-06
+  - from: /ee/development/query_recorder.html
+    to: /ee/development/database/query_recorder.html
+    remove_date: 2023-08-06
+  - from: /ee/development/hash_indexes.html
+    to: /ee/development/database/hash_indexes.html
+    remove_date: 2023-08-06
+  - from: /ee/development/insert_into_tables_in_batches.html
+    to: /ee/development/database/insert_into_tables_in_batches.html
+    remove_date: 2023-08-05
+  - from: /ee/development/creating_enums.html
+    to: /ee/development/database/creating_enums.html
+    remove_date: 2023-08-06
+  - from: /ee/development/database_query_comments.html
+    to: /ee/development/database/database_query_comments.html
+    remove_date: 2023-08-05
+  - from: /ee/development/query_performance.html
+    to: /ee/development/database/query_performance.html
+    remove_date: 2023-08-06
+  - from: /ee/development/new_fe_guide/tips.html
+    to: /ee/development/fe_guide/index.html
+    remove_date: 2023-08-15
+  - from: /ee/development/new_fe_guide/development/components.html
+    to: /ee/development/fe_guide/index.html
+    remove_date: 2023-08-15
+  - from: /ee/development/new_fe_guide/development/accessibility.html
+    to: /ee/development/fe_guide/accessibility.html
+    remove_date: 2023-08-15
+  - from: /ee/development/new_fe_guide/development/performance.html
+    to: /ee/development/fe_guide/performance.html
+    remove_date: 2023-08-15
+  - from: /ee/development/new_fe_guide/development/index.html
+    to: /ee/development/fe_guide/index.html
+    remove_date: 2023-08-15
+  - from: /ee/development/new_fe_guide/development/
+    to: /ee/development/fe_guide/index.html
+    remove_date: 2023-08-15
+  - from: /ee/development/new_fe_guide/index.html
+    to: /ee/development/fe_guide/index.html
+    remove_date: 2023-08-15
+  - from: /ee/development/new_fe_guide/
+    to: /ee/development/fe_guide/index.html
+    remove_date: 2023-08-15
+  - from: /ee/development/new_fe_guide/modules/widget_extensions.html
+    to: /ee/development/fe_guide/merge_request_widget_extensions.html
+    remove_date: 2023-08-15
+  - from: /ee/development/new_fe_guide/modules/dirty_submit.html
+    to: /ee/development/fe_guide/index.html
+    remove_date: 2023-08-15
+  - from: /ee/development/new_fe_guide/modules/index.html
+    to: /ee/development/fe_guide/index.html
+    remove_date: 2023-08-15
+  - from: /ee/development/new_fe_guide/modules/
+    to: /ee/development/fe_guide/index.html
+    remove_date: 2023-08-15
+  - from: /ee/development/understanding_explain_plans.html
+    to: /ee/development/database/understanding_explain_plans.html
+    remove_date: 2023-08-04
+  - from: /ee/user/project/merge_requests/merge_request_dependencies.html
+    to: /ee/user/project/merge_requests/dependencies.html
+    remove_date: 2023-08-22
+  - from: /ee/user/infrastructure/clusters/manage/management_project_applications/prometheus.html
+    to: /ee/operations/metrics/index.html
+    remove_date: 2023-08-03
+  - from: /ee/user/infrastructure/clusters/manage/management_project_applications/sentry.html
+    to: /ee/operations/error_tracking.html
+    remove_date: 2023-08-03
+  - from: /ee/operations/tracing.html
+    to: /ee/operations/index.html
+    remove_date: 2023-08-01
+  - from: /ee/raketasks/sidekiq_job_migration.html
+    to: /ee/administration/sidekiq/sidekiq_job_migration.html
+    remove_date: 2023-08-11
+  - from: /ee/administration/sidekiq.html
+    to: /ee/administration/sidekiq/index.html
+    remove_date: 2023-08-11
+  - from: /ee/administration/troubleshooting/sidekiq.html
+    to: /ee/administration/sidekiq/sidekiq_troubleshooting.html
+    remove_date: 2023-08-11
+  - from: /ee/administration/troubleshooting/tracing_correlation_id.html
+    to: /ee/administration/logs/tracing_correlation_id.html
+    remove_date: 2023-08-12
+  - from: /ee/administration/troubleshooting/elasticsearch.html
+    to: /ee/integration/advanced_search/elasticsearch_troubleshooting.html
+    remove_date: 2023-08-02
+  - from: /ee/administration/operations/sidekiq_memory_killer.html
+    to: /ee/administration/sidekiq/sidekiq_memory_killer.html
+    remove_date: 2023-08-11
+  - from: /ee/administration/operations/extra_sidekiq_routing.html
+    to: /ee/administration/sidekiq/extra_sidekiq_routing.html
+    remove_date: 2023-08-11
+  - from: /ee/administration/operations/extra_sidekiq_processes.html
+    to: /ee/administration/sidekiq/extra_sidekiq_processes.html
+    remove_date: 2023-08-11
+  - from: /ee/administration/sidekiq_health_check.html
+    to: /ee/administration/sidekiq/sidekiq_health_check.html
+    remove_date: 2023-08-11
+  - from: /runner/install/old.html
+    to: /runner/install/index.html
+    remove_date: 2023-08-12
