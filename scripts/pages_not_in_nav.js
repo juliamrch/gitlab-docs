@@ -23,9 +23,16 @@ const nav = JSON.stringify(navYaml);
 // Read the markdown file and extract the fields we need.
 const getPageData = (filename) => {
   const contents = fs.readFileSync(filename, 'utf-8');
+  const title = contents
+    .split('\n')
+    .filter((line) => line.startsWith('# '))
+    .toString()
+    .toLowerCase();
+
   return {
     filename,
     isRedirect: contents.includes('redirect_to'),
+    isDeprecated: title.includes('(deprecated)') || title.includes('(removed)'),
     stage: fm(contents).attributes.stage,
     group: fm(contents).attributes.group,
   };
@@ -36,7 +43,7 @@ const lostPages = [];
 dataSources.forEach((source) => {
   glob.sync(`${source.content_dir}/**/*.md`).forEach((filename) => {
     const pageData = getPageData(filename);
-    if (pageData.isRedirect) {
+    if (pageData.isRedirect || pageData.isDeprecated) {
       return;
     }
 
