@@ -50,7 +50,7 @@ update-all-docs-projects: update-gitlab update-gitlab-runner update-omnibus-gitl
 
 up: setup view
 
-compile: setup
+compile:
 	@printf "\n$(INFO)INFO: Compiling GitLab documentation site...$(END)\n"
 	@bundle exec nanoc compile
 
