@@ -2003,10 +2003,9 @@ sections:
             docs:
               - doc_title: Alerts
                 doc_url: 'ee/operations/incident_management/alerts.html'
-              - doc_title: Escalation policies
-                doc_url: 'ee/operations/incident_management/escalation_policies.html'
-              - doc_title: Paging and notifications
-                doc_url: 'ee/operations/incident_management/paging.html'
+                docs:
+                  - doc_title: Integrations
+                    doc_url: 'ee/operations/incident_management/integrations.html'
               - doc_title: Incidents
                 doc_url: 'ee/operations/incident_management/incidents.html'
                 docs:
@@ -2014,12 +2013,15 @@ sections:
                     doc_url: 'ee/operations/incident_management/incident_timeline_events.html'
                   - doc_title: Linked resources
                     doc_url: 'ee/operations/incident_management/linked_resources.html'
-              - doc_title: Integrations
-                doc_url: 'ee/operations/incident_management/integrations.html'
-              - doc_title: Status page
-                doc_url: 'ee/operations/incident_management/status_page.html'
               - doc_title: On-call schedules
                 doc_url: 'ee/operations/incident_management/oncall_schedules.html'
+                docs:
+                  - doc_title: Escalation policies
+                    doc_url: 'ee/operations/incident_management/escalation_policies.html'
+                  - doc_title: Paging and notifications
+                    doc_url: 'ee/operations/incident_management/paging.html'
+              - doc_title: Status page
+                doc_url: 'ee/operations/incident_management/status_page.html'
           - doc_title: Metrics dashboard
             doc_url: 'ee/operations/metrics/'
             docs:
