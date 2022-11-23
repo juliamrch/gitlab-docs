@@ -7,28 +7,6 @@
   extends:
     - .retry
     - .bundle_and_yarn
-  script:
-    - bundle exec rake default
-    - bundle exec nanoc compile -VV
-    # Create _redirects for Pages redirects
-    - bundle exec rake redirects
-    # Build the Lunr.js search index if needed
-    - if [[ "$ALGOLIA_SEARCH" == "false" ]]; then node scripts/lunr/preindex.js; fi
-    # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
-    - SIZE_BEFORE=$(du -sh public/ | awk '{print $1}')
-    # Minify the assets of the resulting site
-    - cd public
-    - ../scripts/minify-assets.sh ./ ./
-    - cd ..
-    - SIZE_AFTER_MINIFY=$(du -sh public/ | awk '{print $1}')
-    # Use gzip to compress static content for faster web serving
-    # https://docs.gitlab.com/ee/user/project/pages/introduction.html#serving-compressed-assets
-    - find public/ -type f \( -iname "*.html" -o -iname "*.js"  -o -iname "*.css"  -o -iname "*.svg" -o -iname "*.json" \) -exec gzip --keep --best --force --verbose {} \;
-    - SIZE_AFTER_GZIP=$(du -sh public/ | awk '{print $1}')
-    # Print size results
-    - echo "Minify and compress the static assets (HTML, CSS, JS)"
-    - echo
-    - echo -e "Size before minifying and gzipping ..... $SIZE_BEFORE\nSize after minifying ................... $SIZE_AFTER_MINIFY\nSize after adding gzipped versions ..... $SIZE_AFTER_GZIP"
   artifacts:
     paths:
       - public
@@ -44,7 +22,40 @@
     auto_stop_in: 30 days
 
 #
-# Compile only on the default and stable branches
+# The script lines for compiling and minifying the site
+#
+.compile-and-minify-scripts:
+  script:
+    - bundle exec rake default
+    - bundle exec nanoc compile -VV
+    # Create _redirects for Pages redirects
+    - bundle exec rake redirects
+    # Build the Lunr.js search index if needed
+    - if [[ "$ALGOLIA_SEARCH" == "false" ]]; then node scripts/lunr/preindex.js; fi
+    # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
+    - SIZE_BEFORE_MINIFY=$(du -sh public/ | awk '{print $1}')
+    # Minify the assets of the resulting site
+    - cd public
+    - ../scripts/minify-assets.sh ./ ./
+    - cd ..
+    - SIZE_AFTER_MINIFY=$(du -sh public/ | awk '{print $1}')
+    # Print size results
+    - echo -e "Size before minifying ......... $SIZE_BEFORE_MINIFY\nSize after minifying ................... $SIZE_AFTER_MINIFY"
+
+#
+# The script lines for gzipping the site (not used in upstream review apps, to speed up pipelines)
+#
+.gzip-scripts:
+  script:
+    # Use gzip to compress static content for faster web serving. Keep uncompressed files for browsers that don't support
+    # compressed files: https://docs.gitlab.com/ee/user/project/pages/introduction.html#serving-compressed-assets
+    - find public/ -type f \( -iname "*.html" -o -iname "*.js"  -o -iname "*.css"  -o -iname "*.svg" -o -iname "*.json" \) -exec gzip --keep  --best --force --verbose {} \;
+    - SIZE_AFTER_GZIP=$(du -sh public/ | awk '{print $1}')
+    # Print size results
+    - echo -e "Size after adding gzipped versions ..... $SIZE_AFTER_GZIP"
+
+#
+# Compile "prod" only on the default and stable branches
 #
 compile_prod:
   extends:
@@ -53,9 +64,12 @@ compile_prod:
   variables:
     ALGOLIA_SEARCH: 'true'
     NANOC_ENV: 'production'
+  script:
+    - !reference [".compile-and-minify-scripts", "script"]
+    - !reference [".gzip-scripts", "script"]
 
 #
-# Compile on all branches except the default branch
+# Compile "dev" for all MRs in `gitlab-docs`
 #
 compile_dev:
   extends:
@@ -63,6 +77,21 @@ compile_dev:
     - .build_base
   variables:
     ALGOLIA_SEARCH: 'false'
+  script:
+    - !reference [".compile-and-minify-scripts", "script"]
+    - !reference [".gzip-scripts", "script"]
+
+#
+# Compile but skip gzip step for review apps from upstream projects
+#
+compile_upstream_review_app:
+  extends:
+    - .rules_upstream_review_app
+    - .build_base
+  variables:
+    ALGOLIA_SEARCH: 'false'
+  script:
+    - !reference [".compile-and-minify-scripts", "script"]
 
 ###############################################
 #               Review Apps                   #
