@@ -146,6 +146,9 @@ test:image:docs-single:
       changes:
         - $DOCKERFILE
   script:
+    - apk add --no-cache -U git
+    - git fetch -all
+    - git checkout -b $GITLAB_VERSION origin/$GITLAB_VERSION
     - docker build
              --build-arg NANOC_ENV=${NANOC_ENV}
              --build-arg VER=${GITLAB_VERSION}
@@ -200,7 +203,9 @@ test:image:docs-single-lunrjs:
       changes:
         - $DOCKERFILE
   script:
-    - apk add --no-cache -U make bash
+    - apk add --no-cache -U make bash git
+    - git fetch -all
+    - git checkout -b $GITLAB_VERSION origin/$GITLAB_VERSION
     - docker build
              --build-arg NANOC_ENV=${NANOC_ENV}
              --build-arg VER=${GITLAB_VERSION}
