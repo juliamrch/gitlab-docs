@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 unlinked_files=0
 

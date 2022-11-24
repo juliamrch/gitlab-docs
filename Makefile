@@ -164,6 +164,10 @@ markdownlint-tests:
 	@printf "\n$(INFO)INFO: Running markdownlint tests...$(END)\n"
 	@yarn markdownlint doc/**/*.md
 
+shellcheck-tests:
+	@printf "\n$(INFO)INFO: Running shellcheck tests...$(END)\n"
+	@shellcheck scripts/*.sh tasks/*.sh
+
 check-global-navigation:
 	@printf "\n$(INFO)INFO: Checking global navigation...$(END)\n"
 	@scripts/check-navigation.sh

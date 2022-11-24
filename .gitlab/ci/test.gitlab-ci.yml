@@ -126,6 +126,19 @@ markdownlint:
     - make markdownlint-tests
 
 #
+# Run ShellCheck tests
+#
+shellcheck:
+  extends:
+    - .rules_site_tests
+  image: koalaman/shellcheck-alpine:v0.8.0
+  needs: []
+  stage: test
+  script:
+    - apk add make
+    - make shellcheck-tests
+
+#
 # Check for broken external links
 #
 test_external_links:

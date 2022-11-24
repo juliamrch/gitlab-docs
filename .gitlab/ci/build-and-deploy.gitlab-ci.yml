@@ -81,8 +81,8 @@ review:
   before_script: []
   cache: {}
   script:
-    - scripts/review-replace-urls
-    - scripts/deploy-review-app
+    - scripts/review-replace-urls.sh
+    - scripts/deploy-review-app.sh
   rules:
     - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
       when: manual
@@ -109,7 +109,7 @@ review_stop:
   before_script: []
   cache: {}
   script:
-    - scripts/deploy-review-app
+    - scripts/deploy-review-app.sh
   rules:
     - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
       allow_failure: true

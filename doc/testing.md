@@ -10,16 +10,17 @@ configured in the project's [`.gitlab-ci.yml`](../.gitlab-ci.yml) file.
 
 These code tests are included in the project:
 
-| Test target | Tool         | Make target          | Purpose                                    |
-|:----------- |:-------------|:---------------------|:-------------------------------------------|
-| CSS         | Stylelint    | `stylelint-tests`    | Code quality                               |
-| Dockerfiles | Hadolint     | `hadolint-tests`     | Syntax checks                              |
-| JavaScript  | ESLint       | `eslint-tests`       | Syntax checks                              |
-| JavaScript  | Prettier     | `prettier-tests`     | Code formatting                            |
-| Markdown    | markdownlint | `markdownlint-tests` | Documentation formatting and syntax checks |
-| Ruby        | RSpec        | `rspec-tests`        | Unit tests                                 |
-| Vue         | Jest         | `jest-tests`         | Unit tests                                 |
-| YAML        | yamllint     | `yamllint-tests`     | Syntax checks                              |
+| Test target   | Tool         | Make target          | Purpose                                    |
+|:--------------|:-------------|:---------------------|:-------------------------------------------|
+| CSS           | Stylelint    | `stylelint-tests`    | Code quality                               |
+| Dockerfiles   | Hadolint     | `hadolint-tests`     | Syntax checks                              |
+| JavaScript    | ESLint       | `eslint-tests`       | Syntax checks                              |
+| JavaScript    | Prettier     | `prettier-tests`     | Code formatting                            |
+| Markdown      | markdownlint | `markdownlint-tests` | Documentation formatting and syntax checks |
+| Ruby          | RSpec        | `rspec-tests`        | Unit tests                                 |
+| Shell scripts | ShellCheck   | `shellcheck-tests`   | Syntax checks                              |
+| Vue           | Jest         | `jest-tests`         | Unit tests                                 |
+| YAML          | yamllint     | `yamllint-tests`     | Syntax checks                              |
 
 ### Run code tests locally
 
