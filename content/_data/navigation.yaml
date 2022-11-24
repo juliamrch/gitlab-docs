@@ -1916,6 +1916,8 @@ sections:
                     doc_url: 'ee/user/application_security/dast/checks/'
               - doc_title: DAST proxy-based analyzer
                 doc_url: 'ee/user/application_security/dast/proxy-based.html'
+              - doc_title: Authentication
+                doc_url: 'ee/user/application_security/dast/authentication.html'
               - doc_title: DAST API
                 doc_url: 'ee/user/application_security/dast_api/'
               - doc_title: Troubleshooting
