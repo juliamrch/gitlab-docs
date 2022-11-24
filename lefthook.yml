@@ -18,5 +18,7 @@ pre-push:
       run: make yamllint-tests
     markdownlint-tests:
       run: make markdownlint-tests
+    shellcheck-tests:
+      run: make shellcheck-tests
     navigation-checks:
       run: make check-global-navigation

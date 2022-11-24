@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 TARGET="$1"
 VER="$2"
@@ -23,7 +23,8 @@ if ! [ -d "$TARGET/$VER" ]; then
 fi
 
 # Compress images
-for image in $(find ${TARGET}/${VER}/ -name "*.png")
-  do $PNG $image
-  echo "Compressing $image"
+# shellcheck disable=SC2044
+for image in $(find "${TARGET}/${VER}/" -name "*.png")
+  do echo "Compressing $image"
+  $PNG "$image"
 done

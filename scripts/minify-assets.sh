@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 TARGET="$1"
 VER="$2"
 MINIFY_FLAGS="--html-keep-document-tags --html-keep-whitespace --recursive"
 
-if [ -z "$TARGET" -o -z "$VER" ]; then
+if [ -z "$TARGET" ] || [ -z "$VER" ]; then
   echo "Usage: $0 <target> <ver>"
   echo "Either <target> or <ver> is missing. Exiting."
   exit 1
@@ -16,9 +16,7 @@ if ! [ -d "$TARGET" ]; then
 fi
 
 # Check if minify is in the PATH
-which minify > /dev/null 2>&1
-# Check if the previous command has a 0 exit status
-if [ $? -eq 0 ]
+if which minify > /dev/null 2>&1
 then
   MINIFY_BIN=$(which minify)
 else
@@ -35,9 +33,9 @@ fi
 # Minify assets
 printf "Optimizing assets..."
 
-printf "HTML..."; $MINIFY_BIN $MINIFY_FLAGS --type=html --match="\.html$" -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
-printf "CSS..." ; $MINIFY_BIN $MINIFY_FLAGS --type=css  --match="\.css$"  -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
-printf "JSON..."; $MINIFY_BIN $MINIFY_FLAGS --type=json --match="\.json$" -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
-printf "SVG..." ; $MINIFY_BIN $MINIFY_FLAGS --type=svg  --match="\.svg$"  -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
+printf "HTML..."; $MINIFY_BIN "$MINIFY_FLAGS" --type=html --match="\.html$" -o "${TARGET}/${VER}/" "${TARGET}/${VER}" || true
+printf "CSS..." ; $MINIFY_BIN "$MINIFY_FLAGS" --type=css  --match="\.css$"  -o "${TARGET}/${VER}/" "${TARGET}/${VER}" || true
+printf "JSON..."; $MINIFY_BIN "$MINIFY_FLAGS" --type=json --match="\.json$" -o "${TARGET}/${VER}/" "${TARGET}/${VER}" || true
+printf "SVG..." ; $MINIFY_BIN "$MINIFY_FLAGS" --type=svg  --match="\.svg$"  -o "${TARGET}/${VER}/" "${TARGET}/${VER}" || true
 
 echo "Done"

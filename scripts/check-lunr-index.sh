@@ -18,17 +18,18 @@ COLOR_RESET="\e[39m"
 if [ "$CI" = "true" ];
 then
   div_check=$(docker run --rm "$IMAGE_NAME" grep -o js-lunr-form "/usr/share/nginx/html/$GITLAB_VERSION/index.html")
-  index_check=$(docker run --rm "$IMAGE_NAME" ls "/usr/share/nginx/html/$GITLAB_VERSION/assets/javascripts/lunr-index.json" | wc -l)
+  index_check=$(docker run --rm "$IMAGE_NAME" find "/usr/share/nginx/html/$GITLAB_VERSION/assets/javascripts/lunr-index.json" | wc -l)
 else
   div_check=$(grep -o js-lunr-form public/index.html)
-  index_check=$(ls public/assets/javascripts/lunr-index.json | wc -l)
+  index_check=$(find public/assets/javascripts/lunr-index.json | wc -l)
 fi
 
-if [ $index_check != 1 ];
+if [ "$index_check" != 1 ];
 then
   # shellcheck disable=2059
   printf "${COLOR_RED}ERROR: lunr.js index is not built!\n"
   printf "       Did you forget to run 'make build-lunr-index'?\n"
+  # shellcheck disable=2059
   printf "       For more information, see https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/docsearch.md#lunrjs-search${COLOR_RESET}\n"
   exit 1;
 else
@@ -37,6 +38,7 @@ else
     # shellcheck disable=2059
     printf "${COLOR_RED}ERROR: lunr.js index is found, but not enabled!\n"
     printf "       Did you forget to build the site with ALGOLIA_SEARCH='false'?\n"
+    # shellcheck disable=2059
     printf "       For more information, see https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/docsearch.md#lunrjs-search${COLOR_RESET}\n"
     exit 1;
   else

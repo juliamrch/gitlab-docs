@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 TARGET="$1" # The directory that has all the HTML files including versions.
             # Usually public/ locally and /site in the Docker image.
@@ -34,70 +34,56 @@ fi
 ## Relative URLs
 ##
 echo "Replace relative URLs in $TARGET/$VER for /ee/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/ee/#="/'"$VER"'/ee/#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/ee/#="/'"$VER"'/ee/#g'
 
 echo "Replace relative URLs in $TARGET/$VER for /runner/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/runner/#="/'"$VER"'/runner/#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/runner/#="/'"$VER"'/runner/#g'
 
 echo "Replace relative URLs in $TARGET/$VER for /omnibus/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/omnibus/#="/'"$VER"'/omnibus/#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/omnibus/#="/'"$VER"'/omnibus/#g'
 
 echo "Replace relative URLs in $TARGET/$VER for /charts/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/charts/#="/'"$VER"'/charts/#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/charts/#="/'"$VER"'/charts/#g'
 
 echo "Replace relative URLs in $TARGET/$VER for /operator/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/operator/#="/'"$VER"'/operator/#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/operator/#="/'"$VER"'/operator/#g'
 
 echo "Replace relative URLs in $TARGET/$VER for /assets/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/assets/#="/'"$VER"'/assets/#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/assets/#="/'"$VER"'/assets/#g'
 
 echo "Replace relative URLs in $TARGET/$VER for /frontend/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/frontend/#="/'"$VER"'/frontend/#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/frontend/#="/'"$VER"'/frontend/#g'
 
 echo "Replace relative URLs in $TARGET/$VER for /"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#<a href="/">#<a href="/'"$VER"'/">#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#<a href="/">#<a href="/'"$VER"'/">#g'
 
 echo "Replace relative URLs in $TARGET/$VER for opensearch.xml"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/opensearch.xml#="/'"$VER"'/opensearch.xml#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/opensearch.xml#="/'"$VER"'/opensearch.xml#g'
 
 ##
 ## Full URLs
 ##
 echo "Replace full URLs in $TARGET/$VER for /ee/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/ee/#="/'"$VER"'/ee/#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/ee/#="/'"$VER"'/ee/#g'
 
 echo "Replace full URLs in $TARGET/$VER for /runner/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/runner/#="/'"$VER"'/runner/#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/runner/#="/'"$VER"'/runner/#g'
 
 echo "Replace full URLs in $TARGET/$VER for /omnibus/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/omnibus/#="/'"$VER"'/omnibus/#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/omnibus/#="/'"$VER"'/omnibus/#g'
 
 echo "Replace full URLs in $TARGET/$VER for /charts/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/charts/#="/'"$VER"'/charts/#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/charts/#="/'"$VER"'/charts/#g'
 
 echo "Replace full URLs in $TARGET/$VER for /operator/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/operator/#="/'"$VER"'/operator/#g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/operator/#="/'"$VER"'/operator/#g'
 
 echo "Fix URLs inside the sitemap"
-find ${TARGET}/$VER -type f -name 'sitemap.xml' -print0 | xargs -0 sed -i 's#docs.gitlab.com/#docs.gitlab.com/'"$VER"'/#g'
-
-##
-## In order to have clean URLs, we symlink README.html to index.html.
-## That way, visiting https://docs.gitlab.com/ee/ would be the same as
-## visiting https://docs.gitlab.com/ee/{README.html,index.html}
-## For 13.9 and later, there's a raketask that is run instead of the
-## command below. If the raketask is present, skip the command.
-##
-bundle exec rake -T | grep symlink_readmes
-if [ $? -eq 1 ]
-then
-  echo "Symlink all README.html to index.html"
-  for i in `find ${TARGET}/${VER} -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
-fi
+find "${TARGET}/$VER" -type f -name 'sitemap.xml' -print0 | xargs -0 sed -i 's#docs.gitlab.com/#docs.gitlab.com/'"$VER"'/#g'
 
 ##
 ## Don't deploy the CE docs since they are identical to the EE ones.
 ## https://gitlab.com/gitlab-org/gitlab-docs/issues/418
 ##
 echo "Remove CE dir and symlink EE to CE"
-if [ -d "${TARGET}/${VER}/ce/" ]; then cd ${TARGET}/${VER} && rm -r ce && ln -s ee ce; fi
+if [ -d "${TARGET}/${VER}/ce/" ]; then cd "${TARGET}/${VER}" && rm -r ce && ln -s ee ce; fi
