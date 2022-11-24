@@ -793,6 +793,8 @@ sections:
                 doc_url: 'ee/user/admin_area/reporting/spamcheck.html'
               - doc_title: System Hooks
                 doc_url: 'ee/administration/system_hooks.html'
+              - doc_title: Terms of service and privacy policy
+                doc_url: 'ee/user/admin_area/settings/terms.html'
               - doc_title: Third-party offers
                 doc_url: 'ee/user/admin_area/settings/third_party_offers.html'
               - doc_title: Timezone
