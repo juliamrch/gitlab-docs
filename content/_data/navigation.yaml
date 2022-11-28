@@ -497,7 +497,7 @@ sections:
         docs:
           - doc_title: Troubleshooting
             doc_url: 'ee/integration/advanced_search/elasticsearch_troubleshooting.html'
-      - category_title: GitLab CLI (`glab`)
+      - category_title: GitLab CLI (glab)
         category_url: 'ee/integration/glab/'
       - category_title: Gitpod
         category_url: 'ee/integration/gitpod.html'
