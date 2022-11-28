@@ -7,42 +7,42 @@ version: 7
 
   const BADGES_TITLES = {
     // Free
-    free: 'Available in GitLab Free self-managed, GitLab Free SaaS, and higher tiers.',
+    free: 'On GitLab self-managed and GitLab SaaS, available in all tiers.',
     'free-self':
-      'Available in GitLab Free self-managed and higher tiers. Not available in GitLab SaaS.',
+      'On GitLab self-managed, available in all tiers. Not available on GitLab SaaS.',
     'free-only':
-      'Available in GitLab Free SaaS and higher tiers. Not available in self-managed instances.',
+      'On GitLab SaaS, available in all tiers. Not available on self-managed.',
     'free-saas':
-      'Available in GitLab Free SaaS and higher tiers. Not available in self-managed instances.',
+      'On GitLab SaaS, available in all tiers. Not available on self-managed.',
     // Premium
-    premium: 'Available in GitLab Premium self-managed, GitLab Premium SaaS, and higher tiers.',
+    premium: 'On GitLab self-managed and GitLab SaaS, available in Premium and Ultimate.',
     'premium-saas':
-      'Available in GitLab Premium SaaS and higher tiers. Not available in self-managed instances.',
+      'On GitLab SaaS, available in Premium and Ultimate. Not available on self-managed.',
     'silver-only':
-      'Available in GitLab Premium SaaS and higher tiers. Not available in self-managed instances.',
+      'On GitLab SaaS, available in Premium and Ultimate. Not available on self-managed.',
     'premium-only':
-      'Available in GitLab Premium self-managed and higher tiers. Not available in GitLab SaaS.',
+      'On GitLab self-managed, available in Premium and Ultimate. Not available on GitLab SaaS.',
     'premium-self':
-      'Available in GitLab Premium self-managed and higher tiers. Not available in GitLab SaaS.',
+      'On GitLab self-managed, available in Premium and Ultimate. Not available on GitLab SaaS.',
     // Ultimate
-    ultimate: 'Available in GitLab Ultimate self-managed and GitLab Ultimate SaaS.',
+    ultimate: 'On GitLab self-managed and GitLab SaaS, available in Ultimate.',
     'ultimate-only':
-      'Available in GitLab Ultimate self-managed. Not available in GitLab SaaS.',
+      'On GitLab self-managed, available in Ultimate. Not available on GitLab SaaS.',
     'ultimate-self':
-      'Available in GitLab Ultimate self-managed. Not available in GitLab SaaS.',
+      'On GitLab self-managed, available in Ultimate. Not available on GitLab SaaS.',
     'ultimate-saas':
-      'Available in GitLab Ultimate SaaS. Not available in self-managed instances.',
+      'On GitLab SaaS, available in Ultimate. Not available on self-managed.',
     'gold-only':
-      'Available in GitLab Ultimate SaaS. Not available in self-managed instances.',
+      'On GitLab SaaS, available in Ultimate. Not available on self-managed.',
     // Deprecated badges
-    core: 'Available in GitLab Free self-managed, GitLab Free SaaS, and higher tiers',
+    core: 'On GitLab self-managed and GitLab SaaS, available in all tiers.',
     'core-only':
-      'Available in GitLab Free self-managed and higher tiers. Not available in GitLab SaaS.',
-    starter: 'Available in GitLab Starter, GitLab.com Bronze, and higher tiers.',
+      'On GitLab self-managed, available in all tiers. Not available on GitLab SaaS.',
+    starter: 'Available on GitLab Starter, GitLab.com Bronze, and higher tiers.',
     'starter-only':
-      'Available in GitLab Starter and higher tiers. Not available in GitLab.com.',
+      'Available on GitLab Starter and higher tiers. Not available on GitLab.com.',
     'bronze-only':
-      'Available in GitLab Bronze and higher tiers. Not available in self-managed instances.',
+      'Available on GitLab Bronze and higher tiers. Not available on self-managed.',
   };
 
   const BADGES_MAPPING = {
