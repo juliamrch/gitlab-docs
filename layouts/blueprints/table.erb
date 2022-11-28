@@ -10,10 +10,10 @@
       <% unless @summary %>
       <th>Title</th>
       <% end %>
-      <th>Author(s)</th>
+      <th>Authors</th>
       <th>Coach</th>
       <% if @summary %>
-      <th>Approver(s)</th>
+      <th>DRIs</th>
       <% end %>
       <th>Owning Stage</th>
       <th>Created</th>
@@ -42,7 +42,7 @@
         </td>
         <% if @summary %>
         <td>
-          <% b[:approvers]&.each do |a| %>
+          <% (b[:approvers] || b[:owners]).to_a.each do |a| %>
             <code><%= author_link(a) %></code>
           <% end %>
         </td>
