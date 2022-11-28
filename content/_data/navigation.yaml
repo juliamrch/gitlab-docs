@@ -130,6 +130,9 @@ sections:
                     doc_url: 'omnibus/settings/redis.html'
                   - doc_title: SMTP
                     doc_url: 'omnibus/settings/smtp.html'
+                    docs:
+                      - doc_title: Rake tasks
+                        doc_url: 'ee/administration/raketasks/smtp.html'
                   - doc_title: SSL
                     doc_url: 'omnibus/settings/ssl/'
                     docs:
@@ -560,6 +563,9 @@ sections:
             doc_url: 'ee/user/project/integrations/pivotal_tracker.html'
           - doc_title: Prometheus
             doc_url: 'ee/user/project/integrations/prometheus.html'
+            docs:
+              - doc_title: Sample Prometheus data Rake task
+                doc_url: 'ee/raketasks/generate_sample_prometheus_data.html'
           - doc_title: Pumble
             doc_url: 'ee/user/project/integrations/pumble.html'
           - doc_title: ServiceNow
@@ -584,6 +590,8 @@ sections:
             docs:
               - doc_title: Webhook events
                 doc_url: 'ee/user/project/integrations/webhook_events.html'
+              - doc_title: Rake tasks
+                doc_url: 'ee/raketasks/web_hooks.html'
       - category_title: External issue tracker
         category_url: 'ee/integration/external-issue-tracker.html'
         docs:
@@ -666,6 +674,8 @@ sections:
                     doc_url: 'ee/administration/auth/ldap/ldap_synchronization.html'
                   - doc_title: LDAP (Google Secure)
                     doc_url: 'ee/administration/auth/ldap/google_secure_ldap.html'
+                  - doc_title: Rake tasks
+                    doc_url: 'ee/administration/raketasks/ldap.html'
                   - doc_title: Troubleshooting
                     doc_url: 'ee/administration/auth/ldap/ldap-troubleshooting.html'
               - doc_title: OAuth service provider
@@ -801,6 +811,11 @@ sections:
                 doc_url: 'ee/administration/timezone.html'
               - doc_title: Uploads
                 doc_url: 'ee/administration/uploads.html'
+                docs:
+                  - doc_title: Uploads migration Rake tasks
+                    doc_url: 'ee/administration/raketasks/uploads/migrate.html'
+                  - doc_title: Uploads sanitization Rake tasks
+                    doc_url: 'ee/administration/raketasks/uploads/sanitize.html'
               - doc_title: User Cohorts
                 doc_url: 'ee/user/admin_area/user_cohorts.html'
               - doc_title: User and IP rate limits
@@ -877,6 +892,8 @@ sections:
             docs:
               - doc_title: Repository storage types
                 doc_url: 'ee/administration/repository_storage_types.html'
+              - doc_title: Import repositories
+                doc_url: 'ee/raketasks/import.html'
               - doc_title: Gitaly and Gitaly Cluster
                 doc_url: 'ee/administration/gitaly/'
                 docs:
@@ -892,8 +909,16 @@ sections:
                     doc_url: 'ee/administration/gitaly/troubleshooting.html'
                   - doc_title: Gitaly reference
                     doc_url: 'ee/administration/gitaly/reference.html'
+                  - doc_title: Praefect Rake tasks
+                    doc_url: 'ee/administration/raketasks/praefect.html'
                   - doc_title: Gitaly timeouts
                     doc_url: 'ee/user/admin_area/settings/gitaly_timeouts.html'
+              - doc_title: Repository storage Rake tasks
+                doc_url: 'ee/administration/raketasks/storage.html'
+              - doc_title: List repositories Rake task
+                doc_url: 'ee/raketasks/list_repos.html'
+              - doc_title: Migrate snippets Rake tasks
+                doc_url: 'ee/raketasks/migrate_snippets.html'
           - doc_title: Object storage
             doc_url: 'ee/administration/object_storage.html'
           - doc_title: Merge request diffs storage
@@ -933,6 +958,8 @@ sections:
                 doc_url: 'ee/administration/geo/replication/location_aware_git_url.html'
               - doc_title: Tuning Geo
                 doc_url: 'ee/administration/geo/replication/tuning.html'
+              - doc_title: Rake tasks
+                doc_url: 'ee/administration/raketasks/geo.html'
               - doc_title: Disable Geo
                 doc_url: 'ee/administration/geo/replication/disable_geo.html'
               - doc_title: Removing a Geo site
@@ -989,6 +1016,13 @@ sections:
         docs:
           - doc_title: Housekeeping
             doc_url: 'ee/administration/housekeeping.html'
+            docs:
+              - doc_title: Clean up with Rake tasks
+                doc_url: 'ee/raketasks/cleanup.html'
+              - doc_title: Maintenance Rake tasks
+                doc_url: 'ee/administration/raketasks/maintenance.html'
+              - doc_title: Integrity check Rake task
+                doc_url: 'ee/administration/raketasks/check.html'
           - doc_title: Fast SSH key lookup
             doc_url: 'ee/administration/operations/fast_ssh_key_lookup.html'
           - doc_title: Filesystem benchmarking
@@ -1001,62 +1035,21 @@ sections:
             doc_url: 'ee/administration/encrypted_configuration.html'
           - doc_title: Rake tasks
             doc_url: 'ee/raketasks/'
+          - doc_title: Backup and restore
+            doc_url: 'ee/raketasks/backup_restore.html'
             docs:
-              - doc_title: Backup and restore
-                doc_url: 'ee/raketasks/backup_restore.html'
-                docs:
-                  - doc_title: Back up GitLab
-                    doc_url: 'ee/raketasks/backup_gitlab.html'
-                  - doc_title: Restore GitLab
-                    doc_url: 'ee/raketasks/restore_gitlab.html'
-              - doc_title: Clean up
-                doc_url: 'ee/raketasks/cleanup.html'
-              - doc_title: General maintenance
-                doc_url: 'ee/administration/raketasks/maintenance.html'
-              - doc_title: Geo tasks
-                doc_url: 'ee/administration/raketasks/geo.html'
-              - doc_title: GitHub import
-                doc_url: 'ee/administration/raketasks/github_import.html'
-              - doc_title: SMTP
-                doc_url: 'ee/administration/raketasks/smtp.html'
-              - doc_title: SPDX license list import
-                doc_url: 'ee/raketasks/spdx.html'
-          - doc_title: Import repositories
-            doc_url: 'ee/raketasks/import.html'
+              - doc_title: Back up GitLab
+                doc_url: 'ee/raketasks/backup_gitlab.html'
+              - doc_title: Restore GitLab
+                doc_url: 'ee/raketasks/restore_gitlab.html'
           - doc_title: Inactive project deletion
             doc_url: 'ee/administration/inactive_project_deletion.html'
           - doc_title: Move repositories
             doc_url: 'ee/administration/operations/moving_repositories.html'
-          - doc_title: Integrity check
-            doc_url: 'ee/administration/raketasks/check.html'
-          - doc_title: LDAP maintenance
-            doc_url: 'ee/administration/raketasks/ldap.html'
-          - doc_title: List repositories
-            doc_url: 'ee/raketasks/list_repos.html'
-          - doc_title: Migrate snippets
-            doc_url: 'ee/raketasks/migrate_snippets.html'
-          - doc_title: Praefect tasks
-            doc_url: 'ee/administration/raketasks/praefect.html'
-          - doc_title: Project import and export
-            doc_url: 'ee/administration/raketasks/project_import_export.html'
           - doc_title: Read-only state
             doc_url: 'ee/administration/read_only_gitlab.html'
-          - doc_title: Repository storage
-            doc_url: 'ee/administration/raketasks/storage.html'
           - doc_title: Restart GitLab
             doc_url: 'ee/administration/restart_gitlab.html'
-          - doc_title: Sample Prometheus data
-            doc_url: 'ee/raketasks/generate_sample_prometheus_data.html'
-          - doc_title: Uploads migration
-            doc_url: 'ee/administration/raketasks/uploads/migrate.html'
-          - doc_title: Uploads sanitization
-            doc_url: 'ee/administration/raketasks/uploads/sanitize.html'
-          - doc_title: User management
-            doc_url: 'ee/raketasks/user_management.html'
-          - doc_title: Webhooks administration
-            doc_url: 'ee/raketasks/web_hooks.html'
-          - doc_title: X509 signatures
-            doc_url: 'ee/raketasks/x509_signatures.html'
 
       # New - secure (renamed existing topic)
 
@@ -1121,6 +1114,8 @@ sections:
             doc_url: 'ee/user/admin_area/broadcast_messages.html'
           - doc_title: Email from GitLab
             doc_url: 'ee/user/admin_area/email_from_gitlab.html'
+          - doc_title: Rake tasks
+            doc_url: 'ee/raketasks/user_management.html'
 
   # USE GITLAB
 
@@ -1226,6 +1221,8 @@ sections:
             docs:
               - doc_title: License Compliance
                 doc_url: 'ee/user/compliance/license_compliance/'
+              - doc_title: SPDX license list import Rake task
+                doc_url: 'ee/raketasks/spdx.html'
               - doc_title: Compliance report
                 doc_url: 'ee/user/compliance/compliance_report/'
           - doc_title: Description templates
@@ -1280,6 +1277,9 @@ sections:
                 doc_url: 'ee/user/project/import/fogbugz.html'
               - doc_title: GitHub
                 doc_url: 'ee/user/project/import/github.html'
+                docs:
+                  - doc_title: GitHub import Rake task
+                    doc_url: 'ee/administration/raketasks/github_import.html'
               - doc_title: GitLab.com
                 doc_url: 'ee/user/project/import/gitlab_com.html'
               - doc_title: Gitea
@@ -1307,6 +1307,8 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/import_export_rate_limits.html'
               - doc_title: Decompressed archive size limits
                 doc_url: 'ee/security/project_import_decompressed_archive_size_limits.html'
+              - doc_title: Rake tasks
+                doc_url: 'ee/administration/raketasks/project_import_export.html'
 
       - category_title: Plan and track work
         category_url: 'ee/topics/plan_and_track.html'
@@ -1503,6 +1505,9 @@ sections:
                 doc_url: 'ee/user/project/repository/gpg_signed_commits/'
               - doc_title: Signing commits and tags with X.509
                 doc_url: 'ee/user/project/repository/x509_signed_commits/'
+                docs:
+                  - doc_title: X509 signatures Rake task
+                    doc_url: 'ee/raketasks/x509_signatures.html'
               - doc_title: Syntax highlighting
                 doc_url: 'ee/user/project/highlighting.html'
               - doc_title: Web Editor
@@ -3030,6 +3035,8 @@ sections:
                     doc_url: 'ee/development/spam_protection_and_captcha/web_ui.html'
                   - doc_title: Exploratory testing
                     doc_url: 'ee/development/spam_protection_and_captcha/exploratory_testing.html'
+              - doc_title: Test import project
+                doc_url: 'ee/development/import_project.html'
               - doc_title: Uploads
                 doc_url: 'ee/development/uploads/'
                 docs:
