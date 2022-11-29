@@ -1244,6 +1244,8 @@ sections:
                 doc_url: 'ee/user/project/pages/getting_started/pages_forked_sample_project.html'
               - doc_title: Create by using a project template
                 doc_url: 'ee/user/project/pages/getting_started/pages_new_project_template.html'
+              - doc_title: 'Create a Pages deployment for your static site'
+                doc_url: 'ee/user/project/pages/getting_started/pages_ui.html'
               - doc_title: Public folder configuration
                 doc_url: 'ee/user/project/pages/public_folder.html'
               - doc_title: Default domains, URLs, and baseurls
