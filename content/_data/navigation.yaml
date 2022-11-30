@@ -1866,6 +1866,8 @@ sections:
                     doc_url: 'ee/user/packages/package_registry/reduce_package_registry_storage.html'
                   - doc_title: Build packages
                     doc_url: 'ee/user/packages/workflows/build_packages.html'
+                  - doc_title: Yarn
+                    doc_url: 'ee/user/packages/yarn_repository/'
               - doc_title: Container Registry
                 doc_url: 'ee/user/packages/container_registry/'
                 docs:
