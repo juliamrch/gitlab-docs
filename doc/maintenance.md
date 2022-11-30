@@ -166,58 +166,7 @@ Instead, we use a YAML file which is then converted into the `_redirects` file:
 1. After Pages deploys the site, the `_redirects` file is at <https://docs.gitlab.com/_redirects>,
    and the redirects should be working.
 
-## Review apps
-
-The review apps server is hosted in GCP using the [sandbox](https://about.gitlab.com/handbook/infrastructure-standards/realms/sandbox/)
-service provided by GitLab's infrastructure team. It is running Debian 11, and
-it has 100GB of space.
-
-The current owners of the GCP project are:
-
-- Amy
-- Axil
-- Evan
-- Marcel
-- Marcin
-
-If you need access, ask one of the above people to [add you to the owners](https://console.cloud.google.com/iam-admin/iam?project=axil-635e068f).
-
-### Delete old review apps when there is not enough disk space
-
-Each review app takes about 2.5GB of disk space.
-Sometimes the review app server is full and there is no more disk space.
-A cron job to remove review apps older than 14 days runs hourly,
-but the disk space still occasionally fills up.
-
-To manually free up more space, an owner of the GCP project can:
-
-1. Navigate to the [GCP VM daashboard](https://console.cloud.google.com/compute/instances?project=axil-635e068f).
-1. Select the SSH button to connect to the VM through your browaser.
-1. Run the `clean-pages` script by providing it the number of days:
-
-   ```shell
-   sudo -u gitlab-runner /home/gitlab-runner/clean-pages 10
-   ```
-
-There's an issue to [migrate from the DigitalOcean server to GCP buckets](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/735)),
-which should solve the disk space problem.
-
-See [this issue](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/1152) for
-more information.
-
-### Resize review apps disk space
-
-If the disk space is still running low, you can resize it:
-
-1. Go to the [disk page](https://console.cloud.google.com/compute/disksDetail/zones/us-central1-a/disks/docs-review-apps?project=axil-635e068f)
-1. Select **Edit**.
-1. Fill in the new size in GB.
-1. Select **Save**.
-1. Reboot the VM.
-
-See the [official GCP documentation](https://cloud.google.com/compute/docs/disks/resize-persistent-disk).
-
-### Regenerate tokens
+## Regenerate tokens
 
 The `gitlab-docs` project has several tokens used to authenticate with the API from
 CI/CD pipelines. These tokens are stored in each project's CI/CD settings as
