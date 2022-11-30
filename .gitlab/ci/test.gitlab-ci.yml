@@ -3,12 +3,28 @@
 ###############################################
 
 #
-# Test the links in the global nav
+# Test the links in the global nav for all MRs in `gitlab-docs`
 #
 test_global_nav_links:
   image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0088e238
   extends:
     - .rules_global_nav_test
+    - .bundle
+  stage: test
+  script:
+    # Only check files in top-level directories. This means a much faster and less repetitive check of global navigation links.
+    - echo "  all:" >> nanoc.yaml
+    - echo "    exclude_files:" >> nanoc.yaml
+    - echo "      - '\/(ee|runner|omnibus|charts|operator)\/.*\/.*'" >> nanoc.yaml
+    - "parallel time bundle exec nanoc check ::: internal_links internal_anchors"
+
+#
+# Test the links in the global nav for review apps for upstream projects
+#
+upstream_test_global_nav_links:
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0088e238
+  extends:
+    - .rules_upstream_global_nav_test
     - .bundle
   stage: test
   script:

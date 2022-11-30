@@ -116,6 +116,10 @@ default:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
 
+.rules_upstream_global_nav_test:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
+
 .rules_prod:
   rules:
     - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
