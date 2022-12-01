@@ -2155,6 +2155,8 @@ sections:
             doc_url: 'ee/user/group/issues_analytics/'
           - doc_title: Merge request analytics
             doc_url: 'ee/user/analytics/merge_request_analytics.html'
+          - doc_title: Product analytics
+            doc_url: 'ee/user/product_analytics/'
           - doc_title: Productivity analytics
             doc_url: 'ee/user/analytics/productivity_analytics.html'
           - doc_title: Repository analytics
