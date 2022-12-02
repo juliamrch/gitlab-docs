@@ -3,23 +3,15 @@ title: Page Not Found | GitLab Documentation
 searchbar: false
 ---
 
-<div class="four-oh-four gl-text-center gl-display-flex gl-justify-content-center">
+<div class="four-oh-four gl-docs gl-text-center gl-display-flex gl-justify-content-center">
   <div>
-    <img src="<%= @items['/assets/images/error-404.svg'].path %>" width="300" alt="" class="gl-m-auto" />
-    <h1 class="gl-text-theme-indigo-900">We're sorry, no page exists at this address.</h1>
-    <p>To search an older version of the docs, <a href="https://docs.gitlab.com/archives">access an archive</a>.</p>
-
-    <% if @config[:algolia] == "true" %>
-    <div class="search-card gl-w-70p gl-pt-6 gl-pb-7 gl-mt-7 gl-mx-auto gl-rounded-lg">
-      <h3 class="gl-mb-5 gl-text-theme-indigo-900">Search the docs</h3>
-      <div id="docsearch" class="gl-display-flex gl-justify-content-center"></div>
-    </div>
-    <% end %>
-
-    <div class="gl-mt-8 gl-mb-11">
-      <a href="javascript:history.back()" class="back-btn gl-py-3 gl-px-4 gl-text-purple-600 gl-rounded-small gl-border gl-border-purple-700 gl-transition-slow">
-        <%= icon('arrow-left') %>Go back
-      </a>
-    </div>
+    <h1 class="gl-font-size-h1-xl! gl-mt-3!">We're sorry, no page exists at this address.</h1>
+    <ul class="gl-list-style-none gl-pl-0">
+      <li class="gl-display-inline-block"><a href="https://docs.gitlab.com/search/">Search the latest docs</a></li>
+      &nbsp;&bull;&nbsp;
+      <li class="gl-display-inline-block"><a href="https://docs.gitlab.com/ee/">Browse the latest docs</a></li>
+      &nbsp;&bull;&nbsp;
+      <li class="gl-display-inline-block"><a href="https://docs.gitlab.com/archives/">Access older docs</a></li>
+    </ul>
   </div>
 </div>
