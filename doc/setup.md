@@ -163,6 +163,17 @@ To commit and push changes:
 
 ## Troubleshooting
 
+### Dependency errors when running `make view`
+
+When running `make view`, you might get an error about a missing tool or dependency.
+For example, you might need a new version of Ruby.
+
+To install and update the dependencies needed to preview docs locally, run:
+
+```shell
+make setup
+```
+
 ### `realpath: No such file or directory @ rb_check_realpath_internal`
 
 If you run into this error, it means you're missing one of the projects `gitlab-docs` relies on to build the content of the GitLab Docs site.
