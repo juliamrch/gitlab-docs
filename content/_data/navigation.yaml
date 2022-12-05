@@ -1503,9 +1503,11 @@ sections:
                 doc_url: 'ee/user/project/repository/push_rules.html'
               - doc_title: Reduce repository size
                 doc_url: 'ee/user/project/repository/reducing_the_repo_size_using_git.html'
-              - doc_title: Signed Commits
+              - doc_title: Sign commits with GPG
                 doc_url: 'ee/user/project/repository/gpg_signed_commits/'
-              - doc_title: Signing commits and tags with X.509
+              - doc_title: Sign commits with SSH keys
+                doc_url: 'ee/user/project/repository/ssh_signed_commits/'
+              - doc_title: Sign commits and tags with X.509
                 doc_url: 'ee/user/project/repository/x509_signed_commits/'
                 docs:
                   - doc_title: X509 signatures Rake task
