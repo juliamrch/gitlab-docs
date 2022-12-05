@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'nanoc', '~> 4.12.13'
+gem 'nanoc', '~> 4.12.14'
 gem 'sassc', '~> 2.4.0'
 gem 'rake', '~> 13.0.6'
 
