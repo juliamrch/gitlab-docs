@@ -36,3 +36,22 @@ with Docker errors are usually intermittent infrastructure problems. These probl
 resolve themselves with retries. If repeated retries fail, continue troubleshooting.
 
 For an example of a job with Docker errors, see: <https://gitlab.com/gitlab-org/gitlab/-/jobs/2834890543>.
+
+## Failed jobs from upstream review apps
+
+You can ignore any failures that come from an upstream review app.
+
+The upstream projects (GitLab, Omnibus GitLab, GitLab Runner, Charts, Operator)
+are configured so that you can manually run a docs review app for an open merge request.
+
+The pipelines for review apps from upstream project MRs run for the `main` branch in the `gitlab-docs` project,
+to ensure the review app uses the latest docs site code.
+As a result, review app pipeline failures might get posted in the `#docs-site-changes` channel.
+
+There are a few ways to tell whether a pipeline is from an upstream project:
+
+- The **build** stage contains the `upstream_test_global_nav_links` job. Note the
+  `upstream` in the name.
+- The **test** stage contains only two jobs: `test_global_nav_links` and
+  `untamper-my-lockfile`.
+- The **deploy** stage contains the `review` job.
