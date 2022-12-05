@@ -7,19 +7,15 @@
   </head>
   <body>
     <%= render '/header.*' %>
-    <section class="container-fluid mt-5 pt-5">
+    <section class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <%= yield %>
+        <div class="col-12 gl-h-100vh gl-display-flex gl-flex-direction-column">
+          <main class="gl-mt-5 gl-flex-grow-1 gl-flex-shrink-0"><%= yield %></main>
           <%= render '/footer.*' %>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   <script src="<%= @items['/frontend/shared/global_imports.*'].path %>"></script>
-
-  <% if @config[:algolia] == "true" %>
-  <script src="<%= @items['/frontend/search/docsearch.*'].path %>"></script>
-  <% end %>
 
   <% if production? %>
   <%# Add analytics only in production %>
