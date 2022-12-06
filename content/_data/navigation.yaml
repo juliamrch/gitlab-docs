@@ -2577,6 +2577,9 @@ sections:
         docs:
           - doc_title: Architecture
             doc_url: 'ee/development/architecture.html'
+            docs:
+              - doc_title: Adding a new Service Component
+                doc_url: 'ee/development/adding_service_component.html'
           - doc_title: Development Rake tasks
             doc_url: 'ee/development/rake_tasks.html'
             docs:
