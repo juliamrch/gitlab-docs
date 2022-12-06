@@ -2030,6 +2030,8 @@ sections:
                     doc_url: 'ee/operations/incident_management/incident_timeline_events.html'
                   - doc_title: Linked resources
                     doc_url: 'ee/operations/incident_management/linked_resources.html'
+                  - doc_title: Incident management for Slack
+                    doc_url: 'ee/operations/incident_management/slack.html'
               - doc_title: On-call schedules
                 doc_url: 'ee/operations/incident_management/oncall_schedules.html'
                 docs:
