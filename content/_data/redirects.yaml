@@ -848,3 +848,9 @@ redirects:
   - from: /runner/install/old.html
     to: /runner/install/index.html
     remove_date: 2023-08-12
+  - from: /ee/ci/pipelines/parent_child_pipelines.html
+    to: /ee/ci/pipelines/downstream_pipelines.html
+    remove_date: 2023-09-05
+  - from: /ee/ci/pipelines/multi_project_pipelines.html
+    to: /ee/ci/pipelines/downstream_pipelines.html
+    remove_date: 2023-08-30
