@@ -278,3 +278,19 @@ For a temporary solution, stop the GDK server before running `make view`.
    ```plaintext
    make view
    ```
+
+### Missing gems when updating Ruby
+
+When a new Ruby version is added in `.tool-versions`, you can install it with:
+
+```shell
+make install-asdf-dependencies
+```
+
+After the installation completes, you must re-install the Gems. Run the
+following command in all repositories that need Ruby (for example, `gitlab`,
+`gitlab-docs`):
+
+```shell
+bundle install
+```
