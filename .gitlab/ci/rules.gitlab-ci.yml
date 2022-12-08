@@ -138,6 +138,7 @@ default:
 .rules_upstream_review_app:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
+      when: manual
 
 .rules_pages:
   rules:
