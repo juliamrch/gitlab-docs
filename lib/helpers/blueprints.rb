@@ -2,8 +2,14 @@
 
 module Nanoc::Helpers
   module Blueprints
+    BLUEPRINTS_PATH = '/ee/architecture/blueprints/*/index.md'.freeze
+
     def all_blueprints
-      @items.find_all('/ee/architecture/blueprints/**/*.md').sort_by { |i| blueprint_creation_date(i) }.reverse
+      blueprints = @items.find_all(BLUEPRINTS_PATH).sort_by do |i|
+        blueprint_creation_date(i)
+      end
+
+      blueprints.reverse
     end
 
     def author_link(author)
@@ -18,7 +24,7 @@ module Nanoc::Helpers
     # TODO: this is generic, should live elsewhere
     def gl_label(label)
       return if label.nil?
-      
+
       scope, text = label.tr('~', '').split('::')
       is_scoped = !text.nil?
 
