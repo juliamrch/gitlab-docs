@@ -51,6 +51,8 @@ export async function getArchivesVersions() {
     .map((object) => object.name)
     .filter(
       (v) =>
-        compareVersions(v, oldestSupportedMinor) >= 0 && compareVersions(v, oldestCurrentMinor) < 0,
+        compareVersions(v, oldestSupportedMinor) >= 0 &&
+        compareVersions(v, oldestCurrentMinor) < 0 &&
+        !Object.values(onlineVersions).flat().includes(v),
     );
 }
