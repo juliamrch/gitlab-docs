@@ -2928,8 +2928,6 @@ sections:
                     doc_url: 'ee/development/graphql_guide/pagination.html'
                   - doc_title: GraphQL Pro
                     doc_url: 'ee/development/graphql_guide/graphql_pro.html'
-              - doc_title: Import/Export
-                doc_url: 'ee/development/import_export.html'
               - doc_title: Integrations
                 doc_url: 'ee/development/integrations/'
               - doc_title: Internal API
