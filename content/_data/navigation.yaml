@@ -1983,6 +1983,8 @@ sections:
             docs:
               - doc_title: Environments Dashboard
                 doc_url: 'ee/ci/environments/environments_dashboard.html'
+              - doc_title: Operations Dashboard
+                doc_url: 'ee/user/operations_dashboard/'
               - doc_title: Protected environments
                 doc_url: 'ee/ci/environments/protected_environments.html'
               - doc_title: Deployment safety
