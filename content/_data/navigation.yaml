@@ -380,6 +380,8 @@ sections:
         docs:
           - doc_title: Plan an upgrade
             doc_url: 'ee/update/plan_your_upgrade.html'
+          - doc_title: Background migrations
+            doc_url: 'ee/update/background_migrations.html'
           - doc_title: Upgrade Omnibus instance
             doc_url: 'ee/update/package/'
             docs:
@@ -709,8 +711,6 @@ sections:
                 doc_url: 'ee/user/admin_area/appearance.html'
               - doc_title: Authentication
                 doc_url: 'ee/topics/authentication/'
-              - doc_title: Batched background migrations
-                doc_url: 'ee/user/admin_area/monitoring/background_migrations.html'
               - doc_title: CI/CD
                 doc_url: 'ee/user/admin_area/settings/continuous_integration.html'
               - doc_title: Application cache interval
