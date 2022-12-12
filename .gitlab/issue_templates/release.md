@@ -6,6 +6,10 @@ SET TITLE TO: docs.gitlab.com release XX.ZZ (month, YYYY)
 
 Documentation [for handling the docs release](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md) is available.
 
+Prerequisites:
+
+- Make sure you have all the [needed tools](/doc/setup.md) installed on your system.
+
 ### Between the 17th and 20th of each month
 
 1. [ ] Cross-link to the main MR for the release post: `<add link here>`
@@ -27,32 +31,38 @@ Documentation [for handling the docs release](https://gitlab.com/gitlab-org/gitl
       ./bin/rake "release:single[15.0]"
       ```
 
-      A branch for the release is created, a new `15.0.Dockerfile` is created, and `.gitlab-ci.yml`
-      has branches variables updated into a new branch. These files are automatically committed.
+       A branch for the release is created, a new `15.0.Dockerfile` is created and
+       automatically committed, and the new branch is pushed.
 
-   1. [ ] Push the newly created branch, but **don't create a merge request**.
+   After the branch is created, the
+   [`image:docs-single` job](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/7fbb5e1313ebde811877044e87f444a0a283fed4/.gitlab/ci/docker-images.gitlab-ci.yml#L107-129)
+   runs and creates a new Docker image tagged with the name of the stable branch
+   (for example, see [the 15.6 release pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/702437095)).
+   When the job finishes, confirm the Docker image has been created. Go to the `registry` environment at
+   <https://gitlab.com/gitlab-org/gitlab-docs/-/environments/folders/registry> and confirm the image
+   is listed.
 
-      After you push, the `image:docs-single` job creates a new Docker image tagged with the name of
-      the branch you created earlier. Go to the `registry` environment at
-      <https://gitlab.com/gitlab-org/gitlab-docs/-/environments/folders/registry> and confirm the image
-      is listed.
-      The `image:docs-single` might fail initially because often not all stable branches are created yet. Some of the stable
-      branches are created close to the 22nd, which will resolve most issues when you follow the rest of the steps.
-
-1. [ ] [Create a docs.gitlab.com release merge request](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#create-release-merge-request)
-   which updates the version dropdown menu for all online versions, updates the archives list, and adds
-   the release to the Docker configuration.
-   - [ ] Mark as `Draft` and do not merge.
+   >>>
+   **NOTE:**
+   The `image:docs-single` job may fail if stable branches have not been
+   created for all the related projects. Some of the stable branches are
+   created close to the 22nd, so you might need to run the pipeline of the
+   stable branch one more time before the release.
+   >>>
 
 After the tasks above are complete, you don't need to do anything for a few days.
 
 ### On the 22nd, or the first business day after
 
-After release post is live on the 22nd, or the next Monday morning if the release post happens on a weekend:
+After the release post is live on the 22nd, or the next Monday morning if the release post happens on a weekend:
 
-1. [ ] Verify that the [pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all) for the stable branch
+1. [ ] Verify that the [pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all) for the stable branch (filter by branch)
    has passed and created a [Docker image](https://gitlab.com/gitlab-org/gitlab-docs/container_registry/631635?orderBy=NAME&sort=desc&search[]=)
-   tagged the release version. ([If it fails, how do I fix it?](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-latest-job-fails-due-to-broken-links))
+   tagged the release version. ([If it fails, how do I fix it?](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-single-job-fails-when-creating-the-docs-stable-branch))
+1. [ ] [Create a docs.gitlab.com release merge request](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#create-release-merge-request)
+   which updates the version dropdown menu for all online versions, updates the archives list, and adds
+   the release to the Docker configuration.
+   - [ ] Mark as `Draft` and do not merge.
 1. Deploy the versions:
    1. [ ] Merge the docs release merge request.
    1. [ ] Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)

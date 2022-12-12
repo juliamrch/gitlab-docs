@@ -60,6 +60,9 @@ To minimize problems during the documentation release process, use the following
 
 ## Create stable branch and Docker image for release
 
+> Note: an [issue exists](https://gitlab.com/gitlab-org/release-tools/-/issues/533)
+> to create the stable branch automatically.
+
 To create a stable branch of the `gitlab-docs` project and a Docker image for the release:
 
 1. Make sure you're in the root path of the `gitlab-docs` repository.
@@ -69,28 +72,24 @@ To create a stable branch of the `gitlab-docs` project and a Docker image for th
    make update
    ```
 
-1. Run the Rake task to create the single version. For example, to create the 15.0 release branch
-   and perform other tasks:
+1. Run the Rake task to create the single version. For example, to create the 15.0 release:
 
    ```shell
    ./bin/rake "release:single[15.0]"
    ```
 
-   A branch for the release is created, a new `15.0.Dockerfile` is created, and `.gitlab-ci.yml`
-   has branches variables updated into a new branch. These files are automatically committed.
+   A branch for the release is created, a new `15.0.Dockerfile` is created and
+   automatically committed, and the new branch is pushed.
 
-1. Push the newly created branch, but **don't create a merge request**.
+After the branch is created, the
+[`image:docs-single` job](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/7fbb5e1313ebde811877044e87f444a0a283fed4/.gitlab/ci/docker-images.gitlab-ci.yml#L107-129)
+runs and creates a new Docker image tagged with the name of the stable branch
+(for example, see [the 15.6 release pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/702437095)).
+When the job finishes, confirm the Docker image has been created. Go to the `registry` environment at
+<https://gitlab.com/gitlab-org/gitlab-docs/-/environments/folders/registry> and confirm the image
+is listed.
 
-   After you push, the `image:docs-single` job creates a new Docker image tagged with the name of
-   the branch you created earlier.
-
-   Confirm the Docker image has been created. Go to the `registry` environment at
-   <https://gitlab.com/gitlab-org/gitlab-docs/-/environments/folders/registry> and confirm the image
-   is listed. The Docker image may not be created if stable branches have not been created for all
-   the related projects. If that occurs, continue with the docs release process because the
-   Docker creation job will be run again later in the process.
-
-For example, see [the 13.9 release pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/260288747).
+In case the pipeline fails, see the [troubleshooting section](#imagedocs-single-job-fails-when-creating-the-docs-stable-branch).
 
 ### Optional. Test locally
 
@@ -200,45 +199,101 @@ For example, if you released the 14.1 documentation, the first dropdown entry sh
 
 ## Troubleshooting
 
-### `Could not find remote branch` error
+### `image:docs-single` job fails when creating the docs stable branch
 
 When you create the [stable branch](#create-stable-branch-and-docker-image-for-release),
-the pipeline fails with an error similar to the following:
+the `image:docs-single` job might fail. There are generally two reasons why this
+could happen:
 
-```shell
-warning: Could not find remote branch 5-3-stable to clone.
-fatal: Remote branch 5-3-stable not found in upstream origin
-```
+- **Not all upstream stable branches are created yet**
 
-This error occurs because the latest Charts stable branch hasn't been created yet.
+  The `image:docs-single` job may fail if stable branches have not been
+  created for all the related projects. Some of the stable branches are
+  created close to the 22nd, so you might need to run the pipeline of the
+  stable branch one more time before the release.
 
-This is fine! [Keep an eye on the Charts branches](https://gitlab.com/gitlab-org/charts/gitlab/-/branches)
-and when the Charts branch is cut:
+  The error is similar to the following:
 
-- If the error happens when you create the stable branch, go to the **Pipelines** page and run a new pipeline for your branch.
-- If the error happens when you create the MRs to update the dropdown, return to your MR and run the pipeline again.
+  ```shell
+  Cloning into '../gitlab-runner'...
+  warning: Could not find remote branch 15-6-stable to clone.
+  fatal: Remote branch 15-6-stable not found in upstream origin
+  ```
 
-### image:docs-latest job fails due to broken links
+  **Solution**: run a [new pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/new)
+  targeting the docs stable branch after all upstream stable branches have been created.
 
-When this pipeline fails, it is usually because the `gitlab-docs` repository contains
-changes to the navigation menu, but the corresponding page changes in the `gitlab`
-repository didn't make it into the release. This can happen close to the cutoff for
-the release. For example:
+- **Due to broken links**
 
-1. On the 19th, a merge request in `gitlab` is merged, but the GitLab release doesn't include commits from that merge request. The cutoff for the
-   release occurred on the 18th.
-1. A navigation menu item in `gitlab-docs` is also merged on the 19th.
-1. The `gitlab-docs` stable branch is created on the 20th, and includes the navigation menu changes.
-1. The link checker fails, because when building the Docker image, it pulls the
-   stable branch from `gitlab`. This branch doesn't have the new content added on
-   the 19th (first step), but the stable branch in `gitlab-docs` has the navigation menu changes.
+  The `image:docs-single` job may fail when the `gitlab-docs` repository contains
+  changes to the navigation menu, but the corresponding page changes in the `gitlab`
+  repository didn't make it into the release. This can happen close to the cutoff for
+  the release. For example:
 
-Solution: revert the navigation menu change in the `gitlab-docs` stable branch:
+  1. On the 19th, a merge request in `gitlab` is merged, but the GitLab release doesn't include commits from that merge request. The cutoff for the
+     release occurred on the 18th.
+  1. A navigation menu item in `gitlab-docs` is also merged on the 19th.
+  1. The `gitlab-docs` stable branch is created on the 20th, and includes the navigation menu changes.
+  1. The link checker fails, because when building the Docker image, it pulls the
+     stable branch from `gitlab`. This branch doesn't have the new content added on
+     the 19th (first step), but the stable branch in `gitlab-docs` has the navigation menu changes.
 
-1. Find the change to the navigation menu in
-   [the list of recently merged MRs](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests?scope=all&state=merged)
-   for the `gitlab-docs` repository
-1. In the **Overview** tab, select **Revert** and target the `gitlab-docs` stable branch.
+  **Solution**: revert the navigation menu change in the `gitlab-docs` stable branch:
+
+  1. Find the change to the navigation menu in
+     [the list of recently merged MRs](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests?scope=all&state=merged)
+     for the `gitlab-docs` repository
+  1. In the **Overview** tab, select **Revert** and target the `gitlab-docs` stable branch.
+
+  Here's an example of hunting down a broken link of the navbar:
+
+  1. [Filtering](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all&ref=15.6)
+     the pipelines for 15.6, we can see the
+     [failed job](https://gitlab.com/gitlab-org/gitlab-docs/-/jobs/3341220987), which
+     includes errors like:
+
+     ```plaintext
+     [ ERROR ] internal_links - broken reference to file:///ee/integration/glab/
+     ```
+
+     This means that a new global nav item made it into `gitlab-docs` 15.6 branch,
+     but didn't in the counterpart `15-6-stable-ee` in `gitlab`.
+
+  1. The next step is to find the offending MRs. One option is to look at the
+     `navigation.yaml`, since we know this is where the error lies. Using the
+     [blame](https://gitlab.com/gitlab-org/gitlab-docs/-/blame/main/content/_data/navigation.yaml)
+     button, we can see who committed the `integration/glab/` entry.
+     ![Offending commit](https://gitlab.com/gitlab-org/gitlab-docs/uploads/e74554ca538d8c990c14a29bca52ec6c/Screenshot_2022-11-22_at_21-31-33_Blame___content__data_navigation.yaml___main___GitLab.org___GitLab_Docs___GitLab.png)
+
+     Clicking on the commit message, we can find
+     [the related MR](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/3284).
+     For this particular one, there's no related content MR in the description,
+     but there's another link pointing to <https://gitlab.com/gitlab-org/cli/-/issues/1101>.
+     From the related MRs, we can finally find the
+     [content MR](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/104282).
+
+  1. Now that we have found both the nav MR and the content MR, we can verify
+     that the content MR didn't make it into the `gitlab` stable branch. The
+     stable branches are named after the scheme `X-Y-stable-ee`, so searching
+     the [commits of
+     `15-6-stable-ee`](https://gitlab.com/gitlab-org/gitlab/-/commits/15-6-stable-ee/)
+     shows that <https://gitlab.com/gitlab-org/gitlab/-/merge_requests/104282>
+     indeed didn't make it into the stable branch (you can quickly check the
+     dates of the commits and the date the MR was merged and compare).
+
+  1. The next step is to revert the nav MR into the `15.6` branch of
+     `gitlab-docs`. For that, we go to
+     <https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/3284>, click the
+     Revert button, and select the `15.6` branch from the dropdown.
+     The [revert MR](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/3298)
+     is then created.
+
+  1. After the revert MR is merged, we know that the 15.6 docs branch will pass the
+     tests. So, we [run a new pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/new)
+     targeting the `15.6` branch.
+  1. After the [pipeline passed](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/702437095)
+     and the `image:docs-single` job finished successfully, the Docker image
+     is now uploaded to the registry.
 
 ### `Gem::FilePermissionError: You don't have write permissions for the /usr/local/bundle directory`
 
