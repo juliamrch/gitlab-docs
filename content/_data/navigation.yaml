@@ -1929,14 +1929,17 @@ sections:
                 docs:
                   - doc_title: Vulnerability checks
                     doc_url: 'ee/user/application_security/dast/checks/'
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/user/application_security/dast/browser_based_troubleshooting.html'
               - doc_title: DAST proxy-based analyzer
                 doc_url: 'ee/user/application_security/dast/proxy-based.html'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/user/application_security/dast/dast_troubleshooting.html'
               - doc_title: Authentication
                 doc_url: 'ee/user/application_security/dast/authentication.html'
               - doc_title: DAST API
                 doc_url: 'ee/user/application_security/dast_api/'
-              - doc_title: Troubleshooting
-                doc_url: 'ee/user/application_security/dast/dast_troubleshooting.html'
               - doc_title: Run DAST offline
                 doc_url: 'ee/user/application_security/dast/run_dast_offline.html'
           - doc_title: API Fuzzing
