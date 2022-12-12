@@ -105,8 +105,6 @@ review:
   extends:
     - .retry
     - .review-environment
-  needs:
-    - compile_dev
   before_script: []
   cache: {}
   script:
