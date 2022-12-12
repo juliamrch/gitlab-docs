@@ -1329,6 +1329,8 @@ sections:
           - doc_title: Issues
             doc_url: 'ee/user/project/issues/'
             docs:
+              - doc_title: Create issues
+                doc_url: 'ee/user/project/issues/create_issues.html'
               - doc_title: Manage issues
                 doc_url: 'ee/user/project/issues/managing_issues.html'
               - doc_title: Award emojis
