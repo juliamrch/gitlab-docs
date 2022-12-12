@@ -120,7 +120,6 @@ default:
 .rules_upstream_global_nav_test:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
-      when: manual
 
 .rules_prod:
   rules:
