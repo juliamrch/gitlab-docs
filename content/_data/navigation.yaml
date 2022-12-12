@@ -1879,6 +1879,8 @@ sections:
                     doc_url: 'ee/user/packages/container_registry/reduce_container_registry_storage.html'
                   - doc_title: Reduce Container Registry data transfers
                     doc_url: 'ee/user/packages/container_registry/reduce_container_registry_data_transfer.html'
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/user/packages/container_registry/troubleshoot_container_registry.html'
               - doc_title: Harbor Registry
                 doc_url: 'ee/user/packages/harbor_container_registry/'
               - doc_title: Infrastructure Registry
