@@ -1,12 +1,13 @@
 <script>
-import { GlFormSelect } from '@gitlab/ui';
+import { GlFormSelect, GlToggle } from '@gitlab/ui';
 
 export default {
   components: {
     GlFormSelect,
+    GlToggle,
   },
   props: {
-    milestonesList: {
+    milestonesOptions: {
       type: Array,
       required: true,
     },
@@ -17,88 +18,125 @@ export default {
   },
   data() {
     return {
-      selected: this.showAllText,
+      emptyText: 'No deprecations found.',
+      hiddenClass: 'gl-display-none',
+      selected: {
+        removal_milestone: this.showAllText,
+        breaking_only: false,
+      },
+      deprecations: [],
+      selectedDeprecations: [],
+      filtered: false,
     };
   },
+  computed: {
+    noResults() {
+      return this.filtered && this.selectedDeprecations.length === 0;
+    },
+  },
   created() {
-    // Pre-filter the page if the URL includes a valid version parameter.
+    // Initialize with an array of all deprecations.
+    document.querySelectorAll('.deprecation').forEach((el) => {
+      this.deprecations.push(el.getAttribute('data-deprecation-id'));
+    });
+
+    // Pre-filter the page if the URL includes a parameter.
     const searchParams = new URLSearchParams(window.location.search);
-    if (!searchParams.has('removal_milestone')) {
-      return;
-    }
-    const version = searchParams.get('removal_milestone').replace(/\./g, '');
-    if (this.isValidVersion(version)) {
-      this.filterDeprecationList(version);
-      this.selected = version;
+    if (searchParams.has('removal_milestone') || searchParams.has('breaking_only')) {
+      this.selected.removal_milestone = searchParams.get('removal_milestone');
+      this.selected.breaking_only = searchParams.get('breaking_only') === 'true';
+      this.filterList();
     }
   },
   methods: {
-    isValidVersion(version) {
-      return this.milestonesList.some((e) => e.value === version);
-    },
-    updateURLParams(option) {
-      const item = this.milestonesList.find((x) => x.value === option);
+    updateURLParams() {
       const url = new URL(window.location);
-
-      if (item.text.length > 0 && item.text !== this.showAllText) {
-        url.searchParams.set('removal_milestone', item.text);
-      } else {
-        url.searchParams.delete('removal_milestone');
-      }
+      Object.keys(this.selected).forEach((selectName) => {
+        if (this.selected[selectName] !== this.showAllText) {
+          url.searchParams.set(selectName, this.selected[selectName]);
+        }
+      });
       window.history.pushState(null, '', url.toString());
     },
-    /**
-     * Filters the page down to a specified removal version.
-     *
-     * This method hides all deprecations that do not have the selected version
-     * in their wrapper div's class lists.
-     *
-     * @param {String} option
-     */
-    filterDeprecationList(option) {
-      const hiddenClass = 'd-none';
+    filterList() {
+      // Run the deprecations list through both filters.
+      this.selectedDeprecations = this.filterByBreaking(this.filterByVersion(this.deprecations));
 
-      // Reset the list and show all deprecations and headers.
-      document.querySelectorAll('.deprecation, h2').forEach(function showAllSections(el) {
-        el.classList.remove(hiddenClass);
+      // Hide all headers initially.
+      document.querySelectorAll('.announcement-milestone').forEach((section) => {
+        section.children[0].classList.add(this.hiddenClass);
       });
 
-      if (option !== this.showAllText) {
-        // Hide deprecations with non-selected versions.
-        document
-          .querySelectorAll(`.deprecation:not(.removal-${option})`)
-          .forEach(function hideDeprecationsAndHeader(el) {
-            el.classList.add(hiddenClass);
-            // Hide the "announcement version" section header.
-            el.parentElement.children[0].classList.add(hiddenClass);
-          });
+      // Show selected deprecations; hide the others.
+      this.deprecations.forEach((depId) => {
+        const element = document.querySelector(`[data-deprecation-id="${depId}"]`);
+        if (this.selectedDeprecations.includes(depId)) {
+          element.classList.remove(this.hiddenClass);
+          // Ensure the section header is visible.
+          element.parentElement.children[0].classList.remove(this.hiddenClass);
+        } else {
+          element.classList.add(this.hiddenClass);
+        }
+      });
 
-        // Show the "announcement version" header if we have deprecations in this section.
-        document
-          .querySelectorAll(`.deprecation.removal-${option}`)
-          .forEach(function showHeader(el) {
-            el.parentElement.children[0].classList.remove(hiddenClass);
-          });
+      this.updateURLParams();
+      this.filtered = true;
+    },
+    filterByVersion(deps) {
+      let filteredDeps = deps;
+      if (this.selected.removal_milestone !== this.showAllText) {
+        filteredDeps = deps.filter((depID) =>
+          document
+            .querySelector(`[data-deprecation-id="${depID}"]`)
+            .classList.contains(`removal-${this.selected.removal_milestone}`),
+        );
       }
-
-      // Update the removal_milestone parameter in the URL.
-      this.updateURLParams(option);
+      return filteredDeps;
+    },
+    filterByBreaking(deps) {
+      let filteredDeps = deps;
+      if (this.selected.breaking_only === true) {
+        filteredDeps = deps.filter((depID) =>
+          document
+            .querySelector(`[data-deprecation-id="${depID}"]`)
+            .classList.contains('breaking-change'),
+        );
+      }
+      return filteredDeps;
     },
   },
 };
 </script>
 
 <template>
-  <div class="mt-3 row">
-    <div class="col-4">
-      <label for="milestone" class="d-block col-form-label">Filter by removal version:</label>
-      <gl-form-select
-        v-model="selected"
-        name="milestone"
-        :options="milestonesList"
-        data-testid="removal-milestone-filter"
-        @change="filterDeprecationList(selected)"
-      />
+  <div>
+    <div class="gl-mt-7 row">
+      <div class="col gl-md-display-flex">
+        <label
+          for="removal_milestone"
+          class="gl-font-weight-bold gl-mb-0 gl-mr-4 gl-display-flex gl-align-items-center"
+          >Filter by removal version</label
+        >
+        <gl-form-select
+          v-model="selected.removal_milestone"
+          class="gl-md-max-w-15p gl-mr-6"
+          name="removal_milestone"
+          :options="milestonesOptions"
+          data-testid="removal-milestone-filter"
+          @change="filterList()"
+        />
+
+        <gl-toggle
+          v-model="selected.breaking_only"
+          label="Show only breaking changes"
+          class="gl-mt-5 gl-md-mt-0"
+          name="breaking_only"
+          data-testid="breaking-filter"
+          label-position="left"
+          @change="filterList()"
+        />
+      </div>
     </div>
+    <p v-if="noResults" class="gl-mt-5!">{{ emptyText }}</p>
   </div>
 </template>
