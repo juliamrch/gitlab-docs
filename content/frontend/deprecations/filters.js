@@ -3,28 +3,33 @@ import { compareVersions } from 'compare-versions';
 import DeprecationFilters from './components/deprecation_filters.vue';
 
 /**
+ * Add some helper markup to allow for simpler filter logic.
+ */
+document.querySelectorAll('.deprecation').forEach((el, index) => {
+  el.setAttribute('data-deprecation-id', index + 1);
+});
+
+/**
  * Builds an array of removal milestone options from page content.
  *
  * Each milestone object contains:
  *   - A text string, used for labels in the select options list.
- *     This also appears as a query string value in the URL when filtering.
  *   - A value string, which is the same as the text string, but without periods.
  *     This is used to match the query with CSS classes on deprecations.
  *     CSS classes cannot include periods, so we drop those for this element.
  *
  * @param {String} showAllText
- *   Label for default/unselected state.
  * @return {Array}
  */
 const buildMilestonesList = (showAllText) => {
   let milestones = [];
-  document.querySelectorAll('.removal-milestone').forEach(function addOption(el) {
+  document.querySelectorAll('.removal-milestone').forEach((el) => {
     if (!milestones.includes(el.innerText)) {
       milestones.push(el.innerText);
     }
   });
   milestones.sort(compareVersions).reverse();
-  milestones = milestones.map(function addValues(el) {
+  milestones = milestones.map((el) => {
     return { value: el.replaceAll('.', ''), text: el };
   });
   milestones.unshift({ value: showAllText, text: showAllText });
@@ -33,7 +38,7 @@ const buildMilestonesList = (showAllText) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const showAllText = 'Show all';
-  const milestonesList = buildMilestonesList(showAllText);
+  const milestonesOptions = buildMilestonesList(showAllText);
 
   return new Vue({
     el: '.js-deprecation-filters',
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     render(createElement) {
       return createElement(DeprecationFilters, {
         props: {
-          milestonesList,
+          milestonesOptions,
           showAllText,
         },
       });

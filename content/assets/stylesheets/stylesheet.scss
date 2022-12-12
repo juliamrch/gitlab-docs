@@ -583,3 +583,8 @@ a.gl-tab-nav-item:hover {
     box-shadow: 0 0 0.125rem $landing-gl-black-50, 0 0.25rem 1.5rem $landing-gl-blue-950;
   }
 }
+
+select[name='removal_milestone'],
+select[name='breaking'] {
+  background-image: $gl-icon-select-chevron-down;
+}
