@@ -1844,6 +1844,10 @@ sections:
               - doc_title: Package Registry
                 doc_url: 'ee/user/packages/package_registry/'
                 docs:
+                  - doc_title: Supported package managers
+                    doc_url: 'ee/user/packages/package_registry/supported_package_managers.html'
+                  - doc_title: Supported hash types
+                    doc_url: 'ee/user/packages/package_registry/supported_hash_types.html'
                   - doc_title: Composer
                     doc_url: 'ee/user/packages/composer_repository/'
                   - doc_title: Conan
@@ -1864,6 +1868,8 @@ sections:
                     doc_url: 'ee/user/packages/pypi_repository/'
                   - doc_title: Ruby gems
                     doc_url: 'ee/user/packages/rubygems_registry/'
+                  - doc_title: Yarn
+                    doc_url: 'ee/user/packages/yarn_repository/'
                   - doc_title: Generic
                     doc_url: 'ee/user/packages/generic_packages/'
                   - doc_title: Store all packages in one project
@@ -1874,8 +1880,6 @@ sections:
                     doc_url: 'ee/user/packages/package_registry/reduce_package_registry_storage.html'
                   - doc_title: Build packages
                     doc_url: 'ee/user/packages/workflows/build_packages.html'
-                  - doc_title: Yarn
-                    doc_url: 'ee/user/packages/yarn_repository/'
               - doc_title: Container Registry
                 doc_url: 'ee/user/packages/container_registry/'
                 docs:
