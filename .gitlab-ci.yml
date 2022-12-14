@@ -22,10 +22,10 @@ variables:
   BUNDLE_PATH__SYSTEM: 'false'
   GIT_DEPTH: '20'
   ALPINE_VERSION: '3.16'
-  VALE_VERSION: '2.20.2'
+  VALE_VERSION: '2.21.3'
   MARKDOWNLINT_VERSION: '0.32.2'
   MARKDOWNLINT2_VERSION: '0.5.1'
-  RUBY_VERSION: '2.7.6'
+  RUBY_VERSION: '2.7.7'
 
 #
 # workflow:rules to prevent duplicate pipelines when pushing to a branch with an open MR.
