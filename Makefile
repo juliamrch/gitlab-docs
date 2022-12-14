@@ -52,7 +52,7 @@ up: setup view
 
 compile:
 	@printf "\n$(INFO)INFO: Compiling GitLab documentation site...$(END)\n"
-	@bundle exec nanoc compile
+	@bundle exec nanoc compile || (printf "$(ERROR)ERROR: Compilation failed! Try running 'make setup'.$(END)\n" && exit 1)
 
 view: compile
 	@printf "\n$(INFO)INFO: Starting GitLab documentation site...$(END)\n"
