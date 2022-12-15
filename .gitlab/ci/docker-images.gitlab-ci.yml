@@ -20,6 +20,49 @@
     DOCKER_TLS_CERTDIR: "/certs"
 
 #
+# Build and deploy the GitLab Docs base Docker image
+#
+image:gitlab-docs-base:
+  extends:
+    - .rules_scheduled_manual
+    - .docker_prepare
+  stage: build-images
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/base:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
+    DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
+  script:
+    - docker build
+             --build-arg ALPINE_VERSION=${ALPINE_VERSION}
+             --build-arg RUBY_VERSION=${RUBY_VERSION}
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
+    - docker push $IMAGE_NAME
+  environment:
+    name: registry/docs-base
+
+#
+# Test the GitLab docs base Docker image if changes are made to its Dockerfile
+#
+test:image:gitlab-docs-base:
+  extends:
+    - .docker_prepare
+  stage: test
+  needs: []
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/base:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
+    DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - $DOCKERFILE
+  script:
+    - docker build
+             --build-arg ALPINE_VERSION=${ALPINE_VERSION}
+             --build-arg RUBY_VERSION=${RUBY_VERSION}
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
+
+#
 # Build and deploy the GitLab Docs linting (Markdown) Docker image
 #
 image:docs-lint-markdown:
