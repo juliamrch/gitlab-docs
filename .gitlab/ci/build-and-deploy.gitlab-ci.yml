@@ -77,10 +77,6 @@ compile_dev:
     - .build_base
   variables:
     ALGOLIA_SEARCH: 'false'
-  rules:
-    - if: $CI_COMMIT_REF_NAME =~ /algolia/
-      variables:
-          ALGOLIA_SEARCH: 'true'
   script:
     - !reference [".compile-and-minify-scripts", "script"]
     - !reference [".gzip-scripts", "script"]

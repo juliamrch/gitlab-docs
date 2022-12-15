@@ -1,25 +1,30 @@
-import { isProduction } from '../default/environment';
-
 /**
- * Loads Algolia connection info.
- *
- * For production, we use the "gitlab" index.
- * All other environments use the "gitlab_testing" index.
- * Both indexes use the same credentials to connect.
- *
- * @see https://www.algolia.com/apps/3PNCFOU757/indices
+ * Functions used by both DocSearch and InstantSearch.
  */
-export const getAlgoliaCredentials = () => {
-  return {
+
+export const algoliaAccounts = {
+  production: {
     apiKey: 'eef4ee4af5ab6b0d76d1a2f9fc4fab58',
     appId: '3PNCFOU757',
-    index: isProduction() ? 'gitlab' : 'gitlab_testing',
-  };
+    index: 'gitlab',
+  },
+  testing: {
+    apiKey: 'eef4ee4af5ab6b0d76d1a2f9fc4fab58',
+    appId: '3PNCFOU757',
+    index: 'gitlab_testing',
+  },
 };
 
 /**
- * Returns the site version from the docsearch:version metatag.
+ * Loads Algolia connection info for a given Crawler.
+ *
+ * Set the crawler default to 'testing' in order to use
+ * the gitlab_testing index. (Don't forget to change it back!)
  */
+export const getAlgoliaCredentials = (crawler = 'production') => {
+  return algoliaAccounts[crawler];
+};
+
 export const getDocsVersion = () => {
   let docsVersion = 'main';
   if (
