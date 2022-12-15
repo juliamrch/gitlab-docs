@@ -87,6 +87,7 @@ install-asdf-dependencies:
 
 install-ruby-dependencies:
 	@printf "\n$(INFO)INFO: Installing Ruby dependencies...$(END)\n"
+	@gem update --system
 	@bundle install
 
 install-nodejs-dependencies:
