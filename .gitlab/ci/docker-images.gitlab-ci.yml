@@ -136,7 +136,7 @@ test:image:docs-single:
     - .docker_prepare
   stage: test
   variables:
-    GITLAB_VERSION: '15.5'
+    GITLAB_VERSION: '15.6'
     DOCKERFILE: dockerfiles/single.Dockerfile
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$GITLAB_VERSION
     NANOC_ENV: test
@@ -147,7 +147,7 @@ test:image:docs-single:
         - $DOCKERFILE
   script:
     - apk add --no-cache -U git
-    - git fetch -all
+    - git fetch --all
     - git checkout -b $GITLAB_VERSION origin/$GITLAB_VERSION
     - docker build
              --build-arg NANOC_ENV=${NANOC_ENV}
@@ -193,7 +193,7 @@ test:image:docs-single-lunrjs:
     - .docker_prepare
   stage: test
   variables:
-    GITLAB_VERSION: '15.5'
+    GITLAB_VERSION: '15.6'
     IMAGE_NAME: $CI_REGISTRY_IMAGE/archives:$GITLAB_VERSION
     DOCKERFILE: dockerfiles/single.Dockerfile
     NANOC_ENV: test
@@ -204,7 +204,7 @@ test:image:docs-single-lunrjs:
         - $DOCKERFILE
   script:
     - apk add --no-cache -U make bash git
-    - git fetch -all
+    - git fetch --all
     - git checkout -b $GITLAB_VERSION origin/$GITLAB_VERSION
     - docker build
              --build-arg NANOC_ENV=${NANOC_ENV}
