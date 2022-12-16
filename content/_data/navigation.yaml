@@ -1298,8 +1298,6 @@ sections:
                 doc_url: 'ee/user/project/import/manifest.html'
               - doc_title: Repo by URL
                 doc_url: 'ee/user/project/import/repo_by_url.html'
-              - doc_title: SVN
-                doc_url: 'ee/user/project/import/svn.html'
               - doc_title: TFVC
                 doc_url: 'ee/user/project/import/tfvc.html'
           - doc_title: Migrate projects using file exports
