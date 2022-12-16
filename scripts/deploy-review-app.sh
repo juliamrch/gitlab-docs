@@ -20,7 +20,7 @@ function with_backoff {
   local attempt=0
   local exitCode=0
 
-  while [[ $attempt < $max_attempts ]]
+  while [[ $attempt -lt $max_attempts ]]
   do
     "$@"
     exitCode=$?
