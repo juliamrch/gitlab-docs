@@ -131,7 +131,7 @@ markdownlint:
 shellcheck:
   extends:
     - .rules_site_tests
-  image: koalaman/shellcheck-alpine:v0.8.0
+  image: koalaman/shellcheck-alpine:v0.9.0
   needs: []
   stage: test
   script:
