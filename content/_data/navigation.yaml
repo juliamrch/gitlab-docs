@@ -2041,6 +2041,8 @@ sections:
               - doc_title: Incidents
                 doc_url: 'ee/operations/incident_management/incidents.html'
                 docs:
+                  - doc_title: Manage incidents
+                    doc_url: 'ee/operations/incident_management/manage_incidents.html'
                   - doc_title: Timeline events
                     doc_url: 'ee/operations/incident_management/incident_timeline_events.html'
                   - doc_title: Linked resources
