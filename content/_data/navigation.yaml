@@ -851,6 +851,8 @@ sections:
                 doc_url: 'ee/administration/postgresql/external.html'
               - doc_title: Move instances
                 doc_url: 'ee/administration/postgresql/moving.html'
+              - doc_title: Multiple databases
+                doc_url: 'ee/administration/postgresql/multiple_databases.html'
           - doc_title: Load balancer
             doc_url: 'ee/administration/load_balancer.html'
           - doc_title: NFS
