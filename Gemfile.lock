@@ -85,13 +85,13 @@ GEM
     faraday-rack (1.0.0)
     faraday-retry (1.0.3)
     ffi (1.15.5)
-    git (1.12.0)
+    git (1.13.0)
       addressable (~> 2.8)
       rchardet (~> 1.8)
     gitlab (4.19.0)
       httparty (~> 0.20)
       terminal-table (>= 1.5.1)
-    gitlab-dangerfiles (3.6.3)
+    gitlab-dangerfiles (3.6.4)
       danger (>= 8.4.5)
       danger-gitlab (>= 8.0.0)
       rake
@@ -198,7 +198,7 @@ GEM
       pry (>= 0.13, < 0.15)
     psych (4.0.6)
       stringio
-    public_suffix (5.0.0)
+    public_suffix (5.0.1)
     racc (1.6.0)
     rack (2.2.4)
     rack-livereload (0.3.17)
@@ -299,7 +299,7 @@ PLATFORMS
 
 DEPENDENCIES
   builder (~> 3.2.4)
-  gitlab-dangerfiles (~> 3.6.3)
+  gitlab-dangerfiles (~> 3.6.4)
   gitlab-styles (~> 9.1.0)
   gitlab_kramdown (~> 0.23.0)
   highline (~> 2.0.3)
