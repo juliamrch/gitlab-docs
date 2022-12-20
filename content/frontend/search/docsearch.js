@@ -1,6 +1,6 @@
 import docsearch from '@docsearch/js';
 import '@docsearch/css';
-import { getAlgoliaCredentials, getDocsVersion } from './search';
+import { rewriteAlgoliaResultLinks, getAlgoliaCredentials, getDocsVersion } from './search';
 
 document.addEventListener('DOMContentLoaded', () => {
   const docsVersion = getDocsVersion();
@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     placeholder: 'Search the docs',
     searchParameters: {
       facetFilters: [`version:${docsVersion}`],
+    },
+    transformItems(items) {
+      return rewriteAlgoliaResultLinks(items);
     },
     resultsFooterComponent({ state }) {
       return {
