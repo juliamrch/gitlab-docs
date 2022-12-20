@@ -7,12 +7,14 @@
   &.devops {
     --label-background-color: var(--orange);
   }
-
   &.proposed {
     --label-background-color: var(--gray);
   }
   &.accepted {
     --label-background-color: var(--cyan);
+  }
+  &.ongoing {
+    --label-background-color: var(--green);
   }
   &.ready {
     --label-background-color: var(--green);
