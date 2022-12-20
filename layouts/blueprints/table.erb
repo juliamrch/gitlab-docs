@@ -31,13 +31,13 @@
         </td>
         <% end %>
         <td>
-          <% b[:authors]&.each do |a| %>
+          <% Array(b[:authors]).each do |a| %>
             <code><%= author_link(a) %></code>
           <% end %>
         </td>
         <td>
-          <% if b[:coach] %>
-            <code><%= author_link(b[:coach]) %></code>
+          <% Array(b[:coach] || b[:coaches]).each do |c| %>
+            <code><%= author_link(c) %></code>
           <% end %>
         </td>
         <% if @summary %>
