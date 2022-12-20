@@ -4,6 +4,7 @@ import 'instantsearch.css/themes/satellite-min.css';
 import { history as historyRouter } from 'instantsearch.js/es/lib/routers';
 import { singleIndex as singleIndexMapping } from 'instantsearch.js/es/lib/stateMappings';
 import { GlIcon } from '@gitlab/ui';
+import { rewriteAlgoliaResultLinks } from '../search';
 
 export default {
   components: {
@@ -27,6 +28,11 @@ export default {
         stateMapping: singleIndexMapping(this.algoliaCredentials.index),
       },
     };
+  },
+  methods: {
+    transformItems(items) {
+      return rewriteAlgoliaResultLinks(items);
+    },
   },
 };
 </script>
@@ -58,7 +64,10 @@ export default {
           />
         </div>
 
-        <ais-infinite-hits v-if="query.length > 0 && hits.length > 0">
+        <ais-infinite-hits
+          v-if="query.length > 0 && hits.length > 0"
+          :transform-items="transformItems"
+        >
           <template #item="{ item }">
             <div>
               <a :href="item.url" class="gl-font-lg">{{ item.hierarchy.lvl0 }}</a>

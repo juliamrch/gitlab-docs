@@ -18,6 +18,21 @@ export const getAlgoliaCredentials = () => {
 };
 
 /**
+ * Rewrite absolute URLs as relative.
+ *
+ * This allows us to query our production index from review apps
+ * and local environments but return result links within that copy of the site.
+ *
+ * Otherwise Algolia returns links to the production site.
+ */
+export const rewriteAlgoliaResultLinks = (items) => {
+  return items.map((item) => ({
+    ...item,
+    url: item.url.replace('https://docs.gitlab.com', ''),
+  }));
+};
+
+/**
  * Returns the site version from the docsearch:version metatag.
  */
 export const getDocsVersion = () => {
