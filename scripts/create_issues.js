@@ -18,9 +18,10 @@
  * 3. The script requires three variables to run:
  *      - CSV_PATH: Path to your CSV file
  *      - REPO: URL of the destination project
- *      - MILESTONE: Milestone for the issue
+ *      - MILESTONE: Milestone for the issue (ID or name)
  * 4. Prepend the above variables when calling the script, like this:
- *    CSV_PATH=Sheet1.csv REPO="https://gitlab.com/sselhorn/test-project" MILESTONE="15.9" ./scripts/create_issues.js
+ *    CSV_PATH="Sheet1.csv" REPO="https://gitlab.com/sselhorn/test-project" MILESTONE="15.9" ./scripts/create_issues.js
+ * 5. Run the command from the root of the gitlab-docs project.
  */
 
 /* eslint-disable no-console */
@@ -36,43 +37,52 @@ if (!CSV_PATH || !REPO || !MILESTONE) {
   process.exit();
 }
 
-const LABELS =
-  'Technical Writing,good for new contributors,Accepting merge requests,documentation,docs::improvement';
-
 const TITLE_PREFIX = 'Fix Vale issues for';
-const ISSUE_INTRO = `The following issues occurred when we ran a linting tool called Vale against this Markdown page in the GitLab documentation. The first number on each line indicates the line number where the error occurred.\n\n
-To fix the issues, open a merge request for the markdown file, which you can find in the [/doc](https://gitlab.com/gitlab-org/gitlab/-/blob/master/doc) directory. When you open the MR, a bot will automatically ping the appropriate GitLab technical writer. They will work with you to merge the changes.\n\n
-If you feel any of these warnings are incorrect, please create an issue with the tw-test label so we can improve our Vale tests. Thank you!`;
+const TEMPLATE_PATH = '../gitlab/.gitlab/issue_templates/Doc_cleanup.md';
+const DOCS_PATH = 'https://gitlab.com/gitlab-org/gitlab/-/tree/master/doc/';
 
-// Create GitLab issues from our CSV data.
+// Load our issue template, and create a GitLab issue for each set of warnings.
 const createIssues = (issues) => {
-  issues.forEach((issue) => {
-    const title = `${TITLE_PREFIX} ${issue.path}`;
+  fs.readFile(TEMPLATE_PATH, 'utf8', (err, template) => {
+    if (err) {
+      console.log(`Error reading template: ${err}`);
+      process.exit();
+    }
 
-    // Output the Vale warnings in a markdown table.
-    let warningsTable = '\n\n| Line | Rule | Suggestion |\n| --- | --- | --- |\n';
-    issue.warnings.forEach((w) => {
-      warningsTable += `| ${w.line} | ${w.rule} | ${w.suggestion} |\n`;
-    });
-    const description = ISSUE_INTRO + warningsTable;
+    issues.forEach((issue) => {
+      const title = `${TITLE_PREFIX} ${issue.path}`;
 
-    // Use GitLab CLI to create a confidential issue.
-    const command = `glab issue create -c -t "${title}" -d "${description}" -R ${REPO} -m ${MILESTONE} -l "${LABELS}"`;
-    exec(command, (error, stdout) => {
-      if (error) {
-        console.error('Unable to create issues, exiting. Check error.log for details.');
-        // Write errors to a log file.
-        // Drop the command body since it's very long and obscures the actual error.
-        fs.appendFile(
-          'error.log',
-          `[${new Date().toISOString()}]: ${error.toString().replace(command, '')}`,
-          (fsError) => {
-            if (fsError) throw fsError;
-          },
-        );
-      } else {
-        console.log(`Created new issue: ${stdout.replace('\n', '')}`);
-      }
+      // Format the Vale warnings in a markdown table.
+      let warningsTable = '\n\n| Line | Rule | Suggestion |\n| --- | --- | --- |\n';
+      issue.warnings.forEach((w) => {
+        warningsTable += `| ${w.line} | ${w.rule} | ${w.suggestion} |\n`;
+      });
+
+      // Assemble the issue description.
+      const outro = `In the file [${issue.path}](${
+        DOCS_PATH + issue.path
+      }), update the following lines to address the listed issue.`;
+
+      let description = template + outro + warningsTable;
+      // Replace quotes and backticks so we can pass the description as a parameter.
+      description = description.replace(/"/g, '\\"').replace(/`/g, '\\`');
+
+      // Use GitLab CLI to create a confidential issue.
+      const command = `glab issue create -c -t "${title}" -d "${description}" -R ${REPO} -m ${MILESTONE}`;
+      exec(command, (error, stdout) => {
+        if (error) {
+          console.error('Unable to create issues, exiting. Check error.log for details.');
+          fs.appendFile(
+            'error.log',
+            `[${new Date().toISOString()}]: ${error.toString()}`,
+            (fsError) => {
+              if (fsError) throw fsError;
+            },
+          );
+        } else {
+          console.log(`Created new issue: ${stdout.replace('\n', '')}`);
+        }
+      });
     });
   });
 };
