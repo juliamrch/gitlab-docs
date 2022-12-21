@@ -19,11 +19,7 @@ RUN apk add --no-cache git \
 
 #- Start of builder stage -#
 
-# RUBY_VERSION and ALPINE_VERSION are defined in ../.gitlab-ci.yml
-ARG RUBY_VERSION
-ARG ALPINE_VERSION
-
-FROM ruby:${RUBY_VERSION}-alpine${ALPINE_VERSION} AS builder
+FROM ruby:2.7.7-alpine3.16 AS builder
 
 # Copy minifier binary from the minifier stage
 COPY --from=minifier /minify /usr/local/bin/minify
