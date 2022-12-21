@@ -2794,6 +2794,8 @@ sections:
                     doc_url: 'ee/development/database/namespaces_storage_statistics.html'
                   - doc_title: CI mirrored tables
                     doc_url: 'ee/development/database/ci_mirrored_tables.html'
+                  - doc_title: Database Dictionary
+                    doc_url: 'ee/development/database/database_dictionary.html'
                   - doc_title: Database Lab and Postgres.ai
                     doc_url: 'ee/development/database/database_lab.html'
                   - doc_title: Database migration pipeline
