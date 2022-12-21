@@ -70,3 +70,8 @@ table {
     }
   }
 }
+
+table.blueprints {
+  position: relative;
+  z-index: 100;
+}
