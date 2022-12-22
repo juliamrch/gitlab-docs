@@ -2968,6 +2968,8 @@ sections:
                 doc_url: 'ee/development/json.html'
               - doc_title: Kubernetes integration
                 doc_url: 'ee/development/kubernetes.html'
+              - doc_title: Merge request diffs development guide
+                doc_url: 'ee/development/merge_request_diffs.html'
               - doc_title: Observability for stage groups
                 doc_url: 'ee/development/stage_group_observability/'
                 docs:
