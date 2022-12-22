@@ -1377,6 +1377,8 @@ sections:
             docs:
               - doc_title: Burndown and burnup charts
                 doc_url: 'ee/user/project/milestones/burndown_and_burnup_charts.html'
+          - doc_title: Objectives and key results (OKR)
+            doc_url: 'ee/user/okrs.html'
           - doc_title: Requirements
             doc_url: 'ee/user/project/requirements/'
           - doc_title: Roadmaps
