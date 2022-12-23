@@ -2119,6 +2119,8 @@ sections:
                 doc_url: 'ee/user/infrastructure/iac/terraform_state.html'
               - doc_title: Terraform integration in merge requests
                 doc_url: 'ee/user/infrastructure/iac/mr_integration.html'
+              - doc_title: GitLab Terraform helpers
+                doc_url: 'ee/user/infrastructure/iac/gitlab_terraform_helpers.html'
               - doc_title: Terraform template recipes
                 doc_url: 'ee/user/infrastructure/iac/terraform_template_recipes.html'
               - doc_title: Troubleshooting
