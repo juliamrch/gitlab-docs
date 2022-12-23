@@ -2942,6 +2942,15 @@ sections:
                     doc_url: 'ee/development/gitlab_flavored_markdown/specification_guide/'
               - doc_title: GitLab group migration
                 doc_url: 'ee/development/bulk_import.html'
+              - doc_title: GitLab Shell
+                doc_url: 'ee/development/gitlab_shell/'
+                docs:
+                  - doc_title: Features
+                    doc_url: 'ee/development/gitlab_shell/features.html'
+                  - doc_title: GitLab-sshd
+                    doc_url: 'ee/development/gitlab_shell/gitlab_sshd.html'
+                  - doc_title: Processes
+                    doc_url: 'ee/development/gitlab_shell/process.html'
               - doc_title: GraphQL development
                 doc_url: 'ee/development/graphql_guide/'
                 docs:
