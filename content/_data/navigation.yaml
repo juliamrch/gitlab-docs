@@ -1991,7 +1991,7 @@ sections:
                 doc_url: 'ee/user/application_security/policies/scan-result-policies.html'
           - doc_title: Security scanner integration
             doc_url: 'ee/development/integrations/secure.html'
-          - doc_title: Secure and Protect Terminology
+          - doc_title: Secure and Govern Terminology
             doc_url: 'ee/user/application_security/terminology/'
 
       - category_title: Deploy and release your application
