@@ -3,8 +3,20 @@
 /**
  * @file create_issues.js
  *
- * Issues created by this script are given hackathon-specific labels
- * and populated with descriptions of Vale warnings from the given CSV.
+ * This script takes a CSV file of Vale issues and uses the
+ * Doc_cleanup.md template to create issues for contributors.
+ *
+ * An issue is created for each markdown file in the CSV. For example:
+ * https://gitlab.com/gitlab-org/gitlab/-/issues/386506
+ *
+ * The Doc_cleanup.md template is here:
+ * https://gitlab.com/gitlab-org/gitlab/-/blob/master/.gitlab/issue_templates/Doc_cleanup.md
+ * This template has labels associated with it.
+ * These labels are assigned to the issues.
+ *
+ * An example sheet (that you can export to CSV file) is here:
+ * https://docs.google.com/spreadsheets/d/1ukGT-1H-Qvik9GwCU1n0oAH9vofvkKvlL3ga8PaCXjw/edit?usp=sharing
+ *
  *
  * Prerequistes:
  * 1. Install glab: https://gitlab.com/gitlab-org/cli
@@ -12,7 +24,7 @@
  * 3. Run "yarn" in gitlab-docs to ensure node.js dependencies are up-to-date.
  *
  * Use the script:
- * 1. Create a spreadsheet of Vale issues using this template. Do not remove or change the headers.
+ * 1. Create a spreadsheet of Vale issues by using this template. Do not remove or change the headers.
  *    https://docs.google.com/spreadsheets/d/1ukGT-1H-Qvik9GwCU1n0oAH9vofvkKvlL3ga8PaCXjw/edit?usp=sharing
  * 2. Export the spreadsheet to a CSV, and remove spaces from the filename.
  * 3. The script requires three variables to run:
@@ -21,6 +33,9 @@
  *      - MILESTONE: Milestone for the issue (ID or name)
  * 4. Prepend the above variables when calling the script, like this:
  *    CSV_PATH="Sheet1.csv" REPO="https://gitlab.com/sselhorn/test-project" MILESTONE="15.9" ./scripts/create_issues.js
+ *
+ *    The Backlog milestone in the main gitlab repo is 490705.
+ *
  * 5. Run the command from the root of the gitlab-docs project.
  */
 
