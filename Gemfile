@@ -22,7 +22,7 @@ end
 group :test, :development do
   gem 'highline', '~> 2.1.0'
   gem 'rspec', '~> 3.12.0'
-  gem 'rspec-parameterized', '~> 0.5.3'
+  gem 'rspec-parameterized', '~> 1.0.0'
   gem 'simplecov', '~> 0.22.0', require: false
   gem 'simplecov-cobertura', '~> 2.1.0', require: false
   gem 'pry-byebug', '~> 3.10.1', require: false
