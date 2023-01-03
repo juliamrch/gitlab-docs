@@ -2532,6 +2532,8 @@ sections:
             doc_url: 'ee/api/system_hooks.html'
           - doc_title: Tags
             doc_url: 'ee/api/tags.html'
+          - doc_title: Terraform Registry
+            doc_url: 'ee/api/packages/terraform-modules.html'
           - doc_title: To-Do lists
             doc_url: 'ee/api/todos.html'
           - doc_title: Topics
