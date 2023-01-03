@@ -1,5 +1,5 @@
 ---
-version: 3
+version: 4
 ---
 
 window.dataLayer = window.dataLayer || [];
@@ -21,3 +21,13 @@ gtag('consent', 'default', {
   'wait_for_update': 500
 });
 
+window.geofeed = (options) => {
+  dataLayer.push({
+    'event' : 'OneTrustCountryLoad',
+    'oneTrustCountryId': options.country.toString()
+  })
+}
+
+const json = document.createElement('script');
+json.setAttribute('src', 'https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location/geofeed');
+document.head.appendChild(json);
