@@ -2820,6 +2820,13 @@ sections:
                     doc_url: 'ee/development/database/maintenance_operations.html'
                   - doc_title: Migrations style guide
                     doc_url: 'ee/development/migration_style_guide.html'
+                  - doc_title: Multiple databases
+                    doc_url: 'ee/development/database/multiple_databases.html'
+                    docs:
+                      - doc_title: Loose Foreign Keys
+                        doc_url: 'ee/development/database/loose_foreign_keys.html'
+                      - doc_title: Migrations for multiple databases
+                        doc_url: 'ee/development/database/migrations_for_multiple_databases.html'
                   - doc_title: Ordering table columns
                     doc_url: 'ee/development/database/ordering_table_columns.html'
                   - doc_title: Pagination guidelines
@@ -2847,13 +2854,6 @@ sections:
                     doc_url: 'ee/development/database/database_debugging.html'
                   - doc_title: Understanding EXPLAIN plans
                     doc_url: 'ee/development/database/understanding_explain_plans.html'
-                  - doc_title: Multiple databases
-                    doc_url: 'ee/development/database/multiple_databases.html'
-                    docs:
-                      - doc_title: Loose Foreign Keys
-                        doc_url: 'ee/development/database/loose_foreign_keys.html'
-                      - doc_title: Migrations for multiple databases
-                        doc_url: 'ee/development/database/migrations_for_multiple_databases.html'
               - doc_title: Design and UI
                 doc_url: 'ee/development/contributing/design.html'
               - doc_title: Developer guide to logging
