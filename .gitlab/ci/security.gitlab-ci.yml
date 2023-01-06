@@ -18,6 +18,8 @@
   stage: security
   dependencies: []
   needs: []
+  artifacts:
+    expire_in: 1 month
 
 #
 # Dependency scanning job overrides
