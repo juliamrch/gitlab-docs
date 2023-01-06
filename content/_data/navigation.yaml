@@ -45,6 +45,8 @@ sections:
         category_url: 'ee/ci/pipelines/cicd_minutes.html'
       - category_title: Free user limit
         category_url: 'ee/user/free_user_limit.html'
+      - category_title: Read-only namespaces
+        category_url: 'ee/user/read_only_namespaces.html'
       - category_title: Activate Enterprise Edition
         category_url: 'ee/user/admin_area/license.html'
       - category_title: Features available to Starter and Bronze subscribers
