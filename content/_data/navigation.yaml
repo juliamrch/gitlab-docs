@@ -960,6 +960,8 @@ sections:
                 doc_url: 'ee/administration/geo/replication/security_review.html'
               - doc_title: Location-aware Git remote URLs
                 doc_url: 'ee/administration/geo/replication/location_aware_git_url.html'
+              - doc_title: Single Sign On (SSO)
+                doc_url: 'ee/administration/geo/replication/single_sign_on.html'
               - doc_title: Tuning Geo
                 doc_url: 'ee/administration/geo/replication/tuning.html'
               - doc_title: Rake tasks
