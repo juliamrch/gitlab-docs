@@ -2206,6 +2206,8 @@ sections:
             doc_url: 'ee/user/analytics/value_stream_analytics.html'
           - doc_title: Value stream analytics for groups
             doc_url: 'ee/user/group/value_stream_analytics/'
+          - doc_title: Value streams dashboard
+            doc_url: 'ee/user/analytics/value_streams_dashboard.html'
           - doc_title: Instance-level analytics
             doc_url: 'ee/user/admin_area/analytics/'
           - doc_title: Audit events
