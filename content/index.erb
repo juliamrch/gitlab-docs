@@ -289,49 +289,24 @@ title: GitLab Documentation
   </section>
 
   <!-- Footer-->
-  <footer class="landing-footer d-flex align-items-center">
+  <footer class="landing-footer d-xl-flex align-items-xl-center">
     <div class="container">
-        <div class="row">
-          <!-- Footer Items-->
-          <div class="col d-none d-sm-flex align-items-center justify-content-center">
-              <a href="https://about.gitlab.com/company/">About GitLab</a>
-              <div class="dot mx-3"></div>
-              <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer">View page source</a>
-              <div class="dot mx-3"></div>
-              <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer">Edit in Web IDE</a>
-              <div class="dot mx-3"></div>
-              <a href="https://about.gitlab.com/privacy/">Privacy Policy</a>
-              <div class="dot mx-3"></div>
-              <a href="https://about.gitlab.com/privacy/cookies/">Cookies Policy</a>
-              <div class="dot mx-3"></div>
-              <a href="https://about.gitlab.com/community/contribute/">Please contribute</a>
-              <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer" class="ml-3"><img src="<%= @items['/assets/images/by-sa.svg'].path %>" alt="Creative Commons License"></a>
-          </div>
-
-          <!-- Footer Mobile Items-->
-          <div class="col d-sm-none text-center">
-            <ul class="px-0 py-3">
-              <li>
-                <a href="https://about.gitlab.com/company/">About GitLab</a>
-                <div class="dot mx-3"></div>
-                <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer">View page source</a>
-              </li>
-              <li>
-                <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer">Edit in Web IDE</a>
-              <div class="dot mx-3"></div>
-                <a href="https://about.gitlab.com/privacy/">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="https://about.gitlab.com/privacy/cookies/">Cookies Policy</a>
-                <div class="dot mx-3"></div>
-                <a href="https://about.gitlab.com/community/contribute/">Please contribute</a>
-              </li>
-              <li class="pt-3">
-                <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer"><img src="<%= @items['/assets/images/by-sa.svg'].path %>" alt="Creative Commons License"></a>
-              </li>
-            </ul>
-          </div>
+      <div class="row">
+        <div class="col d-xl-flex align-items-xl-center justify-content-xl-center">
+          <a href="https://about.gitlab.com/company/">About GitLab</a>
+          <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer">View page source</a>
+          <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer">Edit in Web IDE</a>
+          <a href="https://about.gitlab.com/privacy/">Privacy Policy</a>
+          <% if production? %>
+          <!-- OneTrust Cookies Settings button -->
+          <button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>
+          <% end %>
+          <a href="https://about.gitlab.com/community/contribute/">Please contribute</a>
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer" class="ml-xl-3 no-attachment-icon mt-3 mt-xl-0 gl-hover-text-decoration-none!">
+            <img src="./assets/images/by-sa.svg" alt="Creative Commons License"/>
+          </a>
         </div>
+      </div>
     </div>
   </footer>
 <% end %>

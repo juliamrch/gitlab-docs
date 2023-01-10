@@ -400,33 +400,50 @@
     height: 3rem;
     background-color: $landing-gl-purple-550;
 
-    @media (max-width: $bp-sm) {
+    @media (max-width: $bp-xl) {
       height: auto;
+      padding: 1rem 0;
     }
 
     ul {
       list-style: none;
     }
 
-    a {
+    a,
+    .ot-sdk-show-settings {
       font-style: normal;
       font-weight: normal;
-      font-size: 0.875rem;
-      line-height: 1rem;
       text-align: center;
-      color: $gds-white;
+      font-size: 0.875rem !important;
+      line-height: 1rem !important;
+      color: $gds-white !important;
 
       &:hover {
         color: $gds-white;
+        text-decoration: underline;
+      }
+
+      @media (max-width: $bp-xl) {
+        display: block;
+        text-align: left;
+        margin: 0.5rem 0;
       }
     }
 
-    .dot {
-      height: 0.25rem;
-      width: 0.25rem;
-      background-color: $gds-white;
-      border-radius: 50%;
-      display: inline-block;
+    a:not(:nth-last-child(-n + 2)),
+    .ot-sdk-show-settings {
+      @media (min-width: $bp-xl) {
+        &::after {
+          content: '\2022'; // bullet
+          margin: 0 0.5rem;
+          display: inline-block;
+          /* stylelint-disable max-nesting-depth */
+          &:hover {
+            text-decoration: none;
+          }
+          /* stylelint-enable max-nesting-depth */
+        }
+      }
     }
   }
 }

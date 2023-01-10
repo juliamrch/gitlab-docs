@@ -28,7 +28,7 @@
         <li class="pr-3">
           <a href='https://gitlab.com/gitlab-org/gitlab-docs'>Docs Repo</a>
         </li>
-        <li  class="pr-3">
+        <li class="pr-3">
           <a href='https://about.gitlab.com/company/'>About GitLab</a>
         </li>
         <li class="pr-3">
@@ -37,9 +37,12 @@
         <li class="pr-3">
           <a href='https://about.gitlab.com/privacy/'>Privacy Policy</a>
         </li>
+        <% if production? %>
         <li class="pr-3">
-          <a href='https://about.gitlab.com/privacy/cookies/'>Cookies Policy</a>
+          <!-- OneTrust Cookies Settings button -->
+          <button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>
         </li>
+        <% end %>
         <li class="pr-3">
           <a href='https://about.gitlab.com/company/contact/'>Contact</a>
         </li>

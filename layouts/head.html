@@ -45,17 +45,13 @@
 
 <% if production? %>
   <%# Adds GTM only in production %>
-  <!-- add cookie consent  -->
-  <script type="text/javascript" src="https://cdn.cookielaw.org/consent/7f944245-c5cd-4eed-a90e-dd955adfdd08/OtAutoBlock.js">
-  </script>
-
-  <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="7f944245-c5cd-4eed-a90e-dd955adfdd08">
-  </script>
-
+  <!-- OneTrust Cookies Consent Notice start -->
+  <script src="https://cdn.cookielaw.org/consent/7f944245-c5cd-4eed-a90e-dd955adfdd08/OtAutoBlock.js"></script>
+  <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="7f944245-c5cd-4eed-a90e-dd955adfdd08"></script>
   <script type="text/javascript">
     function OptanonWrapper() { }
   </script>
-
+  <!-- OneTrust Cookies Consent Notice end -->
 
   <!-- Google Tag Manager -->
   <script src="<%= @items['/assets/javascripts/google_tagmanager.*'].path %>"></script>
