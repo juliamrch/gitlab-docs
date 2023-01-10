@@ -18,7 +18,7 @@ module Nanoc::Helpers
     end
 
     def blueprint_creation_date(blueprint)
-      blueprint[:'creation-date'].nil? ? '-' : Time.parse(blueprint[:'creation-date']).strftime('%Y-%m-%d')
+      blueprint[:'creation-date'].nil? ? '-' : Time.parse(blueprint[:'creation-date'].to_s).strftime('%Y-%m-%d')
     end
 
     # TODO: this is generic, should live elsewhere
