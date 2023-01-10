@@ -2662,6 +2662,8 @@ sections:
               - doc_title: Merge request concepts
                 doc_url: 'ee/development/merge_request_concepts/'
                 docs:
+                  - doc_title: Performance guidelines
+                    doc_url: 'ee/development/merge_request_concepts/performance.html'
                   - doc_title: Working with diffs
                     doc_url: 'ee/development/merge_request_concepts/diffs/'
               - doc_title: Merge request workflow
