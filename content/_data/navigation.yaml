@@ -2254,318 +2254,321 @@ sections:
   - section_title: Use the API
     section_url: 'ee/api/'
     section_categories:
-      - category_title: REST API resources
-        category_url: 'ee/api/api_resources.html'
+      - category_title: REST API
+        category_url: 'ee/api/rest/'
         docs:
-          - doc_title: .gitignore (templates)
-            doc_url: 'ee/api/templates/gitignores.html'
-          - doc_title: .gitlab-ci.yml (templates)
-            doc_url: 'ee/api/templates/gitlab_ci_ymls.html'
-          - doc_title: Access requests
-            doc_url: 'ee/api/access_requests.html'
-          - doc_title: Agent for Kubernetes
-            doc_url: 'ee/api/cluster_agents.html'
-          - doc_title: Alert Management
-            doc_url: 'ee/api/alert_management_alerts.html'
-          - doc_title: Appearance (application)
-            doc_url: 'ee/api/appearance.html'
-          - doc_title: Applications
-            doc_url: 'ee/api/applications.html'
-          - doc_title: Audit events
-            doc_url: 'ee/api/audit_events.html'
-          - doc_title: Avatar
-            doc_url: 'ee/api/avatar.html'
-          - doc_title: Award emojis
-            doc_url: 'ee/api/award_emoji.html'
-          - doc_title: Badges (project)
-            doc_url: 'ee/api/project_badges.html'
-          - doc_title: Badges (group)
-            doc_url: 'ee/api/group_badges.html'
-          - doc_title: Branches
-            doc_url: 'ee/api/branches.html'
-          - doc_title: Broadcast messages
-            doc_url: 'ee/api/broadcast_messages.html'
-          - doc_title: Commits
-            doc_url: 'ee/api/commits.html'
-          - doc_title: Composer
-            doc_url: 'ee/api/packages/composer.html'
-          - doc_title: Conan
-            doc_url: 'ee/api/packages/conan.html'
-          - doc_title: Container Registry
-            doc_url: 'ee/api/container_registry.html'
-          - doc_title: Custom attributes
-            doc_url: 'ee/api/custom_attributes.html'
-          - doc_title: Dashboard annotations
-            doc_url: 'ee/api/metrics_dashboard_annotations.html'
-          - doc_title: Debian
-            doc_url: 'ee/api/packages/debian.html'
-          - doc_title: Debian group distributions
-            doc_url: 'ee/api/packages/debian_group_distributions.html'
-          - doc_title: Debian project distributions
-            doc_url: 'ee/api/packages/debian_project_distributions.html'
-          - doc_title: Dependencies
-            doc_url: 'ee/api/dependencies.html'
-          - doc_title: Dependency Proxy
-            doc_url: 'ee/api/dependency_proxy.html'
-          - doc_title: Deploy keys
-            doc_url: 'ee/api/deploy_keys.html'
-          - doc_title: Deploy tokens
-            doc_url: 'ee/api/deploy_tokens.html'
-          - doc_title: Deployments
-            doc_url: 'ee/api/deployments.html'
-          - doc_title: Discussions
-            doc_url: 'ee/api/discussions.html'
-          - doc_title: Dockerfile (templates)
-            doc_url: 'ee/api/templates/dockerfiles.html'
-          - doc_title: DORA4 metrics
-            doc_url: 'ee/api/dora/metrics.html'
-          - doc_title: Environments
-            doc_url: 'ee/api/environments.html'
-          - doc_title: Epics
-            doc_url: 'ee/api/epics.html'
-          - doc_title: Error tracking
-            doc_url: 'ee/api/error_tracking.html'
-          - doc_title: Events
-            doc_url: 'ee/api/events.html'
-          - doc_title: Experiments
-            doc_url: 'ee/api/experiments.html'
-          - doc_title: External status checks
-            doc_url: 'ee/api/status_checks.html'
-          - doc_title: Feature flags
-            doc_url: 'ee/api/feature_flags.html'
-          - doc_title: Feature flag user lists
-            doc_url: 'ee/api/feature_flag_user_lists.html'
-          - doc_title: Freeze periods
-            doc_url: 'ee/api/freeze_periods.html'
-          - doc_title: Geo nodes
-            doc_url: 'ee/api/geo_nodes.html'
-          - doc_title: GitLab Pages
-            doc_url: 'ee/api/pages.html'
-          - doc_title: Go Proxy
-            doc_url: 'ee/api/packages/go_proxy.html'
-          - doc_title: Group access tokens
-            doc_url: 'ee/api/group_access_tokens.html'
-          - doc_title: Group activity analytics
-            doc_url: 'ee/api/group_activity_analytics.html'
-          - doc_title: Group Import/Export
-            doc_url: 'ee/api/group_import_export.html'
-          - doc_title: Group relations export
-            doc_url: 'ee/api/group_relations_export.html'
-          - doc_title: Group repository storage moves
-            doc_url: 'ee/api/group_repository_storage_moves.html'
-          - doc_title: Groups
-            doc_url: 'ee/api/groups.html'
-          - doc_title: Helm
-            doc_url: 'ee/api/packages/helm.html'
-          - doc_title: Import
-            doc_url: 'ee/api/import.html'
-          - doc_title: Instance-level CI/CD variables
-            doc_url: 'ee/api/instance_level_ci_variables.html'
-          - doc_title: Integrations
-            doc_url: 'ee/api/integrations.html'
-          - doc_title: Invitations
-            doc_url: 'ee/api/invitations.html'
-          - doc_title: Issue boards (project)
-            doc_url: 'ee/api/boards.html'
-          - doc_title: Issue boards (group)
-            doc_url: 'ee/api/group_boards.html'
-          - doc_title: Issues
-            doc_url: 'ee/api/issues.html'
-          - doc_title: Issues (epic)
-            doc_url: 'ee/api/epic_issues.html'
-          - doc_title: Issues statistics
-            doc_url: 'ee/api/issues_statistics.html'
-          - doc_title: Iterations (project)
-            doc_url: 'ee/api/iterations.html'
-          - doc_title: Iterations (group)
-            doc_url: 'ee/api/group_iterations.html'
-          - doc_title: Jobs
-            doc_url: 'ee/api/jobs.html'
-          - doc_title: Job artifacts
-            doc_url: 'ee/api/job_artifacts.html'
-          - doc_title: Keys
-            doc_url: 'ee/api/keys.html'
-          - doc_title: Labels (project)
-            doc_url: 'ee/api/labels.html'
-          - doc_title: Labels (group)
-            doc_url: 'ee/api/group_labels.html'
-          - doc_title: License
-            doc_url: 'ee/api/license.html'
-          - doc_title: Licenses (templates)
-            doc_url: 'ee/api/templates/licenses.html'
-          - doc_title: Linked epics
-            doc_url: 'ee/api/linked_epics.html'
-          - doc_title: Links (issue)
-            doc_url: 'ee/api/issue_links.html'
-          - doc_title: Links (epic)
-            doc_url: 'ee/api/epic_links.html'
-          - doc_title: Managed licenses
-            doc_url: 'ee/api/managed_licenses.html'
-          - doc_title: Markdown
-            doc_url: 'ee/api/markdown.html'
-          - doc_title: Maven
-            doc_url: 'ee/api/packages/maven.html'
-          - doc_title: Members
-            doc_url: 'ee/api/members.html'
-          - doc_title: Merge request approvals
-            doc_url: 'ee/api/merge_request_approvals.html'
-          - doc_title: Merge request context commits
-            doc_url: 'ee/api/merge_request_context_commits.html'
-          - doc_title: Merge requests
-            doc_url: 'ee/api/merge_requests.html'
-          - doc_title: Merge trains
-            doc_url: 'ee/api/merge_trains.html'
-          - doc_title: Metadata
-            doc_url: 'ee/api/metadata.html'
-          - doc_title: Migrations (bulk imports)
-            doc_url: 'ee/api/bulk_imports.html'
-          - doc_title: Milestones (project)
-            doc_url: 'ee/api/milestones.html'
-          - doc_title: Milestones (group)
-            doc_url: 'ee/api/group_milestones.html'
-          - doc_title: Namespaces
-            doc_url: 'ee/api/namespaces.html'
-          - doc_title: Notes (comments)
-            doc_url: 'ee/api/notes.html'
-          - doc_title: Notification settings
-            doc_url: 'ee/api/notification_settings.html'
-          - doc_title: npm
-            doc_url: 'ee/api/packages/npm.html'
-          - doc_title: NuGet
-            doc_url: 'ee/api/packages/nuget.html'
-          - doc_title: Packages
-            doc_url: 'ee/api/packages.html'
-          - doc_title: Pages domains
-            doc_url: 'ee/api/pages_domains.html'
-          - doc_title: Personal access tokens
-            doc_url: 'ee/api/personal_access_tokens.html'
-          - doc_title: Pipelines schedules
-            doc_url: 'ee/api/pipeline_schedules.html'
-          - doc_title: Pipeline triggers
-            doc_url: 'ee/api/pipeline_triggers.html'
-          - doc_title: Pipelines
-            doc_url: 'ee/api/pipelines.html'
-          - doc_title: Plan limits
-            doc_url: 'ee/api/plan_limits.html'
-          - doc_title: Product analytics
-            doc_url: 'ee/api/product_analytics.html'
-          - doc_title: Project access tokens
-            doc_url: 'ee/api/project_access_tokens.html'
-          - doc_title: Project aliases
-            doc_url: 'ee/api/project_aliases.html'
-          - doc_title: Project import/export
-            doc_url: 'ee/api/project_import_export.html'
-          - doc_title: Project relations export
-            doc_url: 'ee/api/project_relations_export.html'
-          - doc_title: Project remote mirrors
-            doc_url: 'ee/api/remote_mirrors.html'
-          - doc_title: Project repository storage moves
-            doc_url: 'ee/api/project_repository_storage_moves.html'
-          - doc_title: Project statistics
-            doc_url: 'ee/api/project_statistics.html'
-          - doc_title: Project templates
-            doc_url: 'ee/api/project_templates.html'
-          - doc_title: Project vulnerabilities
-            doc_url: 'ee/api/project_vulnerabilities.html'
-          - doc_title: Projects
-            doc_url: 'ee/api/projects.html'
-          - doc_title: Protected branches
-            doc_url: 'ee/api/protected_branches.html'
-          - doc_title: Project-level protected environments
-            doc_url: 'ee/api/protected_environments.html'
-          - doc_title: Group-level protected environments
-            doc_url: 'ee/api/group_protected_environments.html'
-          - doc_title: Protected tags
-            doc_url: 'ee/api/protected_tags.html'
-          - doc_title: PyPI
-            doc_url: 'ee/api/packages/pypi.html'
-          - doc_title: Releases
-            doc_url: 'ee/api/releases/'
+          - doc_title: REST API resources
+            doc_url: 'ee/api/api_resources.html'
             docs:
-              - doc_title: Group releases
-                doc_url: 'ee/api/group_releases.html'
-          - doc_title: Release links
-            doc_url: 'ee/api/releases/links.html'
-          - doc_title: Repositories
-            doc_url: 'ee/api/repositories.html'
-          - doc_title: Repository files
-            doc_url: 'ee/api/repository_files.html'
-          - doc_title: Repository submodules
-            doc_url: 'ee/api/repository_submodules.html'
-          - doc_title: Resource group
-            doc_url: 'ee/api/resource_groups.html'
-          - doc_title: Resource iteration events
-            doc_url: 'ee/api/resource_iteration_events.html'
-          - doc_title: Resource label events
-            doc_url: 'ee/api/resource_label_events.html'
-          - doc_title: Resource milestone events
-            doc_url: 'ee/api/resource_milestone_events.html'
-          - doc_title: Resource state events
-            doc_url: 'ee/api/resource_state_events.html'
-          - doc_title: Resource weight events
-            doc_url: 'ee/api/resource_weight_events.html'
-          - doc_title: Ruby gems
-            doc_url: 'ee/api/packages/rubygems.html'
-          - doc_title: Runners
-            doc_url: 'ee/api/runners.html'
-          - doc_title: SAML
-            doc_url: 'ee/api/saml.html'
-          - doc_title: SCIM
-            doc_url: 'ee/api/scim.html'
-          - doc_title: Search
-            doc_url: 'ee/api/search.html'
-          - doc_title: Secure files
-            doc_url: 'ee/api/secure_files.html'
-          - doc_title: Settings (application)
-            doc_url: 'ee/api/settings.html'
-          - doc_title: Sidekiq metrics
-            doc_url: 'ee/api/sidekiq_metrics.html'
-          - doc_title: Sidekiq queues
-            doc_url: 'ee/api/admin_sidekiq_queues.html'
-          - doc_title: Snippet repository storage moves
-            doc_url: 'ee/api/snippet_repository_storage_moves.html'
-          - doc_title: Snippets
-            doc_url: 'ee/api/snippets.html'
-          - doc_title: Snippets (project)
-            doc_url: 'ee/api/project_snippets.html'
-          - doc_title: Statistics (application)
-            doc_url: 'ee/api/statistics.html'
-          - doc_title: Suggestions
-            doc_url: 'ee/api/suggestions.html'
-          - doc_title: System hooks
-            doc_url: 'ee/api/system_hooks.html'
-          - doc_title: Tags
-            doc_url: 'ee/api/tags.html'
-          - doc_title: Terraform Registry
-            doc_url: 'ee/api/packages/terraform-modules.html'
-          - doc_title: To-Do lists
-            doc_url: 'ee/api/todos.html'
-          - doc_title: Topics
-            doc_url: 'ee/api/topics.html'
-          - doc_title: Service Data
-            doc_url: 'ee/api/usage_data.html'
-          - doc_title: Users
-            doc_url: 'ee/api/users.html'
-          - doc_title: User-starred metrics dashboards
-            doc_url: 'ee/api/metrics_user_starred_dashboards.html'
-          - doc_title: Variables (project)
-            doc_url: 'ee/api/project_level_variables.html'
-          - doc_title: Variables (group)
-            doc_url: 'ee/api/group_level_variables.html'
-          - doc_title: Version
-            doc_url: 'ee/api/version.html'
-          - doc_title: Visual Review discussions
-            doc_url: 'ee/api/visual_review_discussions.html'
-          - doc_title: Vulnerabilities
-            doc_url: 'ee/api/vulnerabilities.html'
-          - doc_title: Vulnerability export
-            doc_url: 'ee/api/vulnerability_exports.html'
-          - doc_title: Vulnerability Findings
-            doc_url: 'ee/api/vulnerability_findings.html'
-          - doc_title: Wikis (group)
-            doc_url: 'ee/api/group_wikis.html'
-          - doc_title: Wikis (project)
-            doc_url: 'ee/api/wikis.html'
+              - doc_title: .gitignore (templates)
+                doc_url: 'ee/api/templates/gitignores.html'
+              - doc_title: .gitlab-ci.yml (templates)
+                doc_url: 'ee/api/templates/gitlab_ci_ymls.html'
+              - doc_title: Access requests
+                doc_url: 'ee/api/access_requests.html'
+              - doc_title: Agent for Kubernetes
+                doc_url: 'ee/api/cluster_agents.html'
+              - doc_title: Alert Management
+                doc_url: 'ee/api/alert_management_alerts.html'
+              - doc_title: Appearance (application)
+                doc_url: 'ee/api/appearance.html'
+              - doc_title: Applications
+                doc_url: 'ee/api/applications.html'
+              - doc_title: Audit events
+                doc_url: 'ee/api/audit_events.html'
+              - doc_title: Avatar
+                doc_url: 'ee/api/avatar.html'
+              - doc_title: Award emojis
+                doc_url: 'ee/api/award_emoji.html'
+              - doc_title: Badges (project)
+                doc_url: 'ee/api/project_badges.html'
+              - doc_title: Badges (group)
+                doc_url: 'ee/api/group_badges.html'
+              - doc_title: Branches
+                doc_url: 'ee/api/branches.html'
+              - doc_title: Broadcast messages
+                doc_url: 'ee/api/broadcast_messages.html'
+              - doc_title: Commits
+                doc_url: 'ee/api/commits.html'
+              - doc_title: Composer
+                doc_url: 'ee/api/packages/composer.html'
+              - doc_title: Conan
+                doc_url: 'ee/api/packages/conan.html'
+              - doc_title: Container Registry
+                doc_url: 'ee/api/container_registry.html'
+              - doc_title: Custom attributes
+                doc_url: 'ee/api/custom_attributes.html'
+              - doc_title: Dashboard annotations
+                doc_url: 'ee/api/metrics_dashboard_annotations.html'
+              - doc_title: Debian
+                doc_url: 'ee/api/packages/debian.html'
+              - doc_title: Debian group distributions
+                doc_url: 'ee/api/packages/debian_group_distributions.html'
+              - doc_title: Debian project distributions
+                doc_url: 'ee/api/packages/debian_project_distributions.html'
+              - doc_title: Dependencies
+                doc_url: 'ee/api/dependencies.html'
+              - doc_title: Dependency Proxy
+                doc_url: 'ee/api/dependency_proxy.html'
+              - doc_title: Deploy keys
+                doc_url: 'ee/api/deploy_keys.html'
+              - doc_title: Deploy tokens
+                doc_url: 'ee/api/deploy_tokens.html'
+              - doc_title: Deployments
+                doc_url: 'ee/api/deployments.html'
+              - doc_title: Discussions
+                doc_url: 'ee/api/discussions.html'
+              - doc_title: Dockerfile (templates)
+                doc_url: 'ee/api/templates/dockerfiles.html'
+              - doc_title: DORA4 metrics
+                doc_url: 'ee/api/dora/metrics.html'
+              - doc_title: Environments
+                doc_url: 'ee/api/environments.html'
+              - doc_title: Epics
+                doc_url: 'ee/api/epics.html'
+              - doc_title: Error tracking
+                doc_url: 'ee/api/error_tracking.html'
+              - doc_title: Events
+                doc_url: 'ee/api/events.html'
+              - doc_title: Experiments
+                doc_url: 'ee/api/experiments.html'
+              - doc_title: External status checks
+                doc_url: 'ee/api/status_checks.html'
+              - doc_title: Feature flags
+                doc_url: 'ee/api/feature_flags.html'
+              - doc_title: Feature flag user lists
+                doc_url: 'ee/api/feature_flag_user_lists.html'
+              - doc_title: Freeze periods
+                doc_url: 'ee/api/freeze_periods.html'
+              - doc_title: Geo nodes
+                doc_url: 'ee/api/geo_nodes.html'
+              - doc_title: GitLab Pages
+                doc_url: 'ee/api/pages.html'
+              - doc_title: Go Proxy
+                doc_url: 'ee/api/packages/go_proxy.html'
+              - doc_title: Group access tokens
+                doc_url: 'ee/api/group_access_tokens.html'
+              - doc_title: Group activity analytics
+                doc_url: 'ee/api/group_activity_analytics.html'
+              - doc_title: Group Import/Export
+                doc_url: 'ee/api/group_import_export.html'
+              - doc_title: Group relations export
+                doc_url: 'ee/api/group_relations_export.html'
+              - doc_title: Group repository storage moves
+                doc_url: 'ee/api/group_repository_storage_moves.html'
+              - doc_title: Groups
+                doc_url: 'ee/api/groups.html'
+              - doc_title: Helm
+                doc_url: 'ee/api/packages/helm.html'
+              - doc_title: Import
+                doc_url: 'ee/api/import.html'
+              - doc_title: Instance-level CI/CD variables
+                doc_url: 'ee/api/instance_level_ci_variables.html'
+              - doc_title: Integrations
+                doc_url: 'ee/api/integrations.html'
+              - doc_title: Invitations
+                doc_url: 'ee/api/invitations.html'
+              - doc_title: Issue boards (project)
+                doc_url: 'ee/api/boards.html'
+              - doc_title: Issue boards (group)
+                doc_url: 'ee/api/group_boards.html'
+              - doc_title: Issues
+                doc_url: 'ee/api/issues.html'
+              - doc_title: Issues (epic)
+                doc_url: 'ee/api/epic_issues.html'
+              - doc_title: Issues statistics
+                doc_url: 'ee/api/issues_statistics.html'
+              - doc_title: Iterations (project)
+                doc_url: 'ee/api/iterations.html'
+              - doc_title: Iterations (group)
+                doc_url: 'ee/api/group_iterations.html'
+              - doc_title: Jobs
+                doc_url: 'ee/api/jobs.html'
+              - doc_title: Job artifacts
+                doc_url: 'ee/api/job_artifacts.html'
+              - doc_title: Keys
+                doc_url: 'ee/api/keys.html'
+              - doc_title: Labels (project)
+                doc_url: 'ee/api/labels.html'
+              - doc_title: Labels (group)
+                doc_url: 'ee/api/group_labels.html'
+              - doc_title: License
+                doc_url: 'ee/api/license.html'
+              - doc_title: Licenses (templates)
+                doc_url: 'ee/api/templates/licenses.html'
+              - doc_title: Linked epics
+                doc_url: 'ee/api/linked_epics.html'
+              - doc_title: Links (issue)
+                doc_url: 'ee/api/issue_links.html'
+              - doc_title: Links (epic)
+                doc_url: 'ee/api/epic_links.html'
+              - doc_title: Managed licenses
+                doc_url: 'ee/api/managed_licenses.html'
+              - doc_title: Markdown
+                doc_url: 'ee/api/markdown.html'
+              - doc_title: Maven
+                doc_url: 'ee/api/packages/maven.html'
+              - doc_title: Members
+                doc_url: 'ee/api/members.html'
+              - doc_title: Merge request approvals
+                doc_url: 'ee/api/merge_request_approvals.html'
+              - doc_title: Merge request context commits
+                doc_url: 'ee/api/merge_request_context_commits.html'
+              - doc_title: Merge requests
+                doc_url: 'ee/api/merge_requests.html'
+              - doc_title: Merge trains
+                doc_url: 'ee/api/merge_trains.html'
+              - doc_title: Metadata
+                doc_url: 'ee/api/metadata.html'
+              - doc_title: Migrations (bulk imports)
+                doc_url: 'ee/api/bulk_imports.html'
+              - doc_title: Milestones (project)
+                doc_url: 'ee/api/milestones.html'
+              - doc_title: Milestones (group)
+                doc_url: 'ee/api/group_milestones.html'
+              - doc_title: Namespaces
+                doc_url: 'ee/api/namespaces.html'
+              - doc_title: Notes (comments)
+                doc_url: 'ee/api/notes.html'
+              - doc_title: Notification settings
+                doc_url: 'ee/api/notification_settings.html'
+              - doc_title: npm
+                doc_url: 'ee/api/packages/npm.html'
+              - doc_title: NuGet
+                doc_url: 'ee/api/packages/nuget.html'
+              - doc_title: Packages
+                doc_url: 'ee/api/packages.html'
+              - doc_title: Pages domains
+                doc_url: 'ee/api/pages_domains.html'
+              - doc_title: Personal access tokens
+                doc_url: 'ee/api/personal_access_tokens.html'
+              - doc_title: Pipelines schedules
+                doc_url: 'ee/api/pipeline_schedules.html'
+              - doc_title: Pipeline triggers
+                doc_url: 'ee/api/pipeline_triggers.html'
+              - doc_title: Pipelines
+                doc_url: 'ee/api/pipelines.html'
+              - doc_title: Plan limits
+                doc_url: 'ee/api/plan_limits.html'
+              - doc_title: Product analytics
+                doc_url: 'ee/api/product_analytics.html'
+              - doc_title: Project access tokens
+                doc_url: 'ee/api/project_access_tokens.html'
+              - doc_title: Project aliases
+                doc_url: 'ee/api/project_aliases.html'
+              - doc_title: Project import/export
+                doc_url: 'ee/api/project_import_export.html'
+              - doc_title: Project relations export
+                doc_url: 'ee/api/project_relations_export.html'
+              - doc_title: Project remote mirrors
+                doc_url: 'ee/api/remote_mirrors.html'
+              - doc_title: Project repository storage moves
+                doc_url: 'ee/api/project_repository_storage_moves.html'
+              - doc_title: Project statistics
+                doc_url: 'ee/api/project_statistics.html'
+              - doc_title: Project templates
+                doc_url: 'ee/api/project_templates.html'
+              - doc_title: Project vulnerabilities
+                doc_url: 'ee/api/project_vulnerabilities.html'
+              - doc_title: Projects
+                doc_url: 'ee/api/projects.html'
+              - doc_title: Protected branches
+                doc_url: 'ee/api/protected_branches.html'
+              - doc_title: Project-level protected environments
+                doc_url: 'ee/api/protected_environments.html'
+              - doc_title: Group-level protected environments
+                doc_url: 'ee/api/group_protected_environments.html'
+              - doc_title: Protected tags
+                doc_url: 'ee/api/protected_tags.html'
+              - doc_title: PyPI
+                doc_url: 'ee/api/packages/pypi.html'
+              - doc_title: Releases
+                doc_url: 'ee/api/releases/'
+                docs:
+                  - doc_title: Group releases
+                    doc_url: 'ee/api/group_releases.html'
+              - doc_title: Release links
+                doc_url: 'ee/api/releases/links.html'
+              - doc_title: Repositories
+                doc_url: 'ee/api/repositories.html'
+              - doc_title: Repository files
+                doc_url: 'ee/api/repository_files.html'
+              - doc_title: Repository submodules
+                doc_url: 'ee/api/repository_submodules.html'
+              - doc_title: Resource group
+                doc_url: 'ee/api/resource_groups.html'
+              - doc_title: Resource iteration events
+                doc_url: 'ee/api/resource_iteration_events.html'
+              - doc_title: Resource label events
+                doc_url: 'ee/api/resource_label_events.html'
+              - doc_title: Resource milestone events
+                doc_url: 'ee/api/resource_milestone_events.html'
+              - doc_title: Resource state events
+                doc_url: 'ee/api/resource_state_events.html'
+              - doc_title: Resource weight events
+                doc_url: 'ee/api/resource_weight_events.html'
+              - doc_title: Ruby gems
+                doc_url: 'ee/api/packages/rubygems.html'
+              - doc_title: Runners
+                doc_url: 'ee/api/runners.html'
+              - doc_title: SAML
+                doc_url: 'ee/api/saml.html'
+              - doc_title: SCIM
+                doc_url: 'ee/api/scim.html'
+              - doc_title: Search
+                doc_url: 'ee/api/search.html'
+              - doc_title: Secure files
+                doc_url: 'ee/api/secure_files.html'
+              - doc_title: Settings (application)
+                doc_url: 'ee/api/settings.html'
+              - doc_title: Sidekiq metrics
+                doc_url: 'ee/api/sidekiq_metrics.html'
+              - doc_title: Sidekiq queues
+                doc_url: 'ee/api/admin_sidekiq_queues.html'
+              - doc_title: Snippet repository storage moves
+                doc_url: 'ee/api/snippet_repository_storage_moves.html'
+              - doc_title: Snippets
+                doc_url: 'ee/api/snippets.html'
+              - doc_title: Snippets (project)
+                doc_url: 'ee/api/project_snippets.html'
+              - doc_title: Statistics (application)
+                doc_url: 'ee/api/statistics.html'
+              - doc_title: Suggestions
+                doc_url: 'ee/api/suggestions.html'
+              - doc_title: System hooks
+                doc_url: 'ee/api/system_hooks.html'
+              - doc_title: Tags
+                doc_url: 'ee/api/tags.html'
+              - doc_title: Terraform Registry
+                doc_url: 'ee/api/packages/terraform-modules.html'
+              - doc_title: To-Do lists
+                doc_url: 'ee/api/todos.html'
+              - doc_title: Topics
+                doc_url: 'ee/api/topics.html'
+              - doc_title: Service Data
+                doc_url: 'ee/api/usage_data.html'
+              - doc_title: Users
+                doc_url: 'ee/api/users.html'
+              - doc_title: User-starred metrics dashboards
+                doc_url: 'ee/api/metrics_user_starred_dashboards.html'
+              - doc_title: Variables (project)
+                doc_url: 'ee/api/project_level_variables.html'
+              - doc_title: Variables (group)
+                doc_url: 'ee/api/group_level_variables.html'
+              - doc_title: Version
+                doc_url: 'ee/api/version.html'
+              - doc_title: Visual Review discussions
+                doc_url: 'ee/api/visual_review_discussions.html'
+              - doc_title: Vulnerabilities
+                doc_url: 'ee/api/vulnerabilities.html'
+              - doc_title: Vulnerability export
+                doc_url: 'ee/api/vulnerability_exports.html'
+              - doc_title: Vulnerability Findings
+                doc_url: 'ee/api/vulnerability_findings.html'
+              - doc_title: Wikis (group)
+                doc_url: 'ee/api/group_wikis.html'
+              - doc_title: Wikis (project)
+                doc_url: 'ee/api/wikis.html'
       - category_title: OpenAPI
         category_url: 'ee/api/openapi/openapi_interactive.html'
       - category_title: GraphQL
