@@ -49,6 +49,8 @@ sections:
         category_url: 'ee/user/admin_area/license.html'
       - category_title: Features available to Starter and Bronze subscribers
         category_url: 'ee/subscriptions/bronze_starter.html'
+      - category_title: Alpha, Beta, LA support
+        category_url: 'ee/policy/alpha-beta-support.html'
 
   # INSTALLATION
 
