@@ -20,3 +20,21 @@
     color: $footer-gray-400;
   }
 }
+
+// Override OneTrust button styles
+.ot-sdk-show-settings {
+  all: unset;
+  border: 0 !important;
+  padding: 0 !important;
+  color: $footer-gray-500 !important;
+  font-size: inherit !important;
+
+  &:hover {
+    background-color: inherit !important;
+    color: $gds-purple-900 !important;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
