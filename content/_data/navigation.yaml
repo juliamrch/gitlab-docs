@@ -2661,6 +2661,9 @@ sections:
                 doc_url: 'ee/development/contributing/issue_workflow.html'
               - doc_title: Merge request concepts
                 doc_url: 'ee/development/merge_request_concepts/'
+                docs:
+                  - doc_title: Working with diffs
+                    doc_url: 'ee/development/merge_request_concepts/diffs/'
               - doc_title: Merge request workflow
                 doc_url: 'ee/development/contributing/merge_request_workflow.html'
               - doc_title: Secure partner onboarding process
@@ -2994,7 +2997,7 @@ sections:
               - doc_title: Kubernetes integration
                 doc_url: 'ee/development/kubernetes.html'
               - doc_title: Merge request diffs development guide
-                doc_url: 'ee/development/merge_request_diffs.html'
+                doc_url: 'ee/development/merge_request_concepts/diffs/development.html'
               - doc_title: Observability for stage groups
                 doc_url: 'ee/development/stage_group_observability/'
                 docs:
