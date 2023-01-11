@@ -112,7 +112,7 @@
       <%= render '/analytics.*' %>
     <% end %>
     <% if @item.identifier.to_s == '/ee/update/deprecations.md' %>
-      <script src="<%= @items['/frontend/deprecations/filters.*'].path %>"></script>
+      <script src="<%= @items['/frontend/deprecations/deprecations.*'].path %>"></script>
     <% end %>
     <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
@@ -121,4 +121,3 @@
     <script src="<%= @items['/frontend/default/default.*'].path %>"></script>
   </body>
 </html>
-
