@@ -32,9 +32,10 @@ class TaskHelpers
     if ENV["CI_COMMIT_REF_NAME"].nil?
       default_branch(products[slug].fetch('repo'))
 
-    # If we're on a gitlab-docs stable branch according to the regex, catch the
-    # version and assign the product stable branches correctly.
-    elsif version = ENV["CI_COMMIT_REF_NAME"].match(VERSION_FORMAT)
+    # If we're on a gitlab-docs stable branch (or targeting one) according to the
+    # regex, catch the version and assign the product stable branches
+    # correctly.
+    elsif version = ENV["CI_COMMIT_REF_NAME"].match(VERSION_FORMAT) || ENV["CI_MERGE_REQUEST_TARGET_BRANCH_NAME"].match(VERSION_FORMAT)
 
       case slug
       # EE has different branch name scheme
@@ -46,8 +47,10 @@ class TaskHelpers
 
       # Charts don't use the same version scheme as GitLab, we need to
       # deduct their version from the GitLab equivalent one.
+      # Take the values defined in 'version', and use '.match' to split them
+      # to :major and :minor so that we can use them to craft the charts version.
       when 'charts'
-        chart = chart_version(ENV.fetch('CI_COMMIT_REF_NAME', nil)).match(VERSION_FORMAT)
+        chart = chart_version("#{version[:major]}.#{version[:minor]}").match(VERSION_FORMAT)
         "#{chart[:major]}-#{chart[:minor]}-stable"
 
       # If the upstream product doesn't follow a stable branch scheme, set the
