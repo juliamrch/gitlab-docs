@@ -165,7 +165,12 @@ image:docs-single:
   environment:
     name: registry/$CI_COMMIT_REF_SLUG
   script:
-    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker build
+             --build-arg NANOC_ENV=${NANOC_ENV}
+             --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
+             --build-arg ALGOLIA_SEARCH="true"
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
     - docker push $IMAGE_NAME
   # Only branches with versions like 10.4
   rules:
