@@ -2,7 +2,9 @@
 
 import { compareVersions } from 'compare-versions';
 
-const DOCS_VERSIONS_ENDPOINT = 'https://docs.gitlab.com/versions.json';
+const BASE_URL = `${window.location.protocol}//${window.location.host}`;
+const DOCS_VERSIONS_ENDPOINT = `${BASE_URL}/versions.json`;
+const GITLAB_RELEASE_DATES_ENDPOINT = `${BASE_URL}/release_dates.json`;
 const DOCS_IMAGES_ENDPOINT =
   'https://gitlab.com/api/v4/projects/1794617/registry/repositories/631635/tags?per_page=100';
 
@@ -55,4 +57,18 @@ export async function getArchivesVersions() {
         compareVersions(v, oldestCurrentMinor) < 0 &&
         !Object.values(onlineVersions).flat().includes(v),
     );
+}
+
+/**
+ * Fetch a list of versions with their associated release dates.
+ *
+ * @returns Array
+ */
+export function getReleaseDates() {
+  return fetch(GITLAB_RELEASE_DATES_ENDPOINT)
+    .then((response) => response.json())
+    .then((data) => {
+      return Object.assign(...data);
+    })
+    .catch((error) => console.error(error));
 }

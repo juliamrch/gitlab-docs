@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import { compareVersions } from 'compare-versions';
+import { getReleaseDates } from '../services/fetch_versions';
 import DeprecationFilters from './components/deprecation_filters.vue';
 
 /**
@@ -36,7 +37,24 @@ const buildMilestonesList = (showAllText) => {
   return milestones;
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  // Populate milestone dates.
+  const releaseDates = await getReleaseDates();
+  const dateFields = ['removal-date', 'support-end-date'];
+
+  dateFields.forEach((field) => {
+    const depDates = document.querySelectorAll(`span.${field}`);
+    depDates.forEach((dd) => {
+      // Find the milestone value from within the sibling span tag.
+      // Use this to populate the date for the milestone.
+      const milestone = dd.parentNode.querySelector('.removal-milestone').innerText;
+      const releaseDate = Object.keys(releaseDates).find((key) => releaseDates[key] === milestone);
+      // eslint-disable-next-line no-param-reassign
+      dd.innerText = `(${releaseDate})`;
+    });
+  });
+
+  // Initialize the filters Vue component.
   const showAllText = 'Show all';
   const milestonesOptions = buildMilestonesList(showAllText);
 
