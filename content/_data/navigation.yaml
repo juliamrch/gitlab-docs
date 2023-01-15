@@ -1839,7 +1839,7 @@ sections:
                     doc_url: 'runner/executors/ssh.html'
                   - doc_title: Parallels
                     doc_url: 'runner/executors/parallels.html'
-                  - doc_title: Virtual Box
+                  - doc_title: VirtualBox
                     doc_url: 'runner/executors/virtualbox.html'
               - doc_title: Configure runners
                 doc_url: 'ee/ci/runners/configure_runners.html'
