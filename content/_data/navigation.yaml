@@ -537,6 +537,8 @@ sections:
       - category_title: Project integrations
         category_url: 'ee/user/project/integrations/'
         docs:
+          - doc_title: Apple App Store
+            doc_url: 'ee/user/project/integrations/apple_app_store.html'
           - doc_title: Asana
             doc_url: 'ee/user/project/integrations/asana.html'
           - doc_title: Bamboo CI
