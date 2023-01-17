@@ -518,7 +518,7 @@ sections:
             doc_url: 'ee/integration/jira/dvcs/'
             docs:
               - doc_title: Troubleshooting
-              - doc_url: 'ee/integration/jira/dvcs/troubleshooting.html'
+                doc_url: 'ee/integration/jira/dvcs/troubleshooting.html'
           - doc_title: Jira Development Panel
             doc_url: 'ee/integration/jira/development_panel.html'
           - doc_title: Create Jira Server user
