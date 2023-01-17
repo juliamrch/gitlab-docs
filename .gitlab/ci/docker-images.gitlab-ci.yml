@@ -104,6 +104,7 @@ test:image:docs-lint-markdown:
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
              --build-arg VALE_VERSION=${VALE_VERSION}
              --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
+             --build-arg MARKDOWNLINT2_VERSION=${MARKDOWNLINT2_VERSION}
              --file $DOCKERFILE .
 
 #

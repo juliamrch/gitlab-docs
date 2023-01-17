@@ -206,16 +206,14 @@ To add an additional set of product documentation to <https://docs.gitlab.com> f
    branch at all, you can omit this and the default branch will be always pulled.
 
 1. Edit ['lib/edit_on_gitlab.rb'](../lib/edit_on_gitlab.rb) and add the product and its attributes to the `PRODUCT_REPOS` object, then add 1-2 test cases in [`spec/lib/helpers/edit_on_gitlab_spec.rb`](../spec/lib/helpers/edit_on_gitlab_spec.rb).
-
 1. Edit [`.test.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/test.gitlab-ci.yml) and add the new product to the following tests, following the same pattern as existing products:
 
-- `test_global_nav_links`
-- `test_EOL_whitespace`
-- `test_unlinked_images`
+   - `test_global_nav_links`
+   - `test_EOL_whitespace`
+   - `test_unlinked_images`
 
 1. Edit [`scripts/normalize-links.sh`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/scripts/normalize-links.sh)
    and add the new product to the `Relative URLs` and `Full URLs` sections.
-
 1. Edit the ['Makefile'](../Makefile):
 
    - Add a command to clone the repository, and add it to `clone-all-docs-projects` (see `../gitlab-operator/.git` as an example).
@@ -225,6 +223,8 @@ To add an additional set of product documentation to <https://docs.gitlab.com> f
 
    - Add the new product to the list in [`doc/index.md`](../doc/index.md).
    - Add the new product to the diagram in [`doc/architecture.md`](../doc/architecture.md).
+
+1. Add new whitespace test target to `markdownlint-whitespace-tests-gitlab` in `Makefile`.
 
 ## Exclude a directory
 

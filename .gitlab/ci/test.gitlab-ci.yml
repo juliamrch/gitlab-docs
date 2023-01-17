@@ -162,12 +162,11 @@ test_EOL_whitespace:
   before_script: []
   dependencies: []
   script:
-    - yarn global add markdownlint-cli@$MARKDOWNLINT_VERSION
     - apk add jq
     - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
     - bundle install
     - bundle exec rake default
-    - markdownlint --config tasks/whitespace_task.yml '../gitlab/doc/**/*.md' '../gitlab-runner/doc/**/*.md' '../omnibus-gitlab/doc/**/*.md' '../charts-gitlab/doc/**/*.md' '../gitlab-operator/doc/**/*.md'
+    - make markdownlint-whitespace-tests
 
 test_unlinked_images:
   extends:
