@@ -21,7 +21,7 @@ task :clone_repositories do
       && branch == ENV['CI_DEFAULT_BRANCH'] \
       && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
-    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Cloning #{product['repo']}..#{TaskHelpers::COLOR_CODE_RESET}"
+    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Cloning branch '#{branch}' of #{product['repo']}..#{TaskHelpers::COLOR_CODE_RESET}"
 
     #
     # Handle the cases where we land on a runner that already ran a docs build,

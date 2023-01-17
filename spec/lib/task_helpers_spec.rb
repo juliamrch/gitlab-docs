@@ -13,16 +13,16 @@ describe TaskHelpers do
     end
   end
 
-  describe '#chart_version' do
-    let(:gitlab_version) { nil }
+  describe '#charts_stable_branch' do
+    subject(:charts_stable_branch) { described_class.new.charts_stable_branch }
 
-    subject(:chart_version) { described_class.new.chart_version(gitlab_version) }
+    context 'when GitLab version is 15-0-stable' do
+      ENV['CI_COMMIT_REF_NAME'] = '15.0'
 
-    context 'when GitLab version is 15' do
-      let(:gitlab_version) { '15.0' }
+      let(:stable_branch_name) { '15-0-stable' }
 
-      it 'returns charts version 6.0' do
-        expect(chart_version).to eq('6.0')
+      it 'returns charts branch 6-0-stable' do
+        expect(charts_stable_branch).to eq('6-0-stable')
       end
     end
   end
