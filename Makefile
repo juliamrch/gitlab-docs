@@ -163,7 +163,34 @@ yamllint-tests:
 
 markdownlint-tests:
 	@printf "\n$(INFO)INFO: Running markdownlint tests...$(END)\n"
-	@yarn markdownlint doc/**/*.md
+	@yarn markdownlint-cli2 doc/**/*.md
+
+markdownlint-whitespace-tests-gitlab:
+	@printf "\n$(INFO)INFO: Running markdownlint whitespace tests on GitLab project...$(END)\n"
+	@cd ../gitlab/doc && markdownlint-cli2-config "../../gitlab-docs/tasks/.markdownlint.yml" "**/*.md"
+
+markdownlint-whitespace-tests-gitlab-runner:
+	@printf "\n$(INFO)INFO: Running markdownlint whitespace tests on GitLab Runner project...$(END)\n"
+	@cd ../gitlab-runner/docs && markdownlint-cli2-config "../../gitlab-docs/tasks/.markdownlint.yml" "**/*.md"
+
+markdownlint-whitespace-tests-omnibus-gitlab:
+	@printf "\n$(INFO)INFO: Running markdownlint whitespace tests on Omnibus GitLab project...$(END)\n"
+	@cd ../omnibus-gitlab/doc && markdownlint-cli2-config "../../gitlab-docs/tasks/.markdownlint.yml" "**/*.md"
+
+markdownlint-whitespace-tests-charts-gitlab:
+	@printf "\n$(INFO)INFO: Running markdownlint whitespace tests on GitLab Chart project...$(END)\n"
+	@cd ../charts-gitlab/doc && markdownlint-cli2-config "../../gitlab-docs/tasks/.markdownlint.yml" "**/*.md"
+
+markdownlint-whitespace-tests-gitlab-operator:
+	@printf "\n$(INFO)INFO: Running markdownlint whitespace tests on GitLab Operator project...$(END)\n"
+	@cd ../gitlab-operator/doc && markdownlint-cli2-config "../../gitlab-docs/tasks/.markdownlint.yml" "**/*.md"
+
+markdownlint-whitespace-tests: install-nodejs-dependencies
+	@$(MAKE) markdownlint-whitespace-tests-gitlab || true
+	@$(MAKE) markdownlint-whitespace-tests-gitlab-runner || true
+	@$(MAKE) markdownlint-whitespace-tests-omnibus-gitlab || true
+	@$(MAKE) markdownlint-whitespace-tests-charts-gitlab || true
+	@$(MAKE) markdownlint-whitespace-tests-gitlab-operator || true
 
 shellcheck-tests:
 	@printf "\n$(INFO)INFO: Running shellcheck tests...$(END)\n"

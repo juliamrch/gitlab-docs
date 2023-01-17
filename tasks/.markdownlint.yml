@@ -1,4 +1,4 @@
 ---
+# Configuration for test_EOL_whitespace job
 default: false
-no-inline-html: false
 no-trailing-spaces: true
