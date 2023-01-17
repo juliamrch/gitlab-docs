@@ -1,9 +1,5 @@
----
-version: 7
----
-
 (function() {
-  const classes = ['core-only', 'core', 'starter-only', 'premium-only', 'ultimate-only', 'starter', 'premium', 'ultimate', 'free-only' , 'bronze-only', 'silver-only', 'gold-only', 'free', 'free-saas', 'free-self', 'premium-saas', 'premium-self', 'ultimate-saas', 'ultimate-self'];
+  const classes = ['core-only', 'core', 'starter-only', 'premium-only', 'ultimate-only', 'starter', 'premium', 'ultimate', 'free-only' , 'bronze-only', 'silver-only', 'gold-only', 'free', 'free-saas', 'free-self', 'premium-saas', 'premium-self', 'ultimate-saas', 'ultimate-self', 'contribute'];
 
   const BADGES_TITLES = {
     // Free
@@ -43,6 +39,9 @@ version: 7
       'Available on GitLab Starter and higher tiers. Not available on GitLab.com.',
     'bronze-only':
       'Available on GitLab Bronze and higher tiers. Not available on self-managed.',
+    // Contributor page badge
+    'contribute':
+      'Use this content to contribute to GitLab development.'
   };
 
   const BADGES_MAPPING = {
@@ -69,6 +68,8 @@ version: 7
     starter: ['starter', 'bronze'],
     'starter-only': ['starter'],
     'bronze-only': ['bronze'],
+    // Contributor badge
+    contribute: ['contribute']
   };
 
   const BADGES_CLASS = {
@@ -78,6 +79,8 @@ version: 7
     premium: 'tier',
     ultimate: 'tier',
     'all tiers': 'tier',
+    // Contributors
+    'contribute': 'contribute',
     // GitLab SaaS
     bronze: 'saas',
     silver: 'saas',
@@ -87,7 +90,18 @@ version: 7
     'self-managed': 'self-managed',
   };
 
+  // Check if the currently-viewed page is GitLab contributor documentation.
+  const isContributorDocs = () => {
+    const paths = ['/ee/development/', '/omnibus/development/', '/runner/development/', '/charts/development/'];
+    return paths.some(substr => window.location.pathname.startsWith(substr))
+  }
+
   function init() {
+    // Insert markup for the "Contribute" badge if this is a contributor doc page.
+    if (isContributorDocs()) {
+      $('<span class="badge-trigger contribute"></span>').insertBefore('h1 a');
+    }
+
     var $badges = $('.badge-trigger');
 
     $badges.each(function() {
@@ -117,7 +131,7 @@ version: 7
     };
 
     var template = function(title, badges) {
-      var container = $('<a>', {
+      let container = $('<a>', {
         class: 'badges-drop',
         'data-toggle': 'tooltip',
         'data-placement': 'top',
@@ -125,8 +139,10 @@ version: 7
         title: title,
         href: 'https://about.gitlab.com/pricing/?glm_source=docs.gitlab.com&glm_content=badges-docs'
       });
+      if (isContributorDocs()) {
+        container.attr({href: "https://docs.gitlab.com/ee/development/"})
+      }
       container.append($('<span>').append(badges));
-
       return container;
     };
 

@@ -314,7 +314,8 @@ ol {
 
   .badge-tier,
   .badge-self-managed,
-  .badge-saas {
+  .badge-saas,
+  .badge-contribute {
     &::after {
       content: '';
       display: block;
@@ -325,7 +326,8 @@ ol {
     }
   }
 
-  .badge-tier {
+  .badge-tier,
+  .badge-contribute {
     &::after {
       background: $badge-tier;
     }
@@ -345,7 +347,8 @@ ol {
   &:hover {
     .badge-tier,
     .badge-self-managed,
-    .badge-saas {
+    .badge-saas,
+    .badge-contribute {
       &::after {
         width: 100%;
       }
@@ -364,6 +367,11 @@ ol {
 
 .badge-saas {
   color: $badge-saas;
+  padding-left: 5px;
+}
+
+.badge-contribute {
+  color: $badge-tier;
   padding-left: 5px;
 }
 
