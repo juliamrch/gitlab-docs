@@ -1541,6 +1541,15 @@ sections:
             docs:
               - doc_title: Get started
                 doc_url: 'ee/user/project/merge_requests/getting_started.html'
+              - doc_title: Workflows
+                doc_url: 'ee/user/project/merge_requests/authorization_for_merge_requests.html'
+                docs:
+                  - doc_title: Collaborate across forks
+                    doc_url: 'ee/user/project/merge_requests/allow_collaboration.html'
+              - doc_title: Create merge requests
+                doc_url: 'ee/user/project/merge_requests/creating_merge_requests.html'
+              - doc_title: Changes
+                doc_url: 'ee/user/project/merge_requests/changes.html'
               - doc_title: Approvals
                 doc_url: 'ee/user/project/merge_requests/approvals/'
                 docs:
@@ -1548,48 +1557,40 @@ sections:
                     doc_url: 'ee/user/project/merge_requests/approvals/rules.html'
                   - doc_title: Approval settings
                     doc_url: 'ee/user/project/merge_requests/approvals/settings.html'
-              - doc_title: Changes
-                doc_url: 'ee/user/project/merge_requests/changes.html'
-              - doc_title: Cherry pick changes
-                doc_url: 'ee/user/project/merge_requests/cherry_pick_changes.html'
-              - doc_title: Collaborate across forks
-                doc_url: 'ee/user/project/merge_requests/allow_collaboration.html'
               - doc_title: Commit message templates
                 doc_url: 'ee/user/project/merge_requests/commit_templates.html'
-              - doc_title: Confidential merge requests
-                doc_url: 'ee/user/project/merge_requests/confidential.html'
-              - doc_title: Create merge requests
-                doc_url: 'ee/user/project/merge_requests/creating_merge_requests.html'
               - doc_title: Draft merge requests
                 doc_url: 'ee/user/project/merge_requests/drafts.html'
-              - doc_title: Export merge requests to CSV
-                doc_url: 'ee/user/project/merge_requests/csv_export.html'
-              - doc_title: External status checks
-                doc_url: 'ee/user/project/merge_requests/status_checks.html'
+              - doc_title: Confidential merge requests
+                doc_url: 'ee/user/project/merge_requests/confidential.html'
+              - doc_title: Reviewing and managing merge requests
+                doc_url: 'ee/user/project/merge_requests/reviews/'
+                docs:
+                  - doc_title: Suggestions
+                    doc_url: 'ee/user/project/merge_requests/reviews/suggestions.html'
+              - doc_title: Merge request widgets
+                doc_url: 'ee/user/project/merge_requests/widgets.html'
               - doc_title: Merge methods
                 doc_url: 'ee/user/project/merge_requests/methods/'
                 docs:
                   - doc_title: Squash and merge
                     doc_url: 'ee/user/project/merge_requests/squash_and_merge.html'
-              - doc_title: Merge request dependencies
-                doc_url: 'ee/user/project/merge_requests/dependencies.html'
-              - doc_title: Merge request widgets
-                doc_url: 'ee/user/project/merge_requests/widgets.html'
               - doc_title: Merge when pipeline succeeds
                 doc_url: 'ee/user/project/merge_requests/merge_when_pipeline_succeeds.html'
               - doc_title: Merge conflicts
                 doc_url: 'ee/user/project/merge_requests/conflicts.html'
               - doc_title: Reverting changes
                 doc_url: 'ee/user/project/merge_requests/revert_changes.html'
-              - doc_title: Reviewing and managing merge requests
-                doc_url: 'ee/user/project/merge_requests/reviews/'
-                docs:
-                  - doc_title: Suggestions
-                    doc_url: 'ee/user/project/merge_requests/reviews/suggestions.html'
+              - doc_title: Cherry pick changes
+                doc_url: 'ee/user/project/merge_requests/cherry_pick_changes.html'
               - doc_title: Versions
                 doc_url: 'ee/user/project/merge_requests/versions.html'
-              - doc_title: Workflows
-                doc_url: 'ee/user/project/merge_requests/authorization_for_merge_requests.html'
+              - doc_title: Export merge requests to CSV
+                doc_url: 'ee/user/project/merge_requests/csv_export.html'
+              - doc_title: External status checks
+                doc_url: 'ee/user/project/merge_requests/status_checks.html'
+              - doc_title: Merge request dependencies
+                doc_url: 'ee/user/project/merge_requests/dependencies.html'
           - doc_title: CI/CD
             doc_url: 'ee/ci/'
             docs:
