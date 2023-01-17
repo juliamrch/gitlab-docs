@@ -1863,6 +1863,8 @@ sections:
                     doc_url: 'ee/user/packages/package_registry/supported_package_managers.html'
                   - doc_title: Supported hash types
                     doc_url: 'ee/user/packages/package_registry/supported_hash_types.html'
+                  - doc_title: Supported functionality
+                    doc_url: 'ee/user/packages/package_registry/supported_functionality.html'
                   - doc_title: Composer
                     doc_url: 'ee/user/packages/composer_repository/'
                   - doc_title: Conan
