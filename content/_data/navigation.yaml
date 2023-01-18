@@ -1208,8 +1208,10 @@ sections:
           - doc_title: GitLab.com settings
             doc_url: 'ee/user/gitlab_com/'
       - category_title: Organize work with projects
-        category_url: 'ee/user/project/'
+        category_url: 'ee/user/project/organize_work_with_projects.html'
         docs:
+          - doc_title: Create a project
+            doc_url: 'ee/user/project/'
           - doc_title: Manage projects
             doc_url: 'ee/user/project/working_with_projects.html'
           - doc_title: Project visibility
