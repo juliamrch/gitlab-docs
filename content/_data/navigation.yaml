@@ -1328,15 +1328,18 @@ sections:
       - category_title: Plan and track work
         category_url: 'ee/topics/plan_and_track.html'
         docs:
-          - doc_title: Epics
-            doc_url: 'ee/user/group/epics/'
+          - doc_title: Labels
+            doc_url: 'ee/user/project/labels.html'
+          - doc_title: Iterations
+            doc_url: 'ee/user/group/iterations/'
             docs:
-              - doc_title: Manage epics
-                doc_url: 'ee/user/group/epics/manage_epics.html'
-              - doc_title: Linked epics
-                doc_url: 'ee/user/group/epics/linked_epics.html'
-              - doc_title: Epic boards
-                doc_url: 'ee/user/group/epics/epic_boards.html'
+              - doc_title: 'Tutorial: Use GitLab to run an Agile iteration'
+                doc_url: 'ee/tutorials/agile_sprint.html'
+          - doc_title: Milestones
+            doc_url: 'ee/user/project/milestones/'
+            docs:
+              - doc_title: Burndown and burnup charts
+                doc_url: 'ee/user/project/milestones/burndown_and_burnup_charts.html'
           - doc_title: Issues
             doc_url: 'ee/user/project/issues/'
             docs:
@@ -1372,39 +1375,36 @@ sections:
                 doc_url: 'ee/user/project/issues/issue_weight.html'
               - doc_title: Zoom meetings in issues
                 doc_url: 'ee/user/project/issues/associate_zoom_meeting.html'
-          - doc_title: Labels
-            doc_url: 'ee/user/project/labels.html'
           - doc_title: Comments and threads
             doc_url: 'ee/user/discussions/'
-          - doc_title: Customer relations (CRM)
-            doc_url: 'ee/user/crm/'
-          - doc_title: Iterations
-            doc_url: 'ee/user/group/iterations/'
-            docs:
-              - doc_title: 'Tutorial: Use GitLab to run an Agile iteration'
-                doc_url: 'ee/tutorials/agile_sprint.html'
-          - doc_title: Milestones
-            doc_url: 'ee/user/project/milestones/'
-            docs:
-              - doc_title: Burndown and burnup charts
-                doc_url: 'ee/user/project/milestones/burndown_and_burnup_charts.html'
-          - doc_title: Objectives and key results (OKR)
-            doc_url: 'ee/user/okrs.html'
-          - doc_title: Requirements
-            doc_url: 'ee/user/project/requirements/'
-          - doc_title: Roadmaps
-            doc_url: 'ee/user/group/roadmap/'
-          - doc_title: Planning hierarchies
-            doc_url: 'ee/user/group/planning_hierarchy/'
           - doc_title: Tasks
             doc_url: 'ee/user/tasks.html'
+          - doc_title: Requirements
+            doc_url: 'ee/user/project/requirements/'
           - doc_title: Time tracking
             doc_url: 'ee/user/project/time_tracking.html'
+          - doc_title: Customer relations (CRM)
+            doc_url: 'ee/user/crm/'
           - doc_title: Wikis
             doc_url: 'ee/user/project/wiki/'
             docs:
               - doc_title: Group wikis
                 doc_url: 'ee/user/project/wiki/group.html'
+          - doc_title: Epics
+            doc_url: 'ee/user/group/epics/'
+            docs:
+              - doc_title: Manage epics
+                doc_url: 'ee/user/group/epics/manage_epics.html'
+              - doc_title: Linked epics
+                doc_url: 'ee/user/group/epics/linked_epics.html'
+              - doc_title: Epic boards
+                doc_url: 'ee/user/group/epics/epic_boards.html'
+          - doc_title: Roadmaps
+            doc_url: 'ee/user/group/roadmap/'
+          - doc_title: Planning hierarchies
+            doc_url: 'ee/user/group/planning_hierarchy/'
+          - doc_title: Objectives and key results (OKR)
+            doc_url: 'ee/user/okrs.html'
           - doc_title: Keyboard shortcuts
             doc_url: 'ee/user/shortcuts.html'
           - doc_title: Quick actions
