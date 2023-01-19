@@ -701,6 +701,9 @@ sections:
                 doc_url: 'ee/integration/salesforce.html'
               - doc_title: SAML
                 doc_url: 'ee/integration/saml.html'
+                docs:
+                  - doc_title: Configure SCIM
+                    doc_url: 'ee/user/admin_area/settings/scim_setup.html'
               - doc_title: Smartcard
                 doc_url: 'ee/administration/auth/smartcard.html'
               - doc_title: Twitter
