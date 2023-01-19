@@ -1906,6 +1906,12 @@ sections:
               - doc_title: Container Registry
                 doc_url: 'ee/user/packages/container_registry/'
                 docs:
+                  - doc_title: Authenticate
+                    doc_url: 'ee/user/packages/container_registry/authenticate_with_container_registry.html'
+                  - doc_title: Build and push images
+                    doc_url: 'ee/user/packages/container_registry/build_and_push_images.html'
+                  - doc_title: Delete images
+                    doc_url: 'ee/user/packages/container_registry/delete_container_registry_images.html'
                   - doc_title: Reduce Container Registry storage
                     doc_url: 'ee/user/packages/container_registry/reduce_container_registry_storage.html'
                   - doc_title: Reduce Container Registry data transfers
