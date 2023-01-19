@@ -906,8 +906,6 @@ sections:
             docs:
               - doc_title: Repository storage types
                 doc_url: 'ee/administration/repository_storage_types.html'
-              - doc_title: Import repositories
-                doc_url: 'ee/raketasks/import.html'
               - doc_title: Gitaly and Gitaly Cluster
                 doc_url: 'ee/administration/gitaly/'
                 docs:
@@ -1302,16 +1300,12 @@ sections:
                 docs:
                   - doc_title: GitHub import Rake task
                     doc_url: 'ee/administration/raketasks/github_import.html'
-              - doc_title: GitLab.com
-                doc_url: 'ee/user/project/import/gitlab_com.html'
               - doc_title: Gitea
                 doc_url: 'ee/user/project/import/gitea.html'
               - doc_title: Jira
                 doc_url: 'ee/user/project/import/jira.html'
               - doc_title: Perforce Helix
                 doc_url: 'ee/user/project/import/perforce.html'
-              - doc_title: Phabricator
-                doc_url: 'ee/user/project/import/phabricator.html'
               - doc_title: Repo by manifest file
                 doc_url: 'ee/user/project/import/manifest.html'
               - doc_title: Repo by URL
