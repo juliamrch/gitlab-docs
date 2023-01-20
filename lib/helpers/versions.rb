@@ -15,15 +15,6 @@ module Nanoc::Helpers
     end
 
     #
-    # Get online versions from the JSON file.
-    #
-    def get_versions
-      file = File.read('./content/versions.json')
-      parsed = JSON.parse(file)
-      parsed[0]
-    end
-
-    #
     # Returns the site version using the branch or tag from the CI build.
     #
     def site_version
@@ -32,7 +23,7 @@ module Nanoc::Helpers
         version_tag
       else
         # If this wasn't built on CI, this is a local site that can default to the pre-release version.
-        get_versions["next"]
+        config[:online_versions][:next]
       end
     end
 
@@ -43,11 +34,18 @@ module Nanoc::Helpers
     # in the case of the pre-release site.
     #
     def docsearch_version
-      if get_versions["next"] == site_version
+      if config[:online_versions][:next] == site_version
         ENV.fetch('CI_DEFAULT_BRANCH', nil)
       else
         site_version
       end
+    end
+
+    #
+    # Returns the current stable version.
+    #
+    def get_current_stable_version
+      config[:online_versions][:current]
     end
 
     #
@@ -58,7 +56,7 @@ module Nanoc::Helpers
     # 2) The most recent stable release, which is "current" in versions.json.
     #
     def latest?
-      ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] || ENV['CI_COMMIT_REF_NAME'] == get_versions["current"]
+      ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] || ENV['CI_COMMIT_REF_NAME'] == get_current_stable_version
     end
 
     #
