@@ -2367,6 +2367,8 @@ sections:
                 doc_url: 'ee/api/group_activity_analytics.html'
               - doc_title: Group Import/Export
                 doc_url: 'ee/api/group_import_export.html'
+              - doc_title: Group migration by direct transfer
+                doc_url: 'ee/api/bulk_imports.html'
               - doc_title: Group relations export
                 doc_url: 'ee/api/group_relations_export.html'
               - doc_title: Group repository storage moves
@@ -2435,8 +2437,6 @@ sections:
                 doc_url: 'ee/api/merge_trains.html'
               - doc_title: Metadata
                 doc_url: 'ee/api/metadata.html'
-              - doc_title: Migrations (bulk imports)
-                doc_url: 'ee/api/bulk_imports.html'
               - doc_title: Milestones (project)
                 doc_url: 'ee/api/milestones.html'
               - doc_title: Milestones (group)
@@ -2971,8 +2971,6 @@ sections:
                 docs:
                   - doc_title: GitLab Flavored Markdown (GLFM) specification guide
                     doc_url: 'ee/development/gitlab_flavored_markdown/specification_guide/'
-              - doc_title: GitLab group migration
-                doc_url: 'ee/development/bulk_import.html'
               - doc_title: GitLab Shell
                 doc_url: 'ee/development/gitlab_shell/'
                 docs:
@@ -2993,6 +2991,8 @@ sections:
                     doc_url: 'ee/development/graphql_guide/pagination.html'
                   - doc_title: GraphQL Pro
                     doc_url: 'ee/development/graphql_guide/graphql_pro.html'
+              - doc_title: Group migration by direct transfer
+                doc_url: 'ee/development/bulk_import.html'
               - doc_title: Integrations
                 doc_url: 'ee/development/integrations/'
               - doc_title: Internal API
