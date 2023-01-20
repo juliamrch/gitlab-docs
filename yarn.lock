@@ -1192,6 +1192,11 @@
     eslint-plugin-vue "^9.3.0"
     lodash "^4.17.21"
 
+"@gitlab/fonts@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/fonts/-/fonts-1.1.0.tgz#141db7d7c8e72113307614932d64103d3a68668c"
+  integrity sha512-5XNDJke0ElrMRG5iLWOirFRSLQhf9oNpPx5uie1j2l8QU6RLkMAE0nXG6cwJ82mgAV49ZcqLXXSopWvuUg8Y9Q==
+
 "@gitlab/stylelint-config@^4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@gitlab/stylelint-config/-/stylelint-config-4.1.0.tgz#bd431406c8f8725afba353652f08e42c3301a982"

@@ -3,15 +3,55 @@
 @import 'mixins/md-typography';
 @import 'mixins/spacing';
 
+/*
+ * Font-face declarations copied from GitLab:
+ * https://gitlab.com/gitlab-org/gitlab/-/blob/master/app/assets/stylesheets/fonts.scss#L7
+ */
+@font-face {
+  font-family: 'GitLab Sans';
+  font-weight: 100 900;
+  font-style: normal;
+  font-named-instance: 'Regular'; /* stylelint-disable property-no-unknown */
+  src: url('../fonts/GitLabSans.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-display: optional;
+  font-style: normal;
+  src: url('../fonts/JetBrainsMono.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-display: optional;
+  font-weight: bold;
+  src: url('../fonts/JetBrainsMono-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-display: optional;
+  font-weight: normal;
+  font-style: italic;
+  src: url('../fonts/JetBrainsMono-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-display: optional;
+  font-weight: bold;
+  font-style: italic;
+  src: url('../fonts/JetBrainsMono-BoldItalic.woff2') format('woff2');
+}
+
+/* https://gitlab.com/gitlab-org/gitlab/-/merge_requests/107592/ */
+* {
+  font-variant-ligatures: none;
+}
+
 .gl-docs {
   p,
   ul,
   ol,
   pre,
   blockquote {
-    font-size: 1rem;
-    font-weight: normal;
-    letter-spacing: normal;
     margin-top: 0;
     margin-bottom: 1.5em;
   }
@@ -181,7 +221,6 @@
   @include gl-font-regular;
   @include gl-font-weight-normal;
 
-  -webkit-font-smoothing: auto;
 
   h1,
   h2,
@@ -200,6 +239,7 @@
 
     code {
       font-size: inherit;
+      line-height: 1.35;
     }
   }
 
