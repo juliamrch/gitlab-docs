@@ -175,6 +175,7 @@ layout '/**/*', :erb
 passthrough '/favicon.ico'
 
 postprocess do
+  raise "Failed to copy GitLab fonts. Run 'yarn install' and try again." unless system('make add-gitlab-fonts')
   raise "postprocessing error" unless system('nanoc frontend')
 
   Gitlab::SymlinksConverter.run(config, items)

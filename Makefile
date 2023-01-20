@@ -203,4 +203,9 @@ check-global-navigation:
 check-pages-not-in-nav: install-nodejs-dependencies
 	@scripts/pages_not_in_nav.js | jq
 
+add-gitlab-fonts:
+	@printf "\n$(INFO)INFO: Copying GitLab fonts...$(END)\n"
+	cp -v node_modules/@gitlab/fonts/gitlab-sans/GitLabSans.woff2 public/assets/fonts
+	cp -v node_modules/@gitlab/fonts/jetbrains-mono/JetBrainsMono* public/assets/fonts
+
 test: setup rspec-tests jest-tests eslint-tests prettier-tests stylelint-tests hadolint-tests yamllint-tests markdownlint-tests check-global-navigation
