@@ -1925,8 +1925,10 @@ sections:
                   - doc_title: Reduce Dependency Proxy storage
                     doc_url: 'ee/user/packages/dependency_proxy/reduce_dependency_proxy_storage.html'
       - category_title: Secure your application
-        category_url: 'ee/user/application_security/'
+        category_url: 'ee/user/application_security/secure_your_application.html'
         docs:
+          - doc_title: Application security
+            doc_url: 'ee/user/application_security/'
           - doc_title: Get started
             doc_url: 'ee/user/application_security/get-started-security.html'
           - doc_title: Security Configuration
@@ -1975,7 +1977,7 @@ sections:
                 doc_url: 'ee/user/application_security/dast_api/'
               - doc_title: Run DAST offline
                 doc_url: 'ee/user/application_security/dast/run_dast_offline.html'
-          - doc_title: API Fuzzing
+          - doc_title: Web API Fuzz Testing
             doc_url: 'ee/user/application_security/api_fuzzing/'
             docs:
               - doc_title: HTTP Archive format
@@ -1984,7 +1986,7 @@ sections:
             doc_url: 'ee/user/application_security/coverage_fuzzing/'
           - doc_title: Security Dashboard
             doc_url: 'ee/user/application_security/security_dashboard/'
-          - doc_title: Offline Environments
+          - doc_title: Offline environments
             doc_url: 'ee/user/application_security/offline_deployments/'
           - doc_title: Vulnerability Report
             doc_url: 'ee/user/application_security/vulnerability_report/'
