@@ -1037,6 +1037,8 @@ sections:
                 doc_url: 'ee/administration/raketasks/maintenance.html'
               - doc_title: Integrity check Rake task
                 doc_url: 'ee/administration/raketasks/check.html'
+          - doc_title: Activate GitLab EE with license
+            doc_url: 'ee/user/admin_area/license_file.html'
           - doc_title: Fast SSH key lookup
             doc_url: 'ee/administration/operations/fast_ssh_key_lookup.html'
           - doc_title: Filesystem benchmarking
