@@ -3050,6 +3050,8 @@ sections:
                 doc_url: 'ee/development/product_qualified_lead_guide/'
               - doc_title: Real-time features
                 doc_url: 'ee/development/real_time.html'
+              - doc_title: Redis guidelines
+              - doc_url: 'ee/development/redis.html' 
               - doc_title: Sec section development
                 doc_url: 'ee/development/sec/'
                 docs:
