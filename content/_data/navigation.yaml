@@ -1975,7 +1975,7 @@ sections:
                     doc_url: 'ee/user/application_security/dast/dast_troubleshooting.html'
               - doc_title: Authentication
                 doc_url: 'ee/user/application_security/dast/authentication.html'
-              - doc_title: DAST API
+              - doc_title: DAST API analyzer
                 doc_url: 'ee/user/application_security/dast_api/'
               - doc_title: Run DAST offline
                 doc_url: 'ee/user/application_security/dast/run_dast_offline.html'
