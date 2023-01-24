@@ -2583,10 +2583,10 @@ sections:
             doc_url: 'ee/api/graphql/audit_report.html'
           - doc_title: Identify issue boards (example)
             doc_url: 'ee/api/graphql/sample_issue_boards.html'
-          - doc_title: Query users (example)
-            doc_url: 'ee/api/graphql/users_example.html'
           - doc_title: List branch rules for project (example)
             doc_url: 'ee/api/graphql/branch_rules.html'
+          - doc_title: Query users (example)
+            doc_url: 'ee/api/graphql/users_example.html'
           - doc_title: Use custom emojis (example)
             doc_url: 'ee/api/graphql/custom_emoji.html'
           - doc_title: Removed items
