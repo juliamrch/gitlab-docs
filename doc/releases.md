@@ -39,24 +39,20 @@ To minimize problems during the documentation release process, use the following
   1. If an issue was not already created for you by the TW that handled the last release,
      [create an issue for the release](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/new?issuable_template=release)
      to track your progress and ensure completeness.
+  1. Check the `#releases` Slack channel for a `This is the candidate commit to be released on the 22nd`
+     message. When the announcement is made, proceed with the next step.
   1. [Create a stable branch and Docker image](#create-stable-branch-and-docker-image-for-release) for
      the new version.
-  1. [Create a release merge request](#create-release-merge-request) for the new version, which
-     updates the versions list (`versions.json`) for the current documentation,
-     and adds the release to the Docker configuration.
-
-     Try to create the MR close to the cutoff for `gitlab` project's stable branch for the release.
-     If the `gitlab-docs` MR is too early or late, a mismatch between the `gitlab` project's
-     documentation files and the `gitlab-docs` global navigation can cause failed MR pipelines that
-     must be manually fixed. To check the status of the `gitlab` release, go to the `#releases`
-     Slack channel and look for the `This is the candidate commit to be released on the 22nd.`
-     message.
 
 - Complete the publication steps on the 22nd of the month, after the release post is live:
 
-  [Merge the release merge requests and run the necessary Docker image builds](#merge-merge-requests-and-run-docker-image-builds).
+  1. [Create a release merge request](#create-release-merge-request) for the new version, which
+     updates the versions list (`versions.json`) for the current documentation
+     and adds the release to the Docker configuration.
 
-  If the 22nd of the month falls on a weekend or public holiday, it's OK to complete this last publication step on the next working day.
+  1. [Merge the release merge request and run the necessary Docker image builds](#merge-the-release-merge-request-and-run-the-docker-image-builds).
+
+  If the 22nd of the month falls on a weekend or public holiday, it's OK to complete these publication steps on the next working day.
 
 ## Create stable branch and Docker image for release
 
@@ -167,20 +163,18 @@ To create the release merge request for the release:
 
    ```shell
    git add .gitlab/ci/docker-images.gitlab-ci.yml content/versions.json latest.Dockerfile
-   git commit -m "Release 15.0"
+   git commit -m "Docs release 15.0"
    git push origin release-15-0
    ```
 
-1. Create the merge request and add the `~release` label. Set the merge request to _Draft_ status but do not merge it yet.
+1. Create the merge request and add the `~release` label. Mark the merge request as `Draft` until the release post is live.
 
-## Merge merge requests and run Docker image builds
+## Merge the release merge request and run the Docker image builds
 
 _Do this after the release post is live._
 
-The merge requests for the dropdowns should now all be merged into their respective stable branches.
-
-1. Check the [pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipelines)
-   and make sure the pipelines in all the MRs are green.
+1. Verify that the [pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all) for the stable branch (filter by branch)
+   has passed and created a [Docker image](https://gitlab.com/gitlab-org/gitlab-docs/container_registry/631635?orderBy=NAME&sort=desc&search[]=).
 1. Merge the [release merge request](#create-release-merge-request).
 1. Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)
    and run the `Build docker images weekly` pipeline.
