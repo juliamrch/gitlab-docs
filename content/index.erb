@@ -17,7 +17,7 @@ title: GitLab Documentation
               <h5 class="card-title pb-3 mb-2">Search the docs</h5>
               <% if @item[:searchbar].nil? %>
                 <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
-                  <% if @config[:algolia] == "true" %>
+                  <% if @config[:search_backend] == "algolia" %>
                     <div id="docsearch" class="gl-mb-4 gl-display-flex gl-justify-content-center"></div>
                   <% else %>
                     <div class="js-lunr-form"></div>

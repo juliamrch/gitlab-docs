@@ -17,7 +17,7 @@
 <% end %>
 <meta name="gitlab-docs-version" content="<%= site_version %>">
 
-<% if @config[:algolia] == "true" %>
+<% if @config[:search_backend] == "algolia" %>
 <!--https://community.algolia.com/docsearch/required-configuration.html#introduces-global-information-as-meta-tags-->
 <meta name="docsearch:language" content="en" />
 <meta name="docsearch:version" content="<%= docsearch_version %>" />
