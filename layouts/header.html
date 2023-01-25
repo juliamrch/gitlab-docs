@@ -12,7 +12,7 @@
         <% if @item[:searchbar].nil? %>
           <% location = @item.identifier.to_s.split('/')[1] %>
           <% unless %w(search index.erb).any?(location) %>
-            <% if @config[:algolia] == "true" %>
+            <% if @config[:search_backend] == "algolia" %>
               <div id="docsearch" class="gl-my-3 gl-md-mt-0 gl-md-mb-0"></div>
             <% else %>
               <div class="js-lunr-form"></div>
@@ -38,4 +38,3 @@
     </ul>
   </div>
 </nav>
-

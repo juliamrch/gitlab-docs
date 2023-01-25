@@ -31,7 +31,7 @@
     # Create _redirects for Pages redirects
     - bundle exec rake redirects
     # Build the Lunr.js search index if needed
-    - if [[ "$ALGOLIA_SEARCH" == "false" ]]; then node scripts/lunr/preindex.js; fi
+    - if [[ "$SEARCH_BACKEND" == "lunr" ]]; then node scripts/lunr/preindex.js; fi
     # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
     - SIZE_BEFORE_MINIFY=$(du -sh public/ | awk '{print $1}')
     # Minify the assets of the resulting site
@@ -62,7 +62,7 @@ compile_prod:
     - .rules_prod
     - .build_base
   variables:
-    ALGOLIA_SEARCH: 'true'
+    SEARCH_BACKEND: 'algolia'
     NANOC_ENV: 'production'
   script:
     - !reference [".compile-and-minify-scripts", "script"]
@@ -76,7 +76,7 @@ compile_dev:
     - .rules_dev
     - .build_base
   variables:
-    ALGOLIA_SEARCH: 'false'
+    SEARCH_BACKEND: 'lunr'
   script:
     - !reference [".compile-and-minify-scripts", "script"]
     - !reference [".gzip-scripts", "script"]
@@ -89,7 +89,7 @@ compile_upstream_review_app:
     - .rules_upstream_review_app
     - .build_base
   variables:
-    ALGOLIA_SEARCH: 'false'
+    SEARCH_BACKEND: 'lunr'
   script:
     - !reference [".compile-and-minify-scripts", "script"]
 

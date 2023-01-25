@@ -26,11 +26,11 @@ COPY --from=minifier /minify /usr/local/bin/minify
 
 # Set versions as build args to fetch corresponding branches
 ARG VER
-ARG ALGOLIA_SEARCH
+ARG SEARCH_BACKEND
 ARG NANOC_ENV
 
 ENV CI_COMMIT_REF_NAME=$VER
-ENV ALGOLIA_SEARCH=$ALGOLIA_SEARCH
+ENV SEARCH_BACKEND=$SEARCH_BACKEND
 ENV NANOC_ENV=$NANOC_ENV
 
 #
@@ -79,7 +79,7 @@ RUN yarn install --frozen-lockfile                              \
     && bundle exec rake default                                 \
     && bundle exec nanoc compile -VV
 
-RUN if [ "$ALGOLIA_SEARCH" = "false" ]; then make build-lunr-index; fi
+RUN if [ "$SEARCH_BACKEND" = "lunr" ]; then make build-lunr-index; fi
 
 # Move generated HTML to /site
 RUN mkdir /site \

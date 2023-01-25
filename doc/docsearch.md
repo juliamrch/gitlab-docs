@@ -362,8 +362,10 @@ Production always runs Algolia, but you can build the site with Lunr either loca
 
 ### Local environment
 
-You can compile your local Nanoc site to use a specific search backend by setting the `ALGOLIA_SEARCH` environment variable.
+You can compile your local Nanoc site to use a specific search backend by setting the `SEARCH_BACKEND` environment variable.
 
-- Use Algolia search: `export ALGOLIA_SEARCH="true"` (or leave this undefined)
-- Use Lunr search: `export ALGOLIA_SEARCH="false"`
+- Use Algolia search: `export SEARCH_BACKEND="algolia"` (or leave this undefined)
+- Use Lunr search: `export SEARCH_BACKEND="lunr"`
 - If you do not set this variable before compiling, the build will default to Algolia.
+
+This variable was named `ALGOLIA_SEARCH`, with values of "true" or "false", prior to version 15.9.
