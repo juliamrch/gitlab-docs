@@ -46,16 +46,16 @@ describe Gitlab::Docs::Page do
     describe '#hrefs' do
       it 'collects all hrefs' do
         expect(subject.hrefs).to match_array %w[../link.html#my-anchor
-                                                #internal-anchor
-                                                #internal-anchor-2
-                                                #utf-8-id-✔]
+          #internal-anchor
+          #internal-anchor-2
+          #utf-8-id-✔]
       end
     end
 
     describe '#ids' do
       it 'collects all ids' do
         expect(subject.ids).to match_array %w[internal-anchor
-                                              utf-8-id-✔]
+          utf-8-id-✔]
       end
     end
 
