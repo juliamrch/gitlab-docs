@@ -3168,7 +3168,7 @@ sections:
             doc_url: 'https://design.gitlab.com'
             external_url: true
           - doc_title: GitLab project pipelines
-            doc_url: 'ee/development/pipelines.html'
+            doc_url: 'ee/development/pipelines/'
       # End of GitLab app development documentation
 
       # Omnibus GitLab development documentation
