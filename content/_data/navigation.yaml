@@ -1488,6 +1488,8 @@ sections:
                 doc_url: 'ee/user/snippets.html'
               - doc_title: Branches
                 doc_url: 'ee/user/project/repository/branches/'
+              - doc_title: Changelogs
+                doc_url: 'ee/user/project/changelogs.html'
               - doc_title: Default branch
                 doc_url: 'ee/user/project/repository/branches/default.html'
               - doc_title: Forking workflow
