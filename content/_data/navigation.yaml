@@ -1757,6 +1757,9 @@ sections:
                 doc_url: 'ee/ci/ssh_keys/'
               - doc_title: External secrets
                 doc_url: 'ee/ci/secrets/'
+                docs:
+                  - doc_title: ID token authentication
+                    doc_url: 'ee/ci/secrets/id_token_authentication.html'
               - doc_title: Connect to cloud services
                 doc_url: 'ee/ci/cloud_services/'
                 docs:
