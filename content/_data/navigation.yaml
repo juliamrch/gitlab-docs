@@ -2858,6 +2858,8 @@ sections:
                     doc_url: 'ee/development/database/deleting_migrations.html'
                   - doc_title: Foreign keys and associations
                     doc_url: 'ee/development/database/foreign_keys.html'
+                  - doc_title: Introducing a new database migration version
+                    doc_url: 'ee/development/database/new_database_migration_version.html'
                   - doc_title: Layout and access patterns
                     doc_url: 'ee/development/database/layout_and_access_patterns.html'
                   - doc_title: Maintenance operations
