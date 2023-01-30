@@ -44,7 +44,7 @@ module Nanoc::Helpers
     # don't want to render in one of the upstream products.
     #
     def gitlab_docs_or_local?
-      ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil?
+      ENV['CI_PROJECT_NAME'] == 'gitlab-docs' || ENV['CI_PROJECT_NAME'].nil?
     end
 
     #
