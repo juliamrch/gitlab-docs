@@ -25,7 +25,7 @@ variables:
   VALE_VERSION: '2.22.0'
   MARKDOWNLINT_VERSION: '0.32.2'  # Version also set in package.json
   MARKDOWNLINT2_VERSION: '0.6.0'  # Version also set in package.json
-  RUBY_VERSION: '2.7.7'
+  RUBY_VERSION: '3.0.5'
 
 #
 # workflow:rules to prevent duplicate pipelines when pushing to a branch with an open MR.
