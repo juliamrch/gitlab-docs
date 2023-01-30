@@ -19,7 +19,7 @@ RUN apk add --no-cache git \
 
 #- Start of builder stage -#
 
-FROM ruby:2.7.7-alpine3.16 AS builder
+FROM ruby:3.0.5-alpine3.16 AS builder
 
 # Copy minifier binary from the minifier stage
 COPY --from=minifier /minify /usr/local/bin/minify
