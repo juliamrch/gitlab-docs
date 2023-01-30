@@ -10,7 +10,7 @@ group :nanoc do
   gem 'nanoc-live'
 
   # custom kramdown dialect
-  gem 'gitlab_kramdown', '~> 0.23.0'
+  gem 'gitlab_kramdown', '~> 0.24.0'
 
   # Needed to generate Sitemap
   gem 'builder', '~> 3.2.4'
@@ -27,9 +27,9 @@ group :test, :development do
   gem 'simplecov-cobertura', '~> 2.1.0', require: false
   gem 'pry-byebug', '~> 3.10.1', require: false
   gem 'gitlab-styles', '~> 9.2.0', require: false
-  gem "webrick", "~> 1.7"
+  gem "webrick", "~> 1.8", ">= 1.8.1"
 end
 
 group :development, :danger do
-  gem 'gitlab-dangerfiles', '~> 3.6.5', require: false
+  gem 'gitlab-dangerfiles', '~> 3.6.6', require: false
 end
