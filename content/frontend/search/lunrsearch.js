@@ -1,13 +1,13 @@
 import Vue from 'vue';
-import LunrPage from './components/lunr_page.vue';
-import LunrSearchForm from './components/lunr_search_form.vue';
+import LunrResults from './components/lunr_results.vue';
+import SearchForm from './components/search_form.vue';
 
 // Search results page (/search)
 document.addEventListener('DOMContentLoaded', () => {
   return new Vue({
     el: '.js-lunrsearch',
     render(createElement) {
-      return createElement(LunrPage);
+      return createElement(LunrResults);
     },
   });
 });
@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Homepage and interior navbar search forms
 document.addEventListener('DOMContentLoaded', () => {
   return new Vue({
-    el: '.js-lunr-form',
+    el: '.js-search-form',
     components: {
-      LunrSearchForm,
+      SearchForm,
     },
     render(createElement) {
-      return createElement(LunrSearchForm);
+      return createElement(SearchForm);
     },
   });
 });

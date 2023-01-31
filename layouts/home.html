@@ -19,6 +19,8 @@
     <script src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
     <% if @config[:search_backend] == "algolia" %>
     <script src="<%= @items['/frontend/search/docsearch.*'].path %>"></script>
+    <% elsif @config[:search_backend] == "google" %>
+    <script src="<%= @items['/frontend/search/google.*'].path %>"></script>
     <% else %>
     <script src="<%= @items['/frontend/search/lunrsearch.*'].path %>"></script>
     <% end %>

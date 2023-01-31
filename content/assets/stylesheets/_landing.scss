@@ -173,14 +173,8 @@
       }
     }
 
-    .lunr-search {
+    .search-form {
       margin-bottom: 2em;
-      .btn:not(.gl-search-box-by-click-clear-button) {
-        background: $landing-gl-purple-500;
-      }
-      svg {
-        fill: $gds-white;
-      }
     }
   }
 

@@ -8,8 +8,8 @@ import {
   AisInfiniteHits,
   AisConfigure,
 } from 'vue-instantsearch';
-import SearchPage from './components/search_page.vue';
-import { getAlgoliaCredentials, getDocsVersion } from './search';
+import SearchPage from './components/instantsearch_results.vue';
+import { getAlgoliaCredentials, getDocsVersion } from './algolia';
 
 Vue.component(AisInstantSearch.name, AisInstantSearch);
 Vue.component(AisSearchBox.name, AisSearchBox);
