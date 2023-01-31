@@ -1439,8 +1439,6 @@ sections:
                 doc_url: 'ee/gitlab-basics/start-using-git.html'
               - doc_title: Feature branch workflow
                 doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
-              - doc_title: Feature branch development
-                doc_url: 'ee/topics/git/feature_branch_development.html'
               - doc_title: GitLab Flow
                 doc_url: 'ee/topics/gitlab_flow.html'
               - doc_title: Add file to repository
