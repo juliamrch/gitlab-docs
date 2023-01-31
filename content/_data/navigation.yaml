@@ -1003,6 +1003,8 @@ sections:
             doc_url: 'ee/administration/server_hooks.html'
           - doc_title: Terraform state
             doc_url: 'ee/administration/terraform_state.html'
+          - doc_title: Terraform limits
+            doc_url: 'ee/user/admin_area/settings/terraform_limits.html'
           - doc_title: Packages
             doc_url: 'ee/administration/packages/'
             docs:
