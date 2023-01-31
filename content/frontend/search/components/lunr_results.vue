@@ -1,6 +1,7 @@
 <script>
 /* global lunr */
 import { GlSearchBoxByClick, GlLink } from '@gitlab/ui';
+import { getSearchQueryFromURL, updateURLParams } from '../search_helpers';
 
 export default {
   components: {
@@ -37,9 +38,9 @@ export default {
       window.idx = idx;
 
       // If we have a query string in the URL, run the search.
-      const searchParams = new URLSearchParams(window.location.search);
-      if (searchParams.has('query')) {
-        this.search(searchParams.get('query'));
+      const queryParam = getSearchQueryFromURL();
+      if (queryParam) {
+        this.search(queryParam);
       }
     } catch (e) {
       this.handleError(e);
@@ -67,10 +68,7 @@ export default {
         this.results[key].title = contentItem.h1;
       });
 
-      // Add the search term to the URL to allow linking to result pages.
-      const url = new URL(window.location);
-      url.searchParams.set('query', this.query);
-      window.history.pushState(null, '', url.toString());
+      updateURLParams(this.query);
     },
     handleError() {
       this.error = true;
@@ -80,7 +78,7 @@ export default {
 </script>
 
 <template>
-  <div class="lunr-search">
+  <div class="lunr-search gl-mb-9">
     <h1>Search</h1>
     <gl-search-box-by-click v-model="query" :value="query" @submit="onSubmit" />
     <div v-if="results.length" class="gl-font-sm gl-mb-6">{{ results.length }} results found</div>

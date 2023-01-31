@@ -3,9 +3,9 @@
  */
 
 import { shallowMount } from '@vue/test-utils';
-import SearchPage from '../../../content/frontend/search/components/lunr_page.vue';
+import SearchPage from '../../../content/frontend/search/components/lunr_results.vue';
 
-describe('content/frontend/search/components/lunr_page.vue', () => {
+describe('content/frontend/search/components/lunr_results.vue', () => {
   it('Search form renders', () => {
     const wrapper = shallowMount(SearchPage);
     expect(wrapper.findComponent(SearchPage).isVisible()).toBe(true);

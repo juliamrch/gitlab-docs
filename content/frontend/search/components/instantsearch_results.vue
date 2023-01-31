@@ -4,7 +4,7 @@ import 'instantsearch.css/themes/satellite-min.css';
 import { history as historyRouter } from 'instantsearch.js/es/lib/routers';
 import { singleIndex as singleIndexMapping } from 'instantsearch.js/es/lib/stateMappings';
 import { GlIcon } from '@gitlab/ui';
-import { rewriteAlgoliaResultLinks } from '../search';
+import { rewriteAlgoliaResultLinks } from '../algolia';
 
 export default {
   components: {

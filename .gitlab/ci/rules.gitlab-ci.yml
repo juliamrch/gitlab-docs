@@ -132,6 +132,9 @@ default:
     - if: $CI_MERGE_REQUEST_ID && $CI_COMMIT_REF_NAME =~ /algolia/
       variables:
         SEARCH_BACKEND: 'algolia'
+    - if: $CI_MERGE_REQUEST_ID && $CI_COMMIT_REF_NAME =~ /gps/
+      variables:
+        SEARCH_BACKEND: 'google'
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'

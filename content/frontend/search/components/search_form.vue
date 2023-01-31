@@ -19,5 +19,5 @@ export default {
 </script>
 
 <template>
-  <gl-search-box-by-click v-model="query" class="lunr-search" @submit="onSubmit" />
+  <gl-search-box-by-click v-model="query" class="search-form" @submit="onSubmit" />
 </template>

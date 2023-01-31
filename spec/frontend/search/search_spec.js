@@ -3,7 +3,7 @@
  */
 
 import { mount } from '@vue/test-utils';
-import SearchPage from '../../../content/frontend/search/components/search_page.vue';
+import SearchPage from '../../../content/frontend/search/components/instantsearch_results.vue';
 
 const propsData = { docsVersion: 'main', algoliaCredentials: {} };
 const searchFormSelector = '[data-testid="docs-search"]';

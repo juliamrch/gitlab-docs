@@ -1,6 +1,6 @@
 import docsearch from '@docsearch/js';
 import '@docsearch/css';
-import { rewriteAlgoliaResultLinks, getAlgoliaCredentials, getDocsVersion } from './search';
+import { rewriteAlgoliaResultLinks, getAlgoliaCredentials, getDocsVersion } from './algolia';
 
 document.addEventListener('DOMContentLoaded', () => {
   const docsVersion = getDocsVersion();

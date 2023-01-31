@@ -1,0 +1,116 @@
+<script>
+/* global GOOGLE_SEARCH_KEY */
+import { GlSearchBoxByClick, GlLink, GlSafeHtmlDirective as SafeHtml } from '@gitlab/ui';
+import { getSearchQueryFromURL, updateURLParams } from '../search_helpers';
+import { GPS_ENDPOINT, GPS_ID } from '../../services/google_search_api';
+
+export default {
+  components: {
+    GlSearchBoxByClick,
+    GlLink,
+  },
+  directives: {
+    SafeHtml,
+  },
+  data() {
+    const queryParam = getSearchQueryFromURL();
+    return {
+      query: queryParam || '',
+      submitted: false,
+      error: false,
+      response: {},
+      results: [],
+    };
+  },
+  computed: {
+    resultCount() {
+      const { count, startIndex } = this.response.queries.request[0];
+      const end = startIndex - 1 + count;
+      return `Showing ${startIndex}-${end} of ${this.response.searchInformation.formattedTotalResults} results`;
+    },
+    noResults() {
+      return this.submitted && !this.results.length && !this.error;
+    },
+  },
+  mounted() {
+    if (this.query) {
+      this.search(this.query);
+    }
+  },
+  methods: {
+    cleanTitle(title) {
+      return title.replace(' | GitLab', '');
+    },
+    async fetchGoogleResults() {
+      let data = {};
+      try {
+        const response = await fetch(
+          GPS_ENDPOINT +
+            new URLSearchParams({
+              key: GOOGLE_SEARCH_KEY,
+              cx: GPS_ID,
+              q: this.query,
+            }),
+        );
+        data = await response.json();
+        if (!response.ok) this.handleError(data.error);
+      } catch (error) {
+        this.handleError(error);
+      }
+      return data;
+    },
+    handleError(error) {
+      this.error = true;
+      throw new Error(`Error code ${error.code}: ${error.message}`);
+    },
+    onSubmit() {
+      if (this.query) {
+        this.search(this.query);
+      }
+    },
+    async search(query) {
+      this.query = query;
+      this.response = await this.fetchGoogleResults();
+      this.results = this.response.items ? this.response.items : [];
+      this.submitted = true;
+      updateURLParams(this.query);
+    },
+  },
+};
+</script>
+
+<template>
+  <div class="google-search gl-mb-9">
+    <h1>Search</h1>
+    <gl-search-box-by-click v-model="query" :value="query" @submit="onSubmit" />
+    <div v-if="results.length" class="gl-font-sm gl-mb-5">
+      {{ resultCount }}
+    </div>
+
+    <ul
+      v-if="results.length"
+      class="gl-list-style-none gl-pl-2 gl-max-w-80"
+      data-testid="search-results"
+    >
+      <li v-for="result in results" :key="result.cacheId" class="gl-mb-5!">
+        <gl-link
+          :href="`${result.link}`"
+          class="gl-font-lg gl-border-bottom-0! gl-hover-text-decoration-underline:hover gl-mb-2"
+          >{{ cleanTitle(result.title) }}</gl-link
+        >
+        <p v-safe-html="result.htmlSnippet" class="result-snippet"></p>
+      </li>
+    </ul>
+
+    <p v-if="noResults" class="gl-py-5">No results found.</p>
+    <p v-if="error" class="gl-py-5" data-testid="search-error">
+      Error fetching results. Please try again later.
+    </p>
+  </div>
+</template>
+
+<style scoped>
+.result-snippet {
+  font-size: 0.875rem;
+}
+</style>
