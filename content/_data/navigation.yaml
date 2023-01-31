@@ -1551,8 +1551,6 @@ sections:
           - doc_title: Merge requests
             doc_url: 'ee/user/project/merge_requests/'
             docs:
-              - doc_title: Get started
-                doc_url: 'ee/user/project/merge_requests/getting_started.html'
               - doc_title: Workflows
                 doc_url: 'ee/user/project/merge_requests/authorization_for_merge_requests.html'
                 docs:
