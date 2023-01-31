@@ -2456,6 +2456,9 @@ sections:
                 doc_url: 'ee/api/namespaces.html'
               - doc_title: Notes (comments)
                 doc_url: 'ee/api/notes.html'
+                docs:
+                  - doc_title: Draft notes
+                    doc_url: 'ee/api/draft_notes.html'
               - doc_title: Notification settings
                 doc_url: 'ee/api/notification_settings.html'
               - doc_title: npm
