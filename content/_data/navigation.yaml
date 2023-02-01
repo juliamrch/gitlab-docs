@@ -26,7 +26,7 @@ sections:
   - section_title: Learn GitLab with tutorials
     section_url: 'ee/tutorials/'
 
-  - section_title: Choose a subscription
+  - section_title: Manage GitLab subscription
     section_url: 'ee/subscriptions/'
     section_categories:
       - category_title: GitLab SaaS subscriptions
