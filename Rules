@@ -54,13 +54,14 @@ preprocess do
   config[:search_backend] = ENV['SEARCH_BACKEND'] || 'algolia'
 
   def get_online_versions
-      uri = URI('https://gitlab.com/gitlab-org/gitlab-docs/-/raw/main/content/versions.json')
-      response = Net::HTTP.get(uri)
-      parsed = JSON.parse(response, symbolize_names: true)
-      parsed[0]
+    uri = URI('https://gitlab.com/gitlab-org/gitlab-docs/-/raw/main/content/versions.json')
+    response = Net::HTTP.get(uri)
+    parsed = JSON.parse(response, symbolize_names: true)
+    parsed[0]
+  rescue
+    {}
   end
   config[:online_versions] = get_online_versions
-
 end
 
 compile '/404.*' do
