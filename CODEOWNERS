@@ -17,13 +17,13 @@ jest.config.js       @leipert @oregand @gl-docsteam
 rollup.config.js     @leipert @oregand @gl-docsteam
 
 [Backend]
-/bin/                @leipert @oregand @gl-docsteam
-/commands/           @leipert @oregand @gl-docsteam
-/spec/gitlab/        @leipert @oregand @gl-docsteam
-/spec/spec_helper.rb @leipert @oregand @gl-docsteam
-.rspec               @leipert @oregand @gl-docsteam
-.rubocop             @leipert @oregand @gl-docsteam
-Rakefile             @leipert @oregand @gl-docsteam
+/bin/                @ashmckenzie @leipert @oregand @gl-docsteam
+/commands/           @ashmckenzie @leipert @oregand @gl-docsteam
+/spec/gitlab/        @ashmckenzie @leipert @oregand @gl-docsteam
+/spec/spec_helper.rb @ashmckenzie @leipert @oregand @gl-docsteam
+.rspec               @ashmckenzie @leipert @oregand @gl-docsteam
+.rubocop             @ashmckenzie @leipert @oregand @gl-docsteam
+Rakefile             @ashmckenzie @leipert @oregand @gl-docsteam
 
 [Technical Writing]
 /content/_data/       @gl-docsteam
