@@ -2046,6 +2046,8 @@ sections:
                 doc_url: 'ee/ci/cloud_deployment/ecs/deploy_to_aws_ecs.html'
               - doc_title: Deploy to Heroku
                 doc_url: 'ee/ci/cloud_deployment/heroku.html'
+              - doc_title: External deployment tools
+                doc_url: 'ee/ci/environments/external_deployment_tools.html'
           - doc_title: Releases
             doc_url: 'ee/user/project/releases/'
             docs:
