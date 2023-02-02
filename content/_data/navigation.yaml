@@ -3081,6 +3081,8 @@ sections:
                     doc_url: 'ee/development/sec/analyzer_development_guide.html'
                   - doc_title: Security report ingestion
                     doc_url: 'ee/development/sec/security_report_ingestion_overview.html'
+                  - doc_title: Token Revocation API
+                    doc_url: 'ee/development/sec/token_revocation_api.html'
               - doc_title: Service Ping guide
                 doc_url: 'ee/development/service_ping/'
                 docs:
