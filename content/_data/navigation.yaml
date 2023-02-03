@@ -1259,37 +1259,6 @@ sections:
             doc_url: 'ee/user/project/deploy_tokens/'
           - doc_title: File finder
             doc_url: 'ee/user/project/repository/file_finder.html'
-          - doc_title: GitLab Pages
-            doc_url: 'ee/user/project/pages/'
-            docs:
-              - doc_title: 'Tutorial: Create a GitLab Pages website'
-                doc_url: 'ee/user/project/pages/getting_started/pages_from_scratch.html'
-              - doc_title: Create by using a CI/CD template
-                doc_url: 'ee/user/project/pages/getting_started/pages_ci_cd_template.html'
-              - doc_title: Create by using a forked sample project
-                doc_url: 'ee/user/project/pages/getting_started/pages_forked_sample_project.html'
-              - doc_title: Create by using a project template
-                doc_url: 'ee/user/project/pages/getting_started/pages_new_project_template.html'
-              - doc_title: 'Create a Pages deployment for your static site'
-                doc_url: 'ee/user/project/pages/getting_started/pages_ui.html'
-              - doc_title: Public folder configuration
-                doc_url: 'ee/user/project/pages/public_folder.html'
-              - doc_title: Default domains, URLs, and baseurls
-                doc_url: 'ee/user/project/pages/getting_started_part_one.html'
-              - doc_title: Custom domains and SSL/TLS certificates
-                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/'
-              - doc_title: DNS concepts
-                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/dns_concepts.html'
-              - doc_title: SSL/TLS concepts
-                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/ssl_tls_concepts.html'
-              - doc_title: Let's Encrypt integration
-                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/lets_encrypt_integration.html'
-              - doc_title: Access control
-                doc_url: 'ee/user/project/pages/pages_access_control.html'
-              - doc_title: Redirects
-                doc_url: 'ee/user/project/pages/redirects.html'
-              - doc_title: Exploring GitLab Pages
-                doc_url: 'ee/user/project/pages/introduction.html'
           - doc_title: Migrating projects
             doc_url: 'ee/user/project/import/'
             docs:
@@ -1803,7 +1772,6 @@ sections:
                     doc_url: 'ee/ci/examples/laravel_with_gitlab_and_envoy/'
               - doc_title: Troubleshooting
                 doc_url: 'ee/ci/troubleshooting.html'
-
           - doc_title: Runners
             doc_url: 'runner/'
             docs:
@@ -1861,7 +1829,37 @@ sections:
                 doc_url: 'runner/fleet_scaling/'
               - doc_title: Best practices for large repositories
                 doc_url: 'ee/ci/large_repositories/'
-
+          - doc_title: GitLab Pages
+            doc_url: 'ee/user/project/pages/'
+            docs:
+              - doc_title: 'Tutorial: Create a GitLab Pages website'
+                doc_url: 'ee/user/project/pages/getting_started/pages_from_scratch.html'
+              - doc_title: Create by using a CI/CD template
+                doc_url: 'ee/user/project/pages/getting_started/pages_ci_cd_template.html'
+              - doc_title: Create by using a forked sample project
+                doc_url: 'ee/user/project/pages/getting_started/pages_forked_sample_project.html'
+              - doc_title: Create by using a project template
+                doc_url: 'ee/user/project/pages/getting_started/pages_new_project_template.html'
+              - doc_title: 'Create a Pages deployment for your static site'
+                doc_url: 'ee/user/project/pages/getting_started/pages_ui.html'
+              - doc_title: Public folder configuration
+                doc_url: 'ee/user/project/pages/public_folder.html'
+              - doc_title: Default domains, URLs, and baseurls
+                doc_url: 'ee/user/project/pages/getting_started_part_one.html'
+              - doc_title: Custom domains and SSL/TLS certificates
+                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/'
+              - doc_title: DNS concepts
+                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/dns_concepts.html'
+              - doc_title: SSL/TLS concepts
+                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/ssl_tls_concepts.html'
+              - doc_title: Let's Encrypt integration
+                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/lets_encrypt_integration.html'
+              - doc_title: Access control
+                doc_url: 'ee/user/project/pages/pages_access_control.html'
+              - doc_title: Redirects
+                doc_url: 'ee/user/project/pages/redirects.html'
+              - doc_title: Exploring GitLab Pages
+                doc_url: 'ee/user/project/pages/introduction.html'
           - doc_title: Packages & Registries
             doc_url: 'ee/user/packages/'
             docs:
