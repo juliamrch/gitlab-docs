@@ -39,8 +39,8 @@
 <% end %>
 <!-- End of CSP headers -->
 
-<!-- Preload fonts -->
-<%= render '/fonts.*' %>
+<link rel="preload" href="/assets/fonts/GitLabSans.woff2" as="font" crossorigin />
+<link rel="prefetch" href="/assets/fonts/JetBrainsMono.woff2" as="font" crossorigin />
 
 <link rel="stylesheet" href="/frontend/shared/global_imports.css">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
