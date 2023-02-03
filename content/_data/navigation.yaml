@@ -489,148 +489,6 @@ sections:
       - category_title: Troubleshooting
         category_url: 'runner/faq/'
 
-  - section_title: Integrate applications
-    section_url: 'ee/integration/'
-    section_categories:
-      - category_title: Akismet
-        category_url: 'ee/integration/akismet.html'
-      - category_title: Arkose Protect
-        category_url: 'ee/integration/arkose.html'
-      - category_title: Datadog
-        category_url: 'ee/integration/datadog.html'
-      - category_title: Elasticsearch
-        category_url: 'ee/integration/advanced_search/elasticsearch.html'
-        docs:
-          - doc_title: Troubleshooting
-            doc_url: 'ee/integration/advanced_search/elasticsearch_troubleshooting.html'
-      - category_title: GitLab CLI (glab)
-        category_url: 'ee/integration/glab/'
-      - category_title: Gitpod
-        category_url: 'ee/integration/gitpod.html'
-      - category_title: Jira integrations
-        category_url: 'ee/integration/jira/'
-        docs:
-          - doc_title: Configure the Jira integration
-            doc_url: 'ee/integration/jira/configure.html'
-          - doc_title: GitLab for Jira app
-            doc_url: 'ee/integration/jira/connect-app.html'
-          - doc_title: Jira DVCS connector
-            doc_url: 'ee/integration/jira/dvcs/'
-            docs:
-              - doc_title: Troubleshooting
-                doc_url: 'ee/integration/jira/dvcs/troubleshooting.html'
-          - doc_title: Jira Development Panel
-            doc_url: 'ee/integration/jira/development_panel.html'
-          - doc_title: Create Jira Server user
-            doc_url: 'ee/integration/jira/jira_server_configuration.html'
-          - doc_title: Create Jira Cloud API token
-            doc_url: 'ee/integration/jira/jira_cloud_configuration.html'
-          - doc_title: Jira integration issue management
-            doc_url: 'ee/integration/jira/issues.html'
-          - doc_title: Troubleshooting
-            doc_url: 'ee/integration/jira/troubleshooting.html'
-      - category_title: Kroki diagrams
-        category_url: 'ee/administration/integration/kroki.html'
-      - category_title: Mailgun
-        category_url: 'ee/administration/integration/mailgun.html'
-      - category_title: PlantUML
-        category_url: 'ee/administration/integration/plantuml.html'
-      - category_title: Project integration management
-        category_url: 'ee/user/admin_area/settings/project_integration_management.html'
-      - category_title: Project integrations
-        category_url: 'ee/user/project/integrations/'
-        docs:
-          - doc_title: Apple App Store
-            doc_url: 'ee/user/project/integrations/apple_app_store.html'
-          - doc_title: Asana
-            doc_url: 'ee/user/project/integrations/asana.html'
-          - doc_title: Bamboo CI
-            doc_url: 'ee/user/project/integrations/bamboo.html'
-          - doc_title: Discord
-            doc_url: 'ee/user/project/integrations/discord_notifications.html'
-          - doc_title: Emails on push
-            doc_url: 'ee/user/project/integrations/emails_on_push.html'
-          - doc_title: GitHub
-            doc_url: 'ee/user/project/integrations/github.html'
-          - doc_title: Google Chat
-            doc_url: 'ee/user/project/integrations/hangouts_chat.html'
-          - doc_title: Harbor
-            doc_url: 'ee/user/project/integrations/harbor.html'
-          - doc_title: Irker
-            doc_url: 'ee/user/project/integrations/irker.html'
-          - doc_title: Jenkins
-            doc_url: 'ee/integration/jenkins.html'
-          - doc_title: Mattermost notifications
-            doc_url: 'ee/user/project/integrations/mattermost.html'
-          - doc_title: Mattermost slash commands
-            doc_url: 'ee/user/project/integrations/mattermost_slash_commands.html'
-          - doc_title: Microsoft Teams
-            doc_url: 'ee/user/project/integrations/microsoft_teams.html'
-          - doc_title: Mock CI
-            doc_url: 'ee/user/project/integrations/mock_ci.html'
-          - doc_title: Pipeline status emails
-            doc_url: 'ee/user/project/integrations/pipeline_status_emails.html'
-          - doc_title: Pivotal Tracker
-            doc_url: 'ee/user/project/integrations/pivotal_tracker.html'
-          - doc_title: Prometheus
-            doc_url: 'ee/user/project/integrations/prometheus.html'
-            docs:
-              - doc_title: Sample Prometheus data Rake task
-                doc_url: 'ee/raketasks/generate_sample_prometheus_data.html'
-          - doc_title: Pumble
-            doc_url: 'ee/user/project/integrations/pumble.html'
-          - doc_title: ServiceNow
-            doc_url: 'ee/user/project/integrations/servicenow.html'
-          - doc_title: Shimo
-            doc_url: 'ee/user/project/integrations/shimo.html'
-          - doc_title: Slack notifications
-            doc_url: 'ee/user/project/integrations/slack.html'
-          - doc_title: Slack slash commands
-            doc_url: 'ee/user/project/integrations/slack_slash_commands.html'
-            docs:
-              - doc_title: Slash commands
-                doc_url: 'ee/integration/slash_commands.html'
-          - doc_title: Slack application
-            doc_url: 'ee/user/project/integrations/gitlab_slack_application.html'
-          - doc_title: Unify Circuit
-            doc_url: 'ee/user/project/integrations/unify_circuit.html'
-          - doc_title: Webex Teams
-            doc_url: 'ee/user/project/integrations/webex_teams.html'
-          - doc_title: Webhooks
-            doc_url: 'ee/user/project/integrations/webhooks.html'
-            docs:
-              - doc_title: Webhook events
-                doc_url: 'ee/user/project/integrations/webhook_events.html'
-              - doc_title: Rake tasks
-                doc_url: 'ee/raketasks/web_hooks.html'
-      - category_title: External issue tracker
-        category_url: 'ee/integration/external-issue-tracker.html'
-        docs:
-          - doc_title: Bugzilla
-            doc_url: 'ee/user/project/integrations/bugzilla.html'
-          - doc_title: Custom issue tracker
-            doc_url: 'ee/user/project/integrations/custom_issue_tracker.html'
-          - doc_title: IBM Engineering Workflow Management
-            doc_url: 'ee/user/project/integrations/ewm.html'
-          - doc_title: Redmine
-            doc_url: 'ee/user/project/integrations/redmine.html'
-          - doc_title: YouTrack
-            doc_url: 'ee/user/project/integrations/youtrack.html'
-          - doc_title: ZenTao
-            doc_url: 'ee/user/project/integrations/zentao.html'
-      - category_title: Gmail actions buttons
-        category_url: 'ee/integration/gmail_action_buttons_for_gitlab.html'
-      - category_title: reCAPTCHA
-        category_url: 'ee/integration/recaptcha.html'
-      - category_title: Security partners
-        category_url: 'ee/integration/security_partners/'
-      - category_title: Sourcegraph
-        category_url: 'ee/integration/sourcegraph.html'
-      - category_title: Trello
-        category_url: 'ee/integration/trello_power_up.html'
-      - category_title: Visual Studio Code extension
-        category_url: 'ee/user/project/repository/vscode.html'
-
   # ADMINISTRATION
 
   - section_title: Administer GitLab
@@ -2277,9 +2135,145 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/usage_statistics.html'
               - doc_title: Web exporter
                 doc_url: 'ee/administration/monitoring/prometheus/web_exporter.html'
-  - section_title: Use the API
+  - section_title: Develop with GitLab
     section_url: 'ee/api/'
     section_categories:
+      - category_title: Integrations
+        category_url: 'ee/integration/'
+        docs:
+          - doc_title: Akismet
+            doc_url: 'ee/integration/akismet.html'
+          - doc_title: Apple App Store
+            doc_url: 'ee/user/project/integrations/apple_app_store.html'
+          - doc_title: Arkose Protect
+            doc_url: 'ee/integration/arkose.html'
+          - doc_title: Asana
+            doc_url: 'ee/user/project/integrations/asana.html'
+          - doc_title: Bamboo CI
+            doc_url: 'ee/user/project/integrations/bamboo.html'
+          - doc_title: Datadog
+            doc_url: 'ee/integration/datadog.html'
+          - doc_title: Discord
+            doc_url: 'ee/user/project/integrations/discord_notifications.html'
+          - doc_title: Elasticsearch
+            doc_url: 'ee/integration/advanced_search/elasticsearch.html'
+            docs:
+              - doc_title: Troubleshooting
+                doc_url: 'ee/integration/advanced_search/elasticsearch_troubleshooting.html'
+          - doc_title: Emails on push
+            doc_url: 'ee/user/project/integrations/emails_on_push.html'
+          - doc_title: External issue tracker
+            doc_url: 'ee/integration/external-issue-tracker.html'
+            docs:
+              - doc_title: Bugzilla
+                doc_url: 'ee/user/project/integrations/bugzilla.html'
+              - doc_title: Custom issue tracker
+                doc_url: 'ee/user/project/integrations/custom_issue_tracker.html'
+              - doc_title: IBM Engineering Workflow Management
+                doc_url: 'ee/user/project/integrations/ewm.html'
+              - doc_title: Redmine
+                doc_url: 'ee/user/project/integrations/redmine.html'
+              - doc_title: YouTrack
+                doc_url: 'ee/user/project/integrations/youtrack.html'
+              - doc_title: ZenTao
+                doc_url: 'ee/user/project/integrations/zentao.html'
+          - doc_title: GitHub
+            doc_url: 'ee/user/project/integrations/github.html'
+          - doc_title: Gitpod
+            doc_url: 'ee/integration/gitpod.html'
+          - doc_title: Gmail actions buttons
+            doc_url: 'ee/integration/gmail_action_buttons_for_gitlab.html'
+          - doc_title: Google Chat
+            doc_url: 'ee/user/project/integrations/hangouts_chat.html'
+          - doc_title: Harbor
+            doc_url: 'ee/user/project/integrations/harbor.html'
+          - doc_title: Irker
+            doc_url: 'ee/user/project/integrations/irker.html'
+          - doc_title: Jenkins
+            doc_url: 'ee/integration/jenkins.html'
+          - doc_title: Jira integrations
+            doc_url: 'ee/integration/jira/'
+            docs:
+              - doc_title: Configure the Jira integration
+                doc_url: 'ee/integration/jira/configure.html'
+              - doc_title: Create Jira Cloud API token
+                doc_url: 'ee/integration/jira/jira_cloud_configuration.html'
+              - doc_title: Create Jira Server user
+                doc_url: 'ee/integration/jira/jira_server_configuration.html'
+              - doc_title: GitLab for Jira app
+                doc_url: 'ee/integration/jira/connect-app.html'
+              - doc_title: Jira Development Panel
+                doc_url: 'ee/integration/jira/development_panel.html'
+              - doc_title: Jira DVCS connector
+                doc_url: 'ee/integration/jira/dvcs/'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/integration/jira/dvcs/troubleshooting.html'
+              - doc_title: Jira integration issue management
+                doc_url: 'ee/integration/jira/issues.html'
+              - doc_title: Troubleshooting
+                doc_url: 'ee/integration/jira/troubleshooting.html'
+          - doc_title: Kroki diagrams
+            doc_url: 'ee/administration/integration/kroki.html'
+          - doc_title: Mailgun
+            doc_url: 'ee/administration/integration/mailgun.html'
+          - doc_title: Mattermost notifications
+            doc_url: 'ee/user/project/integrations/mattermost.html'
+          - doc_title: Mattermost slash commands
+            doc_url: 'ee/user/project/integrations/mattermost_slash_commands.html'
+          - doc_title: Microsoft Teams
+            doc_url: 'ee/user/project/integrations/microsoft_teams.html'
+          - doc_title: Mock CI
+            doc_url: 'ee/user/project/integrations/mock_ci.html'
+          - doc_title: Pipeline status emails
+            doc_url: 'ee/user/project/integrations/pipeline_status_emails.html'
+          - doc_title: Pivotal Tracker
+            doc_url: 'ee/user/project/integrations/pivotal_tracker.html'
+          - doc_title: PlantUML
+            doc_url: 'ee/administration/integration/plantuml.html'
+          - doc_title: Project integration management
+            doc_url: 'ee/user/admin_area/settings/project_integration_management.html'
+          - doc_title: Project integrations
+            doc_url: 'ee/user/project/integrations/'
+          - doc_title: Prometheus
+            doc_url: 'ee/user/project/integrations/prometheus.html'
+            docs:
+              - doc_title: Sample Prometheus data Rake task
+                doc_url: 'ee/raketasks/generate_sample_prometheus_data.html'
+          - doc_title: Pumble
+            doc_url: 'ee/user/project/integrations/pumble.html'
+          - doc_title: reCAPTCHA
+            doc_url: 'ee/integration/recaptcha.html'
+          - doc_title: Security partners
+            doc_url: 'ee/integration/security_partners/'
+          - doc_title: ServiceNow
+            doc_url: 'ee/user/project/integrations/servicenow.html'
+          - doc_title: Shimo
+            doc_url: 'ee/user/project/integrations/shimo.html'
+          - doc_title: Slack application
+            doc_url: 'ee/user/project/integrations/gitlab_slack_application.html'
+          - doc_title: Slack notifications
+            doc_url: 'ee/user/project/integrations/slack.html'
+          - doc_title: Slack slash commands
+            doc_url: 'ee/user/project/integrations/slack_slash_commands.html'
+            docs:
+              - doc_title: Slash commands
+                doc_url: 'ee/integration/slash_commands.html'
+          - doc_title: Sourcegraph
+            doc_url: 'ee/integration/sourcegraph.html'
+          - doc_title: Trello
+            doc_url: 'ee/integration/trello_power_up.html'
+          - doc_title: Unify Circuit
+            doc_url: 'ee/user/project/integrations/unify_circuit.html'
+          - doc_title: Webex Teams
+            doc_url: 'ee/user/project/integrations/webex_teams.html'
+      - category_title: Webhooks
+        category_url: 'ee/user/project/integrations/webhooks.html'
+        docs:
+          - doc_title: Webhook events
+            doc_url: 'ee/user/project/integrations/webhook_events.html'
+          - doc_title: Rake tasks
+            doc_url: 'ee/raketasks/web_hooks.html'
       - category_title: REST API
         category_url: 'ee/api/rest/'
         docs:
@@ -2430,6 +2424,8 @@ sections:
                 doc_url: 'ee/api/issue_links.html'
               - doc_title: Links (epic)
                 doc_url: 'ee/api/epic_links.html'
+              - doc_title: Lint .gitlab-ci.yml
+                doc_url: 'ee/api/lint.html'
               - doc_title: Managed licenses
                 doc_url: 'ee/api/managed_licenses.html'
               - doc_title: Markdown
@@ -2598,9 +2594,9 @@ sections:
                 doc_url: 'ee/api/group_wikis.html'
               - doc_title: Wikis (project)
                 doc_url: 'ee/api/wikis.html'
-      - category_title: OpenAPI
-        category_url: 'ee/api/openapi/openapi_interactive.html'
-      - category_title: GraphQL
+          - doc_title: OpenAPI
+            doc_url: 'ee/api/openapi/openapi_interactive.html'
+      - category_title: GraphQL API
         category_url: 'ee/api/graphql/'
         docs:
           - doc_title: Get started using GraphQL
@@ -2619,10 +2615,12 @@ sections:
             doc_url: 'ee/api/graphql/custom_emoji.html'
           - doc_title: Removed items
             doc_url: 'ee/api/graphql/removed_items.html'
-      - category_title: Lint .gitlab-ci.yml
-        category_url: 'ee/api/lint.html'
       - category_title: GitLab as an OAuth2 provider
         category_url: 'ee/api/oauth2.html'
+      - category_title: GitLab CLI (glab)
+        category_url: 'ee/integration/glab/'
+      - category_title: Visual Studio Code extension
+        category_url: 'ee/user/project/repository/vscode.html'
   # End of documentation from https://gitlab.com/gitlab-org/gitlab
 
   # Development documentation from:
