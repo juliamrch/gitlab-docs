@@ -263,6 +263,8 @@ sections:
                         doc_url: 'charts/advanced/geo/'
                       - doc_title: Internal TLS between services
                         doc_url: 'charts/advanced/internal-tls/'
+                      - doc_title: Multiple databases
+                        doc_url: 'charts/advanced/multiple-databases/'
                       - doc_title: Persistent volumes
                         doc_url: 'charts/advanced/persistent-volumes/'
                       - doc_title: Red Hat UBI-based images
