@@ -885,6 +885,11 @@ sections:
           - doc_title: Host the product documentation
             doc_url: 'ee/administration/docs_self_host.html'
 
+      # GitLab Dedicated
+
+      - category_title: Configure GitLab Dedicated
+        category_url: 'ee/administration/dedicated/'
+
       # Maintain your install
 
       - category_title: Maintain your installation
