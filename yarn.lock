@@ -1206,15 +1206,15 @@
     stylelint-declaration-strict-value "1.8.0"
     stylelint-scss "4.2.0"
 
-"@gitlab/svgs@^3.18.0":
-  version "3.18.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-3.18.0.tgz#d89364feb42404a35824a54d518b51af8c1e900f"
-  integrity sha512-ni9TmhusXpt/3k/DZzovMEUeB/6UTXiDpuujI8HDBqR4Mwlah6FBco5ZfolkW6YjFL0YvtcLWhnwZA0iM3hfMw==
+"@gitlab/svgs@^3.19.0":
+  version "3.19.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-3.19.0.tgz#23bfe338708d62a310fe424693455339baa6cac1"
+  integrity sha512-R/nWQXTpN1Vf8FwxgSODK2f2cU6fsmb7Y2pOLozUPYACKRqJkEwD0Bv7nzWsgheEO/fMK9olv83R9v0acYYI/A==
 
-"@gitlab/ui@^54.2.0":
-  version "54.2.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-54.2.0.tgz#8c3335f1e74112d34545269da97124ded8e16508"
-  integrity sha512-CLcTbp6Zhp3l5zXeCjPRvOS7iWU/lH9ecFaOC9MIpA6KV3qH5GhVQRi8s+FiR3esKlzpLL7xHdUqfKIQeD6W0A==
+"@gitlab/ui@^54.4.0":
+  version "54.4.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-54.4.0.tgz#0fbe3cc8ebc475b98ba4e20b69b4a19283a6a240"
+  integrity sha512-gqTLDYEDcj+E9jaidaaT3O0uYVP+xB1vMeTOWDJTuBGWNv6tNWGozL9RTWjueC4rc1beblT7PQOtFInlLCy8Wg==
   dependencies:
     "@popperjs/core" "^2.11.2"
     bootstrap-vue "2.20.1"
@@ -4195,10 +4195,10 @@ instantsearch.css@^8.0.0:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-8.0.0.tgz#66a56b52400c7a14f678859e35a12eb32696a417"
   integrity sha512-yU63cF9KdkyFFh7ynYQy39nh1MD1eVDHIaa/gdm8a/O9dTG/5P6hBF1ONoIbKTtjlxxsHS2S8MarCZZ0l31ajg==
 
-instantsearch.js@^4.43.0, instantsearch.js@^4.50.1:
-  version "4.50.1"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.50.1.tgz#3494865c727b27f8587b287a7e41669dc2c2c7d4"
-  integrity sha512-vLO1wxaJqrumryn1/4+6opSze04m6cPj2vYQtGlrYFMtVmYhrI42VXR0llNxgzSv6VJLEROjOxEj6iI3gfWaIw==
+instantsearch.js@^4.43.0, instantsearch.js@^4.50.2:
+  version "4.50.2"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.50.2.tgz#f8cc7342ddfc9fa025f84cab43837fc456b1826c"
+  integrity sha512-7MqHwLPOb9LCe3HkFHGOZUfzzpFbM82qJabZSDJkIZPZT00nvgw4NLHL/A6Wnqj9WkRK1au+n17EQFVgk5nqww==
   dependencies:
     "@algolia/events" "^4.0.1"
     "@algolia/ui-components-highlight-vdom" "^1.2.1"
@@ -6353,10 +6353,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^3.12.0:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.12.0.tgz#813d88ec11e36108da788fc471b3c81b365a7c29"
-  integrity sha512-4MZ8kA2HNYahIjz63rzrMMRvDqQDeS9LoriJvMuV0V6zIGysP36e9t4yObUfwdT9h/szXoHQideICftcdZklWg==
+rollup@^3.14.0:
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.14.0.tgz#f5925255f3b6e8de1dba3916d7619c7da5708d95"
+  integrity sha512-o23sdgCLcLSe3zIplT9nQ1+r97okuaiR+vmAPZPTDYB7/f3tgWIYNyiQveMsZwshBT0is4eGax/HH83Q7CG+/Q==
   optionalDependencies:
     fsevents "~2.3.2"
 
