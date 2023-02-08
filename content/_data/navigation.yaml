@@ -512,8 +512,6 @@ sections:
                 doc_url: 'ee/administration/auth/atlassian.html'
               - doc_title: Auth0
                 doc_url: 'ee/integration/auth0.html'
-              - doc_title: Authentiq
-                doc_url: 'ee/administration/auth/authentiq.html'
               - doc_title: AWS Cognito
                 doc_url: 'ee/administration/auth/cognito.html'
               - doc_title: Azure
