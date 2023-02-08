@@ -2652,8 +2652,6 @@ sections:
                 doc_url: 'ee/development/chatops_on_gitlabcom.html'
               - doc_title: Code review guidelines
                 doc_url: 'ee/development/code_review.html'
-              - doc_title: Community roles
-                doc_url: 'ee/development/contributing/community_roles.html'
               - doc_title: Danger bot
                 doc_url: 'ee/development/dangerbot.html'
               - doc_title: Deprecation guidelines
