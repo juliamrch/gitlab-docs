@@ -910,6 +910,8 @@ sections:
             doc_url: 'ee/administration/operations/fast_ssh_key_lookup.html'
           - doc_title: Filesystem benchmarking
             doc_url: 'ee/administration/operations/filesystem_benchmarking.html'
+          - doc_title: gitlab-sshd
+            doc_url: 'ee/administration/operations/gitlab_sshd.html'
           - doc_title: Rails console
             doc_url: 'ee/administration/operations/rails_console.html'
           - doc_title: Use SSH certificates
