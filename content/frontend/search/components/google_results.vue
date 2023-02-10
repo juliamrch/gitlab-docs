@@ -1,6 +1,12 @@
 <script>
 /* global GOOGLE_SEARCH_KEY */
-import { GlSearchBoxByClick, GlLink, GlSafeHtmlDirective as SafeHtml } from '@gitlab/ui';
+import {
+  GlSearchBoxByClick,
+  GlLink,
+  GlLoadingIcon,
+  GlSafeHtmlDirective as SafeHtml,
+  GlPagination,
+} from '@gitlab/ui';
 import { getSearchQueryFromURL, updateURLParams } from '../search_helpers';
 import { GPS_ENDPOINT, GPS_ID } from '../../services/google_search_api';
 
@@ -8,6 +14,8 @@ export default {
   components: {
     GlSearchBoxByClick,
     GlLink,
+    GlLoadingIcon,
+    GlPagination,
   },
   directives: {
     SafeHtml,
@@ -17,20 +25,35 @@ export default {
     return {
       query: queryParam || '',
       submitted: false,
+      loading: false,
       error: false,
+      pageNumber: 1,
       response: {},
       results: [],
     };
   },
   computed: {
-    resultCount() {
+    resultSummary() {
       const { count, startIndex } = this.response.queries.request[0];
       const end = startIndex - 1 + count;
       return `Showing ${startIndex}-${end} of ${this.response.searchInformation.formattedTotalResults} results`;
     },
     noResults() {
-      return this.submitted && !this.results.length && !this.error;
+      return this.submitted && !this.loading && !this.results.length && !this.error;
     },
+    showPager() {
+      return (
+        this.submitted && this.response.searchInformation.totalResults > this.MAX_RESULTS_PER_PAGE
+      );
+    },
+    pagerMaxItems() {
+      return Math.min(this.response.searchInformation.totalResults, this.MAX_TOTAL_RESULTS);
+    },
+  },
+  created() {
+    // Limits from the Google API
+    this.MAX_RESULTS_PER_PAGE = 10;
+    this.MAX_TOTAL_RESULTS = 100;
   },
   mounted() {
     if (this.query) {
@@ -50,6 +73,7 @@ export default {
               key: GOOGLE_SEARCH_KEY,
               cx: GPS_ID,
               q: this.query,
+              start: (this.pageNumber - 1) * this.MAX_RESULTS_PER_PAGE + 1,
             }),
         );
         data = await response.json();
@@ -70,8 +94,13 @@ export default {
     },
     async search(query) {
       this.query = query;
+      this.results = [];
+
+      this.loading = true;
       this.response = await this.fetchGoogleResults();
       this.results = this.response.items ? this.response.items : [];
+      this.loading = false;
+
       this.submitted = true;
       updateURLParams(this.query);
     },
@@ -84,8 +113,10 @@ export default {
     <h1>Search</h1>
     <gl-search-box-by-click v-model="query" :value="query" @submit="onSubmit" />
     <div v-if="results.length" class="gl-font-sm gl-mb-5">
-      {{ resultCount }}
+      {{ resultSummary }}
     </div>
+
+    <gl-loading-icon v-if="loading" size="lg" class="gl-mt-5" />
 
     <ul
       v-if="results.length"
@@ -101,6 +132,15 @@ export default {
         <p v-safe-html="result.htmlSnippet" class="result-snippet"></p>
       </li>
     </ul>
+
+    <gl-pagination
+      v-if="showPager"
+      v-model="pageNumber"
+      :per-page="MAX_RESULTS_PER_PAGE"
+      :total-items="pagerMaxItems"
+      class="gl-mt-9"
+      @input="search(query)"
+    />
 
     <p v-if="noResults" class="gl-py-5">No results found.</p>
     <p v-if="error" class="gl-py-5" data-testid="search-error">
