@@ -1,0 +1,665 @@
+sections:
+  - section_title: GitLab Docs
+    section_url: 'ee/'
+
+  - section_title: Learn GitLab with tutorials
+    section_url: 'ee/tutorials/'
+
+  - section_title: Manage GitLab subscription
+    section_url: 'ee/subscriptions/'
+    section_categories:
+      - category_title: GitLab SaaS subscriptions
+        category_url: 'ee/subscriptions/gitlab_com/'
+      - category_title: Self-managed subscriptions
+        category_url: 'ee/subscriptions/self_managed/'
+      - category_title: GitLab Dedicated subscriptions
+        category_url: 'ee/subscriptions/gitlab_dedicated/'
+      - category_title: Compare self-managed to SaaS
+        category_url: 'ee/install/migrate/compare_sm_to_saas.html'
+      - category_title: Quarterly reconciliation
+        category_url: 'ee/subscriptions/quarterly_reconciliation.html'
+      - category_title: Storage usage quota
+        category_url: 'ee/user/usage_quotas.html'
+      - category_title: CI/CD minutes quota
+        category_url: 'ee/ci/pipelines/cicd_minutes.html'
+      - category_title: Free user limit
+        category_url: 'ee/user/free_user_limit.html'
+      - category_title: Read-only namespaces
+        category_url: 'ee/user/read_only_namespaces.html'
+      - category_title: Activate Enterprise Edition
+        category_url: 'ee/user/admin_area/license.html'
+      - category_title: Features available to Starter and Bronze subscribers
+        category_url: 'ee/subscriptions/bronze_starter.html'
+      - category_title: Alpha, Beta, LA support
+        category_url: 'ee/policy/alpha-beta-support.html'
+  - section_title: Use GitLab
+    section_url: 'ee/user/'
+    section_categories:
+      - category_title: Set up your organization
+        category_url: 'ee/topics/set_up_organization.html'
+        docs:
+          - doc_title: Namespaces
+            doc_url: 'ee/user/namespace/'
+          - doc_title: Members
+            doc_url: 'ee/user/project/members/'
+          - doc_title: Groups
+            doc_url: 'ee/user/group/'
+            docs:
+              - doc_title: Manage groups
+                doc_url: 'ee/user/group/manage.html'
+              - doc_title: Group access and permissions
+                doc_url: 'ee/user/group/access_and_permissions.html'
+              - doc_title: Custom group-level project templates
+                doc_url: 'ee/user/group/custom_project_templates.html'
+              - doc_title: Group access tokens
+                doc_url: 'ee/user/group/settings/group_access_tokens.html'
+              - doc_title: Group import/export
+                doc_url: 'ee/user/group/settings/import_export.html'
+              - doc_title: Migrating groups
+                doc_url: 'ee/user/group/import/'
+              - doc_title: SAML Group Sync
+                doc_url: 'ee/user/group/saml_sso/group_sync.html'
+              - doc_title: Compliance frameworks
+                doc_url: 'ee/user/group/compliance_frameworks.html'
+              - doc_title: Troubleshooting SAML
+                doc_url: 'ee/user/group/saml_sso/troubleshooting.html'
+              - doc_title: SAML SSO for GitLab.com groups
+                doc_url: 'ee/user/group/saml_sso/'
+                docs:
+                  - doc_title: Configure SCIM
+                    doc_url: 'ee/user/group/saml_sso/scim_setup.html'
+                  - doc_title: Example group SAML and SCIM configurations
+                    doc_url: 'ee/user/group/saml_sso/example_saml_config.html'
+                  - doc_title: Troubleshooting SCIM
+                    doc_url: 'ee/user/group/saml_sso/troubleshooting_scim.html'
+              - doc_title: Subgroups
+                doc_url: 'ee/user/group/subgroups/'
+              - doc_title: Move a personal project to a group
+                doc_url: 'ee/tutorials/move_personal_project_to_a_group.html'
+              - doc_title: Git abuse rate limit
+                doc_url: 'ee/user/group/reporting/git_abuse_rate_limit.html'
+          - doc_title: Enterprise users
+            doc_url: 'ee/user/enterprise_user/'
+          - doc_title: User account options
+            doc_url: 'ee/user/profile/'
+            docs:
+              - doc_title: Active sessions
+                doc_url: 'ee/user/profile/active_sessions.html'
+              - doc_title: Contributions calendar
+                doc_url: 'ee/user/profile/contributions_calendar.html'
+              - doc_title: Permissions and roles
+                doc_url: 'ee/user/permissions.html'
+              - doc_title: Personal access tokens
+                doc_url: 'ee/user/profile/personal_access_tokens.html'
+              - doc_title: Profile preferences
+                doc_url: 'ee/user/profile/preferences.html'
+              - doc_title: Notification emails
+                doc_url: 'ee/user/profile/notifications.html'
+              - doc_title: User passwords
+                doc_url: 'ee/user/profile/user_passwords.html'
+              - doc_title: Two-factor authentication
+                doc_url: 'ee/user/profile/account/two_factor_authentication.html'
+              - doc_title: Report abuse
+                doc_url: 'ee/user/report_abuse.html'
+              - doc_title: Delete account
+                doc_url: 'ee/user/profile/account/delete_account.html'
+          - doc_title: SSH keys
+            doc_url: 'ee/user/ssh.html'
+          - doc_title: GitLab.com settings
+            doc_url: 'ee/user/gitlab_com/'
+      - category_title: Organize work with projects
+        category_url: 'ee/user/project/organize_work_with_projects.html'
+        docs:
+          - doc_title: Create a project
+            doc_url: 'ee/user/project/'
+          - doc_title: Manage projects
+            doc_url: 'ee/user/project/working_with_projects.html'
+          - doc_title: Project visibility
+            doc_url: 'ee/user/public_access.html'
+          - doc_title: Project settings
+            doc_url: 'ee/user/project/settings/'
+          - doc_title: Project access tokens
+            doc_url: 'ee/user/project/settings/project_access_tokens.html'
+          - doc_title: Share projects
+            doc_url: 'ee/user/project/members/share_project_with_groups.html'
+          - doc_title: Reserved project and group names
+            doc_url: 'ee/user/reserved_names.html'
+          - doc_title: Search
+            doc_url: 'ee/user/search/'
+            docs:
+              - doc_title: Advanced Search
+                doc_url: 'ee/user/search/advanced_search.html'
+              - doc_title: Exact code search
+                doc_url: 'ee/user/search/exact_code_search.html'
+          - doc_title: Badges
+            doc_url: 'ee/user/project/badges.html'
+          - doc_title: Code intelligence
+            doc_url: 'ee/user/project/code_intelligence.html'
+          - doc_title: Compliance
+            doc_url: 'ee/user/compliance/'
+            docs:
+              - doc_title: License Compliance
+                doc_url: 'ee/user/compliance/license_compliance/'
+              - doc_title: SPDX license list import Rake task
+                doc_url: 'ee/raketasks/spdx.html'
+              - doc_title: Compliance report
+                doc_url: 'ee/user/compliance/compliance_report/'
+          - doc_title: Description templates
+            doc_url: 'ee/user/project/description_templates.html'
+          - doc_title: Deploy keys
+            doc_url: 'ee/user/project/deploy_keys/'
+          - doc_title: Deploy tokens
+            doc_url: 'ee/user/project/deploy_tokens/'
+          - doc_title: File finder
+            doc_url: 'ee/user/project/repository/file_finder.html'
+          - doc_title: Migrating projects
+            doc_url: 'ee/user/project/import/'
+            docs:
+              - doc_title: Bitbucket Cloud
+                doc_url: 'ee/user/project/import/bitbucket.html'
+              - doc_title: Bitbucket Server
+                doc_url: 'ee/user/project/import/bitbucket_server.html'
+              - doc_title: ClearCase
+                doc_url: 'ee/user/project/import/clearcase.html'
+              - doc_title: CVS
+                doc_url: 'ee/user/project/import/cvs.html'
+              - doc_title: FogBugz
+                doc_url: 'ee/user/project/import/fogbugz.html'
+              - doc_title: GitHub
+                doc_url: 'ee/user/project/import/github.html'
+                docs:
+                  - doc_title: GitHub import Rake task
+                    doc_url: 'ee/administration/raketasks/github_import.html'
+              - doc_title: Gitea
+                doc_url: 'ee/user/project/import/gitea.html'
+              - doc_title: Jira
+                doc_url: 'ee/user/project/import/jira.html'
+              - doc_title: Perforce Helix
+                doc_url: 'ee/user/project/import/perforce.html'
+              - doc_title: Repo by manifest file
+                doc_url: 'ee/user/project/import/manifest.html'
+              - doc_title: Repo by URL
+                doc_url: 'ee/user/project/import/repo_by_url.html'
+              - doc_title: TFVC
+                doc_url: 'ee/user/project/import/tfvc.html'
+          - doc_title: Migrate projects using file exports
+            doc_url: 'ee/user/project/settings/import_export.html'
+            docs:
+              - doc_title: Troubleshooting
+                doc_url: 'ee/user/project/settings/import_export_troubleshooting.html'
+              - doc_title: Rate limits for project and group imports and exports
+                doc_url: 'ee/user/admin_area/settings/import_export_rate_limits.html'
+              - doc_title: Decompressed archive size limits
+                doc_url: 'ee/security/project_import_decompressed_archive_size_limits.html'
+              - doc_title: Rake tasks
+                doc_url: 'ee/administration/raketasks/project_import_export.html'
+
+      - category_title: Plan and track work
+        category_url: 'ee/topics/plan_and_track.html'
+        docs:
+          - doc_title: Labels
+            doc_url: 'ee/user/project/labels.html'
+          - doc_title: Iterations
+            doc_url: 'ee/user/group/iterations/'
+            docs:
+              - doc_title: 'Tutorial: Use GitLab to run an Agile iteration'
+                doc_url: 'ee/tutorials/agile_sprint.html'
+          - doc_title: Milestones
+            doc_url: 'ee/user/project/milestones/'
+            docs:
+              - doc_title: Burndown and burnup charts
+                doc_url: 'ee/user/project/milestones/burndown_and_burnup_charts.html'
+          - doc_title: Issues
+            doc_url: 'ee/user/project/issues/'
+            docs:
+              - doc_title: Create issues
+                doc_url: 'ee/user/project/issues/create_issues.html'
+              - doc_title: Manage issues
+                doc_url: 'ee/user/project/issues/managing_issues.html'
+              - doc_title: Award emojis
+                doc_url: 'ee/user/award_emojis.html'
+              - doc_title: Confidential issues
+                doc_url: 'ee/user/project/issues/confidential_issues.html'
+              - doc_title: Crosslinking issues
+                doc_url: 'ee/user/project/issues/crosslinking_issues.html'
+              - doc_title: CSV export
+                doc_url: 'ee/user/project/issues/csv_export.html'
+              - doc_title: CSV import
+                doc_url: 'ee/user/project/issues/csv_import.html'
+              - doc_title: Design management
+                doc_url: 'ee/user/project/issues/design_management.html'
+              - doc_title: Due dates
+                doc_url: 'ee/user/project/issues/due_dates.html'
+              - doc_title: Issue boards
+                doc_url: 'ee/user/project/issue_board.html'
+              - doc_title: Multiple assignees
+                doc_url: 'ee/user/project/issues/multiple_assignees_for_issues.html'
+              - doc_title: Linked issues
+                doc_url: 'ee/user/project/issues/related_issues.html'
+              - doc_title: Service Desk
+                doc_url: 'ee/user/project/service_desk.html'
+              - doc_title: Sorting and ordering issue lists
+                doc_url: 'ee/user/project/issues/sorting_issue_lists.html'
+              - doc_title: Weight
+                doc_url: 'ee/user/project/issues/issue_weight.html'
+              - doc_title: Zoom meetings in issues
+                doc_url: 'ee/user/project/issues/associate_zoom_meeting.html'
+          - doc_title: Comments and threads
+            doc_url: 'ee/user/discussions/'
+          - doc_title: Tasks
+            doc_url: 'ee/user/tasks.html'
+          - doc_title: Requirements
+            doc_url: 'ee/user/project/requirements/'
+          - doc_title: Time tracking
+            doc_url: 'ee/user/project/time_tracking.html'
+          - doc_title: Customer relations (CRM)
+            doc_url: 'ee/user/crm/'
+          - doc_title: Wikis
+            doc_url: 'ee/user/project/wiki/'
+            docs:
+              - doc_title: Group wikis
+                doc_url: 'ee/user/project/wiki/group.html'
+          - doc_title: Epics
+            doc_url: 'ee/user/group/epics/'
+            docs:
+              - doc_title: Manage epics
+                doc_url: 'ee/user/group/epics/manage_epics.html'
+              - doc_title: Linked epics
+                doc_url: 'ee/user/group/epics/linked_epics.html'
+              - doc_title: Epic boards
+                doc_url: 'ee/user/group/epics/epic_boards.html'
+          - doc_title: Roadmaps
+            doc_url: 'ee/user/group/roadmap/'
+          - doc_title: Planning hierarchies
+            doc_url: 'ee/user/group/planning_hierarchy/'
+          - doc_title: Objectives and key results (OKR)
+            doc_url: 'ee/user/okrs.html'
+          - doc_title: Keyboard shortcuts
+            doc_url: 'ee/user/shortcuts.html'
+          - doc_title: Quick actions
+            doc_url: 'ee/user/project/quick_actions.html'
+            docs:
+              - doc_title: Autocomplete characters
+                doc_url: 'ee/user/project/autocomplete_characters.html'
+          - doc_title: Markdown
+            doc_url: 'ee/user/markdown.html'
+            docs:
+              - doc_title: AsciiDoc
+                doc_url: 'ee/user/asciidoc.html'
+              - doc_title: CSV files
+                doc_url: 'ee/user/project/repository/csv.html'
+          - doc_title: To-Do List
+            doc_url: 'ee/user/todos.html'
+          - doc_title: Using Git
+            doc_url: 'ee/topics/git/'
+            docs:
+              - doc_title: 'Tutorial: Make your first Git commit'
+                doc_url: 'ee/tutorials/make_your_first_git_commit.html'
+              - doc_title: Terminology
+                doc_url: 'ee/topics/git/terminology.html'
+              - doc_title: Installing Git
+                doc_url: 'ee/topics/git/how_to_install_git/'
+              - doc_title: Command line Git
+                doc_url: 'ee/gitlab-basics/start-using-git.html'
+              - doc_title: GitLab Flow
+                doc_url: 'ee/topics/gitlab_flow.html'
+              - doc_title: Add file to repository
+                doc_url: 'ee/gitlab-basics/add-file.html'
+              - doc_title: Partial clone
+                doc_url: 'ee/topics/git/partial_clone.html'
+              - doc_title: Rebase, force-push, merge conflicts
+                doc_url: 'ee/topics/git/git_rebase.html'
+              - doc_title: Undo options
+                doc_url: 'ee/topics/git/numerous_undo_possibilities_in_git/'
+              - doc_title: Frequently used commands
+                doc_url: 'ee/topics/git/useful_git_commands.html'
+                docs:
+                  - doc_title: Git add
+                    doc_url: 'ee/topics/git/git_add.html'
+                  - doc_title: Unstage
+                    doc_url: 'ee/topics/git/unstage.html'
+                  - doc_title: Git stash
+                    doc_url: 'ee/topics/git/stash.html'
+                  - doc_title: Push options
+                    doc_url: 'ee/user/project/push_options.html'
+                  - doc_title: Roll back commits
+                    doc_url: 'ee/topics/git/rollback_commits.html'
+                  - doc_title: Cherry-pick a commit
+                    doc_url: 'ee/topics/git/cherry_picking.html'
+                  - doc_title: Tags
+                    doc_url: 'ee/topics/git/tags.html'
+              - doc_title: Troubleshooting
+                doc_url: 'ee/topics/git/troubleshooting_git.html'
+      - category_title: Build your application
+        category_url: 'ee/topics/build_your_application.html'
+        docs:
+          - doc_title: Repositories
+            doc_url: 'ee/user/project/repository/'
+            docs:
+              - doc_title: Code owners
+                doc_url: 'ee/user/project/code_owners.html'
+              - doc_title: Snippets
+                doc_url: 'ee/user/snippets.html'
+              - doc_title: Branches
+                doc_url: 'ee/user/project/repository/branches/'
+              - doc_title: Changelogs
+                doc_url: 'ee/user/project/changelogs.html'
+              - doc_title: Default branch
+                doc_url: 'ee/user/project/repository/branches/default.html'
+              - doc_title: Forking workflow
+                doc_url: 'ee/user/project/repository/forking_workflow.html'
+              - doc_title: Git attributes
+                doc_url: 'ee/user/project/git_attributes.html'
+              - doc_title: Git LFS
+                doc_url: 'ee/topics/git/lfs/'
+              - doc_title: Jupyter notebook files
+                doc_url: 'ee/user/project/repository/jupyter_notebooks/'
+              - doc_title: Locked files
+                doc_url: 'ee/user/project/file_lock.html'
+              - doc_title: File Blame
+                doc_url: 'ee/user/project/repository/git_blame.html'
+              - doc_title: File History
+                doc_url: 'ee/user/project/repository/git_history.html'
+              - doc_title: Mirroring
+                doc_url: 'ee/user/project/repository/mirror/'
+                docs:
+                  - doc_title: Bidirectional mirroring
+                    doc_url: 'ee/user/project/repository/mirror/bidirectional.html'
+                  - doc_title: Pull mirroring
+                    doc_url: 'ee/user/project/repository/mirror/pull.html'
+                  - doc_title: Push mirroring
+                    doc_url: 'ee/user/project/repository/mirror/push.html'
+              - doc_title: Protected branches
+                doc_url: 'ee/user/project/protected_branches.html'
+              - doc_title: Protected tags
+                doc_url: 'ee/user/project/protected_tags.html'
+              - doc_title: Push rules
+                doc_url: 'ee/user/project/repository/push_rules.html'
+              - doc_title: Reduce repository size
+                doc_url: 'ee/user/project/repository/reducing_the_repo_size_using_git.html'
+              - doc_title: Sign commits with GPG
+                doc_url: 'ee/user/project/repository/gpg_signed_commits/'
+              - doc_title: Sign commits with SSH keys
+                doc_url: 'ee/user/project/repository/ssh_signed_commits/'
+              - doc_title: Sign commits and tags with X.509
+                doc_url: 'ee/user/project/repository/x509_signed_commits/'
+                docs:
+                  - doc_title: X509 signatures Rake task
+                    doc_url: 'ee/raketasks/x509_signatures.html'
+              - doc_title: Syntax highlighting
+                doc_url: 'ee/user/project/highlighting.html'
+              - doc_title: Web Editor
+                doc_url: 'ee/user/project/repository/web_editor.html'
+              - doc_title: Web IDE
+                doc_url: 'ee/user/project/web_ide/'
+              - doc_title: Web IDE Beta
+                doc_url: 'ee/user/project/web_ide_beta/'
+              - doc_title: Remote Development
+                doc_url: 'ee/user/project/remote_development/'
+              - doc_title: Managing large repositories
+                doc_url: 'ee/user/project/repository/managing_large_repositories.html'
+          - doc_title: Merge requests
+            doc_url: 'ee/user/project/merge_requests/'
+            docs:
+              - doc_title: Workflows
+                doc_url: 'ee/user/project/merge_requests/authorization_for_merge_requests.html'
+                docs:
+                  - doc_title: Collaborate across forks
+                    doc_url: 'ee/user/project/merge_requests/allow_collaboration.html'
+              - doc_title: Create merge requests
+                doc_url: 'ee/user/project/merge_requests/creating_merge_requests.html'
+              - doc_title: Changes
+                doc_url: 'ee/user/project/merge_requests/changes.html'
+              - doc_title: Approvals
+                doc_url: 'ee/user/project/merge_requests/approvals/'
+                docs:
+                  - doc_title: Approval rules
+                    doc_url: 'ee/user/project/merge_requests/approvals/rules.html'
+                  - doc_title: Approval settings
+                    doc_url: 'ee/user/project/merge_requests/approvals/settings.html'
+              - doc_title: Commit message templates
+                doc_url: 'ee/user/project/merge_requests/commit_templates.html'
+              - doc_title: Draft merge requests
+                doc_url: 'ee/user/project/merge_requests/drafts.html'
+              - doc_title: Confidential merge requests
+                doc_url: 'ee/user/project/merge_requests/confidential.html'
+              - doc_title: Reviewing and managing merge requests
+                doc_url: 'ee/user/project/merge_requests/reviews/'
+                docs:
+                  - doc_title: Suggestions
+                    doc_url: 'ee/user/project/merge_requests/reviews/suggestions.html'
+              - doc_title: Merge request widgets
+                doc_url: 'ee/user/project/merge_requests/widgets.html'
+              - doc_title: Merge methods
+                doc_url: 'ee/user/project/merge_requests/methods/'
+                docs:
+                  - doc_title: Squash and merge
+                    doc_url: 'ee/user/project/merge_requests/squash_and_merge.html'
+              - doc_title: Merge when pipeline succeeds
+                doc_url: 'ee/user/project/merge_requests/merge_when_pipeline_succeeds.html'
+              - doc_title: Merge conflicts
+                doc_url: 'ee/user/project/merge_requests/conflicts.html'
+              - doc_title: Reverting changes
+                doc_url: 'ee/user/project/merge_requests/revert_changes.html'
+              - doc_title: Cherry pick changes
+                doc_url: 'ee/user/project/merge_requests/cherry_pick_changes.html'
+              - doc_title: Versions
+                doc_url: 'ee/user/project/merge_requests/versions.html'
+              - doc_title: Export merge requests to CSV
+                doc_url: 'ee/user/project/merge_requests/csv_export.html'
+              - doc_title: External status checks
+                doc_url: 'ee/user/project/merge_requests/status_checks.html'
+              - doc_title: Merge request dependencies
+                doc_url: 'ee/user/project/merge_requests/dependencies.html'
+          - doc_title: CI/CD
+            doc_url: 'ee/ci/'
+            docs:
+              - doc_title: 'Tutorial: Create your first pipeline'
+                doc_url: 'ee/ci/quick_start/'
+                docs:
+                  - doc_title: CI/CD concepts
+                    doc_url: 'ee/ci/introduction/'
+                  - doc_title: Migrate from CircleCI
+                    doc_url: 'ee/ci/migration/circleci.html'
+                  - doc_title: Migrate from Jenkins
+                    doc_url: 'ee/ci/migration/jenkins.html'
+                  - doc_title: Enable or disable CI/CD
+                    doc_url: 'ee/ci/enable_or_disable_ci.html'
+              - doc_title: Pipelines
+                doc_url: 'ee/ci/pipelines/'
+                docs:
+                  - doc_title: Scheduled pipelines
+                    doc_url: 'ee/ci/pipelines/schedules.html'
+                  - doc_title: Trigger a pipeline
+                    doc_url: 'ee/ci/triggers/'
+                  - doc_title: Customize pipeline configuration
+                    doc_url: 'ee/ci/pipelines/settings.html'
+                  - doc_title: Pipeline architectures
+                    doc_url: 'ee/ci/pipelines/pipeline_architectures.html'
+                  - doc_title: Pipeline efficiency
+                    doc_url: 'ee/ci/pipelines/pipeline_efficiency.html'
+                  - doc_title: Pipeline resource groups
+                    doc_url: 'ee/ci/resource_groups/'
+                  - doc_title: Directed acyclic graph (DAG)
+                    doc_url: 'ee/ci/directed_acyclic_graph/'
+                  - doc_title: Downstream pipelines
+                    doc_url: 'ee/ci/pipelines/downstream_pipelines.html'
+                  - doc_title: Merge request pipelines
+                    doc_url: 'ee/ci/pipelines/merge_request_pipelines.html'
+                  - doc_title: Merged results pipelines
+                    doc_url: 'ee/ci/pipelines/merged_results_pipelines.html'
+                  - doc_title: Merge trains
+                    doc_url: 'ee/ci/pipelines/merge_trains.html'
+              - doc_title: Jobs
+                doc_url: 'ee/ci/jobs/'
+                docs:
+                  - doc_title: Choose when jobs run
+                    doc_url: 'ee/ci/jobs/job_control.html'
+                  - doc_title: CI/CD job token
+                    doc_url: 'ee/ci/jobs/ci_job_token.html'
+                  - doc_title: Access a terminal for a running job
+                    doc_url: 'ee/ci/interactive_web_terminal/'
+                  - doc_title: Format scripts and job logs
+                    doc_url: 'ee/ci/yaml/script.html'
+                  - doc_title: Git submodules
+                    doc_url: 'ee/ci/git_submodules.html'
+              - doc_title: Variables
+                doc_url: 'ee/ci/variables/'
+                docs:
+                  - doc_title: Predefined variables
+                    doc_url: 'ee/ci/variables/predefined_variables.html'
+                  - doc_title: Where variables can be used
+                    doc_url: 'ee/ci/variables/where_variables_can_be_used.html'
+                  - doc_title: Secure Files
+                    doc_url: 'ee/ci/secure_files/'
+              - doc_title: Cache and artifacts
+                doc_url: 'ee/ci/caching/'
+                docs:
+                  - doc_title: Job artifacts
+                    doc_url: 'ee/ci/pipelines/job_artifacts.html'
+                  - doc_title: Pipeline artifacts
+                    doc_url: 'ee/ci/pipelines/pipeline_artifacts.html'
+              - doc_title: '.gitlab-ci.yml'
+                doc_url: 'ee/ci/yaml/gitlab_ci_yaml.html'
+                docs:
+                  - doc_title: '.gitlab-ci.yml reference'
+                    doc_url: 'ee/ci/yaml/'
+                  - doc_title: 'Optimize your YAML files'
+                    doc_url: 'ee/ci/yaml/yaml_optimization.html'
+                  - doc_title: Validate syntax
+                    doc_url: 'ee/ci/lint.html'
+                  - doc_title: Pipeline Editor
+                    doc_url: 'ee/ci/pipeline_editor/'
+                  - doc_title: Artifacts reports
+                    doc_url: 'ee/ci/yaml/artifacts_reports.html'
+                  - doc_title: Include examples
+                    doc_url: 'ee/ci/yaml/includes.html'
+                  - doc_title: Workflow examples
+                    doc_url: 'ee/ci/yaml/workflow.html'
+              - doc_title: Docker
+                doc_url: 'ee/ci/docker/'
+                docs:
+                  - doc_title: Run CI/CD jobs in Docker containers
+                    doc_url: 'ee/ci/docker/using_docker_images.html'
+                  - doc_title: Use Docker to build Docker images
+                    doc_url: 'ee/ci/docker/using_docker_build.html'
+                  - doc_title: Use kaniko to build Docker images
+                    doc_url: 'ee/ci/docker/using_kaniko.html'
+              - doc_title: Services
+                doc_url: 'ee/ci/services/'
+                docs:
+                  - doc_title: MySQL service
+                    doc_url: 'ee/ci/services/mysql.html'
+                  - doc_title: PostgreSQL service
+                    doc_url: 'ee/ci/services/postgres.html'
+                  - doc_title: Redis service
+                    doc_url: 'ee/ci/services/redis.html'
+                  - doc_title: GitLab as a service
+                    doc_url: 'ee/ci/services/gitlab.html'
+              - doc_title: Auto DevOps
+                doc_url: 'ee/topics/autodevops/'
+                docs:
+                  - doc_title: Requirements
+                    doc_url: 'ee/topics/autodevops/requirements.html'
+                  - doc_title: Stages
+                    doc_url: 'ee/topics/autodevops/stages.html'
+                  - doc_title: Customize
+                    doc_url: 'ee/topics/autodevops/customize.html'
+                    docs:
+                      - doc_title: CI/CD variables
+                        doc_url: 'ee/topics/autodevops/cicd_variables.html'
+                      - doc_title: Multiple Kubernetes clusters
+                        doc_url: 'ee/topics/autodevops/multiple_clusters_auto_devops.html'
+                  - doc_title: Upgrade PostgreSQL
+                    doc_url: 'ee/topics/autodevops/upgrading_postgresql.html'
+                  - doc_title: Prepare for deployment
+                    doc_url: 'ee/topics/autodevops/prepare_deployment.html'
+                  - doc_title: Upgrade Auto Deploy dependencies
+                    doc_url: 'ee/topics/autodevops/upgrading_auto_deploy_dependencies.html'
+                  - doc_title: Deploy to GKE
+                    doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_gke.html'
+                  - doc_title: Deploy to ECS
+                    doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_ecs.html'
+                  - doc_title: Deploy to EC2
+                    doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_ec2.html'
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/topics/autodevops/troubleshooting.html'
+              - doc_title: Testing
+                doc_url: 'ee/ci/testing/'
+                docs:
+                  - doc_title: Accessibility testing
+                    doc_url: 'ee/ci/testing/accessibility_testing.html'
+                  - doc_title: Browser performance testing
+                    doc_url: 'ee/ci/testing/browser_performance_testing.html'
+                  - doc_title: Code quality
+                    doc_url: 'ee/ci/testing/code_quality.html'
+                  - doc_title: Fail fast testing
+                    doc_url: 'ee/ci/testing/fail_fast_testing.html'
+                  - doc_title: Load performance testing
+                    doc_url: 'ee/ci/testing/load_performance_testing.html'
+                  - doc_title: Metrics reports
+                    doc_url: 'ee/ci/testing/metrics_reports.html'
+                  - doc_title: Test cases
+                    doc_url: 'ee/ci/test_cases/'
+                  - doc_title: Test coverage visualization
+                    doc_url: 'ee/ci/testing/test_coverage_visualization.html'
+                  - doc_title: Unit test reports
+                    doc_url: 'ee/ci/testing/unit_test_reports.html'
+                  - doc_title: Unit test report examples
+                    doc_url: 'ee/ci/testing/unit_test_report_examples.html'
+              - doc_title: SSH keys
+                doc_url: 'ee/ci/ssh_keys/'
+              - doc_title: External secrets
+                doc_url: 'ee/ci/secrets/'
+                docs:
+                  - doc_title: ID token authentication
+                    doc_url: 'ee/ci/secrets/id_token_authentication.html'
+              - doc_title: Connect to cloud services
+                doc_url: 'ee/ci/cloud_services/'
+                docs:
+                  - doc_title: Authenticating with HashiCorp Vault
+                    doc_url: 'ee/ci/examples/authenticating-with-hashicorp-vault/'
+                  - doc_title: Configure OpenID Connect in AWS
+                    doc_url: 'ee/ci/cloud_services/aws/'
+                  - doc_title: Configure OpenID Connect in Azure
+                    doc_url: 'ee/ci/cloud_services/azure/'
+                  - doc_title: Configure OpenID Connect with Google Cloud
+                    doc_url: 'ee/ci/cloud_services/google_cloud/'
+              - doc_title: ChatOps
+                doc_url: 'ee/ci/chatops/'
+              - doc_title: Mobile DevOps
+                doc_url: 'ee/ci/mobile_devops.html'
+              - doc_title: External repository integrations
+                doc_url: 'ee/ci/ci_cd_for_external_repos/'
+                docs:
+                  - doc_title: Bitbucket Cloud
+                    doc_url: 'ee/ci/ci_cd_for_external_repos/bitbucket_integration.html'
+                  - doc_title: GitHub
+                    doc_url: 'ee/ci/ci_cd_for_external_repos/github_integration.html'
+              - doc_title: CI/CD examples
+                doc_url: 'ee/ci/examples/'
+                docs:
+                  - doc_title: Deployment with Dpl
+                    doc_url: 'ee/ci/examples/deployment/'
+                  - doc_title: End-to-end testing
+                    doc_url: 'ee/ci/examples/end_to_end_testing_webdriverio/'
+                  - doc_title: NPM with semantic-release
+                    doc_url: 'ee/ci/examples/semantic-release.html'
+                  - doc_title: PHP with PHPunit and atoum
+                    doc_url: 'ee/ci/examples/php.html'
+                  - doc_title: PHP with NPM and SCP
+                    doc_url: 'ee/ci/examples/deployment/composer-npm-deploy.html'
+                  - doc_title: PHP with Laravel and Envoy
+                    doc_url: 'ee/ci/examples/laravel_with_gitlab_and_envoy/'
+              - doc_title: Troubleshooting
+                doc_url: 'ee/ci/troubleshooting.html'
+          - doc_title: Runners
+            doc_url: 'runner/'
+            docs:
+              - doc_title: Runner SaaS
+                doc_url: 'ee/ci/runners/'
+                docs:
+                  - doc_title: Linux
+                    doc_url: 'ee/ci/runners/saas/linux_saas_runner.html'
+                  - doc_title: macOS
+                    doc_url: 'ee/ci/runners/saas/macos_saas_runner.html'

@@ -53,5 +53,44 @@ module Nanoc::Helpers
     def show_banner?
       @items['/_data/banner.yaml'][:show_banner]
     end
+
+    #
+    # Returns global nav sections.
+    #
+    def get_nav_sections
+      @items['/_data/navigation.yaml'][:sections]
+    end
+
+    #
+    # Get the top-level section for a page, based on the global navigation.
+    #
+    def docs_section(path)
+      path = path[1..] # remove the leading slash
+
+      get_nav_sections.each do |section|
+        section_title = section[:section_title]
+        return section_title if section[:section_url] == path
+
+        section.fetch(:section_categories, []).each do |category|
+          return section_title if category[:category_url] == path
+          next unless category[:docs]
+          return section_title if section_exists?(category[:docs], path)
+        end
+      end
+      nil
+    end
+
+    def section_exists?(docs, path)
+      docs.each do |doc|
+        return true if doc[:doc_url] == path
+
+        sub_docs = doc[:docs]
+        next unless sub_docs
+
+        return true if section_exists?(sub_docs, path)
+      end
+
+      false
+    end
   end
 end
