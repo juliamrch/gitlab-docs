@@ -100,9 +100,14 @@ export default {
       this.response = await this.fetchGoogleResults();
       this.results = this.response.items ? this.response.items : [];
       this.loading = false;
-
       this.submitted = true;
       updateURLParams(this.query);
+
+      // Add a relative link to each result object.
+      this.results = this.results.map((obj) => ({
+        ...obj,
+        relativeLink: obj.link.replace('https://docs.gitlab.com/', '/'),
+      }));
     },
   },
 };
@@ -125,7 +130,7 @@ export default {
     >
       <li v-for="result in results" :key="result.cacheId" class="gl-mb-5!">
         <gl-link
-          :href="`${result.link}`"
+          :href="`${result.relativeLink}`"
           class="gl-font-lg gl-border-bottom-0! gl-hover-text-decoration-underline:hover gl-mb-2"
           >{{ cleanTitle(result.title) }}</gl-link
         >
