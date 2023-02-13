@@ -2427,6 +2427,8 @@ sections:
                 doc_url: 'ee/api/markdown.html'
               - doc_title: Maven
                 doc_url: 'ee/api/packages/maven.html'
+              - doc_title: Member Roles
+                doc_url: 'ee/api/member_roles.html'
               - doc_title: Members
                 doc_url: 'ee/api/members.html'
               - doc_title: Merge request approvals
