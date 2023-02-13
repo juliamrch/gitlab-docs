@@ -26,7 +26,7 @@ group :test, :development do
   gem 'simplecov', '~> 0.22.0', require: false
   gem 'simplecov-cobertura', '~> 2.1.0', require: false
   gem 'pry-byebug', '~> 3.10.1', require: false
-  gem 'gitlab-styles', '~> 9.2.0', require: false
+  gem 'gitlab-styles', '~> 10.0.0', require: false
   gem "webrick", "~> 1.8", ">= 1.8.1"
 end
 
