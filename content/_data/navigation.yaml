@@ -498,6 +498,11 @@ sections:
     section_categories:
       - category_title: Get started
         category_url: 'ee/administration/get_started.html'
+      - category_title: All feature flags
+        category_url: 'ee/user/feature_flags.html'
+        docs:
+          - doc_title: Enable features behind feature flags
+            doc_url: 'ee/administration/feature_flags.html'
       - category_title: Configure your installation
         category_url: 'ee/administration/configure.html'
         docs:
@@ -597,10 +602,6 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/external_authorization.html'
               - doc_title: External pipeline validation
                 doc_url: 'ee/administration/external_pipeline_validation.html'
-              - doc_title: Enable features with feature flags
-                doc_url: 'ee/administration/feature_flags.html'
-              - doc_title: Available GitLab feature flags
-                doc_url: 'ee/user/feature_flags.html'
               - doc_title: Federated Learning of Cohorts (FLoC)
                 doc_url: 'ee/user/admin_area/settings/floc.html'
               - doc_title: Geo sites
