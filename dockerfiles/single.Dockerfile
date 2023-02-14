@@ -75,7 +75,7 @@ WORKDIR /source
 RUN yarn install --frozen-lockfile                              \
     && yarn cache clean                                         \
     && bundle config set --local deployment true                \
-    && bundle install --jobs 4                                  \
+    && bundle install                                           \
     && bundle exec rake default                                 \
     && bundle exec nanoc compile -VV
 

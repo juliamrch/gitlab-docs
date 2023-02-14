@@ -52,4 +52,4 @@ RUN printf "\n\e[32mINFO: Installing Node.js and Ruby dependencies..\e[39m\n" \
   && yarn install --frozen-lockfile \
   && yarn cache clean --all \
   && bundle update --bundler \
-  && bundle install --jobs 4
+  && bundle install
