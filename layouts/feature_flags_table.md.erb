@@ -18,12 +18,9 @@ end
 
 The feature flags available to you depend on:
 
-- Whether you use the GitLab Community Edition or GitLab Enterprise Edition [software distribution](https://about.gitlab.com/install/ce-or-ee/).
-- The version of GitLab you use.
-- Whether the feature is enabled or disabled on your GitLab self-managed instance or GitLab
-  SaaS.
-
-The following sections describe the **default** state of each feature flag.
+- The edition of GitLab: [Community Edition or Enterprise Edition](https://about.gitlab.com/install/ce-or-ee/).
+- The version of GitLab: For example, 15.8 or 16.0.
+- The installation of GitLab: self-managed or GitLab.com.
 
 <% feature_flags_yaml[:products].each do |product, ffs| %>
 ### <%= product %>
@@ -42,8 +39,7 @@ The following sections describe the **default** state of each feature flag.
 ## Ownership by group
 
 GitLab features are developed by
-[engineering groups](https://about.gitlab.com/handbook/product/categories/) that implement features
-using feature flags.
+[engineering groups](https://about.gitlab.com/handbook/product/categories/).
 
 <% all_ffs = feature_flags_yaml[:products].map { |_, ffs| ffs }.flatten %>
 <% ff_groups = all_ffs.group_by { |ff| ff[:group] || 'Not defined' }.sort_by { |group, _| group } %>
@@ -58,7 +54,7 @@ using feature flags.
 GitLab features [are delivered](https://about.gitlab.com/handbook/engineering/releases/):
 
 - Continuously for GitLab SaaS.
-- On the 22nd of every month according to specific milestones for GitLab self-managed.
+- On the 22nd of every month for GitLab self-managed.
 
 <% all_ffs = feature_flags_yaml[:products].map { |_, ffs| ffs }.flatten %>
 <% ff_milestones = all_ffs.group_by { |ff| ff[:milestone].to_s || 'Not defined' }.sort_by { |milestone, _| milestone } %>
