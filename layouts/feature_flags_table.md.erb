@@ -30,11 +30,11 @@ The following sections describe the **default** state of each feature flag.
 
 <%= ffs.count %> feature flags are available in <%= product %>.
 
-<% sorted_ff = ffs.sort_by { |ff| ff[:name] } %>
+<% sorted_ff = ffs.sort_by { |ff| ff[:milestone].to_f } %>
 
 | Name | Group  | Milestone | Default state | Rollout issue |
 |------|--------|-----------|---------------|---------------|
-<% sorted_ff.each do |ff| %>| <%= ff[:introduced_by_url] ? "[`#{ff[:name]}`](#{ff[:introduced_by_url]})" : "`#{ff[:name]}`" %> | `<%= ff[:group] || 'Not defined' %>` | <%= ff[:milestone] || 'Not defined' %> | <%= enabled_state(ff) %> | <%= ff[:rollout_issue_url] ? "<#{ff[:rollout_issue_url]}>" : 'Not defined' %> |
+<% sorted_ff.reverse.each do |ff| %>| <%= ff[:introduced_by_url] ? "[`#{ff[:name]}`](#{ff[:introduced_by_url]})" : "`#{ff[:name]}`" %> | `<%= ff[:group] || 'Not defined' %>` | <%= ff[:milestone] || 'Not defined' %> | <%= enabled_state(ff) %> | <%= ff[:rollout_issue_url] ? "<#{ff[:rollout_issue_url]}>" : 'Not defined' %> |
 <% end %>
 
 <% end %>
@@ -65,6 +65,6 @@ GitLab features [are delivered](https://about.gitlab.com/handbook/engineering/re
 
 | Milestone | Count | Enabled | Disabled |
 |-----------|-------|---------|----------|
-<% ff_milestones.each do |milestone, ffs| %> | <%= milestone %> | <%= ffs.count %> | <%= enabled_count(ffs) %> | <%= disabled_count(ffs) %> |
+<% ff_milestones.reverse.each do |milestone, ffs| %> | <%= milestone %> | <%= ffs.count %> | <%= enabled_count(ffs) %> | <%= disabled_count(ffs) %> |
 <% end %>
 <% end %>
