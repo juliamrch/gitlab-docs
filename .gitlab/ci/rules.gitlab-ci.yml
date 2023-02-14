@@ -13,7 +13,7 @@ default:
     - gem --version
     - bundle --version
     - bundle config set --local deployment true  # Install dependencies into ./vendor/bundle
-    - bundle install --jobs 4
+    - bundle install
   cache:
     key:
       files:
@@ -27,7 +27,7 @@ default:
     - gem --version
     - bundle --version
     - bundle config set --local deployment true  # Install dependencies into ./vendor/bundle
-    - bundle install --jobs 4
+    - bundle install
     - node --version
     - yarn --version
     - yarn install --frozen-lockfile --cache-folder .yarn-cache
