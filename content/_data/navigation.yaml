@@ -1113,6 +1113,8 @@ sections:
             docs:
               - doc_title: License Compliance
                 doc_url: 'ee/user/compliance/license_compliance/'
+              - doc_title: License scanning of CycloneDX files
+                doc_url: 'ee/user/compliance/license_scanning_of_cyclonedx_files/'
               - doc_title: SPDX license list import Rake task
                 doc_url: 'ee/raketasks/spdx.html'
               - doc_title: Compliance report
