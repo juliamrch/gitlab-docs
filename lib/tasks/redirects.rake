@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require './lib/tasks/task_helpers'
 require 'date'
 require 'pathname'

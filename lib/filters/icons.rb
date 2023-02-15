@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-#
+
 # This allows us to add icons to our documentation using standard Markdown
 #
 # Usage: `**{<icon-name>, <optional-size>, <optional-class>}**`
@@ -20,7 +20,7 @@ class IconsFilter < Nanoc::Filter
   ICON_HTML_PATTERN = %r{<strong>#{ICON_PATTERN}</strong>}.freeze
   ICON_MARKDOWN_PATTERN = %r{\*\*#{ICON_PATTERN}\*\*}.freeze
 
-  def run(content, params = {})
+  def run(content, _params = {})
     content.gsub(ICON_HTML_PATTERN) { generate(Regexp.last_match(1), Regexp.last_match(2), Regexp.last_match(3)) }
   end
 

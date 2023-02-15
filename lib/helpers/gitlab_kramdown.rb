@@ -3,7 +3,7 @@
 module Nanoc::Helpers
   module GitLabKramdown
     require 'kramdown'
-    def markdown(item, params = {})
+    def markdown(item, _params = {})
       Nanoc::Filters::GitLabKramdown.new.run(
         item,
         {
