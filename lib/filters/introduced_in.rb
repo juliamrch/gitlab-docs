@@ -1,10 +1,10 @@
 # frozen_string_literal: true
-#
+
 # Adapted from the admonition code on http://nanoc.ws/
 class IntroducedInFilter < Nanoc::Filter
   identifier :introduced_in
 
-  def run(content, params = {})
+  def run(content, _params = {})
     # `#dup` is necessary because `.fragment` modifies the incoming string. Ew!
     # See https://github.com/sparklemotion/nokogiri/issues/1077
     @incremental_id = 0

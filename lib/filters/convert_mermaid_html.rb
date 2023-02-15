@@ -5,7 +5,7 @@ class ConvertMermaidHtml < Nanoc::Filter
 
   MERMAID_HTML_PATTERN = %r{<div\ class="mermaid">(?<mermaid_content>.*?)</div>}mx.freeze
 
-  def run(content, params = {})
+  def run(content, _params = {})
     content.gsub(MERMAID_HTML_PATTERN) { generate(Regexp.last_match[:mermaid_content]) }
   end
 

@@ -33,7 +33,7 @@ class BadgesFilter < Nanoc::Filter
     (?:$|[^`]) # must end of line or anything except backtick
   }x.freeze
 
-  def run(content, params = {})
+  def run(content, _params = {})
     content.gsub(BADGES_HTML_PATTERN) { generate(Regexp.last_match[:tier].downcase, Regexp.last_match[:type]) }
   end
 
