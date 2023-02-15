@@ -20,13 +20,13 @@
 
 sections:
   # Documentation from https://gitlab.com/gitlab-org/gitlab
-  - section_title: GitLab Docs
+  - section_title: Home
     section_url: 'ee/'
 
-  - section_title: Learn GitLab with tutorials
+  - section_title: Tutorials
     section_url: 'ee/tutorials/'
 
-  - section_title: Manage GitLab subscription
+  - section_title: Subscribe
     section_url: 'ee/subscriptions/'
     section_categories:
       - category_title: GitLab SaaS subscriptions
@@ -56,7 +56,7 @@ sections:
 
   # INSTALLATION
 
-  - section_title: Install GitLab
+  - section_title: Install
     section_url: 'ee/install/'
     section_categories:
       - category_title: Requirements
@@ -435,30 +435,29 @@ sections:
 
   # Documentation from https://gitlab.com/gitlab-org/gitlab-runner
 
-  - section_title: Install GitLab Runner
-    section_url: 'runner/install/'
-    section_categories:
-      - category_title: Linux
-        category_url: 'runner/install/linux-repository.html'
-      - category_title: Linux manual install
-        category_url: 'runner/install/linux-manually.html'
-      - category_title: FreeBSD
-        category_url: 'runner/install/freebsd.html'
-      - category_title: macOS
-        category_url: 'runner/install/osx.html'
-      - category_title: Windows
-        category_url: 'runner/install/windows.html'
-      - category_title: Docker
-        category_url: 'runner/install/docker.html'
-      - category_title: Helm chart
-        category_url: 'runner/install/kubernetes.html'
-      - category_title: GitLab agent
-        category_url: 'runner/install/kubernetes-agent.html'
-      - category_title: Operator
-        category_url: 'runner/install/operator.html'
-      - category_title: Bleeding edge releases
-        category_url: 'runner/install/bleeding-edge.html'
-
+      - category_title: Install GitLab Runner
+        category_url: 'runner/install/'
+        docs:
+          - doc_title: Linux
+            doc_url: 'runner/install/linux-repository.html'
+          - doc_title: Linux manual install
+            doc_url: 'runner/install/linux-manually.html'
+          - doc_title: FreeBSD
+            doc_url: 'runner/install/freebsd.html'
+          - doc_title: macOS
+            doc_url: 'runner/install/osx.html'
+          - doc_title: Windows
+            doc_url: 'runner/install/windows.html'
+          - doc_title: Docker
+            doc_url: 'runner/install/docker.html'
+          - doc_title: Helm chart
+            doc_url: 'runner/install/kubernetes.html'
+          - doc_title: GitLab agent
+            doc_url: 'runner/install/kubernetes-agent.html'
+          - doc_title: Operator
+            doc_url: 'runner/install/operator.html'
+          - doc_title: Bleeding edge releases
+            doc_url: 'runner/install/bleeding-edge.html'
       - category_title: Configure GitLab Runner
         category_url: 'runner/configuration/'
         docs:
@@ -488,12 +487,12 @@ sections:
             doc_url: 'runner/configuration/init.html'
           - doc_title: Speed up job execution
             doc_url: 'runner/configuration/speed_up_job_execution.html'
-      - category_title: Troubleshooting
-        category_url: 'runner/faq/'
+          - doc_title: Troubleshooting
+            doc_url: 'runner/faq/'
 
   # ADMINISTRATION
 
-  - section_title: Administer GitLab
+  - section_title: Administer
     section_url: 'ee/administration/'
     section_categories:
       - category_title: Get started
@@ -2133,7 +2132,7 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/usage_statistics.html'
               - doc_title: Web exporter
                 doc_url: 'ee/administration/monitoring/prometheus/web_exporter.html'
-  - section_title: Develop with GitLab
+  - section_title: Develop
     section_url: 'ee/api/'
     section_categories:
       - category_title: Integrations
@@ -2631,7 +2630,7 @@ sections:
   # - https://gitlab.com/gitlab-org/charts/gitlab
   #
   # GitLab
-  - section_title: Contribute to GitLab development
+  - section_title: Contribute
     section_url: 'ee/development/'
     section_categories:
       # GitLab app development documentation
