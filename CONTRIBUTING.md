@@ -13,28 +13,27 @@ terms.
 
 ## Ownership
 
-The [Editor group](https://about.gitlab.com/handbook/product/categories/#editor-group)
-in the DevOps Create stage is the team responsible for developing and
-maintaining this project with the Technical Writing team.
-
-[Jacques Erasmus](https://gitlab.com/jerasmus) is in charge of scheduling work
-from this project in the [Editor group](https://about.gitlab.com/handbook/product/categories/#editor-group),
-and the DRI is [Susan Tacker](https://gitlab.com/susantacker), Senior Manager,
-Technical Writing.
+[Susan Tacker](https://gitlab.com/susantacker), Director, Technical Writing, is the DRI for this project.
 
 ## Contribution process
 
-The DRI and the EM will prioritize and schedule improvements to the docs
-site. Workflow labels (`docs-site::*` and `workflow::*`), as well as priority
-labels `P*` should be handled **exclusively** by them.
+When creating issues, merge requests, and epics related to <https://docs.gitlab.com>:
 
-When creating issues, merge requests, and epics related to <https://docs.gitlab.com>,
-add the label ~"Category:Docs Site" plus ~frontend, and/or ~backend, and/or
-~UX, accordingly.
+1. Add the label ~"Category:Docs Site".
+1. Add the labels ~frontend, ~backend, or ~UX as required.
+
+See the available [issue templates](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/.gitlab/issue_templates) and
+[merge request templates](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/.gitlab/merge_request_templates).
 
 ### Code review guidelines
 
-You're very welcome to contribute to this project. Once you've verified that
-your code is working, assign the MR to a [reviewer](https://about.gitlab.com/handbook/engineering/projects/#gitlab-docs)
-of the changed subject. Once the review is complete, assign a maintainer to
-merge your changes.
+You're very welcome to contribute to this project.
+
+When contributing:
+
+- Code, assign merge requests to a [code owner](CODEOWNERS) for review.
+- Global navigation updates, assign merge requests to the
+  [assigned technical writer](https://about.gitlab.com/handbook/product/ux/technical-writing/#assignments) for the
+  relevant group or project for review. At mention [Suzanne Selhorn](https://gitlab.com/sselhorn), Staff Technical Writer. 
+
+For any other updates, assign to any technical writer for review.
