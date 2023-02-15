@@ -44,14 +44,28 @@ We can then loop over the `versions` array with something like:
 Note that the data file must have the `yaml` extension (not `yml`) and that
 we reference the array with a symbol (`:versions`).
 
-## Modern JavaScript
+## JavaScript
 
-A lot of the JavaScript can be found in [`content/assets/javascripts/`](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/content/assets/javascripts/content/assets/javascripts).
-The files in this directory are handcrafted `ES5` JavaScript files.
+[Rollup](https://rollupjs.org/) is used on this project to bundle JavaScript into modules. See [rollup.config.js](../rollup.config.js) for configuration details.
 
-We've [recently introduced](https://gitlab.com/gitlab-org/gitlab-docs/merge_requests/577)
-the ability to write modern JavaScript. All modern JavaScript should be added to
-the [content/frontend/](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/content/frontend) directory.
+All new JavaScript should be added to the [content/frontend/](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/content/frontend) directory.
+
+Legacy JavaScript can be found in [`content/assets/javascripts/`](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/content/assets/javascripts/content/assets/javascripts).
+The files in this directory are handcrafted `ES5` JavaScript files. Work is [ongoing](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/439) to modernize these files.
+
+### Development using Rollup watch mode
+
+If you're working with files within the `/content/frontend/` directory, you can speed up compile time by using
+[Rollup's `watch` mode](https://rollupjs.org/command-line-interface/#w-watch). This generates a new bundle when any of
+the files in `/content/frontend/` are changed on disk.
+
+To start Rollup in watch mode, run:
+
+```shell
+yarn watch
+```
+
+Changes made outside of the `/content/frontend/` directory require a full `make compile` to be previewable.
 
 ### Add a new bundle
 

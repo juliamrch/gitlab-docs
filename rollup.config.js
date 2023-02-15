@@ -22,6 +22,7 @@ module.exports = glob.sync('content/frontend/**/*.js').map((file) => ({
     format: 'iife',
     name: file,
   },
+  cache: true,
   plugins: [
     nodeResolve({ browser: true, preferBuiltins: false }),
     commonjs({
