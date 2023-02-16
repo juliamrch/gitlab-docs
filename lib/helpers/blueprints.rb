@@ -2,7 +2,7 @@
 
 module Nanoc::Helpers
   module Blueprints
-    BLUEPRINTS_PATH = '/ee/architecture/blueprints/*/index.md'.freeze
+    BLUEPRINTS_PATH = '/ee/architecture/blueprints/*/index.md'
 
     def all_blueprints
       blueprints = @items.find_all(BLUEPRINTS_PATH).sort_by do |i|

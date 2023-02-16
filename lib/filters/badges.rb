@@ -42,10 +42,10 @@ class BadgesFilter < Nanoc::Filter
   end
 
   def generate(tier, type)
-    if !type.nil?
-      %(<span class="badge-trigger #{tier}-#{type.downcase}"></span>)
-    else
+    if type.nil?
       %(<span class="badge-trigger #{tier}"></span>)
+    else
+      %(<span class="badge-trigger #{tier}-#{type.downcase}"></span>)
     end
   end
 end
