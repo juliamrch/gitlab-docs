@@ -2178,7 +2178,7 @@ sections:
                 doc_url: 'ee/user/project/integrations/redmine.html'
               - doc_title: YouTrack
                 doc_url: 'ee/user/project/integrations/youtrack.html'
-              - doc_title: ZenTao
+              - doc_title: ZenTao (deprecated)
                 doc_url: 'ee/user/project/integrations/zentao.html'
           - doc_title: GitHub
             doc_url: 'ee/user/project/integrations/github.html'
@@ -2251,7 +2251,7 @@ sections:
             doc_url: 'ee/integration/security_partners/'
           - doc_title: ServiceNow
             doc_url: 'ee/user/project/integrations/servicenow.html'
-          - doc_title: Shimo
+          - doc_title: Shimo (deprecated)
             doc_url: 'ee/user/project/integrations/shimo.html'
           - doc_title: Slack application
             doc_url: 'ee/user/project/integrations/gitlab_slack_application.html'
