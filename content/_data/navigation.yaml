@@ -17,6 +17,13 @@
 # Options:
 #
 # - Use "external_url: true" for external URLs in docs and categories
+#
+# Section titles:
+#
+# Section titles are also used as options for filtering search results.
+# If you add, edit, or remove a section_title, you will need to also update
+# the filters in /content/frontend/search/components/search_filters.vue.
+# You may want to get a frontend engineer to assist with this.
 
 sections:
   # Documentation from https://gitlab.com/gitlab-org/gitlab
