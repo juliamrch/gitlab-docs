@@ -3251,66 +3251,6 @@ sections:
             doc_url: 'ee/development/pipelines/'
       # End of GitLab app development documentation
 
-      # Omnibus GitLab development documentation
-      - category_title: Contribute to Omnibus GitLab
-        category_url: 'omnibus/development/'
-        docs:
-          - doc_title: Get started
-            doc_url: 'omnibus/development/contribute-to-omnibus-gitlab.html'
-          - doc_title: Build locally
-            doc_url: 'omnibus/build/'
-            docs:
-              - doc_title: Build Omnibus GitLab package
-                doc_url: 'omnibus/build/build_package.html'
-              - doc_title: Build all-in-one Docker image
-                doc_url: 'omnibus/build/build_docker_image.html'
-              - doc_title: Information for GitLab team members
-                doc_url: 'omnibus/build/team_member_docs.html'
-          - doc_title: Set up a development environment
-            doc_url: 'omnibus/development/setup.html'
-          - doc_title: CI variables
-            doc_url: 'omnibus/development/ci-variables.html'
-          - doc_title: Change package behavior
-            doc_url: 'omnibus/development/change-package-behavior.html'
-          - doc_title: Change YAML config options
-            doc_url: 'omnibus/settings/gitlab.yml.html'
-          - doc_title: Add deprecation messages
-            doc_url: 'omnibus/development/adding-deprecation-messages.html'
-          - doc_title: Add new gitlab-ctl commands
-            doc_url: 'omnibus/development/gitlab-ctl-commands.html'
-          - doc_title: Add new services
-            doc_url: 'omnibus/development/new-services.html'
-          - doc_title: Add new software definitions
-            doc_url: 'omnibus/development/new-software-definition.html'
-          - doc_title: Create patches
-            doc_url: 'omnibus/development/creating-patches.html'
-          - doc_title: Add or remove configuration options
-            doc_url: 'omnibus/development/add-remove-configuration-options.html'
-          - doc_title: Manage PostgreSQL versions
-            doc_url: 'omnibus/development/managing-postgresql-versions.html'
-          - doc_title: Omnibus mirror
-            doc_url: 'omnibus/development/omnibus-mirror.html'
-          - doc_title: Version format for the packages and Docker images
-            doc_url: 'omnibus/development/package_version_format.html'
-          - doc_title: Pipelines
-            doc_url: 'omnibus/development/pipelines.html'
-          - doc_title: Work with public_attributes.json
-            doc_url: 'omnibus/development/public-attributes.html'
-          - doc_title: Upgrade Chef
-            doc_url: 'omnibus/development/upgrading-chef.html'
-          - doc_title: Handle vulnerabilities
-            doc_url: 'omnibus/development/vulnerabilities.html'
-          - doc_title: Handle broken master pipelines
-            doc_url: 'omnibus/development/broken_master.html'
-          - doc_title: Deprecate and remove support for an OS
-            doc_url: 'omnibus/development/deprecating-and-removing-support-for-an-os.html'
-      # End Omnibus GitLab development documentation
-
-      # GitLab Pages development documentation
-      - category_title: Contribute to GitLab Pages
-        category_url: 'ee/development/pages/'
-      # End GitLab Pages development documentation
-
       # GitLab Runner development documentation
       - category_title: Contribute to GitLab Runner
         category_url: 'runner/development/'
@@ -3321,32 +3261,101 @@ sections:
             doc_url: 'runner/development/add-windows-version.html'
       # End GitLab Runner development documentation
 
-      # GitLab Helm charts development documentation
-      - category_title: Contribute to GitLab Helm charts
-        category_url: 'charts/development/'
+      # GitLab Pages development documentation
+      - category_title: Contribute to GitLab Pages
+        category_url: 'ee/development/pages/'
+      # End GitLab Pages development documentation
+
+      # Distribution development documentation
+      - category_title: Contribute to GitLab Distribution
+        category_url: 'ee/development/distribution/'
         docs:
-          - doc_title: Architecture of Cloud native GitLab Helm charts
-            doc_url: 'charts/architecture/'
+          # Omnibus GitLab development documentation
+          - doc_title: Contribute to Omnibus GitLab
+            doc_url: 'omnibus/development/'
             docs:
-              - doc_title: Backup and Restore
-                doc_url: 'charts/architecture/backup-restore.html'
-              - doc_title: Goals
-                doc_url: 'charts/architecture/goals.html'
-              - doc_title: Architecture
-                doc_url: 'charts/architecture/architecture.html'
-              - doc_title: Design Decisions
-                doc_url: 'charts/architecture/decisions.html'
-              - doc_title: Resource Usage
-                doc_url: 'charts/architecture/resource-usage.html'
-          - doc_title: Environment setup
-            doc_url: 'charts/development/environment_setup.html'
-          - doc_title: Style guide
-            doc_url: 'charts/development/style_guide.html'
-          - doc_title: Versioning and release
-            doc_url: 'charts/development/release.html'
-          - doc_title: Troubleshooting
-            doc_url: 'charts/development/troubleshooting.html'
-      # End GitLab Helm Charts development documentation
+              - doc_title: Get started
+                doc_url: 'omnibus/development/contribute-to-omnibus-gitlab.html'
+              - doc_title: Build locally
+                doc_url: 'omnibus/build/'
+                docs:
+                  - doc_title: Build Omnibus GitLab package
+                    doc_url: 'omnibus/build/build_package.html'
+                  - doc_title: Build all-in-one Docker image
+                    doc_url: 'omnibus/build/build_docker_image.html'
+                  - doc_title: Information for GitLab team members
+                    doc_url: 'omnibus/build/team_member_docs.html'
+              - doc_title: Set up a development environment
+                doc_url: 'omnibus/development/setup.html'
+              - doc_title: CI variables
+                doc_url: 'omnibus/development/ci-variables.html'
+              - doc_title: Change package behavior
+                doc_url: 'omnibus/development/change-package-behavior.html'
+              - doc_title: Change YAML config options
+                doc_url: 'omnibus/settings/gitlab.yml.html'
+              - doc_title: Add deprecation messages
+                doc_url: 'omnibus/development/adding-deprecation-messages.html'
+              - doc_title: Add new gitlab-ctl commands
+                doc_url: 'omnibus/development/gitlab-ctl-commands.html'
+              - doc_title: Add new services
+                doc_url: 'omnibus/development/new-services.html'
+              - doc_title: Add new software definitions
+                doc_url: 'omnibus/development/new-software-definition.html'
+              - doc_title: Create patches
+                doc_url: 'omnibus/development/creating-patches.html'
+              - doc_title: Add or remove configuration options
+                doc_url: 'omnibus/development/add-remove-configuration-options.html'
+              - doc_title: Manage PostgreSQL versions
+                doc_url: 'omnibus/development/managing-postgresql-versions.html'
+              - doc_title: Omnibus mirror
+                doc_url: 'omnibus/development/omnibus-mirror.html'
+              - doc_title: Version format for the packages and Docker images
+                doc_url: 'omnibus/development/package_version_format.html'
+              - doc_title: Pipelines
+                doc_url: 'omnibus/development/pipelines.html'
+              - doc_title: Work with public_attributes.json
+                doc_url: 'omnibus/development/public-attributes.html'
+              - doc_title: Upgrade Chef
+                doc_url: 'omnibus/development/upgrading-chef.html'
+              - doc_title: Handle vulnerabilities
+                doc_url: 'omnibus/development/vulnerabilities.html'
+              - doc_title: Handle broken master pipelines
+                doc_url: 'omnibus/development/broken_master.html'
+              - doc_title: Deprecate and remove support for an OS
+                doc_url: 'omnibus/development/deprecating-and-removing-support-for-an-os.html'
+          # End Omnibus GitLab development documentation
+
+          # GitLab Helm charts development documentation
+          - doc_title: Contribute to GitLab Helm charts
+            doc_url: 'charts/development/'
+            docs:
+              - doc_title: Architecture of Cloud native GitLab Helm charts
+                doc_url: 'charts/architecture/'
+                docs:
+                  - doc_title: Backup and Restore
+                    doc_url: 'charts/architecture/backup-restore.html'
+                  - doc_title: Goals
+                    doc_url: 'charts/architecture/goals.html'
+                  - doc_title: Architecture
+                    doc_url: 'charts/architecture/architecture.html'
+                  - doc_title: Design Decisions
+                    doc_url: 'charts/architecture/decisions.html'
+                  - doc_title: Resource Usage
+                    doc_url: 'charts/architecture/resource-usage.html'
+              - doc_title: Environment setup
+                doc_url: 'charts/development/environment_setup.html'
+              - doc_title: Style guide
+                doc_url: 'charts/development/style_guide.html'
+              - doc_title: Versioning and release
+                doc_url: 'charts/development/release.html'
+              - doc_title: Troubleshooting
+                doc_url: 'charts/development/troubleshooting.html'
+          # End GitLab Helm Charts development documentation
+
+          # GitLab Operator development documentation
+          - doc_title: Contribute to GitLab Operator
+            doc_url: 'operator/developer/guide.html'
+          # End GitLab Operator development documentation
 
       - category_title: Contribute to GitLab Design System
         category_url: 'https://design.gitlab.com/get-started/contributing'
