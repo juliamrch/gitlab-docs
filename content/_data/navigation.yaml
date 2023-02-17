@@ -2152,11 +2152,11 @@ sections:
             doc_url: 'ee/integration/arkose.html'
           - doc_title: Asana
             doc_url: 'ee/user/project/integrations/asana.html'
-          - doc_title: Bamboo CI
+          - doc_title: Atlassian Bamboo
             doc_url: 'ee/user/project/integrations/bamboo.html'
           - doc_title: Datadog
             doc_url: 'ee/integration/datadog.html'
-          - doc_title: Discord
+          - doc_title: Discord Notifications
             doc_url: 'ee/user/project/integrations/discord_notifications.html'
           - doc_title: Elasticsearch
             doc_url: 'ee/integration/advanced_search/elasticsearch.html'
@@ -2172,7 +2172,7 @@ sections:
                 doc_url: 'ee/user/project/integrations/bugzilla.html'
               - doc_title: Custom issue tracker
                 doc_url: 'ee/user/project/integrations/custom_issue_tracker.html'
-              - doc_title: IBM Engineering Workflow Management
+              - doc_title: Engineering Workflow Management (EWM)
                 doc_url: 'ee/user/project/integrations/ewm.html'
               - doc_title: Redmine
                 doc_url: 'ee/user/project/integrations/redmine.html'
@@ -2182,30 +2182,30 @@ sections:
                 doc_url: 'ee/user/project/integrations/zentao.html'
           - doc_title: GitHub
             doc_url: 'ee/user/project/integrations/github.html'
+          - doc_title: GitLab for Slack app
+            doc_url: 'ee/user/project/integrations/gitlab_slack_application.html'
           - doc_title: Gitpod
             doc_url: 'ee/integration/gitpod.html'
-          - doc_title: Gmail actions buttons
+          - doc_title: Gmail actions
             doc_url: 'ee/integration/gmail_action_buttons_for_gitlab.html'
           - doc_title: Google Chat
             doc_url: 'ee/user/project/integrations/hangouts_chat.html'
           - doc_title: Harbor
             doc_url: 'ee/user/project/integrations/harbor.html'
-          - doc_title: Irker
+          - doc_title: irker (IRC gateway)
             doc_url: 'ee/user/project/integrations/irker.html'
           - doc_title: Jenkins
             doc_url: 'ee/integration/jenkins.html'
           - doc_title: Jira integrations
             doc_url: 'ee/integration/jira/'
             docs:
-              - doc_title: Configure the Jira integration
+              - doc_title: Configure Jira integration
                 doc_url: 'ee/integration/jira/configure.html'
               - doc_title: Create Jira Cloud API token
                 doc_url: 'ee/integration/jira/jira_cloud_configuration.html'
-              - doc_title: Create Jira Server user
-                doc_url: 'ee/integration/jira/jira_server_configuration.html'
-              - doc_title: GitLab for Jira app
+              - doc_title: GitLab for Jira Cloud app
                 doc_url: 'ee/integration/jira/connect-app.html'
-              - doc_title: Jira Development Panel
+              - doc_title: Jira development panel
                 doc_url: 'ee/integration/jira/development_panel.html'
               - doc_title: Jira DVCS connector
                 doc_url: 'ee/integration/jira/dvcs/'
@@ -2214,9 +2214,11 @@ sections:
                     doc_url: 'ee/integration/jira/dvcs/troubleshooting.html'
               - doc_title: Jira integration issue management
                 doc_url: 'ee/integration/jira/issues.html'
+              - doc_title: Jira Server credentials
+                doc_url: 'ee/integration/jira/jira_server_configuration.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/integration/jira/troubleshooting.html'
-          - doc_title: Kroki diagrams
+          - doc_title: Kroki
             doc_url: 'ee/administration/integration/kroki.html'
           - doc_title: Mailgun
             doc_url: 'ee/administration/integration/mailgun.html'
@@ -2226,7 +2228,7 @@ sections:
             doc_url: 'ee/user/project/integrations/mattermost.html'
           - doc_title: Mattermost slash commands
             doc_url: 'ee/user/project/integrations/mattermost_slash_commands.html'
-          - doc_title: Microsoft Teams
+          - doc_title: Microsoft Teams notifications
             doc_url: 'ee/user/project/integrations/microsoft_teams.html'
           - doc_title: Mock CI
             doc_url: 'ee/user/project/integrations/mock_ci.html'
@@ -2243,7 +2245,7 @@ sections:
           - doc_title: Prometheus
             doc_url: 'ee/user/project/integrations/prometheus.html'
             docs:
-              - doc_title: Sample Prometheus data Rake task
+              - doc_title: Sample data Rake task
                 doc_url: 'ee/raketasks/generate_sample_prometheus_data.html'
           - doc_title: Pumble
             doc_url: 'ee/user/project/integrations/pumble.html'
@@ -2255,18 +2257,15 @@ sections:
             doc_url: 'ee/user/project/integrations/servicenow.html'
           - doc_title: Shimo (deprecated)
             doc_url: 'ee/user/project/integrations/shimo.html'
-          - doc_title: Slack application
-            doc_url: 'ee/user/project/integrations/gitlab_slack_application.html'
           - doc_title: Slack notifications
             doc_url: 'ee/user/project/integrations/slack.html'
           - doc_title: Slack slash commands
             doc_url: 'ee/user/project/integrations/slack_slash_commands.html'
-            docs:
-              - doc_title: Slash commands
-                doc_url: 'ee/integration/slash_commands.html'
+          - doc_title: Slash commands in Mattermost and Slack
+            doc_url: 'ee/integration/slash_commands.html'
           - doc_title: Sourcegraph
             doc_url: 'ee/integration/sourcegraph.html'
-          - doc_title: Trello
+          - doc_title: Trello Power-Ups
             doc_url: 'ee/integration/trello_power_up.html'
           - doc_title: Unify Circuit
             doc_url: 'ee/user/project/integrations/unify_circuit.html'
