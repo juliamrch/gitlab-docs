@@ -65,3 +65,14 @@
 .gl-fill-blue-400 {
   fill: $blue-400;
 }
+
+.lg-w-20p {
+  @media (min-width: $bp-lg) {
+    width: 20%;
+  }
+}
+.lg-w-70p {
+  @media (min-width: $bp-lg) {
+    width: 70%;
+  }
+}

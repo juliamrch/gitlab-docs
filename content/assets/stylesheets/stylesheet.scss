@@ -596,3 +596,23 @@ select[name='removal_milestone'],
 select[name='breaking'] {
   background-image: $gl-icon-select-chevron-down;
 }
+
+// GitLab UI does not export vendor prefixes in the build we use, so we need to add them here.
+// Otherwise we don't get checkmarks in Chrome and Safari.
+// @see https://caniuse.com/css-masks
+$gl-icon-check: 'data:image/svg+xml,%3Csvg width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1 3.05299L2.99123 5L7 1" stroke="white" stroke-width="2"/%3E%3C/svg%3E%0A';
+
+.custom-control-input[type='checkbox']:checked ~ .custom-control-label,
+.custom-control-input[type='checkbox']:indeterminate ~ .custom-control-label,
+.custom-control-input[type='radio']:checked ~ .custom-control-label {
+  &::after {
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    mask-position: center center;
+  }
+}
+.custom-control-input[type='checkbox']:checked ~ .custom-control-label::after {
+  -webkit-mask-image: url('#{$gl-icon-check}');
+  mask-image: url('#{$gl-icon-check}');
+}
