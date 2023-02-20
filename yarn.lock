@@ -1226,14 +1226,14 @@
   resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-3.20.0.tgz#4ee4f2f24304d13ccce58f82c2ecd87e556f35b4"
   integrity sha512-nYTF4j5kon4XbBr/sAzuubgxjIne9+RTZLmSrSaL9FL4eyuv9aa7YMCcOrlIbYX5jlSYlcD+ck2F2M1sqXXOBA==
 
-"@gitlab/ui@^55.2.0":
-  version "55.2.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-55.2.0.tgz#0cd24310a4ebbd08c1fcf4281b8cc60709fde0da"
-  integrity sha512-iEbW3OvgyLcT7c0Sd2LcB3eo4kuxIRoqkM4xCZwgIxVLOeGsQfbaBHMCSG9Ekt/OYoesq7B7pX6AqrV9UBuwKw==
+"@gitlab/ui@^56.0.1":
+  version "56.0.1"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-56.0.1.tgz#314d78fb903373274f68290e1abe540b289076c6"
+  integrity sha512-cCtet+FB8+P6jfKXZaJgKAjnJZ0EW54FSb0nSMSlF36SIYy2oPwy9d2m3beCbXScHvN8QnGiGbypWS3N7utkKA==
   dependencies:
     "@popperjs/core" "^2.11.2"
     bootstrap-vue "2.20.1"
-    dompurify "^2.4.3"
+    dompurify "^2.4.4"
     echarts "^5.3.2"
     iframe-resizer "^4.3.2"
     lodash "^4.17.20"
@@ -3186,10 +3186,10 @@ dompurify@2.4.1:
   resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.4.1.tgz#f9cb1a275fde9af6f2d0a2644ef648dd6847b631"
   integrity sha512-ewwFzHzrrneRjxzmK6oVz/rZn9VWspGFRDb4/rRtIsM1n36t9AKma/ye8syCpcw+XJ25kOK/hOG7t1j2I2yBqA==
 
-dompurify@^2.4.3:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.4.3.tgz#f4133af0e6a50297fc8874e2eaedc13a3c308c03"
-  integrity sha512-q6QaLcakcRjebxjg8/+NP+h0rPfatOgOzc46Fst9VAA3jF2ApfKBNKMzdP4DYTqtUMXSCd5pRS/8Po/OmoCHZQ==
+dompurify@^2.4.4:
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.4.4.tgz#c17803931dd524e1b68e0e940a84567f9498f4bd"
+  integrity sha512-1e2SpqHiRx4DPvmRuXU5J0di3iQACwJM+mFGE2HAkkK7Tbnfk9WcghcAmyWc9CRrjyRRUpmuhPUH6LphQQR3EQ==
 
 domutils@^3.0.1:
   version "3.0.1"
