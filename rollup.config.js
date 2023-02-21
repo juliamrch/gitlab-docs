@@ -21,6 +21,7 @@ module.exports = glob.sync('content/frontend/**/*.js').map((file) => ({
     file: mapDirectory(file),
     format: 'iife',
     name: file,
+    inlineDynamicImports: true,
   },
   cache: true,
   plugins: [
