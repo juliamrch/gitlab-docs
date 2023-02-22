@@ -45,13 +45,13 @@ workflow:
         DOCS_PROJECT_PIPELINE_TYPE: "Monthly stopped environments cleanup pipeline"
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
       variables:
-        DOCS_PROJECT_PIPELINE_TYPE: "Build docker images pipeline"
+        DOCS_PROJECT_PIPELINE_TYPE: "Cleanup chores pipeline"
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TIMING == "weekly"'
       variables:
-        DOCS_PROJECT_PIPELINE_TYPE: "Hourly site deployment pipeline"
+        DOCS_PROJECT_PIPELINE_TYPE: "Build docker images pipeline"
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TIMING == "hourly"'
       variables:
-        DOCS_PROJECT_PIPELINE_TYPE: "Monthly stopped environments cleanup pipeline"
+        DOCS_PROJECT_PIPELINE_TYPE: "Hourly site deployment pipeline"
     - if: '$CI_PIPELINE_SOURCE == "pipeline"'
     - if: '$CI_PIPELINE_SOURCE == "trigger"'
       variables:
