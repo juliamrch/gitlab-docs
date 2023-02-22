@@ -1852,6 +1852,11 @@ sections:
                 doc_url: 'ee/user/application_security/dast_api/'
               - doc_title: Run DAST offline
                 doc_url: 'ee/user/application_security/dast/run_dast_offline.html'
+          - doc_title: API Security
+            doc_url: 'ee/user/application_security/api_security/'
+            docs:
+              - doc_title: API Discovery
+                doc_url: 'ee/user/application_security/api_security/api_discovery/'
           - doc_title: Web API Fuzz Testing
             doc_url: 'ee/user/application_security/api_fuzzing/'
             docs:
