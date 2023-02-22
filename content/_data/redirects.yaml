@@ -875,3 +875,30 @@ redirects:
   - from: /runner/best_practice/
     to: /runner/configuration/advanced-configuration.html
     remove_date: 2023-10-18
+  - from: /ee/development/integrations/codesandbox.html
+    to: /ee/development/integrations/index.html
+    remove_date: 2023-11-01
+  - from: /ee/development/directory_structure.html
+    to: /ee/development/software_design.html
+    remove_date: 2023-10-24
+  - from: /ee/user/search/global_search/advanced_search_syntax.html
+    to: /ee/user/search/advanced_search.html
+    remove_date: 2023-11-02
+  - from: /ee/api/feature_flag_specs.html
+    to: /ee/api/feature_flags.html
+    remove_date: 2023-11-14
+  - from: /ee/administration/sidekiq/extra_sidekiq_routing.html
+    to: /ee/administration/sidekiq/processing_specific_job_classes.html#routing-rules
+    remove_date: 2023-11-01
+  - from: /ee/topics/git/merge_conflicts.html
+    to: /ee/user/project/merge_requests/conflicts.html#resolve-conflicts-from-the-command-line
+    remove_date: 2023-11-01
+  - from: /omnibus/settings/ssl.html
+    to: /omnibus/settings/ssl/index.html
+    remove_date: 2023-10-25
+  - from: /charts/releases/index.html
+    to: /charts/installation/version_mappings.html
+    remove_date: 2023-11-01
+  - from: /charts/releases/
+    to: /charts/installation/version_mappings.html
+    remove_date: 2023-11-01

@@ -2842,8 +2842,6 @@ sections:
                     doc_url: 'ee/development/cicd/pipeline_wizard.html'
               - doc_title: Code intelligence
                 doc_url: 'ee/development/code_intelligence/'
-              - doc_title: CodeSandbox development environment
-                doc_url: 'ee/development/integrations/codesandbox.html'
               - doc_title: Create - Source Code backend
                 doc_url: 'ee/development/backend/create_source_code_be/'
                 docs:
