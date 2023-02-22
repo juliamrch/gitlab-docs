@@ -21,15 +21,15 @@
     }
   }
 
-  h4,
-  h5 {
+  h2,
+  h3 {
     border-bottom: 0;
     margin-bottom: 0;
     margin-top: 0;
     padding-bottom: 0;
   }
 
-  h4[id]::before {
+  h2[id]::before {
     display: none;
   }
 

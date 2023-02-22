@@ -7,16 +7,16 @@
     aria-expanded="false"
     aria-controls="help-feedback-content"
   >
-    <h4 class="help-and-feedback-title" id="help-and-feedback">
+    <h2 class="help-and-feedback-title" id="help-and-feedback">
       <%= icon('question', nil, 'help-icon') %> Help & feedback <%= icon('chevron-lg-up', nil,
       'toggle-icon') %>
-    </h4>
+    </h2>
   </a>
   <div class="collapse show" id="help-feedback-content">
     <div class="row mt-3">
       <div class="col-md-8">
         <div>
-          <h5 class="help-and-feedback-heading">Docs</h5>
+          <h3 class="help-and-feedback-heading">Docs</h3>
           <a
             class="help-and-feedback-link"
             href="<%= edit_on_gitlab(@item) %>"
@@ -44,7 +44,7 @@
         </div>
 
         <div class="mt-3">
-          <h5 class="help-and-feedback-heading">Product</h5>
+          <h3 class="help-and-feedback-heading">Product</h3>
           <a
             class="help-and-feedback-link"
             href="https://gitlab.com/gitlab-org/gitlab/-/issues/new?issue[description]=Describe%20what%20you%20would%20like%20to%20see%20improved.%0A%0A%3C!--%20Don%27t%20edit%20below%20this%20line%20--%3E%0A%0A%2Flabel%20~%22docs%5C-comments%22%20&issue[title]=Docs%20-%20product%20feedback:%20Write%20your%20title"
@@ -69,7 +69,7 @@
         </div>
 
         <div class="mt-3">
-          <h5 class="help-and-feedback-heading">Feature availability and product trials</h5>
+          <h3 class="help-and-feedback-heading">Feature availability and product trials</h3>
           <a class="help-and-feedback-link" href="https://about.gitlab.com/pricing/" target="_blank"
             >View pricing</a
           >
@@ -86,7 +86,7 @@
 
       <div class="col-md-4 right-col">
         <div class="help-subsection">
-          <h5 class="help-and-feedback-heading">Get Help</h5>
+          <h3 class="help-and-feedback-heading">Get Help</h3>
           <p>
             If you didn't find what you were looking for,
             <a class="help-and-feedback-link" href="/search/" target="_blank">search the docs</a
