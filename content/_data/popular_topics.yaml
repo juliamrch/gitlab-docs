@@ -42,7 +42,7 @@ topics:
   - title: SSL configuration
     description: SSL settings for your Omnibus GitLab self-managed instance
     icon: lock
-    url: /omnibus/settings/ssl.html
+    url: /omnibus/settings/ssl/index.html
   - title: Activate GitLab EE
     description: Activate GitLab Enterprise Edition functionality with a license
     icon: license
