@@ -10,7 +10,7 @@ group :nanoc do
   gem 'nanoc-live'
 
   # custom kramdown dialect
-  gem 'gitlab_kramdown', '~> 0.24.0'
+  gem 'gitlab_kramdown', '~> 0.25.0'
 
   # Needed to generate Sitemap
   gem 'builder', '~> 3.2.4'
@@ -31,5 +31,5 @@ group :test, :development do
 end
 
 group :development, :danger do
-  gem 'gitlab-dangerfiles', '~> 3.6.6', require: false
+  gem 'gitlab-dangerfiles', '~> 3.7.0', require: false
 end
