@@ -22,8 +22,8 @@ variables:
   BUNDLE_PATH__SYSTEM: 'false'
   GIT_DEPTH: '20'
   ALPINE_VERSION: '3.16'
-  VALE_VERSION: '2.22.0'
-  MARKDOWNLINT_VERSION: '0.32.2'  # Version also set in package.json
+  VALE_VERSION: '2.23.0'
+  MARKDOWNLINT_VERSION: '0.33.0'  # Version also set in package.json
   MARKDOWNLINT2_VERSION: '0.6.0'  # Version also set in package.json
   RUBY_VERSION: '3.0.5'
 
