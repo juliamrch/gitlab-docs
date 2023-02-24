@@ -2710,14 +2710,16 @@ sections:
               - doc_title: Merge request concepts
                 doc_url: 'ee/development/merge_request_concepts/'
                 docs:
+                  - doc_title: Merge request diffs development guide
+                    doc_url: 'ee/development/merge_request_concepts/diffs/development.html'
+                  - doc_title: Working with diffs
+                    doc_url: 'ee/development/merge_request_concepts/diffs/'
                   - doc_title: Application and rate limit guidelines
                     doc_url: 'ee/development/merge_request_concepts/rate_limits.html'
                   - doc_title: Frontend overview
                     doc_url: 'ee/development/merge_request_concepts/diffs/frontend.html'
                   - doc_title: Performance guidelines
                     doc_url: 'ee/development/merge_request_concepts/performance.html'
-                  - doc_title: Working with diffs
-                    doc_url: 'ee/development/merge_request_concepts/diffs/'
               - doc_title: Merge request workflow
                 doc_url: 'ee/development/contributing/merge_request_workflow.html'
               - doc_title: Secure partner onboarding process
@@ -3075,8 +3077,6 @@ sections:
                 doc_url: 'ee/development/json.html'
               - doc_title: Kubernetes integration
                 doc_url: 'ee/development/kubernetes.html'
-              - doc_title: Merge request diffs development guide
-                doc_url: 'ee/development/merge_request_concepts/diffs/development.html'
               - doc_title: Observability for stage groups
                 doc_url: 'ee/development/stage_group_observability/'
                 docs:
