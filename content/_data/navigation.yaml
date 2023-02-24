@@ -2390,6 +2390,8 @@ sections:
                 doc_url: 'ee/api/group_activity_analytics.html'
               - doc_title: Group Import/Export
                 doc_url: 'ee/api/group_import_export.html'
+              - doc_title: Group-level protected branches
+                doc_url: 'ee/api/group_protected_branches.html'
               - doc_title: Group migration by direct transfer
                 doc_url: 'ee/api/bulk_imports.html'
               - doc_title: Group relations export
