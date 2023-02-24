@@ -2204,6 +2204,8 @@ sections:
             doc_url: 'ee/integration/gmail_action_buttons_for_gitlab.html'
           - doc_title: Google Chat
             doc_url: 'ee/user/project/integrations/hangouts_chat.html'
+          - doc_title: Google Play
+            doc_url: 'ee/user/project/integrations/google_play.html'
           - doc_title: Harbor
             doc_url: 'ee/user/project/integrations/harbor.html'
           - doc_title: irker (IRC gateway)
