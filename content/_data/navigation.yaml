@@ -3105,6 +3105,8 @@ sections:
                 doc_url: 'ee/development/permissions.html'
               - doc_title: Product Qualified Lead (PQL) guide
                 doc_url: 'ee/development/product_qualified_lead_guide/'
+              - doc_title: Pry debugging
+                doc_url: 'ee/development/pry_debugging.html'
               - doc_title: Real-time features
                 doc_url: 'ee/development/real_time.html'
               - doc_title: Redis guidelines
