@@ -1313,8 +1313,6 @@ sections:
                     doc_url: 'ee/topics/git/rollback_commits.html'
                   - doc_title: Cherry-pick a commit
                     doc_url: 'ee/topics/git/cherry_picking.html'
-                  - doc_title: Tags
-                    doc_url: 'ee/topics/git/tags.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/topics/git/troubleshooting_git.html'
       - category_title: Build your application
@@ -1329,6 +1327,8 @@ sections:
                 doc_url: 'ee/user/snippets.html'
               - doc_title: Branches
                 doc_url: 'ee/user/project/repository/branches/'
+              - doc_title: Tags
+                doc_url: 'ee/user/project/repository/tags/'
               - doc_title: Changelogs
                 doc_url: 'ee/user/project/changelogs.html'
               - doc_title: Default branch
