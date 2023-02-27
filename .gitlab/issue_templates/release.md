@@ -14,6 +14,12 @@ Prerequisites:
 
 1. [ ] Cross-link to the main MR for the release post: `<add link here>`
    ([Need help finding the MR?](https://gitlab.com/gitlab-com/www-gitlab-com/-/merge_requests?scope=all&state=opened&label_name%5B%5D=release%20post&label_name%5B%5D=blog%20post))
+1. [ ] On the day of the [code cut-off](https://about.gitlab.com/handbook/engineering/releases/#self-managed-releases-process) (17th, but is sometimes moved earlier), share the following message in the `#tw-team` channel:
+
+   >:mega: I will run the docs release soon. Because we're close to the code cutoff, **don't add new links** to the docs navigation before I cut the release branch.
+   >
+   >Moving, renaming, or deleting entries is allowed. If you're unsure, please assign me to the nav MR.
+
 1. [ ] Monitor the `#releases` Slack channel. When the announcement
    `This is the candidate commit to be released on the 22nd` is made, it's time to begin.
 1. [ ] [Create a stable branch and Docker image for the release](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#create-stable-branch-and-docker-image-for-release):
@@ -31,22 +37,27 @@ Prerequisites:
       ./bin/rake "release:single[15.0]"
       ```
 
-       A branch for the release is created, a new `15.0.Dockerfile` is created and
-       automatically committed, and the new branch is pushed.
+      A branch for the release is created, a new `15.0.Dockerfile` is created and
+      automatically committed, and the new branch is pushed.
 
-   After the branch is created, the
-   [`image:docs-single` job](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/7fbb5e1313ebde811877044e87f444a0a283fed4/.gitlab/ci/docker-images.gitlab-ci.yml#L107-129)
-   runs and creates a new Docker image tagged with the name of the stable branch
-   (for example, see [the 15.6 release pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/702437095)).
-   When the job finishes, confirm the Docker image has been created. Go to the `registry` environment at
-   <https://gitlab.com/gitlab-org/gitlab-docs/-/environments/folders/registry> and confirm the image
-   is listed.
+      After the branch is created, the
+      [`image:docs-single` job](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/7fbb5e1313ebde811877044e87f444a0a283fed4/.gitlab/ci/docker-images.gitlab-ci.yml#L107-129)
+      runs and creates a new Docker image tagged with the name of the stable branch
+      (for example, see [the 15.6 release pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/702437095)).
+
+   1. [ ] Share the following message in the `#tw-team` channel:
+
+      > :mega: The stable branch for `gitlab-docs` was created. You can now make changes to docs navigation as usual.
+
+   1. [ ] When the job finishes, confirm the Docker image has been created. Go to the `registry` environment at
+      <https://gitlab.com/gitlab-org/gitlab-docs/-/environments/folders/registry> and confirm the image
+      is listed.
 
    **NOTE:**
    The `image:docs-single` job may fail if stable branches have not been
    created for all the related projects. Some of the stable branches are
-   created close to the 22nd, so you might need to run the pipeline of the
-   stable branch one more time before the release.
+   created close to the 22nd, so you might need to run a new pipeline for the
+   stable branch before the release.
 
 After the tasks above are complete, you don't need to do anything for a few days.
 
@@ -71,9 +82,13 @@ After the release post is live on the 22nd, or the next Monday morning if the re
    both the latest version and the correct pre-release version are listed in the documentation version dropdown.
 1. [ ] Check all published versions of the docs to ensure they are visible and that their version menus have the latest versions.
 1. [ ] In this issue, create separate _threads_ for the retrospective, and add items as they appear:
-   - `## :+1: What went well this release?`
-   - `## :-1: What didn’t go well this release?`
-   - `## :chart_with_upwards_trend: What can we improve going forward?`
+
+   ```markdown
+   ## :+1: What went well this release?
+   ## :-1: What didn’t go well this release?
+   ## :chart_with_upwards_trend: What can we improve going forward?
+   ```
+
 1. [ ] Mention `@gl-docsteam` in a comment and invite them to read and participate in the retro threads.
 
    ```markdown
