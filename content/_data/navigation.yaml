@@ -2179,7 +2179,7 @@ sections:
                 doc_url: 'ee/integration/advanced_search/elasticsearch_troubleshooting.html'
           - doc_title: Emails on push
             doc_url: 'ee/user/project/integrations/emails_on_push.html'
-          - doc_title: External issue tracker
+          - doc_title: External issue trackers
             doc_url: 'ee/integration/external-issue-tracker.html'
             docs:
               - doc_title: Bugzilla
@@ -2210,10 +2210,10 @@ sections:
             doc_url: 'ee/user/project/integrations/irker.html'
           - doc_title: Jenkins
             doc_url: 'ee/integration/jenkins.html'
-          - doc_title: Jira integrations
+          - doc_title: Jira
             doc_url: 'ee/integration/jira/'
             docs:
-              - doc_title: Configure Jira integration
+              - doc_title: Configure Jira
                 doc_url: 'ee/integration/jira/configure.html'
               - doc_title: Create Jira Cloud API token
                 doc_url: 'ee/integration/jira/jira_cloud_configuration.html'
@@ -2226,7 +2226,7 @@ sections:
                 docs:
                   - doc_title: Troubleshooting
                     doc_url: 'ee/integration/jira/dvcs/troubleshooting.html'
-              - doc_title: Jira integration issue management
+              - doc_title: Jira issue management
                 doc_url: 'ee/integration/jira/issues.html'
               - doc_title: Jira Server credentials
                 doc_url: 'ee/integration/jira/jira_server_configuration.html'
