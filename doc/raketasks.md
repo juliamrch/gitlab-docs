@@ -32,12 +32,15 @@ as seen in the "Local tasks" section of the [issue template](https://gitlab.com/
    - Use `brew list` and see if `jq` is in the list.
    - If it is not installed, run `brew install jq`.
 
-1. Optional. Run the rake task locally in your `gitlab-docs` directory in a "dry run" mode
-   that does not create any MRs:
+1. Run the rake task locally in your `gitlab-docs` directory in a "dry run" mode that does not make any local changes or
+   create merge requests:
 
    ```shell
-   SKIP_MR=true bundle exec rake docs:clean_redirects
+   DRY_RUN=true bundle exec rake docs:clean_redirects
    ```
+
+   Check that this runs succesfully before continuing. If it doesn't run successfully, correct any errors before
+   continuing.
 
 1. Run the rake task locally in your `gitlab-docs` directory. This command creates up to five
    merge requests:
@@ -61,12 +64,6 @@ The task:
 
 Once all the MRs have been created, be sure to edit them to cross link between
 them and the recurring tasks issue.
-
-To omit the automatic merge request creation:
-
-```shell
-SKIP_MR=true bundle exec rake docs:clean_redirects
-```
 
 ## Find pages that are not included in the global navigation
 
