@@ -13,7 +13,7 @@ task :redirects do
   redirects_file = 'public/_redirects'
 
   # Remove _redirects before populating it
-  File.delete(redirects_file) if File.exist?(redirects_file)
+  FileUtils.rm_f(redirects_file)
 
   # Iterate over each entry and append to _redirects
   redirects_yaml.fetch('redirects').each do |redirect|
@@ -42,11 +42,15 @@ namespace :docs do
     # Check jq is available
     abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: jq not found. Install jq and run task again.#{TaskHelpers::COLOR_CODE_RESET}") if `which jq`.empty?
 
-    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (gitlab-docs): Stashing changes of gitlab-docs and syncing with upstream default branch..#{TaskHelpers::COLOR_CODE_RESET}"
-    system("git stash --quiet -u") if task_helpers.git_workdir_dirty?
-    system("git checkout --quiet main")
-    system("git fetch --quiet origin main")
-    system("git reset --quiet --hard origin/main")
+    if ENV['DRY_RUN'] == 'true'
+      TaskHelpers.info("gitlab-docs", "Not stashing changes in gitlab-docs or syncing with upstream default branch because running in dry run mode.")
+    else
+      TaskHelpers.info("gitlab-docs", "Stashing changes in gitlab-docs and syncing with upstream default branch...")
+      system("git stash --quiet -u") if task_helpers.git_workdir_dirty?
+      system("git checkout --quiet main")
+      system("git fetch --quiet origin main")
+      system("git reset --quiet --hard origin/main")
+    end
 
     task_helpers.products.each_value do |product|
       #
@@ -67,6 +71,8 @@ namespace :docs do
       #   To   : /ee/install/requirements.html
       #
       def new_path(redirect, filename, content_dir, slug)
+        abort "\n#{TaskHelpers::COLOR_CODE_RED}ERROR: No redirect_to found in #{filename}!#{TaskHelpers::COLOR_CODE_RESET}" if redirect.nil?
+
         if !redirect.start_with?('http')
           Pathname.new(filename).dirname.join(redirect).to_s.gsub(%r{\.md}, '.html').gsub(content_dir, "/#{slug}")
         elsif redirect.start_with?('https://docs.gitlab.com')
@@ -86,11 +92,15 @@ namespace :docs do
       counter = 0
 
       Dir.chdir(content_dir) do
-        puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Stashing changes of #{slug} and syncing with upstream default branch..#{TaskHelpers::COLOR_CODE_RESET}"
-        system("git", "stash", "--quiet", "-u") if task_helpers.git_workdir_dirty?
-        system("git", "checkout", "--quiet", default_branch)
-        system("git", "fetch", "--quiet", "origin", default_branch)
-        system("git", "reset", "--quiet", "--hard", origin_default_branch)
+        if ENV['DRY_RUN'] == 'true'
+          TaskHelpers.info(slug, "Running in dry run mode...")
+        else
+          TaskHelpers.info(slug, "Stashing changes and syncing with upstream default branch...")
+          system("git", "stash", "--quiet", "-u") if task_helpers.git_workdir_dirty?
+          system("git", "checkout", "--quiet", default_branch)
+          system("git", "fetch", "--quiet", "origin", default_branch)
+          system("git", "reset", "--quiet", "--hard", origin_default_branch)
+        end
       end
 
       #
@@ -125,30 +135,42 @@ namespace :docs do
         #
         next unless remove_date < today
 
-        puts "In #{filename}, remove date: #{remove_date} is less than today (#{today})."
+        TaskHelpers.info(slug, "In #{filename}, remove date: #{remove_date} is less than today (#{today}).")
 
         counter += 1
 
-        File.delete(filename) if File.exist?(filename)
+        if ENV['DRY_RUN'] == 'true'
+          TaskHelpers.info(slug, "Not deleting #{filename} because running in dry run mode.")
+        else
+          FileUtils.rm_f(filename)
+        end
 
         # Don't add any entries that are domain-level redirects, they are not supported
         # https://docs.gitlab.com/ee/user/project/pages/redirects.html
         next if new_path(frontmatter['redirect_to'], filename, content_dir, slug).start_with?('http')
 
-        File.open(redirects_yaml, 'a') do |post|
-          post.puts "  - from: #{old_path}"
-          post.puts "    to: #{new_path(frontmatter['redirect_to'], filename, content_dir, slug)}"
-          post.puts "    remove_date: #{remove_date >> 9}"
+        if ENV['DRY_RUN'] == 'true'
+          TaskHelpers.info("gitlab-docs", "Not updating redirects.yaml because running in dry run mode.")
+        else
+          File.open(redirects_yaml, 'a') do |post|
+            post.puts "  - from: #{old_path}"
+            post.puts "    to: #{new_path(frontmatter['redirect_to'], filename, content_dir, slug)}"
+            post.puts "    remove_date: #{remove_date >> 9}"
+          end
         end
 
         # If the 'from' path ends with 'index.html' we need an extra redirect
         # entry in 'redirects.yaml' that is without 'index.html'
         next unless old_path.end_with?('index.html')
 
-        File.open(redirects_yaml, 'a') do |post|
-          post.puts "  - from: #{old_path.gsub!('index.html', '')}"
-          post.puts "    to: #{new_path(frontmatter['redirect_to'], filename, content_dir, slug)}"
-          post.puts "    remove_date: #{remove_date >> 9}"
+        if ENV['DRY_RUN'] == 'true'
+          TaskHelpers.info("gitlab-docs", "Not updating redirects.yaml because running in dry run mode.")
+        else
+          File.open(redirects_yaml, 'a') do |post|
+            post.puts "  - from: #{old_path.gsub!('index.html', '')}"
+            post.puts "    to: #{new_path(frontmatter['redirect_to'], filename, content_dir, slug)}"
+            post.puts "    remove_date: #{remove_date >> 9}"
+          end
         end
       end
 
@@ -161,18 +183,26 @@ namespace :docs do
       #   4. Commit and push the branch to create the MR
       #
 
-      puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Found #{counter} redirect(s).#{TaskHelpers::COLOR_CODE_RESET}"
+      TaskHelpers.info(slug, "Found #{counter} redirect(s).")
       next unless counter.positive?
 
       Dir.chdir(content_dir) do
-        puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Creating a new branch for the redirects MR..#{TaskHelpers::COLOR_CODE_RESET}"
-        system("git", "checkout", "--quiet", "-b", redirects_branch, origin_default_branch)
-        puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): Committing and pushing to create a merge request..#{TaskHelpers::COLOR_CODE_RESET}"
-        system("git", "add", ".")
-        system("git", "commit", "--quiet", "-m", commit_message)
+        if ENV['DRY_RUN'] == 'true'
+          TaskHelpers.info(slug, "Not creating branch or commiting changes because running in dry run mode.")
+        else
+          TaskHelpers.info(slug, "Creating a new branch for the redirects merge request...")
+          system("git", "checkout", "--quiet", "-b", redirects_branch, origin_default_branch)
+          TaskHelpers.info(slug, "Committing changes to branch...")
+          system("git", "add", ".")
+          system("git", "commit", "--quiet", "-m", commit_message)
+        end
 
-        `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement" -o merge_request.label="type::maintenance" -o merge_request.label="maintenance::refactor"` \
-          if ENV['SKIP_MR'].nil?
+        if ENV['DRY_RUN'] == 'true'
+          TaskHelpers.info(slug, "Not pushing branch because running in dry run mode.")
+        else
+          TaskHelpers.info(slug, "Pushing branch to create a merge request...")
+          `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement" -o merge_request.label="type::maintenance" -o merge_request.label="maintenance::refactor"` \
+        end
       end
       puts
     end
@@ -185,13 +215,21 @@ namespace :docs do
     #   3. Commit and push the branch to create the MR
     #
     mr_title = "Clean up docs redirects - #{today}"
-    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (gitlab-docs): Creating a new branch for the redirects MR..#{TaskHelpers::COLOR_CODE_RESET}"
-    system("git", "checkout", "--quiet", "-b", redirects_branch, "origin/main")
-    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: (gitlab-docs): Committing and pushing to create a merge request..#{TaskHelpers::COLOR_CODE_RESET}"
-    system("git", "add", redirects_yaml)
-    system("git", "commit", "--quiet", "-m", commit_message)
+    if ENV['DRY_RUN'] == 'true'
+      TaskHelpers.info("gitlab-docs", "Not creating branch or commiting changes because running in dry run mode.")
+    else
+      TaskHelpers.info("gitlab-docs", "Creating a new branch for the redirects merge request...")
+      system("git", "checkout", "--quiet", "-b", redirects_branch, "origin/main")
+      TaskHelpers.info("gitlab-docs", "Committing changes to branch...")
+      system("git", "add", redirects_yaml)
+      system("git", "commit", "--quiet", "-m", commit_message)
+    end
 
-    `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs Site" -o merge_request.label="type::maintenance" -o merge_request.label="maintenance::refactor"` \
-      if ENV['SKIP_MR'].nil?
+    if ENV['DRY_RUN'] == 'true'
+      TaskHelpers.info("gitlab-docs", "Not pushing branch because running in dry run mode.")
+    else
+      TaskHelpers.info("gitlab-docs", "Pushing branch to create a merge request...")
+      `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs Site" -o merge_request.label="type::maintenance" -o merge_request.label="maintenance::refactor"` \
+    end
   end
 end

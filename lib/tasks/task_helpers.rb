@@ -115,4 +115,8 @@ class TaskHelpers
 
     `curl --silent https://gitlab.com/api/v4/projects/#{url_encoded_path} | jq --raw-output .default_branch`.tr("\n", '')
   end
+
+  def self.info(slug, message)
+    puts "#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): #{message} #{TaskHelpers::COLOR_CODE_RESET}"
+  end
 end
