@@ -1032,9 +1032,7 @@ sections:
                 doc_url: 'ee/user/group/custom_project_templates.html'
               - doc_title: Group access tokens
                 doc_url: 'ee/user/group/settings/group_access_tokens.html'
-              - doc_title: Group import/export
-                doc_url: 'ee/user/group/settings/import_export.html'
-              - doc_title: Migrating groups
+              - doc_title: Migrate groups
                 doc_url: 'ee/user/group/import/'
               - doc_title: SAML Group Sync
                 doc_url: 'ee/user/group/saml_sso/group_sync.html'
