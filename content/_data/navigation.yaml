@@ -1563,6 +1563,8 @@ sections:
                     doc_url: 'ee/topics/autodevops/upgrading_auto_deploy_dependencies.html'
                   - doc_title: Deploy to GKE
                     doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_gke.html'
+                  - doc_title: Deploy to EKS
+                    doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_eks.html'
                   - doc_title: Deploy to ECS
                     doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_ecs.html'
                   - doc_title: Deploy to EC2
