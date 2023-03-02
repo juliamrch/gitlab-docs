@@ -2799,10 +2799,14 @@ sections:
           - doc_title: Development style guides
             doc_url: 'ee/development/contributing/style_guides.html'
             docs:
-              - doc_title: Frontend style guides
-                doc_url: 'ee/development/fe_guide/style/'
+              - doc_title: Advanced search migration style guide
+                doc_url: 'ee/development/search/advanced_search_migration_styleguide.html'
               - doc_title: API style guide
                 doc_url: 'ee/development/api_styleguide.html'
+              - doc_title: Frontend style guides
+                doc_url: 'ee/development/fe_guide/style/'
+              - doc_title: Gemfile guidelines
+                doc_url: 'ee/development/gemfile.html'
               - doc_title: Go standards and style guidelines
                 doc_url: 'ee/development/go_guide/'
               - doc_title: GraphQL API style guide
@@ -2819,8 +2823,6 @@ sections:
                 doc_url: 'ee/development/rubocop_development_guide.html'
               - doc_title: Ruby style guide
                 doc_url: 'ee/development/backend/ruby_style_guide.html'
-              - doc_title: 'Gemfile guidelines'
-                doc_url: 'ee/development/gemfile.html'
               - doc_title: SCSS style guide
                 doc_url: 'ee/development/fe_guide/style/scss.html'
               - doc_title: Secure coding guidelines
@@ -2832,6 +2834,8 @@ sections:
           - doc_title: Feature development
             doc_url: 'ee/development/feature_development.html'
             docs:
+              - doc_title: Advanced search development
+                doc_url: 'ee/development/advanced_search.html'
               - doc_title: Approval rules development
                 doc_url: 'ee/development/merge_request_concepts/approval_rules.html'
               - doc_title: Audit Event development
