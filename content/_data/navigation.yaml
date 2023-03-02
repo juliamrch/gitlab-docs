@@ -1700,8 +1700,6 @@ sections:
           - doc_title: GitLab Pages
             doc_url: 'ee/user/project/pages/'
             docs:
-              - doc_title: GitLab Pages settings
-                doc_url: 'ee/user/project/pages/introduction.html'
               - doc_title: 'Tutorial: Create website from scratch'
                 doc_url: 'ee/user/project/pages/getting_started/pages_from_scratch.html'
               - doc_title: Create website from CI/CD template
@@ -1712,7 +1710,7 @@ sections:
                 doc_url: 'ee/user/project/pages/getting_started/pages_new_project_template.html'
               - doc_title: Create deployment for static site
                 doc_url: 'ee/user/project/pages/getting_started/pages_ui.html'
-              - doc_title: Configure public folder
+              - doc_title: Public folder
                 doc_url: 'ee/user/project/pages/public_folder.html'
               - doc_title: Default domain names and URLs
                 doc_url: 'ee/user/project/pages/getting_started_part_one.html'
@@ -1728,6 +1726,8 @@ sections:
                 doc_url: 'ee/user/project/pages/pages_access_control.html'
               - doc_title: Redirects
                 doc_url: 'ee/user/project/pages/redirects.html'
+              - doc_title: Settings
+                doc_url: 'ee/user/project/pages/introduction.html'
           - doc_title: Packages & Registries
             doc_url: 'ee/user/packages/'
             docs:
