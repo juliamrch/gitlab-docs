@@ -19,11 +19,9 @@ class TaskHelpers
   end
 
   def products
-    @products ||= begin
-      # Pull products data from the config.
-      PRODUCTS.each_with_object({}) do |key, result|
-        result[key] = config['products'][key]
-      end
+    # Pull products data from the config.
+    @products ||= PRODUCTS.each_with_object({}) do |key, result|
+      result[key] = config['products'][key]
     end
   end
 
@@ -79,10 +77,12 @@ class TaskHelpers
   def stable_branch_name
     @stable_branch_name ||= begin
       ref_name = ENV["CI_COMMIT_REF_NAME"]&.match(VERSION_FORMAT)
-      return "#{ref_name[:major]}-#{ref_name[:minor]}-stable" if ref_name
-
-      mr_name = ENV["CI_MERGE_REQUEST_TARGET_BRANCH_NAME"]&.match(VERSION_FORMAT)
-      "#{mr_name[:major]}-#{mr_name[:minor]}-stable" if mr_name
+      if ref_name
+        "#{ref_name[:major]}-#{ref_name[:minor]}-stable"
+      else
+        mr_name = ENV["CI_MERGE_REQUEST_TARGET_BRANCH_NAME"]&.match(VERSION_FORMAT)
+        "#{mr_name[:major]}-#{mr_name[:minor]}-stable" if mr_name
+      end
     end
   end
 
