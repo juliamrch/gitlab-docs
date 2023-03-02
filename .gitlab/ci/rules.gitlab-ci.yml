@@ -61,23 +61,6 @@ default:
 #
 # Rules to determine which pipelines jobs will run in.
 #
-.rules_scheduled:
-  rules:
-    - if: $CHORES_PIPELINE == "true"
-      when: never
-    - if: '$CI_PIPELINE_SOURCE != "schedule"'
-      when: never
-    - if: '$PIPELINE_SCHEDULE_TIMING == "weekly"'
-    - if: '$PIPELINE_SCHEDULE_TIMING == "hourly"'
-      when: manual
-      allow_failure: true
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-      when: manual
-      allow_failure: true
-    - if: '$CI_COMMIT_BRANCH == "main"'
-      when: manual
-      allow_failure: true
-
 .rules_scheduled_manual:
   rules:
     - if: $CHORES_PIPELINE == "true"
@@ -97,17 +80,6 @@ default:
     - if: $CHORES_PIPELINE == "true"
       when: never
     # Don't run site tests for review apps.
-    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
-      when: never
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
-    - if: '$CI_MERGE_REQUEST_ID'
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
-
-.rules_global_nav_test:
-  rules:
-    - if: $CHORES_PIPELINE == "true"
-      when: never
     - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
       when: never
     - if: '$CI_PIPELINE_SOURCE == "schedule"'

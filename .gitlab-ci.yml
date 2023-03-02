@@ -53,6 +53,8 @@ workflow:
       variables:
         DOCS_PROJECT_PIPELINE_TYPE: "Hourly site deployment pipeline"
     - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+      variables:
+        DOCS_PROJECT_PIPELINE_TYPE: "Pipeline source = pipeline"
     - if: '$CI_PIPELINE_SOURCE == "trigger"'
       variables:
         DOCS_PROJECT_PIPELINE_TYPE: "Review app pipeline"
