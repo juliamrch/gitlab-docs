@@ -1104,7 +1104,7 @@ sections:
           - doc_title: Search
             doc_url: 'ee/user/search/'
             docs:
-              - doc_title: Advanced Search
+              - doc_title: Advanced search
                 doc_url: 'ee/user/search/advanced_search.html'
               - doc_title: Exact code search
                 doc_url: 'ee/user/search/exact_code_search.html'
