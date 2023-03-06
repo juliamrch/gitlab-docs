@@ -2,7 +2,7 @@ const inject = require('@rollup/plugin-inject');
 const json = require('@rollup/plugin-json');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const replace = require('@rollup/plugin-replace');
-const glob = require('glob');
+const { globSync } = require('glob');
 const commonjs = require('@rollup/plugin-commonjs');
 const { babel } = require('@rollup/plugin-babel');
 const importResolver = require('rollup-plugin-import-resolver');
@@ -15,7 +15,7 @@ function mapDirectory(file) {
   return file.replace('content/', 'public/');
 }
 
-module.exports = glob.sync('content/frontend/**/*.js').map((file) => ({
+module.exports = globSync('content/frontend/**/*.js').map((file) => ({
   input: file,
   output: {
     file: mapDirectory(file),

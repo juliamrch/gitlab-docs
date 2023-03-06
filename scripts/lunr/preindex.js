@@ -16,20 +16,12 @@
 const fs = require('fs');
 const lunr = require('lunr');
 const cheerio = require('cheerio');
-const glob = require('glob');
+const { glob } = require('glob');
 
 const htmlSrc = 'public/';
 const outputDir = `${htmlSrc}assets/javascripts`;
 
-/**
- * Find all HTML files within a given path,
- * then execute a callback function to build the index.
- */
-const buildIndex = (path, callback) => {
-  glob(`${path}/**/*.html`, callback);
-};
-
-/**
+/*
  * Extracts text from a given HTML element.
  *
  * @param {cheerio} $
@@ -53,10 +45,8 @@ const getText = ($, element) => {
 /**
  * Build the index and output files.
  */
-buildIndex(htmlSrc, (err, filenames) => {
-  if (err) {
-    console.error(err);
-  }
+(async () => {
+  const filenames = await glob(`${htmlSrc}/**/*.html`);
 
   // Create an array of objects containing each page's text content.
   const pages = [];
@@ -103,4 +93,4 @@ buildIndex(htmlSrc, (err, filenames) => {
       console.error(fsErr);
     }
   });
-});
+})();
