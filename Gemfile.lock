@@ -68,13 +68,13 @@ GEM
       faraday (>= 0.8)
     faraday-net_http (3.0.2)
     ffi (1.15.5)
-    git (1.13.2)
+    git (1.16.0)
       addressable (~> 2.8)
       rchardet (~> 1.8)
     gitlab (4.19.0)
       httparty (~> 0.20)
       terminal-table (>= 1.5.1)
-    gitlab-dangerfiles (3.7.0)
+    gitlab-dangerfiles (3.8.0)
       danger (>= 8.4.5)
       danger-gitlab (>= 8.0.0)
       rake
@@ -285,7 +285,7 @@ PLATFORMS
 
 DEPENDENCIES
   builder (~> 3.2.4)
-  gitlab-dangerfiles (~> 3.7.0)
+  gitlab-dangerfiles (~> 3.8.0)
   gitlab-styles (~> 10.0.0)
   gitlab_kramdown (~> 0.25.0)
   highline (~> 2.1.0)
