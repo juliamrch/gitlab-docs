@@ -46,6 +46,28 @@ check_global_nav_entries:
     - make check-global-navigation
 
 #
+# Check that asdf dependencies install correctly
+#
+check_asdf_installation:
+  image: ubuntu:22.04
+  variables:
+    ASDF_VERSION: '0.11.1'
+  needs: []
+  stage: test
+  before_script:
+    - apt update
+    - apt install -y build-essential git curl zlib1g-dev libyaml-dev libssl-dev
+  script:
+    - git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v$ASDF_VERSION
+    - source "$HOME/.asdf/asdf.sh"
+    - make setup-asdf
+    - make install-asdf-dependencies
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - .tool-versions
+
+#
 # Run rspec tests
 #
 rspec:
