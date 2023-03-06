@@ -3119,13 +3119,13 @@ sections:
                     doc_url: 'ee/development/packages/dependency_proxy.html'
               - doc_title: Permissions
                 doc_url: 'ee/development/permissions.html'
-              - doc_title: Product Qualified Lead (PQL) guide
+              - doc_title: Product Qualified Lead (PQL)
                 doc_url: 'ee/development/product_qualified_lead_guide/'
               - doc_title: Pry debugging
                 doc_url: 'ee/development/pry_debugging.html'
               - doc_title: Real-time features
                 doc_url: 'ee/development/real_time.html'
-              - doc_title: Redis guidelines
+              - doc_title: Redis
                 doc_url: 'ee/development/redis.html'
               - doc_title: Sec section development
                 doc_url: 'ee/development/sec/'
@@ -3136,7 +3136,7 @@ sections:
                     doc_url: 'ee/development/sec/security_report_ingestion_overview.html'
                   - doc_title: Token Revocation API
                     doc_url: 'ee/development/sec/token_revocation_api.html'
-              - doc_title: Service Ping guide
+              - doc_title: Service Ping
                 doc_url: 'ee/development/service_ping/'
                 docs:
                   - doc_title: Metrics lifecycle
@@ -3156,7 +3156,7 @@ sections:
                     doc_url: 'ee/development/service_ping/review_guidelines.html'
                   - doc_title: Troubleshooting
                     doc_url: 'ee/development/service_ping/troubleshooting.html'
-              - doc_title: Sidekiq development
+              - doc_title: Sidekiq
                 doc_url: 'ee/development/sidekiq/'
                 docs:
                   - doc_title: Compatibility across updates
