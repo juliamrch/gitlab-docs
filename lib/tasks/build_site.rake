@@ -9,7 +9,7 @@ task_helpers = TaskHelpers.new
 desc 'Clone Git repositories of documentation projects, keeping only the most recent commit'
 task :clone_repositories do
   task_helpers.products.each_value do |product|
-    branch = task_helpers.retrieve_branch(product['slug'])
+    branch, refspec = task_helpers.retrieve_branch(product['slug'])
 
     # Limit the pipeline to pull only the repo where the MR is, not all 4, to save time/space.
     # First we check if the branch on the docs repo is other than the default branch and
@@ -41,7 +41,14 @@ task :clone_repositories do
       end
     end
 
-    `git clone --branch #{branch} --single-branch #{product['repo']} --depth 1 #{product['project_dir']}`
+    Dir.mkdir(product['project_dir'])
+
+    Dir.chdir(product['project_dir']) do
+      `git -c init.defaultBranch=#{branch} init`
+      `git remote add origin #{product['repo']}`
+      `git fetch --depth 1 origin #{refspec}`
+      `git -c advice.detachedHead=false checkout FETCH_HEAD`
+    end
 
     latest_commit = `git -C #{product['project_dir']} log --oneline -n 1`
 

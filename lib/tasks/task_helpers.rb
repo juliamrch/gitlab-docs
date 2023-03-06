@@ -30,12 +30,19 @@ class TaskHelpers
     # If we're NOT on a gitlab-docs stable branch, fetch the BRANCH_* environment
     # variable, and if not assigned, set to the default branch.
     #
-    return ENV.fetch("BRANCH_#{slug.upcase}", default_branch(products[slug].fetch('repo'))) if stable_branch_name.nil?
+    if stable_branch_name.nil?
+      merge_request_iid = ENV["MERGE_REQUEST_IID_#{slug.upcase}"]
+      branch_name = ENV.fetch("BRANCH_#{slug.upcase}", default_branch(products[slug].fetch('repo')))
+
+      return branch_name, "heads/#{branch_name}" if merge_request_iid.nil?
+
+      return branch_name, "merge-requests/#{merge_request_iid}/head"
+    end
 
     #
     # Check the project slug to determine the branch name
     #
-    case slug
+    stable_branch = case slug
 
     when 'ee'
       "#{stable_branch_name}-ee"
@@ -53,6 +60,8 @@ class TaskHelpers
     else
       default_branch(products[slug].fetch('repo'))
     end
+
+    return stable_branch, "heads/#{stable_branch}"
   end
 
   def git_workdir_dirty?
