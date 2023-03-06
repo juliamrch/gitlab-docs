@@ -2868,7 +2868,7 @@ sections:
                     doc_url: 'ee/development/backend/create_source_code_be/gitaly_touch_points.html'
                   - doc_title: Source Code REST endpoints
                     doc_url: 'ee/development/backend/create_source_code_be/rest_endpoints.html'
-              - doc_title: Database development
+              - doc_title: Database
                 doc_url: 'ee/development/database/'
                 docs:
                   - doc_title: Adding database indexes
@@ -3024,7 +3024,7 @@ sections:
                     doc_url: 'ee/development/fe_guide/vue3_migration.html'
                   - doc_title: Widgets
                     doc_url: 'ee/development/fe_guide/widgets.html'
-              - doc_title: Geo development
+              - doc_title: Geo
                 doc_url: 'ee/development/geo.html'
                 docs:
                   - doc_title: Geo framework
@@ -3035,9 +3035,9 @@ sections:
                 doc_url: 'ee/development/lfs.html'
               - doc_title: Git object deduplication
                 doc_url: 'ee/development/git_object_deduplication.html'
-              - doc_title: Gitaly development
+              - doc_title: Gitaly
                 doc_url: 'ee/development/gitaly.html'
-              - doc_title: GitLab Flavored Markdown (GLFM) developer documentation
+              - doc_title: GitLab Flavored Markdown (GLFM)
                 doc_url: 'ee/development/gitlab_flavored_markdown/'
                 docs:
                   - doc_title: GitLab Flavored Markdown (GLFM) specification guide
@@ -3051,7 +3051,7 @@ sections:
                     doc_url: 'ee/development/gitlab_shell/gitlab_sshd.html'
                   - doc_title: Processes
                     doc_url: 'ee/development/gitlab_shell/process.html'
-              - doc_title: GraphQL development
+              - doc_title: GraphQL
                 doc_url: 'ee/development/graphql_guide/'
                 docs:
                   - doc_title: GraphQL authorization
@@ -3102,7 +3102,7 @@ sections:
                     doc_url: 'ee/development/stage_group_observability/dashboards/stage_group_dashboard.html'
                   - doc_title: Error budget detail
                     doc_url: 'ee/development/stage_group_observability/dashboards/error_budget_detail.html'
-              - doc_title: Package development
+              - doc_title: Package
                 doc_url: 'ee/development/packages/'
                 docs:
                   - doc_title: Package settings
@@ -3127,7 +3127,7 @@ sections:
                 doc_url: 'ee/development/real_time.html'
               - doc_title: Redis
                 doc_url: 'ee/development/redis.html'
-              - doc_title: Sec section development
+              - doc_title: Sec section
                 doc_url: 'ee/development/sec/'
                 docs:
                   - doc_title: Analyzer development guide
@@ -3207,7 +3207,7 @@ sections:
                     doc_url: 'ee/development/uploads/working_with_uploads.html'
               - doc_title: Value Stream Analytics
                 doc_url: 'ee/development/value_stream_analytics.html'
-              - doc_title: Verify stage development
+              - doc_title: Verify stage
                 doc_url: 'ee/development/contributing/verify/'
               - doc_title: Wikis
                 doc_url: 'ee/development/wikis.html'
