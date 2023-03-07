@@ -101,7 +101,7 @@ export default {
       this.loading = false;
       throw new Error(`Error code ${error.code}: ${error.message}`);
     },
-    async search(query, filters = []) {
+    async search(query, filters) {
       this.results = [];
       if (!query) return;
 
@@ -137,7 +137,11 @@ export default {
   <div class="google-search gl-mb-9">
     <h1>Search</h1>
     <div class="gl-h-11 gl-mb-5">
-      <gl-search-box-by-click v-model="query" :value="query" @submit="search(query)" />
+      <gl-search-box-by-click
+        v-model="query"
+        :value="query"
+        @submit="search(query, activeFilters)"
+      />
       <div v-if="results.length" class="gl-font-sm gl-mb-5 gl-ml-1">
         {{ resultSummary }}
       </div>
