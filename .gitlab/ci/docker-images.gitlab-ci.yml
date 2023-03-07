@@ -166,7 +166,7 @@ image:docs-single:
     - docker push $IMAGE_NAME
   # Only branches with versions like 10.4
   rules:
-    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
 
 #
 # Test the GitLab docs single version Docker image if changes made to its Dockerfile
@@ -219,7 +219,7 @@ image:docs-single-lunrjs:
     - docker push $IMAGE_NAME
   # Only branches with versions like 10.4
   rules:
-    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
 
 #
 # Test the GitLab docs single version Docker image with lunr.js enabled

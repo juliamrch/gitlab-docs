@@ -63,7 +63,7 @@ default:
 #
 .rules_docker_images:
   rules:
-    - if: $CHORES_PIPELINE == "true"
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Cleanup chores pipeline"'
       when: never
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: manual
@@ -71,59 +71,53 @@ default:
 
 .rules_docker_image_tests:
   rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
       changes:
         - $DOCKERFILE
 
 .rules_chores:
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Cleanup chores pipeline"'
       when: manual
       allow_failure: true
 
 .rules_site_tests:
   rules:
-    - if: $CHORES_PIPELINE == "true"
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Cleanup chores pipeline"'
       when: never
     # Don't run site tests for review apps.
-    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
       when: never
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
-    - if: '$CI_MERGE_REQUEST_ID'
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Default branch pipeline"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
 
 .rules_prod:
   rules:
-    - if: $CHORES_PIPELINE == "true"
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Cleanup chores pipeline"'
       when: never
     # Don't deploy to production for trigerred pipelines (usually review apps)
-    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
       when: never
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Default branch pipeline"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
 
 .rules_dev:
   rules:
-    - if: $CI_MERGE_REQUEST_ID && $CI_COMMIT_REF_NAME =~ /algolia/
-      variables:
-        SEARCH_BACKEND: 'algolia'
-    - if: $CI_MERGE_REQUEST_ID && $CI_COMMIT_REF_NAME =~ /gps/
-      variables:
-        SEARCH_BACKEND: 'google'
-    - if: '$CI_MERGE_REQUEST_ID'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
     - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Cleanup chores pipeline"'
 
 .rules_upstream_review_app:
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
 
 .rules_pages:
   rules:
-    - if: $CHORES_PIPELINE == "true"
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Cleanup chores pipeline"'
       when: never
     # Don't deploy to production for trigerred pipelines (usually review apps)
-    - if: '$CI_PIPELINE_SOURCE == "pipeline"|| $CI_PIPELINE_SOURCE == "trigger"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
       when: never
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Default branch pipeline"'
