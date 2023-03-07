@@ -20,13 +20,6 @@ module Nanoc::Helpers
     end
 
     #
-    # Used when bundling gitlab-docs with Omnibus
-    #
-    def omnibus?
-      ENV['NANOC_ENV'] == 'omnibus'
-    end
-
-    #
     # Find the current branch. If CI_COMMIT_BRANCH is not defined, that means
     # we're working locally, and Git is used to find the branch.
     #

@@ -5,13 +5,6 @@ module Gitlab
     class Section
       def initialize(section)
         @section = section
-        @enabled = true
-      end
-
-      attr_reader :enabled
-
-      def disable!
-        @enabled = false
       end
 
       def title
