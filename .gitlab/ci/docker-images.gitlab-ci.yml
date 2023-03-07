@@ -24,7 +24,7 @@
 #
 image:gitlab-docs-base:
   extends:
-    - .rules_scheduled_manual
+    - .rules_docker_images
     - .docker_prepare
   stage: build-images
   variables:
@@ -46,15 +46,12 @@ image:gitlab-docs-base:
 test:image:gitlab-docs-base:
   extends:
     - .docker_prepare
+    - .rules_docker_image_tests
   stage: test
   needs: []
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/base:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      changes:
-        - $DOCKERFILE
   script:
     - docker build
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
@@ -67,7 +64,7 @@ test:image:gitlab-docs-base:
 #
 image:docs-lint-markdown:
   extends:
-    - .rules_scheduled_manual
+    - .rules_docker_images
     - .docker_prepare
   stage: build-images
   variables:
@@ -91,14 +88,11 @@ image:docs-lint-markdown:
 test:image:docs-lint-markdown:
   extends:
     - .docker_prepare
+    - .rules_docker_image_tests
   stage: test
   needs: []
   variables:
     DOCKERFILE: dockerfiles/gitlab-docs-lint-markdown.Dockerfile
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      changes:
-        - $DOCKERFILE
   script:
     - docker build
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
@@ -112,7 +106,7 @@ test:image:docs-lint-markdown:
 #
 image:docs-lint-html:
   extends:
-    - .rules_scheduled_manual
+    - .rules_docker_images
     - .docker_prepare
   stage: build-images
   variables:
@@ -134,14 +128,11 @@ image:docs-lint-html:
 test:image:docs-lint-html:
   extends:
     - .docker_prepare
+    - .rules_docker_image_tests
   stage: test
   needs: []
   variables:
     DOCKERFILE: dockerfiles/gitlab-docs-lint-html.Dockerfile
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      changes:
-        - $DOCKERFILE
   script:
     - docker build
              --build-arg RUBY_VERSION=${RUBY_VERSION}
@@ -183,6 +174,7 @@ image:docs-single:
 test:image:docs-single:
   extends:
     - .docker_prepare
+    - .rules_docker_image_tests
   stage: test
   variables:
     GITLAB_VERSION: '15.9'
@@ -190,10 +182,6 @@ test:image:docs-single:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$GITLAB_VERSION
     NANOC_ENV: test
   needs: []
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      changes:
-        - $DOCKERFILE
   script:
     - apk add --no-cache -U git
     - git fetch --all
@@ -240,6 +228,7 @@ image:docs-single-lunrjs:
 test:image:docs-single-lunrjs:
   extends:
     - .docker_prepare
+    - .rules_docker_image_tests
   stage: test
   variables:
     GITLAB_VERSION: '15.6'
@@ -247,10 +236,6 @@ test:image:docs-single-lunrjs:
     DOCKERFILE: dockerfiles/single.Dockerfile
     NANOC_ENV: test
   needs: []
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      changes:
-        - $DOCKERFILE
   script:
     - apk add --no-cache -U make bash git
     - git fetch --all
@@ -271,7 +256,7 @@ test:image:docs-single-lunrjs:
 #
 image:docs-latest:
   extends:
-    - .rules_scheduled_manual
+    - .rules_docker_images
     - .docker_prepare
   stage: build-images
   artifacts: {}
@@ -293,15 +278,12 @@ image:docs-latest:
 test:image:docs-latest:
   extends:
     - .docker_prepare
+    - .rules_docker_image_tests
   stage: test
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
     DOCKERFILE: latest.Dockerfile
   needs: []
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      changes:
-        - $DOCKERFILE
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker run --rm $IMAGE_NAME ls -l /usr/share/nginx/html
