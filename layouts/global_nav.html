@@ -12,7 +12,7 @@
       </span>
 
       <!-- nav categories -->
-      <% if sec.has_children? && sec.enabled  %>
+      <% if sec.has_children? %>
         <div class="collapse <%= navigation.show_element?(sec) ? 'show' : '' %>" id="sec_<%= sec_uuid %>">
           <% sec.children.each do |cat| %>
             <% cat_uuid = SecureRandom.uuid %>

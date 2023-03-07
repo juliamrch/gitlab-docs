@@ -1,19 +1,14 @@
 # frozen_string_literal: true
 
-require_relative '../helpers/generic'
 require_relative '../helpers/icons_helper'
 
 module Gitlab
   class Navigation
-    include Nanoc::Helpers::Generic
     include Nanoc::Helpers::IconsHelper
 
     def initialize(items, item)
       @items = items
       @item = item
-
-      disable_inactive_sections!
-      omnibus_only_items!
     end
 
     def nav_items
@@ -40,34 +35,8 @@ module Gitlab
 
     attr_reader :items, :item
 
-    def disable_inactive_sections!
-      return unless omnibus?
-
-      children.each do |section|
-        section.disable! unless has_active_element?([section])
-      end
-    end
-
-    # Remove sections and categories menu items missing in Omnibus
-    def omnibus_only_items!
-      return unless omnibus?
-
-      children.filter! do |section|
-        if allowed_link?(section.url)
-          section.children.filter! { |category| allowed_link?(category.url) }
-          true
-        end
-      end
-    end
-
     def allowed_link?(link)
       link.start_with?('ee/', 'http')
-    end
-
-    def has_active_element?(collection)
-      return false unless collection
-
-      collection.any? { |element| show_element?(element) || has_active_element?(element.children) }
     end
 
     def dir
