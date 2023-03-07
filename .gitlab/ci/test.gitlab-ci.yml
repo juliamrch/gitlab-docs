@@ -63,7 +63,7 @@ check_asdf_installation:
     - make setup-asdf
     - make install-asdf-dependencies
   rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
       changes:
         - .tool-versions
 

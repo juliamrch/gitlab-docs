@@ -40,6 +40,14 @@ workflow:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
       variables:
         DOCS_PROJECT_PIPELINE_TYPE: "MR pipeline: branch $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_COMMIT_REF_NAME =~ /algolia/'
+      variables:
+        DOCS_PROJECT_PIPELINE_TYPE: "MR pipeline (Algolia): branch $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"
+        SEARCH_BACKEND: 'algolia'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_COMMIT_REF_NAME =~ /gps/'
+      variables:
+        DOCS_PROJECT_PIPELINE_TYPE: "MR pipeline (Google): branch $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"
+        SEARCH_BACKEND: 'google'
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TIMING == "monthly"'
       variables:
         DOCS_PROJECT_PIPELINE_TYPE: "Monthly stopped environments cleanup pipeline"
@@ -57,7 +65,7 @@ workflow:
         DOCS_PROJECT_PIPELINE_TYPE: "Pipeline source = pipeline"
     - if: '$CI_PIPELINE_SOURCE == "trigger"'
       variables:
-        DOCS_PROJECT_PIPELINE_TYPE: "Review app pipeline"
+        DOCS_PROJECT_PIPELINE_TYPE: "Upstream review app pipeline"
     # Allow branch pipelines for the default branch and stable branches named XX.X
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       variables:
