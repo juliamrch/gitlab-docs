@@ -36,4 +36,21 @@ else
   printf "${COLOR_GREEN}INFO: No entries with index.html found!${COLOR_RESET}\n"
 fi
 
+# shellcheck disable=2059
+printf "${COLOR_GREEN}INFO: Checking global navigation against schema...${COLOR_RESET}\n"
+JSON_NAVIGATION=$(ruby -ryaml -rjson -e "puts YAML.load_file('content/_data/navigation.yaml').to_json")
+echo "$JSON_NAVIGATION" | bin/json_schemer spec/lib/gitlab/navigation/navigation_schema.json - > /dev/null
+RETURN_CODE="$?"
+if [[ $RETURN_CODE == 0 ]]; then
+  # shellcheck disable=2059
+  printf "${COLOR_GREEN}INFO: Global navigation matches schema!${COLOR_RESET}\n"
+else
+  # shellcheck disable=2059
+  printf "${COLOR_RED}ERROR: Global navigation doesn't match schema${COLOR_RESET}\n"
+  echo "$JSON_NAVIGATION" | bin/json_schemer spec/lib/gitlab/navigation/navigation_schema.json - > error.log
+  # shellcheck disable=2002
+  cat error.log | while IFS= read -r error; do echo "$error" | jq; done
+  RETURN_CODE=1
+fi
+
 if [[ $RETURN_CODE == 1 ]]; then exit 1; else exit 0; fi

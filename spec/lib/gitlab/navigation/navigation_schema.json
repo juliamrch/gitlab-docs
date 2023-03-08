@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Global navigation for GitLab Docs",
+  "type": "object",
+  "properties": {
+    "sections": {
+      "description": "GitLab Docs site sections (first level)",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "section_title": {
+            "description": "GitLab Docs section (first level) title",
+            "type": "string"
+          },
+          "section_url": {
+            "description": "GitLab Docs section (first level) URL",
+            "type": "string"
+          },
+          "section_categories": {
+            "description": "GitLab Docs site categories (second level)",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "category_title": {
+                  "description": "GitLab Docs category (second level) title",
+                  "type": "string"
+                },
+                "category_url": {
+                  "description": "GitLab Docs category (second level) URL",
+                  "type": "string"
+                },
+                "docs": {
+                  "$ref": "#/definitions/docs"
+                }
+              },
+              "required": ["category_title", "category_url"]
+            }
+          }
+        },
+        "required": ["section_title", "section_url"]
+      }
+    }
+  },
+  "required": ["sections"],
+  "definitions": {
+    "docs": {
+      "description": "GitLab Docs category documentation",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "doc_title": {
+            "description": "GitLab Docs documentation title",
+            "type": "string"
+          },
+          "doc_url": {
+            "description": "GitLab Docs documentation URL",
+            "type": "string"
+          },
+          "external_url": {
+            "description": "Link to a URL outside of GitLab docs",
+            "type": "boolean"
+          },
+          "docs": {
+            "$ref": "#/definitions/docs"
+          }
+        },
+        "required": ["doc_title", "doc_url"]
+      }
+    }
+  }
+}

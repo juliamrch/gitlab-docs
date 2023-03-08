@@ -36,6 +36,7 @@ check_duplicate_redirects:
 #
 # - Identical duplicate entries.
 # - index.html in the entries.
+# - Entries that don't conform to the schema.
 #
 check_global_nav_entries:
   extends:
@@ -43,6 +44,7 @@ check_global_nav_entries:
   needs: []
   stage: test
   script:
+    - bundle install
     - make check-global-navigation
 
 #
