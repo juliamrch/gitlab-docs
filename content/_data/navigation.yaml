@@ -3117,6 +3117,8 @@ sections:
                     doc_url: 'ee/development/packages/debian_repository.html'
                   - doc_title: Dependency proxy
                     doc_url: 'ee/development/packages/dependency_proxy.html'
+                  - doc_title: Harbor registry
+                    doc_url: 'ee/development/packages/harbor_registry_development.html'
               - doc_title: Permissions
                 doc_url: 'ee/development/permissions.html'
               - doc_title: Product Qualified Lead (PQL)
