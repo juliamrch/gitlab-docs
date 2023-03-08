@@ -227,10 +227,3 @@ lint_dockerfiles:
   script:
     - apk add make
     - make hadolint-tests
-
-#
-# eslint-sast scans html too, so run in security stage after html files are generated
-#
-
-eslint-sast:
-  stage: security
