@@ -3339,8 +3339,8 @@ sections:
       - category_title: Contribute to documentation
         category_url: 'ee/development/documentation/'
         docs:
-          - doc_title: How to update the documentation
-            doc_url: 'ee/development/documentation/workflow.html'
+          - doc_title: Contribute
+            doc_url: 'ee/development/documentation/contribute.html'
           - doc_title: Style guide
             doc_url: 'ee/development/documentation/styleguide/'
           - doc_title: Recommended word list
@@ -3362,6 +3362,8 @@ sections:
             doc_url: 'ee/development/documentation/versions.html'
           - doc_title: Global navigation
             doc_url: 'ee/development/documentation/site_architecture/global_nav.html'
+          - doc_title: Workflow
+            doc_url: 'ee/development/documentation/workflow.html'
           - doc_title: Drawer content
             doc_url: 'ee/development/documentation/drawers.html'
           - doc_title: Testing
