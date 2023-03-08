@@ -63,14 +63,13 @@ default:
 #
 .rules_docker_images:
   rules:
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Cleanup chores pipeline"'
-      when: never
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Build docker images pipeline"'
       when: manual
       allow_failure: true
 
 .rules_docker_image_tests:
   rules:
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Build docker images pipeline"'
     - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
       changes:
         - $DOCKERFILE
@@ -83,23 +82,13 @@ default:
 
 .rules_site_tests:
   rules:
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Cleanup chores pipeline"'
-      when: never
-    # Don't run site tests for review apps.
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
-      when: never
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Hourly site deployment pipeline"'
     - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Default branch pipeline"'
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
 
 .rules_prod:
   rules:
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Cleanup chores pipeline"'
-      when: never
-    # Don't deploy to production for trigerred pipelines (usually review apps)
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
-      when: never
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Hourly site deployment pipeline"'
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Default branch pipeline"'
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
@@ -116,8 +105,6 @@ default:
 
 .rules_pages:
   rules:
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Cleanup chores pipeline"'
-      when: never
     # Don't deploy to production for trigerred pipelines (usually review apps)
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
       when: never

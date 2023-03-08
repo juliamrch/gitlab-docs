@@ -177,7 +177,7 @@ _Do this after the release post is live._
    has passed and created a [Docker image](https://gitlab.com/gitlab-org/gitlab-docs/container_registry/631635?orderBy=NAME&sort=desc&search[]=).
 1. Merge the [release merge request](#create-release-merge-request).
 1. Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)
-   and run the `Build docker images weekly` pipeline.
+   and run the `Build docker images manually` pipeline.
 1. In the scheduled pipeline you just started, manually run the **image:docs-latest** job that builds the `:latest` Docker image.
 1. When the pipeline is complete, run the `Build docs.gitlab.com every hour` scheduled pipeline to deploy all new versions to the public documentation site.
    You don't need to run any jobs manually for this second pipeline.

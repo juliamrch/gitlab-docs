@@ -10,11 +10,11 @@ include:
       - '/ci/danger-review.yml'
 
 stages:
-  - build-images
   - build
   - security
   - test
   - pre-deploy
+  - build-images
   - deploy
   - post-deploy
 
