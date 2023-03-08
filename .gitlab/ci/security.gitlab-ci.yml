@@ -21,13 +21,25 @@
   artifacts:
     expire_in: 1 month
 
+.security-rules:
+  rules:
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Hourly site deployment pipeline"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Default branch pipeline"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
+
 #
 # Dependency scanning job overrides
 #
 gemnasium-dependency_scanning:
   extends:
     - .ds-analyzer
+    - .cyclonedx-reports
     - .security-scanning-overrides
+  rules:
+    - if: $DEPENDENCY_SCANNING_DISABLED || $DS_EXCLUDED_ANALYZERS =~ /gemnasium([^-]|$)/
+      when: never
+    - !reference [".security-rules", "rules"]
 
 #
 # SAST job overrides
@@ -36,30 +48,37 @@ brakeman-sast:
   extends:
     - .sast-analyzer
     - .security-scanning-overrides
+  rules:
+    - if: $SAST_DISABLED == 'true' || $SAST_DISABLED == '1' || $SAST_EXCLUDED_ANALYZERS =~ /brakeman/
+      when: never
+    - !reference [".security-rules", "rules"]
 
 nodejs-scan-sast:
   extends:
     - .sast-analyzer
     - .security-scanning-overrides
+  rules:
+    - if: $SAST_DISABLED == 'true' || $SAST_DISABLED == '1' || $SAST_EXCLUDED_ANALYZERS =~ /nodejs-scan/
+      when: never
+    - !reference [".security-rules", "rules"]
 
 semgrep-sast:
   extends:
     - .sast-analyzer
     - .security-scanning-overrides
+  rules:
+    - if: $SAST_DISABLED == 'true' || $SAST_DISABLED == '1' || $SAST_EXCLUDED_ANALYZERS =~ /semgrep/
+      when: never
+    - !reference [".security-rules", "rules"]
 
 #
 # Secret detection job overrides
-# As per https://docs.gitlab.com/ee/user/application_security/#use-security-scanning-tools-with-merge-request-pipelines,
-# overrides the rules to make it work in MR pipelines too.
 #
 secret_detection:
   extends:
     - .secret-analyzer
     - .security-scanning-overrides
   rules:
-    - if: $SECRET_DETECTION_DISABLED
+    - if: $SECRET_DETECTION_DISABLED == 'true' || $SECRET_DETECTION_DISABLED == '1'
       when: never
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Default branch pipeline"'
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
-  script:
-    - /analyzer run
+    - !reference [".security-rules", "rules"]
