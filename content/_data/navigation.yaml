@@ -1137,7 +1137,7 @@ sections:
             doc_url: 'ee/user/project/deploy_tokens/'
           - doc_title: File finder
             doc_url: 'ee/user/project/repository/file_finder.html'
-          - doc_title: Migrating projects
+          - doc_title: Import projects
             doc_url: 'ee/user/project/import/'
             docs:
               - doc_title: Bitbucket Cloud
@@ -1150,13 +1150,24 @@ sections:
                 doc_url: 'ee/user/project/import/cvs.html'
               - doc_title: FogBugz
                 doc_url: 'ee/user/project/import/fogbugz.html'
+              - doc_title: Gitea
+                doc_url: 'ee/user/project/import/gitea.html'
               - doc_title: GitHub
                 doc_url: 'ee/user/project/import/github.html'
                 docs:
                   - doc_title: GitHub import Rake task
                     doc_url: 'ee/administration/raketasks/github_import.html'
-              - doc_title: Gitea
-                doc_url: 'ee/user/project/import/gitea.html'
+              - doc_title: GitLab
+                doc_url: 'ee/user/project/settings/import_export.html'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/user/project/settings/import_export_troubleshooting.html'
+                  - doc_title: Rate limits for project and group imports and exports
+                    doc_url: 'ee/user/admin_area/settings/import_export_rate_limits.html'
+                  - doc_title: Decompressed archive size limits
+                    doc_url: 'ee/security/project_import_decompressed_archive_size_limits.html'
+                  - doc_title: Rake tasks
+                    doc_url: 'ee/administration/raketasks/project_import_export.html'
               - doc_title: Jira
                 doc_url: 'ee/user/project/import/jira.html'
               - doc_title: Perforce Helix
@@ -1167,17 +1178,6 @@ sections:
                 doc_url: 'ee/user/project/import/repo_by_url.html'
               - doc_title: TFVC
                 doc_url: 'ee/user/project/import/tfvc.html'
-          - doc_title: Migrate projects using file exports
-            doc_url: 'ee/user/project/settings/import_export.html'
-            docs:
-              - doc_title: Troubleshooting
-                doc_url: 'ee/user/project/settings/import_export_troubleshooting.html'
-              - doc_title: Rate limits for project and group imports and exports
-                doc_url: 'ee/user/admin_area/settings/import_export_rate_limits.html'
-              - doc_title: Decompressed archive size limits
-                doc_url: 'ee/security/project_import_decompressed_archive_size_limits.html'
-              - doc_title: Rake tasks
-                doc_url: 'ee/administration/raketasks/project_import_export.html'
 
       - category_title: Plan and track work
         category_url: 'ee/topics/plan_and_track.html'
