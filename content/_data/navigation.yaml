@@ -2710,8 +2710,6 @@ sections:
                 docs:
                   - doc_title: Controlling feature flags
                     doc_url: 'ee/development/feature_flags/controls.html'
-                  - doc_title: Documenting feature flags
-                    doc_url: 'ee/development/documentation/feature_flags.html'
                   - doc_title: Feature flags API
                     doc_url: 'ee/api/features.html'
               - doc_title: Framework - DeclarativePolicy
@@ -3367,6 +3365,10 @@ sections:
                 doc_url: 'ee/development/documentation/topic_types/tutorial.html'
           - doc_title: Document product versions
             doc_url: 'ee/development/documentation/versions.html'
+          - doc_title: Document feature flags
+            doc_url: 'ee/development/documentation/feature_flags.html'
+          - doc_title: Document Alpha and Beta features
+            doc_url: 'ee/development/documentation/alpha_beta.html'
           - doc_title: Global navigation
             doc_url: 'ee/development/documentation/site_architecture/global_nav.html'
           - doc_title: Workflow
