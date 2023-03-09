@@ -1051,8 +1051,10 @@ sections:
                     doc_url: 'ee/user/group/saml_sso/troubleshooting_scim.html'
               - doc_title: Subgroups
                 doc_url: 'ee/user/group/subgroups/'
-              - doc_title: Move a personal project to a group
+              - doc_title: 'Tutorial: Move a personal project to a group'
                 doc_url: 'ee/tutorials/move_personal_project_to_a_group.html'
+              - doc_title: 'Tutorial: Convert a personal namespace into a group'
+                doc_url: 'ee/tutorials/convert_personal_namespace_into_group.html'
               - doc_title: Git abuse rate limit
                 doc_url: 'ee/user/group/reporting/git_abuse_rate_limit.html'
           - doc_title: Enterprise users
