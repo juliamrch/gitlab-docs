@@ -96,7 +96,6 @@ default:
 .rules_dev:
   rules:
     - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
-    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Cleanup chores pipeline"'
 
 .rules_upstream_review_app:
@@ -105,8 +104,5 @@ default:
 
 .rules_pages:
   rules:
-    # Don't deploy to production for trigerred pipelines (usually review apps)
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
-      when: never
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Hourly site deployment pipeline"'
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Default branch pipeline"'
