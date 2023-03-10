@@ -41,10 +41,10 @@ check_duplicate_redirects:
 check_global_nav_entries:
   extends:
     - .rules_site_tests
+    - .bundle
   needs: []
   stage: test
   script:
-    - bundle install
     - make check-global-navigation
 
 #
