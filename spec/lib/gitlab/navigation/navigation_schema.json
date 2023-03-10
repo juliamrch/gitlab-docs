@@ -34,6 +34,10 @@
                   "description": "GitLab Docs category (second level) URL",
                   "type": "string"
                 },
+                "external_url": {
+                  "description": "Link to a URL outside of GitLab docs",
+                  "type": "boolean"
+                },
                 "docs": {
                   "$ref": "#/definitions/docs"
                 }
