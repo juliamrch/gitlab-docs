@@ -117,7 +117,6 @@ review:
       when: never
     - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
-    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
 
 #
 # Stop the Review App
@@ -147,10 +146,6 @@ review_stop:
       allow_failure: true
       when: manual
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
-      allow_failure: true
-      when: manual
-    # TODO: Remove once no projects create such branch
-    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
       allow_failure: true
       when: manual
 

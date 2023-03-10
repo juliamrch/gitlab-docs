@@ -36,10 +36,6 @@ workflow:
     # Prevent branch pipelines if an MR is open on the branch.
     - if: $CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE == "push" && $CI_OPEN_MERGE_REQUESTS
       when: never
-    # Allow merge request and scheduled pipelines.
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-      variables:
-        DOCS_PROJECT_PIPELINE_TYPE: "MR pipeline: branch $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_COMMIT_REF_NAME =~ /algolia/'
       variables:
         DOCS_PROJECT_PIPELINE_TYPE: "MR pipeline (Algolia): branch $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"
@@ -48,21 +44,21 @@ workflow:
       variables:
         DOCS_PROJECT_PIPELINE_TYPE: "MR pipeline (Google): branch $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"
         SEARCH_BACKEND: 'google'
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TIMING == "monthly"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      variables:
+        DOCS_PROJECT_PIPELINE_TYPE: "MR pipeline: branch $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TYPE == "delete_environments"'
       variables:
         DOCS_PROJECT_PIPELINE_TYPE: "Monthly stopped environments cleanup pipeline"
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TYPE == "chores"'
       variables:
         DOCS_PROJECT_PIPELINE_TYPE: "Cleanup chores pipeline"
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TIMING == "weekly"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TYPE == "docker"'
       variables:
         DOCS_PROJECT_PIPELINE_TYPE: "Build docker images pipeline"
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TIMING == "hourly"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TYPE == "hourly_deploy"'
       variables:
         DOCS_PROJECT_PIPELINE_TYPE: "Hourly site deployment pipeline"
-    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
-      variables:
-        DOCS_PROJECT_PIPELINE_TYPE: "Pipeline source = pipeline"
     - if: '$CI_PIPELINE_SOURCE == "trigger"'
       variables:
         DOCS_PROJECT_PIPELINE_TYPE: "Upstream review app pipeline"
