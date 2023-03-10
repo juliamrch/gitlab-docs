@@ -75,8 +75,6 @@ compile_dev:
   extends:
     - .rules_dev
     - .build_base
-  variables:
-    SEARCH_BACKEND: 'lunr'
   script:
     - !reference [".compile-and-minify-scripts", "script"]
     - !reference [".gzip-scripts", "script"]
@@ -88,8 +86,6 @@ compile_upstream_review_app:
   extends:
     - .rules_upstream_review_app
     - .build_base
-  variables:
-    SEARCH_BACKEND: 'lunr'
   script:
     - !reference [".compile-and-minify-scripts", "script"]
 
