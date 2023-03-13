@@ -48,5 +48,5 @@ RUN printf "\n\e[32mINFO: Installing markdownlint-cli %s..\e[39m\n" "${MARKDOWNL
 # Install markdownlint-cli2
 RUN printf "\n\e[32mINFO: Installing markdownlint-cli2 %s..\e[39m\n" "${MARKDOWNLINT2_VERSION}" \
   && yarn global add markdownlint-cli2@${MARKDOWNLINT2_VERSION} && yarn cache clean \
-  && echo "markdownlint-cli2: $(markdownlint-cli2 --version)" \
+  && markdownlint-cli2 | head -n 1 \
   && printf "\n"

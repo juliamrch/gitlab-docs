@@ -14,7 +14,7 @@
 
 # Common setup for review apps
 .review-environment:
-  image: registry.gitlab.com/gitlab-org/gitlab-build-images:www-gitlab-com-debian-bullseye-ruby-3.0-node-16
+  image: registry.gitlab.com/gitlab-org/gitlab-build-images:www-gitlab-com-debian-bullseye-ruby-3.2-node-18
   environment:
     name: review/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
     url: https://$CI_COMMIT_REF_SLUG$REVIEW_SLUG.docs.gitlab-review.app
