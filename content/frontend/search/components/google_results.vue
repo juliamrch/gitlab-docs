@@ -40,10 +40,10 @@ export default {
     resultSummary() {
       const { count, startIndex } = this.response.queries.request[0];
       const end = startIndex - 1 + count;
-      return `Showing ${startIndex}-${end} of ${this.response.searchInformation.formattedTotalResults} results`;
+      return `Showing ${startIndex}-${end} of ${this.pagerMaxItems()} results`;
     },
     noResults() {
-      return this.query && !this.loading && !this.results.length && !this.error;
+      return this.query && this.submitted && !this.results.length && !this.loading && !this.error;
     },
     showPager() {
       return (
@@ -52,9 +52,6 @@ export default {
         this.response.searchInformation.totalResults > this.MAX_RESULTS_PER_PAGE &&
         !this.loading
       );
-    },
-    pagerMaxItems() {
-      return Math.min(this.response.searchInformation.totalResults, this.MAX_TOTAL_RESULTS);
     },
   },
   created() {
@@ -70,6 +67,9 @@ export default {
   methods: {
     cleanTitle(title) {
       return title.replace(' | GitLab', '');
+    },
+    pagerMaxItems() {
+      return Math.min(this.response.searchInformation.totalResults, this.MAX_TOTAL_RESULTS);
     },
     async fetchGoogleResults(filters) {
       let data = {};
@@ -135,7 +135,7 @@ export default {
 
 <template>
   <div class="google-search gl-mb-9">
-    <h1>Search</h1>
+    <h1 class="gl-pt-0! gl-mt-7!">Search</h1>
     <div class="gl-h-11 gl-mb-5">
       <gl-search-box-by-click
         v-model="query"
@@ -149,7 +149,6 @@ export default {
 
     <div class="results-container gl-lg-display-flex">
       <div v-if="submitted" class="results-sidebar gl-mb-5 lg-w-20p">
-        <h2 class="gl-mt-0! gl-mb-5!">Filter results</h2>
         <search-filters @filteredSearch="(filters) => search(query, filters)" />
       </div>
 
@@ -171,7 +170,7 @@ export default {
           v-if="showPager"
           v-model="pageNumber"
           :per-page="MAX_RESULTS_PER_PAGE"
-          :total-items="pagerMaxItems"
+          :total-items="pagerMaxItems()"
           class="gl-mt-9"
           @input="search(query, activeFilters)"
         />
@@ -194,8 +193,5 @@ html {
 }
 .result-snippet {
   font-size: 0.875rem;
-}
-.results-sidebar h2 {
-  font-size: 1.5rem;
 }
 </style>

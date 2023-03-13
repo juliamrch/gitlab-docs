@@ -14,8 +14,29 @@ export default {
   created() {
     this.filters = [
       {
-        title: 'Sections',
-        options: ['Tutorials', 'Install', 'Administer', 'Use GitLab', 'Develop', 'Contribute'],
+        title: 'Filter by',
+        options: [
+          {
+            text: 'Installation docs',
+            value: 'Install,Subscribe',
+          },
+          {
+            text: 'Administration docs',
+            value: 'Administer,Subscribe',
+          },
+          {
+            text: 'User docs',
+            value: 'Use GitLab,Tutorials,Subscribe',
+          },
+          {
+            text: 'Developer (API) docs',
+            value: 'Develop',
+          },
+          {
+            text: 'Contributor docs',
+            value: 'Contribute',
+          },
+        ],
       },
     ];
   },
@@ -25,7 +46,7 @@ export default {
 <template>
   <div>
     <div v-for="filter in filters" :key="filter.title">
-      <h3 class="gl-font-lg! gl-mt-5! gl-mb-3!">{{ filter.title }}</h3>
+      <h2 class="gl-font-lg! gl-mt-0! gl-mb-3!">{{ filter.title }}</h2>
       <gl-form-checkbox-group
         v-model="selected"
         :label="filter.title"
