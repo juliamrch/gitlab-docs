@@ -3233,11 +3233,10 @@ sections:
                 doc_url: 'ee/development/prometheus_metrics.html'
               - doc_title: Organization
                 doc_url: 'ee/development/organization/'
+          - doc_title: User experience
+            doc_url: 'ee/development/ux/'
           - doc_title: GitLab Development Kit
             doc_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/README.md'
-            external_url: true
-          - doc_title: GitLab Design System
-            doc_url: 'https://design.gitlab.com'
             external_url: true
           - doc_title: GitLab project pipelines
             doc_url: 'ee/development/pipelines/'
@@ -3339,6 +3338,10 @@ sections:
           - doc_title: Troubleshooting
             doc_url: 'charts/development/troubleshooting.html'
       # End GitLab Helm Charts development documentation
+
+      - category_title: Contribute to GitLab Design System
+        category_url: 'https://design.gitlab.com/get-started/contributing'
+        external_url: true
 
       # Contribute to GitLab docs
       - category_title: Contribute to documentation
