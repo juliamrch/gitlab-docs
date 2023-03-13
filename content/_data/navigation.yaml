@@ -3231,6 +3231,8 @@ sections:
                     doc_url: 'ee/development/workhorse/channel.html'
               - doc_title: Prometheus metrics
                 doc_url: 'ee/development/prometheus_metrics.html'
+              - doc_title: Organization
+                doc_url: 'ee/development/organization/'
           - doc_title: GitLab Development Kit
             doc_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/README.md'
             external_url: true
