@@ -25,6 +25,13 @@ To bump the versions of Ruby or Alpine:
 1. In the same merge request, edit [`.gitlab-ci.yml`](.gitlab-ci.yml) to bump the environment variables:
    - [ ] `ALPINE_VERSION`
    - [ ] `RUBY_VERSION`
+1. Before merging changes to `.tool-versions`, notify the team in the `#tw-team` channel of the change:
+
+   ```plaintext
+   I'm about to merge dependency changes to `gitlab-docs`. Run `make setup` to install the necessary updates.
+   ```
+
+   Then merge the merge request.
 1. After the merge request is merged, run the following manual jobs in the next
    [scheduled pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all&source=schedule):
 
