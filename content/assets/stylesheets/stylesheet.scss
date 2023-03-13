@@ -237,7 +237,7 @@ ol {
 .navbar {
   min-height: $header-height;
   background-color: $header-background-color;
-  z-index: 3;
+  z-index: 99;
 
   .navbar-brand {
     font-size: 1rem;
@@ -292,11 +292,14 @@ ol {
     }
   }
 
-  .search-form {
-    .input-group-append {
-      background-color: inherit;
-    }
+  .search-form .input-group-append {
+    background-color: inherit;
   }
+}
+
+// Search
+.search-form {
+  max-width: 25rem;
 }
 
 //badges
@@ -579,6 +582,9 @@ a.gl-tab-nav-item:hover {
   .gl-search-box-by-click-clear-button {
     z-index: auto;
   }
+}
+.gl-pagination a.page-link {
+  color: $gds-gray-900;
 }
 
 .four-oh-four {
