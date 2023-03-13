@@ -19,7 +19,7 @@ RUN apk add --no-cache git \
 
 #- Start of builder stage -#
 
-FROM ruby:3.0.5-alpine3.16 AS builder
+FROM ruby:3.2.1-alpine3.17 AS builder
 
 # Copy minifier binary from the minifier stage
 COPY --from=minifier /minify /usr/local/bin/minify
@@ -72,11 +72,11 @@ RUN apk add --no-cache -U \
 COPY . /source/
 WORKDIR /source
 
-RUN yarn install --frozen-lockfile                              \
-    && yarn cache clean                                         \
-    && bundle config set --local deployment true                \
-    && bundle install                                           \
-    && bundle exec rake default                                 \
+RUN yarn install --frozen-lockfile               \
+    && yarn cache clean                          \
+    && bundle config set --local deployment true \
+    && bundle install                            \
+    && bundle exec rake default                  \
     && bundle exec nanoc compile -VV
 
 RUN if [ "$SEARCH_BACKEND" = "lunr" ]; then make build-lunr-index; fi
