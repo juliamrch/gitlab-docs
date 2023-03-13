@@ -902,3 +902,24 @@ redirects:
   - from: /charts/releases/
     to: /charts/installation/version_mappings.html
     remove_date: 2023-11-01
+  - from: /ee/administration/auth/authentiq.html
+    to: /ee/integration/omniauth.html
+    remove_date: 2023-11-22
+  - from: /ee/update/mysql_to_postgresql.html
+    to: /ee/update/index.html
+    remove_date: 2023-11-28
+  - from: /ee/update/restore_after_failure.html
+    to: /ee/raketasks/backup_restore.html
+    remove_date: 2023-11-28
+  - from: /ee/update/upgrading_postgresql_using_slony.html
+    to: /ee/administration/postgresql/replication_and_failover.html
+    remove_date: 2023-11-28
+  - from: /ee/user/admin_area/monitoring/background_migrations.html
+    to: /ee/update/background_migrations.html
+    remove_date: 2023-12-11
+  - from: /ee/user/group/settings/import_export.html
+    to: /ee/user/group/import/index.html
+    remove_date: 2023-12-08
+  - from: /ee/user/project/merge_requests/commits.html
+    to: /ee/user/project/merge_requests/index.html
+    remove_date: 2023-12-12
