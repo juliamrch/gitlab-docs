@@ -32,15 +32,17 @@ To bump the versions of Ruby or Alpine:
    ```
 
    Then merge the merge request.
-1. After the merge request is merged, run the following manual jobs in the next
-   [scheduled pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all&source=schedule):
+1. After the merge request is merged, run the [`Build docker images manually` scheduled pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules),
+   and run the following manual jobs:
 
    - [ ] `image:gitlab-docs-base`
    - [ ] `image:docs-lint-markdown`
    - [ ] `image:docs-lint-html`
 
-1. [ ] After the new images are built, make sure they work as expected by first updating
-   the `image` entries in `gitlab-docs`: <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/test.gitlab-ci.yml>.
+1. After the new images are built, make sure they work as expected by first updating
+   the `image` entries in `gitlab-docs`:
+   - [ ] <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/test.gitlab-ci.yml>
+   - [ ] <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/rules.gitlab-ci.yml>
 
 1. Update the the `image` entries in the upstream projects:
 
