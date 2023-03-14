@@ -2620,6 +2620,8 @@ sections:
                 doc_url: 'ee/api/group_wikis.html'
               - doc_title: Wikis (project)
                 doc_url: 'ee/api/wikis.html'
+          - doc_title: Deprecations and removals
+            doc_url: 'ee/api/rest/deprecations.html'
           - doc_title: OpenAPI
             doc_url: 'ee/api/openapi/openapi_interactive.html'
       - category_title: GraphQL API
