@@ -15,8 +15,8 @@ heros:
     img: /assets/images/continuous-delivery.svg
     alt: continuous-delivery
     links:
-      - title: GitLab CI/CD
-        url: '/ee/ci/'
+      - title: .gitlab-ci.yml reference
+        url: 'ee/ci/yaml/'
       - title: GitLab Runner
         url: '/runner/'
       - title: Auto DevOps
