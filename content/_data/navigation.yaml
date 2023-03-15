@@ -1076,6 +1076,8 @@ sections:
                 doc_url: 'ee/user/profile/notifications.html'
               - doc_title: User passwords
                 doc_url: 'ee/user/profile/user_passwords.html'
+              - doc_title: Saved replies
+                doc_url: 'ee/user/profile/saved_replies.html'
               - doc_title: Two-factor authentication
                 doc_url: 'ee/user/profile/account/two_factor_authentication.html'
               - doc_title: Report abuse
