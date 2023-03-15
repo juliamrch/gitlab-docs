@@ -2865,6 +2865,8 @@ sections:
                     doc_url: 'ee/development/cicd/templates.html'
                   - doc_title: Pipeline Wizard
                     doc_url: 'ee/development/cicd/pipeline_wizard.html'
+                  - doc_title: New partitioned CI/CD tables
+                    doc_url: 'ee/development/cicd/cicd_tables.html'
               - doc_title: Code intelligence
                 doc_url: 'ee/development/code_intelligence/'
               - doc_title: Code Owners
