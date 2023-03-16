@@ -950,7 +950,7 @@ sections:
             doc_url: 'ee/security/ssh_keys_restrictions.html'
           - doc_title: Rate limits
             doc_url: 'ee/security/rate_limits.html'
-          - doc_title: Webhooks
+          - doc_title: Filtering outbound requests
             doc_url: 'ee/security/webhooks.html'
           - doc_title: Information exclusivity
             doc_url: 'ee/security/information_exclusivity.html'
