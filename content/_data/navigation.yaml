@@ -1820,8 +1820,8 @@ sections:
             docs:
               - doc_title: Dependency Scanning Analyzers
                 doc_url: 'ee/user/application_security/dependency_scanning/analyzers.html'
-              - doc_title: Dependency List
-                doc_url: 'ee/user/application_security/dependency_list/'
+          - doc_title: Dependency List
+            doc_url: 'ee/user/application_security/dependency_list/'
           - doc_title: Static Application Security Testing
             doc_url: 'ee/user/application_security/sast/'
             docs:
