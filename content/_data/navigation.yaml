@@ -3412,7 +3412,7 @@ sections:
             doc_url: 'ee/development/documentation/redirects.html'
           - doc_title: Create a GraphQL example page
             doc_url: 'ee/development/documentation/graphql_styleguide.html'
-          - doc_title: RESTful API style guide
+          - doc_title: Documenting REST API resources
             doc_url: 'ee/development/documentation/restful_api_styleguide.html'
       # End of contribute to docs
 
