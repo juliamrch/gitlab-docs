@@ -2,58 +2,75 @@
 
 require './lib/tasks/task_helpers'
 require 'fileutils'
+require 'pathname'
 
 task_helpers = TaskHelpers.new
+DRY_RUN = ENV['DRY_RUN'] == 'true'
 
 namespace :release do
   desc 'Creates a single release archive'
-  task :single, :version do |t, args|
+  task :single, :version do |_t, args|
     require "highline/import"
     version = args.version.to_s
 
-    # Disable lefthook because it was causing some PATH errors
+    # Disable lefthook because it causes PATH errors
     # https://docs.gitlab.com/ee/development/contributing/style_guides.html#disable-lefthook-temporarily
     ENV['LEFTHOOK'] = '0'
 
     raise 'You need to specify a version, like 10.1' unless version.match?(%r{\A\d+\.\d+\z})
 
-    # Check if local branch exists
-    abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.#{TaskHelpers::COLOR_CODE_RESET}") \
+    abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: Rake aborted! Local branch already exists. Run `git branch --delete --force #{version}` and rerun the task.#{TaskHelpers::COLOR_CODE_RESET}") \
       if task_helpers.local_branch_exist?(version)
 
-    # Stash modified and untracked files so we have "clean" environment
-    # without accidentally deleting data
-    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Stashing changes..#{TaskHelpers::COLOR_CODE_RESET}"
-    `git stash -u` if task_helpers.git_workdir_dirty?
-
-    # Sync with upstream default branch
-    `git checkout #{ENV.fetch('CI_DEFAULT_BRANCH', nil)}`
-    `git pull origin #{ENV.fetch('CI_DEFAULT_BRANCH', nil)}`
-
-    # Create branch
-    `git checkout -b #{version}`
-
-    # Set version variable in X.Y.Dockerfile
-    dockerfile = "#{version}.Dockerfile"
-
-    if File.exist?(dockerfile)
-      abort('rake aborted!') if ask("#{dockerfile} already exists. Do you want to overwrite?", %w[y n]) == 'n'
+    if DRY_RUN
+      TaskHelpers.info("gitlab-docs", "DRY RUN: Not stashing local changes.")
+    else
+      TaskHelpers.info("gitlab-docs", "Stashing local changes...")
+      `git stash -u` if task_helpers.git_workdir_dirty?
     end
 
-    content = File.read('dockerfiles/single.Dockerfile')
-    content.gsub!('ARG VER', "ARG VER=#{version}")
-
-    File.open(dockerfile, 'w') do |post|
-      post.puts content
+    if DRY_RUN
+      TaskHelpers.info("gitlab-docs", "DRY RUN: Not checking out main branch and pulling updates.")
+    else
+      TaskHelpers.info("gitlab-docs", "Checking out main branch and pulling updates...")
+      `git checkout main`
+      `git pull origin main`
     end
 
-    # Add and commit
-    `git add #{version}.Dockerfile`
-    `git commit -m 'Release cut #{version}'`
+    if DRY_RUN
+      TaskHelpers.info("gitlab-docs", "DRY RUN: Not creating branch #{version}.")
+    else
+      TaskHelpers.info("gitlab-docs", "Creating branch #{version}...")
+      `git checkout -b #{version}`
+    end
 
-    puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Created new Dockerfile:#{TaskHelpers::COLOR_CODE_RESET} #{dockerfile}."
-    puts "#{TaskHelpers::COLOR_CODE_GREEN}INFO: Pushing the new branch. Don't create a merge request!#{TaskHelpers::COLOR_CODE_RESET}"
+    dockerfile = Pathname.new("#{version}.Dockerfile")
+    single_dockerfile = Pathname.new('dockerfiles/single.Dockerfile')
 
-    `git push origin #{version}`
+    if DRY_RUN
+      TaskHelpers.info("gitlab-docs", "DRY RUN: Not creating file #{dockerfile}.")
+    elsif File.exist?(dockerfile) && ask("#{dockerfile} already exists. Do you want to overwrite?", %w[y n]) == 'n'
+      abort('rake aborted!')
+    else
+      TaskHelpers.info("gitlab-docs", "Creating file #{dockerfile}...")
+      dockerfile.open('w') do |post|
+        post.write(single_dockerfile.read.gsub('ARG VER', "ARG VER=#{version}"))
+      end
+    end
+
+    if DRY_RUN
+      TaskHelpers.info("gitlab-docs", "DRY RUN: Not adding file #{dockerfile} to branch #{version} or commiting changes.")
+    else
+      TaskHelpers.info("gitlab-docs", "Adding file #{dockerfile} and commiting changes to branch #{version}...")
+      `git add #{version}.Dockerfile`
+      `git commit -m 'Release cut #{version}'`
+    end
+
+    if DRY_RUN
+      TaskHelpers.info("gitlab-docs", "DRY RUN: Not pushing branch #{version}.")
+    else
+      TaskHelpers.info("gitlab-docs", "Pushing branch #{version}. Don't create a merge request...")
+      `git push origin #{version}`
+    end
   end
 end

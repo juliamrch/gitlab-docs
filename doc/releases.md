@@ -62,10 +62,16 @@ To minimize problems during the documentation release process, use the following
 To create a stable branch of the `gitlab-docs` project and a Docker image for the release:
 
 1. Make sure you're in the root path of the `gitlab-docs` repository.
-1. Update your local clone:
+1. Update your local checkout:
 
    ```shell
    make update
+   ```
+
+1. Optional. To practice running the task and check the process, run the Rake task in dry run mode. For example, to check the process for the 15.0 release:
+
+   ```shell
+   DRY_RUN=true ./bin/rake "release:single[15.0]"
    ```
 
 1. Run the Rake task to create the single version. For example, to create the 15.0 release:
