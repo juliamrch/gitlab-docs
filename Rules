@@ -45,8 +45,6 @@ preprocess do
     if item.identifier.match?('/ee/architecture/**/*.md')
       item[:layout] = 'blueprints/index'
       item[:feedback] = false
-      item[:comments] = false
-
       item[:status] ||= 'proposed'
     end
   end
