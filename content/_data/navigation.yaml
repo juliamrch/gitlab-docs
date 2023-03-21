@@ -1064,6 +1064,8 @@ sections:
             docs:
               - doc_title: Active sessions
                 doc_url: 'ee/user/profile/active_sessions.html'
+              - doc_title: Comment templates
+                doc_url: 'ee/user/profile/comment_templates.html'
               - doc_title: Contributions calendar
                 doc_url: 'ee/user/profile/contributions_calendar.html'
               - doc_title: Permissions and roles
@@ -1076,8 +1078,6 @@ sections:
                 doc_url: 'ee/user/profile/notifications.html'
               - doc_title: User passwords
                 doc_url: 'ee/user/profile/user_passwords.html'
-              - doc_title: Saved replies
-                doc_url: 'ee/user/profile/saved_replies.html'
               - doc_title: Two-factor authentication
                 doc_url: 'ee/user/profile/account/two_factor_authentication.html'
               - doc_title: Report abuse
