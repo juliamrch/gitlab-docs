@@ -1183,6 +1183,8 @@ sections:
                 doc_url: 'ee/user/project/import/repo_by_url.html'
               - doc_title: TFVC
                 doc_url: 'ee/user/project/import/tfvc.html'
+          - doc_title: System notes
+            doc_url: 'ee/user/project/system_notes.html'
 
       - category_title: Plan and track work
         category_url: 'ee/topics/plan_and_track.html'
