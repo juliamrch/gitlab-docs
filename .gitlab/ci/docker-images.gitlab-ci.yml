@@ -177,7 +177,7 @@ test:image:docs-single:
     - .rules_docker_image_tests
   stage: test
   variables:
-    GITLAB_VERSION: '15.9'
+    GITLAB_VERSION: '15.10'
     DOCKERFILE: dockerfiles/single.Dockerfile
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$GITLAB_VERSION
     NANOC_ENV: test
