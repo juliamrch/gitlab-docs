@@ -31,7 +31,7 @@ class TaskHelpers
     # variable, and if not assigned, set to the default branch.
     #
     if stable_branch_name.nil?
-      merge_request_iid = ENV["MERGE_REQUEST_IID_#{slug.upcase}"]
+      merge_request_iid = ENV.fetch("MERGE_REQUEST_IID_#{slug.upcase}", nil)
       branch_name = ENV.fetch("BRANCH_#{slug.upcase}", default_branch(products[slug].fetch('repo')))
 
       return branch_name, "heads/#{branch_name}" if merge_request_iid.nil?
@@ -42,26 +42,26 @@ class TaskHelpers
     #
     # Check the project slug to determine the branch name
     #
-    stable_branch = case slug
+    stable_branch = stable_branch_for(slug)
 
+    [stable_branch, "heads/#{stable_branch}"]
+  end
+
+  def stable_branch_for(slug)
+    case slug
     when 'ee'
       "#{stable_branch_name}-ee"
-
     when 'omnibus', 'runner'
       stable_branch_name
-
     # Charts don't use the same version scheme as GitLab, we need to
     # deduct their version from the GitLab equivalent one.
     when 'charts'
       charts_stable_branch
-
     # If the upstream product doesn't follow a stable branch scheme, set the
     # branch to the default
     else
       default_branch(products[slug].fetch('repo'))
     end
-
-    return stable_branch, "heads/#{stable_branch}"
   end
 
   def git_workdir_dirty?

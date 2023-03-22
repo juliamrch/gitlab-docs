@@ -10,6 +10,8 @@ pre-push:
       run: make eslint-tests
     prettier-tests:
       run: make prettier-tests
+    rubocop-tests:
+      run: make rubocop-tests
     stylelint-tests:
       run: make stylelint-tests
     hadolint-tests:
