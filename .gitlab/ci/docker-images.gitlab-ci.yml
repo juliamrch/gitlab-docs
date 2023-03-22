@@ -27,6 +27,7 @@ image:gitlab-docs-base:
     - .rules_docker_images
     - .docker_prepare
   stage: build-images
+  needs: ["test:image:gitlab-docs-base"]
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/base:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
@@ -67,6 +68,7 @@ image:docs-lint-markdown:
     - .rules_docker_images
     - .docker_prepare
   stage: build-images
+  needs: ["test:image:docs-lint-markdown"]
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-markdown:alpine-$ALPINE_VERSION-vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION-markdownlint2-$MARKDOWNLINT2_VERSION
     DOCKERFILE: dockerfiles/gitlab-docs-lint-markdown.Dockerfile
@@ -109,6 +111,7 @@ image:docs-lint-html:
     - .rules_docker_images
     - .docker_prepare
   stage: build-images
+  needs: ["test:image:docs-lint-html"]
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-html:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/gitlab-docs-lint-html.Dockerfile
@@ -147,6 +150,7 @@ image:docs-single:
   extends:
     - .docker_prepare
   stage: pre-deploy
+  needs: ["test:image:docs-single"]
   artifacts: {}
   cache: {}
   dependencies: []
@@ -200,6 +204,7 @@ image:docs-single-lunrjs:
   extends:
     - .docker_prepare
   stage: pre-deploy
+  needs: ["test:image:docs-single-lunrjs"]
   artifacts: {}
   cache: {}
   dependencies: []
@@ -259,6 +264,7 @@ image:docs-latest:
     - .rules_docker_images
     - .docker_prepare
   stage: build-images
+  needs: ["test:image:docs-latest"]
   artifacts: {}
   cache: {}
   dependencies: []
