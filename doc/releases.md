@@ -199,31 +199,46 @@ For example, if you released the 14.1 documentation, the first dropdown entry sh
 
 ## Troubleshooting
 
-### `image:docs-single` job fails when creating the docs stable branch
+### `compile_prod` job fails when creating the docs stable branch
 
 When you create the [stable branch](#create-stable-branch-and-docker-image-for-release),
-the `image:docs-single` job might fail. There are generally two reasons why this
-could happen:
+the `compile_prod` job might fail.
+
+This happens if stable branches have not been
+created for all the related projects. Some of the stable branches are
+created close to the 22nd, so you might need to run the pipeline of the
+stable branch one more time before the release.
+
+The error is similar to the following:
+
+```shell
+fatal: couldn't find remote ref heads/6-10-stable
+error: pathspec 'FETCH_HEAD' did not match any file(s) known to git
+fatal: your current branch '6-10-stable' does not have any commits yet
+```
+
+**Solution**: run a [new pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/new)
+targeting the docs stable branch after all upstream stable branches have been created.
+
+### `image:docs-single` job fails when creating the docs stable branch
+
+There are generally two reasons why the `image:docs-single` job might fail:
 
 - **Not all upstream stable branches are created yet**
 
-  The `image:docs-single` job may fail if stable branches have not been
-  created for all the related projects. Some of the stable branches are
-  created close to the 22nd, so you might need to run the pipeline of the
-  stable branch one more time before the release.
+   The error is similar to the [`compile_prod` job failure](#compile_prod-job-fails-when-creating-the-docs-stable-branch),
+   and might looks like this:
 
-  The error is similar to the following:
+   ```shell
+   Cloning into '../gitlab-runner'...
+   warning: Could not find remote branch 15-6-stable to clone.
+   fatal: Remote branch 15-6-stable not found in upstream origin
+   ```
 
-  ```shell
-  Cloning into '../gitlab-runner'...
-  warning: Could not find remote branch 15-6-stable to clone.
-  fatal: Remote branch 15-6-stable not found in upstream origin
-  ```
+   **Solution**: run a [new pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/new)
+targeting the docs stable branch after all upstream stable branches have been created.
 
-  **Solution**: run a [new pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/new)
-  targeting the docs stable branch after all upstream stable branches have been created.
-
-- **Due to broken links**
+- **The navigation menu contains broken links**
 
   The `image:docs-single` job may fail when the `gitlab-docs` repository contains
   changes to the navigation menu, but the corresponding page changes in the `gitlab`
