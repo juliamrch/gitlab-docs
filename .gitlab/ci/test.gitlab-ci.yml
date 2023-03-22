@@ -113,6 +113,18 @@ js_lint:
     - make prettier-tests
 
 #
+# RuboCop
+#
+rubocop:
+  extends:
+    - .rules_site_tests
+    - .bundle
+  needs: []
+  stage: test
+  script:
+    - make rubocop-tests
+
+#
 # Lint SCSS
 #
 stylelint:

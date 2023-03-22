@@ -151,6 +151,10 @@ prettier-tests:
 	@printf "\n$(INFO)INFO: Running Prettier tests...$(END)\n"
 	@yarn prettier
 
+rubocop-tests:
+	@printf "\n$(INFO)INFO: Running RuboCop tests...$(END)\n"
+	@bundle exec rubocop
+
 stylelint-tests:
 	@printf "\n$(INFO)INFO: Running Stylelint tests...$(END)\n"
 	@yarn stylelint content/assets/stylesheets

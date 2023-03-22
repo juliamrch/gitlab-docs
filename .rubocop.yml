@@ -4,6 +4,7 @@ inherit_gem:
 
 AllCops:
   NewCops: enable
+  SuggestExtensions: false
 
 CodeReuse/ActiveRecord:
   Enabled: false
