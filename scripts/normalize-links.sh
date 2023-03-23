@@ -85,10 +85,3 @@ find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="http
 
 echo "Fix URLs inside the sitemap"
 find "${TARGET}/$VER" -type f -name 'sitemap.xml' -print0 | xargs -0 sed -i 's#docs.gitlab.com/#docs.gitlab.com/'"$VER"'/#g'
-
-##
-## Don't deploy the CE docs since they are identical to the EE ones.
-## https://gitlab.com/gitlab-org/gitlab-docs/issues/418
-##
-echo "Remove CE dir and symlink EE to CE"
-if [ -d "${TARGET}/${VER}/ce/" ]; then cd "${TARGET}/${VER}" && rm -r ce && ln -s ee ce; fi
