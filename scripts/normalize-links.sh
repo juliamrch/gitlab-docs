@@ -50,9 +50,14 @@ find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/ope
 
 echo "Replace relative URLs in $TARGET/$VER for /assets/"
 find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/assets/#="/'"$VER"'/assets/#g'
+find "${TARGET}/$VER" -type f -name '*.css' -print0 | xargs -0 sed -i 's#/assets/#/'"$VER"'/assets/#g'
+find "${TARGET}/$VER" -type f -name '*.js' -print0 | xargs -0 sed -i 's#/assets/#/'"$VER"'/assets/#g'
 
 echo "Replace relative URLs in $TARGET/$VER for /frontend/"
 find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/frontend/#="/'"$VER"'/frontend/#g'
+
+echo "Replace relative URLs in $TARGET/$VER for /search/"
+find "${TARGET}/$VER" -type f -name '*.js' -print0 | xargs -0 sed -i 's#/search/#/'"$VER"'/search/#g'
 
 echo "Replace relative URLs in $TARGET/$VER for /"
 find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 sed -i 's#<a href="/">#<a href="/'"$VER"'/">#g'

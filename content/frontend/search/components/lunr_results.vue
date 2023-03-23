@@ -2,6 +2,7 @@
 /* global lunr */
 import { GlSearchBoxByClick, GlLink } from '@gitlab/ui';
 import { getSearchQueryFromURL, updateURLParams } from '../search_helpers';
+import { isArchivesSite } from '../../default/environment';
 
 export default {
   components: {
@@ -62,16 +63,29 @@ export default {
       // Limit the results by relevancy score.
       this.results = this.results.filter((key) => key.score > this.relevancy_threshold);
 
-      // Add page titles to the result set.
+      // Add page titles and link paths to the result set.
       Object.keys(this.results).forEach((key) => {
         const contentItem = this.contentMap.find(({ id }) => id === this.results[key].ref);
         this.results[key].title = contentItem.h1;
+        this.results[key].link = `/${this.results[key].ref}`;
       });
+
+      // Rewrite links to include the version prefix if this is the archives site.
+      if (isArchivesSite()) {
+        this.rewriteResultLinks();
+      }
 
       updateURLParams(this.query);
     },
     handleError() {
       this.error = true;
+    },
+    rewriteResultLinks() {
+      const pathPrefix = document.querySelector('meta[name="gitlab-docs-version"]').content;
+      this.results = this.results.map((obj) => ({
+        ...obj,
+        link: `https://archives.docs.gitlab.com/${pathPrefix}/${obj.ref}`,
+      }));
     },
   },
 };
@@ -85,7 +99,7 @@ export default {
 
     <ul v-if="results.length">
       <li v-for="result in results" :key="result.ref">
-        <gl-link :href="`/${result.ref}`">{{ result.title }}</gl-link>
+        <gl-link :href="result.link">{{ result.title }}</gl-link>
       </li>
     </ul>
 
