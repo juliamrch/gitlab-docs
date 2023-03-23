@@ -60,7 +60,10 @@ default:
 
 #
 # Rules to determine which pipelines jobs will run in.
+# The DOCS_PROJECT_PIPELINE_TYPE variable names are defined
+# in .gitlab-ci.yml under workflow:rules.
 #
+
 .rules_docker_images:
   rules:
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Build docker images pipeline"'
