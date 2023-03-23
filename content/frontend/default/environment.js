@@ -22,13 +22,13 @@ export const GlHosts = [
 ];
 
 export function isGitLabHosted() {
-  return GlHosts.some((e) => window.location.host.includes(e.host));
+  return GlHosts.some((e) => window.location.hostname.includes(e.host));
 }
 
 export function isArchivesSite() {
-  return window.location.host === GlHosts.find((x) => x.environment === 'archives').host;
+  return window.location.hostname === GlHosts.find((x) => x.environment === 'archives').host;
 }
 
 export function isProduction() {
-  return window.location.host === GlHosts.find((x) => x.environment === 'production').host;
+  return window.location.hostname === GlHosts.find((x) => x.environment === 'production').host;
 }
