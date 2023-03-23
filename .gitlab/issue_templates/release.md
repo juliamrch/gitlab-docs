@@ -74,8 +74,8 @@ After the release post is live on the 22nd, or the next Monday morning if the re
 1. Deploy the versions:
    1. [ ] Merge the docs release merge request.
    1. [ ] Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)
-      and run the `Build Docker images weekly` pipeline.
-   1. [ ] In the scheduled pipeline you just started, cancel the pipeline, and manually run the `image:docs-latest`
+      and run the `Build Docker images manually` pipeline.
+   1. [ ] In the scheduled pipeline you just started, wait for the `test:image:docs-latest` job to finish, then manually run the `image:docs-latest`
       job that builds the `:latest` Docker image.
    1. [ ] When the job is complete, run the `Build docs.gitlab.com every hour` scheduled pipeline.
 1. [ ] After the deployment completes, open `docs.gitlab.com` in a browser. Confirm
