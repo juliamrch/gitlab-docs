@@ -32,6 +32,7 @@
 
 <% if @config[:search_backend] == "google" && @config[:google_search_key] %>
 <script>const GOOGLE_SEARCH_KEY = "<%= @config[:google_search_key] %>";</script>
+<script async src="https://cse.google.com/cse.js?cx=97494f9fe316a426d"></script>
 <% end %>
 
 <!-- Enable CSP headers -->
