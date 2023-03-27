@@ -1038,6 +1038,8 @@ sections:
                 doc_url: 'ee/user/group/saml_sso/group_sync.html'
               - doc_title: Compliance frameworks
                 doc_url: 'ee/user/group/compliance_frameworks.html'
+              - doc_title: 'Tutorial: Create a compliance pipeline'
+                doc_url: 'ee/tutorials/create_compliance_pipeline.html'
               - doc_title: Troubleshooting SAML
                 doc_url: 'ee/user/group/saml_sso/troubleshooting.html'
               - doc_title: SAML SSO for GitLab.com groups
