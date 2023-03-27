@@ -50,55 +50,32 @@ fi
 ##
 ## Relative URLs
 ##
-echo "Replace relative URLs in $TARGET/$VER for /ee/"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="/ee/#="/'"$VER"'/ee/#g'
+echo "=> Replace relative URLs in $TARGET/$VER for HTML files"
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e 's|href="/ee/|href="/'"$VER"'/ee/|g' \
+                                                                          -e 's|href="/runner/|href="/'"$VER"'/runner/|g' \
+                                                                          -e 's|href="/omnibus/|href="/'"$VER"'/omnibus/|g' \
+                                                                          -e 's|href="/charts/|href="/'"$VER"'/charts/|g' \
+                                                                          -e 's|href="/operator/|href="/'"$VER"'/operator/|g' \
+                                                                          -e 's|href="/assets/|href="/'"$VER"'/assets/|g' \
+                                                                          -e 's|href="/frontend/|href="/'"$VER"'/frontend/|g' \
+                                                                          -e 's|<a href="/">|<a href="/'"$VER"'/">|g' \
+                                                                          -e 's|href="/opensearch.xml|href="/'"$VER"'/opensearch.xml|g'
 
-echo "Replace relative URLs in $TARGET/$VER for /runner/"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="/runner/#="/'"$VER"'/runner/#g'
+echo "=> Replace relative URLs in $TARGET/$VER for CSS files"
+find "${TARGET}/$VER" -type f -name '*.css' -print0 | xargs -0 "$SED" -i 's|/assets/|/'"$VER"'/assets/|g'
 
-echo "Replace relative URLs in $TARGET/$VER for /omnibus/"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="/omnibus/#="/'"$VER"'/omnibus/#g'
-
-echo "Replace relative URLs in $TARGET/$VER for /charts/"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="/charts/#="/'"$VER"'/charts/#g'
-
-echo "Replace relative URLs in $TARGET/$VER for /operator/"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="/operator/#="/'"$VER"'/operator/#g'
-
-echo "Replace relative URLs in $TARGET/$VER for /assets/"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="/assets/#="/'"$VER"'/assets/#g'
-find "${TARGET}/$VER" -type f -name '*.css' -print0 | xargs -0 "$SED" -i 's#/assets/#/'"$VER"'/assets/#g'
-find "${TARGET}/$VER" -type f -name '*.js' -print0 | xargs -0 "$SED" -i 's#/assets/#/'"$VER"'/assets/#g'
-
-echo "Replace relative URLs in $TARGET/$VER for /frontend/"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="/frontend/#="/'"$VER"'/frontend/#g'
-
-echo "Replace relative URLs in $TARGET/$VER for /search/"
-find "${TARGET}/$VER" -type f -name '*.js' -print0 | xargs -0 "$SED" -i 's#/search/#/'"$VER"'/search/#g'
-
-echo "Replace relative URLs in $TARGET/$VER for /"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#<a href="/">#<a href="/'"$VER"'/">#g'
-
-echo "Replace relative URLs in $TARGET/$VER for opensearch.xml"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="/opensearch.xml#="/'"$VER"'/opensearch.xml#g'
-
+echo "=> Replace relative URLs in $TARGET/$VER for JavaScript files"
+find "${TARGET}/$VER" -type f -name '*.js' -print0 | xargs -0 "$SED" -i -e 's|/search/|/'"$VER"'/search/|g' \
+                                                                        -e 's|/assets/|/'"$VER"'/assets/|g'
 ##
 ## Full URLs
 ##
-echo "Replace full URLs in $TARGET/$VER for /ee/"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="https://docs.gitlab.com/ee/#="/'"$VER"'/ee/#g'
+echo "=> Replace full URLs in $TARGET/$VER for HTML files"
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e 's|href="https://docs.gitlab.com/ee/|href="/'"$VER"'/ee/|g' \
+                                                                          -e 's|href="https://docs.gitlab.com/runner/|href="/'"$VER"'/runner/|g' \
+                                                                          -e 's|href="https://docs.gitlab.com/omnibus/|href="/'"$VER"'/omnibus/|g' \
+                                                                          -e 's|href="https://docs.gitlab.com/charts/|href="/'"$VER"'/charts/|g' \
+                                                                          -e 's|href="https://docs.gitlab.com/operator/|href="/'"$VER"'/operator/|g'
 
-echo "Replace full URLs in $TARGET/$VER for /runner/"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="https://docs.gitlab.com/runner/#="/'"$VER"'/runner/#g'
-
-echo "Replace full URLs in $TARGET/$VER for /omnibus/"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="https://docs.gitlab.com/omnibus/#="/'"$VER"'/omnibus/#g'
-
-echo "Replace full URLs in $TARGET/$VER for /charts/"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="https://docs.gitlab.com/charts/#="/'"$VER"'/charts/#g'
-
-echo "Replace full URLs in $TARGET/$VER for /operator/"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i 's#="https://docs.gitlab.com/operator/#="/'"$VER"'/operator/#g'
-
-echo "Fix URLs inside the sitemap"
-find "${TARGET}/$VER" -type f -name 'sitemap.xml' -print0 | xargs -0 "$SED" -i 's#docs.gitlab.com/#docs.gitlab.com/'"$VER"'/#g'
+echo "=> Fix URLs inside the sitemap"
+find "${TARGET}/$VER" -type f -name 'sitemap.xml' -print0 | xargs -0 "$SED" -i 's|docs.gitlab.com/|docs.gitlab.com/'"$VER"'/|g'
