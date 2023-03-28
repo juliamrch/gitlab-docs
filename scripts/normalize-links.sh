@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+COLOR_RED="\e[31m"
+COLOR_GREEN="\e[32m"
+COLOR_RESET="\e[39m"
+
 TARGET="$1" # The directory that has all the HTML files including versions.
             # Usually public/ locally and /site in the Docker image.
 
@@ -15,8 +19,8 @@ if [ "$(uname)" == "Darwin" ]; then
   if hash gsed 2>/dev/null; then
     SED="gsed"
   else
-    echo "✖ ERROR: The built-in sed in macOS is not supported.
-         Install gnu-sed instead: 'brew install gnu-sed'." >&2
+    # shellcheck disable=2059
+    printf "${COLOR_RED}ERROR: The built-in sed in macOS is not supported. Run 'make setup'.${COLOR_RESET}\n" >&2
     exit 1
   fi
 else
@@ -26,19 +30,22 @@ fi
 if [ -z "$TARGET" ]; then
   echo "Usage: $0 <target> <version>"
   echo "Example: $0 public 13.0"
-  echo "No target provided. Exiting."
+  # shellcheck disable=2059
+  printf "${COLOR_RED}ERROR: No target provided.${COLOR_RESET}\n"
   exit 1
 fi
 
 if [ -z "$VER" ]; then
   echo "Usage: $0 <target> <version>"
   echo "Example: $0 public 13.0"
-  echo "No version provided. Exiting."
+  # shellcheck disable=2059
+  printf "${COLOR_RED}ERROR: No version provided.${COLOR_RESET}\n"
   exit 1
 fi
 
 if ! [ -d "$TARGET/$VER" ]; then
-  echo "Target directory $TARGET/$VER does not exist. Exiting."
+  # shellcheck disable=2059
+  printf "${COLOR_RED}ERROR: Target directory $TARGET/$VER does not exist.${COLOR_RESET}\n"
   exit 1
 fi
 
@@ -50,7 +57,9 @@ fi
 ##
 ## Relative URLs
 ##
-echo "=> Replace relative URLs in $TARGET/$VER for HTML files"
+
+# shellcheck disable=2059
+printf "${COLOR_GREEN}INFO: Replacing relative URLs in $TARGET/$VER for HTML files...${COLOR_RESET}\n"
 find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e 's|href="/ee/|href="/'"$VER"'/ee/|g' \
                                                                           -e 's|href="/runner/|href="/'"$VER"'/runner/|g' \
                                                                           -e 's|href="/omnibus/|href="/'"$VER"'/omnibus/|g' \
@@ -61,21 +70,26 @@ find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e 's|
                                                                           -e 's|<a href="/">|<a href="/'"$VER"'/">|g' \
                                                                           -e 's|href="/opensearch.xml|href="/'"$VER"'/opensearch.xml|g'
 
-echo "=> Replace relative URLs in $TARGET/$VER for CSS files"
+# shellcheck disable=2059
+printf "${COLOR_GREEN}INFO: Replacing relative URLs in $TARGET/$VER for CSS files...${COLOR_RESET}\n"
 find "${TARGET}/$VER" -type f -name '*.css' -print0 | xargs -0 "$SED" -i 's|/assets/|/'"$VER"'/assets/|g'
 
-echo "=> Replace relative URLs in $TARGET/$VER for JavaScript files"
+# shellcheck disable=2059
+printf "${COLOR_GREEN}INFO: Replacing relative URLs in $TARGET/$VER for JavaScript files...${COLOR_RESET}\n"
 find "${TARGET}/$VER" -type f -name '*.js' -print0 | xargs -0 "$SED" -i -e 's|/search/|/'"$VER"'/search/|g' \
                                                                         -e 's|/assets/|/'"$VER"'/assets/|g'
 ##
 ## Full URLs
 ##
-echo "=> Replace full URLs in $TARGET/$VER for HTML files"
+
+# shellcheck disable=2059
+printf "${COLOR_GREEN}INFO: Replacing full URLs in $TARGET/$VER for HTML files...${COLOR_RESET}\n"
 find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e 's|href="https://docs.gitlab.com/ee/|href="/'"$VER"'/ee/|g' \
                                                                           -e 's|href="https://docs.gitlab.com/runner/|href="/'"$VER"'/runner/|g' \
                                                                           -e 's|href="https://docs.gitlab.com/omnibus/|href="/'"$VER"'/omnibus/|g' \
                                                                           -e 's|href="https://docs.gitlab.com/charts/|href="/'"$VER"'/charts/|g' \
                                                                           -e 's|href="https://docs.gitlab.com/operator/|href="/'"$VER"'/operator/|g'
 
-echo "=> Fix URLs inside the sitemap"
+# shellcheck disable=2059
+printf "${COLOR_GREEN}INFO: Fixing URLs inside the sitemap...${COLOR_RESET}\n"
 find "${TARGET}/$VER" -type f -name 'sitemap.xml' -print0 | xargs -0 "$SED" -i 's|docs.gitlab.com/|docs.gitlab.com/'"$VER"'/|g'
