@@ -78,17 +78,22 @@ find "${TARGET}/$VER" -type f -name '*.css' -print0 | xargs -0 "$SED" -i 's|/ass
 printf "${COLOR_GREEN}INFO: Replacing relative URLs in $TARGET/$VER for JavaScript files...${COLOR_RESET}\n"
 find "${TARGET}/$VER" -type f -name '*.js' -print0 | xargs -0 "$SED" -i -e 's|/search/|/'"$VER"'/search/|g' \
                                                                         -e 's|/assets/|/'"$VER"'/assets/|g'
-##
-## Full URLs
-##
-
+#
+# Full URLs
+#
+# We exclude the following occurrences from sed that are used to determine the
+# canonical URL:
+# - rel="canonical"
+# - property="og:url"
+# See https://gitlab.com/gitlab-org/gitlab-docs/-/issues/1568
+#
 # shellcheck disable=2059
 printf "${COLOR_GREEN}INFO: Replacing full URLs in $TARGET/$VER for HTML files...${COLOR_RESET}\n"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e 's|href="https://docs.gitlab.com/ee/|href="/'"$VER"'/ee/|g' \
-                                                                          -e 's|href="https://docs.gitlab.com/runner/|href="/'"$VER"'/runner/|g' \
-                                                                          -e 's|href="https://docs.gitlab.com/omnibus/|href="/'"$VER"'/omnibus/|g' \
-                                                                          -e 's|href="https://docs.gitlab.com/charts/|href="/'"$VER"'/charts/|g' \
-                                                                          -e 's|href="https://docs.gitlab.com/operator/|href="/'"$VER"'/operator/|g'
+find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/ee/|href="/'"$VER"'/ee/|g' \
+                                                                          -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/runner/|href="/'"$VER"'/runner/|g' \
+                                                                          -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/omnibus/|href="/'"$VER"'/omnibus/|g' \
+                                                                          -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/charts/|href="/'"$VER"'/charts/|g' \
+                                                                          -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/operator/|href="/'"$VER"'/operator/|g'
 
 # shellcheck disable=2059
 printf "${COLOR_GREEN}INFO: Fixing URLs inside the sitemap...${COLOR_RESET}\n"
