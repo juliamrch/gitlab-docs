@@ -9,15 +9,13 @@ DRY_RUN = ENV['DRY_RUN'] == 'true'
 
 namespace :release do
   desc 'Creates a single release archive'
-  task :single, :version do |_t, args|
+  task :single, :version do
     require "highline/import"
-    version = args.version.to_s
+    version = task_helpers.current_milestone
 
     # Disable lefthook because it causes PATH errors
     # https://docs.gitlab.com/ee/development/contributing/style_guides.html#disable-lefthook-temporarily
     ENV['LEFTHOOK'] = '0'
-
-    raise 'You need to specify a version, like 10.1' unless version.match?(%r{\A\d+\.\d+\z})
 
     abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: Rake aborted! Local branch already exists. Run `git branch --delete --force #{version}` and rerun the task.#{TaskHelpers::COLOR_CODE_RESET}") \
       if task_helpers.local_branch_exist?(version)

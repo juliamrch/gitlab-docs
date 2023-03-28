@@ -214,4 +214,8 @@ add-gitlab-fonts:
 	cp -v node_modules/@gitlab/fonts/gitlab-sans/GitLabSans.woff2 public/assets/fonts
 	cp -v node_modules/@gitlab/fonts/jetbrains-mono/JetBrainsMono* public/assets/fonts
 
+create-stable-branch:
+	@printf "\n$(INFO)INFO: Creating stable branch...$(END)\n"
+	@bundle exec rake release:single
+
 test: setup rspec-tests jest-tests eslint-tests prettier-tests stylelint-tests hadolint-tests yamllint-tests markdownlint-tests check-global-navigation
