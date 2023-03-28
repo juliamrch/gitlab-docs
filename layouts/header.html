@@ -14,6 +14,8 @@
           <% unless %w(search index.erb).any?(location) %>
             <% if @config[:search_backend] == "algolia" %>
               <div id="docsearch" class="gl-my-3 gl-md-mt-0 gl-md-mb-0"></div>
+            <% elsif @config[:search_backend] == "google" %>
+              <div class="gcse-searchbox-only" enableAutoComplete="true" data-resultsUrl="/search/"></div>
             <% else %>
               <div class="js-search-form"></div>
             <% end %>

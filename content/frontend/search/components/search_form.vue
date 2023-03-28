@@ -12,7 +12,7 @@ export default {
   },
   methods: {
     onSubmit() {
-      window.location.href = `/search/?query=${encodeURI(this.query)}`;
+      window.location.href = `/search/?q=${encodeURI(this.query)}`;
     },
   },
 };

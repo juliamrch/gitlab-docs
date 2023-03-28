@@ -9,7 +9,7 @@
  *  The query string if it exists, or an empty string.
  */
 export const getSearchQueryFromURL = () => {
-  return new URLSearchParams(window.location.search).get('query') || '';
+  return new URLSearchParams(window.location.search).get('q') || '';
 };
 
 /**
@@ -18,5 +18,5 @@ export const getSearchQueryFromURL = () => {
  * This allows users to copy a link to search result pages.
  */
 export const updateURLParams = (query) => {
-  window.history.pushState(null, '', `${window.location.pathname}?query=${query}`);
+  window.history.pushState(null, '', `${window.location.pathname}?q=${query}`);
 };
