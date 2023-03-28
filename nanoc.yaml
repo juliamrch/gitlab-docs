@@ -134,6 +134,12 @@ checks:
       - 'https:\/\/downloads\.raspberrypi\.org\/raspbian\/images\/'
       - 'https:\/\/wiki\.jenkins\.io\/display\/JENKINS\/'
       - 'https:\/\/twitter\.com\/gitlab'
+      - 'https:\/\/www\.facebook\.com\/gitlab'
+      - 'https:\/\/www\.mend\.io\/gitlab\/.*'
+      - 'https:\/\/support\.discord\.com.*'
+      - 'https:\/\/www\.hostgator\.com\/help\/.*'
+      - 'https:\/\/help\.dreamhost\.com\/hc\/.*'
+      - 'https:\/\/www\.bluehost\.com\/help\/.*'
       # Redirected links to ignore.
       - 'https:\/\/www\.jaegertracing\.io\/docs\/latest\/'
       - 'https:\/\/bit.ly\/.*'
@@ -141,6 +147,7 @@ checks:
       - 'https?:\/\/\w*\.example\.com.*'
       - 'https?:\/\/localhost.*'
       - 'https?:\/\/127.0.0.1.*'
+      - 'http?:\/\/gdk.test.*'
       # Don't check gitlab.com links. Cloudflare thinks the link test is a DOS attack.
       # The temporary solution is to exclude them from link testing.
       - 'https:\/\/gitlab.com.*'
@@ -151,7 +158,8 @@ checks:
       - 'https:\/\/youtu.be\/.*'
       # Some links require authentication
       - 'https:\/\/dashboards.gitlab.com\/.*'
-      - 'https:\/\/ops.gitlab.net\/.*'
+      - 'https:\/\/ops\.gitlab\.net\/.*'
+      - 'https:\/\/start.1password.com\/.*'
       - 'https:\/\/3PNCFOU757-dsn.algolia.net.*'
       # Redirected link we don't want to update to platform/locale specific link
       # See https://gitlab.com/gitlab-org/gitlab/-/issues/368300#note_1047352091
