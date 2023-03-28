@@ -30,15 +30,15 @@ Prerequisites:
       make update
       ```
 
-   1. [ ] Run the Rake task to create the single version. For example, to create the 15.0 release branch
-      and perform other tasks:
+   1. [ ] Create the stable branch:
 
       ```shell
-      ./bin/rake "release:single[15.0]"
+      make create-stable-branch
       ```
 
-      A branch for the release is created, a new `15.0.Dockerfile` is created and
-      automatically committed, and the new branch is pushed.
+      - A branch `X.Y` for the release is created.
+      - A new `X.Y.Dockerfile` is created and automatically committed.
+      - The new branch is pushed.
 
       After the branch is created, the
       [`image:docs-single` job](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/7fbb5e1313ebde811877044e87f444a0a283fed4/.gitlab/ci/docker-images.gitlab-ci.yml#L107-129)

@@ -68,19 +68,19 @@ To create a stable branch of the `gitlab-docs` project and a Docker image for th
    make update
    ```
 
-1. Optional. To practice running the task and check the process, run the Rake task in dry run mode. For example, to check the process for the 15.0 release:
+1. Optional. To practice running the task and check the process, run the Rake task in dry run mode:
 
    ```shell
-   DRY_RUN=true ./bin/rake "release:single[15.0]"
+   DRY_RUN=true make create-stable-branch
    ```
 
-1. Run the Rake task to create the single version. For example, to create the 15.0 release:
+1. Run the make target to create the stable branch:
 
    ```shell
-   ./bin/rake "release:single[15.0]"
+   make create-stable-branch
    ```
 
-   A branch for the release is created, a new `15.0.Dockerfile` is created and
+   A branch for the release is created, a new `X.Y.Dockerfile` is created and
    automatically committed, and the new branch is pushed.
 
 After the branch is created, the
