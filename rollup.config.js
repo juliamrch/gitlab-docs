@@ -9,6 +9,7 @@ const importResolver = require('rollup-plugin-import-resolver');
 const css = require('rollup-plugin-import-css');
 const url = require('@rollup/plugin-url');
 const vue = require('rollup-plugin-vue');
+const copy = require('rollup-plugin-copy');
 const { terser } = require('rollup-plugin-terser');
 
 function mapDirectory(file) {
@@ -54,23 +55,15 @@ module.exports = globSync('content/frontend/**/*.js').map((file) => ({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     terser(),
+    copy({
+      copyOnce: true,
+      hook: 'closeBundle',
+      targets: [
+        {
+          src: './node_modules/mermaid/dist/mermaid.min.js*',
+          dest: './public/assets/javascripts/vendor',
+        },
+      ],
+    }),
   ],
-  onwarn(warning, warn) {
-    // Ignore specified circular dependency warnings.
-    // https://github.com/d3/d3-selection/issues/168
-    const ignoreCircular = [
-      'd3-selection',
-      'd3-interpolate',
-      'd3-transition',
-      'd3-voronoi',
-      'dagre-d3-es',
-    ];
-    if (
-      warning.code === 'CIRCULAR_DEPENDENCY' &&
-      ignoreCircular.some((d) => warning.message.includes(d))
-    ) {
-      return;
-    }
-    warn(warning);
-  },
 }));
