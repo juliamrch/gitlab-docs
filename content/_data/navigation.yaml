@@ -1070,6 +1070,8 @@ sections:
                 doc_url: 'ee/user/profile/comment_templates.html'
               - doc_title: Contributions calendar
                 doc_url: 'ee/user/profile/contributions_calendar.html'
+              - doc_title: Achievements
+                doc_url: 'ee/user/profile/achievements.html'
               - doc_title: Permissions and roles
                 doc_url: 'ee/user/permissions.html'
               - doc_title: Personal access tokens
