@@ -3,26 +3,7 @@
 # and rename it to X.Y.Dockerfile, where X.Y the major.minor GitLab version.
 #
 
-#- Start of minifier stage -#
-
-#
-# Build minifier utility
-# Adapted from https://github.com/docker/docker.github.io/blob/publish-tools/Dockerfile.builder
-#
-FROM golang:1.13-alpine AS minifier
-RUN apk add --no-cache git \
-    && export GO111MODULE=on \
-    && go get -d github.com/tdewolff/minify/v2@latest \
-    && go build -v -o /minify github.com/tdewolff/minify/cmd/minify
-
-#- End of minifier stage -#
-
-#- Start of builder stage -#
-
-FROM ruby:3.2.1-alpine3.17 AS builder
-
-# Copy minifier binary from the minifier stage
-COPY --from=minifier /minify /usr/local/bin/minify
+FROM ruby:3.2.1-alpine3.17 as builder
 
 # Set versions as build args to fetch corresponding branches
 ARG VER
@@ -51,6 +32,7 @@ RUN apk add --no-cache -U \
     libcurl     \
     libxslt     \
     libxslt-dev \
+    minify      \
     nodejs      \
     openssl     \
     pngquant    \
@@ -88,7 +70,8 @@ RUN mkdir /site \
 # Do some HTML post-processing on the archive, compress images, and minify assets
 RUN /source/scripts/normalize-links.sh /site "${VER}"    \
     && /source/scripts/compress_images.sh /site "${VER}" \
-    && /source/scripts/minify-assets.sh /site "${VER}" # ATTENTION: This should be the last script to run
+    # ATTENTION: This should be the last script to run
+    && /source/scripts/minify-assets.sh /site "${VER}"
 
 # Make an index.html and 404.html which will redirect / to /${VER}/
 RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/index.html \
@@ -101,7 +84,7 @@ RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refre
 # Copy the ending HTML files from the previous 'builder' stage and copy them
 # to an NGINX Docker image.
 #
-FROM nginx:alpine
+FROM nginx:stable-alpine
 
 # Clean out any existing HTML files, and copy the HTML from the builder stage
 # to the default location for Nginx.
