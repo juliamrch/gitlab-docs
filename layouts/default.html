@@ -80,7 +80,8 @@
     <script src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
 
     <% if @item.compiled_content.include? "load-mermaid" %>
-      <script src="<%= @items['/frontend/default/mermaid.*'].path %>"></script>
+      <script src="/assets/javascripts/vendor/mermaid.min.js"></script>
+      <script src="<%= @items['/assets/javascripts/mermaid.*'].path %>"></script>
     <% end %>
 
     <% if production? %>
