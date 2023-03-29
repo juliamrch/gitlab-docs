@@ -1585,7 +1585,7 @@ sections:
               - doc_title: Testing
                 doc_url: 'ee/ci/testing/'
                 docs:
-                  - doc_title: Accessibility testing
+                  - doc_title: Accessibility testing (deprecated)
                     doc_url: 'ee/ci/testing/accessibility_testing.html'
                   - doc_title: Browser performance testing
                     doc_url: 'ee/ci/testing/browser_performance_testing.html'
