@@ -621,6 +621,8 @@ sections:
                 docs:
                   - doc_title: GitLab Pages for source installations
                     doc_url: 'ee/administration/pages/source.html'
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/administration/pages/troubleshooting.html'
               - doc_title: Health Check
                 doc_url: 'ee/user/admin_area/monitoring/health_check.html'
               - doc_title: Incident management rate limits
