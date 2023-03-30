@@ -2110,7 +2110,7 @@ sections:
             doc_url: 'ee/user/product_analytics/'
           - doc_title: Productivity analytics
             doc_url: 'ee/user/analytics/productivity_analytics.html'
-          - doc_title: Repository analytics
+          - doc_title: Repository analytics for projects
             doc_url: 'ee/user/analytics/repository_analytics.html'
           - doc_title: Repository analytics for groups
             doc_url: 'ee/user/group/repositories_analytics/'
