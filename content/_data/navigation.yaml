@@ -302,7 +302,7 @@ sections:
                     doc_url: 'charts/backup-restore/backup.html'
                   - doc_title: Restore
                     doc_url: 'charts/backup-restore/restore.html'
-              - doc_title: Migrate from Omnibus
+              - doc_title: Migration guides
                 doc_url: 'charts/installation/migration/'
                 docs:
                   - doc_title: Migrate from the Linux package
