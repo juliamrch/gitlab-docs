@@ -95,7 +95,7 @@ install-ruby-dependencies:
 install-nodejs-dependencies:
 	@yarn install --frozen-lockfile --silent
 
-setup: brew-bundle setup-asdf install-asdf-dependencies install-ruby-dependencies install-nodejs-dependencies
+setup: clean brew-bundle setup-asdf install-asdf-dependencies install-ruby-dependencies install-nodejs-dependencies
 
 update:
 	@printf "\n$(INFO)INFO: Stashing any changes, switching to main branch, and pulling updates to GitLab Docs project...$(END)\n"
