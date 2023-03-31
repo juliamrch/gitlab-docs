@@ -12,6 +12,13 @@ If you feel that your issue can be categorized as a reproducible bug or a featur
 - GitLab Docs content, please [raise an issue](https://gitlab.com/gitlab-org/gitlab/-/issues) on the GitLab project.
 - GitLab Docs publishing or pipelines, please remove this text and provide as much information as possible.
 
+If you're opening an issue related to search, make sure to use one of the following
+labels. Remove the ones you don't need.
+
+/label ~"docsearch::algolia"
+/label ~"docsearch::google"
+/label ~"docsearch::lunrjs"
+
 Thank you for helping to make GitLab a better product.
 -->
 
