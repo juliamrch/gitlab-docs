@@ -2668,7 +2668,7 @@ sections:
             doc_url: 'ee/api/graphql/custom_emoji.html'
           - doc_title: Removed items
             doc_url: 'ee/api/graphql/removed_items.html'
-      - category_title: GitLab as an OAuth2 provider
+      - category_title: OAuth 2.0 identity provider API
         category_url: 'ee/api/oauth2.html'
       - category_title: GitLab CLI (glab)
         category_url: 'ee/integration/glab/'
