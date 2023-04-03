@@ -960,7 +960,9 @@ sections:
             doc_url: 'ee/security/crime_vulnerability.html'
           - doc_title: Enforce two-factor authentication (2FA)
             doc_url: 'ee/security/two_factor_authentication.html'
-          - doc_title: User email confirmation
+          - doc_title: Account email verification
+            doc_url: 'ee/security/email_verification.html'
+          - doc_title: Make new users confirm email
             doc_url: 'ee/security/user_email_confirmation.html'
           - doc_title: Runners
             doc_url: 'runner/security/'
