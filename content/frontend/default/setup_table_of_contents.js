@@ -5,14 +5,12 @@ import { StickToFooter } from './directives/stick_to_footer';
 
 const SIDEBAR_SELECTOR = '.doc-nav';
 const MARKDOWN_TOC_ID = 'markdown-toc';
-const HELP_AND_FEEDBACK_ID = 'help-and-feedback';
 const MAIN_SELECTOR = '.js-main-wrapper';
 
 export const setupTableOfContents = () => {
   const sidebar = document.querySelectorAll(SIDEBAR_SELECTOR);
   const menu = document.getElementById(MARKDOWN_TOC_ID);
   const main = document.querySelector(MAIN_SELECTOR);
-  const hasHelpAndFeedback = Boolean(document.getElementById(HELP_AND_FEEDBACK_ID));
 
   if (!sidebar || !menu) {
     return null;
@@ -37,8 +35,6 @@ export const setupTableOfContents = () => {
         return h(TableOfContents, {
           props: {
             items,
-            helpAndFeedbackId: HELP_AND_FEEDBACK_ID,
-            hasHelpAndFeedback,
           },
           directives: [
             {

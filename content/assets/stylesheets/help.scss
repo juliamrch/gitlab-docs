@@ -34,7 +34,6 @@
   }
 
   a {
-    text-decoration: underline;
     color: $help-blue-500;
   }
 
@@ -86,6 +85,10 @@
   .help-and-feedback-link {
     color: $help-blue-500;
     text-decoration: underline;
+    border-width: 0;
+    &:hover {
+      border-width: 0;
+    }
   }
 
   .support-btn {
