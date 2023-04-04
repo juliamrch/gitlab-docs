@@ -1396,8 +1396,11 @@ sections:
                 doc_url: 'ee/user/project/web_ide/'
               - doc_title: Web IDE Beta
                 doc_url: 'ee/user/project/web_ide_beta/'
-              - doc_title: Remote Development
+              - doc_title: Remote development
                 doc_url: 'ee/user/project/remote_development/'
+                docs:
+                  - doc_title: 'Tutorial: Connect a remote machine to the Web IDE'
+                    doc_url: 'ee/user/project/remote_development/connect_machine.html'
               - doc_title: Managing large repositories
                 doc_url: 'ee/user/project/repository/managing_large_repositories.html'
           - doc_title: Merge requests
