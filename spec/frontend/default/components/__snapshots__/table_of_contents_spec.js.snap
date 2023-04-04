@@ -17,16 +17,11 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
         href="#"
         role="button"
       >
-        <svg
-          aria-hidden="true"
-          class="gl-pt-2 gl-mr-2 s18 gl-icon s16"
-          data-testid="chevron-right-icon"
-          role="img"
-        >
-          <use
-            href="[object Object]#chevron-right"
-          />
-        </svg>
+        <gl-icon-stub
+          class="gl-pt-2 gl-mr-2 s18"
+          name="chevron-right"
+          size="16"
+        />
          On this page
       
       </a>
@@ -38,119 +33,19 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
       On this page
     </h4>
      
-    <div
-      class="sm-collapsed"
+    <collapsible-container-stub
+      collapsedclass="sm-collapsed"
+      collapsingclass="sm-collapsing"
       data-testid="container"
+      iscollapsed="true"
     >
-      <ul
-        class="nav nav-pills flex-column my-0"
+      <table-of-contents-list-stub
+        class="my-0"
         data-testid="main-list"
-      >
-        <li
-          class="mb-0"
-        >
-          <a
-            class="nav-link d-block toc-level-0"
-            href="#lorem"
-            id="Lorem-anchor"
-          >
-            Lorem
-          </a>
-           
-          <!---->
-        </li>
-        <li
-          class="mb-0"
-        >
-          <a
-            class="nav-link d-block toc-level-1"
-            href="#lorem-"
-            id="Lorem 2-anchor"
-          >
-            Lorem 2
-          </a>
-           
-          <!---->
-        </li>
-        <li
-          class="mb-0"
-        >
-          <a
-            class="nav-link d-block toc-level-0"
-            href="#ipsum"
-            id="Ipsum-anchor"
-          >
-            Ipsum
-          </a>
-           
-          <!---->
-        </li>
-        <li
-          class="mb-0"
-        >
-          <a
-            class="nav-link d-block toc-level-1"
-            href="#dolar"
-            id="Dolar-anchor"
-          >
-            Dolar
-          </a>
-           
-          <!---->
-        </li>
-        <li
-          class="mb-0"
-        >
-          <a
-            class="nav-link d-block toc-level-2"
-            href="#sit"
-            id="Sit-anchor"
-          >
-            Sit
-          </a>
-           
-          <!---->
-        </li>
-        <li
-          class="mb-0"
-        >
-          <a
-            class="nav-link d-block toc-level-2"
-            href="#amit"
-            id="Amit-anchor"
-          >
-            Amit
-          </a>
-           
-          <!---->
-        </li>
-        <li
-          class="mb-0"
-        >
-          <a
-            class="nav-link d-block toc-level-2"
-            href="#test"
-            id="Test-anchor"
-          >
-            Test
-          </a>
-           
-          <!---->
-        </li>
-        <li
-          class="mb-0"
-        >
-          <a
-            class="nav-link d-block toc-level-0"
-            href="#test-help-and-feedback"
-          >
-            Help and feedback
-          </a>
-           
-          <!---->
-        </li>
-      </ul>
-    </div>
+        items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+        level="0"
+      />
+    </collapsible-container-stub>
   </div>
 </div>
 `;

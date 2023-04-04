@@ -16,16 +16,6 @@ export default {
       type: Array,
       required: true,
     },
-    helpAndFeedbackId: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    hasHelpAndFeedback: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
   },
   data() {
     return {
@@ -33,24 +23,9 @@ export default {
     };
   },
   computed: {
-    helpAndFeedbackItems() {
-      if (!this.hasHelpAndFeedback) {
-        return [];
-      }
-
-      return [
-        {
-          text: 'Help and feedback',
-          href: `#${this.helpAndFeedbackId}`,
-          id: null,
-          items: [],
-          withSeparator: true,
-        },
-      ];
-    },
     allItems() {
       // Flatten the items so that only one is highlighted at a time
-      return flattenItems(this.items.concat(this.helpAndFeedbackItems));
+      return flattenItems(this.items);
     },
     collapseIcon() {
       return this.isCollapsed ? 'chevron-right' : 'chevron-down';

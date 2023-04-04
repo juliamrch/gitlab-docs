@@ -9,7 +9,6 @@ import { flattenItems } from '../../../../content/frontend/shared/toc/flatten_it
 import { createExampleToc } from '../../shared/toc_helper';
 
 const TEST_ITEMS = createExampleToc();
-const TEST_HELP_AND_FEEDBACK_ID = 'test-help-and-feedback';
 
 describe('frontend/default/components/table_of_contents', () => {
   let wrapper;
@@ -28,7 +27,6 @@ describe('frontend/default/components/table_of_contents', () => {
     wrapper = mountFn(TableOfContents, {
       propsData: {
         items: TEST_ITEMS,
-        helpAndFeedbackId: TEST_HELP_AND_FEEDBACK_ID,
         ...props,
       },
     });
@@ -50,30 +48,8 @@ describe('frontend/default/components/table_of_contents', () => {
   };
 
   it('matches snapshot', () => {
-    createComponent({ hasHelpAndFeedback: true }, mount);
+    createComponent();
     expect(wrapper.element).toMatchSnapshot();
-  });
-
-  describe('with hasHelpAndFeedback', () => {
-    beforeEach(() => {
-      createComponent({ hasHelpAndFeedback: true });
-    });
-
-    it('appends help and feedback item', () => {
-      expect(findMainListItems()).toEqual(
-        flattenItems(
-          TEST_ITEMS.concat([
-            {
-              href: `#${TEST_HELP_AND_FEEDBACK_ID}`,
-              id: null,
-              items: [],
-              text: 'Help and feedback',
-              withSeparator: true,
-            },
-          ]),
-        ),
-      );
-    });
   });
 
   describe('default', () => {
