@@ -1297,7 +1297,7 @@ sections:
             docs:
               - doc_title: 'Tutorial: Make your first Git commit'
                 doc_url: 'ee/tutorials/make_your_first_git_commit.html'
-              - doc_title: Terminology
+              - doc_title: Concepts
                 doc_url: 'ee/topics/git/terminology.html'
               - doc_title: Installing Git
                 doc_url: 'ee/topics/git/how_to_install_git/'
@@ -1915,7 +1915,7 @@ sections:
                 doc_url: 'ee/user/application_security/policies/scan-result-policies.html'
           - doc_title: Security scanner integration
             doc_url: 'ee/development/integrations/secure.html'
-          - doc_title: Secure and Govern Terminology
+          - doc_title: Secure and Govern glossary
             doc_url: 'ee/user/application_security/terminology/'
 
       - category_title: Deploy and release your application
