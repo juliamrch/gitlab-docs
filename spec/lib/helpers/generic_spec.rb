@@ -26,7 +26,7 @@ RSpec.describe Nanoc::Helpers::Generic do
     end
 
     before do
-      mock_items = { '/_data/navigation.yaml' => YAML.load_file('spec/lib/fixtures/navigation.yaml', symbolize_names: true) }
+      mock_items = { '/_data/navigation.yaml' => YAML.load_file('spec/lib/fixtures/navigation-mock.yaml', symbolize_names: true) }
       mock_sections = mock_items['/_data/navigation.yaml'][:sections]
       allow(mock_class).to receive(:get_nav_sections).and_return(mock_sections)
     end
