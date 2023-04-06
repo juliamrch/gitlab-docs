@@ -1601,13 +1601,13 @@ sections:
                 docs:
                   - doc_title: Accessibility testing (deprecated)
                     doc_url: 'ee/ci/testing/accessibility_testing.html'
-                  - doc_title: Browser performance testing
+                  - doc_title: Browser performance testing (deprecated)
                     doc_url: 'ee/ci/testing/browser_performance_testing.html'
                   - doc_title: Code quality
                     doc_url: 'ee/ci/testing/code_quality.html'
                   - doc_title: Fail fast testing
                     doc_url: 'ee/ci/testing/fail_fast_testing.html'
-                  - doc_title: Load performance testing
+                  - doc_title: Load performance testing (deprecated)
                     doc_url: 'ee/ci/testing/load_performance_testing.html'
                   - doc_title: Metrics reports
                     doc_url: 'ee/ci/testing/metrics_reports.html'
@@ -2640,7 +2640,7 @@ sections:
                 doc_url: 'ee/api/group_level_variables.html'
               - doc_title: Version
                 doc_url: 'ee/api/version.html'
-              - doc_title: Visual Review discussions
+              - doc_title: Visual Review discussions (deprecated)
                 doc_url: 'ee/api/visual_review_discussions.html'
               - doc_title: Vulnerabilities
                 doc_url: 'ee/api/vulnerabilities.html'
