@@ -468,9 +468,9 @@ sections:
       - category_title: Configure GitLab Runner
         category_url: 'runner/configuration/'
         docs:
-          - doc_title: Advanced config
+          - doc_title: Advanced configuration
             doc_url: 'runner/configuration/advanced-configuration.html'
-          - doc_title: Autoscale config
+          - doc_title: Autoscale configuration
             doc_url: 'runner/configuration/autoscale.html'
           - doc_title: Autoscale on AWS EC2
             doc_url: 'runner/configuration/runner_autoscale_aws/'
@@ -1705,6 +1705,10 @@ sections:
                     doc_url: 'runner/executors/docker.html'
                   - doc_title: Docker Machine
                     doc_url: 'runner/executors/docker_machine.html'
+                  - doc_title: Docker Autoscaler
+                    doc_url: 'runner/executors/docker_autoscaler.html'
+                  - doc_title: Instance
+                    doc_url: 'runner/executors/instance.html'
                   - doc_title: Kubernetes
                     doc_url: 'runner/executors/kubernetes.html'
                   - doc_title: Shell
