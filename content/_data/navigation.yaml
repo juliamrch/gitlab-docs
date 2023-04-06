@@ -2244,23 +2244,25 @@ sections:
           - doc_title: Jira
             doc_url: 'ee/integration/jira/'
             docs:
-              - doc_title: Configure Jira
+              - doc_title: Jira integration
                 doc_url: 'ee/integration/jira/configure.html'
-              - doc_title: Create Jira Cloud API token
-                doc_url: 'ee/integration/jira/jira_cloud_configuration.html'
-              - doc_title: GitLab for Jira Cloud app
-                doc_url: 'ee/integration/jira/connect-app.html'
+                docs:
+                  - doc_title: Create Jira Cloud API token
+                    doc_url: 'ee/integration/jira/jira_cloud_configuration.html'
+                  - doc_title: Jira issue management
+                    doc_url: 'ee/integration/jira/issues.html'
+                  - doc_title: Jira Server credentials
+                    doc_url: 'ee/integration/jira/jira_server_configuration.html'
               - doc_title: Jira development panel
                 doc_url: 'ee/integration/jira/development_panel.html'
-              - doc_title: Jira DVCS connector
-                doc_url: 'ee/integration/jira/dvcs/'
                 docs:
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/integration/jira/dvcs/troubleshooting.html'
-              - doc_title: Jira issue management
-                doc_url: 'ee/integration/jira/issues.html'
-              - doc_title: Jira Server credentials
-                doc_url: 'ee/integration/jira/jira_server_configuration.html'
+                  - doc_title: GitLab for Jira Cloud app
+                    doc_url: 'ee/integration/jira/connect-app.html'
+                  - doc_title: Jira DVCS connector
+                    doc_url: 'ee/integration/jira/dvcs/'
+                    docs:
+                      - doc_title: Troubleshooting
+                        doc_url: 'ee/integration/jira/dvcs/troubleshooting.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/integration/jira/troubleshooting.html'
           - doc_title: Kroki
