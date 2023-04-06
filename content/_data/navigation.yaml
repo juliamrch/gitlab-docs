@@ -1521,7 +1521,9 @@ sections:
                 doc_url: 'ee/ci/caching/'
                 docs:
                   - doc_title: Job artifacts
-                    doc_url: 'ee/ci/pipelines/job_artifacts.html'
+                    doc_url: 'ee/ci/jobs/job_artifacts.html'
+                  - doc_title: Troubleshooting job artifacts
+                    doc_url: 'ee/ci/jobs/job_artifacts_troubleshooting.html'
                   - doc_title: Pipeline artifacts
                     doc_url: 'ee/ci/pipelines/pipeline_artifacts.html'
               - doc_title: '.gitlab-ci.yml'
