@@ -2706,6 +2706,8 @@ sections:
       - category_title: Contribute to GitLab
         category_url: 'ee/development/contributing/'
         docs:
+          - doc_title: "Tutorial: Make a GitLab contribution"
+            doc_url: 'ee/development/contributing/first_contribution.html'
           - doc_title: Architecture
             doc_url: 'ee/development/architecture.html'
             docs:
