@@ -2253,8 +2253,6 @@ sections:
               - doc_title: Jira integration
                 doc_url: 'ee/integration/jira/configure.html'
                 docs:
-                  - doc_title: Create Jira Cloud API token
-                    doc_url: 'ee/integration/jira/jira_cloud_configuration.html'
                   - doc_title: Jira issue management
                     doc_url: 'ee/integration/jira/issues.html'
                   - doc_title: Jira Server credentials
