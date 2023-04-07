@@ -1605,6 +1605,8 @@ sections:
                     doc_url: 'ee/ci/testing/accessibility_testing.html'
                   - doc_title: Browser performance testing (deprecated)
                     doc_url: 'ee/ci/testing/browser_performance_testing.html'
+                  - doc_title: Code coverage
+                    doc_url: 'ee/ci/testing/code_coverage.html'
                   - doc_title: Code quality
                     doc_url: 'ee/ci/testing/code_quality.html'
                   - doc_title: Fail fast testing
