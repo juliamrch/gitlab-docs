@@ -1337,7 +1337,7 @@ sections:
             doc_url: 'ee/user/project/repository/'
             docs:
               - doc_title: Code owners
-                doc_url: 'ee/user/project/code_owners.html'
+                doc_url: 'ee/user/project/codeowners/'
               - doc_title: Snippets
                 doc_url: 'ee/user/snippets.html'
               - doc_title: Branches
