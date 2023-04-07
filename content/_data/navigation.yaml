@@ -346,8 +346,8 @@ sections:
                 doc_url: 'ee/install/relative_url.html'
           - doc_title: Troubleshooting
             doc_url: 'ee/administration/troubleshooting/'
-      - category_title: Cloud providers guides
-        category_url: 'ee/install/install_methods.html#cloud-providers'
+      - category_title: Cloud providers
+        category_url: 'ee/install/cloud_providers.html'
         docs:
           - doc_title: Azure
             doc_url: 'ee/install/azure/'
