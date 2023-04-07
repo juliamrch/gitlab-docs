@@ -7,21 +7,19 @@ export default {
     GlToggle,
   },
   props: {
-    milestonesOptions: {
+    allMilestones: {
       type: Array,
-      required: true,
-    },
-    showAllText: {
-      type: String,
       required: true,
     },
   },
   data() {
     return {
       emptyText: 'No deprecations found.',
+      showAllText: 'Show all',
       hiddenClass: 'gl-display-none',
+      milestoneOptions: [],
       selected: {
-        removal_milestone: this.showAllText,
+        removal_milestone: '',
         breaking_only: false,
       },
       deprecations: [],
@@ -35,6 +33,10 @@ export default {
     },
   },
   created() {
+    // Populate the milestones list
+    this.milestoneOptions = [this.showAllText].concat(this.allMilestones);
+    this.selected.removal_milestone = this.showAllText;
+
     // Initialize with an array of all deprecations.
     document.querySelectorAll('.deprecation').forEach((el) => {
       this.deprecations.push(el.getAttribute('data-deprecation-id'));
@@ -45,15 +47,20 @@ export default {
     if (searchParams.has('removal_milestone') || searchParams.has('breaking_only')) {
       this.selected.removal_milestone = searchParams.get('removal_milestone');
       this.selected.breaking_only = searchParams.get('breaking_only') === 'true';
-      this.filterList();
     }
+
+    this.filterList();
   },
   methods: {
     updateURLParams() {
       const url = new URL(window.location);
+      const filterDefaults = [this.showAllText, false];
+      // Add the URL param if a value besides the default is selected.
       Object.keys(this.selected).forEach((selectName) => {
-        if (this.selected[selectName] !== this.showAllText) {
+        if (!filterDefaults.includes(this.selected[selectName])) {
           url.searchParams.set(selectName, this.selected[selectName]);
+        } else {
+          url.searchParams.delete(selectName);
         }
       });
       window.history.pushState(null, '', url.toString());
@@ -61,9 +68,8 @@ export default {
     filterList() {
       // Run the deprecations list through both filters.
       this.selectedDeprecations = this.filterByBreaking(this.filterByVersion(this.deprecations));
-
       // Hide all headers initially.
-      document.querySelectorAll('.announcement-milestone').forEach((section) => {
+      document.querySelectorAll('.milestone-wrapper').forEach((section) => {
         section.children[0].classList.add(this.hiddenClass);
       });
 
@@ -85,10 +91,10 @@ export default {
     filterByVersion(deps) {
       let filteredDeps = deps;
       if (this.selected.removal_milestone !== this.showAllText) {
-        filteredDeps = deps.filter((depID) =>
-          document
-            .querySelector(`[data-deprecation-id="${depID}"]`)
-            .classList.contains(`removal-${this.selected.removal_milestone}`),
+        filteredDeps = deps.filter(
+          (depID) =>
+            document.querySelector(`[data-deprecation-id="${depID}"]`).dataset.milestone ===
+            this.selected.removal_milestone,
         );
       }
       return filteredDeps;
@@ -121,7 +127,7 @@ export default {
           v-model="selected.removal_milestone"
           class="gl-md-max-w-15p gl-mr-6"
           name="removal_milestone"
-          :options="milestonesOptions"
+          :options="milestoneOptions"
           data-testid="removal-milestone-filter"
           @change="filterList()"
         />

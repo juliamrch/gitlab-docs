@@ -601,9 +601,17 @@ a.gl-tab-nav-item:hover {
   }
 }
 
-select[name='removal_milestone'],
-select[name='breaking'] {
+.gl-form-select {
   background-image: $gl-icon-select-chevron-down;
+}
+
+// Deprecations page
+.deprecation-notes {
+  font-size: 0.9rem;
+  line-height: 1rem;
+}
+h2 .milestone-date {
+  font-size: 1.25rem;
 }
 
 // GitLab UI does not export vendor prefixes in the build we use, so we need to add them here.
