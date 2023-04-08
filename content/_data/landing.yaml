@@ -92,5 +92,5 @@ cards:
     url: '/ee/install/installation.html'
     description: If the Omnibus GitLab package isn't available for your distribution, you can install GitLab from source.
   - title: Install from cloud provider
-    url: '/ee/install/install_methods.html#cloud-providers'
+    url: '/ee/install/cloud_providers.html'
     description: Install directly from platforms like AWS, Azure, GCP, OpenShift, and DigitalOcean.
