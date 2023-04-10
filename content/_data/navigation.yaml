@@ -344,8 +344,6 @@ sections:
             docs:
               - doc_title: Install under a relative URL
                 doc_url: 'ee/install/relative_url.html'
-          - doc_title: Troubleshooting
-            doc_url: 'ee/administration/troubleshooting/'
       - category_title: Cloud providers
         category_url: 'ee/install/cloud_providers.html'
         docs:
@@ -944,7 +942,8 @@ sections:
             doc_url: 'ee/administration/read_only_gitlab.html'
           - doc_title: Restart GitLab
             doc_url: 'ee/administration/restart_gitlab.html'
-
+          - doc_title: Troubleshooting
+            doc_url: 'ee/administration/troubleshooting/'
       # New - secure (renamed existing topic)
 
       - category_title: Secure your installation
