@@ -2689,6 +2689,8 @@ sections:
         category_url: 'ee/integration/glab/'
       - category_title: Visual Studio Code extension
         category_url: 'ee/user/project/repository/vscode.html'
+      - category_title: Code Suggestions
+        category_url: 'ee/user/project/repository/code_suggestions.html'
   # End of documentation from https://gitlab.com/gitlab-org/gitlab
 
   # Development documentation from:
