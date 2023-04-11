@@ -1896,6 +1896,9 @@ sections:
                 doc_url: 'ee/user/application_security/api_fuzzing/create_har_files.html'
           - doc_title: Coverage-guided fuzz testing
             doc_url: 'ee/user/application_security/coverage_fuzzing/'
+            docs:
+              - doc_title: "Tutorial: Perform fuzz testing in GitLab"
+                doc_url: 'ee/tutorials/fuzz_testing_tutorial.html'
           - doc_title: Security Dashboard
             doc_url: 'ee/user/application_security/security_dashboard/'
           - doc_title: Offline environments
