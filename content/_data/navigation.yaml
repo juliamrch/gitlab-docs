@@ -1690,6 +1690,8 @@ sections:
               - doc_title: Register a runner
                 doc_url: 'runner/register/'
                 docs:
+                  - doc_title: Generate runner tokens
+                    doc_url: 'ee/ci/runners/register_runner.html'
                   - doc_title: Examples
                     doc_url: 'runner/examples/gitlab.html'
               - doc_title: Runner executors
