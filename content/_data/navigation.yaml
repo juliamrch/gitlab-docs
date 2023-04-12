@@ -1825,11 +1825,8 @@ sections:
                     doc_url: 'ee/user/packages/container_registry/troubleshoot_container_registry.html'
               - doc_title: Harbor Registry
                 doc_url: 'ee/user/packages/harbor_container_registry/'
-              - doc_title: Infrastructure Registry
-                doc_url: 'ee/user/packages/infrastructure_registry/'
-                docs:
-                  - doc_title: Terraform module registry
-                    doc_url: 'ee/user/packages/terraform_module_registry/'
+              - doc_title: Terraform module registry
+                doc_url: 'ee/user/packages/terraform_module_registry/'
               - doc_title: Dependency Proxy
                 doc_url: 'ee/user/packages/dependency_proxy/'
                 docs:
