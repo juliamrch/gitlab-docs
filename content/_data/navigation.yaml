@@ -3433,7 +3433,7 @@ sections:
             doc_url: 'ee/development/documentation/versions.html'
           - doc_title: Document feature flags
             doc_url: 'ee/development/documentation/feature_flags.html'
-          - doc_title: Document Alpha and Beta features
+          - doc_title: Document Experiment and Beta features
             doc_url: 'ee/development/documentation/alpha_beta.html'
           - doc_title: Global navigation
             doc_url: 'ee/development/documentation/site_architecture/global_nav.html'
