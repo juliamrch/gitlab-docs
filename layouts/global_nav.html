@@ -1,5 +1,5 @@
 <% navigation = Gitlab::Navigation.new(@items, @item) %>
-<nav class="global-nav-content">
+<nav class="global-nav-content" data-nosnippet>
 	<!-- nav sections -->
   <% navigation.children.each do |sec| %>
     <% sec_uuid = SecureRandom.uuid %>
