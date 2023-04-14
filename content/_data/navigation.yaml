@@ -1345,6 +1345,9 @@ sections:
             docs:
               - doc_title: Code owners
                 doc_url: 'ee/user/project/codeowners/'
+                docs:
+                  - doc_title: Syntax and errors
+                    doc_url: 'ee/user/project/codeowners/reference.html'
               - doc_title: Snippets
                 doc_url: 'ee/user/snippets.html'
               - doc_title: Branches
