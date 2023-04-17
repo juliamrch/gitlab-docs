@@ -1,4 +1,4 @@
-import Vue from 'vue';
+/* global Vue */
 import { compareVersions } from 'compare-versions';
 import { getReleaseDates } from '../services/fetch_versions';
 import DeprecationFilters from './components/deprecation_filters.vue';

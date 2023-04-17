@@ -3,7 +3,7 @@
  */
 
 import { shallowMount } from '@vue/test-utils';
-import ArchivesPage from '../../../../content/frontend/default/components/archives_page.vue';
+import ArchivesPage from '../../../../content/frontend/archives/archives_page.vue';
 import {
   getVersions,
   getArchiveImages,

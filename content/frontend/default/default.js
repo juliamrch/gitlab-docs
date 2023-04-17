@@ -5,7 +5,8 @@ import VersionBanner from './components/version_banner.vue';
 import { setupTableOfContents } from './setup_table_of_contents';
 import VersionsMenu from './components/versions_menu.vue';
 import TabsSection from './components/tabs_section.vue';
-import ArchivesPage from './components/archives_page.vue';
+
+window.Vue = Vue;
 
 function fixScrollPosition() {
   if (!window.location.hash || !document.querySelector(window.location.hash)) return;
@@ -21,37 +22,41 @@ function fixScrollPosition() {
   scrollPositionMutationObserver.observe(contentBody);
 }
 
+/* eslint-disable no-new */
 document.addEventListener('DOMContentLoaded', () => {
+  fixScrollPosition();
+  setupTableOfContents();
+
+  /**
+   * Banner components
+   */
   const versionBanner = document.querySelector('#js-version-banner');
-  if (!versionBanner) {
-    return;
+  if (versionBanner) {
+    const isOutdated = versionBanner.hasAttribute('data-is-outdated');
+    const { latestVersionUrl, archivesUrl } = versionBanner.dataset;
+
+    new Vue({
+      el: versionBanner,
+      components: {
+        VersionBanner,
+      },
+      render(createElement) {
+        return createElement(VersionBanner, {
+          props: { isOutdated, latestVersionUrl, archivesUrl },
+          on: {
+            toggleVersionBanner(isVisible) {
+              const wrapper = document.querySelector('.wrapper');
+              wrapper.classList.toggle('show-banner', isVisible);
+            },
+          },
+        });
+      },
+    });
   }
 
-  const isOutdated = versionBanner.hasAttribute('data-is-outdated');
-  const { latestVersionUrl, archivesUrl } = versionBanner.dataset;
-
-  fixScrollPosition();
-
-  // eslint-disable-next-line no-new
-  new Vue({
-    el: versionBanner,
-    components: {
-      VersionBanner,
-    },
-    render(createElement) {
-      return createElement(VersionBanner, {
-        props: { isOutdated, latestVersionUrl, archivesUrl },
-        on: {
-          toggleVersionBanner(isVisible) {
-            const wrapper = document.querySelector('.wrapper');
-            wrapper.classList.toggle('show-banner', isVisible);
-          },
-        },
-      });
-    },
-  });
-
-  // eslint-disable-next-line no-new
+  /**
+   * Navigation toggle component
+   */
   new Vue({
     el: '#js-nav-toggle',
     components: {
@@ -66,11 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  setupTableOfContents();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  return new Vue({
+  /**
+   * Versions menu component
+   */
+  new Vue({
     el: '.js-versions-menu',
     components: {
       VersionsMenu,
@@ -79,9 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return createElement(VersionsMenu);
     },
   });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+  /**
+   * Tabs component
+   */
   const tabsetSelector = '.js-tabs';
   document.querySelectorAll(tabsetSelector).forEach((tabset) => {
     const tabTitles = [];
@@ -92,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tabContents.push(getNextUntil(tab, '.tab-title'));
     });
 
-    return new Vue({
+    new Vue({
       el: tabsetSelector,
       components: {
         TabsSection,
@@ -106,17 +111,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       },
     });
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  return new Vue({
-    el: '.js-archives',
-    components: {
-      ArchivesPage,
-    },
-    render(createElement) {
-      return createElement(ArchivesPage);
-    },
   });
 });

@@ -1,4 +1,4 @@
-import Vue from 'vue';
+/* global Vue */
 import { parseTOC } from '../shared/toc/parse_toc';
 import TableOfContents from './components/table_of_contents.vue';
 import { StickToFooter } from './directives/stick_to_footer';

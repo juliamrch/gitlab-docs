@@ -69,6 +69,7 @@
         </div>
       </div>
     </section>
+    <script src="<%= @items['/frontend/default/default.*'].path %>"></script>
     <script src="<%= @items['/frontend/shared/global_imports.*'].path %>"></script>
     <% if @config[:search_backend] == "algolia" %>
     <script src="<%= @items['/frontend/search/docsearch.*'].path %>"></script>
@@ -91,9 +92,11 @@
     <% if @item.identifier.to_s == '/ee/update/deprecations.md' %>
       <script src="<%= @items['/frontend/deprecations/deprecations.*'].path %>"></script>
     <% end %>
+    <% if @item.identifier.to_s == '/archives/index.md' %>
+      <script src="<%= @items['/frontend/archives/archives.*'].path %>"></script>
+    <% end %>
     <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/global-nav.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/tables.*'].path %>"></script>
-    <script src="<%= @items['/frontend/default/default.*'].path %>"></script>
   </body>
 </html>
