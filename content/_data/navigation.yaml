@@ -2966,6 +2966,8 @@ sections:
                     doc_url: 'ee/development/database/database_dictionary.html'
                   - doc_title: Database Lab and Postgres.ai
                     doc_url: 'ee/development/database/database_lab.html'
+                  - doc_title: Database load balancing
+                    doc_url: 'ee/development/database/load_balancing.html'
                   - doc_title: Database migration pipeline
                     doc_url: 'ee/development/database/database_migration_pipeline.html'
                   - doc_title: Database review guidelines
