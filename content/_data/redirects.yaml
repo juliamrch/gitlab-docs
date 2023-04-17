@@ -923,3 +923,24 @@ redirects:
   - from: /ee/user/project/merge_requests/commits.html
     to: /ee/user/project/merge_requests/index.html
     remove_date: 2023-12-12
+  - from: /ee/development/merge_request_diffs.html
+    to: /ee/development/merge_request_concepts/diffs/development.html
+    remove_date: 2024-01-10
+  - from: /ee/development/merge_request_performance_guidelines.html
+    to: /ee/development/merge_request_concepts/performance.html
+    remove_date: 2024-01-10
+  - from: /ee/development/diffs.html
+    to: /ee/development/merge_request_concepts/diffs/index.html
+    remove_date: 2024-01-10
+  - from: /ee/user/project/merge_requests/getting_started.html
+    to: /ee/user/project/merge_requests/index.html
+    remove_date: 2023-12-31
+  - from: /ee/user/project/import/svn.html
+    to: /ee/user/project/import/index.html#import-from-subversion
+    remove_date: 2023-12-15
+  - from: /ee/topics/git/feature_branch_development.html
+    to: /ee/topics/git/index.html
+    remove_date: 2023-12-31
+  - from: /charts/installation/operator.html
+    to: /operator/
+    remove_date: 2024-01-04
