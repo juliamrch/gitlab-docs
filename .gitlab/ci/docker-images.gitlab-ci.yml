@@ -149,6 +149,7 @@ test:image:docs-lint-html:
 image:docs-single:
   extends:
     - .docker_prepare
+    - .rules_docker_single_images
   stage: pre-deploy
   needs: ["test:image:docs-single"]
   artifacts: {}
@@ -168,9 +169,6 @@ image:docs-single:
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
     - docker push $IMAGE_NAME
-  # Only branches with versions like 10.4
-  rules:
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
 
 #
 # Test the GitLab docs single version Docker image if changes made to its Dockerfile
@@ -178,7 +176,7 @@ image:docs-single:
 test:image:docs-single:
   extends:
     - .docker_prepare
-    - .rules_docker_image_tests
+    - .rules_docker_single_images
   stage: test
   variables:
     GITLAB_VERSION: '15.10'
@@ -196,6 +194,7 @@ test:image:docs-single:
              --build-arg SEARCH_BACKEND="algolia"
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
+
 #
 # Final Docker image containing a single version with lunr.js enabled
 # It is based on single.Dockerfile for each branch
@@ -203,6 +202,7 @@ test:image:docs-single:
 image:docs-single-lunrjs:
   extends:
     - .docker_prepare
+    - .rules_docker_single_images
   stage: pre-deploy
   needs: ["test:image:docs-single-lunrjs"]
   artifacts: {}
@@ -222,9 +222,6 @@ image:docs-single-lunrjs:
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
     - docker push $IMAGE_NAME
-  # Only branches with versions like 10.4
-  rules:
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
 
 #
 # Test the GitLab docs single version Docker image with lunr.js enabled
@@ -233,7 +230,7 @@ image:docs-single-lunrjs:
 test:image:docs-single-lunrjs:
   extends:
     - .docker_prepare
-    - .rules_docker_image_tests
+    - .rules_docker_single_images
   stage: test
   variables:
     GITLAB_VERSION: '15.6'

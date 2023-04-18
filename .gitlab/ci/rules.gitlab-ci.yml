@@ -70,6 +70,10 @@ default:
       when: manual
       allow_failure: true
 
+.rules_docker_single_images:
+  rules:
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
+
 .rules_docker_image_tests:
   rules:
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Build docker images pipeline"'
