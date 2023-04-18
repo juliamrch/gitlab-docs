@@ -3193,7 +3193,7 @@ sections:
                 doc_url: 'ee/development/product_qualified_lead_guide/'
               - doc_title: Pry debugging
                 doc_url: 'ee/development/pry_debugging.html'
-              - doc_title: Real-time features
+              - doc_title: Build and deploy real-time view components
                 doc_url: 'ee/development/real_time.html'
               - doc_title: Redis
                 doc_url: 'ee/development/redis.html'
