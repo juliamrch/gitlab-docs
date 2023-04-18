@@ -232,7 +232,13 @@ error for macOS:
 
 You can encounter this error if you run `make view` whilst running the [GitLab Development Kit (GDK)](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/index.md) server on the same port, which is `3000` in this example.
 
-To resolve this error,
+To resolve this error, specify a custom port with:
+
+```shell
+make view PORT=4000
+```
+
+Alternatively, you can
 [configure GDK](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/configuration.md#notable-settings)
 to use another port, for example, `3001`:
 
