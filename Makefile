@@ -4,6 +4,8 @@ INFO = \033[32m
 ERROR = \033[31m
 END = \033[0m
 
+PORT := 3000
+
 ../gitlab/.git:
 	@echo "\n$(INFO)INFO: Cloning GitLab project into parent directory...$(END)\n"
 	@git clone git@gitlab.com:gitlab-org/gitlab.git ../gitlab
@@ -56,11 +58,11 @@ compile:
 
 view: compile
 	@printf "\n$(INFO)INFO: Starting GitLab documentation site...$(END)\n"
-	@bundle exec nanoc view
+	@bundle exec nanoc view -p $(PORT)
 
 live: compile
 	@printf "\n$(INFO)INFO: Starting GitLab documentation site with live reload...$(END)\n"
-	@bundle exec nanoc live
+	@bundle exec nanoc live -p $(PORT)
 
 check-asdf:
 	@printf "\n$(INFO)INFO: Checking asdf is available...$(END)\n"
