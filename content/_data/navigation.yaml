@@ -32,6 +32,23 @@ sections:
 
   - section_title: Tutorials
     section_url: 'ee/tutorials/'
+    section_categories:
+      - category_title: Find your way around GitLab
+        category_url: 'ee/tutorials/gitlab_navigation.html'
+      - category_title: Learn Git
+        category_url: 'ee/tutorials/learn_git.html'
+      - category_title: Plan and track your work
+        category_url: 'ee/tutorials/plan_and_track.html'
+      - category_title: Build your application
+        category_url: 'ee/tutorials/build_application.html'
+      - category_title: Secure your application
+        category_url: 'ee/tutorials/secure_application.html'
+      - category_title: Manage your infrastructure
+        category_url: 'ee/tutorials/infrastructure.html'
+      - category_title: Develop with GitLab
+        category_url: 'ee/tutorials/develop.html'
+      - category_title: Find more tutorials
+        category_url: 'ee/tutorials/more_tutorials.html'
 
   - section_title: Subscribe
     section_url: 'ee/subscriptions/'
