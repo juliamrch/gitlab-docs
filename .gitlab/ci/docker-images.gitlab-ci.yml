@@ -176,7 +176,7 @@ image:docs-single:
 test:image:docs-single:
   extends:
     - .docker_prepare
-    - .rules_docker_single_images
+    - .rules_docker_image_tests
   stage: test
   variables:
     GITLAB_VERSION: '15.11'
@@ -230,10 +230,10 @@ image:docs-single-lunrjs:
 test:image:docs-single-lunrjs:
   extends:
     - .docker_prepare
-    - .rules_docker_single_images
+    - .rules_docker_image_tests
   stage: test
   variables:
-    GITLAB_VERSION: '15.6'
+    GITLAB_VERSION: '15.11'
     IMAGE_NAME: $CI_REGISTRY_IMAGE/archives:$GITLAB_VERSION
     DOCKERFILE: dockerfiles/single.Dockerfile
     NANOC_ENV: test
