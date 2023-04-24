@@ -29,6 +29,8 @@ end
 namespace :docs do
   desc 'GitLab | Docs | Clean up old redirects'
   task :clean_redirects do
+    include TaskHelpers::Output
+
     redirects_yaml = "#{task_helpers.project_root}/content/_data/redirects.yaml"
     today = Time.now.utc.to_date
     mr_description = "Monthly cleanup of docs redirects.</br><p>See https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks</p></br></hr></br><p>_Created automatically: https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/raketasks.md#clean-up-redirects_</p>"
@@ -43,9 +45,9 @@ namespace :docs do
     abort("\n#{TaskHelpers::COLOR_CODE_RED}ERROR: jq not found. Install jq and run task again.#{TaskHelpers::COLOR_CODE_RESET}") if `which jq`.empty?
 
     if ENV['DRY_RUN'] == 'true'
-      TaskHelpers.info("gitlab-docs", "Not stashing changes in gitlab-docs or syncing with upstream default branch because running in dry run mode.")
+      info("gitlab-docs", "Not stashing changes in gitlab-docs or syncing with upstream default branch because running in dry run mode.")
     else
-      TaskHelpers.info("gitlab-docs", "Stashing changes in gitlab-docs and syncing with upstream default branch...")
+      info("gitlab-docs", "Stashing changes in gitlab-docs and syncing with upstream default branch...")
       system("git stash --quiet -u") if task_helpers.git_workdir_dirty?
       system("git checkout --quiet main")
       system("git fetch --quiet origin main")
@@ -93,9 +95,9 @@ namespace :docs do
 
       Dir.chdir(content_dir) do
         if ENV['DRY_RUN'] == 'true'
-          TaskHelpers.info(slug, "Running in dry run mode...")
+          info(slug, "Running in dry run mode...")
         else
-          TaskHelpers.info(slug, "Stashing changes and syncing with upstream default branch...")
+          info(slug, "Stashing changes and syncing with upstream default branch...")
           system("git", "stash", "--quiet", "-u") if task_helpers.git_workdir_dirty?
           system("git", "checkout", "--quiet", default_branch)
           system("git", "fetch", "--quiet", "origin", default_branch)
@@ -135,12 +137,12 @@ namespace :docs do
         #
         next unless remove_date < today
 
-        TaskHelpers.info(slug, "In #{filename}, remove date: #{remove_date} is less than today (#{today}).")
+        info(slug, "In #{filename}, remove date: #{remove_date} is less than today (#{today}).")
 
         counter += 1
 
         if ENV['DRY_RUN'] == 'true'
-          TaskHelpers.info(slug, "Not deleting #{filename} because running in dry run mode.")
+          info(slug, "Not deleting #{filename} because running in dry run mode.")
         else
           FileUtils.rm_f(filename)
         end
@@ -150,7 +152,7 @@ namespace :docs do
         next if new_path(frontmatter['redirect_to'], filename, content_dir, slug).start_with?('http')
 
         if ENV['DRY_RUN'] == 'true'
-          TaskHelpers.info("gitlab-docs", "Not updating redirects.yaml because running in dry run mode.")
+          info("gitlab-docs", "Not updating redirects.yaml because running in dry run mode.")
         else
           File.open(redirects_yaml, 'a') do |post|
             post.puts "  - from: #{old_path}"
@@ -164,7 +166,7 @@ namespace :docs do
         next unless old_path.end_with?('index.html')
 
         if ENV['DRY_RUN'] == 'true'
-          TaskHelpers.info("gitlab-docs", "Not updating redirects.yaml because running in dry run mode.")
+          info("gitlab-docs", "Not updating redirects.yaml because running in dry run mode.")
         else
           File.open(redirects_yaml, 'a') do |post|
             post.puts "  - from: #{old_path.gsub!('index.html', '')}"
@@ -183,24 +185,24 @@ namespace :docs do
       #   4. Commit and push the branch to create the MR
       #
 
-      TaskHelpers.info(slug, "Found #{counter} redirect(s).")
+      info(slug, "Found #{counter} redirect(s).")
       next unless counter.positive?
 
       Dir.chdir(content_dir) do
         if ENV['DRY_RUN'] == 'true'
-          TaskHelpers.info(slug, "Not creating branch or commiting changes because running in dry run mode.")
+          info(slug, "Not creating branch or commiting changes because running in dry run mode.")
         else
-          TaskHelpers.info(slug, "Creating a new branch for the redirects merge request...")
+          info(slug, "Creating a new branch for the redirects merge request...")
           system("git", "checkout", "--quiet", "-b", redirects_branch, origin_default_branch)
-          TaskHelpers.info(slug, "Committing changes to branch...")
+          info(slug, "Committing changes to branch...")
           system("git", "add", ".")
           system("git", "commit", "--quiet", "-m", commit_message)
         end
 
         if ENV['DRY_RUN'] == 'true'
-          TaskHelpers.info(slug, "Not pushing branch because running in dry run mode.")
+          info(slug, "Not pushing branch because running in dry run mode.")
         else
-          TaskHelpers.info(slug, "Pushing branch to create a merge request...")
+          info(slug, "Pushing branch to create a merge request...")
           `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement" -o merge_request.label="type::maintenance" -o merge_request.label="maintenance::refactor"` \
         end
       end
@@ -216,19 +218,19 @@ namespace :docs do
     #
     mr_title = "Clean up docs redirects - #{today}"
     if ENV['DRY_RUN'] == 'true'
-      TaskHelpers.info("gitlab-docs", "Not creating branch or commiting changes because running in dry run mode.")
+      info("gitlab-docs", "Not creating branch or commiting changes because running in dry run mode.")
     else
-      TaskHelpers.info("gitlab-docs", "Creating a new branch for the redirects merge request...")
+      info("gitlab-docs", "Creating a new branch for the redirects merge request...")
       system("git", "checkout", "--quiet", "-b", redirects_branch, "origin/main")
-      TaskHelpers.info("gitlab-docs", "Committing changes to branch...")
+      info("gitlab-docs", "Committing changes to branch...")
       system("git", "add", redirects_yaml)
       system("git", "commit", "--quiet", "-m", commit_message)
     end
 
     if ENV['DRY_RUN'] == 'true'
-      TaskHelpers.info("gitlab-docs", "Not pushing branch because running in dry run mode.")
+      info("gitlab-docs", "Not pushing branch because running in dry run mode.")
     else
-      TaskHelpers.info("gitlab-docs", "Pushing branch to create a merge request...")
+      info("gitlab-docs", "Pushing branch to create a merge request...")
       `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs Site" -o merge_request.label="type::maintenance" -o merge_request.label="maintenance::refactor"` \
     end
   end
