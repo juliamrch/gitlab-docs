@@ -1105,17 +1105,17 @@
   resolved "https://registry.yarnpkg.com/@braintree/sanitize-url/-/sanitize-url-6.0.2.tgz#6110f918d273fe2af8ea1c4398a88774bb9fc12f"
   integrity sha512-Tbsj02wXCbqGmzdnXNk0SOF19ChhRU70BsroIi4Pm6Ehp56in6vch94mfbdQ17DozxkL3BAVjbZ4Qc1a0HFRAg==
 
-"@csstools/css-parser-algorithms@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@csstools/css-parser-algorithms/-/css-parser-algorithms-2.1.0.tgz#c0a605b0218790faeb5911f240964891c6031501"
-  integrity sha512-KP8TicdXpUyeB1NMlbHud/1l39xvLGvqNFWMpG4qC6H1zs9SadGUHe5SO92n/659sDW9aGDvm9AMru0DZkN1Bw==
+"@csstools/css-parser-algorithms@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@csstools/css-parser-algorithms/-/css-parser-algorithms-2.1.1.tgz#7b62e6412a468a2d1096ed267edd1e4a7fd4a119"
+  integrity sha512-viRnRh02AgO4mwIQb2xQNJju0i+Fh9roNgmbR5xEuG7J3TGgxjnE95HnBLgsFJOJOksvcfxOUCgODcft6Y07cA==
 
-"@csstools/css-tokenizer@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@csstools/css-tokenizer/-/css-tokenizer-2.1.0.tgz#fee4de3d444db3ce9007f3af6474af8ba3e4b930"
-  integrity sha512-dtqFyoJBHUxGi9zPZdpCKP1xk8tq6KPHJ/NY4qWXiYo6IcSGwzk3L8x2XzZbbyOyBs9xQARoGveU2AsgLj6D2A==
+"@csstools/css-tokenizer@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@csstools/css-tokenizer/-/css-tokenizer-2.1.1.tgz#07ae11a0a06365d7ec686549db7b729bc036528e"
+  integrity sha512-GbrTj2Z8MCTUv+52GE0RbFGM527xuXZ0Xa5g0Z+YN573uveS4G0qi6WNOMyz3yrFM/jaILTTwJ0+umx81EzqfA==
 
-"@csstools/media-query-list-parser@^2.0.2":
+"@csstools/media-query-list-parser@^2.0.4":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@csstools/media-query-list-parser/-/media-query-list-parser-2.0.4.tgz#466bd254041530dfd1e88bcb1921e8ca4af75b6a"
   integrity sha512-GyYot6jHgcSDZZ+tLSnrzkR7aJhF2ZW6d+CXH66mjy5WpAQhZD4HDke2OQ36SivGRWlZJpAz7TzbW6OKlEpxAA==
@@ -1175,10 +1175,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@eslint/js@8.38.0":
-  version "8.38.0"
-  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.38.0.tgz#73a8a0d8aa8a8e6fe270431c5e72ae91b5337892"
-  integrity sha512-IoD2MfUnOV58ghIHCiil01PcohxjbYR/qCxsoC+xNgUwh1EY8jOOrYmu3d3a71+tJJ23uscEV4X2HJWMsPJu4g==
+"@eslint/js@8.39.0":
+  version "8.39.0"
+  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.39.0.tgz#58b536bcc843f4cd1e02a7e6171da5c040f4d44b"
+  integrity sha512-kf9RB0Fg7NZfap83B3QOqOGg9QmD9yBudqQXzzOtn3i4y7ZUXe5ONeW34Gwi+TxhH4mvj72R1Zc300KUMa9Bng==
 
 "@evilmartians/lefthook@^1.3.10":
   version "1.3.10"
@@ -1242,15 +1242,15 @@
     stylelint-declaration-strict-value "1.8.0"
     stylelint-scss "4.2.0"
 
-"@gitlab/svgs@^3.38.0":
-  version "3.38.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-3.38.0.tgz#5c316bc139b3017eea92bb8d603c7ff26fa9ddb7"
-  integrity sha512-yDkZnuYDQlBB7Eb7noSHGlNpZE6KgM6kX2zB0bmGdHBY2w4wbnjgCR8INYFblH19QGlIToxoW3rOL9iobu4Puw==
+"@gitlab/svgs@^3.40.0":
+  version "3.40.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-3.40.0.tgz#f1ebb2fcdbb1181550d53f0db827eca1f5060af0"
+  integrity sha512-9CVkIbV0VnIFfVBjWcW8+nHzpMhHhC73C9mGPEktEPfpEbaaRws2UywgDEH+C2B8Ba1QdBo/aFr68RDu2VwvfA==
 
-"@gitlab/ui@^61.1.1":
-  version "61.1.1"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-61.1.1.tgz#fcd0f66e307456aacfb072d026bf9096bef43658"
-  integrity sha512-dd9LqCV/6Ju7pMId0g8vbTyHYa1MavVbvB2WsJpnr+VsCPCLsl8hp9XB238kijhvfQqcExUsqwm0Plsu/nE1xQ==
+"@gitlab/ui@^61.3.0":
+  version "61.3.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-61.3.0.tgz#5b1f9c7a01d7571150a796ca5f02fe44f9604fc4"
+  integrity sha512-jOaEGjvtrVT7IZhtu/VZNmlodGgrE/UllciNfJxzm4nbbWMHlALspFp8btt/zxGxiI33oQJLS2qTCEu0QVVZHA==
   dependencies:
     "@popperjs/core" "^2.11.2"
     bootstrap-vue "2.23.1"
@@ -3626,10 +3626,10 @@ eslint-scope@5.1.1, eslint-scope@^5.1.1:
     esrecurse "^4.3.0"
     estraverse "^4.1.1"
 
-eslint-scope@^7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-7.1.1.tgz#fff34894c2f65e5226d3041ac480b4513a163642"
-  integrity sha512-QKQM/UXpIiHcLqJ5AOyIW7XZmzjkzQXYE54n1++wb0u9V/abW3l9uQnxX8Z5Xd18xyKIMTUAyQ0k1e8pz6LUrw==
+eslint-scope@^7.1.1, eslint-scope@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-7.2.0.tgz#f21ebdafda02352f103634b96dd47d9f81ca117b"
+  integrity sha512-DYj5deGlHBfMt15J7rdtyKNq/Nqlv5KfU4iodrQ019XESsRnwXH9KAE0y3cwtUHDo2ob7CypAnCqefh6vioWRw==
   dependencies:
     esrecurse "^4.3.0"
     estraverse "^5.2.0"
@@ -3651,15 +3651,15 @@ eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.0.tgz#c7f0f956124ce677047ddbc192a68f999454dedc"
   integrity sha512-HPpKPUBQcAsZOsHAFwTtIKcYlCje62XB7SEAcxjtmW6TD1WVpkS6i6/hOVtTZIl4zGj/mBqpFVGvaDneik+VoQ==
 
-eslint@^8.38.0:
-  version "8.38.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.38.0.tgz#a62c6f36e548a5574dd35728ac3c6209bd1e2f1a"
-  integrity sha512-pIdsD2jwlUGf/U38Jv97t8lq6HpaU/G9NKbYmpWpZGw3LdTNhZLbJePqxOXGB5+JEKfOPU/XLxYxFh03nr1KTg==
+eslint@^8.39.0:
+  version "8.39.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.39.0.tgz#7fd20a295ef92d43809e914b70c39fd5a23cf3f1"
+  integrity sha512-mwiok6cy7KTW7rBpo05k6+p4YVZByLNjAZ/ACB9DRCu4YDRwjXI01tWHp6KAUWelsBetTxKK/2sHB0vdS8Z2Og==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     "@eslint-community/regexpp" "^4.4.0"
     "@eslint/eslintrc" "^2.0.2"
-    "@eslint/js" "8.38.0"
+    "@eslint/js" "8.39.0"
     "@humanwhocodes/config-array" "^0.11.8"
     "@humanwhocodes/module-importer" "^1.0.1"
     "@nodelib/fs.walk" "^1.2.8"
@@ -3669,7 +3669,7 @@ eslint@^8.38.0:
     debug "^4.3.2"
     doctrine "^3.0.0"
     escape-string-regexp "^4.0.0"
-    eslint-scope "^7.1.1"
+    eslint-scope "^7.2.0"
     eslint-visitor-keys "^3.4.0"
     espree "^9.5.1"
     esquery "^1.4.2"
@@ -4037,13 +4037,12 @@ glob-parent@^6.0.2:
   dependencies:
     is-glob "^4.0.3"
 
-glob@^10.2.1:
-  version "10.2.1"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-10.2.1.tgz#44288e9186b5cd5baa848728533ba21a94aa8f33"
-  integrity sha512-ngom3wq2UhjdbmRE/krgkD8BQyi1KZ5l+D2dVm4+Yj+jJIBp74/ZGunL6gNGc/CYuQmvUBiavWEXIotRiv5R6A==
+glob@^10.2.2:
+  version "10.2.2"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-10.2.2.tgz#ce2468727de7e035e8ecf684669dc74d0526ab75"
+  integrity sha512-Xsa0BcxIC6th9UwNjZkhrMtNo/MnyRL8jGCP+uEwhA5oFOCY1f2s1/oNKY47xQ0Bg5nkjsfAEIej1VeH62bDDQ==
   dependencies:
     foreground-child "^3.1.0"
-    fs.realpath "^1.0.0"
     jackspeak "^2.0.3"
     minimatch "^9.0.0"
     minipass "^5.0.0"
@@ -4121,10 +4120,10 @@ globby@10.0.1:
     merge2 "^1.2.3"
     slash "^3.0.0"
 
-globby@13.1.3:
-  version "13.1.3"
-  resolved "https://registry.yarnpkg.com/globby/-/globby-13.1.3.tgz#f62baf5720bcb2c1330c8d4ef222ee12318563ff"
-  integrity sha512-8krCNHXvlCgHDpegPzleMq07yMYTO2sXKASmZmquEYWEmCx6J5UTRbp5RwMJkTJGtcQ44YpiUYUiN0b9mzy8Bw==
+globby@13.1.4:
+  version "13.1.4"
+  resolved "https://registry.yarnpkg.com/globby/-/globby-13.1.4.tgz#2f91c116066bcec152465ba36e5caa4a13c01317"
+  integrity sha512-iui/IiiW+QrJ1X1hKH5qwlMQyv34wJAYwH1vrf8b9kBA4sNiif3gKsMHa+BrdnOpEudWjpotfa7LrTzB1ERS/g==
   dependencies:
     dir-glob "^3.0.1"
     fast-glob "^3.2.11"
@@ -5571,19 +5570,19 @@ markdown-it@13.0.1:
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
-markdownlint-cli2-formatter-default@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/markdownlint-cli2-formatter-default/-/markdownlint-cli2-formatter-default-0.0.3.tgz#5aecd6e576ad18801b76e58bbbaf0e916c583ab8"
-  integrity sha512-QEAJitT5eqX1SNboOD+SO/LNBpu4P4je8JlR02ug2cLQAqmIhh8IJnSK7AcaHBHhNADqdGydnPpQOpsNcEEqCw==
+markdownlint-cli2-formatter-default@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/markdownlint-cli2-formatter-default/-/markdownlint-cli2-formatter-default-0.0.4.tgz#81e26b0a50409c0357c6f0d38d8246946b236fab"
+  integrity sha512-xm2rM0E+sWgjpPn1EesPXx5hIyrN2ddUnUwnbCsD/ONxYtw3PX6LydvdH6dciWAoFDpwzbHM1TO7uHfcMd6IYg==
 
-markdownlint-cli2@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/markdownlint-cli2/-/markdownlint-cli2-0.6.0.tgz#ffa6aee4098e61f781e5e69528db60f7f39f737c"
-  integrity sha512-Bv20r6WGdcHMWi8QvAFZ3CBunf4i4aYmVdTfpAvXODI/1k3f09DZZ0i0LcX9ZMhlVxjoOzbVDz1NWyKc5hwTqg==
+markdownlint-cli2@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/markdownlint-cli2/-/markdownlint-cli2-0.7.0.tgz#4ce5444d79b6a0f1526fb77299a08d5df3e8c6af"
+  integrity sha512-67r1t9ep+z0fa6g9TgL3tiPQeWo297ip165Et2u54UquJAkXWnq6e+dXFBjSPft/iLaGJfU0fUHXhXueqNUkGQ==
   dependencies:
-    globby "13.1.3"
-    markdownlint "0.27.0"
-    markdownlint-cli2-formatter-default "0.0.3"
+    globby "13.1.4"
+    markdownlint "0.28.1"
+    markdownlint-cli2-formatter-default "0.0.4"
     micromatch "4.0.5"
     strip-json-comments "5.0.0"
     yaml "2.2.1"
@@ -5603,7 +5602,20 @@ markdownlint-cli@^0.33.0:
     minimatch "~5.1.2"
     run-con "~1.2.11"
 
-markdownlint@0.27.0, markdownlint@~0.27.0:
+markdownlint-micromark@0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/markdownlint-micromark/-/markdownlint-micromark-0.1.2.tgz#5520e04febffa46741875a2f297509ffdb561f5c"
+  integrity sha512-jRxlQg8KpOfM2IbCL9RXM8ZiYWz2rv6DlZAnGv8ASJQpUh6byTBnEsbuMZ6T2/uIgntyf7SKg/mEaEBo1164fQ==
+
+markdownlint@0.28.1:
+  version "0.28.1"
+  resolved "https://registry.yarnpkg.com/markdownlint/-/markdownlint-0.28.1.tgz#7978f7e4393edbe08527417d44ffdc2ab865a61f"
+  integrity sha512-8At2DbgGKT/RVBinkqIPqLETopPXyQFGWSiTCJSr9Y6wVVyY70cDJ9dw3FXePn4AkytIUclgrsgI6KVeqeHFoA==
+  dependencies:
+    markdown-it "13.0.1"
+    markdownlint-micromark "0.1.2"
+
+markdownlint@~0.27.0:
   version "0.27.0"
   resolved "https://registry.yarnpkg.com/markdownlint/-/markdownlint-0.27.0.tgz#9dabf7710a4999e2835e3c68317f1acd0bc89049"
   integrity sha512-HtfVr/hzJJmE0C198F99JLaeada+646B5SaG2pVoEakLFI6iRGsvMqrnnrflq8hm1zQgwskEgqSnhDW11JBp0w==
@@ -6206,10 +6218,10 @@ postcss@^7.0.36:
     picocolors "^0.2.1"
     source-map "^0.6.1"
 
-postcss@^8.4.14, postcss@^8.4.21, postcss@^8.4.22:
-  version "8.4.22"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.22.tgz#c29e6776b60ab3af602d4b513d5bd2ff9aa85dc1"
-  integrity sha512-XseknLAfRHzVWjCEtdviapiBtfLdgyzExD50Rg2ePaucEesyh8Wv4VPdW0nbyDa1ydbrAxV19jvMT4+LFmcNUA==
+postcss@^8.4.14, postcss@^8.4.22, postcss@^8.4.23:
+  version "8.4.23"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.23.tgz#df0aee9ac7c5e53e1075c24a3613496f9e6552ab"
+  integrity sha512-bQ3qMcpF6A/YjR55xtoTr0jGOlnPOKAIMdOWiv0EIT6HVPEaJiJB4NLljSbiHoC2RX7DN5Uvjtpbg1NPdwv1oA==
   dependencies:
     nanoid "^3.3.6"
     picocolors "^1.0.0"
@@ -6230,10 +6242,10 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==
 
-"prettier@^1.18.2 || ^2.0.0", prettier@^2.8.7:
-  version "2.8.7"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.7.tgz#bb79fc8729308549d28fe3a98fce73d2c0656450"
-  integrity sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==
+"prettier@^1.18.2 || ^2.0.0", prettier@^2.8.8:
+  version "2.8.8"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.8.tgz#e8c5d7e98a4305ffe3de2e1fc4aca1a71c28b1da"
+  integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
 
 pretty-format@^29.5.0:
   version "29.5.0"
@@ -6652,10 +6664,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^3.20.4:
-  version "3.20.4"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.20.4.tgz#cde35731c5c0c637de0b532d5d1a84bd802c128e"
-  integrity sha512-n7J4tuctZXUErM9Uc916httwqmTc63zzCr2+TLCiSCpfO/Xuk3g/marGN1IlRJZi+QF3XMYx75PxXRfZDVgaRw==
+rollup@^3.21.0:
+  version "3.21.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.21.0.tgz#0a71517db56e150222670f88e5e7acfa4fede7c8"
+  integrity sha512-ANPhVcyeHvYdQMUyCbczy33nbLzI7RzrBje4uvNiTDJGIMtlKoOStmympwr9OtS1LZxiDmE2wvxHyVhoLtf1KQ==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -7048,14 +7060,14 @@ stylelint-scss@4.2.0:
     postcss-selector-parser "^6.0.6"
     postcss-value-parser "^4.1.0"
 
-stylelint@^15.5.0:
-  version "15.5.0"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-15.5.0.tgz#f16c238231f3f32e62da8a88969821d237eae8a6"
-  integrity sha512-jyMO3R1QtE5mUS4v40+Gg+sIQBqe7CF1xPslxycDzNVkIBCUD4O+5F1vLPq16VmunUTv4qG9o2rUKLnU5KkVeQ==
+stylelint@^15.6.0:
+  version "15.6.0"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-15.6.0.tgz#1d76176dd8b6307bc4645e428ad18ddd15edbafc"
+  integrity sha512-Cqzpc8tvJm77KaM8qUbhpJ/UYK55Ia0whQXj4b9IId9dlPICO7J8Lyo15SZWiHxKjlvy3p5FQor/3n6i8ignXg==
   dependencies:
-    "@csstools/css-parser-algorithms" "^2.1.0"
-    "@csstools/css-tokenizer" "^2.1.0"
-    "@csstools/media-query-list-parser" "^2.0.2"
+    "@csstools/css-parser-algorithms" "^2.1.1"
+    "@csstools/css-tokenizer" "^2.1.1"
+    "@csstools/media-query-list-parser" "^2.0.4"
     "@csstools/selector-specificity" "^2.2.0"
     balanced-match "^2.0.0"
     colord "^2.9.3"
@@ -7080,7 +7092,7 @@ stylelint@^15.5.0:
     micromatch "^4.0.5"
     normalize-path "^3.0.0"
     picocolors "^1.0.0"
-    postcss "^8.4.21"
+    postcss "^8.4.22"
     postcss-media-query-parser "^0.2.3"
     postcss-resolve-nested-selector "^0.1.1"
     postcss-safe-parser "^6.0.0"
