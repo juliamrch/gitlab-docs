@@ -163,7 +163,7 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.21.4.tgz#457ffe647c480dff59c2be092fc3acf71195c87f"
   integrity sha512-/DYyDpeCfaVinT40FPGdkkb+lYSKvsVuMjDAG7jPOWWiM1ibOaB9CXJAlc4d1QpP/U2q2P9jbrSlClKSErd55g==
 
-"@babel/core@^7.11.6", "@babel/core@^7.12.3", "@babel/core@^7.17.0", "@babel/core@^7.21.4":
+"@babel/core@^7.11.6", "@babel/core@^7.12.3", "@babel/core@^7.21.4":
   version "7.21.4"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.21.4.tgz#c6dc73242507b8e2a27fd13a9c1814f9fa34a659"
   integrity sha512-qt/YV149Jman/6AfmlxJ04LMIu8bMoyl3RB91yTFrxQmgbrSvQMy7cI8Q62FHx1t8wJ8B5fu0UDoLwHAhUo1QA==
@@ -184,7 +184,7 @@
     json5 "^2.2.2"
     semver "^6.3.0"
 
-"@babel/eslint-parser@^7.17.0", "@babel/eslint-parser@^7.21.3":
+"@babel/eslint-parser@^7.21.3":
   version "7.21.3"
   resolved "https://registry.yarnpkg.com/@babel/eslint-parser/-/eslint-parser-7.21.3.tgz#d79e822050f2de65d7f368a076846e7184234af7"
   integrity sha512-kfhmPimwo6k4P8zxNs8+T7yR44q1LdpsZdE1NkCsVlfiuTPRfnGgjaF8Qgug9q9Pou17u6wneYF0lDCZJATMFg==
@@ -192,13 +192,6 @@
     "@nicolo-ribaudo/eslint-scope-5-internals" "5.1.1-v1"
     eslint-visitor-keys "^2.1.0"
     semver "^6.3.0"
-
-"@babel/eslint-plugin@^7.17.7":
-  version "7.19.1"
-  resolved "https://registry.yarnpkg.com/@babel/eslint-plugin/-/eslint-plugin-7.19.1.tgz#8bfde4b6e4380ea038e7947a765fe536c3057a4c"
-  integrity sha512-ElGPkQPapKMa3zVqXHkZYzuL7I5LbRw9UWBUArgWsdWDDb9XcACqOpBib5tRPA9XvbVZYrFUkoQPbiJ4BFvu4w==
-  dependencies:
-    eslint-rule-composer "^0.3.0"
 
 "@babel/generator@^7.21.4", "@babel/generator@^7.7.2":
   version "7.21.4"
@@ -1210,17 +1203,13 @@
     lodash.isundefined "^3.0.1"
     lodash.uniq "^4.5.0"
 
-"@gitlab/eslint-plugin@^18.3.2":
-  version "18.3.2"
-  resolved "https://registry.yarnpkg.com/@gitlab/eslint-plugin/-/eslint-plugin-18.3.2.tgz#dc4d5b487e26a1473106c1a3e34ae3ea219d4dd1"
-  integrity sha512-Lz0RnEW5isZ/jkeHcr2k6NqaHISwgKeWN/vkWUU5J4Ax7oYPR0CgA2KO/dEnOvIPmGfbnUKowsekBmmy5SUQHA==
+"@gitlab/eslint-plugin@^19.0.0":
+  version "19.0.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/eslint-plugin/-/eslint-plugin-19.0.0.tgz#bbf5b535876421f000255f0e9ac8f971b8aa6042"
+  integrity sha512-clAN/hIs3fVWIJtGLUJy4cL/cXP0jOPCLHOFhlPyYCUpEZXIka73FtPYfaC3NJoRheLA3u2Ue5KKOAj6pi1ZrA==
   dependencies:
-    "@babel/core" "^7.17.0"
-    "@babel/eslint-parser" "^7.17.0"
-    "@babel/eslint-plugin" "^7.17.7"
     eslint-config-airbnb-base "^15.0.0"
     eslint-config-prettier "^6.10.0"
-    eslint-plugin-babel "^5.3.0"
     eslint-plugin-import "^2.26.0"
     eslint-plugin-jest "^27.2.1"
     eslint-plugin-promise "^6.0.1"
@@ -1247,10 +1236,10 @@
   resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-3.40.0.tgz#f1ebb2fcdbb1181550d53f0db827eca1f5060af0"
   integrity sha512-9CVkIbV0VnIFfVBjWcW8+nHzpMhHhC73C9mGPEktEPfpEbaaRws2UywgDEH+C2B8Ba1QdBo/aFr68RDu2VwvfA==
 
-"@gitlab/ui@^61.3.0":
-  version "61.3.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-61.3.0.tgz#5b1f9c7a01d7571150a796ca5f02fe44f9604fc4"
-  integrity sha512-jOaEGjvtrVT7IZhtu/VZNmlodGgrE/UllciNfJxzm4nbbWMHlALspFp8btt/zxGxiI33oQJLS2qTCEu0QVVZHA==
+"@gitlab/ui@^62.3.0":
+  version "62.3.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-62.3.0.tgz#26e9d294d1017f9227d1ef6c8025ad23ff2afe8f"
+  integrity sha512-HHBz7uh6tHShxzNpITKzzBh3x1Fvpc6Ih/wwIXvbhKKY96Ms5OApQ/aAE2zE145tVbZbShcDeV1mZ/747n2gSw==
   dependencies:
     "@popperjs/core" "^2.11.2"
     bootstrap-vue "2.23.1"
@@ -3530,13 +3519,6 @@ eslint-module-utils@^2.7.4:
   dependencies:
     debug "^3.2.7"
 
-eslint-plugin-babel@^5.3.0:
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-babel/-/eslint-plugin-babel-5.3.1.tgz#75a2413ffbf17e7be57458301c60291f2cfbf560"
-  integrity sha512-VsQEr6NH3dj664+EyxJwO4FCYm/00JhYb3Sk3ft8o+fpKuIfQ9TaW6uVUfvwMXHcf/lsnRIoyFPsLMyiWCSL/g==
-  dependencies:
-    eslint-rule-composer "^0.3.0"
-
 eslint-plugin-filenames@^1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-filenames/-/eslint-plugin-filenames-1.3.2.tgz#7094f00d7aefdd6999e3ac19f72cea058e590cf7"
@@ -3612,11 +3594,6 @@ eslint-plugin-vue@^9.3.0:
     semver "^7.3.5"
     vue-eslint-parser "^9.0.1"
     xml-name-validator "^4.0.0"
-
-eslint-rule-composer@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-rule-composer/-/eslint-rule-composer-0.3.0.tgz#79320c927b0c5c0d3d3d2b76c8b4a488f25bbaf9"
-  integrity sha512-bt+Sh8CtDmn2OajxvNO+BX7Wn4CIWMpTRm3MaiKPCQcnnlm0CS2mhui6QaoeQugs+3Kj2ESKEEGJUdVafwhiCg==
 
 eslint-scope@5.1.1, eslint-scope@^5.1.1:
   version "5.1.1"
