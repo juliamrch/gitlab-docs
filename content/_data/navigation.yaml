@@ -1421,8 +1421,6 @@ sections:
                 doc_url: 'ee/user/project/repository/web_editor.html'
               - doc_title: Web IDE
                 doc_url: 'ee/user/project/web_ide/'
-              - doc_title: Web IDE Beta
-                doc_url: 'ee/user/project/web_ide_beta/'
               - doc_title: Remote development
                 doc_url: 'ee/user/project/remote_development/'
                 docs:
