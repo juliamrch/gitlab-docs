@@ -220,4 +220,8 @@ create-stable-branch:
 	@printf "\n$(INFO)INFO: Creating stable branch...$(END)\n"
 	@bundle exec rake release:single
 
+.PHONY: update-versions-dropdown
+update-versions-dropdown:
+	@bundle exec rake release:update_versions_dropdown
+
 test: setup rspec-tests jest-tests eslint-tests prettier-tests stylelint-tests hadolint-tests yamllint-tests markdownlint-tests check-global-navigation

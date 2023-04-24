@@ -10,7 +10,22 @@ class TaskHelpers
   COLOR_CODE_RESET = "\e[0m"
   COLOR_CODE_RED = "\e[31m"
   COLOR_CODE_GREEN = "\e[32m"
-  CURRENT_RELEASE_DATE = Date.today.strftime("%Y-%m-22")
+
+  module Output
+    def info(slug, message)
+      puts "#{COLOR_CODE_GREEN}INFO: (#{slug}): #{message} #{COLOR_CODE_RESET}"
+    end
+
+    def error(slug, message)
+      puts error_format(slug, message)
+    end
+
+    def error_format(slug, message)
+      "#{COLOR_CODE_RED}ERROR: (#{slug}): #{message} #{COLOR_CODE_RESET}"
+    end
+  end
+
+  include Output
 
   def config
     # Parse the config file and create a hash.
@@ -128,16 +143,9 @@ class TaskHelpers
     `curl --silent https://gitlab.com/api/v4/projects/#{url_encoded_path} | jq --raw-output .default_branch`.tr("\n", '')
   end
 
-  def self.info(slug, message)
-    puts "#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): #{message} #{TaskHelpers::COLOR_CODE_RESET}"
-  end
-
-  def current_milestone
-    @current_milestone ||= begin
-      release_dates_json = File.read("#{project_root}/content/release_dates.json")
-      # Search in the relase dates hash for the upcoming release date
-      # and fetch the milestone title.
-      JSON.parse(release_dates_json).first[CURRENT_RELEASE_DATE]
-    end
+  # Search in the relase dates hash for the release date
+  # and fetch the milestone title. The date must be in the format of "<year>-<month>-22".
+  def milestone(date)
+    JSON.load_file!("#{project_root}/content/release_dates.json").first[date]
   end
 end
