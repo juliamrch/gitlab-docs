@@ -1166,8 +1166,6 @@ sections:
                 doc_url: 'ee/user/compliance/compliance_report/'
               - doc_title: License Compliance (deprecated)
                 doc_url: 'ee/user/compliance/license_compliance/'
-              - doc_title: License check policies (deprecated)
-                doc_url: 'ee/user/compliance/license_check_rules.html'
           - doc_title: Description templates
             doc_url: 'ee/user/project/description_templates.html'
           - doc_title: Deploy keys
