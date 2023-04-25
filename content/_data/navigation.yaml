@@ -2747,7 +2747,7 @@ sections:
                 doc_url: 'ee/api/feature_flag_user_lists.html'
               - doc_title: Freeze periods
                 doc_url: 'ee/api/freeze_periods.html'
-              - doc_title: Geo nodes
+              - doc_title: Geo nodes (deprecated)
                 doc_url: 'ee/api/geo_nodes.html'
               - doc_title: Geo sites
                 doc_url: 'ee/api/geo_sites.html'
