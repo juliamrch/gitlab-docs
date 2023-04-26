@@ -18,15 +18,10 @@ table {
   overflow: auto;
 
   tr {
-    border-top: 1px solid $gray-100;
-
-
-    &:nth-child(even) {
-      background-color: $gray-10;
-    }
+    border-top: 1px solid $gray-50;
 
     &:last-child {
-      border-bottom: 1px solid $gray-100;
+      border-bottom: 1px solid $gray-50;
     }
   }
 
@@ -42,17 +37,15 @@ table {
   }
 
   th {
-    background-color: $gray-50;
-    color: $gray-900;
+    background-color: $white;
+    color: $gray-950;
     line-height: 1.25;
     text-align: left;
     position: sticky;
     vertical-align: top;
     z-index: 1;
     top: $header-height;
-    box-shadow: 0 3px 0 0 var(--color-auto-gray-4);
-    padding: 12px 8px;
-    border: 0;
+    padding: 14px;
   }
 
   td {
