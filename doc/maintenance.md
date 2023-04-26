@@ -189,7 +189,7 @@ maintainer in the relevant projects to rotate the tokens.
 1. Under **Add a project access token**, fill in the following values:
    - **Token name**: `DOCS_PROJECT_API_TOKEN`.
    - **Expiration date**: None.
-   - **Select a role**: `Maintainer`.
+   - **Select a role**: `Developer`.
    - **Select scopes**: `api`.
 1. Select **Create project access token**.
 1. After the token is created, go to **Your new project access token** at the top
