@@ -687,12 +687,16 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/rate_limit_on_notes_creation.html'
               - doc_title: Rate limits on Users API
                 doc_url: 'ee/user/admin_area/settings/rate_limit_on_users_api.html'
+              - doc_title: Rate limits on Projects API
+                doc_url: 'ee/user/admin_area/settings/rate_limit_on_projects_api.html'
               - doc_title: Rate limits on pipeline creation
                 doc_url: 'ee/user/admin_area/settings/rate_limit_on_pipelines_creation.html'
               - doc_title: Reply by email
                 doc_url: 'ee/administration/reply_by_email.html'
               - doc_title: Repository checks
                 doc_url: 'ee/administration/repository_checks.html'
+              - doc_title: Security and Compliance
+                doc_url: 'ee/user/admin_area/settings/security_and_compliance.html'
               - doc_title: Sign-in and help page text
                 doc_url: 'ee/user/admin_area/settings/help_page.html'
               - doc_title: Sign-in restrictions
