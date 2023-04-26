@@ -2285,7 +2285,7 @@ sections:
           - doc_title: Jira
             doc_url: 'ee/integration/jira/'
             docs:
-              - doc_title: Jira integration
+              - doc_title: Jira issue integration
                 doc_url: 'ee/integration/jira/configure.html'
                 docs:
                   - doc_title: Jira issue management
