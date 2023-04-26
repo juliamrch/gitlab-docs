@@ -492,11 +492,14 @@ sections:
           - doc_title: Advanced configuration
             doc_url: 'runner/configuration/advanced-configuration.html'
           - doc_title: Autoscale configuration
-            doc_url: 'runner/configuration/autoscale.html'
-          - doc_title: Autoscale on AWS EC2
-            doc_url: 'runner/configuration/runner_autoscale_aws/'
-          - doc_title: Autoscale on AWS Fargate
-            doc_url: 'runner/configuration/runner_autoscale_aws_fargate/'
+            doc_url: 'runner/runner_autoscale/'
+            docs:
+              - doc_title: Docker Machine Executor autoscale
+                doc_url: 'runner/configuration/autoscale.html'
+              - doc_title: Autoscale on AWS EC2
+                doc_url: 'runner/configuration/runner_autoscale_aws/'
+              - doc_title: Autoscale on AWS Fargate
+                doc_url: 'runner/configuration/runner_autoscale_aws_fargate/'
           - doc_title: Commands
             doc_url: 'runner/commands/'
           - doc_title: Feature flags
