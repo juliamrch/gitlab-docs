@@ -1492,6 +1492,8 @@ sections:
               - doc_title: 'Tutorial: Create your first pipeline'
                 doc_url: 'ee/ci/quick_start/'
                 docs:
+                  - doc_title: 'Tutorial: Create a complex pipeline'
+                    doc_url: 'ee/ci/quick_start/tutorial.html'
                   - doc_title: CI/CD concepts
                     doc_url: 'ee/ci/introduction/'
                   - doc_title: Migrate from CircleCI
