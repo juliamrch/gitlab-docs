@@ -238,8 +238,6 @@ sections:
                         doc_url: 'charts/charts/gitlab/gitaly/'
                       - doc_title: GitLab Exporter chart
                         doc_url: 'charts/charts/gitlab/gitlab-exporter/'
-                      - doc_title: GitLab Grafana chart
-                        doc_url: 'charts/charts/gitlab/gitlab-grafana/'
                       - doc_title: GitLab Pages chart
                         doc_url: 'charts/charts/gitlab/gitlab-pages/'
                       - doc_title: GitLab Runner chart
