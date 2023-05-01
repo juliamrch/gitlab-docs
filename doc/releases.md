@@ -137,19 +137,15 @@ To create the release merge request for the release:
    git checkout -b release-15-0
    ```
 
-1. Update `content/versions.json` to reflect the new release in the Versions menu:
+1. Edit `content/versions.json` and update the lists of versions to reflect the new release in the Versions menu:
 
-   ```shell
-   make update-versions-dropdown
-   ```
-
-   - `next` is set to the version number of the next release. For example, if you're releasing `15.2`, `next` is set to `15.3`.
-   - `current` is set to the version number of the release you're releasing. For example, if you're releasing `15.2`,
-     `current` is set to `15.2`.
-   - `last_minor` is set to the last two most recent minor releases. For example, if you're
-     releasing `15.2`, `last_minor` is set to `15.1` and `15.0`.
+   - Set `next` to the version number of the next release. For example, if you're releasing `15.2`, set `next` to `15.3`.
+   - Set `current` to the version number of the release you're releasing. For example, if you're releasing `15.2`, set
+     `current` to `15.2`.
    - Ensure `last_major` is set to the two most recent major versions. Do not include the current major version.
      For example, if you're releasing `15.2`, ensure `last_major` is `14.10` and `13.12`.
+   - Set `last_minor` to the last two most recent minor releases. For example, if you're
+     releasing `15.2`, set `last_minor` to `15.1` and `15.0`.
 
    As a complete example, the `content/versions.json` file for the `15.2` release is:
 
@@ -158,14 +154,8 @@ To create the release merge request for the release:
      {
        "next": "15.3",
        "current": "15.2",
-       "last_minor": [
-         "15.1",
-         "15.0"
-       ],
-       "last_major": [
-         "14.10",
-         "13.12"
-       ]
+       "last_minor": ["15.1", "15.0"],
+       "last_major": ["14.10", "13.12"]
      }
    ]
    ```
