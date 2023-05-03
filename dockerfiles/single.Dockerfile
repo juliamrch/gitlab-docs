@@ -3,7 +3,7 @@
 # and rename it to X.Y.Dockerfile, where X.Y the major.minor GitLab version.
 #
 
-FROM ruby:3.2.1-alpine3.17 as builder
+FROM ruby:3.2.2-alpine3.17 as builder
 
 # Set versions as build args to fetch corresponding branches
 ARG VER
