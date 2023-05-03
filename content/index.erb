@@ -13,14 +13,14 @@ title: GitLab Documentation
       <div class="row">
         <div class="col d-flex justify-content-center">
           <div class="card search gl-mt-6 gl-py-2">
-            <div class="card-body gl-pb-7">
+            <div class="card-body">
               <h5 class="card-title gl-pb-4">Search the docs</h5>
               <% if @item[:searchbar].nil? %>
                 <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
                   <% if @config[:search_backend] == "algolia" %>
                     <div id="docsearch" class="gl-mb-4 gl-display-flex gl-justify-content-center"></div>
                   <% elsif @config[:search_backend] == "google" %>
-                    <div class="gcse-searchbox-only" enableAutoComplete="true" data-resultsUrl="/search/"></div>
+                    <div class="js-google-search-form"></div>
                   <% else %>
                     <div class="js-search-form"></div>
                   <% end %>

@@ -1,5 +1,4 @@
 <script>
-/* global GOOGLE_SEARCH_KEY */
 import {
   GlSearchBoxByClick,
   GlLink,
@@ -9,7 +8,11 @@ import {
 } from '@gitlab/ui';
 import isEqual from 'lodash.isequal';
 import { getSearchQueryFromURL, updateURLParams } from '../search_helpers';
-import { GPS_ENDPOINT, GPS_ID } from '../../services/google_search_api';
+import {
+  fetchResults,
+  MAX_RESULTS_PER_PAGE,
+  MAX_TOTAL_RESULTS,
+} from '../../services/google_search_api';
 import SearchFilters from './search_filters.vue';
 
 export default {
@@ -49,15 +52,14 @@ export default {
       return (
         this.submitted &&
         this.results.length &&
-        this.response.searchInformation.totalResults > this.MAX_RESULTS_PER_PAGE &&
+        this.response.searchInformation.totalResults > MAX_RESULTS_PER_PAGE &&
         !this.loading
       );
     },
   },
   created() {
-    // Limits from the Google API
-    this.MAX_RESULTS_PER_PAGE = 10;
-    this.MAX_TOTAL_RESULTS = 100;
+    // Provides this constant for the template.
+    this.MAX_RESULTS_PER_PAGE = MAX_RESULTS_PER_PAGE;
   },
   mounted() {
     if (this.query) {
@@ -65,36 +67,8 @@ export default {
     }
   },
   methods: {
-    cleanTitle(title) {
-      return title.replace(' | GitLab', '');
-    },
     pagerMaxItems() {
-      return Math.min(this.response.searchInformation.totalResults, this.MAX_TOTAL_RESULTS);
-    },
-    async fetchGoogleResults(filters) {
-      let data = {};
-
-      // Construct the query string for additional filters if needed.
-      const filterQuery = filters.length
-        ? `+more:pagemap:metatags-gitlab-docs-section:${filters.join(',')}`
-        : '';
-
-      try {
-        const response = await fetch(
-          GPS_ENDPOINT +
-            new URLSearchParams({
-              key: GOOGLE_SEARCH_KEY,
-              cx: GPS_ID,
-              q: `${this.query}${filterQuery}`.replaceAll(' ', '*'),
-              start: (this.pageNumber - 1) * this.MAX_RESULTS_PER_PAGE + 1,
-            }),
-        );
-        data = await response.json();
-        if (!response.ok) this.handleError(data.error);
-      } catch (error) {
-        this.handleError(error);
-      }
-      return data;
+      return Math.min(this.response.searchInformation.totalResults, MAX_TOTAL_RESULTS);
     },
     handleError(error) {
       this.error = true;
@@ -113,7 +87,7 @@ export default {
 
       try {
         this.loading = true;
-        this.response = await this.fetchGoogleResults(filters);
+        this.response = await fetchResults(query, filters, this.pageNumber, MAX_RESULTS_PER_PAGE);
         this.results = this.response.items ? this.response.items : [];
       } catch (error) {
         this.handleError(error);
@@ -121,12 +95,6 @@ export default {
         this.loading = false;
         this.submitted = true;
         updateURLParams(this.query);
-
-        // Add a relative link to each result object.
-        this.results = this.results.map((obj) => ({
-          ...obj,
-          relativeLink: obj.link.replace('https://docs.gitlab.com/', '/'),
-        }));
       }
     },
   },
@@ -158,10 +126,10 @@ export default {
         <ul v-if="results.length" class="gl-list-style-none gl-pl-2" data-testid="search-results">
           <li v-for="result in results" :key="result.cacheId" class="gl-mb-5!">
             <gl-link
+              v-safe-html="result.formattedTitle"
               :href="`${result.relativeLink}`"
               class="gl-font-lg gl-border-bottom-0! gl-hover-text-decoration-underline:hover gl-mb-2"
-              >{{ cleanTitle(result.title) }}
-            </gl-link>
+            />
             <p v-safe-html="result.htmlSnippet" class="result-snippet"></p>
           </li>
         </ul>

@@ -64,11 +64,13 @@
     "instantsearch.js": "^4.55.0",
     "jquery": "^3.6.4",
     "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
     "lodash.isequal": "^4.5.0",
     "lunr": "^2.3.9",
     "mermaid": "^9.4.3",
     "pikaday": "^1.8.2",
     "rollup-plugin-import-css": "^3.2.1",
+    "v-click-outside": "^3.2.0",
     "vue": "^2.7.0",
     "vue-instantsearch": "^4.4.0"
   }

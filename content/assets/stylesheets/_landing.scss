@@ -76,6 +76,10 @@
         width: 100%;
       }
 
+      .card-body {
+        min-height: 10rem;
+      }
+
       .card-title {
         font-size: 3rem;
         line-height: 3.25rem;
@@ -92,6 +96,25 @@
         font-size: 1.5rem;
         line-height: 1.5rem;
         color: $landing-gl-purple-500;
+      }
+
+      .search-form,
+      .gs-wrapper,
+      .gs-results {
+        @media (max-width: $bp-md) {
+          width: $search-md-width;
+        }
+        @media (min-width: $bp-lg) {
+          width: $search-lg-width;
+        }
+      }
+      .gl-search-box-by-type-input {
+        height: auto;
+      }
+
+      // Lunr.js
+      .gl-search-box-by-click {
+        margin: 0 auto;
       }
     }
 
@@ -155,7 +178,7 @@
       color: $gds-purple-900;
     }
 
-    .btn:not(.gl-search-box-by-click-clear-button, .gl-search-box-by-click-search-button) {
+    .btn:not(.gl-search-box-by-click-clear-button, .gl-search-box-by-click-search-button, .gl-search-box-by-type-clear) {
       color: $gds-white;
       background: $landing-gl-purple-500;
       border: 1px solid $landing-gl-purple-600;
@@ -167,10 +190,6 @@
         color: $landing-gl-purple-500;
         background: $gds-white;
       }
-    }
-
-    .search-form {
-      margin: 0 auto 2em;
     }
   }
 
