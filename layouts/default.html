@@ -75,6 +75,8 @@
     <script src="<%= @items['/frontend/search/docsearch.*'].path %>"></script>
     <% elsif @config[:search_backend] == "lunr" %>
     <script src="<%= @items['/frontend/search/lunrsearch.*'].path %>"></script>
+    <% elsif @config[:search_backend] == "google" %>
+    <script src="<%= @items['/frontend/search/google.*'].path %>"></script>
     <% end %>
     <script src="<%= @items['/assets/javascripts/toggle_popover.*'].path %>"></script>
     <script src="<%= @items['/frontend/shared/clipboardjs.*'].path %>"></script>
