@@ -2227,6 +2227,8 @@ sections:
                 doc_url: 'ee/administration/monitoring/prometheus/web_exporter.html'
       - category_title: Experiment, Beta, GA support
         category_url: 'ee/policy/alpha-beta-support.html'
+      - category_title: AI/ML powered features
+        category_url: 'ee/user/ai_features.html'
   - section_title: Develop
     section_url: 'ee/api/'
     section_categories:
