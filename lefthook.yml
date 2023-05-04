@@ -24,3 +24,5 @@ pre-push:
       run: make shellcheck-tests
     navigation-checks:
       run: make check-global-navigation
+    danger-checks:
+      run: make check-danger

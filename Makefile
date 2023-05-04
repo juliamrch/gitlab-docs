@@ -212,6 +212,10 @@ check-global-navigation:
 check-pages-not-in-nav: install-nodejs-dependencies
 	@scripts/pages_not_in_nav.js | jq
 
+check-danger:
+	@printf "\n$(INFO)INFO: Checking for Danger errors and warnings...$(END)\n"
+	@scripts/check-danger.sh ; exit $$?
+
 add-gitlab-fonts:
 	@printf "\n$(INFO)INFO: Copying GitLab fonts...$(END)\n"
 	cp -v node_modules/@gitlab/fonts/gitlab-sans/GitLabSans.woff2 public/assets/fonts
