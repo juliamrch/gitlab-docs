@@ -12,27 +12,23 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
     >
       <a
         aria-controls="markdown-toc"
-        class="d-flex text-decoration-none border-bottom-0"
+        class="text-decoration-none border-bottom-0"
         data-testid="collapse"
         href="#"
         role="button"
       >
         <gl-icon-stub
-          class="gl-pt-2 gl-mr-2 s18"
           name="chevron-right"
           size="16"
         />
-         On this page
-      
+        On this page
       </a>
     </h4>
-     
     <h4
       class="border-0 gl-font-base font-weight-bold toc-lg"
     >
       On this page
     </h4>
-     
     <collapsible-container-stub
       collapsedclass="sm-collapsed"
       collapsingclass="sm-collapsing"
