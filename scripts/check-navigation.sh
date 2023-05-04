@@ -21,6 +21,8 @@ else
   printf "${COLOR_GREEN}INFO: No identical duplicate entries found!${COLOR_RESET}\n"
 fi
 
+if [[ $RETURN_CODE == 1 ]]; then exit 1; fi
+
 NAV_ENTRIES_WITH_INDEX=$(sed -n -E "s/.*[section|category|doc|]_url: '(.*)'/\1/p" content/_data/navigation.yaml | grep -e "index.html" | grep -v "index.html.")
 
 # shellcheck disable=2059
@@ -35,6 +37,8 @@ else
   # shellcheck disable=2059
   printf "${COLOR_GREEN}INFO: No entries with index.html found!${COLOR_RESET}\n"
 fi
+
+if [[ $RETURN_CODE == 1 ]]; then exit 1; fi
 
 # shellcheck disable=2059
 printf "${COLOR_GREEN}INFO: Checking global navigation against schema...${COLOR_RESET}\n"
