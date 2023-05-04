@@ -1074,7 +1074,7 @@ sections:
               - doc_title: Compliance frameworks
                 doc_url: 'ee/user/group/compliance_frameworks.html'
               - doc_title: 'Tutorial: Create a compliance pipeline'
-                doc_url: 'ee/tutorials/compliance_pipeline/index.html'
+                doc_url: 'ee/tutorials/compliance_pipeline/'
               - doc_title: Troubleshooting SAML
                 doc_url: 'ee/user/group/saml_sso/troubleshooting.html'
               - doc_title: SAML SSO for GitLab.com groups
@@ -1089,9 +1089,9 @@ sections:
               - doc_title: Subgroups
                 doc_url: 'ee/user/group/subgroups/'
               - doc_title: 'Tutorial: Move a personal project to a group'
-                doc_url: 'ee/tutorials/move_personal_project_to_group/index.html'
+                doc_url: 'ee/tutorials/move_personal_project_to_group/'
               - doc_title: 'Tutorial: Convert a personal namespace into a group'
-                doc_url: 'ee/tutorials/convert_personal_namespace_to_group/index.html'
+                doc_url: 'ee/tutorials/convert_personal_namespace_to_group/'
               - doc_title: Git abuse rate limit
                 doc_url: 'ee/user/group/reporting/git_abuse_rate_limit.html'
           - doc_title: Enterprise users
@@ -1232,7 +1232,7 @@ sections:
             doc_url: 'ee/user/group/iterations/'
             docs:
               - doc_title: 'Tutorial: Use GitLab to run an Agile iteration'
-                doc_url: 'ee/tutorials/agile_sprint/index.html'
+                doc_url: 'ee/tutorials/agile_sprint/'
           - doc_title: Milestones
             doc_url: 'ee/user/project/milestones/'
             docs:
@@ -1323,7 +1323,7 @@ sections:
             doc_url: 'ee/topics/git/'
             docs:
               - doc_title: 'Tutorial: Make your first Git commit'
-                doc_url: 'ee/tutorials/make_first_git_commit/index.html'
+                doc_url: 'ee/tutorials/make_first_git_commit/'
               - doc_title: Concepts
                 doc_url: 'ee/topics/git/terminology.html'
               - doc_title: Installing Git
@@ -1928,7 +1928,7 @@ sections:
             doc_url: 'ee/user/application_security/coverage_fuzzing/'
             docs:
               - doc_title: "Tutorial: Perform fuzz testing in GitLab"
-                doc_url: 'ee/tutorials/fuzz_testing/index.html'
+                doc_url: 'ee/tutorials/fuzz_testing/'
           - doc_title: Breach and Attack Simulation
             doc_url: 'ee/user/application_security/breach_and_attack_simulation/'
           - doc_title: Security Dashboard
@@ -1956,7 +1956,7 @@ sections:
               - doc_title: Scan result policies
                 doc_url: 'ee/user/application_security/policies/scan-result-policies.html'
               - doc_title: "Tutorial: Set up a scan result policy"
-                doc_url: 'ee/tutorials/scan_result_policy/index.html'
+                doc_url: 'ee/tutorials/scan_result_policy/'
           - doc_title: Security scanner integration
             doc_url: 'ee/development/integrations/secure.html'
           - doc_title: Secure and Govern glossary
