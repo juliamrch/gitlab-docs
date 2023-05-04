@@ -144,6 +144,7 @@ rspec-tests:
 jest-tests:
 	@printf "\n$(INFO)INFO: Running Jest tests...$(END)\n"
 	@yarn test
+	@yarn test:vue3
 
 eslint-tests:
 	@printf "\n$(INFO)INFO: Running ESLint tests...$(END)\n"

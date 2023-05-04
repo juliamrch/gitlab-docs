@@ -43,7 +43,7 @@ export default {
     <div class="table-of-contents">
       <h4 class="border-0 toc-sm d-xl-none">
         <a
-          class="d-flex text-decoration-none border-bottom-0"
+          class="text-decoration-none border-bottom-0"
           href="#"
           role="button"
           :aria-expanded="!isCollapsed"
@@ -51,8 +51,8 @@ export default {
           data-testid="collapse"
           @click.prevent="toggleCollapse"
         >
-          <gl-icon :name="collapseIcon" class="gl-pt-2 gl-mr-2 s18" /> On this page
-        </a>
+          <gl-icon :name="collapseIcon" />On this page</a
+        >
       </h4>
       <h4 class="border-0 gl-font-base font-weight-bold toc-lg">On this page</h4>
       <collapsible-container ref="container" v-model="isCollapsed" data-testid="container">

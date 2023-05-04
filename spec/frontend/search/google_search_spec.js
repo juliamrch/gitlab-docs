@@ -1,14 +1,13 @@
 /**
  * @jest-environment jsdom
  */
-
 import { mount, shallowMount } from '@vue/test-utils';
+import flushPromises from 'flush-promises';
 import { mockResults, mockNoResults, mockErrorResults } from '../__mocks__/search_results_mock';
 import SearchForm from '../../../content/frontend/search/components/google_search_form.vue';
 import SearchPage from '../../../content/frontend/search/components/google_results.vue';
 import { GPS_ENDPOINT, fetchResults } from '../../../content/frontend/services/google_search_api';
 
-jest.useFakeTimers('modern');
 jest.mock('../../../content/frontend/services/google_search_api', () => ({
   fetchResults: jest.fn(),
   MAX_RESULTS_PER_PAGE: 10,
@@ -66,7 +65,7 @@ describe('content/frontend/search/components/google_search_form.vue', () => {
     input.setValue('non-existent query');
     await input.trigger('keyup');
     jest.advanceTimersByTime(500);
-    await wrapper.vm.$nextTick();
+    await flushPromises();
 
     expect(fetchResults).toHaveBeenCalledTimes(1);
     expect(wrapper.find('[data-testid="no-results"]').exists()).toBe(true);
@@ -79,7 +78,7 @@ describe('content/frontend/search/components/google_search_form.vue', () => {
     input.setValue('test');
     await input.trigger('keyup');
     jest.advanceTimersByTime(500);
-    await wrapper.vm.$nextTick();
+    await flushPromises();
 
     expect(wrapper.vm.hasMoreResults).toBe(true);
     expect(wrapper.find('[data-testid="more-results"]').exists()).toBe(true);
@@ -92,7 +91,7 @@ describe('content/frontend/search/components/google_search_form.vue', () => {
     input.setValue('test');
     await input.trigger('keyup');
     jest.advanceTimersByTime(500);
-    await wrapper.vm.$nextTick();
+    await flushPromises();
 
     const link = wrapper.find('[data-testid="more-results"]');
     expect(link.attributes('href')).toBe('/search/?q=test');
