@@ -63,19 +63,21 @@ RUN yarn install --frozen-lockfile               \
 
 RUN if [ "$SEARCH_BACKEND" = "lunr" ]; then make build-lunr-index; fi
 
-# Move generated HTML to /site
-RUN mkdir /site \
-    && mv public "/site/${VER}"
-
-# Do some HTML post-processing on the archive, compress images, and minify assets
-RUN /source/scripts/normalize-links.sh /site "${VER}"    \
-    && /source/scripts/compress_images.sh /site "${VER}" \
-    # ATTENTION: This should be the last script to run
-    && /source/scripts/minify-assets.sh /site "${VER}"
+# Run post-processing on archive:
+#
+# 1. Normalize the links in /source/public using version $VER.
+# 2. Compress images in /source/public.
+# 3. Minify the files in /source/public into /dest, creating /dest/public. Must run last.
+# 4. Rename /dest/public to /dest/$VER
+RUN /source/scripts/normalize-links.sh /source/public $VER   \
+    && /source/scripts/compress_images.sh /source/public     \
+    && mkdir /dest                                           \
+    && /source/scripts/minify-assets.sh /dest /source/public \
+    && mv /dest/public "/dest/${VER}"
 
 # Make an index.html and 404.html which will redirect / to /${VER}/
-RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/index.html \
-    && echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/404.html
+RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /dest/index.html \
+    && echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /dest/404.html
 
 #- End of builder build stage -#
 
@@ -87,14 +89,14 @@ RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refre
 FROM nginx:stable-alpine
 
 # Clean out any existing HTML files, and copy the HTML from the builder stage
-# to the default location for Nginx.
+# to the default location for NGINX.
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder /site /usr/share/nginx/html
+COPY --from=builder /dest /usr/share/nginx/html
 
-# Copy the Nginx config
+# Copy the NGINX config
 COPY dockerfiles/nginx-overrides.conf /etc/nginx/conf.d/default.conf
 
-# Start Nginx to serve the archive at / (which will redirect to the version-specific dir)
+# Start NGINX to serve the archive at / (which will redirect to the version-specific dir)
 CMD ["sh", "-c", "echo 'GitLab docs are viewable at: http://0.0.0.0:4000'; exec nginx -g 'daemon off;'"]
 
 #- End of NGINX stage -#
