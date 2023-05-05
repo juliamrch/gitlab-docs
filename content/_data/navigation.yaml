@@ -1891,8 +1891,8 @@ sections:
           - doc_title: Secret Detection
             doc_url: 'ee/user/application_security/secret_detection/'
             docs:
-              - doc_title: Post-processing and revocation
-                doc_url: 'ee/user/application_security/secret_detection/post_processing.html'
+              - doc_title: Automatic response to leaked secrets
+                doc_url: 'ee/user/application_security/secret_detection/automatic_response.html'
           - doc_title: Dynamic Application Security Testing (DAST)
             doc_url: 'ee/user/application_security/dast/'
             docs:
