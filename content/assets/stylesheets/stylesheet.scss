@@ -329,10 +329,21 @@ ol {
 .gl-search-box-by-type-input-borderless:not(.form-control-plaintext):focus {
   box-shadow: inset 0 0 0 2px $blue-400;
 }
-.gs-results a:hover {
+.gs-wrapper kbd {
+  display: none;
+  @media (min-width: $bp-md) {
+    display: inline;
+    top: 0.25rem;
+    right: 0.3rem;
+    font-size: 0.75rem;
+  }
+}
+.gs-results a:hover,
+.gs-results a:focus {
   text-decoration: none;
   background-color: $gray-50;
   color: $gray-700;
+  outline: none;
 }
 .gl-search-box-by-click {
   width: $search-lg-width;

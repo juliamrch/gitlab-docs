@@ -26,3 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Lunr.js
   mountVue('.js-search-form', SearchForm);
 });
+
+// Keyboard shortcut: forward slash focuses on search forms
+document.addEventListener('keyup', (e) => {
+  if (e.key !== '/' || e.ctrlKey || e.metaKey) return;
+  if (/^(?:input|textarea|select|button)$/i.test(e.target.tagName)) return;
+  e.preventDefault();
+  document.querySelector('input[type="search"]').focus();
+});
