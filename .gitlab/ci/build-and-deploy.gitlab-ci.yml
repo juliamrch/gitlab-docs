@@ -32,15 +32,11 @@
     - bundle exec rake redirects
     # Build the Lunr.js search index if needed
     - if [[ "$SEARCH_BACKEND" == "lunr" ]]; then node scripts/lunr/preindex.js; fi
-    # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
-    - SIZE_BEFORE_MINIFY=$(du -sh public/ | awk '{print $1}')
     # Minify the assets of the resulting site
-    - cd public
-    - ../scripts/minify-assets.sh ./ ./
-    - cd ..
-    - SIZE_AFTER_MINIFY=$(du -sh public/ | awk '{print $1}')
-    # Print size results
-    - echo -e "Size before minifying ......... $SIZE_BEFORE_MINIFY\nSize after minifying ................... $SIZE_AFTER_MINIFY"
+    - mkdir dest/
+    - scripts/minify-assets.sh dest/ public/
+    - rm -rf public/
+    - mv dest/public public/
 
 #
 # The script lines for gzipping the site (not used in upstream review apps, to speed up pipelines)

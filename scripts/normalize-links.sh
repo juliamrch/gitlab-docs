@@ -4,11 +4,8 @@ COLOR_RED="\e[31m"
 COLOR_GREEN="\e[32m"
 COLOR_RESET="\e[39m"
 
-TARGET="$1" # The directory that has all the HTML files including versions.
-            # Usually public/ locally and /site in the Docker image.
-
-VER="$2"    # The docs version which is a directory holding all the respective
-            # versioned site, for example 13.0/
+INPUT="$1" # The directory that has all the HTML files.
+VER="$2"   # The docs version to replace the URLs with.
 
 ## Check which OS the script runs from since sed behaves differently
 ## on macOS and Linux. For macOS, check if you're using the built-in sed.
@@ -27,8 +24,8 @@ else
   SED="sed"
 fi
 
-if [ -z "$TARGET" ]; then
-  echo "Usage: $0 <target> <version>"
+if [ -z "$INPUT" ]; then
+  echo "Usage: $0 <input> <version>"
   echo "Example: $0 public 13.0"
   # shellcheck disable=2059
   printf "${COLOR_RED}ERROR: No target provided.${COLOR_RESET}\n"
@@ -36,16 +33,10 @@ if [ -z "$TARGET" ]; then
 fi
 
 if [ -z "$VER" ]; then
-  echo "Usage: $0 <target> <version>"
+  echo "Usage: $0 <input> <version>"
   echo "Example: $0 public 13.0"
   # shellcheck disable=2059
   printf "${COLOR_RED}ERROR: No version provided.${COLOR_RESET}\n"
-  exit 1
-fi
-
-if ! [ -d "$TARGET/$VER" ]; then
-  # shellcheck disable=2059
-  printf "${COLOR_RED}ERROR: Target directory $TARGET/$VER does not exist.${COLOR_RESET}\n"
   exit 1
 fi
 
@@ -59,25 +50,25 @@ fi
 ##
 
 # shellcheck disable=2059
-printf "${COLOR_GREEN}INFO: Replacing relative URLs in $TARGET/$VER for HTML files...${COLOR_RESET}\n"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e 's|href="/ee/|href="/'"$VER"'/ee/|g' \
-                                                                          -e 's|href="/runner/|href="/'"$VER"'/runner/|g' \
-                                                                          -e 's|href="/omnibus/|href="/'"$VER"'/omnibus/|g' \
-                                                                          -e 's|href="/charts/|href="/'"$VER"'/charts/|g' \
-                                                                          -e 's|href="/operator/|href="/'"$VER"'/operator/|g' \
-                                                                          -e 's|="/assets/|="/'"$VER"'/assets/|g' \
-                                                                          -e 's|="/frontend/|="/'"$VER"'/frontend/|g' \
-                                                                          -e 's|<a href="/">|<a href="/'"$VER"'/">|g' \
-                                                                          -e 's|="/opensearch.xml|="/'"$VER"'/opensearch.xml|g'
+printf "${COLOR_GREEN}INFO: Replacing relative URLs in $INPUT for HTML files...${COLOR_RESET}\n"
+find "${INPUT}" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e 's|href="/ee/|href="/'"$VER"'/ee/|g' \
+                                                                    -e 's|href="/runner/|href="/'"$VER"'/runner/|g' \
+                                                                    -e 's|href="/omnibus/|href="/'"$VER"'/omnibus/|g' \
+                                                                    -e 's|href="/charts/|href="/'"$VER"'/charts/|g' \
+                                                                    -e 's|href="/operator/|href="/'"$VER"'/operator/|g' \
+                                                                    -e 's|="/assets/|="/'"$VER"'/assets/|g' \
+                                                                    -e 's|="/frontend/|="/'"$VER"'/frontend/|g' \
+                                                                    -e 's|<a href="/">|<a href="/'"$VER"'/">|g' \
+                                                                    -e 's|="/opensearch.xml|="/'"$VER"'/opensearch.xml|g'
 
 # shellcheck disable=2059
-printf "${COLOR_GREEN}INFO: Replacing relative URLs in $TARGET/$VER for CSS files...${COLOR_RESET}\n"
-find "${TARGET}/$VER" -type f -name '*.css' -print0 | xargs -0 "$SED" -i 's|/assets/|/'"$VER"'/assets/|g'
+printf "${COLOR_GREEN}INFO: Replacing relative URLs in $INPUT for CSS files...${COLOR_RESET}\n"
+find "${INPUT}" -type f -name '*.css' -print0 | xargs -0 "$SED" -i 's|/assets/|/'"$VER"'/assets/|g'
 
 # shellcheck disable=2059
-printf "${COLOR_GREEN}INFO: Replacing relative URLs in $TARGET/$VER for JavaScript files...${COLOR_RESET}\n"
-find "${TARGET}/$VER" -type f -name '*.js' -print0 | xargs -0 "$SED" -i -e 's|/search/|/'"$VER"'/search/|g' \
-                                                                        -e 's|/assets/|/'"$VER"'/assets/|g'
+printf "${COLOR_GREEN}INFO: Replacing relative URLs in $INPUT for JavaScript files...${COLOR_RESET}\n"
+find "${INPUT}" -type f -name '*.js' -print0 | xargs -0 "$SED" -i -e 's|/search/|/'"$VER"'/search/|g' \
+                                                                  -e 's|/assets/|/'"$VER"'/assets/|g'
 #
 # Full URLs
 #
@@ -88,13 +79,13 @@ find "${TARGET}/$VER" -type f -name '*.js' -print0 | xargs -0 "$SED" -i -e 's|/s
 # See https://gitlab.com/gitlab-org/gitlab-docs/-/issues/1568
 #
 # shellcheck disable=2059
-printf "${COLOR_GREEN}INFO: Replacing full URLs in $TARGET/$VER for HTML files...${COLOR_RESET}\n"
-find "${TARGET}/$VER" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/ee/|href="/'"$VER"'/ee/|g' \
-                                                                          -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/runner/|href="/'"$VER"'/runner/|g' \
-                                                                          -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/omnibus/|href="/'"$VER"'/omnibus/|g' \
-                                                                          -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/charts/|href="/'"$VER"'/charts/|g' \
-                                                                          -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/operator/|href="/'"$VER"'/operator/|g'
+printf "${COLOR_GREEN}INFO: Replacing full URLs in $INPUT for HTML files...${COLOR_RESET}\n"
+find "${INPUT}" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/ee/|href="/'"$VER"'/ee/|g' \
+                                                                    -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/runner/|href="/'"$VER"'/runner/|g' \
+                                                                    -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/omnibus/|href="/'"$VER"'/omnibus/|g' \
+                                                                    -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/charts/|href="/'"$VER"'/charts/|g' \
+                                                                    -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/operator/|href="/'"$VER"'/operator/|g'
 
 # shellcheck disable=2059
 printf "${COLOR_GREEN}INFO: Fixing URLs inside the sitemap...${COLOR_RESET}\n"
-find "${TARGET}/$VER" -type f -name 'sitemap.xml' -print0 | xargs -0 "$SED" -i 's|docs.gitlab.com/|docs.gitlab.com/'"$VER"'/|g'
+find "${INPUT}" -type f -name 'sitemap.xml' -print0 | xargs -0 "$SED" -i 's|docs.gitlab.com/|docs.gitlab.com/'"$VER"'/|g'
