@@ -48,6 +48,12 @@ export default {
       if (versionNumber) {
         path = `/${versionNumber}${path}`;
       }
+
+      // If this is one of the older major releases, point to the Archives site.
+      if (this.versions.last_major.includes(versionNumber)) {
+        path = `https://archives.docs.gitlab.com${path}`;
+      }
+
       return path;
     },
   },
