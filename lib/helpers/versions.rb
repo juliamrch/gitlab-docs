@@ -28,20 +28,6 @@ module Nanoc::Helpers
     end
 
     #
-    # Returns the site version for Algolia DocSearch.
-    #
-    # For DocSearch, we need to pass "main" instead of a version number
-    # in the case of the pre-release site.
-    #
-    def docsearch_version
-      if config[:online_versions][:next] == site_version
-        ENV.fetch('CI_DEFAULT_BRANCH', nil)
-      else
-        site_version
-      end
-    end
-
-    #
     # Returns the current stable version.
     #
     def get_current_stable_version

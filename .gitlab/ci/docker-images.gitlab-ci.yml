@@ -165,7 +165,7 @@ image:docs-single:
     - docker build
              --build-arg NANOC_ENV=${NANOC_ENV}
              --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
-             --build-arg SEARCH_BACKEND="algolia"
+             --build-arg SEARCH_BACKEND="google"
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
     - docker push $IMAGE_NAME
@@ -191,7 +191,7 @@ test:image:docs-single:
     - docker build
              --build-arg NANOC_ENV=${NANOC_ENV}
              --build-arg VER=${GITLAB_VERSION}
-             --build-arg SEARCH_BACKEND="algolia"
+             --build-arg SEARCH_BACKEND="google"
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
 
@@ -242,12 +242,9 @@ test:image:docs-single-lunrjs:
     - apk add --no-cache -U make bash git
     - git fetch --all
     - git checkout -b $GITLAB_VERSION origin/$GITLAB_VERSION
-    # We can drop the ALGOLIA_SEARCH arg once we target a GITLAB_VERSION >= 15.9.
-    # See https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/3477#note_1251563455
     - docker build
              --build-arg NANOC_ENV=${NANOC_ENV}
              --build-arg VER=${GITLAB_VERSION}
-             --build-arg ALGOLIA_SEARCH="false"
              --build-arg SEARCH_BACKEND="lunr"
              --tag $IMAGE_NAME
              --file $DOCKERFILE .

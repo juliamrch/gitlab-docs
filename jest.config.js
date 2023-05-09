@@ -43,12 +43,10 @@ module.exports = {
     '^.+\\.vue$': VUE_JEST_TRANSFORMER,
     '^.+\\.svg$': VUE_JEST_TRANSFORMER,
   },
-  transformIgnorePatterns: [
-    'node_modules/(?!(@gitlab/(ui|svgs)|bootstrap-vue|vue-instantsearch|instantsearch.js)/)',
-  ],
   snapshotSerializers: [
     '<rootDir>/spec/frontend/html_string_serializer.js',
     '<rootDir>/spec/frontend/clean_html_element_serializer.js',
   ],
   setupFilesAfterEnv,
+  transformIgnorePatterns: ['node_modules/(?!(@gitlab/(ui|svgs)|bootstrap-vue)/)'],
 };

@@ -18,18 +18,6 @@
 <meta name="gitlab-docs-version" content="<%= site_version %>">
 <meta name="gitlab-docs-section" content="<%= docs_section(@item.path.to_s) %>">
 
-<% if @config[:search_backend] == "algolia" %>
-<!--https://community.algolia.com/docsearch/required-configuration.html#introduces-global-information-as-meta-tags-->
-<meta name="docsearch:language" content="en" />
-<meta name="docsearch:version" content="<%= docsearch_version %>" />
-<meta name="docsearch:pageRank" content="<%= algolia_rank(@item).to_s %>" />
-<meta name="docsearch:level" content="<%= algolia_level(@item).to_s %>" />
-<link crossorigin href="https://3PNCFOU757-dsn.algolia.net" rel="preconnect" />
-<!-- Algolia Searching from the URL bar https://www.algolia.com/doc/tutorials/search-ui/ux-patterns/search-from-the-url-bar/ -->
-<link href='/opensearch.xml' rel='search' title='Search through GitLab Docs' type='application/opensearchdescription+xml'>
-<link rel="stylesheet" href="/frontend/search/docsearch.css">
-<% end %>
-
 <% if @config[:search_backend] == "google" && @config[:google_search_key] %>
 <script>const GOOGLE_SEARCH_KEY = "<%= @config[:google_search_key] %>";</script>
 <% end %>

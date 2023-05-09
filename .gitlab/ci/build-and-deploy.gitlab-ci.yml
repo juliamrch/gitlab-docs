@@ -58,7 +58,7 @@ compile_prod:
     - .rules_prod
     - .build_base
   variables:
-    SEARCH_BACKEND: 'algolia'
+    SEARCH_BACKEND: 'google'
     NANOC_ENV: 'production'
   script:
     - !reference [".compile-and-minify-scripts", "script"]
