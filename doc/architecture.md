@@ -210,9 +210,9 @@ web IDE. Here's how you can use it in a Nanoc layout:
 
 If you don't specify `editor:`, the simple one is used by default.
 
-## Algolia search engine
+## Search engine
 
-The docs site uses [Algolia DocSearch](https://docsearch.algolia.com/)
+The docs site uses [Google Programmable Search](https://developers.google.com/custom-search)
 for its search function.
 
-Learn more in <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/docsearch.md>.
+Learn more in <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/search.md>.

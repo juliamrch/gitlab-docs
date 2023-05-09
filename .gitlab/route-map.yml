@@ -45,8 +45,5 @@
 ##########################
 
 ## Search
-- source: '/layouts\/instantsearch*/'
+- source: '/layouts\/search*/'
   public: 'search/'
-
-- source: 'layouts/landing-header.html'
-  public: 'index.html'

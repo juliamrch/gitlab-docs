@@ -3,10 +3,7 @@
   <head>
     <%= render '/head.*' %>
     <link rel="canonical" href="<%= @config[:base_url] %>/search/">
-    <% if @config[:search_backend] == "algolia" %>
-    <link rel="stylesheet" href="/frontend/search/instantsearch.css">
-    <script src="<%= @items['/frontend/search/instantsearch.*'].path %>"></script>
-    <% elsif @config[:search_backend] == "google" %>
+    <% if @config[:search_backend] == "google" %>
     <script src="<%= @items['/frontend/search/google.*'].path %>"></script>
     <% else %>
     <script src="/assets/javascripts/lunr.min.js"></script>
@@ -20,9 +17,7 @@
       <div class="row">
         <div class="col-12 mt-5">
           <div class="main class pl-lg-4">
-            <% if @config[:search_backend] == "algolia" %>
-            <div class="js-instantsearch"></div>
-            <% elsif @config[:search_backend] == "google" %>
+            <% if @config[:search_backend] == "google" %>
             <div class="js-google-search"></div>
             <% else %>
             <div class="js-lunrsearch"></div>

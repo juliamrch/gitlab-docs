@@ -49,7 +49,7 @@ preprocess do
     end
   end
 
-  config[:search_backend] = ENV.fetch('SEARCH_BACKEND', 'algolia')
+  config[:search_backend] = ENV.fetch('SEARCH_BACKEND', 'google')
   config[:google_search_key] = ENV.fetch('GOOGLE_SEARCH_KEY', '')
 
   def get_online_versions
