@@ -2127,6 +2127,14 @@ sections:
                 docs:
                   - doc_title: Manage cluster applications
                     doc_url: 'ee/user/clusters/management_project_template.html'
+                  - doc_title: Install cert-manager
+                    doc_url: 'ee/user/infrastructure/clusters/manage/management_project_applications/certmanager.html'
+                  - doc_title: Install Ingress
+                    doc_url: 'ee/user/infrastructure/clusters/manage/management_project_applications/ingress.html'
+                  - doc_title: Install GitLab Runner
+                    doc_url: 'ee/user/infrastructure/clusters/manage/management_project_applications/runner.html'
+                  - doc_title: Install Vault
+                    doc_url: 'ee/user/infrastructure/clusters/manage/management_project_applications/vault.html'
               - doc_title: Install the agent for Kubernetes
                 doc_url: 'ee/user/clusters/agent/install/'
               - doc_title: Work with the agent for Kubernetes
