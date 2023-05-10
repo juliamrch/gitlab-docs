@@ -1441,6 +1441,8 @@ sections:
                     doc_url: 'ee/user/project/merge_requests/allow_collaboration.html'
               - doc_title: Create merge requests
                 doc_url: 'ee/user/project/merge_requests/creating_merge_requests.html'
+              - doc_title: Commits
+                doc_url: 'ee/user/project/merge_requests/commits.html'
               - doc_title: Changes
                 doc_url: 'ee/user/project/merge_requests/changes.html'
               - doc_title: Approvals
