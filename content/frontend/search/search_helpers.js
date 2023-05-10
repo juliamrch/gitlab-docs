@@ -27,3 +27,16 @@ export const getSearchQueryFromURL = () => {
 export const updateURLParams = (query) => {
   window.history.pushState(null, '', `${window.location.pathname}?q=${query}`);
 };
+
+/**
+ * Keyboard shortcuts.
+ */
+export const activateKeyboardShortcut = () => {
+  document.addEventListener('keyup', (e) => {
+    // Focus on search form with the forward slash key.
+    if (e.key !== '/' || e.ctrlKey || e.metaKey) return;
+    if (/^(?:input|textarea|select|button)$/i.test(e.target.tagName)) return;
+    e.preventDefault();
+    document.querySelector('input[type="search"]').focus();
+  });
+};

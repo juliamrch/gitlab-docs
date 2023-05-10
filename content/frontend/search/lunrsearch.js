@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import LunrResults from './components/lunr_results.vue';
-import SearchForm from './components/search_form.vue';
+import SearchForm from './components/lunr_search_form.vue';
 
 // Search results page (/search)
 document.addEventListener('DOMContentLoaded', () => {
