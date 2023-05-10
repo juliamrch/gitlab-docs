@@ -4,7 +4,7 @@
     <%= render '/head.*' %>
     <link rel="canonical" href="<%= @config[:base_url] %>/search/">
     <% if @config[:search_backend] == "google" %>
-    <script src="<%= @items['/frontend/search/google.*'].path %>"></script>
+    <script src="<%= @items['/frontend/search/google_results.*'].path %>"></script>
     <% else %>
     <script src="/assets/javascripts/lunr.min.js"></script>
     <script src="<%= @items['/frontend/search/lunrsearch.*'].path %>"></script>
