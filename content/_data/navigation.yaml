@@ -1831,8 +1831,6 @@ sections:
                     doc_url: 'ee/user/packages/yarn_repository/'
                   - doc_title: Generic
                     doc_url: 'ee/user/packages/generic_packages/'
-                  - doc_title: Gradle
-                    doc_url: 'ee/user/packages/gradle_repository/'
                   - doc_title: Store all packages in one project
                     doc_url: 'ee/user/packages/workflows/project_registry.html'
                   - doc_title: Monorepo workflows
