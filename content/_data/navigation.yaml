@@ -356,6 +356,8 @@ sections:
                 doc_url: 'operator/operator_upgrades.html'
               - doc_title: Security context constraints
                 doc_url: 'operator/security_context_constraints.html'
+              - doc_title: Troubleshooting
+                doc_url: 'operator/troubleshooting.html'
               # End of documentation from https://gitlab.com/gitlab-org/cloud-native/gitlab-operator
 
           - doc_title: Docker
