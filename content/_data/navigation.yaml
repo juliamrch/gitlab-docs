@@ -1577,6 +1577,8 @@ sections:
                     doc_url: 'ee/ci/yaml/includes.html'
                   - doc_title: Workflow examples
                     doc_url: 'ee/ci/yaml/workflow.html'
+              - doc_title: CI/CD Components
+                doc_url: 'ee/ci/components/'
               - doc_title: Docker
                 doc_url: 'ee/ci/docker/'
                 docs:
