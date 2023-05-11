@@ -944,3 +944,18 @@ redirects:
   - from: /charts/installation/operator.html
     to: /operator/
     remove_date: 2024-01-04
+  - from: /ee/development/contributing/community_roles.html
+    to: /ee/development/contributing/index.html
+    remove_date: 2024-02-08
+  - from: /ee/development/merge_request_application_and_rate_limit_guidelines.html
+    to: /ee/development/merge_request_concepts/rate_limits.html
+    remove_date: 2024-01-23
+  - from: /ee/development/approval_rules.html
+    to: /ee/development/merge_request_concepts/approval_rules.html
+    remove_date: 2024-01-23
+  - from: /ee/user/packages/package_registry/supported_hash_types.html
+    to: /ee/user/packages/package_registry/supported_functionality.html
+    remove_date: 2024-01-22
+  - from: /ee/topics/git/getting_started.html
+    to: /ee/tutorials/make_first_git_commit/index.html
+    remove_date: 2024-01-23
