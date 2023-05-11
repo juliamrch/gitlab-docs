@@ -164,7 +164,7 @@ image:docs-single:
   script:
     - docker build
              --build-arg NANOC_ENV=${NANOC_ENV}
-             --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
+             --build-arg VER=${CI_COMMIT_REF_NAME}
              --build-arg SEARCH_BACKEND="google"
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
