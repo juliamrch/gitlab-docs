@@ -134,7 +134,7 @@ export default {
         v-show="showTooltip && !isLoading"
         v-gl-tooltip.bottom.hover.html
         class="gl-absolute gl-z-index-1 gl-bg-gray-100 gl-text-gray-700"
-        title="Use the shortcut key <kbd>/</kbd> to start a search"
+        title="Use the shortcut keys<br><kbd>/</kbd> or <kbd>s</kbd> to start a search"
         >/</kbd
       >
     </form>

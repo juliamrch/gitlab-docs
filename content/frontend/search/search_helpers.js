@@ -32,9 +32,10 @@ export const updateURLParams = (query) => {
  * Keyboard shortcuts.
  */
 export const activateKeyboardShortcut = () => {
-  document.addEventListener('keyup', (e) => {
-    // Focus on search form with the forward slash key.
-    if (e.key !== '/' || e.ctrlKey || e.metaKey) return;
+  document.addEventListener('keydown', (e) => {
+    // Focus on the search form with the forward slash and S keys.
+    const shortcutKeys = ['/', 's'];
+    if (!shortcutKeys.includes(e.key) || e.ctrlKey || e.metaKey) return;
     if (/^(?:input|textarea|select|button)$/i.test(e.target.tagName)) return;
     e.preventDefault();
     document.querySelector('input[type="search"]').focus();
