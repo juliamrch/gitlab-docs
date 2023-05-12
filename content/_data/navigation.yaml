@@ -2498,8 +2498,6 @@ sections:
                 doc_url: 'ee/api/epic_links.html'
               - doc_title: Lint .gitlab-ci.yml
                 doc_url: 'ee/api/lint.html'
-              - doc_title: Managed licenses
-                doc_url: 'ee/api/managed_licenses.html'
               - doc_title: Markdown
                 doc_url: 'ee/api/markdown.html'
               - doc_title: Marketplace
