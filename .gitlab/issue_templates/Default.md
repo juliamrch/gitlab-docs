@@ -15,7 +15,6 @@ If you feel that your issue can be categorized as a reproducible bug or a featur
 If you're opening an issue related to search, make sure to use one of the following
 labels. Remove the ones you don't need.
 
-/label ~"docsearch::algolia"
 /label ~"docsearch::google"
 /label ~"docsearch::lunrjs"
 
