@@ -1245,8 +1245,6 @@ sections:
                 doc_url: 'ee/user/project/issues/create_issues.html'
               - doc_title: Manage issues
                 doc_url: 'ee/user/project/issues/managing_issues.html'
-              - doc_title: Award emojis
-                doc_url: 'ee/user/award_emojis.html'
               - doc_title: Confidential issues
                 doc_url: 'ee/user/project/issues/confidential_issues.html'
               - doc_title: Crosslinking issues
@@ -1259,6 +1257,8 @@ sections:
                 doc_url: 'ee/user/project/issues/design_management.html'
               - doc_title: Due dates
                 doc_url: 'ee/user/project/issues/due_dates.html'
+              - doc_title: Emoji reactions
+                doc_url: 'ee/user/award_emojis.html'
               - doc_title: Issue boards
                 doc_url: 'ee/user/project/issue_board.html'
               - doc_title: Multiple assignees
@@ -2366,8 +2366,6 @@ sections:
                 doc_url: 'ee/api/audit_events.html'
               - doc_title: Avatar
                 doc_url: 'ee/api/avatar.html'
-              - doc_title: Award emojis
-                doc_url: 'ee/api/award_emoji.html'
               - doc_title: Badges (project)
                 doc_url: 'ee/api/project_badges.html'
               - doc_title: Badges (group)
@@ -2410,6 +2408,8 @@ sections:
                 doc_url: 'ee/api/templates/dockerfiles.html'
               - doc_title: DORA4 metrics
                 doc_url: 'ee/api/dora/metrics.html'
+              - doc_title: Emoji reactions
+                doc_url: 'ee/api/award_emoji.html'
               - doc_title: Environments
                 doc_url: 'ee/api/environments.html'
               - doc_title: Epics
