@@ -10,8 +10,3 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:15.11 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:15.10 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:15.9 ${TARGET} ${TARGET}
-
-# List the two last major versions
-# Copy the versions found in 'content/versions.json' under "last_major"
-COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:14.10 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.12 ${TARGET} ${TARGET}
