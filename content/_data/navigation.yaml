@@ -2083,6 +2083,8 @@ sections:
                     doc_url: 'ee/user/clusters/agent/gitops/secrets_management.html'
                   - doc_title: Track cluster resources
                     doc_url: 'ee/user/infrastructure/clusters/deploy/inventory_object.html'
+                  - doc_title: Example GitOps repository structure
+                    doc_url: 'ee/user/clusters/agent/gitops/example_repository_structure.html'
               - doc_title: GitLab CI/CD workflow
                 doc_url: 'ee/user/clusters/agent/ci_cd_workflow.html'
                 docs:
