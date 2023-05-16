@@ -71,12 +71,10 @@
     </section>
     <script src="<%= @items['/frontend/default/default.*'].path %>"></script>
     <script src="<%= @items['/frontend/shared/global_imports.*'].path %>"></script>
-    <% if @config[:search_backend] == "algolia" %>
-    <script src="<%= @items['/frontend/search/docsearch.*'].path %>"></script>
+    <% if @config[:search_backend] == "google" %>
+    <script src="<%= @items['/frontend/search/google.*'].path %>"></script>
     <% elsif @config[:search_backend] == "lunr" %>
     <script src="<%= @items['/frontend/search/lunrsearch.*'].path %>"></script>
-    <% elsif @config[:search_backend] == "google" %>
-    <script src="<%= @items['/frontend/search/google.*'].path %>"></script>
     <% end %>
     <script src="<%= @items['/assets/javascripts/toggle_popover.*'].path %>"></script>
     <script src="<%= @items['/frontend/shared/clipboardjs.*'].path %>"></script>
