@@ -151,7 +151,9 @@ image:docs-single:
     - .docker_prepare
     - .rules_docker_single_images
   stage: pre-deploy
-  needs: ["test:image:docs-single"]
+  needs:
+    - test:image:docs-single
+    - compile_prod
   artifacts: {}
   cache: {}
   dependencies: []
@@ -176,7 +178,7 @@ image:docs-single:
 test:image:docs-single:
   extends:
     - .docker_prepare
-    - .rules_docker_image_tests
+    - .rules_docker_single_images_tests
   stage: test
   variables:
     GITLAB_VERSION: '15.11'
@@ -204,7 +206,9 @@ image:docs-single-lunrjs:
     - .docker_prepare
     - .rules_docker_single_images
   stage: pre-deploy
-  needs: ["test:image:docs-single-lunrjs"]
+  needs:
+    - test:image:docs-single-lunrjs
+    - compile_prod
   artifacts: {}
   cache: {}
   dependencies: []
@@ -230,7 +234,7 @@ image:docs-single-lunrjs:
 test:image:docs-single-lunrjs:
   extends:
     - .docker_prepare
-    - .rules_docker_image_tests
+    - .rules_docker_single_images_tests
   stage: test
   variables:
     GITLAB_VERSION: '15.11'
