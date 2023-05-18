@@ -70,13 +70,20 @@ default:
       when: manual
       allow_failure: true
 
+.rules_docker_image_tests:
+  rules:
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Build docker images pipeline"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
+      changes:
+        - $DOCKERFILE
+
 .rules_docker_single_images:
   rules:
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
 
-.rules_docker_image_tests:
+.rules_docker_single_images_tests:
   rules:
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Build docker images pipeline"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
     - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
       changes:
         - $DOCKERFILE
