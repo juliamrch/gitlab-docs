@@ -2870,6 +2870,11 @@ sections:
                 doc_url: 'ee/development/gemfile.html'
               - doc_title: Go standards and style guidelines
                 doc_url: 'ee/development/go_guide/'
+                docs:
+                  - doc_title: Dependency management in Go
+                    doc_url: 'ee/development/go_guide/dependencies.html'
+                  - doc_title: Managing Go versions
+                    doc_url: 'ee/development/go_guide/go_upgrade.html'
               - doc_title: GraphQL API style guide
                 doc_url: 'ee/development/api_graphql_styleguide.html'
               - doc_title: Shell command guidelines
