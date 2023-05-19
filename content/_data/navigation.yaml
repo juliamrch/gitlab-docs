@@ -1094,6 +1094,8 @@ sections:
                 doc_url: 'ee/tutorials/convert_personal_namespace_to_group/'
               - doc_title: Git abuse rate limit
                 doc_url: 'ee/user/group/reporting/git_abuse_rate_limit.html'
+              - doc_title: Troubleshooting groups
+                doc_url: 'ee/user/group/troubleshooting.html'
           - doc_title: Enterprise users
             doc_url: 'ee/user/enterprise_user/'
           - doc_title: User account options
