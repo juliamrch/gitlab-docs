@@ -41,6 +41,22 @@ fi
 if [[ $RETURN_CODE == 1 ]]; then exit 1; fi
 
 # shellcheck disable=2059
+printf "${COLOR_GREEN}INFO: Checking for global navigation entries with absolute paths...${COLOR_RESET}\n"
+NAV_ENTRIES_WITH_ABSOLUTE_PATHS=$(sed -n -E "s/.*[section|category|doc]_url: '(\/.*)'/\1/p" content/_data/navigation.yaml)
+
+if [[ -n $NAV_ENTRIES_WITH_ABSOLUTE_PATHS ]]; then
+  for NAV_ENTRY_WITH_ABSOLUTE_PATH in $NAV_ENTRIES_WITH_ABSOLUTE_PATHS; do
+    printf "${COLOR_RED}ERROR (absolute path):${COLOR_RESET} %s\n" "${NAV_ENTRY_WITH_ABSOLUTE_PATH}"
+  done
+  RETURN_CODE=1
+else
+  # shellcheck disable=2059
+  printf "${COLOR_GREEN}INFO: No entries with absolute paths found!${COLOR_RESET}\n"
+fi
+
+if [[ $RETURN_CODE == 1 ]]; then exit 1; fi
+
+# shellcheck disable=2059
 printf "${COLOR_GREEN}INFO: Checking global navigation against schema...${COLOR_RESET}\n"
 JSON_NAVIGATION=$(ruby -ryaml -rjson -e "puts YAML.load_file('content/_data/navigation.yaml').to_json")
 echo "$JSON_NAVIGATION" | bin/json_schemer spec/lib/gitlab/navigation/navigation_schema.json - > /dev/null
