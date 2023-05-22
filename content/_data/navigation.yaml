@@ -2736,6 +2736,8 @@ sections:
           - doc_title: Development processes
             doc_url: 'ee/development/development_processes.html'
             docs:
+              - doc_title: AI features
+                doc_url: 'ee/development/ai_features.html'
               - doc_title: Changelog entries
                 doc_url: 'ee/development/changelog.html'
               - doc_title: ChatOps on GitLab.com
