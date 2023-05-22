@@ -87,6 +87,6 @@ export default {
       <gl-dropdown-divider />
     </template>
 
-    <gl-dropdown-item href="/archives">Archives</gl-dropdown-item>
+    <gl-dropdown-item href="https://docs.gitlab.com/archives">Archives</gl-dropdown-item>
   </gl-dropdown>
 </template>
