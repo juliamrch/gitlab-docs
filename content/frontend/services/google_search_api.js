@@ -6,7 +6,7 @@ export const MAX_RESULTS_PER_PAGE = 10;
 export const MAX_TOTAL_RESULTS = 100;
 
 export const fetchResults = async (query, filters, pageNumber, resultCount) => {
-  if (!query || query.length < 2) {
+  if (!query || query.length < 2 || typeof query !== 'string') {
     return [];
   }
 
