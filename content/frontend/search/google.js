@@ -5,7 +5,7 @@ import { activateKeyboardShortcut } from './search_helpers';
 document.addEventListener('DOMContentLoaded', () => {
   activateKeyboardShortcut();
 
-  const isHomepage = document.querySelector('body').dataset.isHomepage;
+  const { isHomepage } = document.querySelector('body').dataset;
 
   (() =>
     new Vue({
