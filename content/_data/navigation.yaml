@@ -2321,8 +2321,6 @@ sections:
             doc_url: 'ee/integration/security_partners/'
           - doc_title: ServiceNow
             doc_url: 'ee/user/project/integrations/servicenow.html'
-          - doc_title: Shimo (deprecated)
-            doc_url: 'ee/user/project/integrations/shimo.html'
           - doc_title: Slack notifications (deprecated)
             doc_url: 'ee/user/project/integrations/slack.html'
           - doc_title: Slack slash commands
