@@ -52,9 +52,21 @@ update-all-docs-projects: update-gitlab update-gitlab-runner update-omnibus-gitl
 
 up: setup view
 
+.PHONY: compile
 compile:
-	@printf "\n$(INFO)INFO: Compiling GitLab documentation site...$(END)\n"
+ifeq ($(SEARCH_BACKEND),lunr)
+	@printf "\n$(INFO)INFO: Compiling GitLab documentation site with Lunr.js search...$(END)\n"
 	@bundle exec nanoc compile || (printf "$(ERROR)ERROR: Compilation failed! Try running 'make setup'.$(END)\n" && exit 1)
+	$(MAKE) build-lunr-index
+else ifeq ($(SEARCH_BACKEND),google)
+	@printf "\n$(INFO)INFO: Compiling GitLab documentation site with Google Programmable Search...$(END)\n"
+	@bundle exec nanoc compile || (printf "$(ERROR)ERROR: Compilation failed! Try running 'make setup'.$(END)\n" && exit 1)
+else ifeq ($(SEARCH_BACKEND),)
+	@printf "\n$(INFO)INFO: No search backend specified. Compiling GitLab documentation site with Google Programmable Search...$(END)\n"
+	@bundle exec nanoc compile || (printf "$(ERROR)ERROR: Compilation failed! Try running 'make setup'.$(END)\n" && exit 1)
+else
+	@printf "\n$(ERROR)ERROR: Invalid search backend specified!$(END)\n" && exit 1
+endif
 
 view: compile
 	@printf "\n$(INFO)INFO: Starting GitLab documentation site...$(END)\n"
