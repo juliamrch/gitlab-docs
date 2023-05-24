@@ -35,6 +35,9 @@ sections:
     section_categories:
       - category_title: Find your way around GitLab
         category_url: 'ee/tutorials/gitlab_navigation.html'
+        docs:
+          - doc_title: 'Tutorial: Use the left sidebar to navigate GitLab'
+            doc_url: 'ee/tutorials/left_sidebar/'
       - category_title: Learn Git
         category_url: 'ee/tutorials/learn_git.html'
       - category_title: Plan and track your work
