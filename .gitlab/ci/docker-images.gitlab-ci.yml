@@ -168,6 +168,7 @@ image:docs-single:
              --build-arg NANOC_ENV=${NANOC_ENV}
              --build-arg VER=${CI_COMMIT_REF_NAME}
              --build-arg SEARCH_BACKEND="google"
+             --build-arg GOOGLE_SEARCH_KEY=${GOOGLE_SEARCH_KEY}
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
     - docker push $IMAGE_NAME
