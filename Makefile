@@ -52,6 +52,13 @@ update-all-docs-projects: update-gitlab update-gitlab-runner update-omnibus-gitl
 
 up: setup view
 
+check-google-search-key:
+ifeq ($(GOOGLE_SEARCH_KEY),)
+	@printf "\n$(INFO)INFO: GOOGLE_SEARCH_KEY environment variable not detected! For more information, see https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/search.md.$(END)\n"
+else
+	@printf "\n$(INFO)INFO: GOOGLE_SEARCH_KEY environment variable detected!$(END)\n"
+endif
+
 .PHONY: compile
 compile:
 ifeq ($(SEARCH_BACKEND),lunr)
@@ -60,9 +67,11 @@ ifeq ($(SEARCH_BACKEND),lunr)
 	$(MAKE) build-lunr-index
 else ifeq ($(SEARCH_BACKEND),google)
 	@printf "\n$(INFO)INFO: Compiling GitLab documentation site with Google Programmable Search...$(END)\n"
+	$(MAKE) check-google-search-key
 	@bundle exec nanoc compile || (printf "$(ERROR)ERROR: Compilation failed! Try running 'make setup'.$(END)\n" && exit 1)
 else ifeq ($(SEARCH_BACKEND),)
 	@printf "\n$(INFO)INFO: No search backend specified. Compiling GitLab documentation site with Google Programmable Search...$(END)\n"
+	$(MAKE) check-google-search-key
 	@bundle exec nanoc compile || (printf "$(ERROR)ERROR: Compilation failed! Try running 'make setup'.$(END)\n" && exit 1)
 else
 	@printf "\n$(ERROR)ERROR: Invalid search backend specified!$(END)\n" && exit 1
