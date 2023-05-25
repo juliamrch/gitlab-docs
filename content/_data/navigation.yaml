@@ -2626,6 +2626,8 @@ sections:
                 doc_url: 'ee/api/scim.html'
               - doc_title: Search
                 doc_url: 'ee/api/search.html'
+              - doc_title: Search migrations
+                doc_url: 'ee/api/search_admin.html'
               - doc_title: Secure files
                 doc_url: 'ee/api/secure_files.html'
               - doc_title: Settings (application)
