@@ -186,6 +186,6 @@ postprocess do
   # Skip the frontend compilation if NANOC_ENV=skip_frontend is set
   # See doc/development.md
   next if ENV['NANOC_ENV'] == 'skip_frontend'
-  raise "Failed to copy GitLab fonts. Run 'yarn install' and try again." unless system('make add-gitlab-fonts')
+  raise "Failed to copy GitLab fonts. Run 'yarn install' and try again." unless system('make --no-print-directory add-gitlab-fonts')
   raise "postprocessing error" unless system('nanoc frontend')
 end

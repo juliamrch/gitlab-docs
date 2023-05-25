@@ -64,14 +64,14 @@ compile:
 ifeq ($(SEARCH_BACKEND),lunr)
 	@printf "\n$(INFO)INFO: Compiling GitLab documentation site with Lunr.js search...$(END)\n"
 	@bundle exec nanoc compile || (printf "$(ERROR)ERROR: Compilation failed! Try running 'make setup'.$(END)\n" && exit 1)
-	$(MAKE) build-lunr-index
+	@$(MAKE) --no-print-directory build-lunr-index
 else ifeq ($(SEARCH_BACKEND),google)
 	@printf "\n$(INFO)INFO: Compiling GitLab documentation site with Google Programmable Search...$(END)\n"
-	$(MAKE) check-google-search-key
+	@$(MAKE) --no-print-directory check-google-search-key
 	@bundle exec nanoc compile || (printf "$(ERROR)ERROR: Compilation failed! Try running 'make setup'.$(END)\n" && exit 1)
 else ifeq ($(SEARCH_BACKEND),)
 	@printf "\n$(INFO)INFO: No search backend specified. Compiling GitLab documentation site with Google Programmable Search...$(END)\n"
-	$(MAKE) check-google-search-key
+	@$(MAKE) --no-print-directory check-google-search-key
 	@bundle exec nanoc compile || (printf "$(ERROR)ERROR: Compilation failed! Try running 'make setup'.$(END)\n" && exit 1)
 else
 	@printf "\n$(ERROR)ERROR: Invalid search backend specified!$(END)\n" && exit 1
@@ -132,7 +132,7 @@ clean:
 
 build-lunr-index:
 	@printf "\n$(INFO)INFO: Building offline search index..$(END)\n"
-	node scripts/lunr/preindex.js
+	@node scripts/lunr/preindex.js
 
 check-lunr-index:
 	@printf "\n$(INFO)INFO: Checking if lunr.js is enabled...$(END)\n"
@@ -239,8 +239,8 @@ check-danger:
 
 add-gitlab-fonts:
 	@printf "\n$(INFO)INFO: Copying GitLab fonts...$(END)\n"
-	cp -v node_modules/@gitlab/fonts/gitlab-sans/GitLabSans.woff2 public/assets/fonts
-	cp -v node_modules/@gitlab/fonts/jetbrains-mono/JetBrainsMono* public/assets/fonts
+	@cp -v node_modules/@gitlab/fonts/gitlab-sans/GitLabSans.woff2 public/assets/fonts
+	@cp -v node_modules/@gitlab/fonts/jetbrains-mono/JetBrainsMono* public/assets/fonts
 
 create-stable-branch:
 	@printf "\n$(INFO)INFO: Creating stable branch...$(END)\n"
