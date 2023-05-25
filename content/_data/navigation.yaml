@@ -2683,7 +2683,7 @@ sections:
       - category_title: GraphQL API
         category_url: 'ee/api/graphql/'
         docs:
-          - doc_title: Get started using GraphQL
+          - doc_title: Run GraphQL API queries and mutations
             doc_url: 'ee/api/graphql/getting_started.html'
           - doc_title: GraphQL reference
             doc_url: 'ee/api/graphql/reference/'
