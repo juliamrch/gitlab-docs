@@ -1,6 +1,6 @@
 <script>
 import { GlDropdown, GlDropdownItem, GlDropdownDivider } from '@gitlab/ui';
-import { getVersions } from '../../services/fetch_versions';
+import { getVersions, getArchivesVersions } from '../../services/fetch_versions';
 import { isGitLabHosted, isArchivesSite } from '../environment';
 
 export default {
@@ -12,6 +12,7 @@ export default {
   data() {
     return {
       versions: {},
+      archiveVersions: [],
       activeVersion: '',
     };
   },
@@ -28,6 +29,7 @@ export default {
     if (isGitLabHosted() && !isArchivesSite()) {
       try {
         this.versions = await getVersions();
+        this.archiveVersions = await getArchivesVersions();
       } catch (err) {
         console.error(`Failed to fetch versions.json: ${err}`); // eslint-disable-line no-console
       }
@@ -50,7 +52,7 @@ export default {
       }
 
       // If this is one of the older major releases, point to the Archives site.
-      if (this.versions.last_major.includes(versionNumber)) {
+      if (this.archiveVersions.includes(versionNumber)) {
         path = `https://archives.docs.gitlab.com${path}`;
       }
 
