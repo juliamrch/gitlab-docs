@@ -5,6 +5,8 @@ export const mockVersions = {
   last_major: ['14.10', '13.12'],
 };
 
+export const mockArchiveVersions = ['13.0', '13.1', '13.12', '14.0', '14.10'];
+
 export const mockArchiveImages = [
   {
     name: '14.9',

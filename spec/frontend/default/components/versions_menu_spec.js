@@ -5,8 +5,11 @@
 import { shallowMount } from '@vue/test-utils';
 import flushPromises from 'flush-promises';
 import VersionsMenu from '../../../../content/frontend/default/components/versions_menu.vue';
-import { getVersions } from '../../../../content/frontend/services/fetch_versions';
-import { mockVersions } from '../../__mocks__/versions_mock';
+import {
+  getVersions,
+  getArchivesVersions,
+} from '../../../../content/frontend/services/fetch_versions';
+import { mockVersions, mockArchiveVersions } from '../../__mocks__/versions_mock';
 import { setWindowPath, setVersionMetatag } from './helpers/versions_menu_helper';
 
 jest.mock('../../../../content/frontend/services/fetch_versions');
@@ -17,6 +20,7 @@ describe('component: Versions menu', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     getVersions.mockResolvedValueOnce(mockVersions);
+    getArchivesVersions.mockResolvedValueOnce(mockArchiveVersions);
   });
   afterEach(() => {
     document.querySelector('meta[name="gitlab-docs-version"]').remove();
@@ -28,6 +32,7 @@ describe('component: Versions menu', () => {
     await flushPromises();
 
     expect(getVersions).toHaveBeenCalledTimes(1);
+    expect(getArchivesVersions).toHaveBeenCalledTimes(1);
 
     const nextVersion = wrapper.find('[data-testid="next-version"]').text();
     expect(nextVersion).toEqual(mockVersions.next);
