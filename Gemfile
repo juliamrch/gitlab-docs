@@ -28,7 +28,7 @@ group :test, :development do
   gem 'pry-byebug', '~> 3.10.1', require: false
   gem 'gitlab-styles', '~> 10.0.0', require: false
   gem "webrick", "~> 1.8", ">= 1.8.1"
-  gem 'json_schemer', '~> 0.2', '>= 0.2.24', require: false
+  gem 'json_schemer', '~> 0.2', '>= 0.2.25', require: false
 end
 
 group :development, :danger do
