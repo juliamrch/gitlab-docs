@@ -237,11 +237,6 @@ check-danger:
 	@printf "\n$(INFO)INFO: Checking for Danger errors and warnings...$(END)\n"
 	@scripts/check-danger.sh ; exit $$?
 
-add-gitlab-fonts:
-	@printf "\n$(INFO)INFO: Copying GitLab fonts...$(END)\n"
-	@cp -v node_modules/@gitlab/fonts/gitlab-sans/GitLabSans.woff2 public/assets/fonts
-	@cp -v node_modules/@gitlab/fonts/jetbrains-mono/JetBrainsMono* public/assets/fonts
-
 create-stable-branch:
 	@printf "\n$(INFO)INFO: Creating stable branch...$(END)\n"
 	@bundle exec rake release:single

@@ -14,6 +14,9 @@ function mapDirectory(file) {
   return file.replace('content/', 'public/');
 }
 
+// Global assets are copied here.
+const vendorDir = './public/assets/vendor';
+
 module.exports = globSync('content/frontend/**/*.js').map((file) => ({
   input: file,
   output: {
@@ -21,7 +24,12 @@ module.exports = globSync('content/frontend/**/*.js').map((file) => ({
     format: 'iife',
     name: file,
     inlineDynamicImports: true,
+    globals: {
+      vue: 'Vue',
+      jquery: '$',
+    },
   },
+  external: ['vue', 'jquery'],
   cache: true,
   plugins: [
     nodeResolve({ browser: true, preferBuiltins: false }),
@@ -49,7 +57,39 @@ module.exports = globSync('content/frontend/**/*.js').map((file) => ({
       targets: [
         {
           src: './node_modules/mermaid/dist/mermaid.min.js*',
-          dest: './public/assets/javascripts/vendor',
+          dest: vendorDir,
+        },
+        {
+          src: './node_modules/vue/dist/vue.min.js',
+          dest: vendorDir,
+        },
+        {
+          src: './node_modules/lunr/lunr.min.js',
+          dest: vendorDir,
+        },
+        {
+          src: './node_modules/jquery/dist/jquery.slim.min.js',
+          dest: vendorDir,
+        },
+        {
+          src: './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js*',
+          dest: vendorDir,
+        },
+        {
+          src: './node_modules/@gitlab/ui/dist/utility_classes.css*',
+          dest: vendorDir,
+        },
+        {
+          src: './node_modules/@gitlab/ui/dist/index.css*',
+          dest: vendorDir,
+        },
+        {
+          src: './node_modules/@gitlab/fonts/gitlab-sans/GitLabSans.woff2',
+          dest: vendorDir,
+        },
+        {
+          src: './node_modules/@gitlab/fonts/jetbrains-mono/JetBrainsMono*',
+          dest: vendorDir,
         },
       ],
     }),

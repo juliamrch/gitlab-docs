@@ -30,19 +30,4 @@ run do |_opts, _args, _cmd|
 
     ERROR
   end
-
-  puts "\n#{COLOR_CODE_GREEN}INFO: Copying GitLab UI CSS sourcemaps...#{COLOR_CODE_RESET}"
-  root = File.expand_path('../', __dir__)
-  gl_ui_src = 'node_modules/@gitlab/ui/dist'
-  gl_ui_dest = 'public/frontend/shared'
-
-  Dir.children(gl_ui_src).each do |filename|
-    puts "- Copied #{gl_ui_src}/#{filename}" if filename.include?("map") && File.write("#{gl_ui_dest}/#{filename}", File.read("#{root}/#{gl_ui_src}/#{filename}"))
-  end
-
-  if ENV['SEARCH_BACKEND'] == "lunr"
-    lunr_src = "node_modules/lunr/lunr.min.js"
-    puts "\n#{COLOR_CODE_GREEN}INFO: Copying Lunr.js...#{COLOR_CODE_RESET}"
-    puts "- Copied #{lunr_src}" if File.write('public/assets/javascripts/lunr.min.js', File.read("#{root}/#{lunr_src}"))
-  end
 end

@@ -12,33 +12,33 @@
   font-weight: 100 900;
   font-style: normal;
   font-named-instance: 'Regular'; /* stylelint-disable property-no-unknown */
-  src: url('../fonts/GitLabSans.woff2') format('woff2');
+  src: url('../vendor/GitLabSans.woff2') format('woff2');
 }
 @font-face {
   font-family: 'JetBrains Mono';
   font-display: swap;
   font-style: normal;
-  src: url('../fonts/JetBrainsMono.woff2') format('woff2');
+  src: url('../vendor/JetBrainsMono.woff2') format('woff2');
 }
 @font-face {
   font-family: 'JetBrains Mono';
   font-display: swap;
   font-weight: bold;
-  src: url('../fonts/JetBrainsMono-Bold.woff2') format('woff2');
+  src: url('../vendor/JetBrainsMono-Bold.woff2') format('woff2');
 }
 @font-face {
   font-family: 'JetBrains Mono';
   font-display: swap;
   font-weight: normal;
   font-style: italic;
-  src: url('../fonts/JetBrainsMono-Italic.woff2') format('woff2');
+  src: url('../vendor/JetBrainsMono-Italic.woff2') format('woff2');
 }
 @font-face {
   font-family: 'JetBrains Mono';
   font-display: swap;
   font-weight: bold;
   font-style: italic;
-  src: url('../fonts/JetBrainsMono-BoldItalic.woff2') format('woff2');
+  src: url('../vendor/JetBrainsMono-BoldItalic.woff2') format('woff2');
 }
 
 /* https://gitlab.com/gitlab-org/gitlab/-/merge_requests/107592/ */

@@ -69,8 +69,11 @@
         </div>
       </div>
     </section>
+    <script src="/assets/vendor/vue.min.js"></script>
+    <script src="/assets/vendor/jquery.slim.min.js"></script>
+    <script src="/assets/vendor/bootstrap.bundle.min.js"></script>
+
     <script src="<%= @items['/frontend/default/default.*'].path %>"></script>
-    <script src="<%= @items['/frontend/shared/global_imports.*'].path %>"></script>
     <% if @config[:search_backend] == "google" %>
     <script src="<%= @items['/frontend/search/google.*'].path %>"></script>
     <% elsif @config[:search_backend] == "lunr" %>
@@ -81,7 +84,7 @@
     <script src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
 
     <% if @item.compiled_content.include? "load-mermaid" %>
-      <script src="/assets/javascripts/vendor/mermaid.min.js"></script>
+      <script src="/assets/vendor/mermaid.min.js"></script>
       <script src="<%= @items['/assets/javascripts/mermaid.*'].path %>"></script>
     <% end %>
 

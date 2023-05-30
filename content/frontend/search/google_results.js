@@ -1,4 +1,4 @@
-import Vue from 'vue';
+/* global Vue */
 import GoogleResults from './components/google_results.vue';
 import { activateKeyboardShortcut } from './search_helpers';
 
