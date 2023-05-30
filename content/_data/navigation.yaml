@@ -2231,6 +2231,8 @@ sections:
             doc_url: 'ee/user/project/integrations/bamboo.html'
           - doc_title: Datadog
             doc_url: 'ee/integration/datadog.html'
+          - doc_title: Diagrams.net
+            doc_url: 'ee/administration/integration/diagrams_net.html'
           - doc_title: Discord Notifications
             doc_url: 'ee/user/project/integrations/discord_notifications.html'
           - doc_title: Elasticsearch
