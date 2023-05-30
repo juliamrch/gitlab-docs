@@ -10,13 +10,20 @@ Prerequisites:
 
 - Make sure you have all the [needed tools](/doc/setup.md) installed on your system.
 
+Terminology:
+
+The following terms are used throughout this document:
+
+- **Stable branch**: This is the branch that matches the GitLab version being released. For example,
+  for GitLab 16.0, the stable branch is `16.0`.
+
 ### Between the 17th and 20th of each month
 
 1. [ ] Cross-link to the main MR for the release post: `<add link here>`
    ([Need help finding the MR?](https://gitlab.com/gitlab-com/www-gitlab-com/-/merge_requests?scope=all&state=opened&label_name%5B%5D=release%20post&label_name%5B%5D=blog%20post))
 1. [ ] On the day of the [code cut-off](https://about.gitlab.com/handbook/engineering/releases/#self-managed-releases-process) (17th, but is sometimes moved earlier), share the following message in the `#tw-team` channel:
 
-   >:mega: I will run the docs release soon. Because we're close to the code cutoff, **don't add new links** to the docs navigation before I cut the release branch.
+   >:mega: I will run the docs release soon. Because we're close to the code cutoff, **don't add new links** to the docs navigation before I cut the stable branch.
    >
    >Moving, renaming, or deleting entries is allowed. If you're unsure, please assign me to the nav MR.
 
@@ -59,6 +66,10 @@ Prerequisites:
    created close to the 22nd, so you might need to run a new pipeline for the
    stable branch before the release.
 
+   Optionally, you can check the job log to see which project does not have a stable branch
+   created for the release yet. Then check that project's branches for a branch with `-stable`.
+   For example, for `gitlab-runner`: <https://gitlab.com/gitlab-org/gitlab-runner/-/branches?state=all&sort=updated_desc&search=-stable>
+
 After the tasks above are complete, you don't need to do anything for a few days.
 
 ### On the 22nd, or the first business day after
@@ -68,6 +79,7 @@ After the release post is live on the 22nd, or the next Monday morning if the re
 1. [ ] Verify that the [pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all) for the stable branch (filter by branch)
    has passed and created a [Docker image](https://gitlab.com/gitlab-org/gitlab-docs/container_registry/631635?orderBy=NAME&sort=desc&search[]=)
    tagged with the release version. ([If it fails, how do I fix it?](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-single-job-fails-when-creating-the-docs-stable-branch))
+   - To filter the list of pipelines to the stable branch, select the **Branch name** filter then manually input the stable branch's name. For example, "Branch name = 16.0".
 1. [ ] [Create a docs.gitlab.com release merge request](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#create-release-merge-request)
    which updates the version dropdown menu for all online versions, updates the archives list, and adds
    the release to the Docker configuration.
@@ -77,7 +89,7 @@ After the release post is live on the 22nd, or the next Monday morning if the re
       and run the `Build Docker images manually` pipeline.
    1. [ ] In the scheduled pipeline you just started, wait for the `test:image:docs-latest` job to finish, then manually run the `image:docs-latest`
       job that builds the `:latest` Docker image.
-   1. [ ] When the job is complete, run the `Build docs.gitlab.com every hour` scheduled pipeline.
+   1. [ ] When the `image:docs-latest` job is complete, run the `Build docs.gitlab.com every hour` scheduled pipeline.
 1. [ ] After the deployment completes, open `docs.gitlab.com` in a browser. Confirm
    both the latest version and the correct pre-release version are listed in the documentation version dropdown.
 1. [ ] Check all published versions of the docs to ensure they are visible and that their version menus have the latest versions.
