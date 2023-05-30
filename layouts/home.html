@@ -13,8 +13,11 @@
       <%= render '/analytics.*' %>
     <% end %>
     <%= render '/schema-microdata.*' %>
+    <script src="/assets/vendor/vue.min.js"></script>
+    <script src="/assets/vendor/jquery.slim.min.js"></script>
+    <script src="/assets/vendor/bootstrap.bundle.min.js"></script>
+
     <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
-    <script src="<%= @items['/frontend/shared/global_imports.*'].path %>"></script>
     <script src="<%= @items['/frontend/default/default.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
     <% if @config[:search_backend] == "google" %>

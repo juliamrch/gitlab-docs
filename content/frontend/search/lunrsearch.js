@@ -1,4 +1,4 @@
-import Vue from 'vue';
+/* global Vue */
 import LunrResults from './components/lunr_results.vue';
 import SearchForm from './components/lunr_search_form.vue';
 

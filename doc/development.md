@@ -82,12 +82,6 @@ match to make it easier to find:
 You should replace `<bundle-name>` with whatever you'd like to call your
 bundle.
 
-### Add a global library
-
-Libraries that are not specific to individual components (e.g, jQuery) are bundled via `global_imports.js`. The resulting build is included on all pages.
-
-This is a pattern to avoid going forward -- ideally third-party libraries are only loaded from components that require them -- but this allows us to utilize yarn for package management and avoid external CDNs while the site is still only partially component-driven.
-
 ## Bump versions of JavaScript
 
 Whenever the JavaScript files under `content/assets/` change,
@@ -262,7 +256,6 @@ To avoid this, you can use the following workaround:
 1. Compile the frontend files once:
 
    ```shell
-   make add-gitlab-fonts
    bin/nanoc frontend
    ```
 

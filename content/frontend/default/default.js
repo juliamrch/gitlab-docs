@@ -1,12 +1,10 @@
-import Vue from 'vue';
+/* global Vue */
 import { getNextUntil } from '../shared/dom';
 import NavigationToggle from './components/navigation_toggle.vue';
 import VersionBanner from './components/version_banner.vue';
 import { setupTableOfContents } from './setup_table_of_contents';
 import VersionsMenu from './components/versions_menu.vue';
 import TabsSection from './components/tabs_section.vue';
-
-window.Vue = Vue;
 
 function fixScrollPosition() {
   if (!window.location.hash || !document.querySelector(window.location.hash)) return;
