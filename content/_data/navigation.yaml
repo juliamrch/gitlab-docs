@@ -1784,6 +1784,8 @@ sections:
             docs:
               - doc_title: 'Tutorial: Create website from scratch'
                 doc_url: 'ee/user/project/pages/getting_started/pages_from_scratch.html'
+              - doc_title: 'Tutorial: Build, test, and deploy your Hugo site'
+                doc_url: 'ee/tutorials/hugo/'
               - doc_title: Create website from CI/CD template
                 doc_url: 'ee/user/project/pages/getting_started/pages_ci_cd_template.html'
               - doc_title: Create website from forked sample project
