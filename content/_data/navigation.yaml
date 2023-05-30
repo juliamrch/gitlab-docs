@@ -2241,6 +2241,8 @@ sections:
             docs:
               - doc_title: Bugzilla
                 doc_url: 'ee/user/project/integrations/bugzilla.html'
+              - doc_title: ClickUp
+                doc_url: 'ee/user/project/integrations/clickup.html'
               - doc_title: Custom issue tracker
                 doc_url: 'ee/user/project/integrations/custom_issue_tracker.html'
               - doc_title: Engineering Workflow Management (EWM)
