@@ -305,6 +305,8 @@ sections:
                 docs:
                   - doc_title: Database upgrade
                     doc_url: 'charts/installation/database_upgrade.html'
+                  - doc_title: Release notes 7.0
+                    doc_url: 'charts/releases/7_0.html'
                   - doc_title: Release notes 6.0
                     doc_url: 'charts/releases/6_0.html'
                   - doc_title: Release notes 5.0
