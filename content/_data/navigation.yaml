@@ -2287,7 +2287,7 @@ sections:
                 docs:
                   - doc_title: Jira issue management
                     doc_url: 'ee/integration/jira/issues.html'
-                  - doc_title: Jira Server credentials
+                  - doc_title: 'Tutorial: Create Jira credentials'
                     doc_url: 'ee/integration/jira/jira_server_configuration.html'
               - doc_title: Jira development panel
                 doc_url: 'ee/integration/jira/development_panel.html'
