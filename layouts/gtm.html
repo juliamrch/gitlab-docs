@@ -1,4 +1,4 @@
-<% if production? and ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
+<% if production_and_default_branch? %>
   <%# Adds GTM only in production // leave this immediately after the opening the body tag%>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJXWQL"
