@@ -31,10 +31,8 @@
     <% end %>
     <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
 
-    <% if production? %>
     <%# Add analytics only in production %>
-      <%= render '/analytics.*' %>
-    <% end %>
+    <%= render '/analytics.*' %>
     <%= render '/schema-microdata.*' %>
   </body>
 </html>

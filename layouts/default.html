@@ -88,10 +88,8 @@
       <script src="<%= @items['/assets/javascripts/mermaid.*'].path %>"></script>
     <% end %>
 
-    <% if production? %>
     <%# Add analytics only in production %>
-      <%= render '/analytics.*' %>
-    <% end %>
+    <%= render '/analytics.*' %>
     <% if @item.identifier.to_s == '/ee/update/deprecations.md' %>
       <script src="<%= @items['/frontend/deprecations/deprecations.*'].path %>"></script>
     <% end %>

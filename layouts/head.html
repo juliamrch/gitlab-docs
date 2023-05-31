@@ -43,7 +43,6 @@
 
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/font-awesome.min.*'].path %>">
 <% if production? %>
-  <%# Adds GTM only in production %>
   <!-- OneTrust Cookies Consent Notice start -->
   <script src="https://cdn.cookielaw.org/consent/7f944245-c5cd-4eed-a90e-dd955adfdd08/OtAutoBlock.js"></script>
   <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="7f944245-c5cd-4eed-a90e-dd955adfdd08"></script>
@@ -51,7 +50,10 @@
     function OptanonWrapper() { }
   </script>
   <!-- OneTrust Cookies Consent Notice end -->
+<% end %>
 
+<% if production_and_default_branch? %>
+  <%# Adds GTM only in production %>
   <!-- Google Tag Manager -->
   <script src="<%= @items['/assets/javascripts/google_tagmanager.*'].path %>"></script>
   <!-- End Google Tag Manager -->

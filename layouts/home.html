@@ -8,10 +8,8 @@
     <%= render '/gtm.*' %>
     <%= render '/header.*' %>
     <%= yield %>
-    <% if production? and ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
     <%# Add analytics only in production %>
-      <%= render '/analytics.*' %>
-    <% end %>
+    <%= render '/analytics.*' %>
     <%= render '/schema-microdata.*' %>
     <script src="/assets/vendor/vue.min.js"></script>
     <script src="/assets/vendor/jquery.slim.min.js"></script>

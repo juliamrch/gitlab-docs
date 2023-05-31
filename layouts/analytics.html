@@ -1,3 +1,4 @@
+<% if production_and_default_branch? %>
 <!-- Facebook -->
 <script src="<%= @items['/assets/javascripts/facebook_analytics.*'].path %>"></script>
 <noscript><img height="1" width="1" style="display:none"
@@ -19,3 +20,4 @@ src="https://www.facebook.com/tr?id=1689559637958103&ev=PageView&noscript=1"
 <noscript>
   <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=30694&fmt=gif" />
 </noscript>
+<% end %>
