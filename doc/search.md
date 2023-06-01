@@ -66,7 +66,7 @@ Running Google search on your local site requires an API key. To set this locall
 Alternatively, you can pass the API key for a build like this:
 
 ```shell
-GOOGLE_SEARCH_KEY="abc123" SEARCH_BACKEND="google" bundle exec nanoc compile
+GOOGLE_SEARCH_KEY="abc123" SEARCH_BACKEND="google" make compile
 ```
 
 Developers can also use [HackyStack](https://about.gitlab.com/handbook/infrastructure-standards/realms/sandbox/) on Google to spin up a sandbox GCP project. This allows for creating and testing a separate Programmable Search Engine, with separate API keys, and separate billing. However, for most development work, using the production instance is adequate.

@@ -61,7 +61,8 @@ RUN yarn install --frozen-lockfile               \
     && bundle config set --local deployment true \
     && bundle install                            \
     && bundle exec rake default                  \
-    && bundle exec nanoc compile -VV
+    && bundle exec nanoc compile -VV             \
+    && yarn compile:css
 
 RUN if [ "$SEARCH_BACKEND" = "lunr" ]; then make build-lunr-index; fi
 

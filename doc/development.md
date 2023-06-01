@@ -53,19 +53,21 @@ All new JavaScript should be added to the [content/frontend/](https://gitlab.com
 Legacy JavaScript can be found in [`content/assets/javascripts/`](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/content/assets/javascripts/content/assets/javascripts).
 The files in this directory are handcrafted `ES5` JavaScript files. Work is [ongoing](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/439) to modernize these files.
 
-### Development using Rollup watch mode
+### Development using watch mode
 
-If you're working with files within the `/content/frontend/` directory, you can speed up compile time by using
-[Rollup's `watch` mode](https://rollupjs.org/command-line-interface/#w-watch). This generates a new bundle when any of
-the files in `/content/frontend/` are changed on disk.
+Watch mode recompiles assests as the files are changed on disk. This is useful for local development.
 
-To start Rollup in watch mode, run:
+Start Rollup in watch mode:
 
 ```shell
-yarn watch
+yarn watch:js
 ```
 
-Changes made outside of the `/content/frontend/` directory require a full `make compile` to be previewable.
+Start Sass in watch mode:
+
+```shell
+yarn watch:css
+```
 
 ### Add a new bundle
 

@@ -76,6 +76,8 @@ else ifeq ($(SEARCH_BACKEND),)
 else
 	@printf "\n$(ERROR)ERROR: Invalid search backend specified!$(END)\n" && exit 1
 endif
+	@printf "\n$(INFO)INFO: Compiling CSS...$(END)\n"
+	@yarn compile:css
 
 view: compile
 	@printf "\n$(INFO)INFO: Starting GitLab documentation site...$(END)\n"
