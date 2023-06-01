@@ -148,9 +148,10 @@
   }
 
   pre {
-    background-color: desaturate($theme-indigo-950, 20%);
+    background-color: desaturate($gray-50, 20%);
     border-radius: 4px;
-    color: $white;
+    border: solid 1px $purple-100;
+    color: $gray-800;
     padding: 1rem;
   }
 
