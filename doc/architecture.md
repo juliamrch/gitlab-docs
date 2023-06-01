@@ -175,9 +175,9 @@ The archived documentation banner is displayed:
 - For 14.10.
 - For any other version.
 
-## Bumping versions of CSS and JavaScript
+## Bumping versions of JavaScript
 
-Whenever the custom CSS and JavaScript files under `content/assets/` change,
+Whenever the custom JavaScript files under `content/assets/` change,
 make sure to bump their version in the front matter. This method guarantees that
 your changes take effect by clearing the cache of previous files.
 
@@ -186,8 +186,6 @@ layouts. For example use:
 
 ```erb
 <script async type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
-
-<link rel="stylesheet" href="<%= @items['/assets/stylesheets/toc.*'].path %>">
 ```
 
 The links pointing to the files should be similar to:

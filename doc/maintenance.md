@@ -45,7 +45,7 @@ site on your own and disable the inclusion of the CSP header, you can do so with
 the `DISABLE_CSP` environment variable:
 
 ```shell
-DISABLE_CSP=1 bundle exec nanoc compile
+DISABLE_CSP=1 make compile
 ```
 
 ### Add or update domains in the CSP header

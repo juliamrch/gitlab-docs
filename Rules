@@ -128,14 +128,6 @@ compile '/**/*.md' do
   end
 end
 
-compile '/**/*.scss' do
-  filter :erb
-  filter :sass,
-         syntax: :scss,
-         style: :compressed
-  write "#{item.identifier.without_ext}.css"
-end
-
 # Do not compile minified assets
 passthrough '/**/*.min.*'
 

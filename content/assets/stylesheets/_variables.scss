@@ -308,8 +308,8 @@ $gl-font-size-monospace-sm: 0.688rem;
   $breakpoint-min: $breakpoint-md,
   $breakpoint-max: $breakpoint-xl
 ) {
-  $breakpoint-range: ($breakpoint-max - $breakpoint-min) / 1rem;
-  $property-range: ($property-max - $property-min) / 1rem;
+  $breakpoint-range: calc(($breakpoint-max - $breakpoint-min) / 1rem);
+  $property-range: calc(($property-max - $property-min) / 1rem);
 
   @media (min-width: $breakpoint-min) {
     #{$property}: calc(#{$property-min} + #{$property-range} * ((100vw - #{$breakpoint-min}) / #{$breakpoint-range}));
