@@ -994,6 +994,8 @@ sections:
             doc_url: 'ee/security/crime_vulnerability.html'
           - doc_title: Enforce two-factor authentication (2FA)
             doc_url: 'ee/security/two_factor_authentication.html'
+          - doc_title: Identity verification
+            doc_url: 'ee/security/identity_verification.html'
           - doc_title: Account email verification
             doc_url: 'ee/security/email_verification.html'
           - doc_title: Make new users confirm email
@@ -3157,6 +3159,8 @@ sections:
                 doc_url: 'ee/development/import_export.html'
               - doc_title: Import (test project)
                 doc_url: 'ee/development/import_project.html'
+              - doc_title: Identity verification
+                doc_url: 'ee/development/identity_verification.html'
               - doc_title: Integrations
                 doc_url: 'ee/development/integrations/'
               - doc_title: Internal API
