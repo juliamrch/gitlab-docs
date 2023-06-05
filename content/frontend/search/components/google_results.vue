@@ -127,6 +127,7 @@ export default {
           <li v-for="result in results" :key="result.cacheId" class="gl-mb-5!">
             <gl-link
               v-safe-html="result.formattedTitle"
+              data-result-type="page"
               :href="`${result.relativeLink}`"
               class="gl-font-lg gl-border-bottom-0! gl-hover-text-decoration-underline:hover gl-mb-2"
             />
