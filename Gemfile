@@ -9,7 +9,7 @@ group :nanoc do
   gem 'nanoc-live'
 
   # custom kramdown dialect
-  gem 'gitlab_kramdown', '~> 0.26.0'
+  gem 'gitlab_kramdown', '~> 0.27.0'
 
   # Needed to generate Sitemap
   gem 'builder', '~> 3.2.4'
