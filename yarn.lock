@@ -1197,6 +1197,18 @@
     lodash.isundefined "^3.0.1"
     lodash.uniq "^4.5.0"
 
+"@floating-ui/core@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-1.2.6.tgz#d21ace437cc919cdd8f1640302fa8851e65e75c0"
+  integrity sha512-EvYTiXet5XqweYGClEmpu3BoxmsQ4hkj3QaYA6qEnigCWffTP3vNRwBReTdrwDwo7OoJ3wM8Uoe9Uk4n+d4hfg==
+
+"@floating-ui/dom@1.2.9":
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-1.2.9.tgz#b9ed1c15d30963419a6736f1b7feb350dd49c603"
+  integrity sha512-sosQxsqgxMNkV3C+3UqTS6LxP7isRLwX8WMepp843Rb3/b0Wz8+MdUkxJksByip3C2WwLugLHN1b4ibn//zKwQ==
+  dependencies:
+    "@floating-ui/core" "^1.2.6"
+
 "@gitlab/eslint-plugin@^19.0.0":
   version "19.0.0"
   resolved "https://registry.yarnpkg.com/@gitlab/eslint-plugin/-/eslint-plugin-19.0.0.tgz#bbf5b535876421f000255f0e9ac8f971b8aa6042"
@@ -1230,12 +1242,12 @@
   resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-3.51.0.tgz#c6d63c7e16b71b167662696662efc1b0587acaaf"
   integrity sha512-IyMcZsLJ7AYoyHhWimHKsP/Swk0MlOLxHxgP9kp8Nc/xPC8p/JRVzlWU9vehSTcoYzu55alnKYABJe4fhUw2aQ==
 
-"@gitlab/ui@^63.4.0":
-  version "63.4.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-63.4.0.tgz#7ffafc0c29d45de449f8b77044d39b728fff84f5"
-  integrity sha512-Qz4kQiCLUmheeUf84z42vXz57kmf+29jIhwsSO5n1aijEDuFFB9o5/gxKc4ldoa7x2OJdqH67OtBs5p3cqmIDw==
+"@gitlab/ui@^64.2.2":
+  version "64.2.2"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-64.2.2.tgz#c066ef2989509eb89433f4ef6697ac2e8140659a"
+  integrity sha512-n6xsQo9q2AKd6J7Hv2UBOGF+gYJAvnampEKwqriiajcD1ZYH9ChQyrUk1EiHUmVeIIFNJLXCLw/n/McA3P8ORw==
   dependencies:
-    "@popperjs/core" "^2.11.2"
+    "@floating-ui/dom" "1.2.9"
     bootstrap-vue "2.23.1"
     dompurify "^2.4.5"
     echarts "^5.3.2"
@@ -1561,7 +1573,7 @@
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
-"@popperjs/core@^2.11.2", "@popperjs/core@^2.11.8":
+"@popperjs/core@^2.11.8":
   version "2.11.8"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.8.tgz#6b79032e760a0899cd4204710beede972a3a185f"
   integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
