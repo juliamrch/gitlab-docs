@@ -3069,7 +3069,7 @@ sections:
                   - doc_title: Development process
                     doc_url: 'ee/development/fe_guide/development_process.html'
                   - doc_title: Event tracking
-                    doc_url: 'https://about.gitlab.com/handbook/product/product-intelligence-guide/'
+                    doc_url: 'https://about.gitlab.com/handbook/product/analytics-instrumentation-guide/'
                     external_url: true
                   - doc_title: Emojis
                     doc_url: 'ee/development/fe_guide/emojis.html'
