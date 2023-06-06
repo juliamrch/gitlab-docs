@@ -335,9 +335,9 @@ To fix the error, make sure the Docker images for `image` and `services` use
 the same stable version. For example:
 
 ```yaml
-image: docker:20.10.8
+image: docker:24.0.2
 services:
-  - docker:20.10.8-dind
+  - docker:24.0.2-dind
 ```
 
 If the error still persists, use a more recent `docker:` version

@@ -8,11 +8,11 @@
 .docker_prepare:
   extends:
     - .retry
-  image: docker:20.10.8
+  image: docker:24.0.2
   tags:
     - gitlab-org-docker
   services:
-    - docker:20.10.8-dind
+    - docker:24.0.2-dind
   before_script:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY

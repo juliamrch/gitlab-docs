@@ -1,8 +1,7 @@
-#
 # Copy this Dockerfile to the root of each branch you want to create an archive
 # and rename it to X.Y.Dockerfile, where X.Y the major.minor GitLab version.
 #
-
+#- Start of builder build stage -#
 FROM ruby:3.2.2-alpine3.17 as builder
 
 # Set versions as build args to fetch corresponding branches
@@ -16,10 +15,8 @@ ENV SEARCH_BACKEND=$SEARCH_BACKEND
 ENV GOOGLE_SEARCH_KEY=$GOOGLE_SEARCH_KEY
 ENV NANOC_ENV=$NANOC_ENV
 
-#
 # Install Nanoc dependencies and tools that
 # are needed to build the docs site and run the tests.
-#
 RUN apk add --no-cache -U \
     bash        \
     build-base  \
@@ -88,7 +85,6 @@ RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refre
 #
 # Copy the ending HTML files from the previous 'builder' stage and copy them
 # to an NGINX Docker image.
-#
 FROM nginx:stable-alpine
 
 # Clean out any existing HTML files, and copy the HTML from the builder stage
