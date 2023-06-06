@@ -1726,11 +1726,6 @@ sections:
                     doc_url: 'ee/ci/runners/saas/linux_saas_runner.html'
                   - doc_title: macOS
                     doc_url: 'ee/ci/runners/saas/macos_saas_runner.html'
-                    docs:
-                      - doc_title: VM instances
-                        doc_url: 'ee/ci/runners/saas/macos/environment.html'
-                      - doc_title: Code signing
-                        doc_url: 'ee/ci/runners/saas/macos/codesigning.html'
                   - doc_title: Windows
                     doc_url: 'ee/ci/runners/saas/windows_saas_runner.html'
               - doc_title: The scope of runners
