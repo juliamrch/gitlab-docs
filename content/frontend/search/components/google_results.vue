@@ -154,12 +154,3 @@ export default {
     </div>
   </div>
 </template>
-
-<style>
-html {
-  overflow-y: scroll;
-}
-.result-snippet {
-  font-size: 0.875rem;
-}
-</style>
