@@ -1,11 +1,11 @@
 # GitLab Docs linting (Markdown) Docker image
 #
-# ALPINE_VERSION is defined in ../.gitlab-ci.yml
+# Value for ALPINE_VERSION is defined in .gitlab-ci.yml
 ARG ALPINE_VERSION
 
 FROM alpine:${ALPINE_VERSION}
 
-# VALE_VERSION, MARKDOWNLINT_VERSION, and MARKDOWNLINT2_VERSION are defined in .gitlab-ci.yml
+# Values for VALE_VERSION, MARKDOWNLINT_VERSION, and MARKDOWNLINT2_VERSION are defined in .gitlab-ci.yml
 ARG VALE_VERSION
 ARG MARKDOWNLINT_VERSION
 ARG MARKDOWNLINT2_VERSION

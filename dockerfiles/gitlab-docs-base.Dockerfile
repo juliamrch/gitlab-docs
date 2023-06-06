@@ -1,8 +1,7 @@
-#
 # Base image for other Docker images
 # Includes all system dependencies to build the GitLab Docs site
 #
-# RUBY_VERSION and ALPINE_VERSION are defined in ../.gitlab-ci.yml
+# Values for RUBY_VERSION and ALPINE_VERSION are defined in .gitlab-ci.yml
 ARG RUBY_VERSION
 ARG ALPINE_VERSION
 

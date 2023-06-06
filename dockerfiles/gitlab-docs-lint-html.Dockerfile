@@ -1,6 +1,6 @@
 # GitLab Docs linting (HTML) Docker image
 #
-# RUBY_VERSION and ALPINE_VERSION are defined in ../.gitlab-ci.yml
+# Values for RUBY_VERSION and ALPINE_VERSION are defined in .gitlab-ci.yml
 ARG RUBY_VERSION
 ARG ALPINE_VERSION
 
