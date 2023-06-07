@@ -1021,7 +1021,19 @@ sections:
             doc_url: 'ee/administration/compliance.html'
           - doc_title: Respond to security incidents
             doc_url: 'ee/security/responding_to_security_incidents.html'
-
+          - doc_title: Hardening
+            doc_url: 'ee/security/hardening.html'
+            docs:
+              - doc_title: General concepts
+                doc_url: 'ee/security/hardening_general_concepts.html'
+              - doc_title: Application recommendations
+                doc_url: 'ee/security/hardening_application_recommendations.html'
+              - doc_title: CI/CD recommendations
+                doc_url: 'ee/security/hardening_cicd_recommendations.html'
+              - doc_title: Configuration recommendations
+                doc_url: 'ee/security/hardening_configuration_recommendations.html'
+              - doc_title: Operating system recommendations
+                doc_url: 'ee/security/hardening_operating_system_recommendations.html'
       - category_title: Administer users
         category_url: 'ee/user/profile/account/create_accounts.html'
         docs:
