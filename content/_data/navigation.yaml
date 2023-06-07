@@ -517,6 +517,8 @@ sections:
             doc_url: 'runner/configuration/proxy.html'
           - doc_title: Rate limited requests
             doc_url: 'runner/configuration/proxy.html#handling-rate-limited-requests'
+          - doc_title: Graphical processing units
+            doc_url: 'runner/configuration/gpus.html'
           - doc_title: Self-signed certificates
             doc_url: 'runner/configuration/tls-self-signed.html'
           - doc_title: System services
