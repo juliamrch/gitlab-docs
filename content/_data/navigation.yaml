@@ -359,6 +359,10 @@ sections:
                 doc_url: 'operator/git_over_ssh.html'
               - doc_title: Upgrade the Operator
                 doc_url: 'operator/operator_upgrades.html'
+              - doc_title: Ingress in OpenShift
+                doc_url: 'operator/openshift_ingress.html'
+              - doc_title: RedHat-certified images
+                doc_url: 'operator/certified_images.html'
               - doc_title: Security context constraints
                 doc_url: 'operator/security_context_constraints.html'
               - doc_title: Troubleshooting
@@ -430,6 +434,8 @@ sections:
                 doc_url: 'ee/update/package/convert_to_ee.html'
               - doc_title: Package signatures
                 doc_url: 'omnibus/update/package_signatures.html'
+              - doc_title: GitLab 16 changes
+                doc_url: 'omnibus/update/gitlab_16_changes.html'
               - doc_title: GitLab 15 changes
                 doc_url: 'omnibus/update/gitlab_15_changes.html'
               - doc_title: GitLab 14 changes
