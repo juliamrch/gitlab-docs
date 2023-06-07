@@ -147,6 +147,7 @@ export default {
         <li v-for="(result, index) in results" :key="result.cacheId" class="gl-list-style-none">
           <gl-link
             v-safe-html="result.formattedTitle"
+            data-result-type="dropdown"
             :href="result.relativeLink"
             :data-link-index="index"
             class="gl-text-gray-700 gl-py-3 gl-px-2 gl-display-block gl-text-left"
