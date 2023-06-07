@@ -347,6 +347,13 @@ ol {
 .gl-search-box-by-click {
   width: $search-lg-width;
 }
+// Results page
+html.search-results {
+  overflow-y: scroll;
+}
+p.result-snippet {
+  font-size: 0.875rem;
+}
 
 //badges
 .badges-drop {
