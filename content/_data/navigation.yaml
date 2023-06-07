@@ -742,6 +742,9 @@ sections:
             doc_url: 'ee/administration/git_protocol.html'
           - doc_title: Incoming email
             doc_url: 'ee/administration/incoming_email.html'
+            docs:
+              - doc_title: Rake tasks
+                doc_url: 'ee/administration/raketasks/incoming_email.html'
           - doc_title: Instance limits
             doc_url: 'ee/administration/instance_limits.html'
           - doc_title: Instance Review
@@ -1278,6 +1281,9 @@ sections:
                 doc_url: 'ee/user/project/issues/related_issues.html'
               - doc_title: Service Desk
                 doc_url: 'ee/user/project/service_desk.html'
+                docs:
+                  - doc_title: Rake tasks
+                    doc_url: 'ee/administration/raketasks/service_desk_email.html'
               - doc_title: Sorting and ordering issue lists
                 doc_url: 'ee/user/project/issues/sorting_issue_lists.html'
               - doc_title: Weight
@@ -2310,6 +2316,8 @@ sections:
             doc_url: 'ee/user/project/integrations/mattermost_slash_commands.html'
           - doc_title: Microsoft Teams notifications
             doc_url: 'ee/user/project/integrations/microsoft_teams.html'
+          - doc_title: MLflow
+            doc_url: 'ee/user/project/integrations/mlflow_client.html'
           - doc_title: Mock CI
             doc_url: 'ee/user/project/integrations/mock_ci.html'
           - doc_title: Pipeline status emails
