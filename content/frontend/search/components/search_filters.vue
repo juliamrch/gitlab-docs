@@ -1,5 +1,6 @@
 <script>
 import { GlFormCheckboxGroup, GlFormCheckbox } from '@gitlab/ui';
+import { SEARCH_FILTERS } from '../search_helpers';
 
 export default {
   name: 'SearchFilters',
@@ -7,39 +8,27 @@ export default {
     GlFormCheckboxGroup,
     GlFormCheckbox,
   },
+  props: {
+    initialSelected: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
       selected: [],
     };
   },
-  created() {
-    this.filters = [
-      {
-        title: 'Filter by',
-        options: [
-          {
-            text: 'Installation docs',
-            value: 'Install,Subscribe',
-          },
-          {
-            text: 'Administration docs',
-            value: 'Administer,Subscribe',
-          },
-          {
-            text: 'User docs',
-            value: 'Use GitLab,Tutorials,Subscribe',
-          },
-          {
-            text: 'Developer (API) docs',
-            value: 'Develop',
-          },
-          {
-            text: 'Contributor docs',
-            value: 'Contribute',
-          },
-        ],
+  watch: {
+    initialSelected: {
+      immediate: true,
+      handler(newValues) {
+        this.selected = newValues;
       },
-    ];
+    },
+  },
+  created() {
+    this.filters = SEARCH_FILTERS;
   },
   methods: {
     /**
@@ -50,7 +39,7 @@ export default {
       if (this.selected.includes(option.value)) {
         window.dataLayer.push({
           event: 'docs_search_filter',
-          docs_search_filter_type: option.text.split(' ')[0].toLowerCase(),
+          docs_search_filter_type: option.id,
         });
       }
     },
@@ -62,12 +51,15 @@ export default {
   <div>
     <div v-for="filter in filters" :key="filter.title">
       <h2 class="gl-font-lg! gl-mt-0! gl-mb-3!">{{ filter.title }}</h2>
-      <gl-form-checkbox-group v-model="selected" :label="filter.title">
+      <gl-form-checkbox-group
+        v-model="selected"
+        :label="filter.title"
+        @input="$emit('filteredSearch', selected)"
+      >
         <gl-form-checkbox
           v-for="option in filter.options"
-          :key="option.value"
+          :key="option.id"
           :value="option.value"
-          @input="$emit('filteredSearch', selected)"
           @change="trackFilterChange(option)"
         >
           {{ option.text }}
