@@ -110,11 +110,10 @@ improve maintainability:
 
 ### Rebuild the docs site Docker images
 
-Once a week on Mondays, a scheduled pipeline runs and rebuilds the Docker images
-used in various pipeline jobs, like `docs-lint`. The Docker image configuration files are
+The Docker image configuration files are
 located in the [Dockerfiles directory](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/dockerfiles).
 
-If you need to rebuild the Docker images immediately (must have maintainer level permissions):
+If you need to rebuild one or all the Docker images (must have at least the Maintainer role on the project):
 
 WARNING:
 If you change the Dockerfile configuration and rebuild the images, you can break the main
@@ -123,11 +122,12 @@ a different name first and test it to ensure you do not break the pipelines.
 
 1. In [`gitlab-docs`](https://gitlab.com/gitlab-org/gitlab-docs), go to **{rocket}** **CI/CD > Pipelines**.
 1. Select **Run pipeline**.
-1. See that a new pipeline is running. The jobs that build the images are in the first
+1. See that a new pipeline is running. The jobs that build the images are in the second
    stage, `build-images`. You can select the pipeline number to see the larger pipeline
-   graph, or select the first (`build-images`) stage in the mini pipeline graph to
+   graph, or select the second (`build-images`) stage in the mini pipeline graph to
    expose the jobs that build the images.
-1. Select the **play** (**{play}**) button next to the images you want to rebuild.
+1. After the test builds have passed, select the **play** (**{play}**) button
+   next to the images you want to rebuild.
 
 ### Deploy the docs site
 

@@ -55,3 +55,21 @@ There are a few ways to tell whether a pipeline is from an upstream project:
 - The **test** stage contains only two jobs: `test_global_nav_links` and
   `untamper-my-lockfile`.
 - The **deploy** stage contains the `review` job.
+
+## Error: `ArgumentError: <icon name> is not a known icon in @gitlab-org/gitlab-svg`
+
+When a new icon is added to the [`gitlab-svgs` library](https://gitlab.com/gitlab-org/gitlab-svgs)
+and we use it immediately in the documentation, the `docs-lint links` job
+in the upstream projects fails with an error like:
+
+```plaintext
+ArgumentError: <icon name> is not a known icon in @gitlab-org/gitlab-svg
+```
+
+This error happens when the `lint-html` image has an older version of `@gitlab/svgs`
+which doesn't include the new icon.
+
+To solve this, follow the template to build a
+[new `lint-html` image](https://gitlab.com/gitlab-org/gitlab/-/issues/new?issuable_template=html-lint-image-new-version&issue[title]=Upgrade%20the%20lint-html%20Docker%20image).
+
+For more information, see issue [1639](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/1639).
