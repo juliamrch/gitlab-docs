@@ -82,7 +82,7 @@ sections:
         category_url: 'ee/subscriptions/quarterly_reconciliation.html'
       - category_title: Storage usage quota
         category_url: 'ee/user/usage_quotas.html'
-      - category_title: CI/CD minutes quota
+      - category_title: Compute quota
         category_url: 'ee/ci/pipelines/cicd_minutes.html'
       - category_title: Features available to Starter and Bronze subscribers
         category_url: 'ee/subscriptions/bronze_starter.html'
