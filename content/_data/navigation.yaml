@@ -2892,6 +2892,8 @@ sections:
                     doc_url: 'ee/development/testing_guide/end_to_end/style_guide.html'
                   - doc_title: Testing with feature flags
                     doc_url: 'ee/development/testing_guide/end_to_end/feature_flags.html'
+                  - doc_title: Test Infrastructure for Cloud Integrations
+                    doc_url: 'ee/development/testing_guide/end_to_end/test_infrastructure.html'
                   - doc_title: Troubleshooting
                     doc_url: 'ee/development/testing_guide/end_to_end/troubleshooting.html'
               - doc_title: Translate GitLab
