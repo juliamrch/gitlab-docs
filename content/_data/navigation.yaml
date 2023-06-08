@@ -2831,6 +2831,8 @@ sections:
                     doc_url: 'ee/development/merge_request_concepts/performance.html'
               - doc_title: Merge request workflow
                 doc_url: 'ee/development/contributing/merge_request_workflow.html'
+              - doc_title: Ruby upgrade guidelines
+                doc_url: 'ee/development/ruby_upgrade.html'
               - doc_title: Secure partner onboarding process
                 doc_url: 'ee/development/integrations/secure_partner_integration.html'
               - doc_title: Testing standards and styles
