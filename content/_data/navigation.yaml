@@ -2524,6 +2524,8 @@ sections:
                 doc_url: 'ee/api/jobs.html'
               - doc_title: Job artifacts
                 doc_url: 'ee/api/job_artifacts.html'
+              - doc_title: Job token scopes
+                doc_url: 'ee/api/project_job_token_scopes.html'
               - doc_title: Keys
                 doc_url: 'ee/api/keys.html'
               - doc_title: Labels (project)
