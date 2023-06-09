@@ -1750,6 +1750,8 @@ sections:
                 docs:
                   - doc_title: Linux
                     doc_url: 'ee/ci/runners/saas/linux_saas_runner.html'
+                  - doc_title: GPU
+                    doc_url: 'ee/ci/runners/saas/gpu_saas_runner.html'
                   - doc_title: macOS
                     doc_url: 'ee/ci/runners/saas/macos_saas_runner.html'
                   - doc_title: Windows
