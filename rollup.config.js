@@ -97,7 +97,7 @@ module.exports = globSync('content/frontend/**/*.js')
             dest: vendorDir,
           },
           {
-            src: './node_modules/@gitlab/fonts/jetbrains-mono/JetBrainsMono*',
+            src: './node_modules/@gitlab/fonts/gitlab-mono/GitLabMono*',
             dest: vendorDir,
           },
         ],
