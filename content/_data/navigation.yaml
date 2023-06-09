@@ -1080,6 +1080,8 @@ sections:
       - category_title: Set up your organization
         category_url: 'ee/topics/set_up_organization.html'
         docs:
+          - doc_title: 'Tutorial: Set up your organization'
+            doc_url: 'ee/tutorials/manage_user/'
           - doc_title: Namespaces
             doc_url: 'ee/user/namespace/'
           - doc_title: Members
