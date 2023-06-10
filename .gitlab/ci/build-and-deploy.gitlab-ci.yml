@@ -20,6 +20,15 @@
     url: https://$CI_COMMIT_REF_SLUG$REVIEW_SLUG.docs.gitlab-review.app
     on_stop: review_stop
     auto_stop_in: 30 days
+  rules:
+    - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
+      when: manual
+    - if: '$CI_PROJECT_PATH !~ /^gitlab-org/'
+      when: never
+    - if: '$CI_MERGE_REQUEST_EVENT_TYPE == "merge_train"'
+      when: never
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
 
 #
 # The script lines for compiling and minifying the site
@@ -99,19 +108,15 @@ review:
     - .retry
     - .review-environment
   before_script: []
+  needs:
+    - job: compile_dev
+      optional: true
+    - job: compile_upstream_review_app
+      optional: true
   cache: {}
   script:
     - scripts/review-replace-urls.sh
     - scripts/deploy-review-app.sh
-  rules:
-    - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
-      when: manual
-    - if: '$CI_PROJECT_PATH !~ /^gitlab-org/'
-      when: never
-    - if: '$CI_MERGE_REQUEST_EVENT_TYPE == "merge_train"'
-      when: never
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
 
 #
 # Stop the Review App
@@ -131,20 +136,8 @@ review_stop:
   cache: {}
   script:
     - scripts/deploy-review-app.sh
-  rules:
-    - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
-      allow_failure: true
-      when: manual
-    - if: '$CI_PROJECT_PATH !~ /^gitlab-org/'
-      when: never
-    - if: '$CI_MERGE_REQUEST_EVENT_TYPE == "merge_train"'
-      when: never
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
-      allow_failure: true
-      when: manual
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Upstream review app pipeline"'
-      allow_failure: true
-      when: manual
+  allow_failure: true
+  when: manual
 
 #
 # Clean up stopped review app environments. Done once a month in a scheduled pipeline,
