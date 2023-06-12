@@ -52,3 +52,4 @@ To bump the versions of Ruby or Alpine:
    - [ ] GitLab Chart (<https://gitlab.com/gitlab-org/charts/gitlab/-/blob/master/.gitlab-ci.yml>)
    - [ ] GitLab Operator (<https://gitlab.com/gitlab-org/cloud-native/gitlab-operator/-/blob/master/.gitlab-ci.yml>)
    - [ ] GitLab Development Kit (<https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/.gitlab/ci/test.gitlab-ci.yml>)
+   - [ ] Gitaly (<https://gitlab.com/gitlab-org/gitaly/-/blob/master/.gitlab-ci.yml>)
