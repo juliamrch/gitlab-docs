@@ -2020,6 +2020,8 @@ sections:
                 doc_url: 'ee/ci/environments/environments_dashboard.html'
               - doc_title: Operations Dashboard
                 doc_url: 'ee/user/operations_dashboard/'
+              - doc_title: Dashboard for Kubernetes
+                doc_url: 'ee/ci/environments/kubernetes_dashboard.html'
               - doc_title: Protected environments
                 doc_url: 'ee/ci/environments/protected_environments.html'
               - doc_title: Deployment safety
@@ -2036,6 +2038,8 @@ sections:
                 doc_url: 'ee/ci/cloud_deployment/heroku.html'
               - doc_title: External deployment tools
                 doc_url: 'ee/ci/environments/external_deployment_tools.html'
+              - doc_title: Configure Kubernetes deployments (deprecated)
+                doc_url: 'ee/ci/environments/configure_kubernetes_deployments.html'
           - doc_title: Releases
             doc_url: 'ee/user/project/releases/'
             docs:
@@ -2146,6 +2150,8 @@ sections:
                 doc_url: 'ee/user/clusters/agent/install/'
               - doc_title: Work with the agent for Kubernetes
                 doc_url: 'ee/user/clusters/agent/work_with_agent.html'
+              - doc_title: Grant users Kubernetes access
+                doc_url: 'ee/user/clusters/agent/user_access.html'
               - doc_title: Operational container scanning
                 doc_url: 'ee/user/clusters/agent/vulnerabilities.html'
               - doc_title: Troubleshooting
