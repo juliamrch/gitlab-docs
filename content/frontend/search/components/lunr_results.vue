@@ -1,7 +1,7 @@
 <script>
 /* global lunr */
 import { GlSearchBoxByClick, GlLink } from '@gitlab/ui';
-import { getSearchQueryFromURL, updateURLParams } from '../search_helpers';
+import { getSearchParamsFromURL, updateURLParams } from '../search_helpers';
 import { isArchivesSite } from '../../default/environment';
 
 export default {
@@ -39,9 +39,9 @@ export default {
       window.idx = idx;
 
       // If we have a query string in the URL, run the search.
-      const queryParam = getSearchQueryFromURL();
-      if (queryParam) {
-        this.search(queryParam);
+      const { qParam } = getSearchParamsFromURL();
+      if (qParam) {
+        this.search(qParam);
       }
     } catch (e) {
       this.handleError(e);
@@ -75,7 +75,7 @@ export default {
         this.rewriteResultLinks();
       }
 
-      updateURLParams(this.query);
+      updateURLParams({ q: this.query });
     },
     handleError() {
       this.error = true;

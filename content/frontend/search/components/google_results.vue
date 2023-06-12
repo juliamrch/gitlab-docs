@@ -7,7 +7,7 @@ import {
   GlPagination,
 } from '@gitlab/ui';
 import isEqual from 'lodash.isequal';
-import { getSearchQueryFromURL, updateURLParams } from '../search_helpers';
+import { getSearchParamsFromURL, updateURLParams, convertFilterValues } from '../search_helpers';
 import {
   fetchResults,
   MAX_RESULTS_PER_PAGE,
@@ -27,16 +27,16 @@ export default {
     SafeHtml,
   },
   data() {
-    const queryParam = getSearchQueryFromURL();
+    const { qParam, pageParam, filterParam } = getSearchParamsFromURL();
     return {
-      query: queryParam || '',
+      query: qParam || '',
       submitted: false,
       loading: false,
       error: false,
-      pageNumber: 1,
+      pageNumber: Number(pageParam) || 1,
       response: {},
       results: [],
-      activeFilters: [],
+      activeFilters: convertFilterValues(filterParam.split(','), false) || [],
     };
   },
   computed: {
@@ -94,7 +94,11 @@ export default {
       } finally {
         this.loading = false;
         this.submitted = true;
-        updateURLParams(this.query);
+        updateURLParams({
+          q: this.query,
+          page: this.pageNumber,
+          filters: convertFilterValues(this.activeFilters, true),
+        });
       }
     },
   },
@@ -117,7 +121,10 @@ export default {
 
     <div class="results-container gl-lg-display-flex">
       <div v-if="submitted" class="results-sidebar gl-mb-5 lg-w-20p">
-        <search-filters @filteredSearch="(filters) => search(query, filters)" />
+        <search-filters
+          :initial-selected="activeFilters"
+          @filteredSearch="(filters) => search(query, filters)"
+        />
       </div>
 
       <div class="lg-w-70p">
