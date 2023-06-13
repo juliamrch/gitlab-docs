@@ -25,5 +25,10 @@ rollup.config.js     @leipert @oregand @gl-docsteam
 .rubocop             @ashmckenzie @leipert @oregand @gl-docsteam
 Rakefile             @ashmckenzie @leipert @oregand @gl-docsteam
 
+# Exported configuration for third-party services.
+# Currently this only includes Google Search.
+[configuration]
+/config/             @sarahgerman @axil @gitlab-org/tw-leadership
+
 [Technical Writing]
 /content/_data/       @gl-docsteam
