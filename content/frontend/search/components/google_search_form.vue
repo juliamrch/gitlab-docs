@@ -36,6 +36,7 @@ export default {
       totalCount: 0,
       activeLink: -1,
       showTooltip: true,
+      suggestion: '',
     };
   },
   computed: {
@@ -61,14 +62,24 @@ export default {
     async getResults() {
       this.showResultPanel = false;
       this.isLoading = true;
-      const response = await fetchResults(this.searchQuery, [], 1, 10);
+
+      const query = this.suggestion ? this.suggestion : this.searchQuery;
+      const response = await fetchResults(query, [], 1, 10);
       this.isLoading = false;
+      this.suggestion = '';
 
       this.totalCount =
         response.searchInformation && response.searchInformation.totalCount
           ? response.searchInformation.totalCount
           : 0;
       this.results = response.items ? response.items : [];
+
+      // If there were no results, try the spelling suggestion if present.
+      if (!this.results.length && response.spelling) {
+        this.suggestion = response.spelling.correctedQuery;
+        this.getResults();
+      }
+
       this.submitted = true;
       this.showResultPanel = true;
     },
@@ -165,7 +176,11 @@ export default {
           </gl-link>
         </li>
       </ul>
-      <p v-if="hasNoResults" data-testid="no-results" class="gl-text-left gl-pt-3 gl-my-2 gl-pb-2">
+      <p
+        v-if="hasNoResults && !suggestion"
+        data-testid="no-results"
+        class="gl-text-left gl-pt-3 gl-my-2 gl-pb-2"
+      >
         No results found.
       </p>
     </div>

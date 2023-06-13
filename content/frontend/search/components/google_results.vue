@@ -37,6 +37,8 @@ export default {
       response: {},
       results: [],
       activeFilters: convertFilterValues(filterParam.split(','), false) || [],
+      suggestion: '',
+      correctedTerm: '',
     };
   },
   computed: {
@@ -46,7 +48,14 @@ export default {
       return `Showing ${startIndex}-${end} of ${this.pagerMaxItems()} results`;
     },
     noResults() {
-      return this.query && this.submitted && !this.results.length && !this.loading && !this.error;
+      return (
+        this.query &&
+        this.submitted &&
+        !this.results.length &&
+        !this.loading &&
+        !this.error &&
+        !this.suggestion
+      );
     },
     showPager() {
       return (
@@ -75,12 +84,23 @@ export default {
       this.loading = false;
       throw new Error(`Error code ${error.code}: ${error.message}`);
     },
-    async search(query, filters) {
+    formatSuggestion(suggestion) {
+      // Drop the "+more" and any subsequent text from the correction.
+      // These are filter values, which we include elsewhere.
+      return suggestion.split('+more').shift().trim().replaceAll('*', ' ');
+    },
+    async search(query, filters, corrected = false) {
       this.results = [];
       if (!query) return;
 
       // If the query or filters changed, return to page 1 of results.
       if (query !== this.query || !isEqual(filters, this.activeFilters)) this.pageNumber = 1;
+
+      // Drop any previously-set spelling suggestions if this search was not rewritten.
+      if (!corrected) {
+        this.suggestion = '';
+        this.correctedTerm = '';
+      }
 
       this.query = query;
       this.activeFilters = filters;
@@ -89,6 +109,14 @@ export default {
         this.loading = true;
         this.response = await fetchResults(query, filters, this.pageNumber, MAX_RESULTS_PER_PAGE);
         this.results = this.response.items ? this.response.items : [];
+
+        // If there were no results, use the spelling suggestion if present.
+        if (!this.results.length && this.response.spelling) {
+          this.suggestion = this.formatSuggestion(this.response.spelling.correctedQuery);
+          this.correctedTerm = query;
+          // Run a new search with the spelling suggestion.
+          this.search(this.suggestion, filters, true);
+        }
       } catch (error) {
         this.handleError(error);
       } finally {
@@ -129,6 +157,13 @@ export default {
 
       <div class="lg-w-70p">
         <gl-loading-icon v-if="loading" size="lg" class="gl-mt-5 gl-text-center" />
+
+        <p v-if="correctedTerm && !loading" class="gl-py-4">
+          No results found for
+          <span class="gl-font-weight-bold gl-font-style-italic">{{ correctedTerm }}</span
+          >. Showing results for
+          <span class="gl-font-weight-bold gl-font-style-italic">{{ suggestion }}</span> instead.
+        </p>
 
         <ul v-if="results.length" class="gl-list-style-none gl-pl-2" data-testid="search-results">
           <li v-for="result in results" :key="result.cacheId" class="gl-mb-5!">
