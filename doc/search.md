@@ -27,8 +27,25 @@ The advanced search page includes up to 100 results. These are rendered alongsid
 
 Google Programmable Search has two areas of admininstration on Google:
 
-1. The [Programmable Search Engine control panel](https://programmablesearchengine.google.com/controlpanel/overview?cx=97494f9fe316a426d) is used to configure settings for search behavior. At this time the only setting configured here is the domain that Google searches, docs.gitlab.com.
+1. The [Programmable Search Engine control panel](https://programmablesearchengine.google.com/controlpanel/overview?cx=97494f9fe316a426d) is used to configure settings for search behavior.
 1. Billing and credentials (API keys) are managed from the [Google Cloud Console](https://console.cloud.google.com). Changes or access requests for the console can be requested from the GitLab Infrastructure team by [creating an issue](https://gitlab.com/gitlab-com/gl-infra/reliability/-/issues) in the Reliability team project. Access to this is not required to do development work on search.
+
+Configuration from the Programmable Search Engine (PSE) control panel is tracked in [`config/search/google`](/config/search/google/) as XML files. These files must be manually uploaded and downloaded from the PSE control panel to change actual search configuration.
+
+You can read more about what each file is used for on the [Programmable Search Engine documentation site](https://developers.google.com/custom-search/docs/basics).
+
+##### Modify synonyms
+
+Sometimes we may want to provide synoyms if users are searching for terms that differ from what's actually written on the site.
+
+To add a synonym:
+
+1. Review Google's [best practices documentation](https://developers.google.com/custom-search/docs/queries#expanding-search-queries-with-synonyms).
+2. Modify [`config/search/google/synonyms.xml`](/config/search/google/synonyms.xml) as needed. For formatting guidelines, see [Creating Synonyms](https://developers.google.com/custom-search/docs/queries#creating-synonyms) on the PSE documentation site.
+3. Create an MR with your change, and add `configuration` and `docsearch::google` labels.
+4. After approved and before merging the MR, a [CODEOWNER](/CODEOWNERS) for the `config/search/google` directory must visit the PSE dashboard, and under the [Query Enhancement card](https://programmablesearchengine.google.com/controlpanel/searchfeatures?cx=97494f9fe316a426d#query-enhancement-card), expand "Upload/Download Synonyms in XML files" and select **Upload** to upload the new XML file.
+
+Keep in mind that this only affects Google-powered search on docs.gitlab.com, not general Google search, so in general, it's likely a better idea to consider changing content rather than search configuration.
 
 #### Authentication
 
