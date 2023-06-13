@@ -554,10 +554,10 @@ sections:
             docs:
               - doc_title: AliCloud
                 doc_url: 'ee/integration/alicloud.html'
-              - doc_title: Atlassian Crowd (deprecated)
-                doc_url: 'ee/administration/auth/crowd.html'
               - doc_title: Atlassian
                 doc_url: 'ee/administration/auth/atlassian.html'
+              - doc_title: Atlassian Crowd (deprecated)
+                doc_url: 'ee/administration/auth/crowd.html'
               - doc_title: Auth0
                 doc_url: 'ee/integration/auth0.html'
               - doc_title: AWS Cognito
@@ -597,10 +597,10 @@ sections:
                 doc_url: 'ee/integration/oauth_provider.html'
               - doc_title: OmniAuth
                 doc_url: 'ee/integration/omniauth.html'
-              - doc_title: OpenID Connect OmniAuth
-                doc_url: 'ee/administration/auth/oidc.html'
               - doc_title: OpenID Connect identity
                 doc_url: 'ee/integration/openid_connect_provider.html'
+              - doc_title: OpenID Connect OmniAuth
+                doc_url: 'ee/administration/auth/oidc.html'
               - doc_title: Salesforce
                 doc_url: 'ee/integration/salesforce.html'
               - doc_title: SAML
@@ -608,8 +608,12 @@ sections:
                 docs:
                   - doc_title: Configure SCIM
                     doc_url: 'ee/user/admin_area/settings/scim_setup.html'
+              - doc_title: Shibboleth
+                doc_url: 'ee/integration/shibboleth.html'
               - doc_title: Smartcard
                 doc_url: 'ee/administration/auth/smartcard.html'
+              - doc_title: Test OIDC/OAuth in GitLab
+                doc_url: 'ee/administration/auth/test_oidc_oauth.html'
               - doc_title: Twitter
                 doc_url: 'ee/integration/twitter.html'
               - doc_title: Vault
@@ -2496,6 +2500,8 @@ sections:
                 doc_url: 'ee/api/group_access_tokens.html'
               - doc_title: Group activity analytics
                 doc_url: 'ee/api/group_activity_analytics.html'
+              - doc_title: Group epic boards
+                doc_url: 'ee/api/group_epic_boards.html'
               - doc_title: Group Import/Export
                 doc_url: 'ee/api/group_import_export.html'
               - doc_title: Group-level protected branches
