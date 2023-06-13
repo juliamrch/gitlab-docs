@@ -21,10 +21,10 @@ stages:
 variables:
   BUNDLE_PATH__SYSTEM: 'false'
   GIT_DEPTH: '20'
-  ALPINE_VERSION: '3.17'
-  VALE_VERSION: '2.25.2'
+  ALPINE_VERSION: '3.18'
+  VALE_VERSION: '2.27.0'
   MARKDOWNLINT_VERSION: '0.34.0'  # Version also set in package.json
-  MARKDOWNLINT2_VERSION: '0.7.1'  # Version also set in package.json
+  MARKDOWNLINT2_VERSION: '0.8.1'  # Version also set in package.json
   RUBY_VERSION: '3.2.2'
 
 #
