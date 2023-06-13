@@ -962,3 +962,18 @@ redirects:
   - from: /ee/topics/git/tags.html
     to: /ee/user/project/repository/tags/index.html
     remove_date: 2024-02-27
+  - from: /ee/gitlab-basics/command-line-commands.html
+    to: /ee/user/index.html
+    remove_date: 2024-03-09
+  - from: /ee/topics/git/git_log.html
+    to: /ee/topics/git/index.html
+    remove_date: 2024-03-09
+  - from: /ee/topics/git/bisect.html
+    to: /ee/topics/git/index.html
+    remove_date: 2024-03-09
+  - from: /ee/topics/git/feature_branching.html
+    to: /ee/topics/git/index.html
+    remove_date: 2024-03-09
+  - from: /ee/topics/git/subtree.html
+    to: /ee/topics/git/index.html
+    remove_date: 2024-03-09
