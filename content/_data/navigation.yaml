@@ -467,6 +467,9 @@ sections:
             doc_url: 'ee/policy/maintenance.html'
           - doc_title: Deprecations by version
             doc_url: 'ee/update/deprecations.html'
+            docs:
+              - doc_title: 'Terminology'
+                doc_url: 'ee/update/terminology.html'
           - doc_title: Removals by version
             doc_url: 'ee/update/removals.html'
           - doc_title: What's new
