@@ -2392,6 +2392,8 @@ sections:
             doc_url: 'ee/integration/sourcegraph.html'
           - doc_title: Squash TM
             doc_url: 'ee/user/project/integrations/squash_tm.html'
+          - doc_title: Telegram
+            doc_url: 'ee/user/project/integrations/telegram.html'
           - doc_title: Trello Power-Ups
             doc_url: 'ee/integration/trello_power_up.html'
           - doc_title: Unify Circuit
