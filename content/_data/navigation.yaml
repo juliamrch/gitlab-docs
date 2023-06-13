@@ -1918,6 +1918,9 @@ sections:
             doc_url: 'ee/user/application_security/configuration/'
           - doc_title: Container Scanning
             doc_url: 'ee/user/application_security/container_scanning/'
+            docs:
+              - doc_title: 'Tutorial: Scan a Docker container for vulnerabilities'
+                doc_url: 'ee/tutorials/container_scanning/'
           - doc_title: Dependency Scanning
             doc_url: 'ee/user/application_security/dependency_scanning/'
             docs:
