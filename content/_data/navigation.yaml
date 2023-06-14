@@ -269,6 +269,8 @@ sections:
                     doc_url: 'charts/charts/nginx/'
                   - doc_title: Registry chart
                     doc_url: 'charts/charts/registry/'
+                  - doc_title: Zoekt chart
+                    doc_url: 'charts/charts/gitlab/gitlab-zoekt/'
                   - doc_title: Advanced
                     doc_url: 'charts/advanced/'
                     docs:
