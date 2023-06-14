@@ -977,3 +977,90 @@ redirects:
   - from: /ee/topics/git/subtree.html
     to: /ee/topics/git/index.html
     remove_date: 2024-03-09
+  - from: /ee/development/workspace/index.html
+    to: /ee/development/organization/index.html
+    remove_date: 2024-03-13
+  - from: /ee/development/workspace/
+    to: /ee/development/organization/index.html
+    remove_date: 2024-03-13
+  - from: /ee/user/packages/infrastructure_registry/index.html
+    to: /ee/user/packages/terraform_module_registry/index.html
+    remove_date: 2024-03-13
+  - from: /ee/user/packages/infrastructure_registry/
+    to: /ee/user/packages/terraform_module_registry/index.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-router-endpoints-classification.html
+    to: /ee/architecture/blueprints/cells/cells-feature-router-endpoints-classification.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-global-search.html
+    to: /ee/architecture/blueprints/cells/cells-feature-global-search.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/proposal-stateless-router-with-buffering-requests.html
+    to: /ee/architecture/blueprints/cells/proposal-stateless-router-with-buffering-requests.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-data-migration.html
+    to: /ee/architecture/blueprints/cells/cells-feature-data-migration.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-git-access.html
+    to: /ee/architecture/blueprints/cells/cells-feature-git-access.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-contributions-forks.html
+    to: /ee/architecture/blueprints/cells/cells-feature-contributions-forks.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-agent-for-kubernetes.html
+    to: /ee/architecture/blueprints/cells/cells-feature-agent-for-kubernetes.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-dashboard.html
+    to: /ee/architecture/blueprints/cells/cells-feature-dashboard.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-personal-namespaces.html
+    to: /ee/architecture/blueprints/cells/cells-feature-personal-namespaces.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-container-registry.html
+    to: /ee/architecture/blueprints/cells/cells-feature-container-registry.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-backups.html
+    to: /ee/architecture/blueprints/cells/cells-feature-backups.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-database-sequences.html
+    to: /ee/architecture/blueprints/cells/cells-feature-database-sequences.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-template.html
+    to: /ee/architecture/blueprints/cells/cells-feature-template.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-snippets.html
+    to: /ee/architecture/blueprints/cells/cells-feature-snippets.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-organizations.html
+    to: /ee/architecture/blueprints/cells/cells-feature-organizations.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-ci-runners.html
+    to: /ee/architecture/blueprints/cells/cells-feature-ci-runners.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-schema-changes.html
+    to: /ee/architecture/blueprints/cells/cells-feature-schema-changes.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-graphql.html
+    to: /ee/architecture/blueprints/cells/cells-feature-graphql.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-gitlab-pages.html
+    to: /ee/architecture/blueprints/cells/cells-feature-gitlab-pages.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/index.html
+    to: /ee/architecture/blueprints/cells/index.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/
+    to: /ee/architecture/blueprints/cells/index.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-uploads.html
+    to: /ee/architecture/blueprints/cells/cells-feature-uploads.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/proposal-stateless-router-with-routes-learning.html
+    to: /ee/architecture/blueprints/cells/proposal-stateless-router-with-routes-learning.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-admin-area.html
+    to: /ee/architecture/blueprints/cells/cells-feature-admin-area.html
+    remove_date: 2024-03-13
+  - from: /ee/architecture/blueprints/pods/pods-feature-secrets.html
+    to: /ee/architecture/blueprints/cells/cells-feature-secrets.html
+    remove_date: 2024-03-13
