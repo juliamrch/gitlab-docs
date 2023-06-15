@@ -20,7 +20,7 @@ export const fetchResults = async (query, filters, pageNumber, resultCount) => {
       new URLSearchParams({
         key: GOOGLE_SEARCH_KEY,
         cx: GPS_ID,
-        q: `${query}${filterQuery}`.replaceAll(' ', '*'),
+        q: `${query}${filterQuery}`.replaceAll(' ', '+'),
         start: (pageNumber - 1) * resultCount + 1,
       }),
   );

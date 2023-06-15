@@ -87,7 +87,7 @@ export default {
     formatSuggestion(suggestion) {
       // Drop the "+more" and any subsequent text from the correction.
       // These are filter values, which we include elsewhere.
-      return suggestion.split('+more').shift().trim().replaceAll('*', ' ');
+      return suggestion.split('+more').shift().trim().replaceAll('+', ' ');
     },
     async search(query, filters, corrected = false) {
       this.results = [];
