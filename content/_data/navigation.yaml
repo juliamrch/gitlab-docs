@@ -2175,6 +2175,8 @@ sections:
       - category_title: Analyze GitLab usage
         category_url: 'ee/user/analytics/'
         docs:
+          - doc_title: Analytics dashboards
+            doc_url: 'ee/user/analytics/analytics_dashboards.html'
           - doc_title: CI/CD analytics
             doc_url: 'ee/user/analytics/ci_cd_analytics.html'
           - doc_title: Code review analytics
