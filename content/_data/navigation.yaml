@@ -1430,6 +1430,8 @@ sections:
                 doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
               - doc_title: Forking workflow
                 doc_url: 'ee/user/project/repository/forking_workflow.html'
+              - doc_title: GeoJSON files
+                doc_url: 'ee/user/project/repository/geojson.html'
               - doc_title: Git attributes
                 doc_url: 'ee/user/project/git_attributes.html'
               - doc_title: Git LFS
