@@ -3413,6 +3413,9 @@ sections:
       # GitLab Pages development documentation
       - category_title: Contribute to GitLab Pages
         category_url: 'ee/development/pages/'
+        docs:
+          - doc_title: Using dnsmasq to dynamically handle GitLab Pages subdomains
+            doc_url: 'ee/development/pages/dnsmasq.html'
       # End GitLab Pages development documentation
 
       # Distribution development documentation
