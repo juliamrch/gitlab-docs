@@ -20,6 +20,7 @@
     <script src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
     <% if @config[:search_backend] == "google" %>
     <script src="<%= @items['/frontend/search/google.*'].path %>"></script>
+    <script src="<%= @items['/frontend/search/recently_viewed.*'].path %>"></script>
     <% else %>
     <script src="<%= @items['/frontend/search/lunrsearch.*'].path %>"></script>
     <% end %>

@@ -8,11 +8,13 @@ import {
 import { debounce } from 'lodash';
 import { directive as clickOutside } from 'v-click-outside';
 import { fetchResults, MAX_RESULTS_PER_PAGE } from '../../services/google_search_api';
+import RecentHistory from './recently_viewed.vue';
 
 export default {
   components: {
     GlSearchBoxByType,
     GlLink,
+    RecentHistory,
   },
   directives: {
     clickOutside,
@@ -37,6 +39,7 @@ export default {
       activeLink: -1,
       showTooltip: true,
       suggestion: '',
+      historyItems: 0,
     };
   },
   computed: {
@@ -45,6 +48,9 @@ export default {
     },
     hasNoResults() {
       return !this.results.length && this.submitted && this.searchQuery;
+    },
+    showHistory() {
+      return !this.searchQuery;
     },
   },
   watch: {
@@ -98,7 +104,8 @@ export default {
         const activeIndex = this.activeLink + (isArrowUp ? -1 : 1);
 
         // If we're at the top or bottom of the list, go back to the search box.
-        if (activeIndex < 0 || activeIndex > this.results.length) {
+        const listLength = this.searchQuery ? this.results.length : this.historyItems - 1;
+        if (activeIndex < 0 || activeIndex > listLength) {
           this.activeLink = -1;
           searchBox.focus();
           // Reset the value after focus so that the cursor is at the end of the text.
@@ -151,7 +158,7 @@ export default {
     </form>
 
     <div
-      v-show="showResultPanel && submitted"
+      v-show="showResultPanel"
       class="gs-results gl-absolute gl-z-index-200 gl-bg-white gl-rounded gl-px-3 gl-shadow"
     >
       <ul v-show="results.length" data-testid="search-results" class="gl-pl-0 gl-mb-3 gl-pt-3">
@@ -183,6 +190,7 @@ export default {
       >
         No results found.
       </p>
+      <recent-history v-if="showHistory" @pageHistoryInit="(items) => (historyItems = items)" />
     </div>
   </div>
 </template>
