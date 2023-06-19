@@ -67,3 +67,10 @@ export const mockErrorResults = {
     status: 'PERMISSION_DENIED',
   },
 };
+
+export const mockHistoryCookie = [
+  { path: '/runner/', title: 'GitLab Runner' },
+  { path: '/ee/topics/plan_and_track.html', title: 'Plan and track work' },
+  { path: '/ee/user/analytics/', title: 'Analyze GitLab usage' },
+  { path: '/ee/user/infrastructure/', title: 'Infrastructure management' },
+];
