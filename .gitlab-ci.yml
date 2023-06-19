@@ -23,7 +23,7 @@ variables:
   GIT_DEPTH: '20'
   ALPINE_VERSION: '3.18'
   VALE_VERSION: '2.27.0'
-  MARKDOWNLINT_VERSION: '0.34.0'  # Version also set in package.json
+  MARKDOWNLINT_VERSION: '0.35.0'  # Version also set in package.json
   MARKDOWNLINT2_VERSION: '0.8.1'  # Version also set in package.json
   RUBY_VERSION: '3.2.2'
 
