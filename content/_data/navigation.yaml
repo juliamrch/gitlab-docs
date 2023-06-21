@@ -1028,8 +1028,6 @@ sections:
             doc_url: 'ee/ci/variables/#cicd-variable-security'
           - doc_title: Token overview
             doc_url: 'ee/security/token_overview.html'
-          - doc_title: Compliance features
-            doc_url: 'ee/administration/compliance.html'
           - doc_title: Respond to security incidents
             doc_url: 'ee/security/responding_to_security_incidents.html'
           - doc_title: Hardening
@@ -1112,10 +1110,6 @@ sections:
                 doc_url: 'ee/user/group/import/'
               - doc_title: SAML Group Sync
                 doc_url: 'ee/user/group/saml_sso/group_sync.html'
-              - doc_title: Compliance frameworks
-                doc_url: 'ee/user/group/compliance_frameworks.html'
-              - doc_title: 'Tutorial: Create a compliance pipeline'
-                doc_url: 'ee/tutorials/compliance_pipeline/'
               - doc_title: Troubleshooting SAML
                 doc_url: 'ee/user/group/saml_sso/troubleshooting.html'
               - doc_title: SAML SSO for GitLab.com groups
@@ -1137,6 +1131,39 @@ sections:
                 doc_url: 'ee/user/group/reporting/git_abuse_rate_limit.html'
               - doc_title: Troubleshooting groups
                 doc_url: 'ee/user/group/troubleshooting.html'
+          - doc_title: Compliance
+            doc_url: 'ee/administration/compliance.html'
+            docs:
+              - doc_title: Audit events
+                doc_url: 'ee/administration/audit_events.html'
+              - doc_title: Audit event streaming
+                doc_url: 'ee/administration/audit_event_streaming/'
+                docs:
+                  - doc_title: Examples
+                    doc_url: 'ee/administration/audit_event_streaming/examples.html'
+                  - doc_title: GraphQL API
+                    doc_url: 'ee/administration/audit_event_streaming/graphql_api.html'
+              - doc_title: Audit reports
+                doc_url: 'ee/administration/audit_reports.html'
+              - doc_title: Compliance frameworks
+                doc_url: 'ee/user/group/compliance_frameworks.html'
+                docs:
+                  - doc_title: 'Tutorial: Create a compliance pipeline'
+                    doc_url: 'ee/tutorials/compliance_pipeline/'
+              - doc_title: Compliance reports
+                doc_url: 'ee/user/compliance/compliance_report/'
+              - doc_title: Compliance tools
+                doc_url: 'ee/user/compliance/'
+                docs:
+                  - doc_title: License scanning of CycloneDX files
+                    doc_url: 'ee/user/compliance/license_scanning_of_cyclonedx_files/'
+                  - doc_title: License approval policies
+                    doc_url: 'ee/user/compliance/license_approval_policies.html'
+                  - doc_title: License list
+                    doc_url: 'ee/user/compliance/license_list.html'
+                    docs:
+                      - doc_title: SPDX license list import
+                        doc_url: 'ee/raketasks/spdx.html'
           - doc_title: Enterprise users
             doc_url: 'ee/user/enterprise_user/'
           - doc_title: User account options
@@ -1198,22 +1225,6 @@ sections:
             doc_url: 'ee/user/project/badges.html'
           - doc_title: Code intelligence
             doc_url: 'ee/user/project/code_intelligence.html'
-          - doc_title: Compliance
-            doc_url: 'ee/user/compliance/'
-            docs:
-              - doc_title: License scanning of CycloneDX files
-                doc_url: 'ee/user/compliance/license_scanning_of_cyclonedx_files/'
-              - doc_title: License approval policies
-                doc_url: 'ee/user/compliance/license_approval_policies.html'
-              - doc_title: License list
-                doc_url: 'ee/user/compliance/license_list.html'
-                docs:
-                  - doc_title: SPDX license list import
-                    doc_url: 'ee/raketasks/spdx.html'
-              - doc_title: Compliance report
-                doc_url: 'ee/user/compliance/compliance_report/'
-              - doc_title: License Compliance (deprecated)
-                doc_url: 'ee/user/compliance/license_compliance/'
           - doc_title: Description templates
             doc_url: 'ee/user/project/description_templates.html'
           - doc_title: Deploy keys
@@ -2219,17 +2230,6 @@ sections:
             doc_url: 'ee/user/analytics/value_streams_dashboard.html'
           - doc_title: Instance-level analytics
             doc_url: 'ee/user/admin_area/analytics/'
-          - doc_title: Audit events
-            doc_url: 'ee/administration/audit_events.html'
-          - doc_title: Audit event streaming
-            doc_url: 'ee/administration/audit_event_streaming/'
-            docs:
-              - doc_title: Examples
-                doc_url: 'ee/administration/audit_event_streaming/examples.html'
-              - doc_title: GraphQL API
-                doc_url: 'ee/administration/audit_event_streaming/graphql_api.html'
-          - doc_title: Audit reports
-            doc_url: 'ee/administration/audit_reports.html'
           - doc_title: Metrics
             doc_url: 'ee/administration/monitoring/'
             docs:
