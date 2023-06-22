@@ -673,6 +673,8 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/incident_management_rate_limits.html'
               - doc_title: Instance template repository
                 doc_url: 'ee/user/admin_area/settings/instance_template_repository.html'
+              - doc_title: IP address restrictions
+                doc_url: 'ee/user/admin_area/reporting/ip_addr_restrictions.html'
               - doc_title: Job artifacts
                 doc_url: 'ee/administration/job_artifacts.html'
               - doc_title: Job logs
