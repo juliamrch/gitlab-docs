@@ -2400,8 +2400,6 @@ sections:
             doc_url: 'ee/user/project/integrations/slack.html'
           - doc_title: Slack slash commands
             doc_url: 'ee/user/project/integrations/slack_slash_commands.html'
-          - doc_title: Slash commands in Mattermost and Slack
-            doc_url: 'ee/integration/slash_commands.html'
           - doc_title: Sourcegraph
             doc_url: 'ee/integration/sourcegraph.html'
           - doc_title: Squash TM
