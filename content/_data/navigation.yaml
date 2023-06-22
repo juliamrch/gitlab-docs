@@ -1946,8 +1946,6 @@ sections:
           - doc_title: Dependency Scanning
             doc_url: 'ee/user/application_security/dependency_scanning/'
             docs:
-              - doc_title: Dependency Scanning Analyzers
-                doc_url: 'ee/user/application_security/dependency_scanning/analyzers.html'
               - doc_title: "Tutorial: Set up dependency scanning"
                 doc_url: 'ee/tutorials/dependency_scanning.html'
           - doc_title: Dependency List
