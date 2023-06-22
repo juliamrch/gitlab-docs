@@ -6,7 +6,7 @@
 # Test the links in the global nav for all MRs in `gitlab-docs`
 #
 test_global_nav_links:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.17-ruby-3.2.2-63d48bf7
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.18-ruby-3.2.2-4207821e
   extends:
     - .rules_site_tests
     - .bundle
@@ -193,7 +193,7 @@ test_EOL_whitespace:
     - .rules_chores
     - .bundle
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.17-ruby-3.2.2-63d48bf7
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.18-ruby-3.2.2-4207821e
   needs: []
   before_script: []
   dependencies: []
@@ -210,7 +210,7 @@ test_unlinked_images:
     - .rules_chores
     - .bundle
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.17-ruby-3.2.2-63d48bf7
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.18-ruby-3.2.2-4207821e
   needs: []
   before_script: []
   dependencies: []
