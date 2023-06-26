@@ -15,35 +15,18 @@
   src: url('../vendor/GitLabSans.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: 'GitLab Mono';
+  font-weight: 100 900;
   font-display: swap;
   font-style: normal;
-  src: url('../vendor/JetBrainsMono.woff2') format('woff2');
+  src: url('../vendor/GitLabMono.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: 'GitLab Mono';
+  font-weight: 100 900;
   font-display: swap;
-  font-weight: bold;
-  src: url('../vendor/JetBrainsMono-Bold.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-display: swap;
-  font-weight: normal;
   font-style: italic;
-  src: url('../vendor/JetBrainsMono-Italic.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-display: swap;
-  font-weight: bold;
-  font-style: italic;
-  src: url('../vendor/JetBrainsMono-BoldItalic.woff2') format('woff2');
-}
-
-/* https://gitlab.com/gitlab-org/gitlab/-/merge_requests/107592/ */
-* {
-  font-variant-ligatures: none;
+  src: url('../vendor/GitLabMono-Italic.woff2') format('woff2');
 }
 
 .gl-docs {
