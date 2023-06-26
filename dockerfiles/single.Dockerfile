@@ -34,7 +34,6 @@ RUN apk add --no-cache -U \
     minify      \
     nodejs      \
     openssl     \
-    pngquant    \
     ruby-dev    \
     tar         \
     xz          \
@@ -66,11 +65,9 @@ RUN if [ "$SEARCH_BACKEND" = "lunr" ]; then make build-lunr-index; fi
 # Run post-processing on archive:
 #
 # 1. Normalize the links in /source/public using version $VER.
-# 2. Compress images in /source/public.
-# 3. Minify the files in /source/public into /dest, creating /dest/public. Must run last.
-# 4. Rename /dest/public to /dest/$VER
+# 2. Minify the files in /source/public into /dest, creating /dest/public. Must run last.
+# 3. Rename /dest/public to /dest/$VER
 RUN /source/scripts/normalize-links.sh /source/public $VER   \
-    && /source/scripts/compress_images.sh /source/public     \
     && mkdir /dest                                           \
     && /source/scripts/minify-assets.sh /dest /source/public \
     && mv /dest/public "/dest/${VER}"
