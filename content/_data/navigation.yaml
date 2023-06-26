@@ -1950,6 +1950,8 @@ sections:
                 doc_url: 'ee/user/application_security/dependency_scanning/analyzers.html'
               - doc_title: "Tutorial: Set up dependency scanning"
                 doc_url: 'ee/tutorials/dependency_scanning.html'
+          - doc_title: "Comparison: Dependency Scanning and Container Scanning"
+            doc_url: 'ee/user/application_security/comparison_dependency_and_container_scanning.html'
           - doc_title: Dependency List
             doc_url: 'ee/user/application_security/dependency_list/'
           - doc_title: Static Application Security Testing
