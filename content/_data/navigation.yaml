@@ -2385,11 +2385,6 @@ sections:
             doc_url: 'ee/user/admin_area/settings/project_integration_management.html'
           - doc_title: Project integrations
             doc_url: 'ee/user/project/integrations/'
-          - doc_title: Prometheus
-            doc_url: 'ee/user/project/integrations/prometheus.html'
-            docs:
-              - doc_title: Sample data Rake task
-                doc_url: 'ee/raketasks/generate_sample_prometheus_data.html'
           - doc_title: Pumble
             doc_url: 'ee/user/project/integrations/pumble.html'
           - doc_title: reCAPTCHA
