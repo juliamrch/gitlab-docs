@@ -472,8 +472,6 @@ sections:
             docs:
               - doc_title: 'Terminology'
                 doc_url: 'ee/update/terminology.html'
-          - doc_title: Removals by version
-            doc_url: 'ee/update/removals.html'
           - doc_title: What's new
             doc_url: 'ee/administration/whats-new.html'
 
