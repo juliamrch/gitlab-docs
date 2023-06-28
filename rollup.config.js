@@ -93,11 +93,11 @@ module.exports = globSync('content/frontend/**/*.js')
             dest: vendorDir,
           },
           {
-            src: './node_modules/@gitlab/fonts/gitlab-sans/GitLabSans.woff2',
+            src: './node_modules/@gitlab/fonts/gitlab-sans/GitLabSans*.woff2',
             dest: vendorDir,
           },
           {
-            src: './node_modules/@gitlab/fonts/gitlab-mono/GitLabMono*',
+            src: './node_modules/@gitlab/fonts/gitlab-mono/GitLabMono*.woff2',
             dest: vendorDir,
           },
         ],
