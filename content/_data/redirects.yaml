@@ -1064,3 +1064,6 @@ redirects:
   - from: /ee/architecture/blueprints/pods/pods-feature-secrets.html
     to: /ee/architecture/blueprints/cells/cells-feature-secrets.html
     remove_date: 2024-03-13
+  - from: /ee/user/profile/saved_replies.html
+    to: /ee/user/profile/comment_templates.html
+    remove_date: 2024-03-22
