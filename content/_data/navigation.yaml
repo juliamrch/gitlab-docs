@@ -981,12 +981,12 @@ sections:
           - doc_title: Rake tasks
             doc_url: 'ee/raketasks/'
           - doc_title: Backup and restore
-            doc_url: 'ee/raketasks/backup_restore.html'
+            doc_url: 'ee/administration/backup_restore/'
             docs:
               - doc_title: Back up GitLab
-                doc_url: 'ee/raketasks/backup_gitlab.html'
+                doc_url: 'ee/administration/backup_restore/backup_gitlab.html'
               - doc_title: Restore GitLab
-                doc_url: 'ee/raketasks/restore_gitlab.html'
+                doc_url: 'ee/administration/backup_restore/restore_gitlab.html'
           - doc_title: Inactive project deletion
             doc_url: 'ee/administration/inactive_project_deletion.html'
           - doc_title: Move repositories
