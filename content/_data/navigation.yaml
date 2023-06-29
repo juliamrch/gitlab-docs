@@ -1698,9 +1698,9 @@ sections:
               - doc_title: Testing
                 doc_url: 'ee/ci/testing/'
                 docs:
-                  - doc_title: Accessibility testing (deprecated)
+                  - doc_title: Accessibility testing
                     doc_url: 'ee/ci/testing/accessibility_testing.html'
-                  - doc_title: Browser performance testing (deprecated)
+                  - doc_title: Browser performance testing
                     doc_url: 'ee/ci/testing/browser_performance_testing.html'
                   - doc_title: Code coverage
                     doc_url: 'ee/ci/testing/code_coverage.html'
@@ -1708,7 +1708,7 @@ sections:
                     doc_url: 'ee/ci/testing/code_quality.html'
                   - doc_title: Fail fast testing
                     doc_url: 'ee/ci/testing/fail_fast_testing.html'
-                  - doc_title: Load performance testing (deprecated)
+                  - doc_title: Load performance testing
                     doc_url: 'ee/ci/testing/load_performance_testing.html'
                   - doc_title: Metrics reports
                     doc_url: 'ee/ci/testing/metrics_reports.html'
