@@ -123,7 +123,7 @@ ol {
       box-shadow: none;
     }
   }
-  @media (max-width: $bp-xl) {
+  @media (max-width: calc($bp-xl - 1px)) {
     width: 0;
 
     .nav-toggle {
