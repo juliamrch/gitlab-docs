@@ -23,6 +23,9 @@ export default {
     noResults() {
       return this.submitted && !this.results.length && !this.error;
     },
+    version() {
+      return document.querySelector('meta[name="gitlab-docs-version"]').content;
+    },
   },
   async created() {
     try {
@@ -93,9 +96,14 @@ export default {
 
 <template>
   <div class="lunr-search gl-mb-9">
-    <h1>Search</h1>
+    <h1 data-testid="version-header">Search the {{ version }} docs</h1>
     <gl-search-box-by-click v-model="query" :value="query" @submit="onSubmit" />
-    <div v-if="results.length" class="gl-font-sm gl-mb-6">{{ results.length }} results found</div>
+    <div v-if="results.length" class="gl-font-sm gl-mb-6">
+      {{ results.length }} results found via
+      <a href="https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/search.md#lunrjs-search">
+        Lunr.js
+      </a>
+    </div>
 
     <ul v-if="results.length">
       <li v-for="result in results" :key="result.ref">
