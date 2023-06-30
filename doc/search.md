@@ -59,9 +59,9 @@ As this API key is used in frontend code, it is a public key, but storing it as 
 
 ## Lunr.js Search
 
-Lunr.js is available as an alternative search backend for self-hosted GitLab Docs installations. Lunr search can also be used in offline or air-gapped environments. Lunr search requires an additional build step to create a search index.
+[Lunr.js](https://lunrjs.com/) is available as an alternative search backend for archived and self-hosted GitLab Docs installations. Lunr search can also be used in offline or air-gapped environments. Lunr search requires an additional build step to create a search index.
 
-Documentation review apps use Lunr search by default.
+Documentation review apps and versions of the site running on [https://archives.docs.gitlab.com](archives.docs.gitlab.com) use Lunr search by default.
 
 ## Development
 
