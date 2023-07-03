@@ -14,10 +14,12 @@ import {
   MAX_TOTAL_RESULTS,
 } from '../../services/google_search_api';
 import SearchFilters from './search_filters.vue';
+import VersionSearch from './version_search.vue';
 
 export default {
   components: {
     SearchFilters,
+    VersionSearch,
     GlSearchBoxByClick,
     GlLink,
     GlLoadingIcon,
@@ -135,7 +137,7 @@ export default {
 
 <template>
   <div class="google-search gl-mb-9">
-    <h1 class="gl-pt-0! gl-mt-7!">Search</h1>
+    <h1 class="gl-pt-0! gl-mt-7!">Search the latest docs</h1>
     <div class="gl-h-11 gl-mb-5">
       <gl-search-box-by-click
         v-model="query"
@@ -153,6 +155,8 @@ export default {
           :initial-selected="activeFilters"
           @filteredSearch="(filters) => search(query, filters)"
         />
+
+        <version-search :query="query" />
       </div>
 
       <div class="lg-w-70p">
