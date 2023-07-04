@@ -3129,6 +3129,8 @@ sections:
                     doc_url: 'ee/development/fe_guide/design_anti_patterns.html'
                   - doc_title: Design patterns
                     doc_url: 'ee/development/fe_guide/design_patterns.html'
+                  - doc_title: Design
+                    doc_url: 'ee/development/fe_guide/design_tokens.html'
                   - doc_title: Development process
                     doc_url: 'ee/development/fe_guide/development_process.html'
                   - doc_title: Event tracking
