@@ -54,7 +54,8 @@ module Nanoc::Helpers
       # content file inside gitlab-docs.
       identifier_path = item.identifier.to_s.delete_prefix("/")
       product, _, repo_doc_path = identifier_path.partition("/")
-      if repo = PRODUCT_REPOS[product]
+      repo = PRODUCT_REPOS[product]
+      if repo
         file_path = "#{repo[:doc_directory]}/#{repo_doc_path}"
         return repo.merge({ file_path: file_path })
       end
