@@ -1731,6 +1731,8 @@ sections:
                 docs:
                   - doc_title: ID token authentication
                     doc_url: 'ee/ci/secrets/id_token_authentication.html'
+                  - doc_title: 'Tutorial: Update HashiCorp Vault configuration to use ID Tokens'
+                    doc_url: 'ee/ci/secrets/convert-to-id-tokens.html'
               - doc_title: Connect to cloud services
                 doc_url: 'ee/ci/cloud_services/'
                 docs:
