@@ -678,7 +678,7 @@ sections:
               - doc_title: Job logs
                 doc_url: 'ee/administration/job_logs.html'
               - doc_title: Labels
-                doc_url: 'ee/user/admin_area/labels.html'
+                doc_url: 'ee/administration/labels.html'
               - doc_title: Log system
                 doc_url: 'ee/administration/logs/'
                 docs:
