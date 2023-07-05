@@ -2462,6 +2462,8 @@ sections:
                 doc_url: 'ee/api/custom_attributes.html'
               - doc_title: Dashboard annotations
                 doc_url: 'ee/api/metrics_dashboard_annotations.html'
+              - doc_title: Database migrations
+                doc_url: 'ee/api/database_migrations.html'
               - doc_title: Debian
                 doc_url: 'ee/api/packages/debian.html'
               - doc_title: Debian group distributions
