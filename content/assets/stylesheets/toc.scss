@@ -97,7 +97,7 @@ $nav-link-font-size: 0.875rem;
     height: 100vh;
   }
 
-  @media(max-width: $bp-xl) {
+  @media(max-width: calc($bp-xl - 1px)) {
     margin-top: 7rem;
   }
 }
@@ -119,7 +119,7 @@ $nav-link-font-size: 0.875rem;
   }
 }
 
-@media(max-width: $bp-xl) {
+@media(max-width: calc($bp-xl - 1px)) {
   .doc-nav {
     margin-left: -20px;
     margin-top: -55px;
