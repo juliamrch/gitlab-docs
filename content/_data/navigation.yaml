@@ -1640,6 +1640,8 @@ sections:
                     doc_url: 'ee/ci/yaml/artifacts_reports.html'
                   - doc_title: Include examples
                     doc_url: 'ee/ci/yaml/includes.html'
+                  - doc_title: Signing examples
+                    doc_url: 'ee/ci/yaml/signing_examples.html'
                   - doc_title: Workflow examples
                     doc_url: 'ee/ci/yaml/workflow.html'
               - doc_title: CI/CD Components
