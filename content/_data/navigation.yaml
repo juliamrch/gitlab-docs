@@ -2391,8 +2391,6 @@ sections:
             doc_url: 'ee/user/project/integrations/pumble.html'
           - doc_title: reCAPTCHA
             doc_url: 'ee/integration/recaptcha.html'
-          - doc_title: Security partners
-            doc_url: 'ee/integration/security_partners/'
           - doc_title: ServiceNow
             doc_url: 'ee/user/project/integrations/servicenow.html'
           - doc_title: Slack notifications (deprecated)
