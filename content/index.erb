@@ -18,9 +18,13 @@ title: GitLab Documentation
               <% if @item[:searchbar].nil? %>
                 <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
                   <% if @config[:search_backend] == "google" %>
-                    <div class="js-google-search-form"></div>
+                    <div class="js-google-search-form gl-spinner-container">
+                      <span aria-label="Loading" class="gl-vertical-align-text-bottom! gl-spinner gl-spinner-dark gl-spinner-md"></span>
+                    </div>
                   <% elsif @config[:search_backend] == "lunr" %>
-                    <div class="js-search-form"></div>
+                    <div class="js-search-form gl-spinner-container">
+                      <span aria-label="Loading" class="gl-vertical-align-text-bottom! gl-spinner gl-spinner-dark gl-spinner-md"></span>
+                    </div>
                   <% end %>
                 <% end %>
               <% end %>
