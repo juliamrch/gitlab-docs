@@ -2207,7 +2207,7 @@ sections:
           - doc_title: Contribution analytics
             doc_url: 'ee/user/group/contribution_analytics/'
           - doc_title: DevOps adoption by instance
-            doc_url: 'ee/user/admin_area/analytics/dev_ops_reports.html'
+            doc_url: 'ee/administration/analytics/dev_ops_reports.html'
           - doc_title: DevOps adoption by group
             doc_url: 'ee/user/group/devops_adoption/'
           - doc_title: DORA metrics
