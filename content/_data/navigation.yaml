@@ -701,7 +701,7 @@ sections:
               - doc_title: Rate limits on Repository files API
                 doc_url: 'ee/user/admin_area/settings/files_api_rate_limits.html'
               - doc_title: Rate limits on Git LFS
-                doc_url: 'ee/user/admin_area/settings/git_lfs_rate_limits.html'
+                doc_url: 'ee/administration/settings/git_lfs_rate_limits.html'
               - doc_title: Rate limits on Git SSH operations
                 doc_url: 'ee/user/admin_area/settings/rate_limits_on_git_ssh_operations.html'
               - doc_title: Rate limits on issue creation
