@@ -3302,6 +3302,8 @@ sections:
                     doc_url: 'ee/development/sec/analyzer_development_guide.html'
                   - doc_title: CycloneDX property taxonomy
                     doc_url: 'ee/development/sec/cyclonedx_property_taxonomy.html'
+                  - doc_title: Gemnasium analyzer data
+                    doc_url: 'ee/development/sec/gemnasium_analyzer_data.html'
                   - doc_title: Security report ingestion
                     doc_url: 'ee/development/sec/security_report_ingestion_overview.html'
                   - doc_title: Token Revocation API
