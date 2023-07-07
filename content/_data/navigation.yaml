@@ -1077,7 +1077,7 @@ sections:
           - doc_title: Configure the libravatar service
             doc_url: 'ee/administration/libravatar.html'
           - doc_title: Broadcast messages
-            doc_url: 'ee/user/admin_area/broadcast_messages.html'
+            doc_url: 'ee/administration/broadcast_messages.html'
           - doc_title: Email from GitLab
             doc_url: 'ee/user/admin_area/email_from_gitlab.html'
           - doc_title: Rake tasks
