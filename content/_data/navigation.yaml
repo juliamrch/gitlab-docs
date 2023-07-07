@@ -1586,6 +1586,8 @@ sections:
                     doc_url: 'ee/ci/pipelines/pipeline_efficiency.html'
                   - doc_title: Pipeline resource groups
                     doc_url: 'ee/ci/resource_groups/'
+                  - doc_title: Pipeline security
+                    doc_url: 'ee/ci/pipelines/pipeline_security.html'
                   - doc_title: Directed acyclic graph (DAG)
                     doc_url: 'ee/ci/directed_acyclic_graph/'
                   - doc_title: Downstream pipelines
