@@ -846,7 +846,7 @@ sections:
                   - doc_title: Praefect Rake tasks
                     doc_url: 'ee/administration/raketasks/praefect.html'
                   - doc_title: Gitaly timeouts
-                    doc_url: 'ee/user/admin_area/settings/gitaly_timeouts.html'
+                    doc_url: 'ee/administration/settings/gitaly_timeouts.html'
               - doc_title: Repository storage Rake tasks
                 doc_url: 'ee/administration/raketasks/storage.html'
               - doc_title: List repositories Rake task
