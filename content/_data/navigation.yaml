@@ -534,6 +534,8 @@ sections:
             doc_url: 'runner/configuration/init.html'
           - doc_title: Speed up job execution
             doc_url: 'runner/configuration/speed_up_job_execution.html'
+          - doc_title: 'Tutorial: Configure GitLab Runner to use the Google Kubernetes Engine'
+            doc_url: 'ee/tutorials/configure_gitlab_runner_to_use_gke/'
           - doc_title: Troubleshooting
             doc_url: 'runner/faq/'
 
@@ -1832,8 +1834,6 @@ sections:
                 doc_url: 'ee/ci/runners/configure_runners.html'
               - doc_title: Scale a fleet of runners
                 doc_url: 'runner/fleet_scaling/'
-              - doc_title: 'Tutorial: Configure GitLab Runner to use the Google Kubernetes Engine'
-                doc_url: 'ee/tutorials/configure_gitlab_runner_to_use_gke/'
               - doc_title: Best practices for large repositories
                 doc_url: 'ee/ci/large_repositories/'
           - doc_title: GitLab Pages
