@@ -13,9 +13,13 @@
           <% location = @item.identifier.to_s.split('/')[1] %>
           <% unless %w(search index.erb).any?(location) %>
             <% if @config[:search_backend] == "google" %>
-              <div class="js-google-search-form"></div>
+              <div class="js-google-search-form gl-spinner-container">
+                <span aria-label="Loading" class="gl-ml-3 gl-vertical-align-text-bottom! gl-spinner gl-spinner-light gl-spinner-sm"></span>
+              </div>
             <% elsif @config[:search_backend] == "lunr" %>
-              <div class="js-search-form"></div>
+              <div class="js-search-form gl-spinner-container">
+                <span aria-label="Loading" class="gl-ml-3 gl-vertical-align-text-bottom! gl-spinner gl-spinner-light gl-spinner-sm"></span>
+              </div>
             <% end %>
           <% end %>
         <% end %>
