@@ -1788,7 +1788,7 @@ sections:
                     doc_url: 'ee/ci/runners/saas/macos_saas_runner.html'
                   - doc_title: Windows
                     doc_url: 'ee/ci/runners/saas/windows_saas_runner.html'
-              - doc_title: The scope of runners
+              - doc_title: Manage runners
                 doc_url: 'ee/ci/runners/runners_scope.html'
               - doc_title: Register a runner
                 doc_url: 'runner/register/'
