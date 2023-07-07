@@ -633,7 +633,7 @@ sections:
               - doc_title: Account and limit settings
                 doc_url: 'ee/user/admin_area/settings/account_and_limit_settings.html'
               - doc_title: Appearance
-                doc_url: 'ee/user/admin_area/appearance.html'
+                doc_url: 'ee/administration/appearance.html'
               - doc_title: Authentication
                 doc_url: 'ee/topics/authentication/'
               - doc_title: CI/CD
