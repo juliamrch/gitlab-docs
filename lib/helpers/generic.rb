@@ -57,6 +57,8 @@ module Nanoc::Helpers
     #
     # Get the top-level section for a page, based on the global navigation.
     #
+    # Returns a string for use in the gitlab-docs-section metatag.
+    #
     def docs_section(path)
       path = path[1..] # remove the leading slash
 
@@ -84,6 +86,100 @@ module Nanoc::Helpers
       end
 
       false
+    end
+
+    #
+    # Generate a breadcrumb trail for a page, based on the global nav.
+    #
+    # Returns an array structured to fit the schema.org breadcrumbList spec.
+    # See https://schema.org/BreadcrumbList
+    #
+    def build_breadcrumb_list(path)
+      breadcrumb_list = []
+
+      data = get_nav_sections
+      crumbs = breadcrumb_trail(data, path[1..]) # remove the leading slash
+
+      return nil if crumbs.empty?
+
+      crumbs.each_with_index do |crumb, index|
+        structured_crumb = {
+          :@type => "ListItem",
+          :position => index + 1,
+          :name => crumb[:name]
+        }
+
+        structured_crumb[:item] = "https://docs.gitlab.com/#{crumb[:item]}" if crumb[:item] && index < crumbs.length - 1
+        breadcrumb_list << structured_crumb
+      end
+
+      return nil if breadcrumb_list.empty?
+
+      {
+        '@context': "https://schema.org",
+        '@type': "BreadcrumbList",
+        itemListElement: breadcrumb_list
+      }
+    end
+
+    #
+    # Traverse the menu and return an array of breadcrumbs for a given item.
+    #
+    # This is used to fill in the itemListElement property in the
+    # BreadcrumbList JSON-LD object, which is included in the head of each page.
+    #
+    def breadcrumb_trail(data, path)
+      return [] if data.empty?
+
+      data.each do |item|
+        # 1st level items
+        if item[:section_url] == path
+          return [{ name: item[:section_title], item: item[:section_url] }]
+
+        # 2nd level items
+        elsif item.key?(:section_categories)
+          result = breadcrumb_trail(item[:section_categories], path)
+          next if result.empty?
+
+          return [{ name: item[:section_title], item: item[:section_url] }] + result
+
+        # 3rd level items
+        elsif item.key?(:category_url) && item[:category_url] == path
+          return [{ name: item[:category_title], item: item[:category_url] }]
+
+        # 4th-6th level items
+        elsif item.key?(:docs)
+          result = breadcrumb_trail_docs(item[:docs], path)
+          next if result.empty?
+
+          return [{ name: item[:category_title], item: item[:category_url] }] + result
+        end
+      end
+
+      []
+    end
+
+    #
+    # Builds a breadcrumb trail for 4th-6th level menu items.
+    #
+    # We can use a recursive method for these since they use the same
+    # property names at each level.
+    #
+    def breadcrumb_trail_docs(docs, path)
+      return [] if docs.empty?
+
+      docs.each do |doc|
+        if doc[:doc_url] == path
+          return [{ name: doc[:doc_title], item: doc[:doc_url] }]
+        elsif doc.key?(:docs)
+          result = breadcrumb_trail_docs(doc[:docs], path)
+          next if result.empty?
+
+          return [{ name: doc[:doc_title], item: doc[:doc_url] }] + result
+        end
+      end
+
+      []
     end
   end
 end

@@ -22,6 +22,9 @@
 <script>const GOOGLE_SEARCH_KEY = "<%= @config[:google_search_key] %>";</script>
 <% end %>
 
+<!-- Breadcrumb JSON schema -->
+<%= render '/schema-breadcrumblist.html' %>
+
 <!-- Enable CSP headers -->
 <% unless ENV['DISABLE_CSP'] %>
 <%= render '/csp.*' %>
