@@ -670,7 +670,7 @@ sections:
               - doc_title: Health Check
                 doc_url: 'ee/user/admin_area/monitoring/health_check.html'
               - doc_title: Incident management rate limits
-                doc_url: 'ee/user/admin_area/settings/incident_management_rate_limits.html'
+                doc_url: 'ee/administration/settings/incident_management_rate_limits.html'
               - doc_title: Instance template repository
                 doc_url: 'ee/user/admin_area/settings/instance_template_repository.html'
               - doc_title: IP address restrictions
