@@ -1,0 +1,7 @@
+<% breadcrumb_json = build_breadcrumb_list(@item.path.to_s) %>
+
+<% unless breadcrumb_json.nil? %>
+<script type="application/ld+json">
+<%= JSON.pretty_generate(breadcrumb_json) %>
+</script>
+<% end %>
