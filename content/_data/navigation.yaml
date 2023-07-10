@@ -725,7 +725,7 @@ sections:
               - doc_title: Security and Compliance
                 doc_url: 'ee/user/admin_area/settings/security_and_compliance.html'
               - doc_title: Sign-in and help page text
-                doc_url: 'ee/user/admin_area/settings/help_page.html'
+                doc_url: 'ee/administration/settings/help_page.html'
               - doc_title: Sign-in restrictions
                 doc_url: 'ee/user/admin_area/settings/sign_in_restrictions.html'
               - doc_title: Sign-up restrictions
