@@ -1079,7 +1079,7 @@ sections:
           - doc_title: Broadcast messages
             doc_url: 'ee/administration/broadcast_messages.html'
           - doc_title: Email from GitLab
-            doc_url: 'ee/user/admin_area/email_from_gitlab.html'
+            doc_url: 'ee/administration/email_from_gitlab.html'
           - doc_title: Rake tasks
             doc_url: 'ee/raketasks/user_management.html'
 
