@@ -1061,7 +1061,7 @@ sections:
           - doc_title: Password storage
             doc_url: 'ee/security/password_storage.html'
           - doc_title: Credentials inventory
-            doc_url: 'ee/user/admin_area/credentials_inventory.html'
+            doc_url: 'ee/administration/credentials_inventory.html'
           - doc_title: Custom password length limits
             doc_url: 'ee/security/password_length_limits.html'
           - doc_title: Generated passwords and integrated authentication
