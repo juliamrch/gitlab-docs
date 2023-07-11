@@ -2390,7 +2390,7 @@ sections:
           - doc_title: PlantUML
             doc_url: 'ee/administration/integration/plantuml.html'
           - doc_title: Project integration management
-            doc_url: 'ee/user/admin_area/settings/project_integration_management.html'
+            doc_url: 'ee/administration/settings/project_integration_management.html'
           - doc_title: Project integrations
             doc_url: 'ee/user/project/integrations/'
           - doc_title: Pumble
