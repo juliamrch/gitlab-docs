@@ -693,7 +693,7 @@ sections:
               - doc_title: Merge request approvals
                 doc_url: 'ee/user/admin_area/merge_requests_approvals.html'
               - doc_title: Package Registry rate limits
-                doc_url: 'ee/user/admin_area/settings/package_registry_rate_limits.html'
+                doc_url: 'ee/administration/settings/package_registry_rate_limits.html'
               - doc_title: Polling interval multiplier
                 doc_url: 'ee/administration/polling.html'
               - doc_title: Protected paths
