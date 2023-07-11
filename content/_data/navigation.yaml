@@ -1227,6 +1227,8 @@ sections:
                 doc_url: 'ee/user/search/advanced_search.html'
               - doc_title: Exact code search
                 doc_url: 'ee/user/search/exact_code_search.html'
+              - doc_title: Command palette
+                doc_url: 'ee/user/search/command_palette.html'
           - doc_title: Badges
             doc_url: 'ee/user/project/badges.html'
           - doc_title: Code intelligence
