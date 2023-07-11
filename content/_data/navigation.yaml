@@ -2233,7 +2233,7 @@ sections:
           - doc_title: Repository analytics for groups
             doc_url: 'ee/user/group/repositories_analytics/'
           - doc_title: Usage trends
-            doc_url: 'ee/user/admin_area/analytics/usage_trends.html'
+            doc_url: 'ee/administration/analytics/usage_trends.html'
           - doc_title: Value stream analytics
             doc_url: 'ee/user/group/value_stream_analytics/'
           - doc_title: Value streams dashboard
