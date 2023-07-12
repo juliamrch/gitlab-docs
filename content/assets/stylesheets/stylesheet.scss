@@ -300,11 +300,7 @@ ol {
   .gs-wrapper {
     width: $search-sm-width;
     @media (min-width: $bp-md) {
-      width: $search-md-width;
-      transition: width 0.3s ease-in-out;
-      &:focus-within {
-        width: $search-lg-width;
-      }
+      width: $search-lg-width;
     }
   }
   .gs-results {

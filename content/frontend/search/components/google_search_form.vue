@@ -8,13 +8,13 @@ import {
 import { debounce } from 'lodash';
 import { directive as clickOutside } from 'v-click-outside';
 import { fetchResults, MAX_RESULTS_PER_PAGE } from '../../services/google_search_api';
-import RecentHistory from './recently_viewed.vue';
+import SuggestedItems from './suggested_items.vue';
 
 export default {
   components: {
     GlSearchBoxByType,
     GlLink,
-    RecentHistory,
+    SuggestedItems,
   },
   directives: {
     clickOutside,
@@ -49,7 +49,7 @@ export default {
     hasNoResults() {
       return !this.results.length && this.submitted && this.searchQuery;
     },
-    showHistory() {
+    showSuggested() {
       return !this.searchQuery;
     },
   },
@@ -190,7 +190,7 @@ export default {
       >
         No results found.
       </p>
-      <recent-history v-if="showHistory" @pageHistoryInit="(items) => (historyItems = items)" />
+      <suggested-items v-if="showSuggested" @pageHistoryInit="(items) => (historyItems = items)" />
     </div>
   </div>
 </template>
