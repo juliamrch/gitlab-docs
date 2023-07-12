@@ -135,6 +135,7 @@ clean:
 build-lunr-index:
 	@printf "\n$(INFO)INFO: Building offline search index..$(END)\n"
 	@node scripts/lunr/preindex.js
+	@find public/assets/javascripts -type f -name 'lunr*.json' -exec sh -c 'gzip -c "{}" > "{}.gz"' \;
 
 check-lunr-index:
 	@printf "\n$(INFO)INFO: Checking if lunr.js is enabled...$(END)\n"
