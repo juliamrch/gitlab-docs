@@ -2156,8 +2156,6 @@ sections:
               - doc_title: GitOps workflow
                 doc_url: 'ee/user/clusters/agent/gitops.html'
                 docs:
-                  - doc_title: Flux
-                    doc_url: 'ee/user/clusters/agent/gitops/flux.html'
                   - doc_title: "Tutorial: Set up Flux for GitOps"
                     doc_url: 'ee/user/clusters/agent/gitops/flux_tutorial.html'
                   - doc_title: Use Helm charts
