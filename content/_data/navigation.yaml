@@ -711,7 +711,7 @@ sections:
               - doc_title: Rate limits on raw endpoints
                 doc_url: 'ee/user/admin_area/settings/rate_limits_on_raw_endpoints.html'
               - doc_title: Rate limits on note creation
-                doc_url: 'ee/user/admin_area/settings/rate_limit_on_notes_creation.html'
+                doc_url: 'ee/administration/settings/rate_limit_on_notes_creation.html'
               - doc_title: Rate limits on Users API
                 doc_url: 'ee/user/admin_area/settings/rate_limit_on_users_api.html'
               - doc_title: Rate limits on Projects API
