@@ -626,7 +626,7 @@ sections:
           - doc_title: CI/CD
             doc_url: 'ee/administration/cicd.html'
           - doc_title: Configuration and Admin Area
-            doc_url: 'ee/user/admin_area/'
+            doc_url: 'ee/administration/admin_area.html'
             docs:
               - doc_title: Admin Area settings
                 doc_url: 'ee/user/admin_area/settings/'
