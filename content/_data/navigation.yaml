@@ -707,7 +707,7 @@ sections:
               - doc_title: Rate limits on Git SSH operations
                 doc_url: 'ee/user/admin_area/settings/rate_limits_on_git_ssh_operations.html'
               - doc_title: Rate limits on issue creation
-                doc_url: 'ee/user/admin_area/settings/rate_limit_on_issues_creation.html'
+                doc_url: 'ee/administration/settings/rate_limit_on_issues_creation.html'
               - doc_title: Rate limits on raw endpoints
                 doc_url: 'ee/user/admin_area/settings/rate_limits_on_raw_endpoints.html'
               - doc_title: Rate limits on note creation
