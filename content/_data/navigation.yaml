@@ -697,7 +697,7 @@ sections:
               - doc_title: Polling interval multiplier
                 doc_url: 'ee/administration/polling.html'
               - doc_title: Protected paths
-                doc_url: 'ee/user/admin_area/settings/protected_paths.html'
+                doc_url: 'ee/administration/settings/protected_paths.html'
               - doc_title: Push event activities limit
                 doc_url: 'ee/user/admin_area/settings/push_event_activities_limit.html'
               - doc_title: Rate limits on Repository files API
