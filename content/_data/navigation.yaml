@@ -717,7 +717,7 @@ sections:
               - doc_title: Rate limits on Projects API
                 doc_url: 'ee/user/admin_area/settings/rate_limit_on_projects_api.html'
               - doc_title: Rate limits on pipeline creation
-                doc_url: 'ee/user/admin_area/settings/rate_limit_on_pipelines_creation.html'
+                doc_url: 'ee/administration/settings/rate_limit_on_pipelines_creation.html'
               - doc_title: Reply by email
                 doc_url: 'ee/administration/reply_by_email.html'
               - doc_title: Repository checks
