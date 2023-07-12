@@ -41,7 +41,7 @@
     # Create _redirects for Pages redirects
     - bundle exec rake redirects
     # Build the Lunr.js search index if needed
-    - if [[ "$SEARCH_BACKEND" == "lunr" ]]; then node scripts/lunr/preindex.js; fi
+    - if [[ "$SEARCH_BACKEND" == "lunr" ]]; then make build-lunr-index; fi
     # Minify the assets of the resulting site
     - mkdir dest/
     - scripts/minify-assets.sh dest/ public/
