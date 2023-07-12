@@ -2380,7 +2380,7 @@ sections:
           - doc_title: Microsoft Teams notifications
             doc_url: 'ee/user/project/integrations/microsoft_teams.html'
           - doc_title: MLflow
-            doc_url: 'ee/user/project/integrations/mlflow_client.html'
+            doc_url: 'ee/user/project/ml/experiment_tracking/mlflow_client.html'
           - doc_title: Mock CI
             doc_url: 'ee/user/project/integrations/mock_ci.html'
           - doc_title: Pipeline status emails
