@@ -658,6 +658,8 @@ sections:
                 doc_url: 'ee/user/admin_area/reporting/git_abuse_rate_limit.html'
               - doc_title: Git LFS administration
                 doc_url: 'ee/administration/lfs/'
+              - doc_title: GitLab for Slack app
+                doc_url: 'ee/user/admin_area/settings/slack_app.html'
               - doc_title: GitLab Pages
                 doc_url: 'ee/administration/pages/'
                 docs:
