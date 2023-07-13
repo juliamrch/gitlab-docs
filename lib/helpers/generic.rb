@@ -181,5 +181,21 @@ module Nanoc::Helpers
 
       []
     end
+
+    #
+    # Return the breadcrumb trail in string format.
+    #
+    # This is set in a metatag and then used for
+    # search results on the site.
+    #
+    # The Google Programmable Search JSON API does not
+    # include the JSON-LD breadcrumbList schema in the
+    # response, but it does include metatag content.
+    #
+    def docs_breadcrumb_list(path)
+      data = get_nav_sections
+      list = breadcrumb_trail(data, path[1..])
+      list.map { |item| item[:name] }.join(", ")
+    end
   end
 end

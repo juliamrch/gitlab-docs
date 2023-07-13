@@ -20,6 +20,8 @@ Rails/NegateInclude:
   Enabled: false
 Rails/RakeEnvironment:
   Enabled: false
+Rails/Pluck:
+  Enabled: false
 
 RSpec/FilePath:
   SpecSuffixOnly: true
