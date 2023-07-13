@@ -645,7 +645,7 @@ sections:
               - doc_title: Deprecated API rate limits
                 doc_url: 'ee/user/admin_area/settings/deprecated_api_rate_limits.html'
               - doc_title: Diff limits
-                doc_url: 'ee/user/admin_area/diff_limits.html'
+                doc_url: 'ee/administration/diff_limits.html'
               - doc_title: Email
                 doc_url: 'ee/user/admin_area/settings/email.html'
               - doc_title: External authorization
