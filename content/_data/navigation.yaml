@@ -1208,6 +1208,8 @@ sections:
         docs:
           - doc_title: Create a project
             doc_url: 'ee/user/project/'
+          - doc_title: 'Tutorial: Build a protected workflow for your project'
+            doc_url: 'ee/tutorials/protected_workflow/'
           - doc_title: Manage projects
             doc_url: 'ee/user/project/working_with_projects.html'
           - doc_title: Project visibility
