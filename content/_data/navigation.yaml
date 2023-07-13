@@ -627,7 +627,7 @@ sections:
             doc_url: 'ee/user/admin_area/'
             docs:
               - doc_title: Admin Area settings
-                doc_url: 'ee/user/admin_area/settings/'
+                doc_url: 'ee/administration/settings/'
               - doc_title: Account and limit settings
                 doc_url: 'ee/user/admin_area/settings/account_and_limit_settings.html'
               - doc_title: Appearance
