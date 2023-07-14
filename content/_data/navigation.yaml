@@ -855,8 +855,6 @@ sections:
                 doc_url: 'ee/administration/raketasks/storage.html'
               - doc_title: List repositories Rake task
                 doc_url: 'ee/raketasks/list_repos.html'
-              - doc_title: Migrate snippets Rake tasks
-                doc_url: 'ee/raketasks/migrate_snippets.html'
           - doc_title: Object storage
             doc_url: 'ee/administration/object_storage.html'
           - doc_title: Merge request diffs storage
