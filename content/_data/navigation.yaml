@@ -1426,8 +1426,8 @@ sections:
                     doc_url: 'ee/topics/git/cherry_picking.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/topics/git/troubleshooting_git.html'
-      - category_title: Build your application
-        category_url: 'ee/topics/build_your_application.html'
+      - category_title: Manage your source files
+        category_url: 'ee/topics/manage_code.html'
         docs:
           - doc_title: Repositories
             doc_url: 'ee/user/project/repository/'
@@ -1561,6 +1561,9 @@ sections:
                 doc_url: 'ee/user/project/merge_requests/status_checks.html'
               - doc_title: Merge request dependencies
                 doc_url: 'ee/user/project/merge_requests/dependencies.html'
+      - category_title: Use CI/CD to build your application
+        category_url: 'ee/topics/build_your_application.html'
+        docs:
           - doc_title: CI/CD
             doc_url: 'ee/ci/'
             docs:
@@ -1842,105 +1845,6 @@ sections:
                 doc_url: 'runner/fleet_scaling/'
               - doc_title: Best practices for large repositories
                 doc_url: 'ee/ci/large_repositories/'
-          - doc_title: GitLab Pages
-            doc_url: 'ee/user/project/pages/'
-            docs:
-              - doc_title: 'Tutorial: Create website from scratch'
-                doc_url: 'ee/user/project/pages/getting_started/pages_from_scratch.html'
-              - doc_title: 'Tutorial: Build, test, and deploy your Hugo site'
-                doc_url: 'ee/tutorials/hugo/'
-              - doc_title: Create website from CI/CD template
-                doc_url: 'ee/user/project/pages/getting_started/pages_ci_cd_template.html'
-              - doc_title: Create website from forked sample project
-                doc_url: 'ee/user/project/pages/getting_started/pages_forked_sample_project.html'
-              - doc_title: Create website from project template
-                doc_url: 'ee/user/project/pages/getting_started/pages_new_project_template.html'
-              - doc_title: Create deployment for static site
-                doc_url: 'ee/user/project/pages/getting_started/pages_ui.html'
-              - doc_title: Public folder
-                doc_url: 'ee/user/project/pages/public_folder.html'
-              - doc_title: Default domain names and URLs
-                doc_url: 'ee/user/project/pages/getting_started_part_one.html'
-              - doc_title: Custom domains
-                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/'
-              - doc_title: DNS records
-                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/dns_concepts.html'
-              - doc_title: SSL/TLS certificates
-                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/ssl_tls_concepts.html'
-              - doc_title: Let's Encrypt certificates
-                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/lets_encrypt_integration.html'
-              - doc_title: Access control
-                doc_url: 'ee/user/project/pages/pages_access_control.html'
-              - doc_title: Redirects
-                doc_url: 'ee/user/project/pages/redirects.html'
-              - doc_title: Settings
-                doc_url: 'ee/user/project/pages/introduction.html'
-          - doc_title: Packages & Registries
-            doc_url: 'ee/user/packages/'
-            docs:
-              - doc_title: Package Registry
-                doc_url: 'ee/user/packages/package_registry/'
-                docs:
-                  - doc_title: Supported package managers
-                    doc_url: 'ee/user/packages/package_registry/supported_package_managers.html'
-                  - doc_title: Supported functionality
-                    doc_url: 'ee/user/packages/package_registry/supported_functionality.html'
-                  - doc_title: Composer
-                    doc_url: 'ee/user/packages/composer_repository/'
-                  - doc_title: Conan
-                    doc_url: 'ee/user/packages/conan_repository/'
-                  - doc_title: Debian
-                    doc_url: 'ee/user/packages/debian_repository/'
-                  - doc_title: Go Proxy
-                    doc_url: 'ee/user/packages/go_proxy/'
-                  - doc_title: Helm
-                    doc_url: 'ee/user/packages/helm_repository/'
-                  - doc_title: Maven
-                    doc_url: 'ee/user/packages/maven_repository/'
-                  - doc_title: npm
-                    doc_url: 'ee/user/packages/npm_registry/'
-                  - doc_title: NuGet
-                    doc_url: 'ee/user/packages/nuget_repository/'
-                  - doc_title: PyPI
-                    doc_url: 'ee/user/packages/pypi_repository/'
-                  - doc_title: Ruby gems
-                    doc_url: 'ee/user/packages/rubygems_registry/'
-                  - doc_title: Yarn
-                    doc_url: 'ee/user/packages/yarn_repository/'
-                  - doc_title: Generic
-                    doc_url: 'ee/user/packages/generic_packages/'
-                  - doc_title: Store all packages in one project
-                    doc_url: 'ee/user/packages/workflows/project_registry.html'
-                  - doc_title: Monorepo workflows
-                    doc_url: 'ee/user/packages/workflows/working_with_monorepos.html'
-                  - doc_title: Reduce Package Registry storage
-                    doc_url: 'ee/user/packages/package_registry/reduce_package_registry_storage.html'
-                  - doc_title: Build packages
-                    doc_url: 'ee/user/packages/workflows/build_packages.html'
-              - doc_title: Container Registry
-                doc_url: 'ee/user/packages/container_registry/'
-                docs:
-                  - doc_title: Authenticate
-                    doc_url: 'ee/user/packages/container_registry/authenticate_with_container_registry.html'
-                  - doc_title: Build and push images
-                    doc_url: 'ee/user/packages/container_registry/build_and_push_images.html'
-                  - doc_title: Delete images
-                    doc_url: 'ee/user/packages/container_registry/delete_container_registry_images.html'
-                  - doc_title: Reduce Container Registry storage
-                    doc_url: 'ee/user/packages/container_registry/reduce_container_registry_storage.html'
-                  - doc_title: Reduce Container Registry data transfers
-                    doc_url: 'ee/user/packages/container_registry/reduce_container_registry_data_transfer.html'
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/user/packages/container_registry/troubleshoot_container_registry.html'
-              - doc_title: Harbor Registry
-                doc_url: 'ee/user/packages/harbor_container_registry/'
-              - doc_title: Terraform module registry
-                doc_url: 'ee/user/packages/terraform_module_registry/'
-              - doc_title: Dependency Proxy
-                doc_url: 'ee/user/packages/dependency_proxy/'
-                docs:
-                  - doc_title: Reduce Dependency Proxy storage
-                    doc_url: 'ee/user/packages/dependency_proxy/reduce_dependency_proxy_storage.html'
       - category_title: Secure your application
         category_url: 'ee/user/application_security/secure_your_application.html'
         docs:
@@ -2088,10 +1992,109 @@ sections:
                 doc_url: 'ee/user/project/releases/release_fields.html'
               - doc_title: Release evidence
                 doc_url: 'ee/user/project/releases/release_evidence.html'
+          - doc_title: Packages & Registries
+            doc_url: 'ee/user/packages/'
+            docs:
+              - doc_title: Package Registry
+                doc_url: 'ee/user/packages/package_registry/'
+                docs:
+                  - doc_title: Supported package managers
+                    doc_url: 'ee/user/packages/package_registry/supported_package_managers.html'
+                  - doc_title: Supported functionality
+                    doc_url: 'ee/user/packages/package_registry/supported_functionality.html'
+                  - doc_title: Composer
+                    doc_url: 'ee/user/packages/composer_repository/'
+                  - doc_title: Conan
+                    doc_url: 'ee/user/packages/conan_repository/'
+                  - doc_title: Debian
+                    doc_url: 'ee/user/packages/debian_repository/'
+                  - doc_title: Go Proxy
+                    doc_url: 'ee/user/packages/go_proxy/'
+                  - doc_title: Helm
+                    doc_url: 'ee/user/packages/helm_repository/'
+                  - doc_title: Maven
+                    doc_url: 'ee/user/packages/maven_repository/'
+                  - doc_title: npm
+                    doc_url: 'ee/user/packages/npm_registry/'
+                  - doc_title: NuGet
+                    doc_url: 'ee/user/packages/nuget_repository/'
+                  - doc_title: PyPI
+                    doc_url: 'ee/user/packages/pypi_repository/'
+                  - doc_title: Ruby gems
+                    doc_url: 'ee/user/packages/rubygems_registry/'
+                  - doc_title: Yarn
+                    doc_url: 'ee/user/packages/yarn_repository/'
+                  - doc_title: Generic
+                    doc_url: 'ee/user/packages/generic_packages/'
+                  - doc_title: Store all packages in one project
+                    doc_url: 'ee/user/packages/workflows/project_registry.html'
+                  - doc_title: Monorepo workflows
+                    doc_url: 'ee/user/packages/workflows/working_with_monorepos.html'
+                  - doc_title: Reduce Package Registry storage
+                    doc_url: 'ee/user/packages/package_registry/reduce_package_registry_storage.html'
+                  - doc_title: Build packages
+                    doc_url: 'ee/user/packages/workflows/build_packages.html'
+              - doc_title: Container Registry
+                doc_url: 'ee/user/packages/container_registry/'
+                docs:
+                  - doc_title: Authenticate
+                    doc_url: 'ee/user/packages/container_registry/authenticate_with_container_registry.html'
+                  - doc_title: Build and push images
+                    doc_url: 'ee/user/packages/container_registry/build_and_push_images.html'
+                  - doc_title: Delete images
+                    doc_url: 'ee/user/packages/container_registry/delete_container_registry_images.html'
+                  - doc_title: Reduce Container Registry storage
+                    doc_url: 'ee/user/packages/container_registry/reduce_container_registry_storage.html'
+                  - doc_title: Reduce Container Registry data transfers
+                    doc_url: 'ee/user/packages/container_registry/reduce_container_registry_data_transfer.html'
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/user/packages/container_registry/troubleshoot_container_registry.html'
+              - doc_title: Harbor Registry
+                doc_url: 'ee/user/packages/harbor_container_registry/'
+              - doc_title: Terraform module registry
+                doc_url: 'ee/user/packages/terraform_module_registry/'
+              - doc_title: Dependency Proxy
+                doc_url: 'ee/user/packages/dependency_proxy/'
+                docs:
+                  - doc_title: Reduce Dependency Proxy storage
+                    doc_url: 'ee/user/packages/dependency_proxy/reduce_dependency_proxy_storage.html'
           - doc_title: Review Apps
             doc_url: 'ee/ci/review_apps/'
           - doc_title: Feature flags
             doc_url: 'ee/operations/feature_flags.html'
+          - doc_title: GitLab Pages
+            doc_url: 'ee/user/project/pages/'
+            docs:
+              - doc_title: 'Tutorial: Create website from scratch'
+                doc_url: 'ee/user/project/pages/getting_started/pages_from_scratch.html'
+              - doc_title: 'Tutorial: Build, test, and deploy your Hugo site'
+                doc_url: 'ee/tutorials/hugo/'
+              - doc_title: Create website from CI/CD template
+                doc_url: 'ee/user/project/pages/getting_started/pages_ci_cd_template.html'
+              - doc_title: Create website from forked sample project
+                doc_url: 'ee/user/project/pages/getting_started/pages_forked_sample_project.html'
+              - doc_title: Create website from project template
+                doc_url: 'ee/user/project/pages/getting_started/pages_new_project_template.html'
+              - doc_title: Create deployment for static site
+                doc_url: 'ee/user/project/pages/getting_started/pages_ui.html'
+              - doc_title: Public folder
+                doc_url: 'ee/user/project/pages/public_folder.html'
+              - doc_title: Default domain names and URLs
+                doc_url: 'ee/user/project/pages/getting_started_part_one.html'
+              - doc_title: Custom domains
+                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/'
+              - doc_title: DNS records
+                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/dns_concepts.html'
+              - doc_title: SSL/TLS certificates
+                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/ssl_tls_concepts.html'
+              - doc_title: Let's Encrypt certificates
+                doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/lets_encrypt_integration.html'
+              - doc_title: Access control
+                doc_url: 'ee/user/project/pages/pages_access_control.html'
+              - doc_title: Redirects
+                doc_url: 'ee/user/project/pages/redirects.html'
+              - doc_title: Settings
+                doc_url: 'ee/user/project/pages/introduction.html'
       - category_title: Monitor application performance
         category_url: 'ee/operations/'
         docs:
