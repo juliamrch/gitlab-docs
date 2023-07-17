@@ -1426,7 +1426,7 @@ sections:
                     doc_url: 'ee/topics/git/cherry_picking.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/topics/git/troubleshooting_git.html'
-      - category_title: Manage your source files
+      - category_title: Manage your code
         category_url: 'ee/topics/manage_code.html'
         docs:
           - doc_title: Repositories
