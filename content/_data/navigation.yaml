@@ -1459,6 +1459,8 @@ sections:
                 doc_url: 'ee/topics/git/lfs/'
               - doc_title: Jupyter notebook files
                 doc_url: 'ee/user/project/repository/jupyter_notebooks/'
+              - doc_title: Machine learning model experiments
+                doc_url: 'ee/user/project/ml/experiment_tracking/'
               - doc_title: Locked files
                 doc_url: 'ee/user/project/file_lock.html'
               - doc_title: File Blame
