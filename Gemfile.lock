@@ -62,7 +62,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    faraday (2.7.7)
+    faraday (2.7.10)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-http-cache (2.5.0)
@@ -75,7 +75,7 @@ GEM
     gitlab (4.19.0)
       httparty (~> 0.20)
       terminal-table (>= 1.5.1)
-    gitlab-dangerfiles (3.11.0)
+    gitlab-dangerfiles (3.12.0)
       danger (>= 8.4.5)
       danger-gitlab (>= 8.0.0)
       rake
@@ -185,7 +185,7 @@ GEM
       pry (>= 0.13, < 0.15)
     psych (4.0.6)
       stringio
-    public_suffix (5.0.1)
+    public_suffix (5.0.3)
     racc (1.6.2)
     rack (3.0.8)
     rack-livereload (0.5.1)
@@ -307,7 +307,7 @@ PLATFORMS
 
 DEPENDENCIES
   builder (~> 3.2.4)
-  gitlab-dangerfiles (~> 3.11.0)
+  gitlab-dangerfiles (~> 3.12.0)
   gitlab-styles (~> 10.1.0)
   gitlab_kramdown (~> 0.27.0)
   highline (~> 2.1.0)
@@ -324,4 +324,4 @@ DEPENDENCIES
   webrick (~> 1.8, >= 1.8.1)
 
 BUNDLED WITH
-   2.4.14
+   2.4.16
