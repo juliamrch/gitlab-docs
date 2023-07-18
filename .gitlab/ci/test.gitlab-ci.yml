@@ -199,7 +199,7 @@ test_EOL_whitespace:
   dependencies: []
   script:
     - apk add jq
-    - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
+    - bundle config set --local path 'vendor/bundle'  # Install dependencies into ./vendor/bundle
     - bundle install
     - bundle exec rake default
     - yarn global add markdownlint-cli2
@@ -216,7 +216,7 @@ test_unlinked_images:
   dependencies: []
   script:
     - apk add jq
-    - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
+    - bundle config set --local path 'vendor/bundle'  # Install dependencies into ./vendor/bundle
     - bundle install
     - bundle exec rake default
     - cp tasks/unlinked-images.sh ../gitlab/unlinked-images.sh

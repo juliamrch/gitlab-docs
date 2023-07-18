@@ -12,7 +12,7 @@ default:
     - ruby --version
     - gem --version
     - bundle --version
-    - bundle config set --local deployment true  # Install dependencies into ./vendor/bundle
+    - bundle config set --local path 'vendor/bundle'  # Install dependencies into ./vendor/bundle
     - bundle install
   cache:
     key:
@@ -26,7 +26,7 @@ default:
     - ruby --version
     - gem --version
     - bundle --version
-    - bundle config set --local deployment true  # Install dependencies into ./vendor/bundle
+    - bundle config set --local path 'vendor/bundle'  # Install dependencies into ./vendor/bundle
     - bundle install
     - node --version
     - yarn --version
