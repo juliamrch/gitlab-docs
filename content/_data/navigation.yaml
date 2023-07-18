@@ -3241,6 +3241,47 @@ sections:
                 doc_url: 'ee/development/identity_verification.html'
               - doc_title: Integrations
                 doc_url: 'ee/development/integrations/'
+              - doc_title: Internal analytics
+                doc_url: 'ee/development/internal_analytics/'
+                docs:
+                  - doc_title: Service Ping
+                    doc_url: 'ee/development/internal_analytics/service_ping/'
+                    docs:
+                      - doc_title: Implement Service Ping
+                        doc_url: 'ee/development/internal_analytics/service_ping/implement.html'
+                      - doc_title: Metrics lifecycle
+                        doc_url: 'ee/development/internal_analytics/service_ping/metrics_lifecycle.html'
+                      - doc_title: Metrics instrumentation
+                        doc_url: 'ee/development/internal_analytics/service_ping/metrics_instrumentation.html'
+                      - doc_title: Metrics dictionary guide
+                        doc_url: 'ee/development/internal_analytics/service_ping/metrics_dictionary.html'
+                      - doc_title: Metrics dictionary
+                        doc_url: 'https://metrics.gitlab.com'
+                        external_url: true
+                      - doc_title: Metrics Performance Indicator
+                        doc_url: 'ee/development/internal_analytics/service_ping/performance_indicator_metrics.html'
+                      - doc_title: Review guidelines
+                        doc_url: 'ee/development/internal_analytics/service_ping/review_guidelines.html'
+                      - doc_title: Troubleshooting
+                        doc_url: 'ee/development/internal_analytics/service_ping/troubleshooting.html'
+                  - doc_title: Snowplow
+                    doc_url: 'ee/development/internal_analytics/snowplow/'
+                    docs:
+                      - doc_title: Implement Snowplow
+                        doc_url: 'ee/development/internal_analytics/snowplow/implementation.html'
+                      - doc_title: Snowplow Infrastructure
+                        doc_url: 'ee/development/internal_analytics/snowplow/infrastructure.html'
+                      - doc_title: Schemas
+                        doc_url: 'ee/development/internal_analytics/snowplow/schemas.html'
+                      - doc_title: Event dictionary guide
+                        doc_url: 'ee/development/internal_analytics/snowplow/event_dictionary_guide.html'
+                      - doc_title: Event dictionary
+                        doc_url: 'https://metrics.gitlab.com/snowplow/'
+                        external_url: true
+                      - doc_title: Review guidelines
+                        doc_url: 'ee/development/internal_analytics/snowplow/review_guidelines.html'
+                      - doc_title: Troubleshooting
+                        doc_url: 'ee/development/internal_analytics/snowplow/troubleshooting.html'
               - doc_title: Internal API
                 doc_url: 'ee/development/internal_api/'
                 docs:
@@ -3313,26 +3354,6 @@ sections:
                     doc_url: 'ee/development/sec/security_report_ingestion_overview.html'
                   - doc_title: Token Revocation API
                     doc_url: 'ee/development/sec/token_revocation_api.html'
-              - doc_title: Service Ping
-                doc_url: 'ee/development/service_ping/'
-                docs:
-                  - doc_title: Metrics lifecycle
-                    doc_url: 'ee/development/service_ping/metrics_lifecycle.html'
-                  - doc_title: Implement Service Ping
-                    doc_url: 'ee/development/service_ping/implement.html'
-                  - doc_title: Metrics instrumentation
-                    doc_url: 'ee/development/service_ping/metrics_instrumentation.html'
-                  - doc_title: Metrics dictionary guide
-                    doc_url: 'ee/development/service_ping/metrics_dictionary.html'
-                  - doc_title: Metrics dictionary
-                    doc_url: 'https://metrics.gitlab.com'
-                    external_url: true
-                  - doc_title: Metrics Performance Indicator
-                    doc_url: 'ee/development/service_ping/performance_indicator_metrics.html'
-                  - doc_title: Review guidelines
-                    doc_url: 'ee/development/service_ping/review_guidelines.html'
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/development/service_ping/troubleshooting.html'
               - doc_title: Sidekiq
                 doc_url: 'ee/development/sidekiq/'
                 docs:
@@ -3346,24 +3367,6 @@ sections:
                     doc_url: 'ee/development/sidekiq/logging.html'
                   - doc_title: Worker attributes
                     doc_url: 'ee/development/sidekiq/worker_attributes.html'
-              - doc_title: Snowplow
-                doc_url: 'ee/development/snowplow/'
-                docs:
-                  - doc_title: Implement Snowplow
-                    doc_url: 'ee/development/snowplow/implementation.html'
-                  - doc_title: Snowplow Infrastructure
-                    doc_url: 'ee/development/snowplow/infrastructure.html'
-                  - doc_title: Schemas
-                    doc_url: 'ee/development/snowplow/schemas.html'
-                  - doc_title: Event dictionary guide
-                    doc_url: 'ee/development/snowplow/event_dictionary_guide.html'
-                  - doc_title: Event dictionary
-                    doc_url: 'https://metrics.gitlab.com/snowplow/'
-                    external_url: true
-                  - doc_title: Review guidelines
-                    doc_url: 'ee/development/snowplow/review_guidelines.html'
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/development/snowplow/troubleshooting.html'
               - doc_title: Spam protection and CAPTCHA
                 doc_url: 'ee/development/spam_protection_and_captcha/'
                 docs:
