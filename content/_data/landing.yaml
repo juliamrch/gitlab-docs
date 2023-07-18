@@ -53,14 +53,14 @@ heros:
       - title: Issue analytics
         url: '/ee/user/group/issues_analytics/'
       - title: Usage trends
-        url: '/ee/user/admin_area/analytics/usage_trends.html'
+        url: '/ee/administration/analytics/usage_trends.html'
   - title: Administration
     description: Customize and configure your self-managed installation.
     img: /assets/images/visibility.svg
     alt: visibility
     links:
       - title: Admin area settings
-        url: '/ee/user/admin_area/settings/'
+        url: '/ee/administration/settings/'
       - title: Set up LDAP
         url: '/ee/administration/auth/ldap/'
       - title: GitLab Pages

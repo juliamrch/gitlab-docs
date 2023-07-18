@@ -46,7 +46,7 @@ topics:
   - title: Activate GitLab EE
     description: Activate GitLab Enterprise Edition functionality with a license
     icon: license
-    url: /ee/user/admin_area/license.html
+    url: /ee/administration/license.html
   - title: GitLab.com settings
     description: |
       Learn about the settings on GitLab.com, like IP ranges,

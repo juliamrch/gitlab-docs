@@ -71,7 +71,7 @@ sections:
         category_url: 'ee/subscriptions/self_managed/'
         docs:
           - doc_title: Activate Enterprise Edition
-            doc_url: 'ee/user/admin_area/license.html'
+            doc_url: 'ee/administration/license.html'
       - category_title: GitLab Dedicated
         category_url: 'ee/subscriptions/gitlab_dedicated/'
       - category_title: Community programs
@@ -631,25 +631,25 @@ sections:
               - doc_title: Admin Area settings
                 doc_url: 'ee/administration/settings/'
               - doc_title: Account and limit settings
-                doc_url: 'ee/user/admin_area/settings/account_and_limit_settings.html'
+                doc_url: 'ee/administration/settings/account_and_limit_settings.html'
               - doc_title: Appearance
                 doc_url: 'ee/administration/appearance.html'
               - doc_title: Authentication
                 doc_url: 'ee/topics/authentication/'
               - doc_title: CI/CD
-                doc_url: 'ee/user/admin_area/settings/continuous_integration.html'
+                doc_url: 'ee/administration/settings/continuous_integration.html'
               - doc_title: Application cache interval
                 doc_url: 'ee/administration/application_settings_cache.html'
               - doc_title: Custom instance-level project templates
                 doc_url: 'ee/administration/custom_project_templates.html'
               - doc_title: Deprecated API rate limits
-                doc_url: 'ee/user/admin_area/settings/deprecated_api_rate_limits.html'
+                doc_url: 'ee/administration/settings/deprecated_api_rate_limits.html'
               - doc_title: Diff limits
                 doc_url: 'ee/administration/diff_limits.html'
               - doc_title: Email
-                doc_url: 'ee/user/admin_area/settings/email.html'
+                doc_url: 'ee/administration/settings/email.html'
               - doc_title: External authorization
-                doc_url: 'ee/user/admin_area/settings/external_authorization.html'
+                doc_url: 'ee/administration/settings/external_authorization.html'
               - doc_title: External pipeline validation
                 doc_url: 'ee/administration/external_pipeline_validation.html'
               - doc_title: Federated Learning of Cohorts (FLoC)
@@ -657,7 +657,7 @@ sections:
               - doc_title: Geo sites
                 doc_url: 'ee/administration/geo_sites.html'
               - doc_title: Git abuse rate limit
-                doc_url: 'ee/user/admin_area/reporting/git_abuse_rate_limit.html'
+                doc_url: 'ee/administration/reporting/git_abuse_rate_limit.html'
               - doc_title: Git LFS administration
                 doc_url: 'ee/administration/lfs/'
               - doc_title: GitLab for Slack app
@@ -670,13 +670,13 @@ sections:
                   - doc_title: Troubleshooting
                     doc_url: 'ee/administration/pages/troubleshooting.html'
               - doc_title: Health Check
-                doc_url: 'ee/user/admin_area/monitoring/health_check.html'
+                doc_url: 'ee/administration/monitoring/health_check.html'
               - doc_title: Incident management rate limits
                 doc_url: 'ee/administration/settings/incident_management_rate_limits.html'
               - doc_title: Instance template repository
                 doc_url: 'ee/administration/settings/instance_template_repository.html'
               - doc_title: IP address restrictions
-                doc_url: 'ee/user/admin_area/reporting/ip_addr_restrictions.html'
+                doc_url: 'ee/administration/reporting/ip_addr_restrictions.html'
               - doc_title: Job artifacts
                 doc_url: 'ee/administration/job_artifacts.html'
               - doc_title: Job logs
@@ -693,7 +693,7 @@ sections:
               - doc_title: Maintenance Mode
                 doc_url: 'ee/administration/maintenance_mode/'
               - doc_title: Merge request approvals
-                doc_url: 'ee/user/admin_area/merge_requests_approvals.html'
+                doc_url: 'ee/administration/merge_requests_approvals.html'
               - doc_title: Package Registry rate limits
                 doc_url: 'ee/administration/settings/package_registry_rate_limits.html'
               - doc_title: Polling interval multiplier
@@ -703,7 +703,7 @@ sections:
               - doc_title: Push event activities limit
                 doc_url: 'ee/administration/settings/push_event_activities_limit.html'
               - doc_title: Rate limits on Repository files API
-                doc_url: 'ee/user/admin_area/settings/files_api_rate_limits.html'
+                doc_url: 'ee/administration/settings/files_api_rate_limits.html'
               - doc_title: Rate limits on Git LFS
                 doc_url: 'ee/administration/settings/git_lfs_rate_limits.html'
               - doc_title: Rate limits on Git SSH operations
@@ -733,7 +733,7 @@ sections:
               - doc_title: Sign-up restrictions
                 doc_url: 'ee/administration/settings/sign_up_restrictions.html'
               - doc_title: Spamcheck
-                doc_url: 'ee/user/admin_area/reporting/spamcheck.html'
+                doc_url: 'ee/administration/reporting/spamcheck.html'
               - doc_title: System Hooks
                 doc_url: 'ee/administration/system_hooks.html'
               - doc_title: Terms of service and privacy policy
@@ -750,11 +750,11 @@ sections:
                   - doc_title: Uploads sanitization Rake tasks
                     doc_url: 'ee/administration/raketasks/uploads/sanitize.html'
               - doc_title: User Cohorts
-                doc_url: 'ee/user/admin_area/user_cohorts.html'
+                doc_url: 'ee/administration/user_cohorts.html'
               - doc_title: User and IP rate limits
                 doc_url: 'ee/administration/settings/user_and_ip_rate_limits.html'
               - doc_title: Visibility and access controls
-                doc_url: 'ee/user/admin_area/settings/visibility_and_access_controls.html'
+                doc_url: 'ee/administration/settings/visibility_and_access_controls.html'
           - doc_title: Consul
             doc_url: 'ee/administration/consul.html'
           - doc_title: Environment variables
@@ -969,7 +969,7 @@ sections:
               - doc_title: Integrity check Rake task
                 doc_url: 'ee/administration/raketasks/check.html'
           - doc_title: Activate GitLab EE with license
-            doc_url: 'ee/user/admin_area/license_file.html'
+            doc_url: 'ee/administration/license_file.html'
           - doc_title: Fast SSH key lookup
             doc_url: 'ee/administration/operations/fast_ssh_key_lookup.html'
           - doc_title: Filesystem benchmarking
@@ -1055,7 +1055,7 @@ sections:
           - doc_title: Unlock a user
             doc_url: 'ee/security/unlock_user.html'
           - doc_title: Review abuse reports
-            doc_url: 'ee/user/admin_area/review_abuse_reports.html'
+            doc_url: 'ee/administration/review_abuse_reports.html'
           - doc_title: User file uploads
             doc_url: 'ee/security/user_file_uploads.html'
           - doc_title: Password storage
@@ -1069,7 +1069,7 @@ sections:
           - doc_title: Global user settings
             doc_url: 'ee/administration/user_settings.html'
           - doc_title: Moderate users
-            doc_url: 'ee/user/admin_area/moderate_users.html'
+            doc_url: 'ee/administration/moderate_users.html'
           - doc_title: Auditor users
             doc_url: 'ee/administration/auditor_users.html'
           - doc_title: External users
@@ -2277,7 +2277,7 @@ sections:
               - doc_title: Registry exporter
                 doc_url: 'ee/administration/monitoring/prometheus/registry_exporter.html'
               - doc_title: Usage statistics
-                doc_url: 'ee/user/admin_area/settings/usage_statistics.html'
+                doc_url: 'ee/administration/settings/usage_statistics.html'
               - doc_title: Web exporter
                 doc_url: 'ee/administration/monitoring/prometheus/web_exporter.html'
       - category_title: Experiment, Beta, GA support
