@@ -2769,7 +2769,7 @@ sections:
         docs:
           - doc_title: Run GraphQL API queries and mutations
             doc_url: 'ee/api/graphql/getting_started.html'
-          - doc_title: GraphQL reference
+          - doc_title: GraphQL API resources
             doc_url: 'ee/api/graphql/reference/'
           - doc_title: Create audit report (example)
             doc_url: 'ee/api/graphql/audit_report.html'
