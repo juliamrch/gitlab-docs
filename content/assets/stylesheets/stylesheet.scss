@@ -300,14 +300,19 @@ ol {
   .gs-wrapper {
     width: $search-sm-width;
     @media (min-width: $bp-md) {
+      width: $search-md-width;
+    }
+    @media (min-width: $bp-lg) {
       width: $search-lg-width;
     }
   }
   .gs-results {
+    margin-top: 1px;
     width: $search-sm-width;
-    top: 5.25rem;
     @media (min-width: $bp-md) {
-      top: 2.75rem;
+      width: $search-md-width;
+    }
+    @media (min-width: $bp-lg) {
       width: $search-lg-width;
     }
   }
@@ -343,7 +348,17 @@ ol {
 .gl-search-box-by-click {
   width: $search-lg-width;
 }
-// Results page
+
+// Search overlay
+body.landing .modal-backdrop {
+  display: none;
+}
+.modal-backdrop {
+  z-index: 100;
+  top: $header-height;
+}
+
+// Search results page
 html.search-results {
   overflow-y: scroll;
 }
@@ -678,4 +693,15 @@ $gl-icon-check: 'data:image/svg+xml,%3Csvg width="8" height="7" viewBox="0 0 8 7
 .custom-control-input[type='checkbox']:checked ~ .custom-control-label::after {
   -webkit-mask-image: url('#{$gl-icon-check}');
   mask-image: url('#{$gl-icon-check}');
+}
+
+// Vue transitions
+// See https://v2.vuejs.org/v2/guide/transitions.html
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s linear;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
