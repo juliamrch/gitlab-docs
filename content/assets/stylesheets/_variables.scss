@@ -8,8 +8,8 @@ $header-height: 3rem;
 $sidebar-width: 16.66667%;
 $sidebar-mobile-width: 20rem;
 $search-sm-width: 90vw;
+$search-md-width: auto;
 $search-lg-width: 25rem;
-$search-md-width: 18rem;
 
 // GitLab colors
 // Tanuki
@@ -141,6 +141,7 @@ $landing-gl-blue-200: rgba(102, 102, 196, 0.24);
 $landing-gl-blue-600: #171537;
 $landing-gl-blue-950: rgba(36, 34, 66, 0.24);
 $landing-gl-blue-1000: rgba(36, 34, 66, 0.25);
+$landing-gl-form-border: #89888d;
 
 // Footer colors
 $footer-gray-400: #868686;

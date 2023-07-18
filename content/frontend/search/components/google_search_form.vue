@@ -29,17 +29,18 @@ export default {
   },
   data() {
     return {
+      activeLink: -1,
+      historyItems: 0,
       isLoading: false,
       moreResultsPath: '',
       results: [],
+      showTooltip: true,
+      suggestion: '',
       searchQuery: '',
+      showModal: false,
       showResultPanel: false,
       submitted: false,
       totalCount: 0,
-      activeLink: -1,
-      showTooltip: true,
-      suggestion: '',
-      historyItems: 0,
     };
   },
   computed: {
@@ -55,6 +56,8 @@ export default {
   },
   watch: {
     searchQuery() {
+      this.results = [];
+      this.showResultPanel = false;
       this.showTooltip = this.searchQuery.length === 0;
       this.submitted = false;
       this.moreResultsPath = `/search/?q=${encodeURI(this.searchQuery)}`;
@@ -122,6 +125,7 @@ export default {
     },
     deactivate() {
       this.showResultPanel = false;
+      this.showModal = false;
       this.activeLink = -1;
       this.showTooltip = this.searchQuery.length === 0;
     },
@@ -130,67 +134,78 @@ export default {
 </script>
 
 <template>
-  <div
-    v-click-outside="() => deactivate()"
-    class="gs-wrapper gl-m-auto gl-my-3 gl-md-mt-0 gl-md-mb-0"
-    @keydown.arrow-down.prevent="keyboardNav"
-    @keydown.arrow-up.prevent="keyboardNav"
-    @keydown.escape="deactivate()"
-  >
-    <form class="gl-relative">
-      <gl-search-box-by-type
-        v-model="searchQuery"
-        :is-loading="isLoading"
-        :borderless="borderless"
-        placeholder=""
-        autocomplete="off"
-        aria-label="Search"
-        @focus="showResultPanel = true"
-        @keydown.enter.prevent="showAllResults()"
-      />
-      <kbd
-        v-show="showTooltip && !isLoading"
-        v-gl-tooltip.bottom.hover.html
-        class="gl-absolute gl-z-index-1 gl-bg-gray-100 gl-text-gray-700"
-        title="Use the shortcut keys<br><kbd>/</kbd> or <kbd>s</kbd> to start a search"
-        >/</kbd
-      >
-    </form>
-
+  <div>
     <div
-      v-show="showResultPanel"
-      class="gs-results gl-absolute gl-z-index-200 gl-bg-white gl-rounded gl-px-3 gl-shadow"
+      v-click-outside="() => deactivate()"
+      class="gs-wrapper gl-m-auto gl-my-3 gl-md-mt-0 gl-md-mb-0"
+      @keydown.arrow-down.prevent="keyboardNav"
+      @keydown.arrow-up.prevent="keyboardNav"
+      @keydown.escape="deactivate()"
     >
-      <ul v-show="results.length" data-testid="search-results" class="gl-pl-0 gl-mb-3 gl-pt-3">
-        <li v-for="(result, index) in results" :key="result.cacheId" class="gl-list-style-none">
-          <gl-link
-            v-safe-html="result.formattedTitle"
-            data-result-type="dropdown"
-            :data-search-query="searchQuery"
-            :href="result.relativeLink"
-            :data-link-index="index"
-            class="gl-text-gray-700 gl-py-3 gl-px-2 gl-display-block gl-text-left"
-          />
-        </li>
-        <li v-if="hasMoreResults" class="gl-list-style-none gl-border-t gl-my-2 gl-py-2">
-          <gl-link
-            :data-link-index="results.length"
-            data-testid="more-results"
-            :href="moreResultsPath"
-            class="gl-text-gray-700 gl-py-3 gl-pb-2 gl-px-2 gl-display-block gl-text-left"
-          >
-            See all results
-          </gl-link>
-        </li>
-      </ul>
-      <p
-        v-if="hasNoResults && !suggestion"
-        data-testid="no-results"
-        class="gl-text-left gl-pt-3 gl-my-2 gl-pb-2"
+      <form class="gl-relative">
+        <gl-search-box-by-type
+          v-model="searchQuery"
+          :is-loading="isLoading"
+          :borderless="borderless"
+          placeholder=""
+          autocomplete="off"
+          aria-label="Search"
+          @focus="
+            showResultPanel = true;
+            showModal = true;
+          "
+          @keydown.enter.prevent="showAllResults()"
+        />
+        <kbd
+          v-show="showTooltip && !isLoading"
+          v-gl-tooltip.bottom.hover.html
+          class="gl-absolute gl-z-index-1 gl-bg-gray-100 gl-text-gray-700"
+          title="Use the shortcut keys<br><kbd>/</kbd> or <kbd>s</kbd> to start a search"
+          >/</kbd
+        >
+      </form>
+
+      <div
+        v-if="showResultPanel"
+        class="gs-results gl-absolute gl-z-index-200 gl-bg-white gl-px-4 gl-rounded gl-shadow"
       >
-        No results found.
-      </p>
-      <suggested-items v-if="showSuggested" @pageHistoryInit="(items) => (historyItems = items)" />
+        <ul v-if="results.length" data-testid="search-results" class="gl-pl-0 gl-mb-0 gl-py-3">
+          <li v-for="(result, index) in results" :key="result.cacheId" class="gl-list-style-none">
+            <gl-link
+              v-safe-html="result.formattedTitle"
+              data-result-type="dropdown"
+              :data-search-query="searchQuery"
+              :href="result.relativeLink"
+              :data-link-index="index"
+              class="gl-text-gray-700 gl-py-3 gl-px-2 gl-display-block gl-text-left"
+            />
+          </li>
+          <li v-if="hasMoreResults" class="gl-list-style-none gl-border-t gl-my-2 gl-py-2">
+            <gl-link
+              :data-link-index="results.length"
+              data-testid="more-results"
+              :href="moreResultsPath"
+              class="gl-text-gray-700 gl-pt-3 gl-pb-2 gl-px-2 gl-display-block gl-text-left"
+            >
+              See all results
+            </gl-link>
+          </li>
+        </ul>
+        <p
+          v-if="hasNoResults && !suggestion"
+          data-testid="no-results"
+          class="gl-text-left gl-pt-3 gl-my-2 gl-pb-2"
+        >
+          No results found.
+        </p>
+        <suggested-items
+          v-if="showSuggested"
+          @pageHistoryInit="(items) => (historyItems = items)"
+        />
+      </div>
     </div>
+    <transition name="fade">
+      <div v-if="showModal" class="gl-display-none gl-md-display-block modal-backdrop"></div>
+    </transition>
   </div>
 </template>

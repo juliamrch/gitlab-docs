@@ -109,6 +109,13 @@
       }
       .gl-search-box-by-type-input {
         height: auto;
+        &:focus {
+          box-shadow: inset 0 0 0 1px $landing-gl-form-border, 0 0 0 1px #fff, 0 0 0 3px $blue-400;
+        }
+      }
+      .gs-results {
+        border: 1px solid $landing-gl-form-border;
+        border-width: 0 1px 1px;
       }
 
       // Lunr.js
