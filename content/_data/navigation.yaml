@@ -3165,6 +3165,11 @@ sections:
                     doc_url: 'ee/development/fe_guide/logging.html'
                   - doc_title: Merge request widget extensions
                     doc_url: 'ee/development/fe_guide/merge_request_widget_extensions.html'
+                  - doc_title: Onboarding course
+                    doc_url: 'ee/development/fe_guide/onboarding_course/'
+                    docs:
+                      - doc_title: Lesson 1
+                        doc_url: 'ee/development/fe_guide/onboarding_course/lesson_1.html'
                   - doc_title: Performance
                     doc_url: 'ee/development/fe_guide/performance.html'
                   - doc_title: Principles
