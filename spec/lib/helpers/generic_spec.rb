@@ -12,16 +12,16 @@ RSpec.describe Nanoc::Helpers::Generic do
     item.new(path)
   end
 
+  before do
+    mock_items = { '/_data/navigation.yaml' => YAML.load_file('spec/lib/fixtures/navigation-mock.yaml', symbolize_names: true) }
+    mock_sections = mock_items['/_data/navigation.yaml'][:sections]
+    allow(mock_class).to receive(:get_nav_sections).and_return(mock_sections)
+  end
+
   describe '#docs_section' do
     using RSpec::Parameterized::TableSyntax
 
     subject { mock_class.docs_section(mock_item.path.to_s) }
-
-    before do
-      mock_items = { '/_data/navigation.yaml' => YAML.load_file('spec/lib/fixtures/navigation-mock.yaml', symbolize_names: true) }
-      mock_sections = mock_items['/_data/navigation.yaml'][:sections]
-      allow(mock_class).to receive(:get_nav_sections).and_return(mock_sections)
-    end
 
     where(:path, :expected_section_title) do
       "/ee/tutorials/" | "Learn GitLab with tutorials"
@@ -39,12 +39,6 @@ RSpec.describe Nanoc::Helpers::Generic do
   end
 
   describe '#build_breadcrumb_list' do
-    before do
-      mock_items = { '/_data/navigation.yaml' => YAML.load_file('spec/lib/fixtures/navigation-mock.yaml', symbolize_names: true) }
-      mock_sections = mock_items['/_data/navigation.yaml'][:sections]
-      allow(mock_class).to receive(:get_nav_sections).and_return(mock_sections)
-    end
-
     # Test all six levels of the menu
     let(:test_data) do
       [
@@ -211,6 +205,26 @@ RSpec.describe Nanoc::Helpers::Generic do
         }
         param_value = data[:path]
         expect(mock_class.build_breadcrumb_list(param_value)).to eq(expected_json)
+      end
+    end
+  end
+
+  describe '#docs_breadcrumb_list' do
+    using RSpec::Parameterized::TableSyntax
+
+    subject { mock_class.docs_breadcrumb_list(mock_item.path.to_s) }
+
+    where(:path, :expected_breadcrumb_list) do
+      "/ee/tutorials/" | "Learn GitLab with tutorials"
+      "/ee/topics/set_up_organization.html" | "Use GitLab &rsaquo; Set up your organization"
+      "/ee/user/project/autocomplete_characters.html" | "Use GitLab &rsaquo; Plan and track work &rsaquo; Quick actions &rsaquo; Autocomplete characters"
+      "/ee/user/project/settings/import_export_troubleshooting.html" | "Use GitLab &rsaquo; Organize work with projects &rsaquo; Migrate projects using file exports &rsaquo; Troubleshooting"
+      "/updog.html" | ""
+    end
+
+    with_them do
+      it "returns the breadcrumb trail for the given path" do
+        expect(subject).to eq(expected_breadcrumb_list)
       end
     end
   end
