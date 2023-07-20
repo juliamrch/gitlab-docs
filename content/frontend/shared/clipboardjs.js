@@ -1,6 +1,5 @@
 /* global $ */
 
-import ClipboardJS from 'clipboard';
 import { spriteIcon } from './sprite_icon';
 
 // Add a copy button to every fenced code block
@@ -29,20 +28,14 @@ function hideTooltip(btn) {
   }, 1000);
 }
 
-// trigger clipboardjs
-const clipboard = new ClipboardJS('.clip-btn', {
-  target: function triggerClipboard(trigger) {
-    return trigger.previousElementSibling;
-  },
-});
+$('.clip-btn').on('click', function onCopyClick() {
+  try {
+    navigator.clipboard.writeText(this.previousElementSibling.innerText);
 
-clipboard.on('success', function clipboardSuccess(e) {
-  setTooltip(e.trigger, 'Copied!');
-  hideTooltip(e.trigger);
-  e.clearSelection();
-});
-
-clipboard.on('error', function clipboardFail(e) {
-  setTooltip(e.trigger, 'Failed!');
-  hideTooltip(e.trigger);
+    setTooltip(this, 'Copied!');
+    hideTooltip(this);
+  } catch {
+    setTooltip(this, 'Failed!');
+    hideTooltip(this);
+  }
 });
