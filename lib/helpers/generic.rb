@@ -195,7 +195,7 @@ module Nanoc::Helpers
     def docs_breadcrumb_list(path)
       data = get_nav_sections
       list = breadcrumb_trail(data, path[1..])
-      list.map { |item| item[:name] }.join(", ")
+      list.map { |item| item[:name] }.join(" &rsaquo; ")
     end
   end
 end
