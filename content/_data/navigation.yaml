@@ -425,10 +425,10 @@ sections:
             doc_url: 'ee/update/plan_your_upgrade.html'
           - doc_title: Background migrations
             doc_url: 'ee/update/background_migrations.html'
-          - doc_title: Upgrade Omnibus instance
+          - doc_title: Upgrade a Linux package instance
             doc_url: 'ee/update/package/'
             docs:
-              - doc_title: Convert to Omnibus
+              - doc_title: Convert to Linux package (Omnibus)
                 doc_url: 'omnibus/update/convert_to_omnibus.html'
               - doc_title: Convert to Enterprise Edition
                 doc_url: 'ee/update/package/convert_to_ee.html'
@@ -450,7 +450,7 @@ sections:
                 doc_url: 'omnibus/update/gitlab_10_changes.html'
               - doc_title: Downgrade
                 doc_url: 'ee/update/package/downgrade.html'
-          - doc_title: Upgrade source instance
+          - doc_title: Upgrade a self-compiled instance
             doc_url: 'ee/update/upgrading_from_source.html'
             docs:
               - doc_title: Patch versions
