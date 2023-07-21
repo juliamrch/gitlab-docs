@@ -1,11 +1,11 @@
 <script type="application/ld+json">
-{
+[{
   "@context":"http://schema.org",
   "@type":"Organization",
   "name":"GitLab",
   "legalName":"GitLab Inc.",
   "url":"https://about.gitlab.com",
-  "logo":"https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo.png",
+  "logo":"https://about.gitlab.com/images/press/logo/png/gitlab-logo-500.png",
   "foundingDate":"2011",
   "founders":[
     {
@@ -16,15 +16,6 @@
       "@type":"Person",
       "name":"Dmitriy Zaporozhets"
     }],
-    "address":
-      {
-        "@type":"PostalAddress",
-        "streetAddress":"1233 Howard St 2F",
-        "addressLocality":"San Francisco",
-        "addressRegion":"CA",
-        "postalCode":"94103",
-        "addressCountry":"USA"
-      },
     "sameAs":[
       "https://gitlab.com/",
       "https://docs.gitlab.com/",
@@ -33,5 +24,18 @@
       "https://www.linkedin.com/company/gitlab-com",
       "https://en.wikipedia.org/wiki/GitLab",
       "https://www.youtube.com/channel/UCnMGQ8QHMAnVIsI3xJrihhg"]
-}
+},
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://docs.gitlab.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://docs.gitlab.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}]
 </script>
