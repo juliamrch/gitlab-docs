@@ -5,7 +5,7 @@ export const GPS_ID = '97494f9fe316a426d';
 export const MAX_RESULTS_PER_PAGE = 10;
 export const MAX_TOTAL_RESULTS = 100;
 
-export const fetchResults = async (query, filters, pageNumber, resultCount) => {
+export const fetchResults = async (query, filters, pageNumber, numResults) => {
   if (!query || query.length < 2 || typeof query !== 'string') {
     return [];
   }
@@ -21,7 +21,8 @@ export const fetchResults = async (query, filters, pageNumber, resultCount) => {
         key: GOOGLE_SEARCH_KEY,
         cx: GPS_ID,
         q: `${query}${filterQuery}`.replaceAll(' ', '+'),
-        start: (pageNumber - 1) * resultCount + 1,
+        num: numResults,
+        start: (pageNumber - 1) * numResults + 1,
       }),
   );
   const results = await response.json();
@@ -37,6 +38,7 @@ export const fetchResults = async (query, filters, pageNumber, resultCount) => {
         .replaceAll('`', '')
         .trim(),
       relativeLink: item.link.replace('https://docs.gitlab.com/', '/'),
+      breadcrumbs: item.pagemap.metatags[0]['gitlab-docs-breadcrumbs'] ?? '',
     }));
   }
 

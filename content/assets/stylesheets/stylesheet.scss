@@ -297,7 +297,8 @@ ol {
 // Search
 .navbar {
   .search-form,
-  .gs-wrapper {
+  .gs-wrapper,
+  .gs-results {
     width: $search-sm-width;
     @media (min-width: $bp-md) {
       width: $search-md-width;
@@ -308,13 +309,6 @@ ol {
   }
   .gs-results {
     margin-top: 1px;
-    width: $search-sm-width;
-    @media (min-width: $bp-md) {
-      width: $search-md-width;
-    }
-    @media (min-width: $bp-lg) {
-      width: $search-lg-width;
-    }
   }
   .search-form .input-group-append {
     background-color: inherit;

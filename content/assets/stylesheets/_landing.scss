@@ -103,7 +103,7 @@
         @media (max-width: $bp-md) {
           width: $search-md-width;
         }
-        @media (min-width: $bp-lg) {
+        @media (min-width: $bp-md) {
           width: $search-lg-width;
         }
       }

@@ -7,7 +7,7 @@ import {
 } from '@gitlab/ui';
 import { debounce } from 'lodash';
 import { directive as clickOutside } from 'v-click-outside';
-import { fetchResults, MAX_RESULTS_PER_PAGE } from '../../services/google_search_api';
+import { fetchResults } from '../../services/google_search_api';
 import SuggestedItems from './suggested_items.vue';
 
 export default {
@@ -24,6 +24,10 @@ export default {
   props: {
     borderless: {
       type: Boolean,
+      required: true,
+    },
+    numResults: {
+      type: Number,
       required: true,
     },
   },
@@ -45,7 +49,7 @@ export default {
   },
   computed: {
     hasMoreResults() {
-      return this.results.length >= MAX_RESULTS_PER_PAGE;
+      return this.results.length >= this.numResults;
     },
     hasNoResults() {
       return !this.results.length && this.submitted && this.searchQuery;
@@ -73,7 +77,7 @@ export default {
       this.isLoading = true;
 
       const query = this.suggestion ? this.suggestion : this.searchQuery;
-      const response = await fetchResults(query, [], 1, 10);
+      const response = await fetchResults(query, [], 1, this.numResults);
       this.isLoading = false;
       this.suggestion = '';
 
@@ -172,20 +176,26 @@ export default {
         <ul v-if="results.length" data-testid="search-results" class="gl-pl-0 gl-mb-0 gl-py-3">
           <li v-for="(result, index) in results" :key="result.cacheId" class="gl-list-style-none">
             <gl-link
-              v-safe-html="result.formattedTitle"
               data-result-type="dropdown"
               :data-search-query="searchQuery"
               :href="result.relativeLink"
               :data-link-index="index"
               class="gl-text-gray-700 gl-py-3 gl-px-2 gl-display-block gl-text-left"
-            />
+            >
+              <span v-safe-html="result.formattedTitle" class="gl-display-block"></span>
+              <span
+                v-if="result.breadcrumbs"
+                v-safe-html="result.breadcrumbs"
+                class="gl-font-xs gl-display-block gl-text-gray-400"
+              ></span>
+            </gl-link>
           </li>
-          <li v-if="hasMoreResults" class="gl-list-style-none gl-border-t gl-my-2 gl-py-2">
+          <li v-if="hasMoreResults" class="gl-list-style-none gl-mb-1">
             <gl-link
               :data-link-index="results.length"
               data-testid="more-results"
               :href="moreResultsPath"
-              class="gl-text-gray-700 gl-pt-3 gl-pb-2 gl-px-2 gl-display-block gl-text-left"
+              class="gl-text-gray-700 gl-pt-3 gl-pb-3 gl-px-2 gl-display-block gl-text-left"
             >
               See all results
             </gl-link>

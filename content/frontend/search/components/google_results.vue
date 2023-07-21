@@ -177,7 +177,12 @@ export default {
               :href="`${result.relativeLink}`"
               class="gl-font-lg gl-border-bottom-0! gl-hover-text-decoration-underline:hover gl-mb-2"
             />
-            <p v-safe-html="result.htmlSnippet" class="result-snippet"></p>
+            <p
+              v-if="result.breadcrumbs"
+              v-safe-html="result.breadcrumbs"
+              class="gl-font-sm gl-text-gray-400"
+            ></p>
+            <p v-safe-html="result.htmlSnippet" class="result-snippet gl-mt-0!"></p>
           </li>
         </ul>
 
