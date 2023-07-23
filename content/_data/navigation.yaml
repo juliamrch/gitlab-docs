@@ -1473,6 +1473,8 @@ sections:
                     doc_url: 'ee/user/project/repository/mirror/pull.html'
                   - doc_title: Push mirroring
                     doc_url: 'ee/user/project/repository/mirror/push.html'
+                  - doc_title: Troubleshooting repository mirroring
+                    doc_url: 'ee/user/project/repository/mirror/troubleshooting.html'
               - doc_title: Protected branches
                 doc_url: 'ee/user/project/protected_branches.html'
               - doc_title: Protected tags
