@@ -440,14 +440,6 @@ sections:
                 doc_url: 'omnibus/update/gitlab_15_changes.html'
               - doc_title: GitLab 14 changes
                 doc_url: 'omnibus/update/gitlab_14_changes.html'
-              - doc_title: GitLab 13 changes
-                doc_url: 'omnibus/update/gitlab_13_changes.html'
-              - doc_title: GitLab 12 changes
-                doc_url: 'omnibus/update/gitlab_12_changes.html'
-              - doc_title: GitLab 11 changes
-                doc_url: 'omnibus/update/gitlab_11_changes.html'
-              - doc_title: GitLab 10 changes
-                doc_url: 'omnibus/update/gitlab_10_changes.html'
               - doc_title: Downgrade
                 doc_url: 'ee/update/package/downgrade.html'
           - doc_title: Upgrade a self-compiled instance
