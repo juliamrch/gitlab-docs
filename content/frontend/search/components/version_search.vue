@@ -64,9 +64,14 @@ export default {
   methods: {
     searchArchivedVersion() {
       if (this.selectedVersion !== SELECT_DEFAULT_TEXT) {
+        // In 15.11, the search query string changed from "query" to "q".
+        // This logic can be removed when 15.x sites are retired (18.0 release).
+        const versionNumber = Number(this.selectedVersion);
+        const queryParam = versionNumber < 16.0 && versionNumber !== 15.11 ? 'query' : 'q';
+
         window.location.href = `https://archives.docs.gitlab.com/${
           this.selectedVersion
-        }/search/?query=${encodeURI(this.query)}`;
+        }/search/?${queryParam}=${encodeURI(this.query)}`;
 
         this.selectedVersion = SELECT_DEFAULT_TEXT;
       }
