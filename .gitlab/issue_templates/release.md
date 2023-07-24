@@ -30,7 +30,7 @@ The following terms are used throughout this document:
    ```
 
 1. Check for the stable branches that correspond with the release:
-   - [ ] `gitlab`: <https://gitlab.com/gitlab-org/gitlab/-/branches?state=all&sort=updated_desc&search=stable-ee->
+   - [ ] `gitlab`: <https://gitlab.com/gitlab-org/gitlab/-/branches?state=all&sort=updated_desc&search=stable-ee>
    - [ ] `gitlab-runner`: <https://gitlab.com/gitlab-org/gitlab-runner/-/branches?state=all&sort=updated_desc&search=-stable>
    - [ ] `omnibus-gitlab`: <https://gitlab.com/gitlab-org/omnibus-gitlab/-/branches?state=all&sort=updated_desc&search=-stable>
    - [ ] `charts/gitlab`: <https://gitlab.com/gitlab-org/charts/gitlab/-/branches?state=all&sort=updated_desc&search=-stable> (Version number is 9 lower than `gitlab` release, so GitLab 16.X = Charts 7.X)
@@ -56,10 +56,6 @@ The following terms are used throughout this document:
       [`image:docs-single` job](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/7fbb5e1313ebde811877044e87f444a0a283fed4/.gitlab/ci/docker-images.gitlab-ci.yml#L107-129)
       runs and creates a new Docker image tagged with the name of the stable branch
       (for example, see [the 15.6 release pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/702437095)).
-
-   1. [ ] Share the following message in the `#tw-team` channel:
-
-      > :mega: The stable branch for `gitlab-docs` was created. You can now make changes to docs navigation as usual.
 
 You can continue onto the next process immediately, or wait for the release post.
 
