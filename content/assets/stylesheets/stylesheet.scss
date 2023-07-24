@@ -323,6 +323,9 @@ ol {
 .gl-search-box-by-type-input-borderless:not(.form-control-plaintext):focus {
   box-shadow: inset 0 0 0 2px $blue-400;
 }
+.gl-form-input.gl-search-box-by-click-input {
+  height: auto;
+}
 .gs-wrapper kbd {
   display: none;
   @media (min-width: $bp-md) {
