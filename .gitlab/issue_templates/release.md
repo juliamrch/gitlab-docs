@@ -25,7 +25,7 @@ The following terms are used throughout this document:
 
    ```markdown
    ## :+1: What went well this release?
-   ## :-1: What didn’t go well this release?
+   ## :-1: What didn't go well this release?
    ## :chart_with_upwards_trend: What can we improve going forward?
    ```
 
@@ -80,19 +80,18 @@ After the release post is live on the 22nd, or the next Monday morning if the re
 1. [ ] After the deployment completes, open `docs.gitlab.com` in a browser. Confirm
    both the latest version and the correct pre-release version are listed in the documentation version dropdown.
 1. [ ] Check all published versions of the docs to ensure they are visible and that their version menus have the latest versions.
-1. [ ] Mention `@gl-docsteam` in a comment and invite them to read and participate in the retro threads.
+1. [ ] Share the following message in the `#tw-team` channel:
 
-   ```markdown
-   @gl-docsteam here's the docs release issue for XX.ZZ with some retro threads, per our [process](#on-the-22nd-or-the-first-business-day-after).
+   ```plaintext
+   :mega: The docs <version> release is complete. If you have any feedback about this release, add it to the retro thread in <this issue>.
    ```
 
 After the 22nd of each month:
 
-1. [ ] Create a release issue for the
-   [next TW](https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks)
-   and assign it to them.
+1. [ ] Create a release issue for the next release, and assign it to the TW who completed the
+   [release post structural check for the previous milestone](https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks).
 1. [ ] **Major releases only.** Update
-   [OutdatedVersions.yml](https://gitlab.com/gitlab-org/gitlab/-/blob/master/doc/.vale/gitlab/OutdatedVersions.yml)
+   [`OutdatedVersions.yml`](https://gitlab.com/gitlab-org/gitlab/-/blob/master/doc/.vale/gitlab/OutdatedVersions.yml)
    with the newly-outdated version.
 1. [ ] Improve this checklist. Continue moving steps from
    [`releases.md`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md)
