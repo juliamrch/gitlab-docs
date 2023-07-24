@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return createElement(GoogleSearchForm, {
           props: {
             borderless: !isHomepage,
+            numResults: 7,
           },
         });
       },

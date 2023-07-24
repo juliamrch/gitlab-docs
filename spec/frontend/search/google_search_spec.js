@@ -47,8 +47,9 @@ describe('content/frontend/search/components/google_search_form.vue', () => {
     };
     const componentData = {
       attachTo: createContainer(),
-      props: {
+      propsData: {
         borderless: true,
+        numResults: 10,
       },
     };
     wrapper = mount(SearchForm, componentData);
@@ -82,7 +83,7 @@ describe('content/frontend/search/components/google_search_form.vue', () => {
     expect(wrapper.find('[data-testid="no-results"]').exists()).toBe(true);
   });
 
-  it('displays "See all results" link when there are more than 10 search results', async () => {
+  it('displays "See all results" link when there are more results than shown', async () => {
     fetchResults.mockResolvedValueOnce(mockResults);
 
     const input = wrapper.find('input');
@@ -92,20 +93,10 @@ describe('content/frontend/search/components/google_search_form.vue', () => {
     await flushPromises();
 
     expect(wrapper.vm.hasMoreResults).toBe(true);
-    expect(wrapper.find('[data-testid="more-results"]').exists()).toBe(true);
-  });
 
-  it('links to the advanced search page from the "See all results" link', async () => {
-    fetchResults.mockResolvedValueOnce(mockResults);
-
-    const input = wrapper.find('input');
-    input.setValue('test');
-    await input.trigger('keyup');
-    jest.advanceTimersByTime(500);
-    await flushPromises();
-
-    const link = wrapper.find('[data-testid="more-results"]');
-    expect(link.attributes('href')).toBe('/search/?q=test');
+    const moreResultsLink = wrapper.find('[data-testid="more-results"]');
+    expect(moreResultsLink.exists()).toBe(true);
+    expect(moreResultsLink.attributes('href')).toBe('/search/?q=test');
   });
 });
 
