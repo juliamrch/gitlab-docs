@@ -1323,7 +1323,7 @@ sections:
               - doc_title: Linked issues
                 doc_url: 'ee/user/project/issues/related_issues.html'
               - doc_title: Service Desk
-                doc_url: 'ee/user/project/service_desk.html'
+                doc_url: 'ee/user/project/service_desk/'
                 docs:
                   - doc_title: Rake tasks
                     doc_url: 'ee/administration/raketasks/service_desk_email.html'
