@@ -242,37 +242,3 @@ To exclude a directory so the contents aren't published to the docs site:
 
 1. Edit [this `Rules` file](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/Rules).
 1. Add an `ignore` line, like: `ignore '/ee/drawers/*.md'`.
-
-## Skip compiling the frontend JavaScript
-
-When `nanoc compile` runs, all the JavaScript files under
-[`content/frontend/`](/content/frontend/) are compiled as well. This action is
-not idempotent, so the JavaScript files are built every time Nanoc compiles
-the site, regardless if a change has been made to one of those files. This means
-that even for a small Markdown file change like a typo, you have to wait almost
-two minutes for the frontend files to finish compiling so that you can preview
-your change locally.
-
-To avoid this, you can use the following workaround:
-
-1. Compile the frontend files once:
-
-   ```shell
-   bin/nanoc frontend
-   ```
-
-1. Use the `NANOC_ENV=skip_frontend` variable to skip compiling the frontend
-   files:
-
-   ```shell
-   NANOC_ENV=skip_frontend make live
-   ```
-
-This workaround uses Nanoc's [environments](https://nanoc.app/doc/sites/#environments)
-by setting one called
-[`skip_frontend`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/9544ee841dcde7591b21ec7f1400ddae495f0b8b/nanoc.yaml#L169)
-and defining the directories to skip
-[pruning](https://nanoc.app/doc/reference/config/#prune). We then use the
-name of the environment to set the `NANOC_ENV` variable and skip the
-[postprocess](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/ca31b96280072e5522ce42f4de89bd212fdf4ba2/Rules#L185)
-when compiling the frontend files.

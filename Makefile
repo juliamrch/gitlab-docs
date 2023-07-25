@@ -78,6 +78,8 @@ else
 endif
 	@printf "\n$(INFO)INFO: Compiling CSS...$(END)\n"
 	@yarn compile:css
+	@printf "\n$(INFO)INFO: Compiling JavaScript...$(END)\n"
+	@ROLLUP_OPTIONS=--silent yarn compile:js
 
 view: compile
 	@printf "\n$(INFO)INFO: Starting GitLab documentation site...$(END)\n"

@@ -38,6 +38,7 @@
     - bundle exec rake default
     - bundle exec nanoc compile -VV
     - yarn compile:css
+    - yarn compile:js
     # Create _redirects for Pages redirects
     - bundle exec rake redirects
     # Build the Lunr.js search index if needed
