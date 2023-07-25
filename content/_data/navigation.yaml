@@ -1377,6 +1377,8 @@ sections:
                 doc_url: 'ee/user/asciidoc.html'
               - doc_title: CSV files
                 doc_url: 'ee/user/project/repository/csv.html'
+              - doc_title: Rich text editor
+                doc_url: 'ee/user/rich_text_editor.html'
           - doc_title: To-Do List
             doc_url: 'ee/user/todos.html'
           - doc_title: Using Git
