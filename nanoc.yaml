@@ -38,7 +38,7 @@ base_url: https://docs.gitlab.com
 
 prune:
   auto_prune: true
-  exclude: ['.git', '.hg', '.svn', 'CVS']
+  exclude: ['.git', '.hg', 'frontend', 'assets']
 
 data_sources:
   -
@@ -163,9 +163,3 @@ checks:
       # Redirected link we don't want to update to platform/locale specific link
       # See https://gitlab.com/gitlab-org/gitlab/-/issues/368300#note_1047352091
       - 'https:\/\/support.gitlab.com'
-
-environments:
-  skip_frontend:
-    prune:
-      auto_prune: true
-      exclude: ['.git', 'frontend', 'assets']

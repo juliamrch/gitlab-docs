@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "public/index.js",
   "scripts": {
-    "bundle": "if [ -z $ROLLUP_OPTIONS ]; then echo INFO: ROLLUP_OPTIONS is not set; else echo INFO: ROLLUP_OPTIONS = ${ROLLUP_OPTIONS}; fi && rollup --config rollup.config.js ${ROLLUP_OPTIONS}",
+    "compile:js": "rollup --config rollup.config.js $ROLLUP_OPTIONS",
     "watch:js": "rollup --config rollup.config.js --watch",
     "compile:css": "node_modules/.bin/sass content/assets/stylesheets:public/assets/stylesheets/",
     "watch:css": "node_modules/.bin/sass --watch content/assets/stylesheets:public/assets/stylesheets/",
