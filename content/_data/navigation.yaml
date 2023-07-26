@@ -1145,8 +1145,8 @@ sections:
                 docs:
                   - doc_title: 'Tutorial: Create a compliance pipeline'
                     doc_url: 'ee/tutorials/compliance_pipeline/'
-              - doc_title: Compliance reports
-                doc_url: 'ee/user/compliance/compliance_report/'
+              - doc_title: Compliance center
+                doc_url: 'ee/user/compliance/compliance_center/'
               - doc_title: Compliance tools
                 doc_url: 'ee/user/compliance/'
                 docs:
