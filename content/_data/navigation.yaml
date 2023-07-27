@@ -2160,12 +2160,14 @@ sections:
                 docs:
                   - doc_title: "Tutorial: Set up Flux for GitOps"
                     doc_url: 'ee/user/clusters/agent/gitops/flux_tutorial.html'
+                  - doc_title: "Tutorial: Structure your repository"
+                    doc_url: 'ee/user/clusters/agent/gitops/example_repository_structure.html'
+                  - doc_title: "Tutorial: Deploy an OCI artifact using Flux"
+                    doc_url: 'ee/user/clusters/agent/gitops/flux_oci_tutorial.html'
                   - doc_title: Manage Kubernetes secrets (deprecated)
                     doc_url: 'ee/user/clusters/agent/gitops/secrets_management.html'
                   - doc_title: Track cluster resources (deprecated)
                     doc_url: 'ee/user/infrastructure/clusters/deploy/inventory_object.html'
-                  - doc_title: Example GitOps repository structure
-                    doc_url: 'ee/user/clusters/agent/gitops/example_repository_structure.html'
                   - doc_title: Using GitOps with the agent for Kubernetes (deprecated)
                     doc_url: 'ee/user/clusters/agent/gitops/agent.html'
               - doc_title: GitLab CI/CD workflow
