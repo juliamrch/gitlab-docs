@@ -2206,6 +2206,8 @@ sections:
             doc_url: 'ee/user/analytics/code_review_analytics.html'
           - doc_title: Contribution analytics
             doc_url: 'ee/user/group/contribution_analytics/'
+          - doc_title: Contributor statistics
+            doc_url: 'ee/user/analytics/contributor_statistics.html'
           - doc_title: DevOps adoption by instance
             doc_url: 'ee/administration/analytics/dev_ops_reports.html'
           - doc_title: DevOps adoption by group
