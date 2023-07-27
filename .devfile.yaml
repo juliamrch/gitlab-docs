@@ -1,0 +1,15 @@
+schemaVersion: 2.2.0
+components:
+  - name: gitlab-docs
+    attributes:
+      gl/inject-editor: true
+    container:
+      image: registry.gitlab.com/gitlab-org/gitlab-build-images:www-gitlab-com-debian-bullseye-ruby-3.2-node-18
+      env:
+        - name: SEARCH_BACKEND
+          value: lunr
+      endpoints:
+        - name: docs
+          targetPort: 3000
+          secure: true
+          protocol: http

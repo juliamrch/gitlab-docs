@@ -194,7 +194,7 @@ hadolint-tests:
 
 yamllint-tests:
 	@printf "\n$(INFO)INFO: Running yamllint tests...$(END)\n"
-	@yamllint .gitlab-ci.yml .gitpod.yml content/_data
+	@yamllint .gitlab-ci.yml .gitpod.yml .devfile.yaml content/_data
 
 markdownlint-tests:
 	@printf "\n$(INFO)INFO: Running markdownlint tests...$(END)\n"
