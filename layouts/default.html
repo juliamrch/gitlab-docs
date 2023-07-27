@@ -11,7 +11,7 @@
     <section class="gl-docs container-fluid gl-mt-9">
       <div class="row">
         <div class="col-0 col-xl-2 pl-0">
-          <div class="nav-wrapper active">
+          <div class="nav-wrapper active gl-display-none!">
             <aside id="global-nav" class="global-nav">
             <!-- Render the global nav only if CI_PROJECT_NAME is gitlab-docs or is not set -->
             <% if gitlab_docs_or_local? %>
@@ -69,6 +69,7 @@
         </div>
       </div>
     </section>
+    <script src="<%= @items['/frontend/navigation/global_nav.*'].path %>"></script>
     <script src="/assets/vendor/vue.min.js"></script>
     <script src="/assets/vendor/jquery.slim.min.js"></script>
     <script src="/assets/vendor/bootstrap.bundle.min.js"></script>
@@ -98,7 +99,6 @@
       <script src="<%= @items['/frontend/archives/archives.*'].path %>"></script>
     <% end %>
     <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
-    <script src="<%= @items['/assets/javascripts/global-nav.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/tables.*'].path %>"></script>
   </body>
 </html>
