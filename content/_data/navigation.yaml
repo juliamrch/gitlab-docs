@@ -1134,6 +1134,8 @@ sections:
               - doc_title: Audit event streaming
                 doc_url: 'ee/administration/audit_event_streaming/'
                 docs:
+                  - doc_title: Audit event types
+                    doc_url: 'ee/administration/audit_event_streaming/audit_event_types.html'
                   - doc_title: Examples
                     doc_url: 'ee/administration/audit_event_streaming/examples.html'
                   - doc_title: GraphQL API
