@@ -3530,6 +3530,25 @@ sections:
           # GitLab Operator development documentation
           - doc_title: Contribute to GitLab Operator
             doc_url: 'operator/developer/guide.html'
+            docs:
+              - doc_title: CI/CD configuration
+                doc_url: 'operator/developer/ci.html'
+              - doc_title: Development installation
+                doc_url: 'operator/developer/installation.html'
+              - doc_title: OpenShift cluster setup
+                doc_url: 'operator/developer/openshift_cluster_setup.html'
+              - doc_title: Publish to OperatorHub
+                doc_url: 'operator/developer/operatorhub_publishing.html'
+              - doc_title: Provision and deploy
+                doc_url: 'operator/developer/provision_and_deploy.html'
+              - doc_title: RedHat certification
+                doc_url: 'operator/developer/redhat_certification.html'
+              - doc_title: RedHat certification full
+                doc_url: 'operator/developer/redhat_certification_full.html'
+              - doc_title: Versioning and releases
+                doc_url: 'operator/developer/releases.html'
+              - doc_title: Test OLM
+                doc_url: 'operator/developer/test_olm.html'
           # End GitLab Operator development documentation
 
       - category_title: Contribute to GitLab Design System
