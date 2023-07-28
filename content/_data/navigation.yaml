@@ -619,6 +619,9 @@ sections:
         docs:
           - doc_title: CI/CD
             doc_url: 'ee/administration/cicd.html'
+            docs:
+              - doc_title: Secure files
+                doc_url: 'ee/administration/secure_files.html'
           - doc_title: Configuration and Admin Area
             doc_url: 'ee/administration/admin_area.html'
             docs:
