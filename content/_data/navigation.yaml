@@ -404,6 +404,9 @@ sections:
         docs:
           - doc_title: Up to 1,000 users
             doc_url: 'ee/administration/reference_architectures/1k_users.html'
+            docs:
+              - doc_title: 'Tutorial: Install and secure a single node GitLab instance'
+                doc_url: 'ee/tutorials/install_gitlab_single_node/'
           - doc_title: Up to 2,000 users
             doc_url: 'ee/administration/reference_architectures/2k_users.html'
           - doc_title: Up to 3,000 users
