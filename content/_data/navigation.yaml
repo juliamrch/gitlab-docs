@@ -2166,7 +2166,7 @@ sections:
                 docs:
                   - doc_title: "Tutorial: Set up Flux for GitOps"
                     doc_url: 'ee/user/clusters/agent/gitops/flux_tutorial.html'
-                  - doc_title: "Tutorial: Structure your repository"
+                  - doc_title: "Tutorial: Deploy a Git repository using Flux"
                     doc_url: 'ee/user/clusters/agent/gitops/example_repository_structure.html'
                   - doc_title: "Tutorial: Deploy an OCI artifact using Flux"
                     doc_url: 'ee/user/clusters/agent/gitops/flux_oci_tutorial.html'
