@@ -5,7 +5,6 @@
     <link rel="canonical" href="<%= @config[:base_url] %>/">
   </head>
   <body class="landing" data-is-homepage="true">
-    <%= render '/gtm.*' %>
     <%= render '/header.*' %>
     <%= yield %>
     <%# Add analytics only in production %>

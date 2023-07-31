@@ -1,22 +1,19 @@
 <% if production_and_default_branch? %>
-<!-- Facebook -->
-<script src="<%= @items['/assets/javascripts/facebook_analytics.*'].path %>"></script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1689559637958103&ev=PageView&noscript=1"
-/></noscript>
+<!-- Google Tag Manager -->
+<script async src="<%= @items['/assets/javascripts/gtag_analytics.*'].path %>"></script>
+<script async src="<%= @items['/assets/javascripts/google_tagmanager.*'].path %>"></script>
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJXWQL" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 
 <!-- Marketo -->
-<script src="<%= @items['/assets/javascripts/marketo_analytics.*'].path %>"></script>
+<script async src="<%= @items['/assets/javascripts/marketo_analytics.*'].path %>"></script>
 
 <!-- Bizible -->
-<script type="text/javascript" src="https://cdn.bizible.com/scripts/bizible.js" async=""></script>
+<script async src="https://cdn.bizible.com/scripts/bizible.js"></script>
 
-<!-- Global site tag (gtag.js) - Google Ads: 923339191 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-923339191"></script>
-<script src="<%= @items['/assets/javascripts/gtag_analytics.*'].path %>"></script>
-
-<!-- Linkedin -->
-<script src="<%= @items['/assets/javascripts/linkedin_analytics.*'].path %>"></script>
+<!-- LinkedIn -->
+<script async src="<%= @items['/assets/javascripts/linkedin_analytics.*'].path %>"></script>
 <noscript>
   <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=30694&fmt=gif" />
 </noscript>
