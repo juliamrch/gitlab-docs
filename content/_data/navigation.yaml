@@ -3256,6 +3256,17 @@ sections:
               - doc_title: Internal analytics
                 doc_url: 'ee/development/internal_analytics/'
                 docs:
+                  - doc_title: Internal event tracking
+                    doc_url: 'ee/development/internal_analytics/internal_event_tracking/'
+                    docs:
+                      - doc_title: Introduction
+                        doc_url: 'ee/development/internal_analytics/internal_event_tracking/introduction.html'
+                      - doc_title: Quick start guide
+                        doc_url: 'ee/development/internal_analytics/internal_event_tracking/quick_start.html'
+                      - doc_title: Event definition guide
+                        doc_url: 'ee/development/internal_analytics/internal_event_tracking/event_definition_guide.html'
+                      - doc_title: Architecture
+                        doc_url: 'ee/development/internal_analytics/internal_event_tracking/architecture.html'
                   - doc_title: Service Ping
                     doc_url: 'ee/development/internal_analytics/service_ping/'
                     docs:
