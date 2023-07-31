@@ -1,18 +1,19 @@
----
-version: 4
----
+/**
+ * Use OneTrust Geolocation to block GA in certain countries.
+ * See https://gitlab.com/gitlab-com/marketing/digital-experience/buyer-experience/-/issues/1618
+ */
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
+
 gtag('js', new Date());
-gtag('config', 'AW-923339191');
+gtag('config', 'GTM-NJXWQL');
 gtag('consent', 'default', {
   'analytics_storage': 'granted',
   'ad_storage': 'granted',
   'functionality_storage': 'granted',
   'wait_for_update': 500
 });
-
 gtag('consent', 'default', {
   'analytics_storage': 'denied',
   'ad_storage': 'denied',
@@ -27,7 +28,6 @@ window.geofeed = (options) => {
     'oneTrustCountryId': options.country.toString()
   })
 }
-
 const json = document.createElement('script');
 json.setAttribute('src', 'https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location/geofeed');
 document.head.appendChild(json);

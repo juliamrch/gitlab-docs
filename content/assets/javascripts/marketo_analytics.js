@@ -1,13 +1,9 @@
----
-version: 1
----
-
 (function() {
   var didInit = false;
   function initMunchkin() {
     if(didInit === false) {
       didInit = true;
-      Munchkin.init('194-VVC-221');
+      Munchkin.init('194-VVC-221', {"useBeaconAPI": true});
     }
   }
   var s = document.createElement('script');

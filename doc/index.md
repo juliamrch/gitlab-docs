@@ -25,3 +25,4 @@ the following maintenance tasks on the GitLab Docs site:
 - Publish [releases](releases.md).
 - Perform [maintenance](maintenance.md).
 - Run [Rake tasks](raketasks.md).
+- Review [analytics](analytics.md).
