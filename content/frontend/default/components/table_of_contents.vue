@@ -1,25 +1,28 @@
 <script>
-import { GlIcon } from '@gitlab/ui';
+import { GlIcon, GlCollapse } from '@gitlab/ui';
 import { flattenItems } from '../../shared/toc/flatten_items';
-import CollapsibleContainer from './collapsible_container.vue';
 import TableOfContentsList from './table_of_contents_list.vue';
 
 export default {
   name: 'TableOfContents',
   components: {
-    CollapsibleContainer,
-    TableOfContentsList,
+    GlCollapse,
     GlIcon,
+    TableOfContentsList,
   },
   props: {
     items: {
       type: Array,
       required: true,
     },
+    initialCollapsed: {
+      type: Boolean,
+      required: true,
+    },
   },
   data() {
     return {
-      isCollapsed: true,
+      isCollapsed: this.initialCollapsed,
     };
   },
   computed: {
@@ -33,7 +36,7 @@ export default {
   },
   methods: {
     toggleCollapse() {
-      this.$refs.container.collapse(!this.isCollapsed);
+      this.isCollapsed = !this.isCollapsed;
     },
   },
 };
@@ -55,9 +58,9 @@ export default {
         >
       </h4>
       <h4 class="border-0 gl-font-base font-weight-bold toc-lg">On this page</h4>
-      <collapsible-container ref="container" v-model="isCollapsed" data-testid="container">
+      <gl-collapse ref="container" :visible="!isCollapsed" data-testid="container">
         <table-of-contents-list :items="allItems" class="my-0" data-testid="main-list" />
-      </collapsible-container>
+      </gl-collapse>
     </div>
   </div>
 </template>

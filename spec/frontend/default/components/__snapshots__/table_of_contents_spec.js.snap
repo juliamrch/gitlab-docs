@@ -29,11 +29,8 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
     >
       On this page
     </h4>
-    <collapsible-container-stub
-      collapsedclass="sm-collapsed"
-      collapsingclass="sm-collapsing"
+    <gl-collapse-stub
       data-testid="container"
-      iscollapsed="true"
     >
       <table-of-contents-list-stub
         class="my-0"
@@ -41,7 +38,7 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
         items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
         level="0"
       />
-    </collapsible-container-stub>
+    </gl-collapse-stub>
   </div>
 </div>
 `;

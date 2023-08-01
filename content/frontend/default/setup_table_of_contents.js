@@ -35,6 +35,7 @@ export const setupTableOfContents = () => {
         return h(TableOfContents, {
           props: {
             items,
+            initialCollapsed: sidebarEl.classList.contains('toc-mobile'),
           },
           directives: [
             {
