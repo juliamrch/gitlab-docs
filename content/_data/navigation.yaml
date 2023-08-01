@@ -2154,6 +2154,8 @@ sections:
             docs:
               - doc_title: Amazon EKS
                 doc_url: 'ee/user/infrastructure/clusters/connect/new_eks_cluster.html'
+              - doc_title: Azure AKS
+                doc_url: 'ee/user/infrastructure/clusters/connect/new_aks_cluster.html'
               - doc_title: Google GKE
                 doc_url: 'ee/user/infrastructure/clusters/connect/new_gke_cluster.html'
               - doc_title: Civo
