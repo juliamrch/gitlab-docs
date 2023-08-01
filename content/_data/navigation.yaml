@@ -468,7 +468,7 @@ sections:
           - doc_title: What's new
             doc_url: 'ee/administration/whats-new.html'
 
-  # Documentation from https://gitlab.com/gitlab-org/gitlab-runner
+      # Documentation from https://gitlab.com/gitlab-org/gitlab-runner
 
       - category_title: Install GitLab Runner
         category_url: 'runner/install/'
@@ -1865,9 +1865,9 @@ sections:
           - doc_title: Dependency Scanning
             doc_url: 'ee/user/application_security/dependency_scanning/'
             docs:
-              - doc_title: "Tutorial: Set up dependency scanning"
+              - doc_title: 'Tutorial: Set up dependency scanning'
                 doc_url: 'ee/tutorials/dependency_scanning.html'
-          - doc_title: "Comparison: Dependency Scanning and Container Scanning"
+          - doc_title: 'Comparison: Dependency Scanning and Container Scanning'
             doc_url: 'ee/user/application_security/comparison_dependency_and_container_scanning.html'
           - doc_title: Dependency List
             doc_url: 'ee/user/application_security/dependency_list/'
@@ -1919,7 +1919,7 @@ sections:
           - doc_title: Coverage-guided fuzz testing
             doc_url: 'ee/user/application_security/coverage_fuzzing/'
             docs:
-              - doc_title: "Tutorial: Perform fuzz testing in GitLab"
+              - doc_title: 'Tutorial: Perform fuzz testing in GitLab'
                 doc_url: 'ee/tutorials/fuzz_testing/'
           - doc_title: Breach and Attack Simulation
             doc_url: 'ee/user/application_security/breach_and_attack_simulation/'
@@ -1947,7 +1947,7 @@ sections:
                 doc_url: 'ee/user/application_security/policies/scan-execution-policies.html'
               - doc_title: Scan result policies
                 doc_url: 'ee/user/application_security/policies/scan-result-policies.html'
-              - doc_title: "Tutorial: Set up a scan result policy"
+              - doc_title: 'Tutorial: Set up a scan result policy'
                 doc_url: 'ee/tutorials/scan_result_policy/'
           - doc_title: Security scanner integration
             doc_url: 'ee/development/integrations/secure.html'
@@ -2164,11 +2164,11 @@ sections:
               - doc_title: GitOps workflow
                 doc_url: 'ee/user/clusters/agent/gitops.html'
                 docs:
-                  - doc_title: "Tutorial: Set up Flux for GitOps"
+                  - doc_title: 'Tutorial: Set up Flux for GitOps'
                     doc_url: 'ee/user/clusters/agent/gitops/flux_tutorial.html'
-                  - doc_title: "Tutorial: Deploy a Git repository using Flux"
+                  - doc_title: 'Tutorial: Deploy a Git repository using Flux'
                     doc_url: 'ee/user/clusters/agent/gitops/example_repository_structure.html'
-                  - doc_title: "Tutorial: Deploy an OCI artifact using Flux"
+                  - doc_title: 'Tutorial: Deploy an OCI artifact using Flux'
                     doc_url: 'ee/user/clusters/agent/gitops/flux_oci_tutorial.html'
                   - doc_title: Manage Kubernetes secrets (deprecated)
                     doc_url: 'ee/user/clusters/agent/gitops/secrets_management.html'
@@ -2790,10 +2790,19 @@ sections:
             doc_url: 'ee/api/graphql/removed_items.html'
       - category_title: OAuth 2.0 identity provider API
         category_url: 'ee/api/oauth2.html'
-      - category_title: GitLab CLI (glab)
-        category_url: 'ee/integration/glab/'
-      - category_title: Visual Studio Code extension
-        category_url: 'ee/user/project/repository/vscode.html'
+      - category_title: Editor and IDE Extensions
+        category_url: 'ee/editor_extensions/'
+        docs:
+          - doc_title: Visual Studio Code
+            doc_url: 'ee/editor_extensions/visual_studio_code/'
+          - doc_title: JetBrains IDEs
+            doc_url: 'ee/editor_extensions/jetbrains_ide/'
+          - doc_title: Visual Studio
+            doc_url: 'ee/editor_extensions/visual_studio/'
+          - doc_title: Neovim
+            doc_url: 'ee/editor_extensions/neovim/'
+          - doc_title: GitLab CLI (glab)
+            doc_url: 'ee/editor_extensions/gitlab_cli/'
       - category_title: Code Suggestions
         category_url: 'ee/user/project/repository/code_suggestions.html'
   # End of documentation from https://gitlab.com/gitlab-org/gitlab
@@ -2813,7 +2822,7 @@ sections:
       - category_title: Contribute to GitLab
         category_url: 'ee/development/contributing/'
         docs:
-          - doc_title: "Tutorial: Make a GitLab contribution"
+          - doc_title: 'Tutorial: Make a GitLab contribution'
             doc_url: 'ee/development/contributing/first_contribution.html'
           - doc_title: Architecture
             doc_url: 'ee/development/architecture.html'
