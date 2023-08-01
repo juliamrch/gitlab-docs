@@ -1,16 +1,3 @@
-/* global $ */
-
-/**
- * Returns outerHeight of element **even if it's hidden**
- *
- * NOTE: Uses jQuery because there is no trivial way to do this in
- * vaniall JS, and it's nice that jQuery has a reliable out-of-the-box
- * solution.
- *
- * @param {Element} el
- */
-export const getOuterHeight = (el) => $(el).outerHeight();
-
 /**
  * Find the first child of the given element with the given tag name
  *
