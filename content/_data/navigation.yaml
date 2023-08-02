@@ -1326,6 +1326,8 @@ sections:
                 doc_url: 'ee/user/project/issue_board.html'
               - doc_title: 'Tutorial: Set up issue boards for team hand-off'
                 doc_url: 'ee/tutorials/boards_for_teams/'
+              - doc_title: 'Tutorial: Set up a single project for issue triage'
+                doc_url: 'ee/tutorials/issue_triage/'
               - doc_title: Multiple assignees
                 doc_url: 'ee/user/project/issues/multiple_assignees_for_issues.html'
               - doc_title: Linked issues
