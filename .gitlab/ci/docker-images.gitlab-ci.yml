@@ -319,3 +319,41 @@ test:image:docs-archives:
   needs: []
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+
+#
+# Build the image that is used for the gitlab-docs Workspace
+#
+image:docs-workspace:
+  extends:
+    - .docker_prepare
+    - .rules_docker_images
+  needs: ["test:image:docs-workspace"]
+  stage: build-images
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/workspace
+    DOCKERFILE: dockerfiles/gitlab-docs-workspace.Dockerfile
+  needs: []
+  script:
+    - docker build --build-arg ASDF_VERSION=${ASDF_VERSION} -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker push $IMAGE_NAME
+
+#
+# Test the GitLab docs workspace Docker image if changes made to its Dockerfile
+#
+test:image:docs-workspace:
+  extends:
+    - .docker_prepare
+    - .rules_docker_image_tests
+  stage: test
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/workspace
+    DOCKERFILE: dockerfiles/gitlab-docs-workspace.Dockerfile
+  needs: []
+  script:
+    - docker build --build-arg ASDF_VERSION=${ASDF_VERSION} -t $IMAGE_NAME -f $DOCKERFILE .
+  rules:
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
+      # This image uses asdf to manage dependencies, so run this test if tool versions change.
+      changes:
+        - .tool-versions
+        - $DOCKERFILE
