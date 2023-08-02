@@ -4,15 +4,13 @@ title: GitLab Documentation
 <!-- Render the front page only if CI_PROJECT_NAME is gitlab-docs or is not set -->
 <% if ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil? %>
   <!-- Hero-->
-  <section class="hero text-center pt-4 mt-4">
+  <section class="hero text-center">
     <!-- Feedback Banner-->
-    <div class="gl-mt-n3">
-      <%= render '/banner.*' %>
-    </div>
-    <div class="container py-6 mb-3">
+    <%= render '/banner.*' %>
+    <div class="container gl-mt-11">
       <div class="row">
         <div class="col d-flex justify-content-center">
-          <div class="card search gl-mt-6 gl-py-2">
+          <div class="card search gl-py-2">
             <div class="card-body">
               <h5 class="card-title gl-pb-4">Search the docs</h5>
               <% if @item[:searchbar].nil? %>

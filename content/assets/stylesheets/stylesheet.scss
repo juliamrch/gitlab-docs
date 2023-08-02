@@ -10,7 +10,7 @@
 @import 'typography';
 
 body {
-  overflow-x: hidden;
+  overscroll-behavior: none;
   > .wrapper {
     min-height: 100vh;
     @media (max-width: $bp-md) {
@@ -18,6 +18,10 @@ body {
       background-color: $white;
     }
   }
+}
+
+:target {
+  scroll-margin-top: $header-height + 1rem;
 }
 
 main {
@@ -79,7 +83,7 @@ ol {
   flex-direction: column;
   position: fixed;
   width: 50px;
-  top: 0;
+  top: $header-height;
   height: 100%;
   transition: all 0.3s;
   border-right: 1px solid $gds-gray-200;
@@ -110,6 +114,8 @@ ol {
     border-radius: 0;
     box-shadow: none;
     justify-content: left;
+    position: relative;
+    top: calc($header-height * -1);
     .label {
       display: none;
     }
@@ -237,11 +243,11 @@ ol {
 
 // Main header CSS
 .navbar {
-  min-height: $header-height;
   background-color: $header-background-color;
 
   .navbar-brand {
     font-size: 1rem;
+    min-height: $header-height;
   }
 
   .navbar-nav {
@@ -500,20 +506,6 @@ p.result-snippet {
 
 .btn-cta {
   background-color: $header-free-trial-button-color !important;
-}
-
-h2[id]::before,
-h3[id]::before,
-h4[id]::before,
-h5[id]::before,
-h6[id]::before {
-  display: block;
-  content: ' ';
-  margin-top: -4.688rem;
-  height: 4.688rem;
-  visibility: hidden;
-  position: relative;
-  z-index: 0;
 }
 
 // Embedded video

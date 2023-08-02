@@ -7,7 +7,7 @@
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90">
     <%= render '/header.*' %>
-    <section class="gl-docs container-fluid gl-mt-9">
+    <section class="gl-docs container-fluid">
       <div class="row">
         <div class="col-0 col-xl-2 pl-0">
           <div class="nav-wrapper active gl-display-none!">
@@ -33,8 +33,8 @@
           </div>
           <div class="row">
             <div class="col">
-              <div class="my-3 my-xl-0">
-                <a class="gl-absolute text-muted gl-mt-4 gl-pt-4 gl-text-decoration-none gl-border-bottom-0! mobile-nav-toggle" href="#"><%= icon('hamburger', 18, 'gl-ml-0!') %></a>
+              <div class="mobile-toggle-wrapper gl-mt-7">
+                <a class="gl-absolute text-muted gl-text-decoration-none gl-border-bottom-0! mobile-nav-toggle" href="#"><%= icon('hamburger', 18, 'gl-ml-0!') %></a>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@
             </div>
           </div>
         </div>
-        <div class="col-3 py-3 d-none d-xl-flex">
+        <div class="col-3 d-none d-xl-flex">
           <div id="doc-nav" class="doc-nav w-100"></div>
         </div>
       </div>

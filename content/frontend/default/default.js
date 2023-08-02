@@ -6,23 +6,8 @@ import { setupTableOfContents } from './setup_table_of_contents';
 import VersionsMenu from './components/versions_menu.vue';
 import TabsSection from './components/tabs_section.vue';
 
-function fixScrollPosition() {
-  if (!window.location.hash || !document.querySelector(window.location.hash)) return;
-  const contentBody = document.querySelector('.gl-docs main');
-
-  const scrollPositionMutationObserver = new ResizeObserver(() => {
-    if (window.location.hash) {
-      document.scrollingElement.scrollTop =
-        document.querySelector(window.location.hash).getBoundingClientRect().top + window.scrollY;
-    }
-  });
-
-  scrollPositionMutationObserver.observe(contentBody);
-}
-
 /* eslint-disable no-new */
 document.addEventListener('DOMContentLoaded', () => {
-  fixScrollPosition();
   setupTableOfContents();
 
   /**
