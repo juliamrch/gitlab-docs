@@ -332,7 +332,6 @@ image:docs-workspace:
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/workspace
     DOCKERFILE: dockerfiles/gitlab-docs-workspace.Dockerfile
-  needs: []
   script:
     - docker build --build-arg ASDF_VERSION=${ASDF_VERSION} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
@@ -343,7 +342,6 @@ image:docs-workspace:
 test:image:docs-workspace:
   extends:
     - .docker_prepare
-    - .rules_docker_image_tests
   stage: test
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/workspace
@@ -352,6 +350,7 @@ test:image:docs-workspace:
   script:
     - docker build --build-arg ASDF_VERSION=${ASDF_VERSION} -t $IMAGE_NAME -f $DOCKERFILE .
   rules:
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Build docker images pipeline"'
     - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
       # This image uses asdf to manage dependencies, so run this test if tool versions change.
       changes:
