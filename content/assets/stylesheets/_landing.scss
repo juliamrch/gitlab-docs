@@ -16,6 +16,11 @@
     }
   }
 
+  // banner
+  .admonition-wrapper {
+    margin-top: -1.5rem;
+  }
+
   // cards
   .card {
     box-shadow: 0 0.5rem 1.5rem -0.75rem $landing-gl-blue-1000;
@@ -55,7 +60,7 @@
     background-image: url('/assets/images/hero-bg.svg');
     background-repeat: no-repeat;
     background-attachment: inherit;
-    background-position: 50% 4%;
+    background-position: 50% 0.85rem;
 
     @media (max-width: $bp-sm) {
       background-image: url('/assets/images/hero-bg-mobile.svg');
@@ -125,17 +130,19 @@
     }
 
     .oval {
-      border-radius: 50%;
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: auto;
-      width: 43.188rem;
-      height: 29rem;
-      background: $landing-gl-purple-50;
-      mix-blend-mode: multiply;
-      opacity: 0.24;
-      filter: blur(10.25rem);
+      @media (min-width: $bp-md) {
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 43.188rem;
+        height: 29rem;
+        background: $landing-gl-purple-50;
+        mix-blend-mode: multiply;
+        opacity: 0.24;
+        filter: blur(10.25rem);
+      }
     }
 
     .topic {

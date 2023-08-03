@@ -42,9 +42,9 @@ export default {
 };
 </script>
 <template>
-  <div class="markdown-toc table-of-contents-container position-sticky">
+  <div class="markdown-toc table-of-contents-container gl-lg-sticky">
     <div class="table-of-contents">
-      <h4 class="border-0 toc-sm d-xl-none">
+      <h4 class="gl-my-0! border-0 toc-sm d-xl-none">
         <a
           class="text-decoration-none border-bottom-0"
           href="#"
