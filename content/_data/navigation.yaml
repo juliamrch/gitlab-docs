@@ -2291,6 +2291,8 @@ sections:
                 doc_url: 'ee/administration/settings/usage_statistics.html'
               - doc_title: Web exporter
                 doc_url: 'ee/administration/monitoring/prometheus/web_exporter.html'
+          - doc_title: 'Tutorial: Set up an analytics-powered project'
+            doc_url: 'ee/tutorials/website_project_with_analytics/'
       - category_title: Experiment, Beta, GA support
         category_url: 'ee/policy/alpha-beta-support.html'
   - section_title: AI/ML powered features
