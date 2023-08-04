@@ -1797,6 +1797,8 @@ sections:
           - doc_title: Runners
             doc_url: 'runner/'
             docs:
+              - doc_title: 'Tutorial: Create, register, and run your own project runner'
+                doc_url: 'ee/tutorials/create_register_first_runner/'
               - doc_title: Runner SaaS
                 doc_url: 'ee/ci/runners/'
                 docs:
