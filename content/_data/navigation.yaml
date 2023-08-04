@@ -1576,210 +1576,17 @@ sections:
       - category_title: Use CI/CD to build your application
         category_url: 'ee/topics/build_your_application.html'
         docs:
-          - doc_title: CI/CD
+          - doc_title: Getting started
             doc_url: 'ee/ci/'
             docs:
-              - doc_title: 'Tutorial: Create your first pipeline'
+              - doc_title: 'Tutorial: Your first pipeline'
                 doc_url: 'ee/ci/quick_start/'
-                docs:
-                  - doc_title: 'Tutorial: Create a complex pipeline'
-                    doc_url: 'ee/ci/quick_start/tutorial.html'
-                  - doc_title: CI/CD concepts
-                    doc_url: 'ee/ci/introduction/'
-                  - doc_title: Migrate from CircleCI
-                    doc_url: 'ee/ci/migration/circleci.html'
-                  - doc_title: Migrate from Jenkins
-                    doc_url: 'ee/ci/migration/jenkins.html'
-                  - doc_title: Enable or disable CI/CD
-                    doc_url: 'ee/ci/enable_or_disable_ci.html'
-              - doc_title: Pipelines
-                doc_url: 'ee/ci/pipelines/'
-                docs:
-                  - doc_title: Scheduled pipelines
-                    doc_url: 'ee/ci/pipelines/schedules.html'
-                  - doc_title: Trigger a pipeline
-                    doc_url: 'ee/ci/triggers/'
-                  - doc_title: Customize pipeline configuration
-                    doc_url: 'ee/ci/pipelines/settings.html'
-                  - doc_title: Pipeline architectures
-                    doc_url: 'ee/ci/pipelines/pipeline_architectures.html'
-                  - doc_title: Pipeline efficiency
-                    doc_url: 'ee/ci/pipelines/pipeline_efficiency.html'
-                  - doc_title: Pipeline resource groups
-                    doc_url: 'ee/ci/resource_groups/'
-                  - doc_title: Pipeline security
-                    doc_url: 'ee/ci/pipelines/pipeline_security.html'
-                  - doc_title: Directed acyclic graph (DAG)
-                    doc_url: 'ee/ci/directed_acyclic_graph/'
-                  - doc_title: Downstream pipelines
-                    doc_url: 'ee/ci/pipelines/downstream_pipelines.html'
-                  - doc_title: Merge request pipelines
-                    doc_url: 'ee/ci/pipelines/merge_request_pipelines.html'
-                  - doc_title: Merged results pipelines
-                    doc_url: 'ee/ci/pipelines/merged_results_pipelines.html'
-                  - doc_title: Merge trains
-                    doc_url: 'ee/ci/pipelines/merge_trains.html'
-              - doc_title: Jobs
-                doc_url: 'ee/ci/jobs/'
-                docs:
-                  - doc_title: Choose when jobs run
-                    doc_url: 'ee/ci/jobs/job_control.html'
-                  - doc_title: CI/CD job token
-                    doc_url: 'ee/ci/jobs/ci_job_token.html'
-                  - doc_title: Access a terminal for a running job
-                    doc_url: 'ee/ci/interactive_web_terminal/'
-                  - doc_title: Format scripts and job logs
-                    doc_url: 'ee/ci/yaml/script.html'
-                  - doc_title: Git submodules
-                    doc_url: 'ee/ci/git_submodules.html'
-              - doc_title: Variables
-                doc_url: 'ee/ci/variables/'
-                docs:
-                  - doc_title: Predefined variables
-                    doc_url: 'ee/ci/variables/predefined_variables.html'
-                  - doc_title: Where variables can be used
-                    doc_url: 'ee/ci/variables/where_variables_can_be_used.html'
-                  - doc_title: Secure Files
-                    doc_url: 'ee/ci/secure_files/'
-              - doc_title: Cache and artifacts
-                doc_url: 'ee/ci/caching/'
-                docs:
-                  - doc_title: Job artifacts
-                    doc_url: 'ee/ci/jobs/job_artifacts.html'
-                  - doc_title: Troubleshooting job artifacts
-                    doc_url: 'ee/ci/jobs/job_artifacts_troubleshooting.html'
-              - doc_title: '.gitlab-ci.yml'
-                doc_url: 'ee/ci/yaml/gitlab_ci_yaml.html'
-                docs:
-                  - doc_title: '.gitlab-ci.yml reference'
-                    doc_url: 'ee/ci/yaml/'
-                  - doc_title: 'Optimize your YAML files'
-                    doc_url: 'ee/ci/yaml/yaml_optimization.html'
-                  - doc_title: Validate syntax
-                    doc_url: 'ee/ci/lint.html'
-                  - doc_title: Pipeline Editor
-                    doc_url: 'ee/ci/pipeline_editor/'
-                  - doc_title: Artifacts reports
-                    doc_url: 'ee/ci/yaml/artifacts_reports.html'
-                  - doc_title: Include examples
-                    doc_url: 'ee/ci/yaml/includes.html'
-                  - doc_title: Signing examples
-                    doc_url: 'ee/ci/yaml/signing_examples.html'
-                  - doc_title: Workflow examples
-                    doc_url: 'ee/ci/yaml/workflow.html'
-              - doc_title: CI/CD Components
-                doc_url: 'ee/ci/components/'
-              - doc_title: Docker
-                doc_url: 'ee/ci/docker/'
-                docs:
-                  - doc_title: Run CI/CD jobs in Docker containers
-                    doc_url: 'ee/ci/docker/using_docker_images.html'
-                  - doc_title: Use Docker to build Docker images
-                    doc_url: 'ee/ci/docker/using_docker_build.html'
-                    docs:
-                      - doc_title: Authenticate with registry
-                        doc_url: 'ee/ci/docker/authenticate_registry.html'
-                      - doc_title: Docker Layer Caching
-                        doc_url: 'ee/ci/docker/docker_layer_caching.html'
-                  - doc_title: Use kaniko to build Docker images
-                    doc_url: 'ee/ci/docker/using_kaniko.html'
-              - doc_title: Services
-                doc_url: 'ee/ci/services/'
-                docs:
-                  - doc_title: MySQL service
-                    doc_url: 'ee/ci/services/mysql.html'
-                  - doc_title: PostgreSQL service
-                    doc_url: 'ee/ci/services/postgres.html'
-                  - doc_title: Redis service
-                    doc_url: 'ee/ci/services/redis.html'
-                  - doc_title: GitLab as a service
-                    doc_url: 'ee/ci/services/gitlab.html'
-              - doc_title: Auto DevOps
-                doc_url: 'ee/topics/autodevops/'
-                docs:
-                  - doc_title: Requirements
-                    doc_url: 'ee/topics/autodevops/requirements.html'
-                  - doc_title: Stages
-                    doc_url: 'ee/topics/autodevops/stages.html'
-                  - doc_title: Customize
-                    doc_url: 'ee/topics/autodevops/customize.html'
-                    docs:
-                      - doc_title: CI/CD variables
-                        doc_url: 'ee/topics/autodevops/cicd_variables.html'
-                      - doc_title: Multiple Kubernetes clusters
-                        doc_url: 'ee/topics/autodevops/multiple_clusters_auto_devops.html'
-                  - doc_title: Upgrade PostgreSQL
-                    doc_url: 'ee/topics/autodevops/upgrading_postgresql.html'
-                  - doc_title: Prepare for deployment
-                    doc_url: 'ee/topics/autodevops/prepare_deployment.html'
-                  - doc_title: Upgrade Auto Deploy dependencies
-                    doc_url: 'ee/topics/autodevops/upgrading_auto_deploy_dependencies.html'
-                  - doc_title: Deploy to GKE
-                    doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_gke.html'
-                  - doc_title: Deploy to EKS
-                    doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_eks.html'
-                  - doc_title: Deploy to ECS
-                    doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_ecs.html'
-                  - doc_title: Deploy to EC2
-                    doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_ec2.html'
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/topics/autodevops/troubleshooting.html'
-              - doc_title: Testing
-                doc_url: 'ee/ci/testing/'
-                docs:
-                  - doc_title: Accessibility testing
-                    doc_url: 'ee/ci/testing/accessibility_testing.html'
-                  - doc_title: Browser performance testing
-                    doc_url: 'ee/ci/testing/browser_performance_testing.html'
-                  - doc_title: Code coverage
-                    doc_url: 'ee/ci/testing/code_coverage.html'
-                  - doc_title: Code quality
-                    doc_url: 'ee/ci/testing/code_quality.html'
-                  - doc_title: Fail fast testing
-                    doc_url: 'ee/ci/testing/fail_fast_testing.html'
-                  - doc_title: Load performance testing
-                    doc_url: 'ee/ci/testing/load_performance_testing.html'
-                  - doc_title: Metrics reports
-                    doc_url: 'ee/ci/testing/metrics_reports.html'
-                  - doc_title: Test cases
-                    doc_url: 'ee/ci/test_cases/'
-                  - doc_title: Test coverage visualization
-                    doc_url: 'ee/ci/testing/test_coverage_visualization.html'
-                  - doc_title: Unit test reports
-                    doc_url: 'ee/ci/testing/unit_test_reports.html'
-                  - doc_title: Unit test report examples
-                    doc_url: 'ee/ci/testing/unit_test_report_examples.html'
-              - doc_title: SSH keys
-                doc_url: 'ee/ci/ssh_keys/'
-              - doc_title: External secrets
-                doc_url: 'ee/ci/secrets/'
-                docs:
-                  - doc_title: ID token authentication
-                    doc_url: 'ee/ci/secrets/id_token_authentication.html'
-                  - doc_title: 'Tutorial: Update HashiCorp Vault configuration to use ID Tokens'
-                    doc_url: 'ee/ci/secrets/convert-to-id-tokens.html'
-              - doc_title: Connect to cloud services
-                doc_url: 'ee/ci/cloud_services/'
-                docs:
-                  - doc_title: Authenticating with HashiCorp Vault
-                    doc_url: 'ee/ci/examples/authenticating-with-hashicorp-vault/'
-                  - doc_title: Configure OpenID Connect in AWS
-                    doc_url: 'ee/ci/cloud_services/aws/'
-                  - doc_title: Configure OpenID Connect in Azure
-                    doc_url: 'ee/ci/cloud_services/azure/'
-                  - doc_title: Configure OpenID Connect with Google Cloud
-                    doc_url: 'ee/ci/cloud_services/google_cloud/'
-              - doc_title: ChatOps
-                doc_url: 'ee/ci/chatops/'
-              - doc_title: Mobile DevOps
-                doc_url: 'ee/ci/mobile_devops.html'
-              - doc_title: External repository integrations
-                doc_url: 'ee/ci/ci_cd_for_external_repos/'
-                docs:
-                  - doc_title: Bitbucket Cloud
-                    doc_url: 'ee/ci/ci_cd_for_external_repos/bitbucket_integration.html'
-                  - doc_title: GitHub
-                    doc_url: 'ee/ci/ci_cd_for_external_repos/github_integration.html'
+              - doc_title: 'Tutorial: A complex pipeline'
+                doc_url: 'ee/ci/quick_start/tutorial.html'
+              - doc_title: Migrate from CircleCI
+                doc_url: 'ee/ci/migration/circleci.html'
+              - doc_title: Migrate from Jenkins
+                doc_url: 'ee/ci/migration/jenkins.html'
               - doc_title: CI/CD examples
                 doc_url: 'ee/ci/examples/'
                 docs:
@@ -1795,8 +1602,194 @@ sections:
                     doc_url: 'ee/ci/examples/deployment/composer-npm-deploy.html'
                   - doc_title: PHP with Laravel and Envoy
                     doc_url: 'ee/ci/examples/laravel_with_gitlab_and_envoy/'
+          - doc_title: '.gitlab-ci.yml reference'
+            doc_url: 'ee/ci/yaml/'
+            docs:
+              - doc_title: 'Optimize your YAML files'
+                doc_url: 'ee/ci/yaml/yaml_optimization.html'
+              - doc_title: Validate syntax
+                doc_url: 'ee/ci/lint.html'
+              - doc_title: Pipeline Editor
+                doc_url: 'ee/ci/pipeline_editor/'
+              - doc_title: Artifacts reports
+                doc_url: 'ee/ci/yaml/artifacts_reports.html'
+              - doc_title: Include examples
+                doc_url: 'ee/ci/yaml/includes.html'
+              - doc_title: Workflow examples
+                doc_url: 'ee/ci/yaml/workflow.html'
+              - doc_title: CI/CD Components
+                doc_url: 'ee/ci/components/'
+          - doc_title: Pipelines
+            doc_url: 'ee/ci/pipelines/'
+            docs:
+              - doc_title: Scheduled pipelines
+                doc_url: 'ee/ci/pipelines/schedules.html'
+              - doc_title: Trigger a pipeline
+                doc_url: 'ee/ci/triggers/'
+              - doc_title: Customize pipeline configuration
+                doc_url: 'ee/ci/pipelines/settings.html'
+              - doc_title: Pipeline architectures
+                doc_url: 'ee/ci/pipelines/pipeline_architectures.html'
+              - doc_title: Pipeline efficiency
+                doc_url: 'ee/ci/pipelines/pipeline_efficiency.html'
+              - doc_title: Pipeline resource groups
+                doc_url: 'ee/ci/resource_groups/'
+              - doc_title: Pipeline security
+                doc_url: 'ee/ci/pipelines/pipeline_security.html'
+              - doc_title: Directed acyclic graph (DAG)
+                doc_url: 'ee/ci/directed_acyclic_graph/'
+              - doc_title: Downstream pipelines
+                doc_url: 'ee/ci/pipelines/downstream_pipelines.html'
+              - doc_title: Merge request pipelines
+                doc_url: 'ee/ci/pipelines/merge_request_pipelines.html'
+              - doc_title: Merged results pipelines
+                doc_url: 'ee/ci/pipelines/merged_results_pipelines.html'
+              - doc_title: Merge trains
+                doc_url: 'ee/ci/pipelines/merge_trains.html'
+          - doc_title: Jobs
+            doc_url: 'ee/ci/jobs/'
+            docs:
+              - doc_title: Choose when jobs run
+                doc_url: 'ee/ci/jobs/job_control.html'
+              - doc_title: CI/CD job token
+                doc_url: 'ee/ci/jobs/ci_job_token.html'
+              - doc_title: Access a terminal for a running job
+                doc_url: 'ee/ci/interactive_web_terminal/'
+              - doc_title: Format scripts and job logs
+                doc_url: 'ee/ci/yaml/script.html'
+              - doc_title: Git submodules
+                doc_url: 'ee/ci/git_submodules.html'
+              - doc_title: Cache and artifacts
+                doc_url: 'ee/ci/caching/'
+              - doc_title: Job artifacts
+                doc_url: 'ee/ci/jobs/job_artifacts.html'
+              - doc_title: Troubleshooting job artifacts
+                doc_url: 'ee/ci/jobs/job_artifacts_troubleshooting.html'
+              - doc_title: Docker
+                doc_url: 'ee/ci/docker/'
+                docs:
+                  - doc_title: Run CI/CD jobs in Docker containers
+                    doc_url: 'ee/ci/docker/using_docker_images.html'
+                  - doc_title: Use Docker to build Docker images
+                    doc_url: 'ee/ci/docker/using_docker_build.html'
+                    docs:
+                      - doc_title: Authenticate with registry
+                        doc_url: 'ee/ci/docker/authenticate_registry.html'
+                      - doc_title: Docker Layer Caching
+                        doc_url: 'ee/ci/docker/docker_layer_caching.html'
+                  - doc_title: Use kaniko to build Docker images
+                    doc_url: 'ee/ci/docker/using_kaniko.html'
+          - doc_title: Variables
+            doc_url: 'ee/ci/variables/'
+            docs:
+              - doc_title: Predefined variables
+                doc_url: 'ee/ci/variables/predefined_variables.html'
+              - doc_title: Where variables can be used
+                doc_url: 'ee/ci/variables/where_variables_can_be_used.html'
+          - doc_title: External secrets
+            doc_url: 'ee/ci/secrets/'
+            docs:
+              - doc_title: ID token authentication
+                doc_url: 'ee/ci/secrets/id_token_authentication.html'
+              - doc_title: Secure Files
+                doc_url: 'ee/ci/secure_files/'
+              - doc_title: Connect to cloud services
+                doc_url: 'ee/ci/cloud_services/'
+                docs:
+                  - doc_title: Configure OpenID Connect in AWS
+                    doc_url: 'ee/ci/cloud_services/aws/'
+                  - doc_title: Configure OpenID Connect in Azure
+                    doc_url: 'ee/ci/cloud_services/azure/'
+                  - doc_title: Configure OpenID Connect with Google Cloud
+                    doc_url: 'ee/ci/cloud_services/google_cloud/'
+                  - doc_title: Authenticating with HashiCorp Vault
+                    doc_url: 'ee/ci/examples/authenticating-with-hashicorp-vault/'
+                  - doc_title: 'Tutorial: Update HashiCorp Vault configuration to use ID Tokens'
+                    doc_url: 'ee/ci/secrets/convert-to-id-tokens.html'
+          - doc_title: Services
+            doc_url: 'ee/ci/services/'
+            docs:
+              - doc_title: MySQL service
+                doc_url: 'ee/ci/services/mysql.html'
+              - doc_title: PostgreSQL service
+                doc_url: 'ee/ci/services/postgres.html'
+              - doc_title: Redis service
+                doc_url: 'ee/ci/services/redis.html'
+              - doc_title: GitLab as a service
+                doc_url: 'ee/ci/services/gitlab.html'
+          - doc_title: Auto DevOps
+            doc_url: 'ee/topics/autodevops/'
+            docs:
+              - doc_title: Requirements
+                doc_url: 'ee/topics/autodevops/requirements.html'
+              - doc_title: Stages
+                doc_url: 'ee/topics/autodevops/stages.html'
+              - doc_title: Customize
+                doc_url: 'ee/topics/autodevops/customize.html'
+                docs:
+                  - doc_title: CI/CD variables
+                    doc_url: 'ee/topics/autodevops/cicd_variables.html'
+                  - doc_title: Multiple Kubernetes clusters
+                    doc_url: 'ee/topics/autodevops/multiple_clusters_auto_devops.html'
+              - doc_title: Upgrade PostgreSQL
+                doc_url: 'ee/topics/autodevops/upgrading_postgresql.html'
+              - doc_title: Prepare for deployment
+                doc_url: 'ee/topics/autodevops/prepare_deployment.html'
+              - doc_title: Upgrade Auto Deploy dependencies
+                doc_url: 'ee/topics/autodevops/upgrading_auto_deploy_dependencies.html'
+              - doc_title: Deploy to GKE
+                doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_gke.html'
+              - doc_title: Deploy to EKS
+                doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_eks.html'
+              - doc_title: Deploy to ECS
+                doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_ecs.html'
+              - doc_title: Deploy to EC2
+                doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_ec2.html'
               - doc_title: Troubleshooting
-                doc_url: 'ee/ci/troubleshooting.html'
+                doc_url: 'ee/topics/autodevops/troubleshooting.html'
+          - doc_title: Testing
+            doc_url: 'ee/ci/testing/'
+            docs:
+              - doc_title: Accessibility testing
+                doc_url: 'ee/ci/testing/accessibility_testing.html'
+              - doc_title: Browser performance testing
+                doc_url: 'ee/ci/testing/browser_performance_testing.html'
+              - doc_title: Code coverage
+                doc_url: 'ee/ci/testing/code_coverage.html'
+              - doc_title: Code quality
+                doc_url: 'ee/ci/testing/code_quality.html'
+              - doc_title: Fail fast testing
+                doc_url: 'ee/ci/testing/fail_fast_testing.html'
+              - doc_title: Load performance testing
+                doc_url: 'ee/ci/testing/load_performance_testing.html'
+              - doc_title: Metrics reports
+                doc_url: 'ee/ci/testing/metrics_reports.html'
+              - doc_title: Test cases
+                doc_url: 'ee/ci/test_cases/'
+              - doc_title: Test coverage visualization
+                doc_url: 'ee/ci/testing/test_coverage_visualization.html'
+              - doc_title: Unit test reports
+                doc_url: 'ee/ci/testing/unit_test_reports.html'
+              - doc_title: Unit test report examples
+                doc_url: 'ee/ci/testing/unit_test_report_examples.html'
+          - doc_title: SSH keys
+            doc_url: 'ee/ci/ssh_keys/'
+          - doc_title: ChatOps
+            doc_url: 'ee/ci/chatops/'
+          - doc_title: Mobile DevOps
+            doc_url: 'ee/ci/mobile_devops.html'
+            docs:
+              - doc_title: Signing examples
+                doc_url: 'ee/ci/yaml/signing_examples.html'
+          - doc_title: External repository integrations
+            doc_url: 'ee/ci/ci_cd_for_external_repos/'
+            docs:
+              - doc_title: Bitbucket Cloud
+                doc_url: 'ee/ci/ci_cd_for_external_repos/bitbucket_integration.html'
+              - doc_title: GitHub
+                doc_url: 'ee/ci/ci_cd_for_external_repos/github_integration.html'
+          - doc_title: Troubleshooting
+            doc_url: 'ee/ci/troubleshooting.html'
           - doc_title: Runners
             doc_url: 'runner/'
             docs:
