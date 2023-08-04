@@ -676,6 +676,9 @@ sections:
                 doc_url: 'ee/administration/reporting/ip_addr_restrictions.html'
               - doc_title: Job artifacts
                 doc_url: 'ee/administration/job_artifacts.html'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/administration/job_artifacts_troubleshooting.html'
               - doc_title: Job logs
                 doc_url: 'ee/administration/job_logs.html'
               - doc_title: Labels
