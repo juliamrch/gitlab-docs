@@ -1696,6 +1696,8 @@ sections:
                 doc_url: 'ee/ci/secrets/id_token_authentication.html'
               - doc_title: Secure Files
                 doc_url: 'ee/ci/secure_files/'
+              - doc_title: Use Azure Key Vault secrets in GitLab CI/CD
+                doc_url: 'ee/ci/secrets/azure_key_vault.html'
               - doc_title: Connect to cloud services
                 doc_url: 'ee/ci/cloud_services/'
                 docs:
