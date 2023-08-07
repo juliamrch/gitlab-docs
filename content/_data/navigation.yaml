@@ -2655,7 +2655,7 @@ sections:
                 doc_url: 'ee/api/personal_access_tokens.html'
               - doc_title: Pipelines schedules
                 doc_url: 'ee/api/pipeline_schedules.html'
-              - doc_title: Pipeline triggers
+              - doc_title: Pipeline trigger tokens
                 doc_url: 'ee/api/pipeline_triggers.html'
               - doc_title: Pipelines
                 doc_url: 'ee/api/pipelines.html'
