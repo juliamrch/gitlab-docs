@@ -1516,6 +1516,9 @@ sections:
                     doc_url: 'ee/user/project/remote_development/connect_machine.html'
               - doc_title: Workspaces
                 doc_url: 'ee/user/workspace/'
+                docs:
+                  - doc_title: 'Tutorial: Create a custom workspace image that supports arbitrary user IDs'
+                    doc_url: 'ee/user/workspace/create_image.html'
               - doc_title: Managing large repositories
                 doc_url: 'ee/user/project/repository/managing_large_repositories.html'
           - doc_title: Merge requests
