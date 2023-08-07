@@ -31,5 +31,5 @@ group :test, :development do
 end
 
 group :development, :danger do
-  gem 'gitlab-dangerfiles', '~> 3.12.0', require: false
+  gem 'gitlab-dangerfiles', '~> 3.13.0', require: false
 end
