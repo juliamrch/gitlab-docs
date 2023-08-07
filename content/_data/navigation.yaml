@@ -1576,6 +1576,8 @@ sections:
                 doc_url: 'ee/user/project/merge_requests/status_checks.html'
               - doc_title: Merge request dependencies
                 doc_url: 'ee/user/project/merge_requests/dependencies.html'
+              - doc_title: AI in merge requests
+                doc_url: 'ee/user/project/merge_requests/ai_in_merge_requests.html'
       - category_title: Use CI/CD to build your application
         category_url: 'ee/topics/build_your_application.html'
         docs:
