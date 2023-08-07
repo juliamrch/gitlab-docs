@@ -437,8 +437,6 @@ sections:
                 doc_url: 'ee/update/package/convert_to_ee.html'
               - doc_title: Package signatures
                 doc_url: 'omnibus/update/package_signatures.html'
-              - doc_title: GitLab 16 changes
-                doc_url: 'omnibus/update/gitlab_16_changes.html'
               - doc_title: GitLab 15 changes
                 doc_url: 'omnibus/update/gitlab_15_changes.html'
               - doc_title: GitLab 14 changes
@@ -452,6 +450,8 @@ sections:
                 doc_url: 'ee/update/patch_versions.html'
               - doc_title: Change from Community Edition to Enterprise Edition
                 doc_url: 'ee/update/upgrading_from_ce_to_ee.html'
+          - doc_title: GitLab 16 changes
+            doc_url: 'ee/update/versions/gitlab_16_changes.html'
           - doc_title: Zero-downtime upgrades for multi-node instances
             doc_url: 'ee/update/zero_downtime.html'
           - doc_title: Upgrades with downtime for multi-node instances
