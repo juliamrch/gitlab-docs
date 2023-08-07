@@ -171,7 +171,7 @@ sections:
                   - doc_title: SSL
                     doc_url: 'omnibus/settings/ssl/'
                     docs:
-                      - doc_title: Troubleshooting SSL
+                      - doc_title: Troubleshooting
                         doc_url: 'omnibus/settings/ssl/ssl_troubleshooting.html'
                   - doc_title: DNS
                     doc_url: 'omnibus/settings/dns.html'
@@ -1116,8 +1116,9 @@ sections:
                 doc_url: 'ee/user/group/import/'
               - doc_title: SAML Group Sync
                 doc_url: 'ee/user/group/saml_sso/group_sync.html'
-              - doc_title: Troubleshooting SAML
-                doc_url: 'ee/user/group/saml_sso/troubleshooting.html'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/user/group/saml_sso/troubleshooting.html'
               - doc_title: SAML SSO for GitLab.com groups
                 doc_url: 'ee/user/group/saml_sso/'
                 docs:
@@ -1125,7 +1126,7 @@ sections:
                     doc_url: 'ee/user/group/saml_sso/scim_setup.html'
                   - doc_title: Example group SAML and SCIM configurations
                     doc_url: 'ee/user/group/saml_sso/example_saml_config.html'
-                  - doc_title: Troubleshooting SCIM
+                  - doc_title: Troubleshooting
                     doc_url: 'ee/user/group/saml_sso/troubleshooting_scim.html'
               - doc_title: Subgroups
                 doc_url: 'ee/user/group/subgroups/'
@@ -1135,7 +1136,7 @@ sections:
                 doc_url: 'ee/tutorials/convert_personal_namespace_to_group/'
               - doc_title: Git abuse rate limit
                 doc_url: 'ee/user/group/reporting/git_abuse_rate_limit.html'
-              - doc_title: Troubleshooting groups
+              - doc_title: Troubleshooting
                 doc_url: 'ee/user/group/troubleshooting.html'
           - doc_title: Compliance
             doc_url: 'ee/administration/compliance.html'
@@ -1484,7 +1485,7 @@ sections:
                     doc_url: 'ee/user/project/repository/mirror/pull.html'
                   - doc_title: Push mirroring
                     doc_url: 'ee/user/project/repository/mirror/push.html'
-                  - doc_title: Troubleshooting repository mirroring
+                  - doc_title: Troubleshooting
                     doc_url: 'ee/user/project/repository/mirror/troubleshooting.html'
               - doc_title: Protected branches
                 doc_url: 'ee/user/project/protected_branches.html'
@@ -1663,8 +1664,9 @@ sections:
                 doc_url: 'ee/ci/caching/'
               - doc_title: Job artifacts
                 doc_url: 'ee/ci/jobs/job_artifacts.html'
-              - doc_title: Troubleshooting job artifacts
-                doc_url: 'ee/ci/jobs/job_artifacts_troubleshooting.html'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/ci/jobs/job_artifacts_troubleshooting.html'
               - doc_title: Docker
                 doc_url: 'ee/ci/docker/'
                 docs:
