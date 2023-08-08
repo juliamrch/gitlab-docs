@@ -1625,6 +1625,68 @@ sections:
                 doc_url: 'ee/ci/yaml/workflow.html'
               - doc_title: CI/CD Components
                 doc_url: 'ee/ci/components/'
+          - doc_title: Runners
+            doc_url: 'runner/'
+            docs:
+              - doc_title: 'Tutorial: Create, register, and run your own project runner'
+                doc_url: 'ee/tutorials/create_register_first_runner/'
+              - doc_title: Runner SaaS
+                doc_url: 'ee/ci/runners/'
+                docs:
+                  - doc_title: Linux
+                    doc_url: 'ee/ci/runners/saas/linux_saas_runner.html'
+                  - doc_title: GPU
+                    doc_url: 'ee/ci/runners/saas/gpu_saas_runner.html'
+                  - doc_title: macOS
+                    doc_url: 'ee/ci/runners/saas/macos_saas_runner.html'
+                  - doc_title: Windows
+                    doc_url: 'ee/ci/runners/saas/windows_saas_runner.html'
+              - doc_title: Manage runners
+                doc_url: 'ee/ci/runners/runners_scope.html'
+              - doc_title: Register a runner
+                doc_url: 'runner/register/'
+                docs:
+                  - doc_title: Migrate to the new runner registration workflow
+                    doc_url: 'ee/ci/runners/new_creation_workflow.html'
+                  - doc_title: Examples
+                    doc_url: 'runner/examples/gitlab.html'
+              - doc_title: Runner executors
+                doc_url: 'runner/executors/'
+                docs:
+                  - doc_title: Custom
+                    doc_url: 'runner/executors/custom.html'
+                    docs:
+                      - doc_title: libvirt
+                        doc_url: 'runner/executors/custom_examples/libvirt.html'
+                      - doc_title: LXD
+                        doc_url: 'runner/executors/custom_examples/lxd.html'
+                  - doc_title: Docker
+                    doc_url: 'runner/executors/docker.html'
+                  - doc_title: Docker Machine
+                    doc_url: 'runner/executors/docker_machine.html'
+                  - doc_title: Docker Autoscaler
+                    doc_url: 'runner/executors/docker_autoscaler.html'
+                  - doc_title: Instance
+                    doc_url: 'runner/executors/instance.html'
+                  - doc_title: Kubernetes
+                    doc_url: 'runner/executors/kubernetes.html'
+                  - doc_title: Shell
+                    doc_url: 'runner/executors/shell.html'
+                    docs:
+                      - doc_title: Supported shells
+                        doc_url: 'runner/shells/'
+                  - doc_title: SSH
+                    doc_url: 'runner/executors/ssh.html'
+                  - doc_title: Parallels
+                    doc_url: 'runner/executors/parallels.html'
+                  - doc_title: VirtualBox
+                    doc_url: 'runner/executors/virtualbox.html'
+              - doc_title: Configure runners
+                doc_url: 'ee/ci/runners/configure_runners.html'
+              - doc_title: Scale a fleet of runners
+                doc_url: 'runner/fleet_scaling/'
+              - doc_title: Best practices for large repositories
+                doc_url: 'ee/ci/large_repositories/'
           - doc_title: Pipelines
             doc_url: 'ee/ci/pipelines/'
             docs:
@@ -1799,68 +1861,6 @@ sections:
                 doc_url: 'ee/ci/ci_cd_for_external_repos/github_integration.html'
           - doc_title: Troubleshooting
             doc_url: 'ee/ci/troubleshooting.html'
-          - doc_title: Runners
-            doc_url: 'runner/'
-            docs:
-              - doc_title: 'Tutorial: Create, register, and run your own project runner'
-                doc_url: 'ee/tutorials/create_register_first_runner/'
-              - doc_title: Runner SaaS
-                doc_url: 'ee/ci/runners/'
-                docs:
-                  - doc_title: Linux
-                    doc_url: 'ee/ci/runners/saas/linux_saas_runner.html'
-                  - doc_title: GPU
-                    doc_url: 'ee/ci/runners/saas/gpu_saas_runner.html'
-                  - doc_title: macOS
-                    doc_url: 'ee/ci/runners/saas/macos_saas_runner.html'
-                  - doc_title: Windows
-                    doc_url: 'ee/ci/runners/saas/windows_saas_runner.html'
-              - doc_title: Manage runners
-                doc_url: 'ee/ci/runners/runners_scope.html'
-              - doc_title: Register a runner
-                doc_url: 'runner/register/'
-                docs:
-                  - doc_title: Migrate to the new runner registration workflow
-                    doc_url: 'ee/ci/runners/new_creation_workflow.html'
-                  - doc_title: Examples
-                    doc_url: 'runner/examples/gitlab.html'
-              - doc_title: Runner executors
-                doc_url: 'runner/executors/'
-                docs:
-                  - doc_title: Custom
-                    doc_url: 'runner/executors/custom.html'
-                    docs:
-                      - doc_title: libvirt
-                        doc_url: 'runner/executors/custom_examples/libvirt.html'
-                      - doc_title: LXD
-                        doc_url: 'runner/executors/custom_examples/lxd.html'
-                  - doc_title: Docker
-                    doc_url: 'runner/executors/docker.html'
-                  - doc_title: Docker Machine
-                    doc_url: 'runner/executors/docker_machine.html'
-                  - doc_title: Docker Autoscaler
-                    doc_url: 'runner/executors/docker_autoscaler.html'
-                  - doc_title: Instance
-                    doc_url: 'runner/executors/instance.html'
-                  - doc_title: Kubernetes
-                    doc_url: 'runner/executors/kubernetes.html'
-                  - doc_title: Shell
-                    doc_url: 'runner/executors/shell.html'
-                    docs:
-                      - doc_title: Supported shells
-                        doc_url: 'runner/shells/'
-                  - doc_title: SSH
-                    doc_url: 'runner/executors/ssh.html'
-                  - doc_title: Parallels
-                    doc_url: 'runner/executors/parallels.html'
-                  - doc_title: VirtualBox
-                    doc_url: 'runner/executors/virtualbox.html'
-              - doc_title: Configure runners
-                doc_url: 'ee/ci/runners/configure_runners.html'
-              - doc_title: Scale a fleet of runners
-                doc_url: 'runner/fleet_scaling/'
-              - doc_title: Best practices for large repositories
-                doc_url: 'ee/ci/large_repositories/'
       - category_title: Secure your application
         category_url: 'ee/user/application_security/secure_your_application.html'
         docs:
