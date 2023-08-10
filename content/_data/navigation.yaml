@@ -2962,8 +2962,8 @@ sections:
                     doc_url: 'ee/development/testing_guide/end_to_end/capybara_to_chemlab_migration_guide.html'
                   - doc_title: Execution context selection
                     doc_url: 'ee/development/testing_guide/end_to_end/execution_context_selection.html'
-                  - doc_title: e2e:package-and-test
-                    doc_url: 'ee/development/testing_guide/end_to_end/package_and_test_pipeline.html'
+                  - doc_title: End-to-end test pipelines
+                    doc_url: 'ee/development/testing_guide/end_to_end/test_pipelines.html'
                   - doc_title: Running tests that require special setup
                     doc_url: 'ee/development/testing_guide/end_to_end/running_tests_that_require_special_setup.html'
                   - doc_title: RSpec metadata for end-to-end tests
