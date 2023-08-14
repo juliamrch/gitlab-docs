@@ -770,7 +770,7 @@ sections:
                 doc_url: 'ee/administration/raketasks/incoming_email.html'
           - doc_title: Instance limits
             doc_url: 'ee/administration/instance_limits.html'
-          - doc_title: Instance Review
+          - doc_title: Instance review
             doc_url: 'ee/administration/instance_review.html'
           - doc_title: PostgreSQL
             doc_url: 'ee/administration/postgresql/'
@@ -884,7 +884,7 @@ sections:
                 doc_url: 'ee/administration/geo/replication/version_specific_upgrades.html'
               - doc_title: Using object storage
                 doc_url: 'ee/administration/geo/replication/object_storage.html'
-              - doc_title: Container registry for a secondary site
+              - doc_title: Container Registry for a secondary site
                 doc_url: 'ee/administration/geo/replication/container_registry.html'
               - doc_title: Geo for multiple servers
                 doc_url: 'ee/administration/geo/replication/multiple_servers.html'
