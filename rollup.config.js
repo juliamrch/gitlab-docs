@@ -9,6 +9,7 @@ const url = require('@rollup/plugin-url');
 const vue = require('@vitejs/plugin-vue2');
 const copy = require('rollup-plugin-copy');
 const terser = require('@rollup/plugin-terser');
+const yaml = require('@rollup/plugin-yaml');
 
 function mapDirectory(file) {
   return file.replace('content/', 'public/');
@@ -60,6 +61,7 @@ module.exports = globSync('content/frontend/**/*.js')
         'process.env.NODE_ENV': JSON.stringify('production'),
       }),
       terser(),
+      yaml(),
       copy({
         copyOnce: true,
         hook: 'closeBundle',

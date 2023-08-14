@@ -1,51 +1,93 @@
 # frozen_string_literal: true
 
-# GitLab price / tiers badge
+# GitLab subscription tiers and offerings badges
 #
 # This allows us to add visual Badges to our documentation using standard Markdown
 # that will render in any markdown editor.
 #
-# The available pattern is either:
-#  - `**(<BADGE_TYPE> <MODIFIER>)**` (preferred)
-#  - `**[<BADGE_TYPE> <MODIFIER>]**` (deprecated)
+# Badges are defined in content/_data/badges.yaml.
 #
-# The following TIERS are supported: CORE, STARTER, PREMIUM, ULTIMATE
-# The following MODIFIERS are supported: ONLY
+# The available pattern is:
+#  - `**(<TIER BADGE> <OFFERING BADGE> <STATUS BADGE>)**`
 #
-# When you have ONLY as MODIFIER, it means, it applies only for on premise instances
-# so we are not going to expand "STARTER" to "BRONZE" as well.
 class BadgesFilter < Nanoc::Filter
   identifier :badges
 
+  badge_data = YAML.load_file('content/_data/badges.yaml')
+  badge_types = %w[tier offering status].freeze
+
+  id_mapping = {}
+  badge_types.each do |type|
+    ids_with_given_type = badge_data["badgeIndex"].select { |item| item["type"] == type }.map { |item| item["id"].upcase }
+    id_mapping[type.upcase] = ids_with_given_type.join("|")
+  end
+
+  TIERS = id_mapping["TIER"]
+  OFFERINGS = id_mapping["OFFERING"]
+  STATUSES = id_mapping["STATUS"]
+
   BADGES_HTML_PATTERN = %r{
     <strong>
-    [\[|(]
-    (?<tier>CORE|STARTER|PREMIUM|ULTIMATE|FREE|BRONZE|SILVER|GOLD)(?:\s+(?<type>ONLY|SAAS|SELF))?
-    [\]|)]
+    \(
+    (?:
+      (?:(?<tier>#{TIERS})(?:\s+(?<offering>#{OFFERINGS}))?(?:\s+(?<status>#{STATUSES}))?)  # All three badge types
+      |
+      (?:(?<tier>#{TIERS})(?:\s+(?<offering>#{OFFERINGS}))?)                                # Tier and offering
+      |
+      (?:(?<tier>#{TIERS})(?:\s+(?<status>#{STATUSES}))?)                                   # Tier and status
+      |
+      (?:(?<offering>#{OFFERINGS})(?:\s+(?<status>#{STATUSES}))?)                           # Offering and status
+      |
+      (?<tier>#{TIERS})                                                                     # Only tier
+      |
+      (?<offering>#{OFFERINGS})                                                             # Only offering
+      |
+      (?<status>#{STATUSES})                                                                # Only status
+    )
+    \)
     </strong>
   }x.freeze
 
   BADGES_MARKDOWN_PATTERN = %r{
-    (?:^|[^`]) # must be start of the line or anything except backtick
+    (?:^|[^`])
     \*\*(?:\[|\()
-    (?<tier>CORE|STARTER|PREMIUM|ULTIMATE|FREE|BRONZE|SILVER|GOLD)(?:\s+(?<type>ONLY|SAAS|SELF))
-    ?(?:\]|\))\*\*
-    (?:$|[^`]) # must end of line or anything except backtick
+    (?:
+      (?:(?<tier>#{TIERS})(?:\s+(?<offering>#{OFFERINGS}))?(?:\s+(?<status>#{STATUSES}))?)  # All three badge types
+      |
+      (?:(?<tier>#{TIERS})(?:\s+(?<offering>#{OFFERINGS}))?)                                # Tier and offering
+      |
+      (?:(?<tier>#{TIERS})(?:\s+(?<status>#{STATUSES}))?)                                   # Tier and status
+      |
+      (?:(?<offering>#{OFFERINGS})(?:\s+(?<status>#{STATUSES}))?)                           # Offering and status
+      |
+      (?<tier>#{TIERS})                                                                     # Only tier
+      |
+      (?<offering>#{OFFERINGS})                                                             # Only offering
+      |
+      (?<status>#{STATUSES})                                                                # Only status
+    )
+    (?:\]|\))\*\*
+    (?:$|[^`])
   }x.freeze
 
   def run(content, _params = {})
-    content.gsub(BADGES_HTML_PATTERN) { generate(Regexp.last_match[:tier].downcase, Regexp.last_match[:type]) }
+    content.gsub(BADGES_HTML_PATTERN) { generate(Regexp.last_match[:tier], Regexp.last_match[:offering], Regexp.last_match[:status]) }
   end
 
   def run_from_markdown(content)
-    content.gsub(BADGES_MARKDOWN_PATTERN) { generate(Regexp.last_match[:tier].downcase, Regexp.last_match[:type]) }
+    content.gsub(BADGES_MARKDOWN_PATTERN) { generate(Regexp.last_match[:tier], Regexp.last_match[:offering], Regexp.last_match[:status]) }
   end
 
-  def generate(tier, type)
-    if type.nil?
-      %(<span class="badge-trigger #{tier}"></span>)
-    else
-      %(<span class="badge-trigger #{tier}-#{type.downcase}"></span>)
-    end
+  def generate(tier, offering, status)
+    badges = { tier: tier, offering: offering, status: status }
+    return "" if badges.empty?
+
+    badges_markup = badges.map do |key, value|
+      next if value.nil?
+
+      %(<span data-type="#{key}" data-value="#{value.downcase}"></span>)
+    end.join
+
+    %(<span data-component="docs-badges">#{badges_markup}</span>)
   end
 end

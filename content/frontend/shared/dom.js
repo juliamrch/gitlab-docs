@@ -29,3 +29,19 @@ export const getNextUntil = (el, selector) => {
 
   return siblings.join('');
 };
+
+/**
+ * Check if an element is contained within a heading.
+ *
+ * @param {Element} el
+ * @returns {Boolean}
+ */
+export const isContainedInHeading = (el) => {
+  // Loop upwards in the DOM through all parent elements, checking for headers.
+  for (let parent = el.parentNode; parent !== null; parent = parent.parentNode) {
+    if (parent.tagName && /^H\d$/.test(parent.tagName)) {
+      return true;
+    }
+  }
+  return false;
+};
