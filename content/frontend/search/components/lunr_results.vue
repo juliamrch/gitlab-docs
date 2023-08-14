@@ -1,7 +1,7 @@
 <script>
 /* global lunr */
 import { GlSearchBoxByClick, GlLink } from '@gitlab/ui';
-import { getSearchParamsFromURL, updateURLParams } from '../search_helpers';
+import { getSearchParamsFromURL, updateURLParams, searchResultQueryParam } from '../search_helpers';
 import { isArchivesSite } from '../../default/environment';
 
 export default {
@@ -70,7 +70,10 @@ export default {
       Object.keys(this.results).forEach((key) => {
         const contentItem = this.contentMap.find(({ id }) => id === this.results[key].ref);
         this.results[key].title = contentItem.h1;
-        this.results[key].link = `/${this.results[key].ref}`;
+        this.results[key].link = `/${this.results[key].ref}${searchResultQueryParam(
+          this.query,
+          this.results[key].ref,
+        )}`;
       });
 
       // Rewrite links to include the version prefix if this is the archives site.

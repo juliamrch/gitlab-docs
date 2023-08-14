@@ -118,3 +118,58 @@ export const activateKeyboardShortcut = () => {
     document.querySelector('input[type="search"]').focus();
   });
 };
+
+/**
+ * Find the highest-level scrollable header that contains a given string.
+ *
+ * We need a regex here to match only if there are word boundaries or slashes.
+ * For example:
+ *  - "to" should match in "login to gitlab" but not "repository"
+ *  - "AI" should match in "AI/ML" but not "FAIL"
+ */
+export const findHighestHeader = (query) => {
+  const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+  const regex = new RegExp(`(?<=^|\\s|\\/)${query}s?(?=$|\\s|\\/)`, 'gi');
+  const matches = Array.from(headings).filter((heading) => heading.textContent.match(regex));
+
+  if (matches.length) {
+    return matches.sort((a, b) => a.tagName.localeCompare(b.tagName))[0];
+  }
+
+  return null;
+};
+
+/**
+ * If a search query is in the URL parameters and a heading, scroll to it.
+ */
+export const scrollToQuery = () => {
+  const { qParam } = getSearchParamsFromURL();
+  if (!qParam) return;
+
+  const header = findHighestHeader(qParam);
+  if (header && header.tagName !== 'H1') {
+    header.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+/**
+ * Generate a query string to be appended to search result links.
+ *
+ * This is used to limit which pages we run scrollToQuery() on.
+ */
+export const searchResultQueryParam = (query, link) => {
+  const pages = new Set(['/ee/ci/yaml/']);
+
+  // Check if the search result is included in the pages set.
+  let linkPath = '';
+  try {
+    const url = new URL(link); // Google results are full URLs
+    linkPath = url.pathname;
+  } catch {
+    linkPath = `/${link.replace('/index.html', '/')}`; // Lunr results are just paths
+  }
+
+  if (pages.has(linkPath)) return `?query=${query}`;
+  return '';
+};

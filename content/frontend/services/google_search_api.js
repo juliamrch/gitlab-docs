@@ -1,5 +1,7 @@
 /* global GOOGLE_SEARCH_KEY */
 
+import { searchResultQueryParam } from '../search/search_helpers';
+
 export const GPS_ENDPOINT = 'https://www.googleapis.com/customsearch/v1/siterestrict?';
 export const GPS_ID = '97494f9fe316a426d';
 export const MAX_RESULTS_PER_PAGE = 10;
@@ -37,7 +39,10 @@ export const fetchResults = async (query, filters, pageNumber, numResults) => {
         .replace(' ...', '')
         .replaceAll('`', '')
         .trim(),
-      relativeLink: item.link.replace('https://docs.gitlab.com/', '/'),
+      relativeLink: `${item.link.replace('https://docs.gitlab.com/', '/')}${searchResultQueryParam(
+        query,
+        item.link,
+      )}`,
       breadcrumbs: item.pagemap.metatags[0]['gitlab-docs-breadcrumbs'] ?? '',
     }));
   }
