@@ -1,8 +1,9 @@
 /* global Vue */
 import GoogleSearchForm from './components/google_search_form.vue';
-import { activateKeyboardShortcut } from './search_helpers';
+import { activateKeyboardShortcut, scrollToQuery } from './search_helpers';
 
 document.addEventListener('DOMContentLoaded', () => {
+  scrollToQuery();
   activateKeyboardShortcut();
 
   const { isHomepage } = document.querySelector('body').dataset;
