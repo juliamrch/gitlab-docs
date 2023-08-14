@@ -861,6 +861,8 @@ sections:
             doc_url: 'ee/administration/merge_request_diffs.html'
           - doc_title: Static objects external storage
             doc_url: 'ee/administration/static_objects_external_storage.html'
+          - doc_title: Automate storage management
+            doc_url: 'ee/user/storage_management_automation.html'
           - doc_title: Geo
             doc_url: 'ee/administration/geo/'
             docs:
