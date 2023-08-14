@@ -1,0 +1,44 @@
+badgeIndex:
+  # Tiers
+  - id: free
+    label: All tiers
+    type: tier
+    text: Free, Premium, and Ultimate
+  - id: premium
+    label: Premium
+    type: tier
+    link: https://about.gitlab.com/pricing/?glm_source=docs.gitlab.com&glm_content=badges-docs
+  - id: ultimate
+    label: Ultimate
+    type: tier
+    link: https://about.gitlab.com/pricing/?glm_source=docs.gitlab.com&glm_content=badges-docs
+
+  # Offerings
+  - id: self
+    label: Self-managed
+    type: offering
+  - id: saas
+    label: SaaS
+    type: offering
+  - id: all
+    label: All offerings
+    type: offering
+    text: Self-managed and SaaS
+
+  # Statuses
+  - id: experiment
+    label: Experiment
+    text: This feature is in the process of being developed. It's not production-ready but we encourage you to try it and provide feedback.
+    type: status
+    link: https://docs.gitlab.com/ee/policy/experiment-beta-support.html#experiment
+  - id: beta
+    label: Beta
+    text: This feature is not production-ready, but is unlikely to change drastically before it's released. We encourage you to try it and provide feedback.
+    type: status
+    link: https://docs.gitlab.com/ee/policy/experiment-beta-support.html#beta
+
+  # Content tags
+  - id: contribute
+    label: Contribute
+    text: This content is about development of the GitLab product.
+    type: content

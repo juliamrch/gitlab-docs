@@ -13,11 +13,16 @@ module Nanoc::Filters
 
     PATCH
 
-    PRODUCT_TIERS = %w[core starter premium ultimate free bronze silver gold].freeze
-    PRODUCT_TYPES = %w[only saas self].freeze
-    PRODUCT_SUFFIX = %r{-(#{PRODUCT_TIERS.join('|')})(?:-(#{PRODUCT_TYPES.join('|')}))?\z}.freeze
+    # Drop tier badges from the heading permalinks provided by GitLab Kramdown
+    badge_index = YAML.load_file('content/_data/badges.yaml')
+    badges = []
+    badge_index["badgeIndex"].each do |badge|
+      id = badge["id"]
+      badges << id unless badges.include?(id)
+    end
+    BADGE_SUFFIX = %r{(#{badges.join('|')})(?:-+(#{badges.join('|')}))?(?:-+(#{badges.join('|')}))?$}.freeze
 
-    # Runs the content through [GitLab Kramdown](https://gitlab.com/brodock/gitlab_kramdown).
+    # Runs the content through [GitLab Kramdown](https://gitlab.com/gitlab-org/ruby/gems/gitlab_kramdown).
     # Parameters passed to this filter will be passed on to Kramdown.
     #
     # @param [String] raw_content The content to filter
@@ -56,7 +61,7 @@ module Nanoc::Filters
       headers = find_type_elements(:header, elements)
 
       headers.each do |header|
-        next unless header.attr['id'].match(PRODUCT_SUFFIX)
+        next unless header.attr['id'].match(BADGE_SUFFIX)
 
         remove_product_suffix!(header, 'id')
 
@@ -67,7 +72,7 @@ module Nanoc::Filters
     end
 
     def remove_product_suffix!(element, attr)
-      element.attr[attr] = element.attr[attr].gsub(PRODUCT_SUFFIX, '')
+      element.attr[attr] = element.attr[attr].gsub(BADGE_SUFFIX, '').gsub(%r{-+$}, '')
     end
 
     def find_type_elements(type, elements)

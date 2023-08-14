@@ -31,10 +31,6 @@ export const getCookie = (name) => {
 
 // Writes page URLs to a cookie
 export const trackPageHistory = () => {
-  if (document.querySelector('h1') === null) {
-    return;
-  }
-
   let pageHistory = [];
   const currentPath = window.location.pathname;
   const cookieValue = getCookie('pageHistory');
@@ -52,7 +48,7 @@ export const trackPageHistory = () => {
   // Add the current page URL to the beginning of the history array
   pageHistory.unshift({
     path: currentPath,
-    title: document.querySelector('h1').textContent,
+    title: document.title.replace(' | GitLab', ''),
   });
 
   // Keep only the designated amount of pages in history

@@ -152,7 +152,7 @@ describe('content/frontend/search/recently_viewed.js', () => {
 
   it('should set a cookie with the current page URL and title', () => {
     // Set up the DOM
-    document.body.innerHTML = '<h1>Test Page</h1>';
+    document.title = 'Test Page | GitLab';
     const location = {
       ...window.location,
       pathname: '/test-page',
@@ -174,7 +174,7 @@ describe('content/frontend/search/recently_viewed.js', () => {
   });
 
   it('should limit the number of items in the history to RECENT_HISTORY_ITEMS', () => {
-    document.body.innerHTML = '<h1>Test Page</h1>';
+    document.title = 'Test Page | GitLab';
 
     // Set a cookie with RECENT_HISTORY_ITEMS pages in it, then track this page
     setCookie('pageHistory', JSON.stringify(mockHistoryCookie), 365);
@@ -188,7 +188,7 @@ describe('content/frontend/search/recently_viewed.js', () => {
   });
 
   it('should not add duplicate history items', () => {
-    document.body.innerHTML = '<h1>Test Page</h1>';
+    document.title = 'Test Page | GitLab';
 
     // Set a cookie with the current page URL
     const initialPageHistory = [{ path: '/test-page', title: 'Test Page' }];
@@ -203,16 +203,5 @@ describe('content/frontend/search/recently_viewed.js', () => {
     expect(pageHistory).toHaveLength(1);
     expect(pageHistory[0].path).toBe('/test-page');
     expect(pageHistory[0].title).toBe('Test Page');
-  });
-
-  it('should not set a cookie if the page does not have a title', () => {
-    // Set up the DOM without a h1 element
-    document.body.innerHTML = '<p>Test Page</p>';
-
-    trackPageHistory();
-
-    // Check that the cookie was not set
-    const cookieValue = getCookie('pageHistory');
-    expect(cookieValue).toBeNull();
   });
 });

@@ -172,20 +172,6 @@
     }
   }
 
-  // Badge tier
-
-  .badge-tier {
-    color: $red-500;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-
-    &:hover {
-      border-bottom-color: $red-700;
-      color: $red-700;
-    }
-  }
-
   .introduced-in {
     border-left: 4px solid $theme-indigo-200;
     padding-left: 0.75rem;
@@ -352,11 +338,6 @@
       @include gl-font-size-markdown-sm;
       @include gl-line-height-20;
     }
-  }
-
-  .sm {
-    @include gl-font-size-markdown-sm;
-    @include gl-line-height-20;
   }
 
   .monospace {

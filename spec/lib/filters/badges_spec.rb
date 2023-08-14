@@ -12,23 +12,7 @@ describe BadgesFilter do
       let(:content) { '<strong>(FREE)</strong>' }
 
       it 'returns correct HTML' do
-        expect(run).to eq('<span class="badge-trigger free"></span>')
-      end
-    end
-
-    context 'when <strong>(PREMIUM)</strong> badge' do
-      let(:content) { '<strong>(PREMIUM)</strong>' }
-
-      it 'returns correct HTML' do
-        expect(run).to eq('<span class="badge-trigger premium"></span>')
-      end
-    end
-
-    context 'when <strong>(ULTIMATE)</strong> badge' do
-      let(:content) { '<strong>(ULTIMATE)</strong>' }
-
-      it 'returns correct HTML' do
-        expect(run).to eq('<span class="badge-trigger ultimate"></span>')
+        expect(run).to eq('<span data-component="docs-badges"><span data-type="tier" data-value="free"></span></span>')
       end
     end
 
@@ -36,47 +20,31 @@ describe BadgesFilter do
       let(:content) { '<strong>(FREE SELF)</strong>' }
 
       it 'returns correct HTML' do
-        expect(run).to eq('<span class="badge-trigger free-self"></span>')
+        expect(run).to eq('<span data-component="docs-badges"><span data-type="tier" data-value="free"></span><span data-type="offering" data-value="self"></span></span>')
       end
     end
 
-    context 'when <strong>(PREMIUM SELF)</strong> badge' do
-      let(:content) { '<strong>(PREMIUM SELF)</strong>' }
+    context 'when <strong>(FREE EXPERIMENT)</strong> badge' do
+      let(:content) { '<strong>(FREE EXPERIMENT)</strong>' }
 
       it 'returns correct HTML' do
-        expect(run).to eq('<span class="badge-trigger premium-self"></span>')
+        expect(run).to eq('<span data-component="docs-badges"><span data-type="tier" data-value="free"></span><span data-type="status" data-value="experiment"></span></span>')
       end
     end
 
-    context 'when <strong>(ULTIMATE SELF)</strong> badge' do
-      let(:content) { '<strong>(ULTIMATE SELF)</strong>' }
+    context 'when <strong>(SAAS EXPERIMENT)</strong> badge' do
+      let(:content) { '<strong>(SAAS EXPERIMENT)</strong>' }
 
       it 'returns correct HTML' do
-        expect(run).to eq('<span class="badge-trigger ultimate-self"></span>')
+        expect(run).to eq('<span data-component="docs-badges"><span data-type="offering" data-value="saas"></span><span data-type="status" data-value="experiment"></span></span>')
       end
     end
 
-    context 'when <strong>(FREE SAAS)</strong> badge' do
-      let(:content) { '<strong>(FREE SAAS)</strong>' }
+    context 'when <strong>(BETA)</strong> badge' do
+      let(:content) { '<strong>(BETA)</strong>' }
 
       it 'returns correct HTML' do
-        expect(run).to eq('<span class="badge-trigger free-saas"></span>')
-      end
-    end
-
-    context 'when <strong>(PREMIUM SAAS)</strong> badge' do
-      let(:content) { '<strong>(PREMIUM SAAS)</strong>' }
-
-      it 'returns correct HTML' do
-        expect(run).to eq('<span class="badge-trigger premium-saas"></span>')
-      end
-    end
-
-    context 'when <strong>(ULTIMATE SAAS)</strong> badge' do
-      let(:content) { '<strong>(ULTIMATE SAAS)</strong>' }
-
-      it 'returns correct HTML' do
-        expect(run).to eq('<span class="badge-trigger ultimate-saas"></span>')
+        expect(run).to eq('<span data-component="docs-badges"><span data-type="status" data-value="beta"></span></span>')
       end
     end
   end
@@ -90,23 +58,7 @@ describe BadgesFilter do
       let(:content) { '**(FREE)**' }
 
       it 'returns correct HTML' do
-        expect(run_from_markdown).to eq('<span class="badge-trigger free"></span>')
-      end
-    end
-
-    context 'when **(PREMIUM)** badge' do
-      let(:content) { '**(PREMIUM)**' }
-
-      it 'returns correct HTML' do
-        expect(run_from_markdown).to eq('<span class="badge-trigger premium"></span>')
-      end
-    end
-
-    context 'when **(ULTIMATE)** badge' do
-      let(:content) { '**(ULTIMATE)**' }
-
-      it 'returns correct HTML' do
-        expect(run_from_markdown).to eq('<span class="badge-trigger ultimate"></span>')
+        expect(run_from_markdown).to eq('<span data-component="docs-badges"><span data-type="tier" data-value="free"></span></span>')
       end
     end
 
@@ -114,47 +66,31 @@ describe BadgesFilter do
       let(:content) { '**(FREE SELF)**' }
 
       it 'returns correct HTML' do
-        expect(run_from_markdown).to eq('<span class="badge-trigger free-self"></span>')
+        expect(run_from_markdown).to eq('<span data-component="docs-badges"><span data-type="tier" data-value="free"></span><span data-type="offering" data-value="self"></span></span>')
       end
     end
 
-    context 'when **(PREMIUM SELF)** badge' do
-      let(:content) { '**(PREMIUM SELF)**' }
+    context 'when **(FREE EXPERIMENT)** badge' do
+      let(:content) { '**(FREE EXPERIMENT)**' }
 
       it 'returns correct HTML' do
-        expect(run_from_markdown).to eq('<span class="badge-trigger premium-self"></span>')
+        expect(run_from_markdown).to eq('<span data-component="docs-badges"><span data-type="tier" data-value="free"></span><span data-type="status" data-value="experiment"></span></span>')
       end
     end
 
-    context 'when **(ULTIMATE SELF)** badge' do
-      let(:content) { '**(ULTIMATE SELF)**' }
+    context 'when **(SAAS EXPERIMENT)** badge' do
+      let(:content) { '**(SAAS EXPERIMENT)**' }
 
       it 'returns correct HTML' do
-        expect(run_from_markdown).to eq('<span class="badge-trigger ultimate-self"></span>')
+        expect(run_from_markdown).to eq('<span data-component="docs-badges"><span data-type="offering" data-value="saas"></span><span data-type="status" data-value="experiment"></span></span>')
       end
     end
 
-    context 'when **(FREE SAAS)** badge' do
-      let(:content) { '**(FREE SAAS)**' }
+    context 'when **(BETA)** badge' do
+      let(:content) { '**(BETA)**' }
 
       it 'returns correct HTML' do
-        expect(run_from_markdown).to eq('<span class="badge-trigger free-saas"></span>')
-      end
-    end
-
-    context 'when **(PREMIUM SAAS)** badge' do
-      let(:content) { '**(PREMIUM SAAS)**' }
-
-      it 'returns correct HTML' do
-        expect(run_from_markdown).to eq('<span class="badge-trigger premium-saas"></span>')
-      end
-    end
-
-    context 'when **(ULTIMATE SAAS)** badge' do
-      let(:content) { '**(ULTIMATE SAAS)**' }
-
-      it 'returns correct HTML' do
-        expect(run_from_markdown).to eq('<span class="badge-trigger ultimate-saas"></span>')
+        expect(run_from_markdown).to eq('<span data-component="docs-badges"><span data-type="status" data-value="beta"></span></span>')
       end
     end
   end
