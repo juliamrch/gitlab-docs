@@ -1070,3 +1070,48 @@ redirects:
   - from: /ee/ci/pipelines/job_artifacts.html
     to: /ee/ci/jobs/job_artifacts.html
     remove_date: 2024-04-04
+  - from: /ee/integration/jira/jira_cloud_configuration.html
+    to: /ee/integration/jira/configure.html#create-a-jira-cloud-api-token
+    remove_date: 2024-04-07
+  - from: /ee/user/application_security/secret_detection/post_processing.html
+    to: /ee/user/application_security/secret_detection/automatic_response.html
+    remove_date: 2024-05-08
+  - from: /ee/user/compliance/license_check_rules.html
+    to: /ee/user/compliance/license_approval_policies.html
+    remove_date: 2024-04-25
+  - from: /ee/user/project/code_owners.html
+    to: /ee/user/project/codeowners/index.html
+    remove_date: 2024-04-07
+  - from: /ee/user/packages/gradle_repository/index.html
+    to: /ee/user/packages/maven_repository/index.html
+    remove_date: 2024-05-09
+  - from: /ee/user/packages/gradle_repository/
+    to: /ee/user/packages/maven_repository/index.html
+    remove_date: 2024-05-09
+  - from: /ee/user/analytics/value_stream_analytics.html
+    to: /ee/user/group/value_stream_analytics/index.html
+    remove_date: 2024-04-22
+  - from: /ee/tutorials/convert_personal_namespace_into_group.html
+    to: /ee/tutorials/convert_personal_namespace_to_group/index.html
+    remove_date: 2024-04-21
+  - from: /ee/tutorials/move_personal_project_to_a_group.html
+    to: /ee/tutorials/move_personal_project_to_group/index.html
+    remove_date: 2024-04-21
+  - from: /ee/tutorials/fuzz_testing_tutorial.html
+    to: /ee/tutorials/fuzz_testing/index.html
+    remove_date: 2024-04-21
+  - from: /ee/tutorials/create_compliance_pipeline.html
+    to: /ee/tutorials/compliance_pipeline/index.html
+    remove_date: 2024-04-21
+  - from: /ee/tutorials/make_your_first_git_commit.html
+    to: /ee/tutorials/make_first_git_commit/index.html
+    remove_date: 2024-04-21
+  - from: /ee/tutorials/scan_result_policy.html
+    to: /ee/tutorials/scan_result_policy/index.html
+    remove_date: 2024-04-21
+  - from: /ee/tutorials/agile_sprint.html
+    to: /ee/tutorials/agile_sprint/index.html
+    remove_date: 2024-04-21
+  - from: /ee/topics/your_work.html
+    to: /ee/tutorials/left_sidebar/index.html
+    remove_date: 2024-05-03
