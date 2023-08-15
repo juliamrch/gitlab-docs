@@ -1897,6 +1897,8 @@ sections:
                 doc_url: 'ee/user/application_security/sast/customize_rulesets.html'
               - doc_title: SAST Analyzers
                 doc_url: 'ee/user/application_security/sast/analyzers.html'
+              - doc_title: Troubleshooting
+                doc_url: 'ee/user/application_security/sast/troubleshooting.html'
           - doc_title: Infrastructure as Code (IaC) Scanning
             doc_url: 'ee/user/application_security/iac_scanning/'
           - doc_title: Secret Detection
@@ -3411,6 +3413,8 @@ sections:
                     doc_url: 'ee/development/sec/security_report_ingestion_overview.html'
                   - doc_title: Token Revocation API
                     doc_url: 'ee/development/sec/token_revocation_api.html'
+                  - doc_title: Generate test vulnerabilities
+                    doc_url: 'ee/development/sec/generate_test_vulnerabilities.html'
               - doc_title: Sidekiq
                 doc_url: 'ee/development/sidekiq/'
                 docs:
