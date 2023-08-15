@@ -64,7 +64,7 @@ export const SEARCH_FILTERS = [
       },
       {
         text: 'User docs',
-        value: 'Use GitLab,Tutorials,Subscribe',
+        value: 'Tutorials,Subscribe,Use GitLab',
         id: 'user',
       },
       {
