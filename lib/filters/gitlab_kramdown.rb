@@ -13,15 +13,6 @@ module Nanoc::Filters
 
     PATCH
 
-    # Drop tier badges from the heading permalinks provided by GitLab Kramdown
-    badge_index = YAML.load_file('content/_data/badges.yaml')
-    badges = []
-    badge_index["badgeIndex"].each do |badge|
-      id = badge["id"]
-      badges << id unless badges.include?(id)
-    end
-    BADGE_SUFFIX = %r{(#{badges.join('|')})(?:-+(#{badges.join('|')}))?(?:-+(#{badges.join('|')}))?$}.freeze
-
     # Runs the content through [GitLab Kramdown](https://gitlab.com/gitlab-org/ruby/gems/gitlab_kramdown).
     # Parameters passed to this filter will be passed on to Kramdown.
     #
@@ -61,18 +52,21 @@ module Nanoc::Filters
       headers = find_type_elements(:header, elements)
 
       headers.each do |header|
-        next unless header.attr['id'].match(BADGE_SUFFIX)
+        # Badges, and only badges, are contained in bold text in headers.
+        # We need to drop these from header IDs and anchor links.
+        badges = find_type_elements(:strong, header.children).first
+        next unless badges && badges.children.first.value
 
-        remove_product_suffix!(header, 'id')
+        badges_suffix = badges.children.first.value.gsub(%r{\(([\w\s]+)\)}, '\1').gsub(%r{\s+}, '-').downcase
 
+        remove_product_suffix!(header, badges_suffix, 'id')
         link = find_type_elements(:a, header.children).first
-
-        remove_product_suffix!(link, 'href') if link
+        remove_product_suffix!(link, badges_suffix, 'href') if link
       end
     end
 
-    def remove_product_suffix!(element, attr)
-      element.attr[attr] = element.attr[attr].gsub(BADGE_SUFFIX, '').gsub(%r{-+$}, '')
+    def remove_product_suffix!(element, badges_suffix, attr)
+      element.attr[attr] = element.attr[attr].gsub(%r{#{Regexp.escape(badges_suffix)}\z}, "").gsub(%r{-$}, "")
     end
 
     def find_type_elements(type, elements)
