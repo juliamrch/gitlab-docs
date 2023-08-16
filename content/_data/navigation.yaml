@@ -1178,8 +1178,6 @@ sections:
                     docs:
                       - doc_title: SPDX license list import
                         doc_url: 'ee/raketasks/spdx.html'
-                  - doc_title: License Compliance (deprecated)
-                    doc_url: 'ee/user/compliance/license_compliance/'
           - doc_title: Enterprise users
             doc_url: 'ee/user/enterprise_user/'
           - doc_title: User account options
