@@ -1952,8 +1952,6 @@ sections:
             docs:
               - doc_title: View vulnerabilities in a pipeline
                 doc_url: 'ee/user/application_security/vulnerability_report/pipeline.html'
-              - doc_title: Generate test vulnerabilities
-                doc_url: 'ee/user/application_security/generate_test_vulnerabilities/'
           - doc_title: Vulnerability Page
             doc_url: 'ee/user/application_security/vulnerabilities/'
           - doc_title: Vulnerability severity levels
