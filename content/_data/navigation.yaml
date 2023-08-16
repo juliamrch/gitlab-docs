@@ -868,8 +868,9 @@ sections:
             docs:
               - doc_title: Setting up Geo
                 doc_url: 'ee/administration/geo/setup/'
-              - doc_title: Set up Geo for two single-node sites
-                doc_url: 'ee/administration/geo/setup/two_single_node_sites.html'
+                docs:
+                  - doc_title: Set up Geo for two single-node sites
+                    doc_url: 'ee/administration/geo/setup/two_single_node_sites.html'
               - doc_title: Database replication
                 doc_url: 'ee/administration/geo/setup/database.html'
               - doc_title: External PostgreSQL instances
