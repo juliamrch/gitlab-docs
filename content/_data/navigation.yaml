@@ -1180,6 +1180,8 @@ sections:
                         doc_url: 'ee/raketasks/spdx.html'
           - doc_title: Enterprise users
             doc_url: 'ee/user/enterprise_user/'
+          - doc_title: Service accounts
+            doc_url: 'ee/user/profile/service_accounts.html'
           - doc_title: User account options
             doc_url: 'ee/user/profile/'
             docs:
