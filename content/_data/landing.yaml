@@ -15,12 +15,12 @@ heros:
     img: /assets/images/continuous-delivery.svg
     alt: continuous-delivery
     links:
+      - title: Getting started
+        url: '/ee/ci/'
+      - title: CI/CD Examples
+        url: '/ee/ci/examples/'
       - title: .gitlab-ci.yml reference
-        url: 'ee/ci/yaml/'
-      - title: GitLab Runner
-        url: '/runner/'
-      - title: Auto DevOps
-        url: '/ee/topics/autodevops/'
+        url: '/ee/ci/yaml/'
   - title: Collaboration
     description: Configure and develop your software applications.
     img: /assets/images/collaberation.svg
