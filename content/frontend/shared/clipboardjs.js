@@ -2,40 +2,48 @@
 
 import { spriteIcon } from './sprite_icon';
 
-// Add a copy button to every fenced code block
-$('pre').append(
-  $(
-    `<button class="clip-btn" title="Click to copy" data-selector="true">${spriteIcon(
-      'copy-to-clipboard',
-      'gl-icon ml-1 mr-1 s16',
-    )}</button>`,
-  ),
-);
+const createCopyButton = () => {
+  const button = document.createElement('button');
+  button.className = 'clip-btn';
+  button.title = 'Click to copy';
+  button.dataset.selector = 'true';
+  button.innerHTML = spriteIcon('copy-to-clipboard', 'gl-icon ml-1 mr-1 s16');
+  return button;
+};
 
-// Tooltip
-$('button').tooltip({
-  trigger: 'click',
-  placement: 'left',
-});
+window.onload = () => {
+  document.querySelectorAll('pre').forEach((element) => {
+    const button = createCopyButton();
+    element.appendChild(button);
+  });
 
-function setTooltip(btn, message) {
-  $(btn).tooltip('hide').attr('data-original-title', message).tooltip('show');
-}
+  $('button').tooltip({
+    trigger: 'click',
+    placement: 'left',
+  });
 
-function hideTooltip(btn) {
-  setTimeout(function hide() {
-    $(btn).tooltip('hide');
-  }, 1000);
-}
-
-$('.clip-btn').on('click', function onCopyClick() {
-  try {
-    navigator.clipboard.writeText(this.previousElementSibling.innerText);
-
-    setTooltip(this, 'Copied!');
-    hideTooltip(this);
-  } catch {
-    setTooltip(this, 'Failed!');
-    hideTooltip(this);
+  function setTooltip(btn, message) {
+    $(btn).tooltip('hide').attr('data-original-title', message).tooltip('show');
   }
-});
+
+  function hideTooltip(btn) {
+    setTimeout(function hide() {
+      $(btn).tooltip('hide');
+    }, 1000);
+  }
+
+  document.querySelectorAll('.clip-btn').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const clickedButton = event.target;
+
+      try {
+        navigator.clipboard.writeText(clickedButton.previousElementSibling.innerText);
+        setTooltip(clickedButton, 'Copied!');
+        hideTooltip(clickedButton);
+      } catch {
+        setTooltip(clickedButton, 'Failed!');
+        hideTooltip(clickedButton);
+      }
+    });
+  });
+};
