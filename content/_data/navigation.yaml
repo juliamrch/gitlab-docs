@@ -1898,6 +1898,8 @@ sections:
           - doc_title: Static Application Security Testing
             doc_url: 'ee/user/application_security/sast/'
             docs:
+              - doc_title: SAST rules
+                doc_url: 'ee/user/application_security/sast/rules.html'
               - doc_title: Customize rulesets
                 doc_url: 'ee/user/application_security/sast/customize_rulesets.html'
               - doc_title: SAST Analyzers
