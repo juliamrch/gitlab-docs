@@ -17,7 +17,7 @@ heros:
     links:
       - title: Getting started
         url: '/ee/ci/'
-      - title: CI/CD Examples
+      - title: CI/CD examples
         url: '/ee/ci/examples/'
       - title: .gitlab-ci.yml reference
         url: '/ee/ci/yaml/'
