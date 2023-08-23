@@ -3597,6 +3597,8 @@ sections:
             docs:
               - doc_title: CI/CD configuration
                 doc_url: 'operator/developer/ci.html'
+              - doc_title: Dependency on GitLab Charts
+                doc_url: 'operator/developer/charts_dependency.html'
               - doc_title: Development installation
                 doc_url: 'operator/developer/installation.html'
               - doc_title: OpenShift cluster setup
