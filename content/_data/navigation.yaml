@@ -2840,7 +2840,14 @@ sections:
           - doc_title: GitLab CLI (glab)
             doc_url: 'ee/editor_extensions/gitlab_cli/'
       - category_title: Code Suggestions
-        category_url: 'ee/user/project/repository/code_suggestions.html'
+        category_url: 'ee/user/project/repository/code_suggestions/'
+        docs:
+          - doc_title: SaaS
+            doc_url: 'ee/user/project/repository/code_suggestions/saas.html'
+          - doc_title: Self-managed
+            doc_url: 'ee/user/project/repository/code_suggestions/self_managed.html'
+          - doc_title: Troubleshooting
+            doc_url: 'ee/user/project/repository/code_suggestions/troubleshooting.html'
   # End of documentation from https://gitlab.com/gitlab-org/gitlab
 
   # Development documentation from:
