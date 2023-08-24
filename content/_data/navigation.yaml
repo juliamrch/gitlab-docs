@@ -2496,6 +2496,8 @@ sections:
                 doc_url: 'ee/api/branches.html'
               - doc_title: Broadcast messages
                 doc_url: 'ee/api/broadcast_messages.html'
+              - doc_title: Code Suggestions
+                doc_url: 'ee/api/code_suggestions.html'
               - doc_title: Commits
                 doc_url: 'ee/api/commits.html'
               - doc_title: Composer
