@@ -1715,8 +1715,6 @@ sections:
                 doc_url: 'ee/ci/pipelines/pipeline_efficiency.html'
               - doc_title: Pipeline resource groups
                 doc_url: 'ee/ci/resource_groups/'
-              - doc_title: Pipeline security
-                doc_url: 'ee/ci/pipelines/pipeline_security.html'
               - doc_title: Directed acyclic graph (DAG)
                 doc_url: 'ee/ci/directed_acyclic_graph/'
               - doc_title: Downstream pipelines
@@ -1732,8 +1730,6 @@ sections:
             docs:
               - doc_title: Choose when jobs run
                 doc_url: 'ee/ci/jobs/job_control.html'
-              - doc_title: CI/CD job token
-                doc_url: 'ee/ci/jobs/ci_job_token.html'
               - doc_title: Access a terminal for a running job
                 doc_url: 'ee/ci/interactive_web_terminal/'
               - doc_title: Format scripts and job logs
@@ -1768,15 +1764,21 @@ sections:
                 doc_url: 'ee/ci/variables/predefined_variables.html'
               - doc_title: Where variables can be used
                 doc_url: 'ee/ci/variables/where_variables_can_be_used.html'
-          - doc_title: External secrets
-            doc_url: 'ee/ci/secrets/'
+          - doc_title: Pipeline security
+            doc_url: 'ee/ci/pipelines/pipeline_security.html'
             docs:
+              - doc_title: CI/CD job token
+                doc_url: 'ee/ci/jobs/ci_job_token.html'
+              - doc_title: External secrets
+                doc_url: 'ee/ci/secrets/'
               - doc_title: ID token authentication
                 doc_url: 'ee/ci/secrets/id_token_authentication.html'
               - doc_title: Secure Files
                 doc_url: 'ee/ci/secure_files/'
               - doc_title: Use Azure Key Vault secrets in GitLab CI/CD
                 doc_url: 'ee/ci/secrets/azure_key_vault.html'
+              - doc_title: Use Sigstore for keyless signing
+                doc_url: 'ee/ci/yaml/signing_examples.html'
               - doc_title: Connect to cloud services
                 doc_url: 'ee/ci/cloud_services/'
                 docs:
@@ -1862,9 +1864,6 @@ sections:
             doc_url: 'ee/ci/chatops/'
           - doc_title: Mobile DevOps
             doc_url: 'ee/ci/mobile_devops.html'
-            docs:
-              - doc_title: Signing examples
-                doc_url: 'ee/ci/yaml/signing_examples.html'
           - doc_title: External repository integrations
             doc_url: 'ee/ci/ci_cd_for_external_repos/'
             docs:
