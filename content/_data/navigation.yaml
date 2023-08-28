@@ -3200,8 +3200,6 @@ sections:
                     doc_url: 'ee/development/fe_guide/design_patterns.html'
                   - doc_title: Design tokens
                     doc_url: 'ee/development/fe_guide/design_tokens.html'
-                  - doc_title: Development process
-                    doc_url: 'ee/development/fe_guide/development_process.html'
                   - doc_title: Event tracking
                     doc_url: 'https://about.gitlab.com/handbook/product/analytics-instrumentation-guide/'
                     external_url: true
@@ -3228,8 +3226,6 @@ sections:
                         doc_url: 'ee/development/fe_guide/onboarding_course/lesson_1.html'
                   - doc_title: Performance
                     doc_url: 'ee/development/fe_guide/performance.html'
-                  - doc_title: Principles
-                    doc_url: 'ee/development/fe_guide/principles.html'
                   - doc_title: Registry architecture
                     doc_url: 'ee/development/fe_guide/registry_architecture.html'
                   - doc_title: Security
