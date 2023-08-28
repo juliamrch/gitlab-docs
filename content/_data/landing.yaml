@@ -11,7 +11,7 @@ heros:
       - title: Labels
         url: '/ee/user/project/labels.html'
   - title: CI/CD
-    description: Build, test, and deploy applications using Continuous Integration and Delivery.
+    description: Build, test, and deploy applications.
     img: /assets/images/continuous-delivery.svg
     alt: continuous-delivery
     links:
@@ -21,6 +21,8 @@ heros:
         url: '/ee/ci/examples/'
       - title: .gitlab-ci.yml reference
         url: '/ee/ci/yaml/'
+      - title: GitLab Runner
+        url: '/runner/'
   - title: Collaboration
     description: Configure and develop your software applications.
     img: /assets/images/collaberation.svg
