@@ -34,28 +34,46 @@ The following terms are used throughout this document:
    - [ ] `gitlab-runner`: <https://gitlab.com/gitlab-org/gitlab-runner/-/branches?state=all&sort=updated_desc&search=-stable>
    - [ ] `omnibus-gitlab`: <https://gitlab.com/gitlab-org/omnibus-gitlab/-/branches?state=all&sort=updated_desc&search=-stable>
    - [ ] `charts/gitlab`: <https://gitlab.com/gitlab-org/charts/gitlab/-/branches?state=all&sort=updated_desc&search=-stable> (Version number is 9 lower than `gitlab` release, so GitLab 16.X = Charts 7.X)
-1. [ ] When all the stable branches are available, [create a stable branch and Docker image for the release](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#create-stable-branch-and-docker-image-for-release):
 
-   1. [ ] In the root path of the `gitlab-docs` repository, update your local clone:
+1. [Create a stable branch and Docker image for the release](#create-a-stable-branch-and-docker-image-for-the-release).
 
-      ```shell
-      make update
-      ```
+#### Create a stable branch and Docker image for the release
 
-   1. [ ] Create the stable branch:
+> Note: an [issue exists](https://gitlab.com/gitlab-org/release-tools/-/issues/533)
+> to create the stable branch automatically.
 
-      ```shell
-      make create-stable-branch
-      ```
+1. [ ] In the root path of the `gitlab-docs` repository, update your local clone:
 
-      - A branch `X.Y` for the release is created.
-      - A new `X.Y.Dockerfile` is created and automatically committed.
-      - The new branch is pushed.
+   ```shell
+   make update
+   ```
 
-      After the branch is created, the
-      [`image:docs-single` job](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/7fbb5e1313ebde811877044e87f444a0a283fed4/.gitlab/ci/docker-images.gitlab-ci.yml#L107-129)
-      runs and creates a new Docker image tagged with the name of the stable branch
-      (for example, see [the 15.6 release pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/702437095)).
+1. Optional. To practice running the task and check the process, run the Rake task in dry run mode:
+
+   ```shell
+   DRY_RUN=true make create-stable-branch
+   ```
+
+1. [ ] Create the stable branch:
+
+   ```shell
+   make create-stable-branch
+   ```
+
+   - A branch `X.Y` for the release is created.
+   - A new `X.Y.Dockerfile` is created and automatically committed.
+   - The new branch is pushed.
+
+   After the branch is created, the
+   [`image:docs-single` job](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/7fbb5e1313ebde811877044e87f444a0a283fed4/.gitlab/ci/docker-images.gitlab-ci.yml#L107-129)
+   runs and creates a new Docker image tagged with the name of the stable branch
+   (for example, see [the 15.6 release pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/702437095)).
+   When the job finishes, confirm the Docker image has been created. Go to the `registry` environment at
+   <https://gitlab.com/gitlab-org/gitlab-docs/-/environments/folders/registry> and confirm the image
+   is listed.
+
+   In case the pipeline fails, see the [troubleshooting section](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-single-job-fails-when-creating-the-docs-stable-branch).
+
 
 You can continue onto the next process immediately, or wait for the release post.
 
