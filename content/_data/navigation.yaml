@@ -1004,6 +1004,8 @@ sections:
             doc_url: 'ee/administration/inactive_project_deletion.html'
           - doc_title: Move repositories
             doc_url: 'ee/administration/operations/moving_repositories.html'
+          - doc_title: Silent mode
+            doc_url: 'ee/administration/silent_mode/'
           - doc_title: Read-only state
             doc_url: 'ee/administration/read_only_gitlab.html'
           - doc_title: Restart GitLab
