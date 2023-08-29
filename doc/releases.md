@@ -39,10 +39,11 @@ To minimize problems during the documentation release process, use the following
   1. If an issue was not already created for you by the TW that handled the last release,
      [create an issue for the release](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/new?issuable_template=release)
      to track your progress and ensure completeness.
-  1. Check the `#releases` Slack channel for a `This is the candidate commit to be released on the 22nd`
-     message. When the announcement is made, proceed with the next step.
-  1. [Create a stable branch and Docker image](#create-stable-branch-and-docker-image-for-release) for
-     the new version.
+  1. Check that the stable branches have been created in all 4 projects. For details, see "Check for
+     the stable branches that correspond with the release" in the docs release issue. When all
+     stable branches are available, proceed with the next step.
+  1. Create a stable branch and Docker image for the new version. For details, see "Create a stable
+     branch and Docker image for the release" in the docs release issue.
 
 - Complete the publication steps on the 22nd of the month, after the release post is live:
 
@@ -53,45 +54,6 @@ To minimize problems during the documentation release process, use the following
   1. [Merge the release merge request and run the necessary Docker image builds](#merge-the-release-merge-request-and-run-the-docker-image-builds).
 
   If the 22nd of the month falls on a weekend or public holiday, it's OK to complete these publication steps on the next working day.
-
-## Create stable branch and Docker image for release
-
-> Note: an [issue exists](https://gitlab.com/gitlab-org/release-tools/-/issues/533)
-> to create the stable branch automatically.
-
-To create a stable branch of the `gitlab-docs` project and a Docker image for the release:
-
-1. Make sure you're in the root path of the `gitlab-docs` repository.
-1. Update your local checkout:
-
-   ```shell
-   make update
-   ```
-
-1. Optional. To practice running the task and check the process, run the Rake task in dry run mode:
-
-   ```shell
-   DRY_RUN=true make create-stable-branch
-   ```
-
-1. Run the make target to create the stable branch:
-
-   ```shell
-   make create-stable-branch
-   ```
-
-   A branch for the release is created, a new `X.Y.Dockerfile` is created and
-   automatically committed, and the new branch is pushed.
-
-After the branch is created, the
-[`image:docs-single` job](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/7fbb5e1313ebde811877044e87f444a0a283fed4/.gitlab/ci/docker-images.gitlab-ci.yml#L107-129)
-runs and creates a new Docker image tagged with the name of the stable branch
-(for example, see [the 15.6 release pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/702437095)).
-When the job finishes, confirm the Docker image has been created. Go to the `registry` environment at
-<https://gitlab.com/gitlab-org/gitlab-docs/-/environments/folders/registry> and confirm the image
-is listed.
-
-In case the pipeline fails, see the [troubleshooting section](#imagedocs-single-job-fails-when-creating-the-docs-stable-branch).
 
 ### Optional. Test locally
 
@@ -201,8 +163,7 @@ For example, if you released the 14.1 documentation, the first dropdown entry sh
 
 ### `compile_prod` job fails when creating the docs stable branch
 
-When you create the [stable branch](#create-stable-branch-and-docker-image-for-release),
-the `compile_prod` job might fail.
+When you create the stable branch in the `gitlab-docs` project, the `compile_prod` job might fail.
 
 This happens if stable branches have not been
 created for all the related projects. Some of the stable branches are
