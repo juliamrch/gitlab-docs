@@ -43,7 +43,11 @@ export const fetchResults = async (query, filters, pageNumber, numResults) => {
         query,
         item.link,
       )}`,
-      breadcrumbs: item.pagemap.metatags[0]['gitlab-docs-breadcrumbs'] ?? '',
+      breadcrumbs:
+        (item.pagemap.metatags &&
+          item.pagemap.metatags[0] &&
+          item.pagemap.metatags[0]['gitlab-docs-breadcrumbs']) ||
+        '',
     }));
   }
 
