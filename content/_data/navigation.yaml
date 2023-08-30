@@ -2880,7 +2880,7 @@ sections:
             doc_url: 'ee/development/development_processes.html'
             docs:
               - doc_title: AI features
-                doc_url: 'ee/development/ai_features.html'
+                doc_url: 'ee/development/ai_features/'
               - doc_title: Avoiding required stops
                 doc_url: 'ee/development/avoiding_required_stops.html'
               - doc_title: Changelog entries
