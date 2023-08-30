@@ -437,8 +437,6 @@ sections:
                 doc_url: 'omnibus/update/package_signatures.html'
               - doc_title: GitLab 15 changes
                 doc_url: 'omnibus/update/gitlab_15_changes.html'
-              - doc_title: GitLab 14 changes
-                doc_url: 'omnibus/update/gitlab_14_changes.html'
               - doc_title: Downgrade
                 doc_url: 'ee/update/package/downgrade.html'
           - doc_title: Upgrade a self-compiled instance
