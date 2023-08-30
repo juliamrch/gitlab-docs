@@ -71,7 +71,7 @@
     "lodash": "^4.17.21",
     "lodash.isequal": "^4.5.0",
     "lunr": "^2.3.9",
-    "mermaid": "^9.4.3",
+    "mermaid": "^10.4",
     "pikaday": "^1.8.2",
     "v-click-outside": "^3.2.0",
     "vue": "^2.7.0"
