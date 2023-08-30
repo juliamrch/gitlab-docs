@@ -2881,6 +2881,11 @@ sections:
             docs:
               - doc_title: AI features
                 doc_url: 'ee/development/ai_features/'
+                docs:
+                  - doc_title: Duo Chat
+                    doc_url: 'ee/development/ai_features/duo_chat.html'
+                  - doc_title: Working with prompts
+                    doc_url: 'ee/development/ai_features/prompts.html'
               - doc_title: Avoiding required stops
                 doc_url: 'ee/development/avoiding_required_stops.html'
               - doc_title: Changelog entries
