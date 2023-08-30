@@ -8,6 +8,7 @@ badgeIndex:
     label: Premium
     type: tier
     link: https://about.gitlab.com/pricing/?glm_source=docs.gitlab.com&glm_content=badges-docs
+    text: Premium and Ultimate
   - id: ultimate
     label: Ultimate
     type: tier
