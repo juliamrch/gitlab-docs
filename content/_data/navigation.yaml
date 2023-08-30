@@ -1125,18 +1125,18 @@ sections:
                 doc_url: 'ee/user/group/import/'
               - doc_title: SAML Group Sync
                 doc_url: 'ee/user/group/saml_sso/group_sync.html'
-                docs:
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/user/group/saml_sso/troubleshooting.html'
               - doc_title: SAML SSO for GitLab.com groups
                 doc_url: 'ee/user/group/saml_sso/'
                 docs:
                   - doc_title: Configure SCIM
                     doc_url: 'ee/user/group/saml_sso/scim_setup.html'
+                    docs:
+                      - doc_title: Troubleshooting
+                        doc_url: 'ee/user/group/saml_sso/troubleshooting_scim.html'
                   - doc_title: Example group SAML and SCIM configurations
                     doc_url: 'ee/user/group/saml_sso/example_saml_config.html'
                   - doc_title: Troubleshooting
-                    doc_url: 'ee/user/group/saml_sso/troubleshooting_scim.html'
+                    doc_url: 'ee/user/group/saml_sso/troubleshooting.html'
               - doc_title: Subgroups
                 doc_url: 'ee/user/group/subgroups/'
               - doc_title: 'Tutorial: Move a personal project to a group'
