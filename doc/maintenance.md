@@ -172,7 +172,7 @@ CI/CD pipelines. These tokens are stored in each project's CI/CD settings as
 [CI/CD variables](https://docs.gitlab.com/ee/ci/variables/#add-a-cicd-variable-to-a-project):
 
 - `DOCS_PROJECT_API_TOKEN` and `DOCS_TRIGGER_TOKEN`: Used by `gitlab`, `gitlab-runner`,
-  `omnibus-gitlab` and `charts` to create docs review apps.
+  `omnibus-gitlab`, `charts`, and `gitlab-operator` to create docs review apps.
 - `DELETE_ENVIRONMENTS_TOKEN`: Used by `gitlab-docs` to
   [delete stale review app environments](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/452c30caebd9db6604d34f1fd04ce19c38ff2273/.gitlab/ci/build-and-deploy.gitlab-ci.yml#L155-L169).
 
