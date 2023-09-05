@@ -1,61 +1,14 @@
 /* global Vue */
-import { getNextUntil, isContainedInHeading } from '../shared/dom';
+import { getNextUntil } from '../shared/dom';
 import NavigationToggle from './components/navigation_toggle.vue';
 import VersionBanner from './components/version_banner.vue';
 import { setupTableOfContents } from './setup_table_of_contents';
 import VersionsMenu from './components/versions_menu.vue';
 import TabsSection from './components/tabs_section.vue';
-import DocsBadges from './components/docs_badges.vue';
 
 /* eslint-disable no-new */
 document.addEventListener('DOMContentLoaded', () => {
   setupTableOfContents();
-
-  /**
-   * Badge components
-   *
-   * Badges are typically added in markdown and rendered by Nanoc as spans.
-   * Contributor docs have a section-wide badge added here.
-   */
-  const isContributorDocs = () => {
-    const paths = [
-      '/ee/development/',
-      '/omnibus/development/',
-      '/runner/development/',
-      '/charts/development/',
-    ];
-    return paths.some((substr) => window.location.pathname.startsWith(substr));
-  };
-  // Inject markup for our Contributor docs badge.
-  if (isContributorDocs()) {
-    document
-      .querySelector('h1 a')
-      .insertAdjacentHTML(
-        'beforebegin',
-        ' <span data-component="docs-badges"><span data-type="content" data-value="contribute"></span></span>',
-      );
-  }
-  document.querySelectorAll('[data-component="docs-badges"]').forEach((badgeSet) => {
-    const badges = badgeSet.querySelectorAll('span');
-
-    // Get badges that were added to the heading
-    const badgesData = Array.from(badges).map((badge) => ({
-      type: badge.getAttribute('data-type'),
-      text: badge.getAttribute('data-value'),
-    }));
-
-    new Vue({
-      el: badgeSet,
-      components: {
-        DocsBadges,
-      },
-      render(createElement) {
-        return createElement(DocsBadges, {
-          props: { badgesData, isHeading: isContainedInHeading(badgeSet) },
-        });
-      },
-    });
-  });
 
   /**
    * Banner components
