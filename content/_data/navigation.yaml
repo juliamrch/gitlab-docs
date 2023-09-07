@@ -1504,14 +1504,16 @@ sections:
                 doc_url: 'ee/user/project/repository/push_rules.html'
               - doc_title: Reduce repository size
                 doc_url: 'ee/user/project/repository/reducing_the_repo_size_using_git.html'
-              - doc_title: Sign commits with GPG
-                doc_url: 'ee/user/project/repository/gpg_signed_commits/'
-              - doc_title: Sign commits with SSH keys
-                doc_url: 'ee/user/project/repository/ssh_signed_commits/'
-              - doc_title: Sign commits and tags with X.509
-                doc_url: 'ee/user/project/repository/x509_signed_commits/'
+              - doc_title: Signed commits
+                doc_url: 'ee/user/project/repository/signed_commits/'
                 docs:
-                  - doc_title: X509 signatures Rake task
+                  - doc_title: Sign commits with GPG
+                    doc_url: 'ee/user/project/repository/signed_commits/gpg.html'
+                  - doc_title: Sign commits with SSH keys
+                    doc_url: 'ee/user/project/repository/signed_commits/ssh.html'
+                  - doc_title: Sign commits and tags with X.509
+                    doc_url: 'ee/user/project/repository/signed_commits/x509.html'
+                  - doc_title: X.509 signatures Rake task
                     doc_url: 'ee/raketasks/x509_signatures.html'
               - doc_title: Syntax highlighting
                 doc_url: 'ee/user/project/highlighting.html'
