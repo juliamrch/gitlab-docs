@@ -3056,6 +3056,11 @@ sections:
           - doc_title: Feature development
             doc_url: 'ee/development/feature_development.html'
             docs:
+              - doc_title: ActivityPub
+                doc_url: 'ee/development/activitypub/'
+                docs:
+                  - doc_title: ActivityPub actor
+                    doc_url: 'ee/development/activitypub/actor.html'
               - doc_title: Advanced search
                 doc_url: 'ee/development/advanced_search.html'
               - doc_title: Approval rules
