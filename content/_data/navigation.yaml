@@ -826,8 +826,6 @@ sections:
           - doc_title: Repository storage
             doc_url: 'ee/administration/repository_storage_paths.html'
             docs:
-              - doc_title: Repository storage types
-                doc_url: 'ee/administration/repository_storage_types.html'
               - doc_title: Gitaly and Geo capabilities
                 doc_url: 'ee/administration/gitaly/gitaly_geo_capabilities.html'
               - doc_title: Gitaly and Gitaly Cluster
