@@ -3320,6 +3320,8 @@ sections:
                         doc_url: 'ee/development/internal_analytics/internal_event_tracking/introduction.html'
                       - doc_title: Quick start guide
                         doc_url: 'ee/development/internal_analytics/internal_event_tracking/quick_start.html'
+                      - doc_title: Migrating to internal event tracking
+                        doc_url: 'ee/development/internal_analytics/internal_event_tracking/migration.html'
                       - doc_title: Event definition guide
                         doc_url: 'ee/development/internal_analytics/internal_event_tracking/event_definition_guide.html'
                       - doc_title: Architecture
