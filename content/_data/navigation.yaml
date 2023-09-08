@@ -1485,6 +1485,8 @@ sections:
                 doc_url: 'ee/user/project/repository/git_blame.html'
               - doc_title: File History
                 doc_url: 'ee/user/project/repository/git_history.html'
+              - doc_title: Managing monorepos
+                doc_url: 'ee/user/project/repository/managing_large_repositories.html'
               - doc_title: Mirroring
                 doc_url: 'ee/user/project/repository/mirror/'
                 docs:
@@ -1521,8 +1523,6 @@ sections:
                 doc_url: 'ee/user/project/repository/web_editor.html'
               - doc_title: Web IDE
                 doc_url: 'ee/user/project/web_ide/'
-              - doc_title: Managing large repositories
-                doc_url: 'ee/user/project/repository/managing_large_repositories.html'
           - doc_title: Merge requests
             doc_url: 'ee/user/project/merge_requests/'
             docs:
@@ -1700,8 +1700,6 @@ sections:
                 doc_url: 'ee/ci/runners/configure_runners.html'
               - doc_title: Scale a fleet of runners
                 doc_url: 'runner/fleet_scaling/'
-              - doc_title: Best practices for large repositories
-                doc_url: 'ee/ci/large_repositories/'
           - doc_title: Pipelines
             doc_url: 'ee/ci/pipelines/'
             docs:
