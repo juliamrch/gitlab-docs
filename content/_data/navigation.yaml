@@ -3117,6 +3117,8 @@ sections:
                   - doc_title: ClickHouse
                     doc_url: 'ee/development/database/clickhouse/'
                     docs:
+                      - doc_title: ClickHouse within GitLab
+                        doc_url: 'ee/development/database/clickhouse/clickhouse_within_gitlab.html'
                       - doc_title: GitLab activity data in ClickHouse
                         doc_url: 'ee/development/database/clickhouse/gitlab_activity_data.html'
                       - doc_title: Merge request analytics with ClickHouse
