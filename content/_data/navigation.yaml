@@ -1604,6 +1604,9 @@ sections:
                 doc_url: 'ee/ci/migration/circleci.html'
               - doc_title: Migrate from Jenkins
                 doc_url: 'ee/ci/migration/jenkins.html'
+                docs:
+                  - doc_title: Migrating Maven builds from Jenkins
+                    doc_url: 'ee/ci/migration/examples/jenkins-maven.html'
               - doc_title: CI/CD examples
                 doc_url: 'ee/ci/examples/'
                 docs:
