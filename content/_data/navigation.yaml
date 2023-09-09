@@ -1758,6 +1758,8 @@ sections:
                         doc_url: 'ee/ci/docker/docker_layer_caching.html'
                   - doc_title: Use kaniko to build Docker images
                     doc_url: 'ee/ci/docker/using_kaniko.html'
+                  - doc_title: "Tutorial: Use Buildah in a rootless container on OpenShift"
+                    doc_url: 'ee/ci/docker/buildah_rootless_tutorial.html'
           - doc_title: Variables
             doc_url: 'ee/ci/variables/'
             docs:
