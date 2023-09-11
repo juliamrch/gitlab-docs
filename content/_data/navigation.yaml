@@ -3060,8 +3060,18 @@ sections:
               - doc_title: ActivityPub
                 doc_url: 'ee/development/activitypub/'
                 docs:
-                  - doc_title: ActivityPub actor
-                    doc_url: 'ee/development/activitypub/actor.html'
+                  - doc_title: ActivityPub actors
+                    doc_url: 'ee/development/activitypub/actors/'
+                  - doc_title: Groups actor
+                    doc_url: 'ee/development/activitypub/actors/group.html'
+                  - doc_title: Projects actor
+                    doc_url: 'ee/development/activitypub/actors/project.html'
+                  - doc_title: Releases actor
+                    doc_url: 'ee/development/activitypub/actors/releases.html'
+                  - doc_title: Topics actor
+                    doc_url: 'ee/development/activitypub/actors/topic.html'
+                  - doc_title: Users actor
+                    doc_url: 'ee/development/activitypub/actors/user.html'
               - doc_title: Advanced search
                 doc_url: 'ee/development/advanced_search.html'
               - doc_title: Approval rules
