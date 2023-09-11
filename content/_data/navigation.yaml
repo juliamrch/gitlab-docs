@@ -3199,70 +3199,75 @@ sections:
                     doc_url: 'ee/development/fe_guide/accessibility.html'
                   - doc_title: Architecture
                     doc_url: 'ee/development/fe_guide/architecture.html'
-                  - doc_title: Axios
-                    doc_url: 'ee/development/fe_guide/axios.html'
-                  - doc_title: Content Editor
-                    doc_url: 'ee/development/fe_guide/content_editor.html'
-                  - doc_title: Customizable dashboards
-                    doc_url: 'ee/development/fe_guide/customizable_dashboards.html'
+                    docs:
+                      - doc_title: Content Editor
+                        doc_url: 'ee/development/fe_guide/content_editor.html'
+                      - doc_title: Customizable dashboards
+                        doc_url: 'ee/development/fe_guide/customizable_dashboards.html'
+                      - doc_title: Design tokens
+                        doc_url: 'ee/development/fe_guide/design_tokens.html'
+                      - doc_title: Merge request widget extensions
+                        doc_url: 'ee/development/fe_guide/merge_request_widget_extensions.html'
+                      - doc_title: Registry architecture
+                        doc_url: 'ee/development/fe_guide/registry_architecture.html'
+                      - doc_title: Source editor
+                        doc_url: 'ee/development/fe_guide/source_editor.html'
+                      - doc_title: Widgets
+                        doc_url: 'ee/development/fe_guide/widgets.html'
                   - doc_title: Dark mode
                     doc_url: 'ee/development/fe_guide/dark_mode.html'
                   - doc_title: Dependencies
                     doc_url: 'ee/development/fe_guide/dependencies.html'
-                  - doc_title: Design anti-patterns
-                    doc_url: 'ee/development/fe_guide/design_anti_patterns.html'
                   - doc_title: Design patterns
                     doc_url: 'ee/development/fe_guide/design_patterns.html'
-                  - doc_title: Design tokens
-                    doc_url: 'ee/development/fe_guide/design_tokens.html'
                   - doc_title: Event tracking
                     doc_url: 'https://about.gitlab.com/handbook/product/analytics-instrumentation-guide/'
                     external_url: true
                   - doc_title: Emojis
                     doc_url: 'ee/development/fe_guide/emojis.html'
-                  - doc_title: Frontend FAQ
+                  - doc_title: FAQ
                     doc_url: 'ee/development/fe_guide/frontend_faq.html'
-                  - doc_title: GraphQL
-                    doc_url: 'ee/development/fe_guide/graphql.html'
-                  - doc_title: HAML
-                    doc_url: 'ee/development/fe_guide/haml.html'
+                  - doc_title: Guides
+                    doc_url: 'ee/development/fe_guide/guides.html'
+                    docs:
+                      - doc_title: Migrating from Vuex
+                        doc_url: 'ee/development/fe_guide/migrating_from_vuex.html'
+                      - doc_title: Onboarding course
+                        doc_url: 'ee/development/fe_guide/onboarding_course/'
+                        docs:
+                          - doc_title: Lesson 1
+                            doc_url: 'ee/development/fe_guide/onboarding_course/lesson_1.html'
+                      - doc_title: Vue 3 migration
+                        doc_url: 'ee/development/fe_guide/vue3_migration.html'
                   - doc_title: Icons and SVG illustrations
                     doc_url: 'ee/development/fe_guide/icons.html'
                   - doc_title: Keyboard shortcuts
                     doc_url: 'ee/development/fe_guide/keyboard_shortcuts.html'
                   - doc_title: Logging
                     doc_url: 'ee/development/fe_guide/logging.html'
-                  - doc_title: Merge request widget extensions
-                    doc_url: 'ee/development/fe_guide/merge_request_widget_extensions.html'
-                  - doc_title: Onboarding course
-                    doc_url: 'ee/development/fe_guide/onboarding_course/'
-                    docs:
-                      - doc_title: Lesson 1
-                        doc_url: 'ee/development/fe_guide/onboarding_course/lesson_1.html'
                   - doc_title: Performance
                     doc_url: 'ee/development/fe_guide/performance.html'
-                  - doc_title: Registry architecture
-                    doc_url: 'ee/development/fe_guide/registry_architecture.html'
                   - doc_title: Security
                     doc_url: 'ee/development/fe_guide/security.html'
-                  - doc_title: Source editor
-                    doc_url: 'ee/development/fe_guide/source_editor.html'
-                  - doc_title: Tooling
-                    doc_url: 'ee/development/fe_guide/tooling.html'
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/development/fe_guide/troubleshooting.html'
-                  - doc_title: ViewComponent
-                    doc_url: 'ee/development/fe_guide/view_component.html'
-                  - doc_title: Vuex
-                    doc_url: 'ee/development/fe_guide/vuex.html'
-                  - doc_title: Migrating from Vuex
-                    doc_url: 'ee/development/fe_guide/migrating_from_vuex.html'
-                  - doc_title: Vue
-                    doc_url: 'ee/development/fe_guide/vue.html'
-                  - doc_title: Vue 3 migration
-                    doc_url: 'ee/development/fe_guide/vue3_migration.html'
-                  - doc_title: Widgets
-                    doc_url: 'ee/development/fe_guide/widgets.html'
+                  - doc_title: Tech Stack
+                    doc_url: 'ee/development/fe_guide/tech_stack.html'
+                    docs:
+                      - doc_title: Axios
+                        doc_url: 'ee/development/fe_guide/axios.html'
+                      - doc_title: GraphQL
+                        doc_url: 'ee/development/fe_guide/graphql.html'
+                      - doc_title: HAML
+                        doc_url: 'ee/development/fe_guide/haml.html'
+                      - doc_title: ViewComponent
+                        doc_url: 'ee/development/fe_guide/view_component.html'
+                      - doc_title: Vue
+                        doc_url: 'ee/development/fe_guide/vue.html'
+                      - doc_title: Vuex
+                        doc_url: 'ee/development/fe_guide/vuex.html'
+                      - doc_title: Tooling
+                        doc_url: 'ee/development/fe_guide/tooling.html'
+                      - doc_title: Troubleshooting
+                        doc_url: 'ee/development/fe_guide/troubleshooting.html'
               - doc_title: Geo
                 doc_url: 'ee/development/geo.html'
                 docs:
