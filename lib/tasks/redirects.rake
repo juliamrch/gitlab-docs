@@ -71,7 +71,7 @@ namespace :docs do
       #   To   : /ee/install/requirements.html
       #
       def new_path(redirect, filename, content_dir, slug)
-        abort "\n#{TaskHelpers::COLOR_CODE_RED}ERROR: No redirect_to found in #{filename}!#{TaskHelpers::COLOR_CODE_RESET}" if redirect.nil?
+        abort "\n#{TaskHelpers::COLOR_CODE_RED}ERROR: No redirect_to found in #{filename}!#{TaskHelpers::COLOR_CODE_RESET}\n\nTo resolve the problem:\n1. Add redirect_to to the metadata of #{filename}.\n2. Raise a merge request with the metadata change and have the change merged.\n3. Run the Rake task again.#{TaskHelpers::COLOR_CODE_RESET}" if redirect.nil?
 
         if !redirect.start_with?('http')
           Pathname.new(filename).dirname.join(redirect).to_s.gsub(%r{\.md}, '.html').gsub(content_dir, "/#{slug}")
