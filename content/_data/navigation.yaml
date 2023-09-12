@@ -3700,6 +3700,8 @@ sections:
             doc_url: 'ee/development/documentation/site_architecture/folder_structure.html'
           - doc_title: Deployment process
             doc_url: 'ee/development/documentation/site_architecture/deployment_process.html'
+          - doc_title: Automation
+            doc_url: 'ee/development/documentation/site_architecture/automation.html'
           - doc_title: Documentation review apps
             doc_url: 'ee/development/documentation/review_apps.html'
           - doc_title: Redirects
