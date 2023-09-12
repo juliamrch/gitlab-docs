@@ -2208,7 +2208,7 @@ sections:
                     doc_url: 'ee/user/infrastructure/clusters/deploy/inventory_object.html'
                   - doc_title: Using GitOps with the agent for Kubernetes (deprecated)
                     doc_url: 'ee/user/clusters/agent/gitops/agent.html'
-              - doc_title: GitLab CI/CD workflow
+              - doc_title: Use GitLab CI/CD with your cluster
                 doc_url: 'ee/user/clusters/agent/ci_cd_workflow.html'
                 docs:
                   - doc_title: Manage cluster applications
