@@ -2223,7 +2223,7 @@ sections:
                     doc_url: 'ee/user/infrastructure/clusters/manage/management_project_applications/vault.html'
               - doc_title: Install the agent for Kubernetes
                 doc_url: 'ee/user/clusters/agent/install/'
-              - doc_title: Work with the agent for Kubernetes
+              - doc_title: Manage the agent for Kubernetes instances
                 doc_url: 'ee/user/clusters/agent/work_with_agent.html'
               - doc_title: Grant users Kubernetes access
                 doc_url: 'ee/user/clusters/agent/user_access.html'
