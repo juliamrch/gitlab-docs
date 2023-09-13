@@ -175,14 +175,73 @@ shellcheck:
     - make shellcheck-tests
 
 #
-# Check for broken external links
+# Check for broken external links from the GitLab project
 #
-test_external_links:
+test_external_links_gitlab:
   extends:
     - .bundle
     - .rules_chores
   stage: test
   script:
+    - echo "  all:" >> nanoc.yaml
+    - echo "    exclude_files:" >> nanoc.yaml
+    - echo "      - '\/(runner|omnibus|charts|operator)\/.*\/.*'" >> nanoc.yaml
+    - bundle exec nanoc check external_links
+
+#
+# Check for broken external links from the Omnibus GitLab project
+#
+test_external_links_omnibus_gitlab:
+  extends:
+    - .bundle
+    - .rules_chores
+  stage: test
+  script:
+    - echo "  all:" >> nanoc.yaml
+    - echo "    exclude_files:" >> nanoc.yaml
+    - echo "      - '\/(ee|runner|charts|operator)\/.*\/.*'" >> nanoc.yaml
+    - bundle exec nanoc check external_links
+
+#
+# Check for broken external links from the GitLab Runner project
+#
+test_external_links_gitlab_runner:
+  extends:
+    - .bundle
+    - .rules_chores
+  stage: test
+  script:
+    - echo "  all:" >> nanoc.yaml
+    - echo "    exclude_files:" >> nanoc.yaml
+    - echo "      - '\/(ee|omnibus|charts|operator)\/.*\/.*'" >> nanoc.yaml
+    - bundle exec nanoc check external_links
+
+#
+# Check for broken external links from the GitLab Chart project
+#
+test_external_links_charts:
+  extends:
+    - .bundle
+    - .rules_chores
+  stage: test
+  script:
+    - echo "  all:" >> nanoc.yaml
+    - echo "    exclude_files:" >> nanoc.yaml
+    - echo "      - '\/(ee|runner|omnibus|operator)\/.*\/.*'" >> nanoc.yaml
+    - bundle exec nanoc check external_links
+
+#
+# Check for broken external links from the GitLab Operator project
+#
+test_external_links_operator:
+  extends:
+    - .bundle
+    - .rules_chores
+  stage: test
+  script:
+    - echo "  all:" >> nanoc.yaml
+    - echo "    exclude_files:" >> nanoc.yaml
+    - echo "      - '\/(ee|runner|omnibus|charts)\/.*\/.*'" >> nanoc.yaml
     - bundle exec nanoc check external_links
 
 #
