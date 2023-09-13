@@ -1600,13 +1600,15 @@ sections:
                 doc_url: 'ee/ci/quick_start/'
               - doc_title: 'Tutorial: A complex pipeline'
                 doc_url: 'ee/ci/quick_start/tutorial.html'
-              - doc_title: Migrate from CircleCI
-                doc_url: 'ee/ci/migration/circleci.html'
-              - doc_title: Migrate from Jenkins
-                doc_url: 'ee/ci/migration/jenkins.html'
+              - doc_title: Plan a migration to GitLab CI/CD
+                doc_url: 'ee/ci/migration/plan_a_migration.html'
                 docs:
-                  - doc_title: Migrating Maven builds from Jenkins
+                  - doc_title: Migrate from Jenkins
+                    doc_url: 'ee/ci/migration/jenkins.html'
+                  - doc_title: Migrate a Maven build from Jenkins
                     doc_url: 'ee/ci/migration/examples/jenkins-maven.html'
+                  - doc_title: Migrate from CircleCI
+                    doc_url: 'ee/ci/migration/circleci.html'
               - doc_title: CI/CD examples
                 doc_url: 'ee/ci/examples/'
                 docs:
