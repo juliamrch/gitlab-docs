@@ -8,16 +8,19 @@
 .docker_prepare:
   extends:
     - .retry
-  image: docker:24.0.2
+  image: "docker:${DOCKER_VERSION}"
   tags:
     - gitlab-org-docker
   services:
-    - docker:24.0.2-dind
+    - "docker:${DOCKER_VERSION}-dind"
   before_script:
     - docker info
+    - docker context create docs-context
+    - docker buildx create --use docs-context
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   variables:
     DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_VERSION: "24.0.6"
 
 #
 # Build and deploy the GitLab Docs base Docker image
@@ -32,12 +35,12 @@ image:gitlab-docs-base:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/base:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
   script:
-    - docker build
+    - docker buildx build
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
              --build-arg RUBY_VERSION=${RUBY_VERSION}
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
-    - docker push $IMAGE_NAME
+             --push
   environment:
     name: registry/docs-base
 
@@ -54,7 +57,7 @@ test:image:gitlab-docs-base:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/base:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
   script:
-    - docker build
+    - docker buildx build
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
              --build-arg RUBY_VERSION=${RUBY_VERSION}
              --tag $IMAGE_NAME
@@ -73,14 +76,14 @@ image:docs-lint-markdown:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-markdown:alpine-$ALPINE_VERSION-vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION-markdownlint2-$MARKDOWNLINT2_VERSION
     DOCKERFILE: dockerfiles/gitlab-docs-lint-markdown.Dockerfile
   script:
-    - docker build
+    - docker buildx build
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
              --build-arg VALE_VERSION=${VALE_VERSION}
              --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
              --build-arg MARKDOWNLINT2_VERSION=${MARKDOWNLINT2_VERSION}
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
-    - docker push $IMAGE_NAME
+             --push
   environment:
     name: registry/docs-lint-markdown
 
@@ -96,7 +99,7 @@ test:image:docs-lint-markdown:
   variables:
     DOCKERFILE: dockerfiles/gitlab-docs-lint-markdown.Dockerfile
   script:
-    - docker build
+    - docker buildx build
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
              --build-arg VALE_VERSION=${VALE_VERSION}
              --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
@@ -116,12 +119,12 @@ image:docs-lint-html:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-html:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/gitlab-docs-lint-html.Dockerfile
   script:
-    - docker build
+    - docker buildx build
              --build-arg RUBY_VERSION=${RUBY_VERSION}
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
-    - docker push $IMAGE_NAME
+             --push
   environment:
     name: registry/docs-lint-html
 
@@ -137,7 +140,7 @@ test:image:docs-lint-html:
   variables:
     DOCKERFILE: dockerfiles/gitlab-docs-lint-html.Dockerfile
   script:
-    - docker build
+    - docker buildx build
              --build-arg RUBY_VERSION=${RUBY_VERSION}
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
              --file $DOCKERFILE .
@@ -164,14 +167,14 @@ image:docs-single:
   environment:
     name: registry/$CI_COMMIT_REF_SLUG
   script:
-    - docker build
+    - docker buildx build
              --build-arg NANOC_ENV=${NANOC_ENV}
              --build-arg VER=${CI_COMMIT_REF_NAME}
              --build-arg SEARCH_BACKEND="google"
              --build-arg GOOGLE_SEARCH_KEY=${GOOGLE_SEARCH_KEY}
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
-    - docker push $IMAGE_NAME
+             --push
 
 #
 # Test the GitLab docs single version Docker image if changes made to its Dockerfile
@@ -188,7 +191,7 @@ test:image:docs-single:
     NANOC_ENV: test
   needs: []
   script:
-    - docker build
+    - docker buildx build
              --build-arg NANOC_ENV=${NANOC_ENV}
              --build-arg VER=${GITLAB_VERSION}
              --build-arg SEARCH_BACKEND="google"
@@ -217,13 +220,13 @@ image:docs-single-lunrjs:
   environment:
     name: registry-archives/$CI_COMMIT_REF_SLUG
   script:
-    - docker build
+    - docker buildx build
              --build-arg NANOC_ENV=${NANOC_ENV}
              --build-arg VER=${CI_COMMIT_REF_NAME}
              --build-arg SEARCH_BACKEND="lunr"
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
-    - docker push $IMAGE_NAME
+             --push
 
 #
 # Test the GitLab docs single version Docker image with lunr.js enabled
@@ -242,7 +245,7 @@ test:image:docs-single-lunrjs:
   needs: []
   script:
     - apk add make bash
-    - docker build
+    - docker buildx build
              --build-arg NANOC_ENV=${NANOC_ENV}
              --build-arg VER=${GITLAB_VERSION}
              --build-arg SEARCH_BACKEND="lunr"
@@ -269,8 +272,12 @@ image:docs-latest:
   environment:
     name: registry/latest
   script:
-    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
-    - docker push $IMAGE_NAME
+    - docker buildx build
+             --build-arg NANOC_ENV=${NANOC_ENV}
+             --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
+             --push
 
 #
 # Test the GitLab docs latest Docker image if changes made to its Dockerfile
@@ -285,7 +292,7 @@ test:image:docs-latest:
     DOCKERFILE: latest.Dockerfile
   needs: []
   script:
-    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker buildx build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker run --rm $IMAGE_NAME ls -l /usr/share/nginx/html
 
 #
@@ -302,8 +309,7 @@ image:docs-archives:
     DOCKERFILE: dockerfiles/archives.Dockerfile
   needs: []
   script:
-    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
-    - docker push $IMAGE_NAME
+    - docker buildx build -t $IMAGE_NAME -f $DOCKERFILE . --push
 
 #
 # Test the GitLab docs archives Docker image if changes made to its Dockerfile
@@ -318,7 +324,7 @@ test:image:docs-archives:
     DOCKERFILE: dockerfiles/archives.Dockerfile
   needs: []
   script:
-    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker buildx build -t $IMAGE_NAME -f $DOCKERFILE .
 
 #
 # Build the image that is used for the gitlab-docs Workspace
@@ -333,8 +339,7 @@ image:docs-workspace:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/workspace
     DOCKERFILE: dockerfiles/gitlab-docs-workspace.Dockerfile
   script:
-    - docker build --build-arg ASDF_VERSION=${ASDF_VERSION} -t $IMAGE_NAME -f $DOCKERFILE .
-    - docker push $IMAGE_NAME
+    - docker buildx build --build-arg ASDF_VERSION=${ASDF_VERSION} -t $IMAGE_NAME -f $DOCKERFILE . --push
 
 #
 # Test the GitLab docs workspace Docker image if changes made to its Dockerfile
@@ -348,7 +353,7 @@ test:image:docs-workspace:
     DOCKERFILE: dockerfiles/gitlab-docs-workspace.Dockerfile
   needs: []
   script:
-    - docker build --build-arg ASDF_VERSION=${ASDF_VERSION} -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker buildx build --build-arg ASDF_VERSION=${ASDF_VERSION} -t $IMAGE_NAME -f $DOCKERFILE .
   rules:
     - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Build docker images pipeline"'
     - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
