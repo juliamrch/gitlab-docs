@@ -19,7 +19,7 @@ heros:
         url: '/ee/ci/'
       - title: CI/CD examples
         url: '/ee/ci/examples/'
-      - title: .gitlab-ci.yml reference
+      - title: .gitlab-ci.yml keyword reference
         url: '/ee/ci/yaml/'
       - title: GitLab Runner
         url: '/runner/'
