@@ -3251,6 +3251,8 @@ sections:
                   - doc_title: Guides
                     doc_url: 'ee/development/fe_guide/guides.html'
                     docs:
+                      - doc_title: Getting started
+                        doc_url: 'ee/development/fe_guide/getting_started.html'
                       - doc_title: Migrating from Vuex
                         doc_url: 'ee/development/fe_guide/migrating_from_vuex.html'
                       - doc_title: Onboarding course
@@ -3287,8 +3289,8 @@ sections:
                         doc_url: 'ee/development/fe_guide/vuex.html'
                       - doc_title: Tooling
                         doc_url: 'ee/development/fe_guide/tooling.html'
-                      - doc_title: Troubleshooting
-                        doc_url: 'ee/development/fe_guide/troubleshooting.html'
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/development/fe_guide/troubleshooting.html'
               - doc_title: Geo
                 doc_url: 'ee/development/geo.html'
                 docs:
