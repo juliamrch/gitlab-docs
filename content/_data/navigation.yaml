@@ -3132,6 +3132,8 @@ sections:
                     doc_url: 'ee/development/database/avoiding_downtime_in_migrations.html'
                   - doc_title: Batched background migrations
                     doc_url: 'ee/development/database/batched_background_migrations.html'
+                  - doc_title: Batch iteration in a tree hierarchy
+                    doc_url: 'ee/development/database/poc_tree_iterator.html'
                   - doc_title: Case study - filtering by label
                     doc_url: 'ee/development/database/filtering_by_label.html'
                   - doc_title: Case study - namespaces storage statistics
