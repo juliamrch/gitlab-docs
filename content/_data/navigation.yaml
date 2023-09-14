@@ -1903,6 +1903,9 @@ sections:
             doc_url: 'ee/user/application_security/comparison_dependency_and_container_scanning.html'
           - doc_title: Dependency List
             doc_url: 'ee/user/application_security/dependency_list/'
+            docs:
+              - doc_title: 'Tutorial: Export dependency list'
+                doc_url: 'ee/tutorials/export_sbom.html'
           - doc_title: Static Application Security Testing
             doc_url: 'ee/user/application_security/sast/'
             docs:
@@ -2526,6 +2529,8 @@ sections:
                 doc_url: 'ee/api/packages/debian_project_distributions.html'
               - doc_title: Dependencies
                 doc_url: 'ee/api/dependencies.html'
+              - doc_title: Dependency list export
+                doc_url: 'ee/api/dependency_list_export.html'
               - doc_title: Dependency Proxy
                 doc_url: 'ee/api/dependency_proxy.html'
               - doc_title: Deploy keys
