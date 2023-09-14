@@ -11,7 +11,7 @@ ARG MARKDOWNLINT_VERSION
 ARG MARKDOWNLINT2_VERSION
 
 # Install dependencies
-RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cache -U \
+RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cache \
     bash         \
     build-base   \
     curl         \

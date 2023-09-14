@@ -17,7 +17,7 @@ ENV NANOC_ENV=$NANOC_ENV
 
 # Install Nanoc dependencies and tools that
 # are needed to build the docs site and run the tests.
-RUN apk add --no-cache -U \
+RUN apk add --no-cache \
     bash        \
     build-base  \
     curl        \
