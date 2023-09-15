@@ -1423,6 +1423,8 @@ sections:
                 doc_url: 'ee/topics/git/partial_clone.html'
               - doc_title: Rebase and force-push
                 doc_url: 'ee/topics/git/git_rebase.html'
+              - doc_title: Feature branch workflow
+                doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
               - doc_title: Undo options
                 doc_url: 'ee/topics/git/numerous_undo_possibilities_in_git/'
               - doc_title: Frequently used commands
@@ -1463,8 +1465,6 @@ sections:
                 doc_url: 'ee/user/project/changelogs.html'
               - doc_title: Default branch
                 doc_url: 'ee/user/project/repository/branches/default.html'
-              - doc_title: Feature branch workflow
-                doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
               - doc_title: Forking workflow
                 doc_url: 'ee/user/project/repository/forking_workflow.html'
               - doc_title: GeoJSON files
