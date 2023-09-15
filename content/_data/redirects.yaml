@@ -1115,3 +1115,195 @@ redirects:
   - from: /ee/topics/your_work.html
     to: /ee/tutorials/left_sidebar/index.html
     remove_date: 2024-05-03
+  - from: /ee/install/cloud_native/index.html
+    to: /charts/
+    remove_date: 2024-06-09
+  - from: /ee/install/cloud_native/
+    to: /charts/
+    remove_date: 2024-06-09
+  - from: /ee/development/snowplow/implementation.html
+    to: /ee/development/internal_analytics/snowplow/implementation.html
+    remove_date: 2024-05-20
+  - from: /ee/development/snowplow/review_guidelines.html
+    to: /ee/development/internal_analytics/snowplow/review_guidelines.html
+    remove_date: 2024-05-20
+  - from: /ee/development/snowplow/schemas.html
+    to: /ee/development/internal_analytics/snowplow/schemas.html
+    remove_date: 2024-05-20
+  - from: /ee/development/snowplow/troubleshooting.html
+    to: /ee/development/internal_analytics/snowplow/troubleshooting.html
+    remove_date: 2024-05-20
+  - from: /ee/development/snowplow/index.html
+    to: /ee/development/internal_analytics/snowplow/index.html
+    remove_date: 2024-05-20
+  - from: /ee/development/snowplow/
+    to: /ee/development/internal_analytics/snowplow/index.html
+    remove_date: 2024-05-20
+  - from: /ee/development/snowplow/event_dictionary_guide.html
+    to: /ee/development/internal_analytics/snowplow/event_dictionary_guide.html
+    remove_date: 2024-05-20
+  - from: /ee/development/snowplow/infrastructure.html
+    to: /ee/development/internal_analytics/snowplow/infrastructure.html
+    remove_date: 2024-05-20
+  - from: /ee/development/service_ping/review_guidelines.html
+    to: /ee/development/internal_analytics/service_ping/review_guidelines.html
+    remove_date: 2024-05-20
+  - from: /ee/development/service_ping/implement.html
+    to: /ee/development/internal_analytics/service_ping/implement.html
+    remove_date: 2024-05-20
+  - from: /ee/development/service_ping/metrics_dictionary.html
+    to: /ee/development/internal_analytics/service_ping/metrics_dictionary.html
+    remove_date: 2024-05-20
+  - from: /ee/development/service_ping/troubleshooting.html
+    to: /ee/development/internal_analytics/service_ping/troubleshooting.html
+    remove_date: 2024-05-20
+  - from: /ee/development/service_ping/index.html
+    to: /ee/development/internal_analytics/service_ping/index.html
+    remove_date: 2024-05-20
+  - from: /ee/development/service_ping/
+    to: /ee/development/internal_analytics/service_ping/index.html
+    remove_date: 2024-05-20
+  - from: /ee/development/service_ping/performance_indicator_metrics.html
+    to: /ee/development/internal_analytics/service_ping/performance_indicator_metrics.html
+    remove_date: 2024-05-20
+  - from: /ee/development/service_ping/usage_data.html
+    to: /ee/development/internal_analytics/service_ping/usage_data.html
+    remove_date: 2024-05-20
+  - from: /ee/development/service_ping/metrics_instrumentation.html
+    to: /ee/development/internal_analytics/service_ping/metrics_instrumentation.html
+    remove_date: 2024-05-20
+  - from: /ee/development/service_ping/metrics_lifecycle.html
+    to: /ee/development/internal_analytics/service_ping/metrics_lifecycle.html
+    remove_date: 2024-05-20
+  - from: /ee/ci/pipelines/pipeline_artifacts.html
+    to: /ee/ci/testing/test_coverage_visualization.html
+    remove_date: 2024-05-31
+  - from: /ee/ci/runners/saas/macos/environment.html
+    to: /ee/ci/runners/saas/macos_saas_runner.html
+    remove_date: 2024-06-05
+  - from: /ee/ci/runners/saas/macos/codesigning.html
+    to: /ee/ci/runners/saas/macos_saas_runner.html
+    remove_date: 2024-06-05
+  - from: /ee/integration/cas.html
+    to: /ee/administration/auth/index.html
+    remove_date: 2024-05-15
+  - from: /ee/user/clusters/integrations.html
+    to: /ee/user/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/clusters/cost_management.html
+    to: /ee/user/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/compliance/license_compliance/index.html
+    to: /ee/user/compliance/license_approval_policies.html
+    remove_date: 2024-05-22
+  - from: /ee/user/compliance/license_compliance/
+    to: /ee/user/compliance/license_approval_policies.html
+    remove_date: 2024-05-22
+  - from: /ee/user/project/repository/code_suggestions.html
+    to: /ee/user/project/repository/code_suggestions/index.html
+    remove_date: 2022-08-25
+  - from: /ee/user/project/web_ide_beta/index.html
+    to: /ee/user/project/web_ide/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/project/web_ide_beta/
+    to: /ee/user/project/web_ide/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/project/integrations/prometheus.html
+    to: /ee/user/project/integrations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/project/integrations/prometheus_library/cloudwatch.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/project/integrations/prometheus_library/kubernetes.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/project/integrations/prometheus_library/haproxy.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/project/integrations/prometheus_library/nginx.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/project/integrations/prometheus_library/nginx_ingress.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/project/integrations/prometheus_library/index.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/project/integrations/prometheus_library/
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/project/integrations/prometheus_library/nginx_ingress_vts.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/project/import/phabricator.html
+    to: /ee/index.html
+    remove_date: 2024-05-22
+  - from: /ee/user/infrastructure/clusters/manage/clusters_health.html
+    to: /ee/user/infrastructure/clusters/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/embed_grafana.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/index.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/embed.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/dashboards/templating_variables.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/dashboards/settings.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/dashboards/default.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/dashboards/yaml.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/dashboards/panel_types.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/dashboards/develop.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/dashboards/yaml_number_format.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/dashboards/index.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/dashboards/
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/dashboards/variables.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/operations/metrics/alerts.html
+    to: /ee/operations/index.html
+    remove_date: 2024-05-22
+  - from: /ee/raketasks/import.html
+    to: /ee/index.html
+    remove_date: 2024-05-22
+  - from: /ee/raketasks/generate_sample_prometheus_data.html
+    to: /ee/raketasks/index.html
+    remove_date: 2024-05-22
+  - from: /ee/api/managed_licenses.html
+    to: /ee/api/index.html
+    remove_date: 2024-05-22
+  - from: /ee/administration/monitoring/gitlab_self_monitoring_project/index.html
+    to: /ee/administration/monitoring/index.html
+    remove_date: 2024-05-22
+  - from: /ee/administration/monitoring/gitlab_self_monitoring_project/
+    to: /ee/administration/monitoring/index.html
+    remove_date: 2024-05-22
+  - from: /ee/policy/alpha-beta-support.html
+    to: /ee/policy/experiment-beta-support.html
+    remove_date: 2024-06-07
+  - from: /omnibus/settings/grafana.html
+    to: /ee/administration/monitoring/performance/grafana_configuration.html#deprecation-of-bundled-grafana
+    remove_date: 2024-05-23
