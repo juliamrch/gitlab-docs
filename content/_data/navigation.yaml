@@ -2202,7 +2202,7 @@ sections:
           - doc_title: Connect Kubernetes clusters
             doc_url: 'ee/user/clusters/agent/'
             docs:
-              - doc_title: GitOps workflow
+              - doc_title: Use GitOps
                 doc_url: 'ee/user/clusters/agent/gitops.html'
                 docs:
                   - doc_title: 'Tutorial: Set up Flux for GitOps'
@@ -2217,7 +2217,7 @@ sections:
                     doc_url: 'ee/user/infrastructure/clusters/deploy/inventory_object.html'
                   - doc_title: Using GitOps with the agent for Kubernetes (deprecated)
                     doc_url: 'ee/user/clusters/agent/gitops/agent.html'
-              - doc_title: Use GitLab CI/CD with your cluster
+              - doc_title: Use GitLab CI/CD
                 doc_url: 'ee/user/clusters/agent/ci_cd_workflow.html'
                 docs:
                   - doc_title: Manage cluster applications
