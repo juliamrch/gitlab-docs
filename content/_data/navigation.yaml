@@ -1977,6 +1977,8 @@ sections:
             doc_url: 'ee/user/application_security/vulnerabilities/'
           - doc_title: Vulnerability severity levels
             doc_url: 'ee/user/application_security/vulnerabilities/severities.html'
+          - doc_title: GitLab Advisory Database
+            doc_url: 'ee/user/application_security/gitlab_advisory_database/'
           - doc_title: CVE ID requests
             doc_url: 'ee/user/application_security/cve_id_request.html'
           - doc_title: Policies
