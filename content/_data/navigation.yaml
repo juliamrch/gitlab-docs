@@ -1908,6 +1908,8 @@ sections:
             docs:
               - doc_title: 'Tutorial: Export dependency list'
                 doc_url: 'ee/tutorials/export_sbom.html'
+          - doc_title: Continuous Vulnerability Scanning
+            doc_url: 'ee/user/application_security/continuous_vulnerability_scanning/'
           - doc_title: Static Application Security Testing
             doc_url: 'ee/user/application_security/sast/'
             docs:
