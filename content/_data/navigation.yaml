@@ -666,6 +666,8 @@ sections:
                     doc_url: 'ee/administration/pages/troubleshooting.html'
               - doc_title: Health Check
                 doc_url: 'ee/administration/monitoring/health_check.html'
+              - doc_title: Import and export settings
+                doc_url: 'ee/administration/settings/import_and_export_settings.html'
               - doc_title: Incident management rate limits
                 doc_url: 'ee/administration/settings/incident_management_rate_limits.html'
               - doc_title: Instance template repository
