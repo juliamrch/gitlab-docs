@@ -2841,7 +2841,7 @@ sections:
             doc_url: 'ee/api/graphql/removed_items.html'
       - category_title: OAuth 2.0 identity provider API
         category_url: 'ee/api/oauth2.html'
-      - category_title: Editor and IDE Extensions
+      - category_title: Editor and IDE extensions
         category_url: 'ee/editor_extensions/'
         docs:
           - doc_title: Visual Studio Code
