@@ -2382,8 +2382,6 @@ sections:
                 doc_url: 'ee/user/project/integrations/redmine.html'
               - doc_title: YouTrack
                 doc_url: 'ee/user/project/integrations/youtrack.html'
-              - doc_title: ZenTao (deprecated)
-                doc_url: 'ee/user/project/integrations/zentao.html'
           - doc_title: GitHub
             doc_url: 'ee/user/project/integrations/github.html'
           - doc_title: GitLab for Slack app
