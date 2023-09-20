@@ -698,6 +698,8 @@ sections:
                 doc_url: 'ee/administration/settings/package_registry_rate_limits.html'
               - doc_title: Polling interval multiplier
                 doc_url: 'ee/administration/polling.html'
+              - doc_title: Project integrations
+                doc_url: 'ee/administration/settings/project_integration_management.html'
               - doc_title: Protected paths
                 doc_url: 'ee/administration/settings/protected_paths.html'
               - doc_title: Push event activities limit
@@ -2444,8 +2446,6 @@ sections:
             doc_url: 'ee/user/project/integrations/pivotal_tracker.html'
           - doc_title: PlantUML
             doc_url: 'ee/administration/integration/plantuml.html'
-          - doc_title: Project integration management
-            doc_url: 'ee/administration/settings/project_integration_management.html'
           - doc_title: Project integrations
             doc_url: 'ee/user/project/integrations/'
           - doc_title: Pumble
