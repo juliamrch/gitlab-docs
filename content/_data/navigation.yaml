@@ -1332,7 +1332,7 @@ sections:
               - doc_title: Due dates
                 doc_url: 'ee/user/project/issues/due_dates.html'
               - doc_title: Emoji reactions
-                doc_url: 'ee/user/award_emojis.html'
+                doc_url: 'ee/user/emoji_reactions.html'
               - doc_title: Issue boards
                 doc_url: 'ee/user/project/issue_board.html'
               - doc_title: 'Tutorial: Set up issue boards for team hand-off'
@@ -2550,7 +2550,7 @@ sections:
               - doc_title: DORA4 metrics
                 doc_url: 'ee/api/dora/metrics.html'
               - doc_title: Emoji reactions
-                doc_url: 'ee/api/award_emoji.html'
+                doc_url: 'ee/api/emoji_reactions.html'
               - doc_title: Environments
                 doc_url: 'ee/api/environments.html'
               - doc_title: Epics
