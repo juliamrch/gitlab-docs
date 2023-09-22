@@ -655,6 +655,8 @@ sections:
                 doc_url: 'ee/administration/reporting/git_abuse_rate_limit.html'
               - doc_title: Git LFS administration
                 doc_url: 'ee/administration/lfs/'
+              - doc_title: GitLab for Jira Cloud app
+                doc_url: 'ee/administration/settings/jira_cloud_app.html'
               - doc_title: GitLab for Slack app
                 doc_url: 'ee/administration/settings/slack_app.html'
               - doc_title: GitLab Pages
@@ -2346,6 +2348,8 @@ sections:
       - category_title: Integrations
         category_url: 'ee/integration/'
         docs:
+          - doc_title: Project integrations
+            doc_url: 'ee/user/project/integrations/'
           - doc_title: Akismet
             doc_url: 'ee/integration/akismet.html'
           - doc_title: Apple App Store
@@ -2446,8 +2450,6 @@ sections:
             doc_url: 'ee/user/project/integrations/pivotal_tracker.html'
           - doc_title: PlantUML
             doc_url: 'ee/administration/integration/plantuml.html'
-          - doc_title: Project integrations
-            doc_url: 'ee/user/project/integrations/'
           - doc_title: Pumble
             doc_url: 'ee/user/project/integrations/pumble.html'
           - doc_title: reCAPTCHA
