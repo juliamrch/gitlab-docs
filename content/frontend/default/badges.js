@@ -26,7 +26,7 @@ if (isContributorDocs()) {
       ' <span data-component="docs-badges" data-nosnippet><span data-type="content" data-value="contribute"></span></span>',
     );
 }
-window.onload = () => {
+window.addEventListener('load', () => {
   document.querySelectorAll('[data-component="docs-badges"]').forEach((badgeSet) => {
     const badges = badgeSet.querySelectorAll('span');
 
@@ -49,4 +49,4 @@ window.onload = () => {
         },
       }))();
   });
-};
+});
