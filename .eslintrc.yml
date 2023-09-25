@@ -12,3 +12,10 @@ rules:
   filenames/match-regex:
     - error
     - "^[a-z0-9_]+(\\.config|\\.[a-z_]+\\_spec)?$"
+  import/no-unresolved:
+    - error
+    # Ignoring glob for now:
+    # https://github.com/import-js/eslint-plugin-import/issues/2703
+    # https://github.com/import-js/eslint-plugin-import/issues/2883
+    - ignore:
+        - 'glob'
