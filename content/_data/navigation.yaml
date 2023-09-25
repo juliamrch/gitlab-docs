@@ -3219,6 +3219,8 @@ sections:
                     doc_url: 'ee/development/database/understanding_explain_plans.html'
               - doc_title: Design and UI
                 doc_url: 'ee/development/contributing/design.html'
+              - doc_title: Development seed files
+                doc_url: 'ee/development/development_seed_files.html'
               - doc_title: Distributed tracing
                 doc_url: 'ee/development/distributed_tracing.html'
               - doc_title: Frontend development
