@@ -11,7 +11,7 @@ const createCopyButton = () => {
   return button;
 };
 
-window.onload = () => {
+window.addEventListener('load', () => {
   document.querySelectorAll('pre').forEach((element) => {
     const button = createCopyButton();
     element.appendChild(button);
@@ -46,4 +46,4 @@ window.onload = () => {
       }
     });
   });
-};
+});
