@@ -135,7 +135,13 @@ To create the release merge request for the release:
    git push origin release-15-0
    ```
 
-1. Create the merge request and add the `~release` label. Mark the merge request as `Draft` until the release post is live.
+1. Create the merge request, then:
+   - Add the `~release` label.
+   - Mark the merge request as **Draft**.
+   - Verify that the **Changes** tab includes the following files:
+     - `.gitlab/ci/docker-images.gitlab-ci.yml`
+     - `content/versions.json`
+     - `latest.Dockerfile`
 
 ## Merge the release merge request and run the Docker image builds
 
@@ -143,7 +149,7 @@ _Do this after the release post is live._
 
 1. Verify that the [pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all) for the stable branch (filter by branch)
    has passed and created a [Docker image](https://gitlab.com/gitlab-org/gitlab-docs/container_registry/631635?orderBy=NAME&sort=desc&search[]=).
-1. Merge the [release merge request](#create-release-merge-request).
+1. Open the [docs release merge request](#create-release-merge-request), mark it ready (that is, not draft), and merge it.
 1. Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)
    and run the `Build docker images manually` pipeline.
 1. In the scheduled pipeline you just started, manually run the **image:docs-latest** job that builds the `:latest` Docker image.
