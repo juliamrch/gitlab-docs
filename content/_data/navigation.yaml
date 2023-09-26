@@ -1039,8 +1039,6 @@ sections:
             doc_url: 'runner/security/'
           - doc_title: Proxying assets
             doc_url: 'ee/security/asset_proxy.html'
-          - doc_title: CI/CD variables
-            doc_url: 'ee/ci/variables/#cicd-variable-security'
           - doc_title: Token overview
             doc_url: 'ee/security/token_overview.html'
           - doc_title: Respond to security incidents
