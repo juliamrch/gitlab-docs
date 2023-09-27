@@ -629,8 +629,6 @@ sections:
                 doc_url: 'ee/administration/settings/account_and_limit_settings.html'
               - doc_title: Appearance
                 doc_url: 'ee/administration/appearance.html'
-              - doc_title: Authentication
-                doc_url: 'ee/topics/authentication/'
               - doc_title: CI/CD
                 doc_url: 'ee/administration/settings/continuous_integration.html'
               - doc_title: Application cache interval
