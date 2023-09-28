@@ -1195,6 +1195,9 @@ sections:
                 doc_url: 'ee/user/profile/achievements.html'
               - doc_title: Permissions and roles
                 doc_url: 'ee/user/permissions.html'
+                docs:
+                  - doc_title: Custom roles
+                    doc_url: 'ee/user/custom_roles.html'
               - doc_title: Personal access tokens
                 doc_url: 'ee/user/profile/personal_access_tokens.html'
               - doc_title: Profile preferences
