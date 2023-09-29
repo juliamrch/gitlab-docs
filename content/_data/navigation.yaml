@@ -3380,24 +3380,6 @@ sections:
                         doc_url: 'ee/development/internal_analytics/service_ping/review_guidelines.html'
                       - doc_title: Troubleshooting
                         doc_url: 'ee/development/internal_analytics/service_ping/troubleshooting.html'
-                  - doc_title: Snowplow
-                    doc_url: 'ee/development/internal_analytics/snowplow/'
-                    docs:
-                      - doc_title: Implement Snowplow
-                        doc_url: 'ee/development/internal_analytics/snowplow/implementation.html'
-                      - doc_title: Snowplow Infrastructure
-                        doc_url: 'ee/development/internal_analytics/snowplow/infrastructure.html'
-                      - doc_title: Schemas
-                        doc_url: 'ee/development/internal_analytics/snowplow/schemas.html'
-                      - doc_title: Event dictionary guide
-                        doc_url: 'ee/development/internal_analytics/snowplow/event_dictionary_guide.html'
-                      - doc_title: Event dictionary
-                        doc_url: 'https://metrics.gitlab.com/snowplow/'
-                        external_url: true
-                      - doc_title: Review guidelines
-                        doc_url: 'ee/development/internal_analytics/snowplow/review_guidelines.html'
-                      - doc_title: Troubleshooting
-                        doc_url: 'ee/development/internal_analytics/snowplow/troubleshooting.html'
               - doc_title: Internal API
                 doc_url: 'ee/development/internal_api/'
                 docs:
