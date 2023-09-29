@@ -2915,8 +2915,8 @@ sections:
                 doc_url: 'ee/development/dangerbot.html'
               - doc_title: Deprecation guidelines
                 doc_url: 'ee/development/deprecation_guidelines/'
-              - doc_title: FIPS compliance
-                doc_url: 'ee/development/fips_compliance.html'
+              - doc_title: EE features
+                doc_url: 'ee/development/ee_features.html'
               - doc_title: Experiments
                 doc_url: 'ee/development/experiment_guide/'
                 docs:
@@ -2935,6 +2935,8 @@ sections:
                     doc_url: 'ee/development/feature_flags/controls.html'
                   - doc_title: Feature flags API
                     doc_url: 'ee/api/features.html'
+              - doc_title: FIPS compliance
+                doc_url: 'ee/development/fips_compliance.html'
               - doc_title: Framework - DeclarativePolicy
                 doc_url: 'ee/development/policies.html'
               - doc_title: Issues workflow
