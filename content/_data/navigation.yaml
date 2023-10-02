@@ -861,8 +861,6 @@ sections:
             doc_url: 'ee/administration/merge_request_diffs.html'
           - doc_title: Static objects external storage
             doc_url: 'ee/administration/static_objects_external_storage.html'
-          - doc_title: Automate storage management
-            doc_url: 'ee/user/storage_management_automation.html'
           - doc_title: Geo
             doc_url: 'ee/administration/geo/'
             docs:
@@ -2814,6 +2812,8 @@ sections:
                 doc_url: 'ee/api/group_wikis.html'
               - doc_title: Wikis (project)
                 doc_url: 'ee/api/wikis.html'
+          - doc_title: Automate storage management
+            doc_url: 'ee/user/storage_management_automation.html'
           - doc_title: Deprecations and removals
             doc_url: 'ee/api/rest/deprecations.html'
           - doc_title: OpenAPI
