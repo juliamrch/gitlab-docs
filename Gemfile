@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'nanoc', '~> 4.12.16'
+gem 'nanoc', '~> 4.12.17'
 gem 'rake', '~> 13.0.6'
 
 group :nanoc do
@@ -31,5 +31,5 @@ group :test, :development do
 end
 
 group :development, :danger do
-  gem 'gitlab-dangerfiles', '~> 4.0.0', require: false
+  gem 'gitlab-dangerfiles', '~> 4.1.0', require: false
 end
