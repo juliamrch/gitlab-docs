@@ -3350,18 +3350,18 @@ sections:
                 doc_url: 'ee/development/internal_analytics/'
                 docs:
                   - doc_title: Internal event tracking
-                    doc_url: 'ee/development/internal_analytics/internal_event_tracking/'
+                    doc_url: 'ee/development/internal_analytics/internal_event_instrumentation/'
                     docs:
-                      - doc_title: Introduction
-                        doc_url: 'ee/development/internal_analytics/internal_event_tracking/introduction.html'
                       - doc_title: Quick start guide
-                        doc_url: 'ee/development/internal_analytics/internal_event_tracking/quick_start.html'
+                        doc_url: 'ee/development/internal_analytics/internal_event_instrumentation/quick_start.html'
                       - doc_title: Migrating to internal event tracking
-                        doc_url: 'ee/development/internal_analytics/internal_event_tracking/migration.html'
+                        doc_url: 'ee/development/internal_analytics/internal_event_instrumentation/migration.html'
                       - doc_title: Event definition guide
-                        doc_url: 'ee/development/internal_analytics/internal_event_tracking/event_definition_guide.html'
+                        doc_url: 'ee/development/internal_analytics/internal_event_instrumentation/event_definition_guide.html'
+                      - doc_title: Local setup and debugging
+                        doc_url: 'ee/development/internal_analytics/internal_event_instrumentation/local_setup_and_debugging.html'
                       - doc_title: Architecture
-                        doc_url: 'ee/development/internal_analytics/internal_event_tracking/architecture.html'
+                        doc_url: 'ee/development/internal_analytics/internal_event_instrumentation/architecture.html'
                   - doc_title: Metrics
                     doc_url: 'ee/development/internal_analytics/metrics/'
                     docs:
