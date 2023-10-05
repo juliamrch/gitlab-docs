@@ -615,156 +615,31 @@ sections:
       - category_title: Configure your installation
         category_url: 'ee/administration/configure.html'
         docs:
+          - doc_title: Admin Area
+            doc_url: 'ee/administration/admin_area.html'
+          - doc_title: Application cache interval
+            doc_url: 'ee/administration/application_settings_cache.html'
           - doc_title: CI/CD
             doc_url: 'ee/administration/cicd.html'
             docs:
               - doc_title: Secure files
                 doc_url: 'ee/administration/secure_files.html'
-          - doc_title: Configuration and Admin Area
-            doc_url: 'ee/administration/admin_area.html'
-            docs:
-              - doc_title: Admin Area settings
-                doc_url: 'ee/administration/settings/'
-              - doc_title: Account and limit settings
-                doc_url: 'ee/administration/settings/account_and_limit_settings.html'
-              - doc_title: Appearance
-                doc_url: 'ee/administration/appearance.html'
-              - doc_title: CI/CD
-                doc_url: 'ee/administration/settings/continuous_integration.html'
-              - doc_title: Application cache interval
-                doc_url: 'ee/administration/application_settings_cache.html'
-              - doc_title: Custom instance-level project templates
-                doc_url: 'ee/administration/custom_project_templates.html'
-              - doc_title: Deprecated API rate limits
-                doc_url: 'ee/administration/settings/deprecated_api_rate_limits.html'
-              - doc_title: Diff limits
-                doc_url: 'ee/administration/diff_limits.html'
-              - doc_title: Email
-                doc_url: 'ee/administration/settings/email.html'
-              - doc_title: External authorization
-                doc_url: 'ee/administration/settings/external_authorization.html'
               - doc_title: External pipeline validation
                 doc_url: 'ee/administration/external_pipeline_validation.html'
-              - doc_title: Federated Learning of Cohorts (FLoC)
-                doc_url: 'ee/administration/settings/floc.html'
-              - doc_title: Geo sites
-                doc_url: 'ee/administration/geo_sites.html'
-              - doc_title: Git abuse rate limit
-                doc_url: 'ee/administration/reporting/git_abuse_rate_limit.html'
-              - doc_title: Git LFS administration
-                doc_url: 'ee/administration/lfs/'
-              - doc_title: GitLab for Jira Cloud app
-                doc_url: 'ee/administration/settings/jira_cloud_app.html'
-              - doc_title: GitLab for Slack app
-                doc_url: 'ee/administration/settings/slack_app.html'
-              - doc_title: GitLab Pages
-                doc_url: 'ee/administration/pages/'
-                docs:
-                  - doc_title: GitLab Pages for source installations
-                    doc_url: 'ee/administration/pages/source.html'
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/administration/pages/troubleshooting.html'
-              - doc_title: Health Check
-                doc_url: 'ee/administration/monitoring/health_check.html'
-              - doc_title: Import and export settings
-                doc_url: 'ee/administration/settings/import_and_export_settings.html'
-              - doc_title: Incident management rate limits
-                doc_url: 'ee/administration/settings/incident_management_rate_limits.html'
-              - doc_title: Instance template repository
-                doc_url: 'ee/administration/settings/instance_template_repository.html'
-              - doc_title: IP address restrictions
-                doc_url: 'ee/administration/reporting/ip_addr_restrictions.html'
-              - doc_title: Job artifacts
-                doc_url: 'ee/administration/job_artifacts.html'
-                docs:
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/administration/job_artifacts_troubleshooting.html'
-              - doc_title: Job logs
-                doc_url: 'ee/administration/job_logs.html'
-              - doc_title: Labels
-                doc_url: 'ee/administration/labels.html'
-              - doc_title: Log system
-                doc_url: 'ee/administration/logs/'
-                docs:
-                  - doc_title: Parse logs with jq
-                    doc_url: 'ee/administration/logs/log_parsing.html'
-                  - doc_title: Trace logs based on correlation ID
-                    doc_url: 'ee/administration/logs/tracing_correlation_id.html'
-              - doc_title: Maintenance Mode
-                doc_url: 'ee/administration/maintenance_mode/'
-              - doc_title: Merge request approvals
-                doc_url: 'ee/administration/merge_requests_approvals.html'
-              - doc_title: Package Registry rate limits
-                doc_url: 'ee/administration/settings/package_registry_rate_limits.html'
-              - doc_title: Polling interval multiplier
-                doc_url: 'ee/administration/polling.html'
-              - doc_title: Project integrations
-                doc_url: 'ee/administration/settings/project_integration_management.html'
-              - doc_title: Protected paths
-                doc_url: 'ee/administration/settings/protected_paths.html'
-              - doc_title: Push event activities limit
-                doc_url: 'ee/administration/settings/push_event_activities_limit.html'
-              - doc_title: Rate limits on Repository files API
-                doc_url: 'ee/administration/settings/files_api_rate_limits.html'
-              - doc_title: Rate limits on Git LFS
-                doc_url: 'ee/administration/settings/git_lfs_rate_limits.html'
-              - doc_title: Rate limits on Git SSH operations
-                doc_url: 'ee/administration/settings/rate_limits_on_git_ssh_operations.html'
-              - doc_title: Rate limits on issue creation
-                doc_url: 'ee/administration/settings/rate_limit_on_issues_creation.html'
-              - doc_title: Rate limits on raw endpoints
-                doc_url: 'ee/administration/settings/rate_limits_on_raw_endpoints.html'
-              - doc_title: Rate limits on note creation
-                doc_url: 'ee/administration/settings/rate_limit_on_notes_creation.html'
-              - doc_title: Rate limits on Users API
-                doc_url: 'ee/administration/settings/rate_limit_on_users_api.html'
-              - doc_title: Rate limits on Projects API
-                doc_url: 'ee/administration/settings/rate_limit_on_projects_api.html'
-              - doc_title: Rate limits on pipeline creation
-                doc_url: 'ee/administration/settings/rate_limit_on_pipelines_creation.html'
-              - doc_title: Reply by email
-                doc_url: 'ee/administration/reply_by_email.html'
-              - doc_title: Repository checks
-                doc_url: 'ee/administration/repository_checks.html'
-              - doc_title: Security and Compliance
-                doc_url: 'ee/administration/settings/security_and_compliance.html'
-              - doc_title: Sign-in and help page text
-                doc_url: 'ee/administration/settings/help_page.html'
-              - doc_title: Sign-in restrictions
-                doc_url: 'ee/administration/settings/sign_in_restrictions.html'
-              - doc_title: Sign-up restrictions
-                doc_url: 'ee/administration/settings/sign_up_restrictions.html'
-              - doc_title: Spamcheck
-                doc_url: 'ee/administration/reporting/spamcheck.html'
-              - doc_title: System Hooks
-                doc_url: 'ee/administration/system_hooks.html'
-              - doc_title: Terms of service and privacy policy
-                doc_url: 'ee/administration/settings/terms.html'
-              - doc_title: Third-party offers
-                doc_url: 'ee/administration/settings/third_party_offers.html'
-              - doc_title: Timezone
-                doc_url: 'ee/administration/timezone.html'
-              - doc_title: Uploads
-                doc_url: 'ee/administration/uploads.html'
-                docs:
-                  - doc_title: Uploads migration Rake tasks
-                    doc_url: 'ee/administration/raketasks/uploads/migrate.html'
-                  - doc_title: Uploads sanitization Rake tasks
-                    doc_url: 'ee/administration/raketasks/uploads/sanitize.html'
-              - doc_title: User Cohorts
-                doc_url: 'ee/administration/user_cohorts.html'
-              - doc_title: User and IP rate limits
-                doc_url: 'ee/administration/settings/user_and_ip_rate_limits.html'
-              - doc_title: Visibility and access controls
-                doc_url: 'ee/administration/settings/visibility_and_access_controls.html'
           - doc_title: Consul
             doc_url: 'ee/administration/consul.html'
           - doc_title: Environment variables
             doc_url: 'ee/administration/environment_variables.html'
           - doc_title: File hooks
             doc_url: 'ee/administration/file_hooks.html'
+          - doc_title: Geo sites
+            doc_url: 'ee/administration/geo_sites.html'
+          - doc_title: Git LFS administration
+            doc_url: 'ee/administration/lfs/'
           - doc_title: Git protocol v2
             doc_url: 'ee/administration/git_protocol.html'
+          - doc_title: Health Check
+            doc_url: 'ee/administration/monitoring/health_check.html'
           - doc_title: Incoming email
             doc_url: 'ee/administration/incoming_email.html'
             docs:
@@ -774,6 +649,15 @@ sections:
             doc_url: 'ee/administration/instance_limits.html'
           - doc_title: Instance review
             doc_url: 'ee/administration/instance_review.html'
+          - doc_title: Log system
+            doc_url: 'ee/administration/logs/'
+            docs:
+              - doc_title: Parse logs with jq
+                doc_url: 'ee/administration/logs/log_parsing.html'
+              - doc_title: Trace logs based on correlation ID
+                doc_url: 'ee/administration/logs/tracing_correlation_id.html'
+          - doc_title: Merge request approvals
+            doc_url: 'ee/administration/merge_requests_approvals.html'
           - doc_title: PostgreSQL
             doc_url: 'ee/administration/postgresql/'
             docs:
@@ -791,6 +675,8 @@ sections:
                 doc_url: 'ee/administration/postgresql/moving.html'
               - doc_title: Multiple databases
                 doc_url: 'ee/administration/postgresql/multiple_databases.html'
+          - doc_title: Labels
+            doc_url: 'ee/administration/labels.html'
           - doc_title: Load balancer
             doc_url: 'ee/administration/load_balancer.html'
           - doc_title: NFS
@@ -808,6 +694,8 @@ sections:
                 doc_url: 'ee/administration/redis/standalone.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/administration/redis/troubleshooting.html'
+          - doc_title: Reply by email
+            doc_url: 'ee/administration/reply_by_email.html'
           - doc_title: Sidekiq
             doc_url: 'ee/administration/sidekiq/'
             docs:
@@ -932,6 +820,15 @@ sections:
             doc_url: 'ee/administration/terraform_state.html'
           - doc_title: Terraform limits
             doc_url: 'ee/administration/settings/terraform_limits.html'
+          - doc_title: Timezone
+            doc_url: 'ee/administration/timezone.html'
+          - doc_title: Uploads
+            doc_url: 'ee/administration/uploads.html'
+            docs:
+              - doc_title: Uploads migration Rake tasks
+                doc_url: 'ee/administration/raketasks/uploads/migrate.html'
+              - doc_title: Uploads sanitization Rake tasks
+                doc_url: 'ee/administration/raketasks/uploads/sanitize.html'
           - doc_title: Packages
             doc_url: 'ee/administration/packages/'
             docs:
@@ -951,6 +848,115 @@ sections:
             doc_url: 'ee/administration/snippets/'
           - doc_title: Host the product documentation
             doc_url: 'ee/administration/docs_self_host.html'
+
+
+      - category_title: Update your settings
+        category_url: 'ee/administration/settings/'
+        docs:
+          - doc_title: Account and limit settings
+            doc_url: 'ee/administration/settings/account_and_limit_settings.html'
+          - doc_title: Appearance
+            doc_url: 'ee/administration/appearance.html'
+          - doc_title: CI/CD
+            doc_url: 'ee/administration/settings/continuous_integration.html'
+          - doc_title: Custom instance-level project templates
+            doc_url: 'ee/administration/custom_project_templates.html'
+          - doc_title: Diff limits
+            doc_url: 'ee/administration/diff_limits.html'
+          - doc_title: Email
+            doc_url: 'ee/administration/settings/email.html'
+          - doc_title: External authorization
+            doc_url: 'ee/administration/settings/external_authorization.html'
+          - doc_title: Federated Learning of Cohorts (FLoC)
+            doc_url: 'ee/administration/settings/floc.html'
+          - doc_title: Git abuse rate limit
+            doc_url: 'ee/administration/reporting/git_abuse_rate_limit.html'
+          - doc_title: GitLab for Jira Cloud app
+            doc_url: 'ee/administration/settings/jira_cloud_app.html'
+          - doc_title: GitLab for Slack app
+            doc_url: 'ee/administration/settings/slack_app.html'
+          - doc_title: GitLab Pages
+            doc_url: 'ee/administration/pages/'
+            docs:
+              - doc_title: GitLab Pages for source installations
+                doc_url: 'ee/administration/pages/source.html'
+              - doc_title: Troubleshooting
+                doc_url: 'ee/administration/pages/troubleshooting.html'
+          - doc_title: Import and export settings
+            doc_url: 'ee/administration/settings/import_and_export_settings.html'
+          - doc_title: Instance template repository
+            doc_url: 'ee/administration/settings/instance_template_repository.html'
+          - doc_title: IP address restrictions
+            doc_url: 'ee/administration/reporting/ip_addr_restrictions.html'
+          - doc_title: Job artifacts
+            doc_url: 'ee/administration/job_artifacts.html'
+            docs:
+              - doc_title: Troubleshooting
+                doc_url: 'ee/administration/job_artifacts_troubleshooting.html'
+          - doc_title: Job logs
+            doc_url: 'ee/administration/job_logs.html'
+          - doc_title: Localization
+            doc_url: 'ee/administration/settings/localization.html'
+          - doc_title: Maintenance Mode
+            doc_url: 'ee/administration/maintenance_mode/'
+          - doc_title: Polling interval multiplier
+            doc_url: 'ee/administration/polling.html'
+          - doc_title: Project integrations
+            doc_url: 'ee/administration/settings/project_integration_management.html'
+          - doc_title: Protected paths
+            doc_url: 'ee/administration/settings/protected_paths.html'
+          - doc_title: Push event activities limit
+            doc_url: 'ee/administration/settings/push_event_activities_limit.html'
+          - doc_title: Rate limits
+            doc_url: 'ee/administration/settings/rate_limits.html'
+            docs:
+              - doc_title: Deprecated API
+                doc_url: 'ee/administration/settings/deprecated_api_rate_limits.html'
+              - doc_title: Git LFS
+                doc_url: 'ee/administration/settings/git_lfs_rate_limits.html'
+              - doc_title: Git SSH operations
+                doc_url: 'ee/administration/settings/rate_limits_on_git_ssh_operations.html'
+              - doc_title: Incident management
+                doc_url: 'ee/administration/settings/incident_management_rate_limits.html'
+              - doc_title: Issue creation
+                doc_url: 'ee/administration/settings/rate_limit_on_issues_creation.html'
+              - doc_title: Note creation
+                doc_url: 'ee/administration/settings/rate_limit_on_notes_creation.html'
+              - doc_title: Package Registry
+                doc_url: 'ee/administration/settings/package_registry_rate_limits.html'
+              - doc_title: Pipeline creation
+                doc_url: 'ee/administration/settings/rate_limit_on_pipelines_creation.html'
+              - doc_title: Projects API
+                doc_url: 'ee/administration/settings/rate_limit_on_projects_api.html'
+              - doc_title: Raw endpoints
+                doc_url: 'ee/administration/settings/rate_limits_on_raw_endpoints.html'
+              - doc_title: Repository files API
+                doc_url: 'ee/administration/settings/files_api_rate_limits.html'
+              - doc_title: User and IP
+                doc_url: 'ee/administration/settings/user_and_ip_rate_limits.html'
+              - doc_title: Users API
+                doc_url: 'ee/administration/settings/rate_limit_on_users_api.html'
+          - doc_title: Repository checks
+            doc_url: 'ee/administration/repository_checks.html'
+          - doc_title: Security and Compliance
+            doc_url: 'ee/administration/settings/security_and_compliance.html'
+          - doc_title: Sign-in and help page text
+            doc_url: 'ee/administration/settings/help_page.html'
+          - doc_title: Sign-in restrictions
+            doc_url: 'ee/administration/settings/sign_in_restrictions.html'
+          - doc_title: Sign-up restrictions
+            doc_url: 'ee/administration/settings/sign_up_restrictions.html'
+          - doc_title: Spamcheck
+            doc_url: 'ee/administration/reporting/spamcheck.html'
+          - doc_title: System Hooks
+            doc_url: 'ee/administration/system_hooks.html'
+          - doc_title: Terms of service and privacy policy
+            doc_url: 'ee/administration/settings/terms.html'
+          - doc_title: Third-party offers
+            doc_url: 'ee/administration/settings/third_party_offers.html'
+          - doc_title: Visibility and access controls
+            doc_url: 'ee/administration/settings/visibility_and_access_controls.html'
+
 
       # GitLab Dedicated
 
@@ -1085,6 +1091,8 @@ sections:
             doc_url: 'ee/administration/broadcast_messages.html'
           - doc_title: Email from GitLab
             doc_url: 'ee/administration/email_from_gitlab.html'
+          - doc_title: User cohorts
+            doc_url: 'ee/administration/user_cohorts.html'
           - doc_title: Rake tasks
             doc_url: 'ee/raketasks/user_management.html'
 
