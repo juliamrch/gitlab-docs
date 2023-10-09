@@ -2,7 +2,11 @@
 
 You can set up, compile, update, and preview the GitLab Docs site locally.
 
-Alternatively, you can use [GitPod](#using-gitpod).
+Alternatively, you can either:
+
+- Use [GitPod](#using-gitpod).
+- Use [GDK](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitlab_docs.md), if you already
+  have GDK configured.
 
 ## Set up GitLab Docs locally
 
