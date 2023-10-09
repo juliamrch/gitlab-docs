@@ -63,6 +63,8 @@ sections:
         docs:
           - doc_title: Free user limit
             doc_url: 'ee/user/free_user_limit.html'
+          - doc_title: Free push limit
+            doc_url: 'ee/user/free_push_limit.html'
           - doc_title: Read-only namespaces
             doc_url: 'ee/user/read_only_namespaces.html'
       - category_title: GitLab self-managed
