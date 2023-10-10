@@ -3285,6 +3285,8 @@ sections:
                     doc_url: 'ee/development/fe_guide/keyboard_shortcuts.html'
                   - doc_title: Logging
                     doc_url: 'ee/development/fe_guide/logging.html'
+                  - doc_title: Sentry
+                    doc_url: 'ee/development/fe_guide/sentry.html'
                   - doc_title: Performance
                     doc_url: 'ee/development/fe_guide/performance.html'
                   - doc_title: Security
