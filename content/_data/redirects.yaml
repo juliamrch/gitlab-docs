@@ -1307,3 +1307,87 @@ redirects:
   - from: /omnibus/settings/grafana.html
     to: /ee/administration/monitoring/performance/grafana_configuration.html#deprecation-of-bundled-grafana
     remove_date: 2024-05-23
+  - from: /ee/update/removals.html
+    to: /ee/update/deprecations.html
+    remove_date: 2024-06-28
+  - from: /ee/development/internal_analytics/service_ping/metrics_dictionary.html
+    to: /ee/development/internal_analytics/metrics/metrics_dictionary.html
+    remove_date: 2024-06-25
+  - from: /ee/development/internal_analytics/service_ping/performance_indicator_metrics.html
+    to: /ee/development/internal_analytics/metrics/metrics_dictionary.html#performance-indicator-metrics
+    remove_date: 2024-06-25
+  - from: /ee/development/internal_analytics/service_ping/metrics_lifecycle.html
+    to: /ee/development/internal_analytics/metrics/metrics_lifecycle.html
+    remove_date: 2024-06-25
+  - from: /ee/ci/runners/register_runner.html
+    to: /ee/ci/runners/runners_scope.html
+    remove_date: 2024-06-21
+  - from: /ee/integration/security_partners/index.html
+    to: /ee/integration/index.html#security-improvements
+    remove_date: 2024-07-05
+  - from: /ee/integration/security_partners/
+    to: /ee/integration/index.html#security-improvements
+    remove_date: 2024-07-05
+  - from: /ee/integration/slash_commands.html
+    to: /ee/user/project/integrations/gitlab_slack_application.html#slash-commands
+    remove_date: 2024-06-19
+  - from: /ee/user/admin_area/settings/import_export_rate_limits.html
+    to: /ee/administration/settings/import_export_rate_limits.html
+    remove_date: 2024-07-07
+  - from: /ee/user/admin_area/settings/gitaly_timeouts.html
+    to: /ee/administration/settings/gitaly_timeouts.html
+    remove_date: 2024-07-07
+  - from: /ee/user/admin_area/settings/git_lfs_rate_limits.html
+    to: /ee/administration/settings/git_lfs_rate_limits.html
+    remove_date: 2024-07-06
+  - from: /ee/user/admin_area/settings/help_page.html
+    to: /ee/administration/settings/help_page.html
+    remove_date: 2024-07-07
+  - from: /ee/user/admin_area/settings/floc.html
+    to: /ee/administration/settings/floc.html
+    remove_date: 2024-07-06
+  - from: /ee/user/admin_area/credentials_inventory.html
+    to: /ee/administration/credentials_inventory.html
+    remove_date: 2024-07-07
+  - from: /ee/user/admin_area/appearance.html
+    to: /ee/administration/appearance.html
+    remove_date: 2024-07-07
+  - from: /ee/user/admin_area/labels.html
+    to: /ee/administration/labels.html
+    remove_date: 2024-07-05
+  - from: /ee/user/admin_area/broadcast_messages.html
+    to: /ee/administration/broadcast_messages.html
+    remove_date: 2024-07-07
+  - from: /ee/user/admin_area/analytics/usage_trends.html
+    to: /ee/administration/analytics/usage_trends.html
+    remove_date: 2024-07-07
+  - from: /ee/user/admin_area/analytics/index.html
+    to: /ee/administration/analytics/index.html
+    remove_date: 2024-07-06
+  - from: /ee/user/admin_area/analytics/
+    to: /ee/administration/analytics/index.html
+    remove_date: 2024-07-06
+  - from: /ee/user/admin_area/analytics/dev_ops_reports.html
+    to: /ee/administration/analytics/dev_ops_reports.html
+    remove_date: 2024-07-06
+  - from: /ee/user/application_security/dependency_scanning/analyzers.html
+    to: /ee/user/application_security/dependency_scanning/index.html
+    remove_date: 2024-06-22
+  - from: /ee/user/compliance/compliance_report/index.html
+    to: /ee/user/compliance/compliance_center/index.html
+    remove_date: 2024-06-20
+  - from: /ee/user/compliance/compliance_report/
+    to: /ee/user/compliance/compliance_center/index.html
+    remove_date: 2024-06-20
+  - from: /ee/raketasks/backup_restore.html
+    to: /ee/administration/backup_restore/index.html
+    remove_date: 2024-06-26
+  - from: /ee/raketasks/restore_gitlab.html
+    to: /ee/administration/backup_restore/restore_gitlab.html
+    remove_date: 2024-06-26
+  - from: /ee/raketasks/backup_gitlab.html
+    to: /ee/administration/backup_restore/backup_gitlab.html
+    remove_date: 2024-06-26
+  - from: /ee/administration/audit_event_streaming.html
+    to: /ee/administration/audit_event_streaming/index.html
+    remove_date: 2024-06-12
