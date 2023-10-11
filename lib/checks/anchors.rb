@@ -19,5 +19,4 @@ Nanoc::Check.define(:internal_anchors) do
       ERROR
     end
   end
-  add_issue "#{issues.count} offenses found!" if issues.count.positive?
 end
