@@ -3378,8 +3378,6 @@ sections:
                         doc_url: 'ee/development/internal_analytics/internal_event_instrumentation/event_definition_guide.html'
                       - doc_title: Local setup and debugging
                         doc_url: 'ee/development/internal_analytics/internal_event_instrumentation/local_setup_and_debugging.html'
-                      - doc_title: Architecture
-                        doc_url: 'ee/development/internal_analytics/internal_event_instrumentation/architecture.html'
                   - doc_title: Metrics
                     doc_url: 'ee/development/internal_analytics/metrics/'
                     docs:
