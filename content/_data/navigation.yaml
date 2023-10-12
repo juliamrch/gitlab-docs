@@ -1616,6 +1616,8 @@ sections:
               - doc_title: Plan a migration to GitLab CI/CD
                 doc_url: 'ee/ci/migration/plan_a_migration.html'
                 docs:
+                  - doc_title: Migrate from GitHub actions
+                    doc_url: 'ee/ci/migration/github_actions.html'
                   - doc_title: Migrate from Jenkins
                     doc_url: 'ee/ci/migration/jenkins.html'
                   - doc_title: Migrate a Maven build from Jenkins
