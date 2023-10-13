@@ -105,4 +105,15 @@ module.exports = globSync('content/frontend/**/*.js')
         ],
       }),
     ],
+    onwarn(warning, warn) {
+      // Ignore known issues from third-party code.
+      const ignoreMap = {
+        CIRCULAR_DEPENDENCY: ['@gitlab/ui'],
+        INVALID_ANNOTATION: ['bootstrap-vue'],
+      };
+      const ignoredKeywords = ignoreMap[warning.code] || [];
+      if (!ignoredKeywords.some((keyword) => warning.message.includes(keyword))) {
+        warn(warning);
+      }
+    },
   }));
