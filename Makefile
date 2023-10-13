@@ -153,7 +153,7 @@ internal-anchors-check: clone-all-docs-projects compile
 
 internal-links-and-anchors-check: clone-all-docs-projects compile
 	@printf "\n$(INFO)INFO: Checking all internal links and anchors...$(END)\n"
-	@parallel time bundle exec nanoc check ::: internal_links internal_anchors
+	@parallel bundle exec nanoc check ::: internal_links internal_anchors
 
 external-links-check: compile
 	@printf "\n$(INFO)INFO: Checking all external links...$(END)\n"
