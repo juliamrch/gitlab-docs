@@ -3394,10 +3394,10 @@ sections:
                         doc_url: 'ee/development/internal_analytics/service_ping/implement.html'
                       - doc_title: Metrics instrumentation
                         doc_url: 'ee/development/internal_analytics/service_ping/metrics_instrumentation.html'
-                      - doc_title: Review guidelines
-                        doc_url: 'ee/development/internal_analytics/service_ping/review_guidelines.html'
                       - doc_title: Troubleshooting
                         doc_url: 'ee/development/internal_analytics/service_ping/troubleshooting.html'
+                  - doc_title: Review guidelines
+                    doc_url: 'ee/development/internal_analytics/review_guidelines.html'
               - doc_title: Internal API
                 doc_url: 'ee/development/internal_api/'
                 docs:
