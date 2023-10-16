@@ -2351,6 +2351,9 @@ sections:
         category_url: 'ee/user/version.html'
   - section_title: GitLab Duo
     section_url: 'ee/user/ai_features.html'
+    section_categories:
+      - category_title: Ask questions with Chat
+        category_url: 'ee/user/gitlab_duo_chat.html'
   - section_title: Develop
     section_url: 'ee/api/'
     section_categories:
