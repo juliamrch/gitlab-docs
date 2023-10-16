@@ -228,4 +228,35 @@ RSpec.describe Nanoc::Helpers::Generic do
       end
     end
   end
+
+  describe '#get_release_dates' do
+    subject { mock_class.get_release_dates }
+
+    valid_yaml_content = "- version: '18.0'\n  date: '2025-05-15'"
+    invalid_yaml_content = "version: '18.0'date: 2025-05-15'"
+
+    it 'returns a JSON array when the YAML is valid' do
+      allow(Net::HTTP).to receive(:get_response).and_return(Net::HTTPSuccess.new('1.1', '200', 'OK'))
+      allow_any_instance_of(Net::HTTPSuccess).to receive(:body).and_return(valid_yaml_content)
+      expect(subject).to be_a(String)
+    end
+
+    it 'returns an empty JSON array when the YAML is invalid' do
+      allow(Net::HTTP).to receive(:get_response).and_return(Net::HTTPSuccess.new('1.1', '200', 'OK'))
+      allow_any_instance_of(Net::HTTPSuccess).to receive(:body).and_return(invalid_yaml_content)
+      allow(mock_class).to receive(:warn).with('Error getting release dates - (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1')
+      expect(subject).to eq("[]")
+    end
+
+    it 'returns an empty JSON array on HTTP error' do
+      allow(Net::HTTP).to receive(:get_response).and_return(Net::HTTPServerError.new('1.1', '500', 'Internal Server Error'))
+      expect(subject).to eq("[]")
+    end
+
+    it 'returns an empty JSON array on other errors' do
+      allow(Net::HTTP).to receive(:get_response).and_raise(StandardError.new('Some error message'))
+      allow(mock_class).to receive(:warn).with('Error getting release dates - Some error message')
+      expect(subject).to eq("[]")
+    end
+  end
 end

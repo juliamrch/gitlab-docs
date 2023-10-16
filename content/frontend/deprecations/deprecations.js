@@ -1,6 +1,7 @@
 /* global Vue */
+/* global GITLAB_RELEASE_DATES */
+
 import { compareVersions } from 'compare-versions';
-import { getReleaseDates } from '../services/fetch_versions';
 import DeprecationFilters from './components/deprecation_filters.vue';
 
 /**
@@ -29,18 +30,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Create the list of milestones from page content.
   const allMilestones = buildMilestonesList();
 
-  // Populate milestone dates.
-  const releaseDates = await getReleaseDates();
-  const getMilestoneDateHTML = (milestone) => {
-    const msDate = new Date(
-      Object.keys(releaseDates).find((key) => releaseDates[key] === milestone),
-    );
-    const msFormattedDate = msDate.toLocaleString('default', {
-      month: 'short',
-      year: 'numeric',
-    });
-    return `&nbsp;<span class="milestone-date">(${msFormattedDate})</span>`;
+  // Find and format the date for a given milestone.
+  const getDateByVersion = (milestone) => {
+    const release = GITLAB_RELEASE_DATES.find((item) => item.version === milestone);
+    return release
+      ? new Date(release.date).toLocaleString('default', {
+          month: 'short',
+          year: 'numeric',
+        })
+      : '';
   };
+
+  // Populate milestone dates.
+  const getMilestoneDateHTML = (milestone) => {
+    const milestoneDate = getDateByVersion(milestone);
+    return milestoneDate ? `&nbsp;<span class="milestone-date">(${milestoneDate})</span>` : '';
+  };
+
   // Add dates to removal milestone headings, before the anchor link.
   document.querySelectorAll('.milestone-wrapper h2').forEach((el) => {
     el.querySelector('a.anchor').insertAdjacentHTML(

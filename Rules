@@ -60,7 +60,9 @@ preprocess do
   rescue
     {}
   end
+
   config[:online_versions] = get_online_versions
+  config[:release_dates] = get_release_dates
 end
 
 compile '/404.*' do

@@ -3,7 +3,6 @@
 import { satisfies, compareVersions } from 'compare-versions';
 
 const DOCS_VERSIONS_ENDPOINT = 'https://docs.gitlab.com/versions.json';
-const GITLAB_RELEASE_DATES_ENDPOINT = 'https://docs.gitlab.com/release_dates.json';
 const ARCHIVE_VERSIONS_ENDPOINT = 'https://archives.docs.gitlab.com/archive_versions.json';
 
 // Archived versions moved registries starting with 15.5.
@@ -65,19 +64,4 @@ export async function getArchivesVersions() {
     .then((response) => response.json())
     .catch((error) => console.error(error));
   return versions || [];
-}
-
-/**
- * Fetch a list of versions with their associated release dates.
- *
- * @returns Array
- */
-export async function getReleaseDates() {
-  const releaseDates = await fetch(GITLAB_RELEASE_DATES_ENDPOINT)
-    .then((response) => response.json())
-    .then((data) => {
-      return Object.assign(...data);
-    })
-    .catch((error) => console.error(error));
-  return releaseDates || [];
 }
