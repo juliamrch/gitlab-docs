@@ -3132,6 +3132,11 @@ sections:
                     doc_url: 'ee/development/backend/create_source_code_be/gitaly_touch_points.html'
                   - doc_title: Source Code REST endpoints
                     doc_url: 'ee/development/backend/create_source_code_be/rest_endpoints.html'
+              - doc_title: Data science
+                doc_url: 'ee/development/data_science/'
+                docs:
+                  - doc_title: Model registry
+                    doc_url: 'ee/development/data_science/model_registry/'
               - doc_title: Database
                 doc_url: 'ee/development/database/'
                 docs:
