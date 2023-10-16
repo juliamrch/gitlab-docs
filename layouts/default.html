@@ -88,6 +88,9 @@
       <script src="<%= @items['/assets/javascripts/mermaid.*'].path %>"></script>
     <% end %>
     <% if @item.identifier.to_s == '/ee/update/deprecations.md' %>
+      <script>
+        const GITLAB_RELEASE_DATES = <%= @config[:release_dates] %>;
+      </script>
       <script src="<%= @items['/frontend/deprecations/deprecations.*'].path %>"></script>
     <% end %>
     <% if @item.identifier.to_s == '/archives/index.md' %>

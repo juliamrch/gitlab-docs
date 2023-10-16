@@ -197,5 +197,20 @@ module Nanoc::Helpers
       list = breadcrumb_trail(data, path[1..])
       list.map { |item| item[:name] }.join(" &rsaquo; ")
     end
+
+    #
+    # Fetch information about GitLab releases.
+    #
+    def get_release_dates
+      uri = URI('https://gitlab.com/gitlab-com/www-gitlab-com/-/raw/master/data/releases.yml')
+      response = Net::HTTP.get_response(uri)
+      return "[]" unless response.is_a?(Net::HTTPSuccess)
+
+      parsed_yaml = YAML.safe_load(response.body) || []
+      JSON.generate(parsed_yaml)
+    rescue StandardError => e
+      warn("Error getting release dates - #{e}")
+      "[]"
+    end
   end
 end
