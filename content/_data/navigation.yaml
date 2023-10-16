@@ -29,7 +29,9 @@ sections:
   # Documentation from https://gitlab.com/gitlab-org/gitlab
   - section_title: Home
     section_url: 'ee/'
-
+    section_categories:
+      - category_title: The DevSecOps platform
+        category_url: 'ee/devsecops.html'
   - section_title: Tutorials
     section_url: 'ee/tutorials/'
     section_categories:
