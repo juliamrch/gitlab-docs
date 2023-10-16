@@ -80,7 +80,6 @@
     <% elsif @config[:search_backend] == "lunr" %>
     <script src="<%= @items['/frontend/search/lunrsearch.*'].path %>"></script>
     <% end %>
-    <script src="<%= @items['/assets/javascripts/toggle_popover.*'].path %>"></script>
     <script src="<%= @items['/frontend/shared/clipboardjs.*'].path %>"></script>
 
     <% if @item.compiled_content.include? "load-mermaid" %>
@@ -94,7 +93,6 @@
       <script src="<%= @items['/frontend/archives/archives.*'].path %>"></script>
     <% end %>
     <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
-    <script src="<%= @items['/assets/javascripts/tables.*'].path %>"></script>
     <script src="<%= @items['/frontend/default/badges.*'].path %>"></script>
 
     <%# Add analytics only in production %>
