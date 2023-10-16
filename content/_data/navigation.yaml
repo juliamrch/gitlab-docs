@@ -851,7 +851,6 @@ sections:
           - doc_title: Host the product documentation
             doc_url: 'ee/administration/docs_self_host.html'
 
-
       - category_title: Update your settings
         category_url: 'ee/administration/settings/'
         docs:
@@ -958,7 +957,6 @@ sections:
             doc_url: 'ee/administration/settings/third_party_offers.html'
           - doc_title: Visibility and access controls
             doc_url: 'ee/administration/settings/visibility_and_access_controls.html'
-
 
       # GitLab Dedicated
 
@@ -1779,7 +1777,7 @@ sections:
                         doc_url: 'ee/ci/docker/docker_layer_caching.html'
                   - doc_title: Use kaniko to build Docker images
                     doc_url: 'ee/ci/docker/using_kaniko.html'
-                  - doc_title: "Tutorial: Use Buildah in a rootless container on OpenShift"
+                  - doc_title: 'Tutorial: Use Buildah in a rootless container on OpenShift'
                     doc_url: 'ee/ci/docker/buildah_rootless_tutorial.html'
           - doc_title: Variables
             doc_url: 'ee/ci/variables/'
@@ -3236,7 +3234,12 @@ sections:
                 doc_url: 'ee/development/fe_guide/'
                 docs:
                   - doc_title: Accessibility
-                    doc_url: 'ee/development/fe_guide/accessibility.html'
+                    doc_url: 'ee/development/fe_guide/accessibility/'
+                    docs:
+                      - doc_title: Best practices
+                        doc_url: 'ee/development/fe_guide/accessibility/best_practices.html'
+                      - doc_title: Automated testing
+                        doc_url: 'ee/development/fe_guide/accessibility/automated_testing.html'
                   - doc_title: Architecture
                     doc_url: 'ee/development/fe_guide/architecture.html'
                     docs:
