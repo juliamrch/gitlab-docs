@@ -85,3 +85,13 @@
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png?v=2">
 <link rel="manifest" href="/assets/manifests/site.webmanifest">
 <meta name="theme-color" content="#FC6D26">
+
+<% if gitlab_analytics_enabled? %>
+  <script src="https://cdn.jsdelivr.net/npm/@gitlab/application-sdk-browser@0.2.8/dist/gl-sdk.min.js"></script>
+  <script>
+    window.glClient = window.glSDK.glClientSDK(<%= gitlab_analytics_json %>);
+
+    window.glClient?.page();
+  </script>
+
+<% end %>
