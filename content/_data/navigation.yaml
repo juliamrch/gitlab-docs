@@ -3106,6 +3106,8 @@ sections:
                 doc_url: 'ee/development/auto_devops.html'
               - doc_title: Built-in project templates
                 doc_url: 'ee/development/project_templates.html'
+              - doc_title: Cells
+                doc_url: 'ee/development/cells/'
               - doc_title: CI/CD
                 doc_url: 'ee/development/cicd/'
                 docs:
