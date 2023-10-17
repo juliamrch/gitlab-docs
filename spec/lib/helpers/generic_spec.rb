@@ -259,4 +259,80 @@ RSpec.describe Nanoc::Helpers::Generic do
       expect(subject).to eq("[]")
     end
   end
+
+  describe '#gitlab_analytics_enabled?' do
+    context 'when GITLAB_ANALYTICS_HOST and GITLAB_ANALYTICS_ID are set' do
+      before do
+        ENV['GITLAB_ANALYTICS_HOST'] = 'https://collector.com'
+        ENV['GITLAB_ANALYTICS_ID'] = '123'
+      end
+
+      it 'returns true' do
+        expect(mock_class.gitlab_analytics_enabled?).to be_truthy
+      end
+    end
+
+    context 'when only GITLAB_ANALYTICS_HOST is set' do
+      before do
+        ENV['GITLAB_ANALYTICS_HOST'] = 'https://collector.com'
+        ENV['GITLAB_ANALYTICS_ID'] = nil
+      end
+
+      it 'returns false' do
+        expect(mock_class.gitlab_analytics_enabled?).to be_falsey
+      end
+    end
+
+    context 'when only GITLAB_ANALYTICS_ID is set' do
+      before do
+        ENV['GITLAB_ANALYTICS_HOST'] = nil
+        ENV['GITLAB_ANALYTICS_ID'] = '123'
+      end
+
+      it 'returns false' do
+        expect(mock_class.gitlab_analytics_enabled?).to be_falsey
+      end
+    end
+
+    context 'when neither GITLAB_ANALYTICS_HOST nor GITLAB_ANALYTICS_ID are set' do
+      before do
+        ENV['GITLAB_ANALYTICS_HOST'] = nil
+        ENV['GITLAB_ANALYTICS_ID'] = nil
+      end
+
+      it 'returns false' do
+        expect(mock_class.gitlab_analytics_enabled?).to be_falsey
+      end
+    end
+  end
+
+  describe '#gitlab_analytics_json' do
+    context 'when gitlab analytics is enabled' do
+      before do
+        ENV['GITLAB_ANALYTICS_ID'] = '123'
+        ENV['GITLAB_ANALYTICS_HOST'] = 'https://collector.com'
+        allow(mock_class).to receive(:gitlab_analytics_enabled?).and_return(true)
+      end
+
+      it 'returns the configuration object' do
+        expected_json = {
+          'appId' => '123',
+          'host' => 'https://collector.com',
+          'hasCookieConsent' => true
+        }.to_json
+
+        expect(mock_class.gitlab_analytics_json).to eq(expected_json)
+      end
+    end
+
+    context 'when gitlab analytics is not enabled' do
+      before do
+        allow(mock_class).to receive(:gitlab_analytics_enabled?).and_return(false)
+      end
+
+      it 'returns nil' do
+        expect(mock_class.gitlab_analytics_json).to be_nil
+      end
+    end
+  end
 end

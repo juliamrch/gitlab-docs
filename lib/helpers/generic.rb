@@ -212,5 +212,27 @@ module Nanoc::Helpers
       warn("Error getting release dates - #{e}")
       "[]"
     end
+
+    # This method will check whether gitlab product analytics is
+    # enabled or not based on env variables
+    #
+    def gitlab_analytics_enabled?
+      !ENV.fetch('GITLAB_ANALYTICS_HOST', '').empty? &&
+        !ENV.fetch('GITLAB_ANALYTICS_ID', '').empty?
+    end
+
+    #
+    # This method will return configuration object
+    # when gitlab product analytics is enabled.
+    #
+    def gitlab_analytics_json
+      return unless gitlab_analytics_enabled?
+
+      {
+        'appId' => ENV.fetch('GITLAB_ANALYTICS_ID', nil),
+        'host' => ENV.fetch('GITLAB_ANALYTICS_HOST', nil),
+        'hasCookieConsent' => true
+      }.to_json
+    end
   end
 end
