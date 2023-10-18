@@ -1495,7 +1495,10 @@ sections:
               - doc_title: File History
                 doc_url: 'ee/user/project/repository/git_history.html'
               - doc_title: Managing monorepos
-                doc_url: 'ee/user/project/repository/managing_large_repositories.html'
+                doc_url: 'ee/user/project/repository/monorepos/'
+                docs:
+                  - doc_title: Observability
+                    doc_url: 'ee/user/project/repository/monorepos/observability.html'
               - doc_title: Mirroring
                 doc_url: 'ee/user/project/repository/mirror/'
                 docs:
