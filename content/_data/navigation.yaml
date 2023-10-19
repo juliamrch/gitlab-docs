@@ -3089,6 +3089,8 @@ sections:
                 doc_url: 'ee/development/secure_coding_guidelines.html'
               - doc_title: Shell scripting standards and style guidelines
                 doc_url: 'ee/development/shell_scripting_guide/'
+              - doc_title: TypeScript style guide
+                doc_url: 'ee/development/fe_guide/style/typescript.html'
               - doc_title: Vue style guide
                 doc_url: 'ee/development/fe_guide/style/vue.html'
           - doc_title: Feature development
