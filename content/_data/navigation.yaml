@@ -1067,6 +1067,8 @@ sections:
             doc_url: 'ee/security/unlock_user.html'
           - doc_title: Review abuse reports
             doc_url: 'ee/administration/review_abuse_reports.html'
+          - doc_title: Review spam logs
+            doc_url: 'ee/administration/review_spam_logs.html'
           - doc_title: User file uploads
             doc_url: 'ee/security/user_file_uploads.html'
           - doc_title: Password storage
