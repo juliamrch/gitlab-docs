@@ -679,6 +679,8 @@ sections:
                 doc_url: 'ee/administration/postgresql/replication_and_failover.html'
               - doc_title: Standalone packaged database
                 doc_url: 'ee/administration/postgresql/standalone.html'
+              - doc_title: Upgrade external database
+                doc_url: 'ee/administration/postgresql/external_upgrade.html'
           - doc_title: Labels
             doc_url: 'ee/administration/labels.html'
           - doc_title: Load balancer
