@@ -663,20 +663,22 @@ sections:
           - doc_title: PostgreSQL
             doc_url: 'ee/administration/postgresql/'
             docs:
-              - doc_title: Replication and failover
-                doc_url: 'ee/administration/postgresql/replication_and_failover.html'
-              - doc_title: Standalone packaged database
-                doc_url: 'ee/administration/postgresql/standalone.html'
-              - doc_title: PgBouncer
-                doc_url: 'ee/administration/postgresql/pgbouncer.html'
-              - doc_title: Database Load Balancing
+              - doc_title: Database load balancing
                 doc_url: 'ee/administration/postgresql/database_load_balancing.html'
               - doc_title: External database service
                 doc_url: 'ee/administration/postgresql/external.html'
+              - doc_title: Monitor external databases
+                doc_url: 'ee/administration/postgresql/external_metrics.html'
               - doc_title: Move instances
                 doc_url: 'ee/administration/postgresql/moving.html'
               - doc_title: Multiple databases
                 doc_url: 'ee/administration/postgresql/multiple_databases.html'
+              - doc_title: PgBouncer
+                doc_url: 'ee/administration/postgresql/pgbouncer.html'
+              - doc_title: Replication and failover
+                doc_url: 'ee/administration/postgresql/replication_and_failover.html'
+              - doc_title: Standalone packaged database
+                doc_url: 'ee/administration/postgresql/standalone.html'
           - doc_title: Labels
             doc_url: 'ee/administration/labels.html'
           - doc_title: Load balancer
