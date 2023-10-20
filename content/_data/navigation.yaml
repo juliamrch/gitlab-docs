@@ -3338,6 +3338,8 @@ sections:
                         doc_url: 'ee/development/fe_guide/tooling.html'
                   - doc_title: Troubleshooting
                     doc_url: 'ee/development/fe_guide/troubleshooting.html'
+                  - doc_title: Type hinting
+                    doc_url: 'ee/development/fe_guide/type_hinting.html'
               - doc_title: Geo
                 doc_url: 'ee/development/geo.html'
                 docs:
