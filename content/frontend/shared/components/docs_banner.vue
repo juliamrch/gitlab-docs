@@ -1,17 +1,35 @@
 <script>
-import { GlButton } from '@gitlab/ui';
+import { GlAlert, GlIcon, GlSafeHtmlDirective as SafeHtml } from '@gitlab/ui';
+import { getCookie, setCookie } from '../cookies';
 
 export default {
+  directives: {
+    SafeHtml,
+  },
   components: {
-    GlButton,
+    GlAlert,
+    GlIcon,
   },
   props: {
     text: {
       type: String,
+      required: true,
+    },
+    variant: {
+      type: String,
+      required: true,
+    },
+    icon: {
+      type: String,
       required: false,
       default: '',
     },
-    show: {
+    isSticky: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    dismissible: {
       type: Boolean,
       required: false,
       default: true,
@@ -19,32 +37,32 @@ export default {
   },
   data() {
     return {
-      isVisible: this.show,
+      showBanner: true,
     };
   },
-  mounted() {
-    this.toggleBanner(this.isVisible);
+  created() {
+    this.showBanner = getCookie('HideDocsBanner') !== '1';
   },
   methods: {
-    toggleBanner(isVisible) {
-      this.$emit('toggle', isVisible);
-      this.isVisible = isVisible;
+    dismissAlert() {
+      this.showBanner = false;
+      setCookie('HideDocsBanner', 1, 30);
     },
   },
 };
 </script>
 
 <template>
-  <div
-    v-if="isVisible"
-    class="gl-z-index-3 gl-left-0 gl-bg-gray-50 gl-border-b-gray-200 gl-fixed gl-w-full gl-text-center"
+  <gl-alert
+    v-if="showBanner"
+    :sticky="isSticky"
+    :variant="variant"
+    :dismissible="dismissible"
+    :show-icon="false"
+    class="gl-font-base gl-docs gl-mt-6 gl-z-index-3"
+    @dismiss="dismissAlert()"
   >
-    <span v-if="text">{{ text }}</span>
-    <slot></slot>
-    <gl-button
-      icon="close"
-      class="gl-shadow-none! gl-bg-transparent!"
-      @click="toggleBanner(false)"
-    />
-  </div>
+    <gl-icon v-if="icon" :name="icon" size="14" class="gl-mr-3 gl-vertical-align-middle!" />
+    <div v-safe-html="text" class="gl-display-inline-block"></div>
+  </gl-alert>
 </template>

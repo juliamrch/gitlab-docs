@@ -1,20 +1,3 @@
-<%
-banner_raw = @items["/_data/banner.yaml"][:description]
-%>
 <% if show_banner? and !stable_version?(current_branch) %>
-<div class="gl-lg-display-block">
-  <div class="admonition-wrapper note gl-display-none" id="banner-close">
-    <div class="admonition alert alert-banner alert-dismissible fade show gl-text-center gl-mt-6 gl-mb-0 gl-z-index-1" role="alert">
-      <div class="gl-display-flex gl-justify-content-center gl-align-items-center">
-        <%= icon('tanuki', 12, 'gl-mx-3') %>
-        <%= markdown(banner_raw) %>
-        <%= icon('tanuki', 12, 'gl-mx-3') %>
-        <button type="button" class="close gl-mt-n2" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <script type="application/javascript" src="<%= @items['/assets/javascripts/banner.*'].path %>"></script>
-</div>
+  <div id="js-survey-banner" data-content='<%= html_escape(markdown(@items["/_data/banner.yaml"][:description])) %>'></div>
 <% end %>

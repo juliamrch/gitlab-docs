@@ -1,33 +1,11 @@
+import { setCookie, getCookie } from '../shared/cookies';
+
 /**
  * Store recent page views in a cookie.
  */
 
 // Number of links to include in history
 export const RECENT_HISTORY_ITEMS = 4;
-
-// Sets a cookie
-export const setCookie = (name, value, daysToExpire) => {
-  let expires = '';
-  if (daysToExpire) {
-    const date = new Date();
-    date.setTime(date.getTime() + daysToExpire * 24 * 60 * 60 * 1000);
-    expires = `; expires=' + ${date.toUTCString()}`;
-  }
-  document.cookie = `${name}=${value}${expires}; path=/`;
-};
-
-// Gets a cookie by name
-export const getCookie = (name) => {
-  const cookieName = `${name}=`;
-  const cookieArray = document.cookie.split(';');
-  for (let i = 0; i < cookieArray.length; i += 1) {
-    const cookie = cookieArray[i].trim();
-    if (cookie.indexOf(cookieName) === 0) {
-      return cookie.substring(cookieName.length, cookie.length);
-    }
-  }
-  return null;
-};
 
 // Writes page URLs to a cookie
 export const trackPageHistory = () => {
