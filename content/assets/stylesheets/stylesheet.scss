@@ -235,14 +235,32 @@ ol {
 }
 
 // End of Pajamas alerts
-// Start of banner alert box
-// https://about.gitlab.com/handbook/markdown-guide/#gitlab-webcast-alert-box
-.alert-banner {
-  background-color: $help-indigo-50;
-  border-color: rgba($help-indigo-50, 0.3);
-  svg {
-    min-width: 12px;
-    fill: $color-tanuki-dark;
+
+body.has-archive-banner {
+  #js-version-banner {
+    height: $archive-banner-height;
+    background-color: $gds-gray-200;
+  }
+  .gl-alert.gl-alert-sticky {
+    margin-top: 0;
+    text-align: center;
+    top: $header-height;
+    padding: 0.65rem 3rem;
+  }
+  .nav-wrapper,
+  th {
+    top: $header-height + $archive-banner-height;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  :target {
+    scroll-margin-top: $header-height + $archive-banner-height + 1rem;
+  }
+  .nav-toggle {
+    top: calc(($header-height + $archive-banner-height) * -1);
   }
 }
 

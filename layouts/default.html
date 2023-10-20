@@ -5,8 +5,9 @@
     <%= render '/head.*' %>
     <%= render '/canonical_urls.*' %>
   </head>
-  <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90">
+  <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90" <% if show_version_banner? %>class="has-archive-banner"<% end %>>
     <%= render '/header.*' %>
+    <% if show_version_banner? %><div id="js-version-banner"></div><% end %>
     <section class="gl-docs container-fluid">
       <div class="row">
         <div class="col-0 col-xl-2 pl-0">
@@ -21,16 +22,7 @@
           </div>
         </div>
         <div class="main pl-xl-4 wrapper js-main-wrapper col-12 col-xl-7">
-          <div class="row">
-            <div class="col">
-              <div id="js-version-banner" <%= 'data-is-outdated' if show_version_banner? %> data-latest-version-url='<%= @item.identifier.without_ext + '.html' %>' data-archives-url="/archives/"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <%= render '/banner.*' %>
-            </div>
-          </div>
+          <%= render '/banner.*' %>
           <div class="row">
             <div class="col">
               <div class="mobile-toggle-wrapper gl-mt-7">

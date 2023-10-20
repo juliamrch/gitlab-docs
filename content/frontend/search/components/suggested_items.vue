@@ -1,6 +1,6 @@
 <script>
 import { GlLink } from '@gitlab/ui';
-import { getCookie } from '../recently_viewed';
+import { getCookie } from '../../shared/cookies';
 
 export default {
   components: {

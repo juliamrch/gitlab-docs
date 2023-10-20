@@ -16,9 +16,9 @@
     }
   }
 
-  // banner
-  .admonition-wrapper {
-    margin-top: -1.5rem;
+  // survey banner
+  .gl-alert.gl-alert-info {
+    margin-top: 0;
   }
 
   // cards
@@ -191,7 +191,7 @@
       color: $gds-purple-900;
     }
 
-    .btn:not(.gl-search-box-by-click-clear-button, .gl-search-box-by-click-search-button, .gl-search-box-by-type-clear) {
+    .btn:not(.gl-search-box-by-click-clear-button, .gl-search-box-by-click-search-button, .gl-search-box-by-type-clear, .gl-dismiss-btn) {
       color: $gds-white;
       background: $landing-gl-purple-500;
       border: 1px solid $landing-gl-purple-600;

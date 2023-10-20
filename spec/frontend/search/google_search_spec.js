@@ -13,10 +13,9 @@ import SearchForm from '../../../content/frontend/search/components/google_searc
 import SearchPage from '../../../content/frontend/search/components/google_results.vue';
 import {
   trackPageHistory,
-  setCookie,
-  getCookie,
   RECENT_HISTORY_ITEMS,
 } from '../../../content/frontend/search/recently_viewed';
+import { getCookie, setCookie } from '../../../content/frontend/shared/cookies';
 import { GPS_ENDPOINT, fetchResults } from '../../../content/frontend/services/google_search_api';
 
 jest.mock('../../../content/frontend/services/google_search_api', () => ({
