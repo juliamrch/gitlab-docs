@@ -16,6 +16,7 @@ team](https://about.gitlab.com/handbook/marketing/strategy-performance/).
 * LinkedIn: Used by the GitLab brand marketing team. Loaded from [analytics.html](../layouts/analytics.html).
 * Marketo: Used by the GitLab marketing ops team to track web visits. Loaded from [analytics.html](../layouts/analytics.html).
 * OneTrust: Provides privacy-related cookie settings. Loaded from [head.html](../layouts/head.html).
+* [GitLab product analytics](https://docs.gitlab.com/ee/user/product_analytics/): Experimental. Currently this only tracks page views. GitLab team members can view data on the [analytics dashboard](https://gitlab.com/gitlab-org/gitlab-docs/-/analytics/dashboards/behavior?date_range_option=last_7_days). Loaded from [head.html](../layouts/head.html).
 
 ## Implementation
 

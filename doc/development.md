@@ -48,10 +48,9 @@ we reference the array with a symbol (`:versions`).
 
 [Rollup](https://rollupjs.org/) is used on this project to bundle JavaScript into modules. See [rollup.config.js](../rollup.config.js) for configuration details.
 
-All new JavaScript should be added to the [content/frontend/](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/content/frontend) directory.
+New JavaScript that uses ES modules or imports should be added to the [content/frontend/](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/content/frontend) directory. Vue components are all located here.
 
-Legacy JavaScript can be found in [`content/assets/javascripts/`](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/content/assets/javascripts/content/assets/javascripts).
-The files in this directory are handcrafted `ES5` JavaScript files. Work is [ongoing](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/439) to modernize these files.
+JavaScript that does not use ES modules, such as third-party analytics scripts, is located in [`content/assets/javascripts/`](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/content/assets/javascripts/content/assets/javascripts). Code added here is not processed by Rollup.
 
 ### Development using watch mode
 
