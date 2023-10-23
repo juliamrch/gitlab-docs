@@ -175,28 +175,6 @@ The archived documentation banner is displayed:
 - For 14.10.
 - For any other version.
 
-## Bumping versions of JavaScript
-
-Whenever the custom JavaScript files under `content/assets/` change,
-make sure to bump their version in the front matter. This method guarantees that
-your changes take effect by clearing the cache of previous files.
-
-Always use Nanoc's way of including those files, do not hardcode them in the
-layouts. For example use:
-
-```erb
-<script async type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
-```
-
-The links pointing to the files should be similar to:
-
-```erb
-<%= @items['/path/to/assets/file.*'].path %>
-```
-
-Nanoc then builds and renders those links correctly according with what's
-defined in [`Rules`](https://gitlab.com/gitlab-org/gitlab-docs/blob/main/Rules).
-
 ## Linking to source files
 
 A helper called [`edit_on_gitlab`](https://gitlab.com/gitlab-org/gitlab-docs/blob/main/lib/helpers/edit_on_gitlab.rb) can be used

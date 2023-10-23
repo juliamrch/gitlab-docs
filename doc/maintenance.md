@@ -61,25 +61,10 @@ To avoid allowing `'unsafe-line'` in the CSP, we cannot use any inline scripts.
 For example, this is prohibited:
 
 ```html
-<script>
-$(function () {
-  $('[data-toggle="popover"]').popover();
-  $('.popover-dismiss').popover({
-    trigger: 'focus'
-  })
-})
-</script>
+<script>alert('Hello world');</script>
 ```
 
-Instead, this should be extracted to its own files in the
-[`/content/assets/javascripts/`](https://gitlab.com/gitlab-org/gitlab-docs/-/tree/main/content/assets/javascripts) directory,
-and then be included in the HTML file that you want. The example above lives
-under `/content/assets/javascripts/toggle_popover.js`, and you would call
-it with:
-
-```html
-<script src="<%= @items['/assets/javascripts/toggle_popover.*'].path %>"></script>
-```
+Instead, JavaScript should be extracted to its own files. See [Add a new bundle](development.md#add-a-new-bundle) for more information.
 
 ### Test the CSP header for conformity
 

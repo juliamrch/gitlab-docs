@@ -133,11 +133,6 @@ end
 # Do not compile minified assets
 passthrough '/**/*.min.*'
 
-compile '/assets/javascripts/*.js' do
-  filter :erb
-  write "#{item.identifier.without_ext}-v#{rep.item[:version]}.js"
-end
-
 compile '/index.*' do
   filter :erb
   layout '/home.*'
