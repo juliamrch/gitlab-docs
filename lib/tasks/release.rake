@@ -57,9 +57,9 @@ namespace :release do
     end
 
     if DRY_RUN
-      TaskHelpers.info("gitlab-docs", "DRY RUN: Not adding file #{dockerfile} to branch #{version} or commiting changes.")
+      TaskHelpers.info("gitlab-docs", "DRY RUN: Not adding file #{dockerfile} to branch #{version} or committing changes.")
     else
-      TaskHelpers.info("gitlab-docs", "Adding file #{dockerfile} and commiting changes to branch #{version}...")
+      TaskHelpers.info("gitlab-docs", "Adding file #{dockerfile} and committing changes to branch #{version}...")
       `git add #{version}.Dockerfile`
       `git commit -m 'Release cut #{version}'`
     end

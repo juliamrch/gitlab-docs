@@ -3,14 +3,17 @@
 require 'yaml'
 require 'json'
 require 'date'
+require 'nanoc'
+require_relative '../helpers/generic'
 
 class TaskHelpers
+  include Nanoc::Helpers::Generic
+
   PRODUCTS = %w[ee omnibus runner charts operator].freeze
   VERSION_FORMAT = %r{^(?<major>\d{1,2})\.(?<minor>\d{1,2})$}.freeze
   COLOR_CODE_RESET = "\e[0m"
   COLOR_CODE_RED = "\e[31m"
   COLOR_CODE_GREEN = "\e[32m"
-  CURRENT_RELEASE_DATE = Date.today.strftime("%Y-%m-22")
 
   def config
     # Parse the config file and create a hash.
@@ -132,12 +135,12 @@ class TaskHelpers
     puts "#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): #{message} #{TaskHelpers::COLOR_CODE_RESET}"
   end
 
-  def current_milestone
+  def current_milestone(release_date = Date.today.strftime("%Y-%m"))
     @current_milestone ||= begin
-      release_dates_json = File.read("#{project_root}/content/release_dates.json")
-      # Search in the relase dates hash for the upcoming release date
-      # and fetch the milestone title.
-      JSON.parse(release_dates_json).first[CURRENT_RELEASE_DATE]
+      # Search in the relase dates hash for this month's release date
+      # and fetch the milestone version number.
+      releases = JSON.parse(get_release_dates)
+      releases.find { |item| item["date"].start_with?(release_date) }&.fetch("version", nil)
     end
   end
 end

@@ -26,4 +26,26 @@ describe TaskHelpers do
       end
     end
   end
+
+  describe '#current_milestone' do
+    let(:task_helpers) { described_class.new }
+
+    context 'when the date is 2023-10' do
+      it 'returns GitLab version 16.5' do
+        expect(task_helpers.current_milestone('2023-10')).to eq('16.5')
+      end
+    end
+
+    context 'when the date is 2025-05' do
+      it 'returns GitLab version 18.0' do
+        expect(task_helpers.current_milestone('2025-05')).to eq('18.0')
+      end
+    end
+
+    context 'when the date is 2084-11' do
+      it 'returns nil' do
+        expect(task_helpers.current_milestone('2084-11')).to be_nil
+      end
+    end
+  end
 end
