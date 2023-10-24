@@ -530,6 +530,7 @@ a.gl-tab-nav-item,
 a.gl-tab-nav-item:hover {
   border: 0;
   color: inherit;
+  font-size: 1rem;
 }
 .gl-tab-nav-item-active:active,
 .gl-tab-nav-item-active:focus,
@@ -542,7 +543,7 @@ a.gl-tab-nav-item:hover {
 .gl-docs .gl-tab-content {
   padding-top: 1rem;
   line-height: 1.5em;
-
+  font-size: 1rem;
   p,
   ul,
   ol,
