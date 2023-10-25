@@ -2307,6 +2307,12 @@ sections:
             doc_url: 'ee/user/analytics/merge_request_analytics.html'
           - doc_title: Product analytics
             doc_url: 'ee/user/product_analytics/'
+            docs:
+              - doc_title: Instrumentation
+                doc_url: 'ee/user/product_analytics/instrumentation/'
+                docs:
+                  - doc_title: Browser SDK
+                    doc_url: 'ee/user/product_analytics/instrumentation/browser_sdk.html'
           - doc_title: Productivity analytics
             doc_url: 'ee/user/analytics/productivity_analytics.html'
           - doc_title: Repository analytics for projects
@@ -3415,6 +3421,8 @@ sections:
                     docs:
                       - doc_title: Metrics dictionary guide
                         doc_url: 'ee/development/internal_analytics/metrics/metrics_dictionary.html'
+                      - doc_title: Metrics instrumentation guide
+                        doc_url: 'ee/development/internal_analytics/metrics/metrics_instrumentation.html'
                       - doc_title: Metrics lifecycle
                         doc_url: 'ee/development/internal_analytics/metrics/metrics_lifecycle.html'
                   - doc_title: Service Ping
@@ -3422,8 +3430,6 @@ sections:
                     docs:
                       - doc_title: Implement Service Ping
                         doc_url: 'ee/development/internal_analytics/service_ping/implement.html'
-                      - doc_title: Metrics instrumentation
-                        doc_url: 'ee/development/internal_analytics/service_ping/metrics_instrumentation.html'
                       - doc_title: Troubleshooting
                         doc_url: 'ee/development/internal_analytics/service_ping/troubleshooting.html'
                   - doc_title: Review guidelines
