@@ -3388,6 +3388,8 @@ sections:
                     doc_url: 'ee/development/graphql_guide/graphql_pro.html'
                   - doc_title: GraphQL API merge request checklist
                     doc_url: 'ee/development/graphql_guide/reviewing.html'
+              - doc_title: Group-level project templates
+                doc_url: 'ee/development/project_templates/'
               - doc_title: Import (Bitbucket Cloud)
                 doc_url: 'ee/development/bitbucket_cloud_importer.html'
               - doc_title: Import (GitHub)
