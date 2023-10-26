@@ -5,22 +5,17 @@
 import { shallowMount } from '@vue/test-utils';
 import flushPromises from 'flush-promises';
 import VersionsMenu from '../../../../content/frontend/default/components/versions_menu.vue';
-import {
-  getVersions,
-  getArchivesVersions,
-} from '../../../../content/frontend/services/fetch_versions';
+import * as fetchVersions from '../../../../content/frontend/services/fetch_versions';
 import { mockVersions, mockArchiveVersions } from '../../__mocks__/versions_mock';
-import { setWindowPath, setVersionMetatag } from './helpers/versions_menu_helper';
-
-jest.mock('../../../../content/frontend/services/fetch_versions');
+import { setWindowPath, setVersionMetatag } from './helpers/versions_helper';
 
 describe('component: Versions menu', () => {
   const archivesUrl = 'https://archives.docs.gitlab.com';
 
   beforeEach(() => {
     jest.clearAllMocks();
-    getVersions.mockResolvedValueOnce(mockVersions);
-    getArchivesVersions.mockResolvedValueOnce(mockArchiveVersions);
+    jest.spyOn(fetchVersions, 'getVersions').mockReturnValue(mockVersions);
+    jest.spyOn(fetchVersions, 'getArchivesVersions').mockReturnValue(mockArchiveVersions);
   });
   afterEach(() => {
     document.querySelector('meta[name="gitlab-docs-version"]').remove();
@@ -31,8 +26,8 @@ describe('component: Versions menu', () => {
     setVersionMetatag(mockVersions.next);
     await flushPromises();
 
-    expect(getVersions).toHaveBeenCalledTimes(1);
-    expect(getArchivesVersions).toHaveBeenCalledTimes(1);
+    expect(fetchVersions.getVersions).toHaveBeenCalledTimes(1);
+    expect(fetchVersions.getArchivesVersions).toHaveBeenCalledTimes(1);
 
     const nextVersion = wrapper.find('[data-testid="next-version"]').text();
     expect(nextVersion).toEqual(mockVersions.next);
@@ -100,5 +95,33 @@ describe('component: Versions menu', () => {
     const wrapper = shallowMount(VersionsMenu);
     await wrapper.setData({ versions: {} });
     expect(wrapper.find('[data-testid="versions-menu"] a:nth-child(2)').exists()).toBe(false);
+  });
+});
+
+describe('isArchivedVersion', () => {
+  beforeEach(() => {
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve([mockVersions]),
+      }),
+    );
+  });
+
+  it('Returns the correct value for the pre-release version', async () => {
+    const result = await fetchVersions.isArchivedVersion('15.3');
+    expect(result).toBe(false);
+  });
+
+  it('Returns the correct value for the current stable version', async () => {
+    const result = await fetchVersions.isArchivedVersion('15.2');
+    expect(result).toBe(false);
+  });
+
+  it('Returns the correct values for previous minor and major releases', async () => {
+    const olderVersions = [...mockVersions.last_minor, mockVersions.last_minor];
+    olderVersions.forEach(async (v) => {
+      const result = await fetchVersions.isArchivedVersion(v);
+      expect(result).toBe(true);
+    });
   });
 });

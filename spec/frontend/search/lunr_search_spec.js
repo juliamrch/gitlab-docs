@@ -4,7 +4,7 @@
 
 import { shallowMount } from '@vue/test-utils';
 import SearchPage from '../../../content/frontend/search/components/lunr_results.vue';
-import { setVersionMetatag } from '../default/components/helpers/versions_menu_helper';
+import { setVersionMetatag } from '../default/components/helpers/versions_helper';
 
 describe('content/frontend/search/components/lunr_results.vue', () => {
   const mockVersion = '16.2';

@@ -1,5 +1,6 @@
 /* global Vue */
 import { getNextUntil } from '../shared/dom';
+import { SITE_VERSION, isArchivedVersion } from '../services/fetch_versions';
 import DocsBanner from '../shared/components/docs_banner.vue';
 import NavigationToggle from './components/navigation_toggle.vue';
 import { setupTableOfContents } from './setup_table_of_contents';
@@ -7,22 +8,20 @@ import VersionsMenu from './components/versions_menu.vue';
 import TabsSection from './components/tabs_section.vue';
 
 /* eslint-disable no-new */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   setupTableOfContents();
 
   /**
    * Banner components
    */
-  const versionBanner = document.querySelector('#js-version-banner');
-  if (versionBanner) {
+  if (await isArchivedVersion(SITE_VERSION)) {
+    document.body.classList.add('has-archive-banner');
+
     // Create the link to the latest page by dropping the version number from the URL path.
-    const version = document
-      .querySelector('meta[name="gitlab-docs-version"]')
-      .getAttribute('content');
-    const latestURL = window.location.pathname.replace(`/${version}/`, '/');
+    const latestURL = window.location.pathname.replace(`/${SITE_VERSION}/`, '/');
 
     new Vue({
-      el: versionBanner,
+      el: document.querySelector('#js-version-banner'),
       components: {
         DocsBanner,
       },
