@@ -5,9 +5,9 @@
     <%= render '/head.*' %>
     <%= render '/canonical_urls.*' %>
   </head>
-  <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90" <% if show_version_banner? %>class="has-archive-banner"<% end %>>
+  <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90">
     <%= render '/header.*' %>
-    <% if show_version_banner? %><div id="js-version-banner"></div><% end %>
+    <div id="js-version-banner"></div>
     <section class="gl-docs container-fluid">
       <div class="row">
         <div class="col-0 col-xl-2 pl-0">

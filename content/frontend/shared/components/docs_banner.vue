@@ -40,6 +40,11 @@ export default {
       showBanner: true,
     };
   },
+  computed: {
+    renderBanner() {
+      return (this.showBanner || !this.dismissible) === true;
+    },
+  },
   created() {
     this.showBanner = getCookie('HideDocsBanner') !== '1';
   },
@@ -54,7 +59,7 @@ export default {
 
 <template>
   <gl-alert
-    v-if="showBanner"
+    v-if="renderBanner"
     :sticky="isSticky"
     :variant="variant"
     :dismissible="dismissible"

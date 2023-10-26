@@ -5,9 +5,8 @@
 import { mount } from '@vue/test-utils';
 import DocsBanner from '../../../../content/frontend/shared/components/docs_banner.vue';
 
-const propsData = { text: 'Some text', variant: 'info' };
-
-describe('component: Banner', () => {
+describe('component: Survey banner', () => {
+  const propsData = { text: 'Some text', variant: 'info' };
   let wrapper;
 
   beforeEach(() => {

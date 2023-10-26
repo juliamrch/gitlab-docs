@@ -11,19 +11,27 @@ const DOCS_IMAGES_ENDPOINT_V1 =
 const DOCS_IMAGES_ENDPOINT_V2 =
   'https://gitlab.com/api/v4/projects/1794617/registry/repositories/3631228/tags?per_page=100';
 
+export const SITE_VERSION = document
+  .querySelector('meta[name="gitlab-docs-version"]')
+  ?.getAttribute('content');
+
 /**
  * Fetch a list of versions available on docs.gitlab.com.
  *
  * @returns Array
  */
+let cachedVersions = null;
+
 export async function getVersions() {
-  const versions = await fetch(DOCS_VERSIONS_ENDPOINT)
-    .then((response) => response.json())
-    .then((data) => {
-      return Object.assign(...data);
-    })
-    .catch((error) => console.error(error));
-  return versions || [];
+  if (!cachedVersions) {
+    try {
+      const data = await (await fetch(DOCS_VERSIONS_ENDPOINT)).json();
+      cachedVersions = Object.assign(...data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  return cachedVersions || [];
 }
 
 /**
@@ -64,4 +72,18 @@ export async function getArchivesVersions() {
     .then((response) => response.json())
     .catch((error) => console.error(error));
   return versions || [];
+}
+
+/**
+ * Check if a version of the site is archived.
+ *
+ * All versions except the pre-release and most
+ * recent stable version are considered archived
+ * versions.
+ *
+ * @returns Boolean
+ */
+export async function isArchivedVersion(version) {
+  const onlineVersions = await getVersions();
+  return ![onlineVersions.next, onlineVersions.current].includes(version);
 }
