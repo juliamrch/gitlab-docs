@@ -495,6 +495,8 @@ sections:
             doc_url: 'runner/install/operator.html'
           - doc_title: Bleeding edge releases
             doc_url: 'runner/install/bleeding-edge.html'
+          - doc_title: Support policy
+            doc_url: 'runner/install/support-policy.html'
       - category_title: Configure GitLab Runner
         category_url: 'runner/configuration/'
         docs:
