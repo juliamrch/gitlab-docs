@@ -7,9 +7,10 @@ require 'helpers/generic'
 RSpec.describe Nanoc::Helpers::Generic do
   let(:mock_class) { Class.new { extend Nanoc::Helpers::Generic } }
   let(:path) { "ee/user/project/code_intelligence.html" }
+  let(:title) { "Code Intelligence" }
   let(:mock_item) do
-    item = Struct.new(:path)
-    item.new(path)
+    item = Struct.new(:title, :path)
+    item.new(title, path)
   end
 
   before do
@@ -21,14 +22,15 @@ RSpec.describe Nanoc::Helpers::Generic do
   describe '#docs_section' do
     using RSpec::Parameterized::TableSyntax
 
-    subject { mock_class.docs_section(mock_item.path.to_s) }
+    subject { mock_class.docs_section(mock_item.title, mock_item.path) }
 
-    where(:path, :expected_section_title) do
-      "/ee/tutorials/" | "Learn GitLab with tutorials"
-      "/ee/topics/set_up_organization.html" | "Use GitLab"
-      "/ee/user/project/autocomplete_characters.html" | "Use GitLab"
-      "/ee/policy/alpha-beta-support.html" | "Manage GitLab subscription"
-      "/updog.html" | nil
+    where(:path, :title, :expected_section_title) do
+      "/ee/tutorials/" | "Learn GitLab with tutorials" | "Tutorials"
+      "/ee/ci/quick_start/" | "Tutorial: Create your first pipeline" | "Tutorials"
+      "/ee/topics/set_up_organization.html" | "Set up your organization" | "Use GitLab"
+      "/ee/user/project/autocomplete_characters.html" | "Autocomplete characters" | "Use GitLab"
+      "/ee/policy/alpha-beta-support.html" | "Support for Experiment, Beta, and Generally Available features" | "Subscribe"
+      "/updog.html" | "Test page" | nil
     end
 
     with_them do
@@ -212,10 +214,10 @@ RSpec.describe Nanoc::Helpers::Generic do
   describe '#docs_breadcrumb_list' do
     using RSpec::Parameterized::TableSyntax
 
-    subject { mock_class.docs_breadcrumb_list(mock_item.path.to_s) }
+    subject { mock_class.docs_breadcrumb_list(mock_item.path) }
 
     where(:path, :expected_breadcrumb_list) do
-      "/ee/tutorials/" | "Learn GitLab with tutorials"
+      "/ee/tutorials/" | "Tutorials"
       "/ee/topics/set_up_organization.html" | "Use GitLab &rsaquo; Set up your organization"
       "/ee/user/project/autocomplete_characters.html" | "Use GitLab &rsaquo; Plan and track work &rsaquo; Quick actions &rsaquo; Autocomplete characters"
       "/ee/user/project/settings/import_export_troubleshooting.html" | "Use GitLab &rsaquo; Organize work with projects &rsaquo; Migrate projects using file exports &rsaquo; Troubleshooting"
