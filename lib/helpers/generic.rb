@@ -55,11 +55,13 @@ module Nanoc::Helpers
     end
 
     #
-    # Get the top-level section for a page, based on the global navigation.
+    # Get the top-level section for a page, based on title and menu placement.
     #
     # Returns a string for use in the gitlab-docs-section metatag.
     #
-    def docs_section(path)
+    def docs_section(title, path)
+      return "Tutorials" if title.start_with?("Tutorial:")
+
       path = path[1..] # remove the leading slash
 
       get_nav_sections.each do |section|
