@@ -2364,6 +2364,8 @@ sections:
                 doc_url: 'ee/administration/monitoring/prometheus/web_exporter.html'
           - doc_title: 'Tutorial: Set up an analytics-powered project'
             doc_url: 'ee/tutorials/website_project_with_analytics/'
+          - doc_title: 'Tutorial: Set up product analytics in a GitLab Pages website project'
+            doc_url: 'ee/tutorials/product_analytics_onboarding_website_project/'
       - category_title: Experiment, Beta, GA support
         category_url: 'ee/policy/experiment-beta-support.html'
       - category_title: Find your GitLab version
