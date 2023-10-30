@@ -22,11 +22,11 @@ variables:
   BUNDLE_PATH__SYSTEM: 'false'
   GIT_DEPTH: '20'
   ALPINE_VERSION: '3.18'
-  VALE_VERSION: '2.27.0'
-  MARKDOWNLINT_VERSION: '0.36.0'  # Version also set in package.json
-  MARKDOWNLINT2_VERSION: '0.9.2'  # Version also set in package.json
+  VALE_VERSION: '2.29.6'
+  MARKDOWNLINT_VERSION: '0.37.0'  # Version also set in package.json
+  MARKDOWNLINT2_VERSION: '0.10.0'  # Version also set in package.json
   RUBY_VERSION: '3.2.2'
-  ASDF_VERSION: '0.12.0'
+  ASDF_VERSION: '0.13.1'
 
 #
 # workflow:rules to prevent duplicate pipelines when pushing to a branch with an open MR.
