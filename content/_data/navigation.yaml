@@ -2826,6 +2826,8 @@ sections:
                 doc_url: 'ee/api/snippets.html'
               - doc_title: Snippets (project)
                 doc_url: 'ee/api/project_snippets.html'
+              - doc_title: SSH certificates (group)
+                doc_url: 'ee/api/group_ssh_certificates.html'
               - doc_title: Statistics (application)
                 doc_url: 'ee/api/statistics.html'
               - doc_title: Suggestions
