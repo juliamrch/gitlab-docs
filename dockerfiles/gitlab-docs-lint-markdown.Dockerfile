@@ -25,9 +25,14 @@ RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cac
     nodejs       \
     openssl      \
     pngquant     \
+    ruby         \
     tar          \
     yarn         \
+    && echo 'gem: --no-document' >> /etc/gemrc \
+    && gem update --silent --system \
     && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
+    && echo "Ruby: $(ruby --version)" \
+    && echo "RubyGems: $(gem --version)" \
     && echo "Node.js: $(node --version)" \
     && echo "Yarn: $(yarn --version)" \
     && printf "\n"
@@ -36,6 +41,7 @@ RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cac
 RUN printf "\n\e[32mINFO: Installing Vale %s..\e[39m\n" "${VALE_VERSION}" \
   && wget --quiet https://github.com/errata-ai/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz \
   && tar -xvzf vale_${VALE_VERSION}_Linux_64-bit.tar.gz -C bin \
+  && rm vale_${VALE_VERSION}_Linux_64-bit.tar.gz \
   && echo "Vale: $(vale --version)" \
   && printf "\n"
 
