@@ -15,12 +15,12 @@ heros:
     img: /assets/images/continuous-delivery.svg
     alt: continuous-delivery
     links:
+      - title: CI/CD YAML syntax reference
+        url: '/ee/ci/yaml/'
       - title: Getting started
         url: '/ee/ci/'
       - title: CI/CD examples
         url: '/ee/ci/examples/'
-      - title: .gitlab-ci.yml keyword reference
-        url: '/ee/ci/yaml/'
       - title: GitLab Runner
         url: '/runner/'
   - title: Collaboration
