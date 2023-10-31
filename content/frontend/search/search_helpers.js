@@ -53,6 +53,11 @@ export const SEARCH_FILTERS = [
     title: 'Filter by',
     options: [
       {
+        text: 'Tutorials',
+        value: 'Tutorials',
+        id: 'tutorials',
+      },
+      {
         text: 'Installation docs',
         value: 'Install,Subscribe',
         id: 'install',
@@ -64,7 +69,7 @@ export const SEARCH_FILTERS = [
       },
       {
         text: 'User docs',
-        value: 'Tutorials,Subscribe,Use GitLab',
+        value: 'Subscribe,Use GitLab',
         id: 'user',
       },
       {
