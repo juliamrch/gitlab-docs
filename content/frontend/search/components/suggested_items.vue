@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       pageHistory: [],
-      popularItems: [{ title: '.gitlab-ci.yml keyword reference', path: '/ee/ci/yaml/' }],
+      popularItems: [{ title: 'CI/CD YAML syntax reference', path: '/ee/ci/yaml/' }],
     };
   },
   created() {
