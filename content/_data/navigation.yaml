@@ -1683,8 +1683,6 @@ sections:
                 docs:
                   - doc_title: Migrate to the new runner registration workflow
                     doc_url: 'ee/ci/runners/new_creation_workflow.html'
-                  - doc_title: Examples
-                    doc_url: 'runner/examples/gitlab.html'
               - doc_title: Runner executors
                 doc_url: 'runner/executors/'
                 docs:
