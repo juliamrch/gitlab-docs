@@ -1652,7 +1652,7 @@ sections:
                     doc_url: 'ee/ci/examples/deployment/composer-npm-deploy.html'
                   - doc_title: PHP with Laravel and Envoy
                     doc_url: 'ee/ci/examples/laravel_with_gitlab_and_envoy/'
-          - doc_title: '.gitlab-ci.yml keyword reference'
+          - doc_title: 'CI/CD YAML syntax reference'
             doc_url: 'ee/ci/yaml/'
             docs:
               - doc_title: 'Optimize your YAML files'
