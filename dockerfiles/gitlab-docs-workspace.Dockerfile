@@ -1,6 +1,6 @@
 # GitLab Docs Workspace Docker image
 
-FROM debian:12.1-slim
+FROM debian:12.2-slim
 
 ARG ASDF_VERSION
 
@@ -24,14 +24,20 @@ RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apt-get update &
 RUN curl -L -o /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64 \
     && chmod +x /bin/hadolint
 
-# Build the docs from this branch
-COPY . /source/
-WORKDIR /source
+# Create a user to run processes in Workspace Docker image
+RUN useradd -l -u 5001 -G sudo -md /home/gitlab-workspaces -s /bin/bash -p gitlab-workspaces gitlab-workspaces
+ENV HOME=/home/gitlab-workspaces
+RUN mkdir -p /home/gitlab-workspaces && chgrp -R 0 /home && chmod -R g=u /etc/passwd /etc/group /home
+USER 5001
+
+# Run processes from /home/gitlab-workspaces/source
+COPY --chown=gitlab-workspaces:gitlab-workspaces . $HOME/source/
+WORKDIR $HOME/source
 
 # Install asdf and dependencies
 # See https://asdf-vm.com/guide/getting-started.html#official-download
 RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v${ASDF_VERSION} && \
-    echo ". $HOME/.asdf/asdf.sh" >> /root/.bashrc && \
+    echo ". $HOME/.asdf/asdf.sh" >> $HOME/.bashrc && \
     ASDF_DIR="${HOME}/.asdf" && . "${HOME}"/.asdf/asdf.sh && \
     make setup && \
     bundle exec rake clone_repositories
