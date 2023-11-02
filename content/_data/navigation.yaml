@@ -1629,6 +1629,8 @@ sections:
               - doc_title: Plan a migration to GitLab CI/CD
                 doc_url: 'ee/ci/migration/plan_a_migration.html'
                 docs:
+                  - doc_title: Migrate from Bamboo
+                    doc_url: 'ee/ci/migration/bamboo.html'
                   - doc_title: Migrate from GitHub actions
                     doc_url: 'ee/ci/migration/github_actions.html'
                   - doc_title: Migrate from Jenkins
