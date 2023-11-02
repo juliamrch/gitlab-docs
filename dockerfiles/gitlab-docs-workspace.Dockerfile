@@ -30,14 +30,8 @@ ENV HOME=/home/gitlab-workspaces
 RUN mkdir -p /home/gitlab-workspaces && chgrp -R 0 /home && chmod -R g=u /etc/passwd /etc/group /home
 USER 5001
 
-# Run processes from /home/gitlab-workspaces/source
-COPY --chown=gitlab-workspaces:gitlab-workspaces . $HOME/source/
-WORKDIR $HOME/source
-
 # Install asdf and dependencies
 # See https://asdf-vm.com/guide/getting-started.html#official-download
 RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v${ASDF_VERSION} && \
     echo ". $HOME/.asdf/asdf.sh" >> $HOME/.bashrc && \
-    ASDF_DIR="${HOME}/.asdf" && . "${HOME}"/.asdf/asdf.sh && \
-    make setup && \
-    bundle exec rake clone_repositories
+    ASDF_DIR="${HOME}/.asdf" && . "${HOME}"/.asdf/asdf.sh

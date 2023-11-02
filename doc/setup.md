@@ -178,6 +178,35 @@ To install and update the dependencies needed to preview docs locally, run:
 make setup
 ```
 
+### Error: `WARNING: <documentation project> documentation is missing`
+
+When building documentation, you might receive one of the following errors in the terminal:
+
+- `WARNING: GitLab documentation is missing.`
+- `WARNING: GitLab Runner documentation is missing.`
+- `WARNING: Omnibus GitLab documentation is missing.`
+- `WARNING: GitLab Charts documentation is missing.`
+- `WARNING: GitLab Operator documentation is missing.`
+
+In many cases, this warning is expected because you're only building some of the documentation suite. If you expect all
+of the documentation to be available to build, and some or all of it is missing, you might need to clone or update more
+projects.
+
+To make sure all documentation projects are in place, run `make` with the required target. For example:
+
+- To make sure GitLab Charts documentation is in place and up to date, run `make update-charts-gitlab`.
+- To make sure all project documentation is in place and up to date, run `make update-all-docs-projects`.
+
+You can clone all repositories:
+
+- Using SSH by running `make clone-all-docs-projects`.
+- Using HTTPS by running `bundle exec rake clone_repositories`.
+
+For more:
+
+- `make` targets, see: <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/Makefile>.
+- Rake tasks, see: <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/Rakefile>.
+
 ### `realpath: No such file or directory @ rb_check_realpath_internal`
 
 If you run into this error, it means you're missing one of the projects `gitlab-docs` relies on to build the content of the GitLab Docs site.

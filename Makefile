@@ -1,6 +1,7 @@
 .PHONY: all clean setup test up
 
 INFO = \033[32m
+WARN = \033[33m
 ERROR = \033[31m
 END = \033[0m
 
@@ -52,6 +53,28 @@ update-all-docs-projects: update-gitlab update-gitlab-runner update-omnibus-gitl
 
 up: setup view
 
+check-for-gitlab-content:
+	@printf "$(INFO)INFO: Checking for GitLab documentation content...$(END)\n"
+	@if [ -d "../gitlab/doc" ]; then printf "$(INFO)INFO: GitLab documentation exists!$(END)\n"; else printf "$(WARN)WARNING: GitLab documentation is missing.$(END) If unexpected, see <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/setup.md#troubleshooting> for more information.\n"; fi
+
+check-for-gitlab-runner-content:
+	@printf "$(INFO)INFO: Checking for GitLab Runner documentation content...$(END)\n"
+	@if [ -d "../gitlab-runner/docs" ]; then printf "$(INFO)INFO: GitLab Runner documentation exists!$(END)\n"; else printf "$(WARN)WARNING: GitLab Runner documentation is missing.$(END) If unexpected, see <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/setup.md#troubleshooting> for more information.\n"; fi
+
+check-for-omnibus-gitlab-content:
+	@printf "$(INFO)INFO: Checking for Omnibus GitLab documentation content...$(END)\n"
+	@if [ -d "../omnibus-gitlab/doc" ]; then printf "$(INFO)INFO: Omnibus GitLab documentation exists!$(END)\n"; else printf "$(WARN)WARNING: Omnibus GitLab documentation is missing.$(END) If unexpected, see <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/setup.md#troubleshooting> for more information.\n"; fi
+
+check-for-charts-gitlab-content:
+	@printf "$(INFO)INFO: Checking for GitLab Charts documentation content...$(END)\n"
+	@if [ -d "../charts-gitlab/doc" ]; then printf "$(INFO)INFO: GitLab Charts documentation exists!$(END)\n"; else printf "$(WARN)WARNING: GitLab Charts documentation is missing.$(END) If unexpected, see <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/setup.md#troubleshooting> for more information.\n"; fi
+
+check-for-gitlab-operator-content:
+	@printf "$(INFO)INFO: Checking for GitLab Operator documentation content...$(END)\n"
+	@if [ -d "../gitlab-operator/doc" ]; then printf "$(INFO)INFO: GitLab Operator documentation exists!$(END)\n"; else printf "$(WARN)WARNING: GitLab Operator documentation is missing.$(END) If unexpected, see <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/setup.md#troubleshooting> for more information.\n"; fi
+
+check-for-all-content: check-for-gitlab-content check-for-gitlab-runner-content check-for-omnibus-gitlab-content check-for-charts-gitlab-content check-for-gitlab-operator-content
+
 check-google-search-key:
 ifeq ($(GOOGLE_SEARCH_KEY),)
 	@printf "\n$(INFO)INFO: GOOGLE_SEARCH_KEY environment variable not detected! For more information, see https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/search.md.$(END)\n"
@@ -60,7 +83,7 @@ else
 endif
 
 .PHONY: compile
-compile:
+compile: check-for-all-content
 ifeq ($(SEARCH_BACKEND),lunr)
 	@printf "\n$(INFO)INFO: Compiling GitLab documentation site with Lunr.js search...$(END)\n"
 	@bundle exec nanoc compile || (printf "$(ERROR)ERROR: Compilation failed! Try running 'make setup'.$(END)\n" && exit 1)
@@ -135,7 +158,7 @@ clean:
 	@rm -rf tmp public
 
 build-lunr-index:
-	@printf "\n$(INFO)INFO: Building offline search index..$(END)\n"
+	@printf "\n$(INFO)INFO: Building offline search index...$(END)\n"
 	@node scripts/lunr/preindex.js
 	@find public/assets/javascripts -type f -name 'lunr*.json' -exec sh -c 'gzip -c "{}" > "{}.gz"' \;
 
