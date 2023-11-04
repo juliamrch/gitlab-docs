@@ -1675,6 +1675,8 @@ sections:
                 doc_url: 'ee/ci/components/'
               - doc_title: CI/CD Catalog
                 doc_url: 'ee/ci/components/catalog.html'
+              - doc_title: Debugging CI/CD pipelines
+                doc_url: 'ee/ci/debugging.html'
           - doc_title: Runners
             doc_url: 'runner/'
             docs:
@@ -1908,8 +1910,6 @@ sections:
                 doc_url: 'ee/ci/ci_cd_for_external_repos/bitbucket_integration.html'
               - doc_title: GitHub
                 doc_url: 'ee/ci/ci_cd_for_external_repos/github_integration.html'
-          - doc_title: Troubleshooting
-            doc_url: 'ee/ci/troubleshooting.html'
       - category_title: Secure your application
         category_url: 'ee/user/application_security/secure_your_application.html'
         docs:
