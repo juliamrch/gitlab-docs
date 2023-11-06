@@ -104,11 +104,13 @@ setup-asdf: check-asdf
 	@asdf plugin add nodejs || true
 	@asdf plugin add yarn || true
 	@asdf plugin add shellcheck || true
+	@asdf plugin add minify || true
 	@printf "\n$(INFO)INFO: Updating asdf plugins...$(END)\n"
 	@asdf plugin update ruby
 	@asdf plugin update nodejs
 	@asdf plugin update yarn
 	@asdf plugin update shellcheck
+	@asdf plugin update minify
 
 install-asdf-dependencies:
 	@printf "\n$(INFO)INFO: Installing asdf dependencies...$(END)\n"
