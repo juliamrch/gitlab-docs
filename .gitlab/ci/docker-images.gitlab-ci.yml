@@ -307,7 +307,6 @@ image:docs-archives:
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/archives:all
     DOCKERFILE: dockerfiles/archives.Dockerfile
-  needs: []
   script:
     - docker buildx build -t $IMAGE_NAME -f $DOCKERFILE . --push
 
