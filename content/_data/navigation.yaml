@@ -82,7 +82,7 @@ sections:
         category_url: 'ee/subscriptions/customers_portal.html'
       - category_title: Quarterly reconciliation
         category_url: 'ee/subscriptions/quarterly_reconciliation.html'
-      - category_title: Storage usage quota
+      - category_title: Storage
         category_url: 'ee/user/usage_quotas.html'
       - category_title: Compute quota
         category_url: 'ee/ci/pipelines/cicd_minutes.html'
