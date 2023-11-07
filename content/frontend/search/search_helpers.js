@@ -82,6 +82,11 @@ export const SEARCH_FILTERS = [
         value: 'Contribute',
         id: 'contribute',
       },
+      {
+        text: 'Solution docs',
+        value: 'Solutions',
+        id: 'solutions',
+      },
     ],
   },
 ];
