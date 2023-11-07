@@ -3776,3 +3776,6 @@ sections:
       # End of contribute to docs
 
   # End of development documentation
+
+  - section_title: Solutions
+    section_url: 'ee/solutions/'
