@@ -206,8 +206,9 @@ To add an additional set of product documentation to <https://docs.gitlab.com> f
    and add the new product to the `Relative URLs` and `Full URLs` sections.
 1. Edit the ['Makefile'](../Makefile):
 
-   - Add a command to clone the repository, and add it to `clone-all-docs-projects` (see `../gitlab-operator/.git` as an example).
-   - Add a command to update the repository, and add it to `update-all-docs-projects` (see `update-gitlab-operator`) as an example).
+   - Add a command to clone the repository, and add it to `clone-all-docs-projects`. See `../gitlab-operator/.git` as an example.
+   - Add a command to update the repository, and add it to `update-all-docs-projects`. See `update-gitlab-operator` as an example.
+   - Add a command to check for the existence of content, and add it to `check-for-all-content`. See `check-for-charts-gitlab-content` as an example.
 
 1. Update `gitlab-docs` documentation:
 
