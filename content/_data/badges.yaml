@@ -43,3 +43,7 @@ badgeIndex:
     label: Contribute
     text: This content is about development of the GitLab product.
     type: content
+  - id: solutions
+    label: Solutions
+    text: This content is provided by GitLab Solution Architects.
+    type: content
