@@ -4,32 +4,6 @@ import DocsBadges from './components/docs_badges.vue';
 
 window.addEventListener('load', () => {
   /**
-   * Handling for Markdown badges.
-   *
-   * These badges are added from Markdown files
-   * and initially rendered as <span> tags.
-   */
-  document.querySelectorAll('[data-component="docs-badges"]').forEach((badgeSet) => {
-    const badges = badgeSet.querySelectorAll('span');
-    const badgesData = Array.from(badges).map((badge) => ({
-      type: badge.getAttribute('data-type'),
-      text: badge.getAttribute('data-value'),
-    }));
-    (() =>
-      new Vue({
-        el: badgeSet,
-        components: {
-          DocsBadges,
-        },
-        render(createElement) {
-          return createElement(DocsBadges, {
-            props: { badgesData, isHeading: isContainedInHeading(badgeSet) },
-          });
-        },
-      }))();
-  });
-
-  /**
    * Handling for section badges.
    *
    * These badges are added to full site sections,
@@ -62,4 +36,30 @@ window.addEventListener('load', () => {
     }
   };
   sectionBadges.forEach(injectSectionBadge);
+
+  /**
+   * Handling for Markdown badges.
+   *
+   * These badges are added from Markdown files
+   * and initially rendered as <span> tags.
+   */
+  document.querySelectorAll('[data-component="docs-badges"]').forEach((badgeSet) => {
+    const badges = badgeSet.querySelectorAll('span');
+    const badgesData = Array.from(badges).map((badge) => ({
+      type: badge.getAttribute('data-type'),
+      text: badge.getAttribute('data-value'),
+    }));
+    (() =>
+      new Vue({
+        el: badgeSet,
+        components: {
+          DocsBadges,
+        },
+        render(createElement) {
+          return createElement(DocsBadges, {
+            props: { badgesData, isHeading: isContainedInHeading(badgeSet) },
+          });
+        },
+      }))();
+  });
 });
