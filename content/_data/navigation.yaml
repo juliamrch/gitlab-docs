@@ -3506,6 +3506,8 @@ sections:
                 doc_url: 'ee/development/real_time.html'
               - doc_title: Redis
                 doc_url: 'ee/development/redis.html'
+              - doc_title: Repository storage moves
+                doc_url: 'ee/development/repository_storage_moves/'
               - doc_title: Sec section
                 doc_url: 'ee/development/sec/'
                 docs:
