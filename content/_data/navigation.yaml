@@ -3779,3 +3779,12 @@ sections:
 
   - section_title: Solutions
     section_url: 'ee/solutions/'
+    section_categories:
+      - category_title: Cloud
+        category_url: 'ee/solutions/cloud/'
+        docs:
+          - doc_title: AWS Solutions
+            doc_url: 'ee/solutions/cloud/aws/'
+            docs:
+              - doc_title: GitLab AWS Integrations Index
+                doc_url: 'ee/solutions/cloud/aws/gitlab_aws_integration.html'
