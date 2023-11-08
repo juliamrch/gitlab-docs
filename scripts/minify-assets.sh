@@ -43,6 +43,9 @@ if $MINIFY_BIN "${MINIFY_FLAGS[@]}" --match="\.html$|\.css$|\.json|\.svg$" -o "$
   SIZE_BEFORE_MINIFY=$(du -sh "$SOURCE" | awk '{print $1}')
   SIZE_AFTER_MINIFY=$(du -sh "$DEST" | awk '{print $1}')
   # Print size results
+  printf "${COLOR_GREEN}INFO: Minified with "
+  $MINIFY_BIN --version
+  printf "${COLOR_RESET}"
   printf "${COLOR_GREEN}INFO: Size before minifying: $SIZE_BEFORE_MINIFY ${COLOR_RESET}\n"
   printf "${COLOR_GREEN}INFO: Size after minifying: $SIZE_AFTER_MINIFY ${COLOR_RESET}\n"
 
@@ -53,8 +56,7 @@ if $MINIFY_BIN "${MINIFY_FLAGS[@]}" --match="\.html$|\.css$|\.json|\.svg$" -o "$
   SOURCE_FILES_COUNT=$(find "$SOURCE" -type f | wc -l)
   DEST_FILES_COUNT=$(find "$DEST" -type f | wc -l)
   SOURCE_DIR_COUNT=$(find "$SOURCE" -type d | wc -l)
-  # Destination is always one directory deeper (more) than source, so we subtract one
-  DEST_DIR_COUNT=$(($(find "$DEST" -type d | wc -l) - 1))
+  DEST_DIR_COUNT=$(find "$DEST" -type d | wc -l)
   printf "${COLOR_GREEN}INFO: Checking that the number of source and destination files is the same...${COLOR_RESET}\n"
   if [[ $SOURCE_FILES_COUNT -eq $DEST_FILES_COUNT ]]; then
     printf "${COLOR_GREEN}SUCCESS: File count in $SOURCE and $DEST: $SOURCE_FILES_COUNT/$DEST_FILES_COUNT ${COLOR_RESET}\n"

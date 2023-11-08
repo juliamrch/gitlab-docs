@@ -2,7 +2,7 @@
 # and rename it to X.Y.Dockerfile, where X.Y the major.minor GitLab version.
 #
 #- Start of builder build stage -#
-FROM ruby:3.2.2-alpine3.17 as builder
+FROM ruby:3.2.2-alpine3.18 as builder
 
 # Set versions as build args to fetch corresponding branches
 ARG VER
@@ -67,15 +67,14 @@ RUN if [ "$SEARCH_BACKEND" = "lunr" ]; then make build-lunr-index; fi
 #
 # 1. Normalize the links in /source/public using version $VER.
 # 2. Minify the files in /source/public into /dest, creating /dest/public. Must run last.
-# 3. Rename /dest/public to /dest/$VER
-RUN /source/scripts/normalize-links.sh /source/public $VER   \
-    && mkdir /dest                                           \
-    && /source/scripts/minify-assets.sh /dest /source/public \
-    && mv /dest/public "/dest/${VER}"
-
-# Make an index.html and 404.html which will redirect / to /${VER}/
-RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /dest/index.html \
-    && echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /dest/404.html
+#    A trailing slash in the source path will copy all files inside the target directory,
+#    while omitting the trainling slash will copy the directory as well.
+#    We want the trailing slash. More info:
+#    https://github.com/tdewolff/minify/blob/master/cmd/minify/README.md#directories
+#
+RUN scripts/normalize-links.sh public $VER   \
+    && mkdir dest/                           \
+    && scripts/minify-assets.sh dest/ public/
 
 #- End of builder build stage -#
 
@@ -88,7 +87,11 @@ FROM nginx:stable-alpine
 # Clean out any existing HTML files, and copy the HTML from the builder stage
 # to the default location for NGINX.
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder /dest /usr/share/nginx/html
+COPY --from=builder /source/dest /usr/share/nginx/html/${VER}
+
+# Make an index.html and 404.html which will redirect / to /${VER}/
+RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /usr/share/nginx/html/index.html \
+    && echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /usr/share/nginx/html/404.html
 
 # Copy the NGINX config
 COPY dockerfiles/nginx-overrides.conf /etc/nginx/conf.d/default.conf

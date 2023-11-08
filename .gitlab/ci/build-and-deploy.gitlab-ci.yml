@@ -44,10 +44,12 @@
     # Build the Lunr.js search index if needed
     - if [[ "$SEARCH_BACKEND" == "lunr" ]]; then make build-lunr-index; fi
     # Minify the assets of the resulting site
+    # The trailing slash of public/ is important
+    # https://github.com/tdewolff/minify/blob/master/cmd/minify/README.md#directories
     - mkdir dest/
     - scripts/minify-assets.sh dest/ public/
     - rm -rf public/
-    - mv dest/public public/
+    - mv dest/ public/
 
 #
 # The script lines for gzipping the site (not used in upstream review apps, to speed up pipelines)
