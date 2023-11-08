@@ -1661,6 +1661,8 @@ sections:
                 doc_url: 'ee/ci/yaml/yaml_optimization.html'
               - doc_title: Validate syntax
                 doc_url: 'ee/ci/lint.html'
+              - doc_title: Debug pipelines
+                doc_url: 'ee/ci/debugging.html'
               - doc_title: Pipeline editor
                 doc_url: 'ee/ci/pipeline_editor/'
               - doc_title: Artifacts reports
@@ -1675,8 +1677,6 @@ sections:
                 doc_url: 'ee/ci/components/'
               - doc_title: CI/CD Catalog
                 doc_url: 'ee/ci/components/catalog.html'
-              - doc_title: Debugging CI/CD pipelines
-                doc_url: 'ee/ci/debugging.html'
           - doc_title: Runners
             doc_url: 'runner/'
             docs:
