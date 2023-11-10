@@ -387,15 +387,6 @@ sections:
             doc_url: 'ee/install/google_cloud_platform/'
           - doc_title: Amazon Web Services (AWS)
             doc_url: 'ee/install/aws/'
-            docs:
-              - doc_title: EKS best practices
-                doc_url: 'ee/install/aws/eks_clusters_aws.html'
-              - doc_title: GitLab SRE for AWS
-                doc_url: 'ee/install/aws/gitlab_sre_for_aws.html'
-              - doc_title: GitLab Cloud Native Hybrid on AWS EKS
-                doc_url: 'ee/install/aws/gitlab_hybrid_on_aws.html'
-              - doc_title: Manual install on AWS
-                doc_url: 'ee/install/aws/manual_install_aws.html'
       - category_title: Offline GitLab
         category_url: 'ee/topics/offline/'
         docs:
@@ -3788,5 +3779,13 @@ sections:
           - doc_title: AWS Solutions
             doc_url: 'ee/solutions/cloud/aws/'
             docs:
-              - doc_title: GitLab AWS Integrations Index
+              - doc_title: GitLab partnership qualifications from AWS
+                doc_url: 'ee/solutions/cloud/aws/gitlab_aws_partner_designations.html'
+              - doc_title: GitLab AWS integrations index
                 doc_url: 'ee/solutions/cloud/aws/gitlab_aws_integration.html'
+              - doc_title: GitLab Instances on AWS EKS
+                doc_url: 'ee/solutions/cloud/aws/gitlab_instance_on_aws.html'
+              - doc_title: Provision GitLab on a single EC2 instance in AWS
+                doc_url: 'ee/solutions/cloud/aws/gitlab_single_box_on_aws.html'
+              - doc_title: SRE considerations for Gitaly on AWS
+                doc_url: 'ee/solutions/cloud/aws/gitaly_sre_for_aws.html'
