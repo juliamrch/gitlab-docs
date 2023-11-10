@@ -1673,9 +1673,9 @@ sections:
                 doc_url: 'ee/ci/yaml/inputs.html'
               - doc_title: Workflow examples
                 doc_url: 'ee/ci/yaml/workflow.html'
-              - doc_title: CI/CD Components
+              - doc_title: CI/CD components
                 doc_url: 'ee/ci/components/'
-              - doc_title: CI/CD Catalog
+              - doc_title: CI/CD catalog
                 doc_url: 'ee/ci/components/catalog.html'
           - doc_title: Runners
             doc_url: 'runner/'
