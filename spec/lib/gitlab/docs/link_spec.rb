@@ -6,7 +6,7 @@ describe Gitlab::Docs::Link do
   let(:page) { instance_double(Gitlab::Docs::Page) }
   let(:href) { '../some/page.html#some-anchor' }
 
-  subject { described_class.new(href, page) }
+  subject(:link) { described_class.new(href, page) }
 
   describe '#to_anchor?' do
     context 'when link contains anchor name' do
@@ -66,7 +66,7 @@ describe Gitlab::Docs::Link do
       let(:href) { 'https://gitlab.com/some/page.html' }
 
       it 'raises an error' do
-        expect { subject.absolute_path }.to raise_error(RuntimeError)
+        expect { link.absolute_path }.to raise_error(RuntimeError)
       end
     end
 
@@ -74,7 +74,7 @@ describe Gitlab::Docs::Link do
       let(:href) { '../some/page.html' }
 
       it 'expands relative link' do
-        expect(subject.absolute_path).to eq '/my/some/page.html'
+        expect(link.absolute_path).to eq '/my/some/page.html'
       end
     end
 
@@ -82,7 +82,7 @@ describe Gitlab::Docs::Link do
       let(:href) { '/some/page.html' }
 
       it 'expands absolute path' do
-        expect(subject.absolute_path).to eq '/nanoc/some/page.html'
+        expect(link.absolute_path).to eq '/nanoc/some/page.html'
       end
     end
   end
@@ -92,7 +92,7 @@ describe Gitlab::Docs::Link do
       let(:href) { '#some-anchor' }
 
       it 'returns the page it is assigned by itself' do
-        expect(subject.destination_page).to eq page
+        expect(link.destination_page).to eq page
       end
     end
 
@@ -109,7 +109,7 @@ describe Gitlab::Docs::Link do
           .with('/my/docs/some/page.html')
           .and_return(destination)
 
-        expect(subject.destination_page).to eq destination
+        expect(link.destination_page).to eq destination
       end
     end
   end
@@ -118,31 +118,31 @@ describe Gitlab::Docs::Link do
     it 'returns page file' do
       expect(page).to receive(:file)
 
-      subject.source_file
+      link.source_file
     end
   end
 
   describe '#destination_page_not_found?' do
     before do
       allow(page).to receive(:directory).and_return('/my/dir')
-      allow(subject).to receive(:destination_file)
+      allow(link).to receive(:destination_file)
         .and_return(instance_double(Gitlab::Docs::Page, exists?: false))
     end
 
     it 'returns false if page does not exist' do
-      expect(subject.destination_page_not_found?).to be true
+      expect(link.destination_page_not_found?).to be true
     end
   end
 
   describe '#destination_anchor_not_found?' do
     before do
       allow(page).to receive(:directory).and_return('/my/dir')
-      allow(subject).to receive(:destination_file)
+      allow(link).to receive(:destination_file)
         .and_return(instance_double(Gitlab::Docs::Page, has_anchor?: false))
     end
 
     it 'returns false if anchor does not exist' do
-      expect(subject.destination_anchor_not_found?).to be true
+      expect(link.destination_anchor_not_found?).to be true
     end
   end
 end
