@@ -60,12 +60,10 @@ describe Gitlab::Navigation::Section do
   end
 
   describe '#children' do
-    subject { section.children }
+    subject(:section_children) { section.children }
 
     it 'returns a list of children' do
-      children = subject
-
-      expect(children.first.title).to eq('Category Title')
+      expect(section_children.first.title).to eq('Category Title')
     end
 
     context 'when categories are empty' do

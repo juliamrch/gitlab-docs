@@ -67,12 +67,10 @@ describe Gitlab::Navigation::Doc do
   end
 
   describe '#children' do
-    subject { doc.children }
+    subject(:doc_children) { doc.children }
 
     it 'returns a list of children' do
-      children = subject
-
-      expect(children.first.title).to eq('Doc Title')
+      expect(doc_children.first.title).to eq('Doc Title')
     end
 
     context 'when docs are empty' do

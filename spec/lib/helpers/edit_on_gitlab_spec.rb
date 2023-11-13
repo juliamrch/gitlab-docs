@@ -14,7 +14,7 @@ RSpec.describe Nanoc::Helpers::EditOnGitLab do
     item.new(identifier, content_filename)
   end
 
-  subject { mock_class.edit_on_gitlab(mock_item, editor: editor) }
+  subject(:edit_on_gitlab) { mock_class.edit_on_gitlab(mock_item, editor: editor) }
 
   describe '#edit_on_gitlab' do
     using RSpec::Parameterized::TableSyntax
@@ -36,14 +36,14 @@ RSpec.describe Nanoc::Helpers::EditOnGitLab do
 
     with_them do
       it 'returns correct url for identifier and editor' do
-        expect(subject).to eq(expected_url)
+        expect(edit_on_gitlab).to eq(expected_url)
       end
     end
 
     context 'with unknown editor' do
       let(:editor) { :word }
 
-      it { expect { subject }.to raise_error("Unknown editor: word") }
+      it { expect { edit_on_gitlab }.to raise_error("Unknown editor: word") }
     end
   end
 end
