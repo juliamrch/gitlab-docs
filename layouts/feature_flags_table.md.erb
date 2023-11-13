@@ -54,7 +54,7 @@ GitLab features are developed by
 GitLab features [are delivered](https://about.gitlab.com/handbook/engineering/releases/):
 
 - Continuously for GitLab SaaS.
-- On the 22nd of every month for GitLab self-managed.
+- Every month on the [release date](https://about.gitlab.com/releases/) for GitLab self-managed.
 
 <% all_ffs = feature_flags_yaml[:products].map { |_, ffs| ffs }.flatten %>
 <% ff_milestones = all_ffs.group_by { |ff| ff[:milestone].to_s || 'Not defined' }.sort_by { |milestone, _| milestone } %>
