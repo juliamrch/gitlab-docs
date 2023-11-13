@@ -16,13 +16,13 @@ describe Gitlab::Navigation do
   end
 
   describe '#nav_items' do
-    subject { navigation.nav_items }
+    subject(:navigation_items) { navigation.nav_items }
 
     context 'when yaml configuration for project does not exist' do
       let(:item) { instance_double(Nanoc::Core::CompilationItemView, path: '/ee/user/README.html', identifier: instance_double(Nanoc::Core::Identifier, to_s: '/ee/user/README.md')) }
 
       it 'returns default sections' do
-        sections = subject[:sections]
+        sections = navigation_items[:sections]
         section = sections.first
 
         expect(section.title).to eq('Default Section')

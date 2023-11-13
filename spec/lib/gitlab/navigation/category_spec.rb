@@ -68,12 +68,10 @@ describe Gitlab::Navigation::Category do
   end
 
   describe '#children' do
-    subject { category.children }
+    subject(:category_children) { category.children }
 
     it 'returns a list of children' do
-      children = subject
-
-      expect(children.first.title).to eq('Doc Title')
+      expect(category_children.first.title).to eq('Doc Title')
     end
 
     context 'when docs are empty' do

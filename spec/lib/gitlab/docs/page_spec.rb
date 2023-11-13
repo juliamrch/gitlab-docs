@@ -9,9 +9,7 @@ require 'gitlab/docs/element'
 require 'gitlab/docs/document'
 
 describe Gitlab::Docs::Page do
-  subject do
-    described_class.new('some/file.html')
-  end
+  subject(:page) { described_class.new('some/file.html') }
 
   context 'when file exists' do
     before do
@@ -39,13 +37,13 @@ describe Gitlab::Docs::Page do
 
     describe '#links' do
       it 'collects links on a page' do
-        expect(subject.links.count).to eq 4
+        expect(page.links.count).to eq 4
       end
     end
 
     describe '#hrefs' do
       it 'collects all hrefs' do
-        expect(subject.hrefs).to match_array %w[../link.html#my-anchor
+        expect(page.hrefs).to match_array %w[../link.html#my-anchor
           #internal-anchor
           #internal-anchor-2
           #utf-8-id-✔]
@@ -54,31 +52,31 @@ describe Gitlab::Docs::Page do
 
     describe '#ids' do
       it 'collects all ids' do
-        expect(subject.ids).to match_array %w[internal-anchor
+        expect(page.ids).to match_array %w[internal-anchor
           utf-8-id-✔]
       end
     end
 
     describe '#has_anchor?' do
       it 'returns true when anchor exists on a page' do
-        expect(subject).to have_anchor('internal-anchor')
+        expect(page).to have_anchor('internal-anchor')
       end
 
       it 'returns false when anchors does not exist' do
-        expect(subject).not_to have_anchor('internal-anchor-2')
+        expect(page).not_to have_anchor('internal-anchor-2')
       end
 
       it 'returns true when UTF-8 encoded anchors are compared' do
-        expect(subject).to have_anchor('utf-8-id-✔')
-        expect(subject).to have_anchor('utf-8-id-%E2%9C%94')
-        expect(subject).to have_anchor('utf-8-id-%e2%9c%94')
+        expect(page).to have_anchor('utf-8-id-✔')
+        expect(page).to have_anchor('utf-8-id-%E2%9C%94')
+        expect(page).to have_anchor('utf-8-id-%e2%9c%94')
       end
     end
   end
 
   describe '#directory' do
     it 'returns base directory of a file' do
-      expect(subject.directory).to eq 'some'
+      expect(page.directory).to eq 'some'
     end
   end
 

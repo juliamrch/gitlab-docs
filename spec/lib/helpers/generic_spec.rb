@@ -22,7 +22,7 @@ RSpec.describe Nanoc::Helpers::Generic do
   describe '#docs_section' do
     using RSpec::Parameterized::TableSyntax
 
-    subject { mock_class.docs_section(mock_item.title, mock_item.path) }
+    subject(:docs_section) { mock_class.docs_section(mock_item.title, mock_item.path) }
 
     where(:path, :title, :expected_section_title) do
       "/ee/tutorials/" | "Learn GitLab with tutorials" | "Tutorials"
@@ -35,7 +35,7 @@ RSpec.describe Nanoc::Helpers::Generic do
 
     with_them do
       it "returns the section title for the given path" do
-        expect(subject).to eq(expected_section_title)
+        expect(docs_section).to eq(expected_section_title)
       end
     end
   end
@@ -214,7 +214,7 @@ RSpec.describe Nanoc::Helpers::Generic do
   describe '#docs_breadcrumb_list' do
     using RSpec::Parameterized::TableSyntax
 
-    subject { mock_class.docs_breadcrumb_list(mock_item.path) }
+    subject(:docs_breadcrumb_list) { mock_class.docs_breadcrumb_list(mock_item.path) }
 
     where(:path, :expected_breadcrumb_list) do
       "/ee/tutorials/" | "Tutorials"
@@ -226,13 +226,13 @@ RSpec.describe Nanoc::Helpers::Generic do
 
     with_them do
       it "returns the breadcrumb trail for the given path" do
-        expect(subject).to eq(expected_breadcrumb_list)
+        expect(docs_breadcrumb_list).to eq(expected_breadcrumb_list)
       end
     end
   end
 
   describe '#get_release_dates' do
-    subject { mock_class.get_release_dates }
+    subject(:release_dates) { mock_class.get_release_dates }
 
     valid_yaml_content = "- version: '18.0'\n  date: '2025-05-15'"
     invalid_yaml_content = "version: '18.0'date: 2025-05-15'"
@@ -240,25 +240,25 @@ RSpec.describe Nanoc::Helpers::Generic do
     it 'returns a JSON array when the YAML is valid' do
       allow(Net::HTTP).to receive(:get_response).and_return(Net::HTTPSuccess.new('1.1', '200', 'OK'))
       allow_any_instance_of(Net::HTTPSuccess).to receive(:body).and_return(valid_yaml_content)
-      expect(subject).to be_a(String)
+      expect(release_dates).to be_a(String)
     end
 
     it 'returns an empty JSON array when the YAML is invalid' do
       allow(Net::HTTP).to receive(:get_response).and_return(Net::HTTPSuccess.new('1.1', '200', 'OK'))
       allow_any_instance_of(Net::HTTPSuccess).to receive(:body).and_return(invalid_yaml_content)
       allow(mock_class).to receive(:warn).with('Error getting release dates - (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1')
-      expect(subject).to eq("[]")
+      expect(release_dates).to eq("[]")
     end
 
     it 'returns an empty JSON array on HTTP error' do
       allow(Net::HTTP).to receive(:get_response).and_return(Net::HTTPServerError.new('1.1', '500', 'Internal Server Error'))
-      expect(subject).to eq("[]")
+      expect(release_dates).to eq("[]")
     end
 
     it 'returns an empty JSON array on other errors' do
       allow(Net::HTTP).to receive(:get_response).and_raise(StandardError.new('Some error message'))
       allow(mock_class).to receive(:warn).with('Error getting release dates - Some error message')
-      expect(subject).to eq("[]")
+      expect(release_dates).to eq("[]")
     end
   end
 
