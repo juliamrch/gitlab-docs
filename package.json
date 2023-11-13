@@ -45,7 +45,7 @@
     "markdownlint-cli": "^0.37.0",
     "markdownlint-cli2": "^0.10.0",
     "postcss": "^8.4.31",
-    "prettier": "^3.0.3",
+    "prettier": "^3.1.0",
     "rollup": "^4.4.0",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-import-css": "^3.3.5",
