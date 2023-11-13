@@ -3242,6 +3242,8 @@ sections:
                     doc_url: 'ee/development/database/database_query_comments.html'
                   - doc_title: Query Recorder
                     doc_url: 'ee/development/database/query_recorder.html'
+                  - doc_title: Single Table Inheritance
+                    doc_url: 'ee/development/database/single_table_inheritance.html'
                   - doc_title: SQL guidelines
                     doc_url: 'ee/development/sql.html'
                   - doc_title: Strings and the Text data type
