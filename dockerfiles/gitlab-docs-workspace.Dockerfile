@@ -34,4 +34,7 @@ USER 5001
 # See https://asdf-vm.com/guide/getting-started.html#official-download
 RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v${ASDF_VERSION} && \
     echo ". $HOME/.asdf/asdf.sh" >> $HOME/.bashrc && \
-    ASDF_DIR="${HOME}/.asdf" && . "${HOME}"/.asdf/asdf.sh
+    ASDF_DIR="${HOME}/.asdf" && . "${HOME}"/.asdf/asdf.sh && \
+    # Add preview instructions when opening a terminal in a workspace
+    echo "echo" >> $HOME/.bashrc && \
+    echo "echo For information on how to preview documentation, see: \<https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/setup.md\>." >> $HOME/.bashrc
