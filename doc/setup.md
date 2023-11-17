@@ -2,10 +2,11 @@
 
 You can set up, compile, update, and preview the GitLab Docs site locally.
 
-Alternatively, you can either:
+Alternatively, you can use either:
 
-- Use [GitPod](#using-gitpod).
-- Use [GDK](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitlab_docs.md), if you already
+- [GitPod](#using-gitpod).
+- A [Workspace](#using-a-workspace).
+- [GDK](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitlab_docs.md), if you already
   have GDK configured.
 
 ## Set up GitLab Docs locally
@@ -164,6 +165,33 @@ To commit and push changes:
    commit your changes.
 1. Push your changes by selecting the **Synchronize changes** action in the bottom blue toolbar. If Gitpod asks you how you want to
    synchronize your changes, select **Push and pull**.
+
+## Using a workspace
+
+[Workspaces](https://docs.gitlab.com/ee/user/workspace/index.html) provide an environment for opening the `gitlab-docs`
+project in a running Docker container where you can preview GitLab documentation.
+
+To open GitLab Docs in a workspace
+
+1. Go to the `gitlab-docs` project page: <https://gitlab.com/gitlab-org/gitlab-docs>.
+1. Next to the **Find file** button, select **Edit**.
+1. Select **New workspace**.
+1. In the **Select cluster agent** dropdown, select the only option available.
+1. Select **Create workspace**.
+1. In the **Preview** column, wait for a link to appear and then select the link.
+
+The workspace opens with a view of the the `gitlab-docs` source code.
+
+To preview documentation:
+
+1. From the hamburger menu, select **Terminal** > **New Terminal**.
+1. In the terminal window, run `make setup`.
+1. (Optional) To make all the GitLab documentation content available, run `bundle exec rake clone_repositories`.
+1. Run `make compile`.
+1. To load the documentation preview, run `bundle exec nanoc view --host 0.0.0.0`.
+
+The preview is available at a URL with the following pattern: `https://3000-workspace-<...>.workspaces.gitlab.dev`,
+which is based on the URL of the workspace.
 
 ## Troubleshooting
 
