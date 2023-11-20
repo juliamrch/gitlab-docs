@@ -51,7 +51,8 @@ fi
 
 # shellcheck disable=2059
 printf "${COLOR_GREEN}INFO: Replacing relative URLs in $INPUT for HTML files...${COLOR_RESET}\n"
-find "${INPUT}" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e 's|href="/ee/|href="/'"$VER"'/ee/|g' \
+find "${INPUT}" -type f -name '*.html' -print0 | xargs -0 -n 2 -P 0 "$SED" -i \
+                                                                    -e 's|href="/ee/|href="/'"$VER"'/ee/|g' \
                                                                     -e 's|href="/runner/|href="/'"$VER"'/runner/|g' \
                                                                     -e 's|href="/omnibus/|href="/'"$VER"'/omnibus/|g' \
                                                                     -e 's|href="/charts/|href="/'"$VER"'/charts/|g' \
@@ -79,7 +80,8 @@ find "${INPUT}" -type f -name '*.js' -print0 | xargs -0 "$SED" -i -e 's|/search/
 #
 # shellcheck disable=2059
 printf "${COLOR_GREEN}INFO: Replacing full URLs in $INPUT for HTML files...${COLOR_RESET}\n"
-find "${INPUT}" -type f -name '*.html' -print0 | xargs -0 "$SED" -i -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/ee/|href="/'"$VER"'/ee/|g' \
+find "${INPUT}" -type f -name '*.html' -print0 | xargs -0 -n 2 -P 0 "$SED" -i \
+                                                                    -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/ee/|href="/'"$VER"'/ee/|g' \
                                                                     -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/runner/|href="/'"$VER"'/runner/|g' \
                                                                     -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/omnibus/|href="/'"$VER"'/omnibus/|g' \
                                                                     -e '/\(rel="canonical"\|property="og:url"\)/! s|href="https://docs.gitlab.com/charts/|href="/'"$VER"'/charts/|g' \

@@ -71,10 +71,17 @@ RUN if [ "$SEARCH_BACKEND" = "lunr" ]; then make build-lunr-index; fi
 #    while omitting the trainling slash will copy the directory as well.
 #    We want the trailing slash. More info:
 #    https://github.com/tdewolff/minify/blob/master/cmd/minify/README.md#directories
+# 3. We move the end result to dest/<version>/, because of the way COPY works
+#    in the next stage. If source is a directory, the entire contents of the
+#    directory are copied, including filesystem metadata. The directory itself
+#    is not copied, just its contents.
+#    More info: https://docs.docker.com/engine/reference/builder/#copy
 #
-RUN scripts/normalize-links.sh public $VER   \
-    && mkdir dest/                           \
-    && scripts/minify-assets.sh dest/ public/
+RUN scripts/normalize-links.sh public $VER    \
+    && mkdir $VER                             \
+    && scripts/minify-assets.sh $VER/ public/ \
+    && mkdir dest                             \
+    && mv $VER dest/
 
 #- End of builder build stage -#
 
@@ -84,10 +91,13 @@ RUN scripts/normalize-links.sh public $VER   \
 # to an NGINX Docker image.
 FROM nginx:stable-alpine
 
-# Clean out any existing HTML files, and copy the HTML from the builder stage
-# to the default location for NGINX.
+# Clean out any existing HTML files
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder /source/dest /usr/share/nginx/html/${VER}
+
+# Copy the HTML from the builder stage to the default location for NGINX.
+# The trailing slashes of the source and destination directories matter.
+# https://docs.docker.com/engine/reference/builder/#copy
+COPY --from=builder /source/dest/ /usr/share/nginx/html/
 
 # Make an index.html and 404.html which will redirect / to /${VER}/
 RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /usr/share/nginx/html/index.html \
