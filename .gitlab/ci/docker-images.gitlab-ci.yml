@@ -286,13 +286,15 @@ image:docs-latest:
   script:
     - docker buildx build
              --build-arg NANOC_ENV=${NANOC_ENV}
-             --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
              --push
 
 #
 # Test the GitLab docs latest Docker image if changes made to its Dockerfile
+# We need to specify an output (similar to --push), otherwise the build result
+# will only remain in the build cache. We use --load to load the image into
+# Docker.
 #
 test:image:docs-latest:
   extends:
@@ -304,8 +306,17 @@ test:image:docs-latest:
     DOCKERFILE: latest.Dockerfile
   needs: []
   script:
-    - docker buildx build -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker buildx build
+             --build-arg NANOC_ENV=${NANOC_ENV}
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
+             --load
     - docker run --rm $IMAGE_NAME ls -l /usr/share/nginx/html
+    - versions_image=$(docker run --rm $IMAGE_NAME ls -1 /usr/share/nginx/html | head -n 3)
+    - versions_dockerfile=$(grep COPY latest.Dockerfile | cut -d ' ' -f2 | cut  -d ':' -f2 | sort -u)
+    - echo $versions_image
+    - echo $versions_dockerfile
+    - if [ "$versions_image" = "$versions_dockerfile" ]; then echo "OK"; else echo "Versions mismatch" && exit 1 ; fi
 
 #
 # Build the archives image that is deployed at https://archives.docs.gitlab.com
