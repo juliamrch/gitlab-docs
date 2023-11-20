@@ -178,8 +178,13 @@ image:docs-single:
 
 #
 # Test the GitLab docs single version Docker image if changes made to its Dockerfile
+# We need to specify an output (similar to --push), otherwise the build result
+# will only remain in the build cache. We use --load to load the image into
+# Docker.
 #
 test:image:docs-single:
+  tags:
+    - saas-linux-medium-amd64
   extends:
     - .docker_prepare
     - .rules_docker_single_images_tests
@@ -197,6 +202,10 @@ test:image:docs-single:
              --build-arg SEARCH_BACKEND="google"
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
+             --load
+    - version=$(docker run --rm $IMAGE_NAME ls -1 /usr/share/nginx/html/ | grep -v html)
+    - echo $version
+    - if [ "$version" = "$GITLAB_VERSION" ]; then echo "OK"; else exit 1 ; fi
 
 #
 # Final Docker image containing a single version with lunr.js enabled
@@ -233,6 +242,8 @@ image:docs-single-lunrjs:
 # if changes made to its Dockerfile
 #
 test:image:docs-single-lunrjs:
+  tags:
+    - saas-linux-medium-amd64
   extends:
     - .docker_prepare
     - .rules_docker_single_images_tests
@@ -251,6 +262,7 @@ test:image:docs-single-lunrjs:
              --build-arg SEARCH_BACKEND="lunr"
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
+             --load
     - make check-lunr-index
 
 #
