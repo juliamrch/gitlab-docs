@@ -150,6 +150,8 @@ test:image:docs-lint-html:
 # It is based on single.Dockerfile for each branch
 #
 image:docs-single:
+  tags:
+    - saas-linux-medium-amd64
   extends:
     - .docker_prepare
     - .rules_docker_single_images
@@ -212,6 +214,8 @@ test:image:docs-single:
 # It is based on single.Dockerfile for each branch
 #
 image:docs-single-lunrjs:
+  tags:
+    - saas-linux-medium-amd64
   extends:
     - .docker_prepare
     - .rules_docker_single_images
