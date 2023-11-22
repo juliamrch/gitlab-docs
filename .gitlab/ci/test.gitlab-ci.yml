@@ -70,6 +70,24 @@ check_asdf_installation:
         - .tool-versions
 
 #
+# Check if single.Dockerfile is the same as the X.Y.Dockerfile.
+# Their only difference should be the assignment of the ARG variable,
+# so we can remove this from both files and diff the rest.
+# Runs only on stable branches.
+#
+check_single_dockerfile_template:
+  image: busybox
+  needs: []
+  stage: test
+  script:
+    - sed -i '/ARG VER/d' $CI_COMMIT_REF_NAME.Dockerfile dockerfiles/single.Dockerfile
+    - difference=$(diff $CI_COMMIT_REF_NAME.Dockerfile dockerfiles/single.Dockerfile)
+    - if [ -z $difference ]; then echo OK; else exit 1; fi
+  rules:
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Stable branch pipeline"'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "MR pipeline (stable backport)"'
+
+#
 # Run rspec tests
 #
 rspec:
