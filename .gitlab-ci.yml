@@ -68,3 +68,6 @@ workflow:
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
       variables:
         DOCS_PROJECT_PIPELINE_TYPE: "Stable branch pipeline"
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^\d{1,2}\.\d{1,2}$/'
+      variables:
+        DOCS_PROJECT_PIPELINE_TYPE: "Stable branch pipeline (backport)"
