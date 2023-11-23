@@ -1120,6 +1120,8 @@ sections:
                 doc_url: 'ee/user/group/manage.html'
               - doc_title: Group access and permissions
                 doc_url: 'ee/user/group/access_and_permissions.html'
+              - doc_title: Manage group SSH certificates
+                doc_url: 'ee/user/group/ssh_certificates.html'
               - doc_title: Moderate users
                 doc_url: 'ee/user/group/moderate_users.html'
               - doc_title: Custom group-level project templates
