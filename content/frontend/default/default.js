@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     },
     render(createElement) {
       return createElement(DocsBanner, {
-        props: { text: surveyBanner.dataset.content, icon: 'tanuki', variant: 'info' },
+        props: { text: surveyBanner.dataset.content, variant: 'info' },
       });
     },
   });

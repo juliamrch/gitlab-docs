@@ -1,5 +1,5 @@
 <script>
-import { GlAlert, GlIcon, GlSafeHtmlDirective as SafeHtml } from '@gitlab/ui';
+import { GlAlert, GlSafeHtmlDirective as SafeHtml } from '@gitlab/ui';
 import { getCookie, setCookie } from '../cookies';
 
 export default {
@@ -8,7 +8,6 @@ export default {
   },
   components: {
     GlAlert,
-    GlIcon,
   },
   props: {
     text: {
@@ -18,11 +17,6 @@ export default {
     variant: {
       type: String,
       required: true,
-    },
-    icon: {
-      type: String,
-      required: false,
-      default: '',
     },
     isSticky: {
       type: Boolean,
@@ -64,10 +58,9 @@ export default {
     :variant="variant"
     :dismissible="dismissible"
     :show-icon="false"
-    class="gl-font-base gl-docs gl-mt-6 gl-z-index-3"
+    class="gl-docs gl-mt-6 gl-z-index-3"
     @dismiss="dismissAlert()"
   >
-    <gl-icon v-if="icon" :name="icon" size="14" class="gl-mr-3 gl-vertical-align-middle!" />
-    <div v-safe-html="text" class="gl-display-inline-block"></div>
+    <div v-safe-html="text" class="gl-line-height-24 gl-layout-w-limited gl-m-auto"></div>
   </gl-alert>
 </template>
