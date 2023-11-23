@@ -726,6 +726,9 @@ sections:
                 docs:
                   - doc_title: Configure Gitaly
                     doc_url: 'ee/administration/gitaly/configure_gitaly.html'
+                    docs:
+                      - doc_title: TLS support
+                        doc_url: 'ee/administration/gitaly/tls_support.html'
                   - doc_title: Configure Gitaly Cluster
                     doc_url: 'ee/administration/gitaly/praefect.html'
                   - doc_title: Monitoring
