@@ -11,15 +11,19 @@ task :clone_repositories do
   task_helpers.products.each_value do |product|
     branch, refspec = task_helpers.retrieve_branch(product['slug'])
 
-    # Limit the pipeline to pull only the repo where the MR is, not all 4, to save time/space.
-    # First we check if the branch on the docs repo is other than the default branch and
-    # then we skip if the remote branch variable is the default branch name. Finally,
-    # check if the pipeline was triggered via the API (multi-project pipeline)
-    # to exclude the case where we create a branch right off the gitlab-docs
-    # project.
-    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] \
-      && branch == ENV['CI_DEFAULT_BRANCH'] \
-      && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
+    # The following is used only in review apps triggered from one of the five
+    # products. It limits the pipeline to pull only the repo where the MR is, not
+    # all five, to save time. If ALL of the following are true, skip the
+    # clone (remember, this runs in gitlab-docs):
+    #
+    # 1. If the pipeline was triggered via the API (multi-project pipeline)
+    #    (to exclude the case where we create a branch off gitlab-docs)
+    # 2. If the remote branch is the upstream's product default branch name
+    #    (which means BRANCH_<slug> is missing, so we default to the default
+    #    branch, see the retrieve_branch method).
+    #
+    next if ENV["CI_PIPELINE_SOURCE"] == 'pipeline' \
+      && branch == product["default_branch"]
 
     puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Cloning branch '#{branch}' of #{product['repo']}..#{TaskHelpers::COLOR_CODE_RESET}"
 

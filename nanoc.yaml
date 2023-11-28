@@ -89,26 +89,31 @@ products:
     repo: 'https://gitlab.com/gitlab-org/gitlab.git'
     project_dir: '../gitlab'
     content_dir: '../gitlab/doc'
+    default_branch: 'master'
   runner:
     slug: 'runner'
     repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
     project_dir: '../gitlab-runner'
     content_dir: '../gitlab-runner/docs'
+    default_branch: 'main'
   omnibus:
     slug: 'omnibus'
     repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git'
     project_dir: '../omnibus-gitlab'
     content_dir: '../omnibus-gitlab/doc'
+    default_branch: 'master'
   charts:
     slug: 'charts'
     repo: 'https://gitlab.com/gitlab-org/charts/gitlab.git'
     project_dir: '../charts-gitlab'
     content_dir: '../charts-gitlab/doc'
+    default_branch: 'master'
   operator:
     slug: 'operator'
     repo: 'https://gitlab.com/gitlab-org/cloud-native/gitlab-operator.git'
     project_dir: '../gitlab-operator'
     content_dir: '../gitlab-operator/doc'
+    default_branch: 'master'
 
 checks:
   internal_links:
