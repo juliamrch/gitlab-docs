@@ -2943,6 +2943,8 @@ sections:
                     doc_url: 'ee/development/ai_features/duo_chat.html'
                   - doc_title: Working with prompts
                     doc_url: 'ee/development/ai_features/prompts.html'
+                  - doc_title: Glossary
+                    doc_url: 'ee/development/ai_features/glossary.html'
               - doc_title: Avoiding required stops
                 doc_url: 'ee/development/avoiding_required_stops.html'
               - doc_title: Changelog entries
