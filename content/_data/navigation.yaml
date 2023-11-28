@@ -727,6 +727,8 @@ sections:
                   - doc_title: Configure Gitaly
                     doc_url: 'ee/administration/gitaly/configure_gitaly.html'
                     docs:
+                      - doc_title: Concurrency limiting
+                        doc_url: 'ee/administration/gitaly/concurrency_limiting.html'
                       - doc_title: TLS support
                         doc_url: 'ee/administration/gitaly/tls_support.html'
                   - doc_title: Configure Gitaly Cluster
