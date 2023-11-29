@@ -395,12 +395,12 @@ p.result-snippet {
     color: inherit;
   }
 }
-.docs-badges-wrapper:not(:first-child) {
-  margin-left: -0.5rem;
-}
 // Badges in headings
 .badge-heading-true  span.gl-badge {
   vertical-align: middle;
+}
+.badge-heading-true:not(:first-of-type) {
+  margin-left: -0.5rem;
 }
 // Badges in regular content
 .badge-heading-false span.gl-badge {
