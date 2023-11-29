@@ -1432,7 +1432,7 @@ sections:
             docs:
               - doc_title: 'Tutorial: Make your first Git commit'
                 doc_url: 'ee/tutorials/make_first_git_commit/'
-              - doc_title: 'Tutorial: How to update Git commit messages'
+              - doc_title: 'Tutorial: Update Git commit messages'
                 doc_url: 'ee/tutorials/update_commit_messages/'
               - doc_title: Concepts
                 doc_url: 'ee/topics/git/terminology.html'
