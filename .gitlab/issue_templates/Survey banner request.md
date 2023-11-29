@@ -9,4 +9,4 @@ Fill in the following information:
 - Date to be unpublished:
 
 /label ~"Category:Docs Site" ~"survey banner"
-/assign @axil
+@axil @kpaizee @sarahgerman
