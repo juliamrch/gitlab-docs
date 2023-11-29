@@ -22,7 +22,7 @@ task :clone_repositories do
     #    (which means BRANCH_<slug> is missing, so we default to the default
     #    branch, see the retrieve_branch method).
     #
-    next if ENV["CI_PIPELINE_SOURCE"] == 'pipeline' \
+    next if ENV["CI_PIPELINE_SOURCE"] == 'trigger' \
       && branch == product["default_branch"]
 
     puts "\n#{TaskHelpers::COLOR_CODE_GREEN}INFO: Cloning branch '#{branch}' of #{product['repo']}..#{TaskHelpers::COLOR_CODE_RESET}"
@@ -65,6 +65,11 @@ end
 
 desc 'Generate feature flags data file'
 task :generate_feature_flags do
+  # Skip this task if the pipeline was triggered via the API (multi-project pipeline)
+  # and the TOP_UPSTREAM_SOURCE_PROJECT variable is not gitlab-org/gitlab.
+  next if ENV["CI_PIPELINE_SOURCE"] == 'trigger' \
+    && ENV["TOP_UPSTREAM_SOURCE_PROJECT"] != 'gitlab-org/gitlab'
+
   feature_flags_dir = Pathname.new('..').join('gitlab', 'config', 'feature_flags').expand_path
   feature_flags_ee_dir = Pathname.new('..').join('gitlab', 'ee', 'config', 'feature_flags').expand_path
 
