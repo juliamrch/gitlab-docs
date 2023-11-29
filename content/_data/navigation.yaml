@@ -3000,6 +3000,8 @@ sections:
                     doc_url: 'ee/development/merge_request_concepts/rate_limits.html'
                   - doc_title: Frontend overview
                     doc_url: 'ee/development/merge_request_concepts/diffs/frontend.html'
+                  - doc_title: Mergeability framework
+                    doc_url: 'ee/development/merge_request_concepts/mergeability_framework.html'
                   - doc_title: Performance guidelines
                     doc_url: 'ee/development/merge_request_concepts/performance.html'
               - doc_title: Merge request workflow
