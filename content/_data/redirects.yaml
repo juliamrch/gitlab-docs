@@ -480,3 +480,291 @@ redirects:
   - from: /ee/administration/audit_event_streaming.html
     to: /ee/administration/audit_event_streaming/index.html
     remove_date: 2024-06-12
+  - from: /ee/administration/troubleshooting/ssl.html
+    to: /omnibus/settings/ssl/ssl_troubleshooting.html
+    remove_date: 2024-07-27
+  - from: /ee/architecture/blueprints/cells/cells-feature-admin-area.html
+    to: /ee/architecture/blueprints/cells/impacted_features/admin-area.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-agent-for-kubernetes.html
+    to: /ee/architecture/blueprints/cells/impacted_features/agent-for-kubernetes.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-backups.html
+    to: /ee/architecture/blueprints/cells/impacted_features/backups.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-ci-runners.html
+    to: /ee/architecture/blueprints/cells/impacted_features/ci-runners.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-container-registry.html
+    to: /ee/architecture/blueprints/cells/impacted_features/container-registry.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-contributions-forks.html
+    to: /ee/architecture/blueprints/cells/impacted_features/contributions-forks.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-data-migration.html
+    to: /ee/architecture/blueprints/cells/impacted_features/data-migration.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-database-sequences.html
+    to: /ee/architecture/blueprints/cells/impacted_features/database-sequences.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-explore.html
+    to: /ee/architecture/blueprints/cells/impacted_features/explore.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-git-access.html
+    to: /ee/architecture/blueprints/cells/impacted_features/git-access.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-gitlab-pages.html
+    to: /ee/architecture/blueprints/cells/impacted_features/gitlab-pages.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-global-search.html
+    to: /ee/architecture/blueprints/cells/impacted_features/global-search.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-graphql.html
+    to: /ee/architecture/blueprints/cells/impacted_features/graphql.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-organizations.html
+    to: /ee/architecture/blueprints/cells/impacted_features/organizations.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-personal-access-tokens.html
+    to: /ee/architecture/blueprints/cells/impacted_features/personal-access-tokens.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-personal-namespaces.html
+    to: /ee/architecture/blueprints/cells/impacted_features/personal-namespaces.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-router-endpoints-classification.html
+    to: /ee/architecture/blueprints/cells/impacted_features/router-endpoints-classification.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-schema-changes.html
+    to: /ee/architecture/blueprints/cells/impacted_features/schema-changes.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-secrets.html
+    to: /ee/architecture/blueprints/cells/impacted_features/secrets.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-snippets.html
+    to: /ee/architecture/blueprints/cells/impacted_features/snippets.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-template.html
+    to: /ee/architecture/blueprints/cells/impacted_features/template.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-uploads.html
+    to: /ee/architecture/blueprints/cells/impacted_features/uploads.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-user-profile.html
+    to: /ee/architecture/blueprints/cells/impacted_features/user-profile.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/cells-feature-your-work.html
+    to: /ee/architecture/blueprints/cells/impacted_features/your-work.html
+    remove_date: 2024-08-17
+  - from: /ee/architecture/blueprints/cells/glossary.html
+    to: /ee/architecture/blueprints/cells/goals.html#glossary
+    remove_date: 2024-08-24
+  - from: /ee/architecture/blueprints/cells/impact.html
+    to: /ee/architecture/blueprints/cells/index.html
+    remove_date: 2024-08-22
+  - from: /ee/ci/introduction/index.html
+    to: /ee/ci/index.html
+    remove_date: 2024-08-24
+  - from: /ee/ci/introduction/
+    to: /ee/ci/index.html
+    remove_date: 2024-08-24
+  - from: /ee/development/database/background_migrations.html
+    to: /ee/development/database/index.html
+    remove_date: 2024-07-11
+  - from: /ee/development/documentation/contribute.html
+    to: /ee/development/documentation/index.html
+    remove_date: 2024-07-27
+  - from: /ee/development/testing_guide/end_to_end/package_and_test_pipeline.html
+    to: /ee/development/testing_guide/end_to_end/test_pipelines.html
+    remove_date: 2024-08-08
+  - from: /ee/development/internal_analytics/internal_events/index.html
+    to: /ee/development/internal_analytics/internal_event_tracking/quick_start.html
+    remove_date: 2024-07-27
+  - from: /ee/development/internal_analytics/internal_events/
+    to: /ee/development/internal_analytics/internal_event_tracking/quick_start.html
+    remove_date: 2024-07-27
+  - from: /ee/install/migrate/compare_sm_to_saas.html
+    to: /ee/subscriptions/choosing_subscription.html
+    remove_date: 2024-07-10
+  - from: /ee/integration/glab/index.html
+    to: /ee/editor_extensions/gitlab_cli/index.html
+    remove_date: 2024-07-31
+  - from: /ee/integration/glab/
+    to: /ee/editor_extensions/gitlab_cli/index.html
+    remove_date: 2024-07-31
+  - from: /ee/raketasks/migrate_snippets.html
+    to: /ee/raketasks/index.html
+    remove_date: 2024-07-13
+  - from: /ee/security/project_import_decompressed_archive_size_limits.html
+    to: /ee/administration/settings/import_and_export_settings.html#maximum-decompressed-file-size-for-imported-archives
+    remove_date: 2024-08-02
+  - from: /ee/user/admin_area/monitoring/health_check.html
+    to: /ee/administration/monitoring/health_check.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/reporting/git_abuse_rate_limit.html
+    to: /ee/administration/reporting/git_abuse_rate_limit.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/reporting/ip_addr_restrictions.html
+    to: /ee/administration/reporting/ip_addr_restrictions.html
+    remove_date: 2024-07-13
+  - from: /ee/user/admin_area/reporting/spamcheck.html
+    to: /ee/administration/reporting/spamcheck.html
+    remove_date: 2024-07-13
+  - from: /ee/user/admin_area/settings/account_and_limit_settings.html
+    to: /ee/administration/settings/account_and_limit_settings.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/settings/continuous_integration.html
+    to: /ee/administration/settings/continuous_integration.html
+    remove_date: 2024-07-13
+  - from: /ee/user/admin_area/settings/deprecated_api_rate_limits.html
+    to: /ee/administration/settings/deprecated_api_rate_limits.html
+    remove_date: 2024-07-13
+  - from: /ee/user/admin_area/settings/email.html
+    to: /ee/administration/settings/email.html
+    remove_date: 2024-07-14
+  - from: /ee/user/admin_area/settings/external_authorization.html
+    to: /ee/administration/settings/external_authorization.html
+    remove_date: 2024-07-14
+  - from: /ee/user/admin_area/settings/files_api_rate_limits.html
+    to: /ee/administration/settings/files_api_rate_limits.html
+    remove_date: 2024-07-14
+  - from: /ee/user/admin_area/settings/incident_management_rate_limits.html
+    to: /ee/administration/settings/incident_management_rate_limits.html
+    remove_date: 2024-07-10
+  - from: /ee/user/admin_area/settings/index.html
+    to: /ee/administration/settings/index.html
+    remove_date: 2024-07-10
+  - from: /ee/user/admin_area/settings/
+    to: /ee/administration/settings/index.html
+    remove_date: 2024-07-10
+  - from: /ee/user/admin_area/settings/instance_template_repository.html
+    to: /ee/administration/settings/instance_template_repository.html
+    remove_date: 2024-07-11
+  - from: /ee/user/admin_area/settings/package_registry_rate_limits.html
+    to: /ee/administration/settings/package_registry_rate_limits.html
+    remove_date: 2024-07-11
+  - from: /ee/user/admin_area/settings/project_integration_management.html
+    to: /ee/administration/settings/project_integration_management.html
+    remove_date: 2024-07-11
+  - from: /ee/user/admin_area/settings/protected_paths.html
+    to: /ee/administration/settings/protected_paths.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/settings/push_event_activities_limit.html
+    to: /ee/administration/settings/push_event_activities_limit.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/settings/rate_limit_on_issues_creation.html
+    to: /ee/administration/settings/rate_limit_on_issues_creation.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/settings/rate_limit_on_notes_creation.html
+    to: /ee/administration/settings/rate_limit_on_notes_creation.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/settings/rate_limit_on_pipelines_creation.html
+    to: /ee/administration/settings/rate_limit_on_pipelines_creation.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/settings/rate_limit_on_projects_api.html
+    to: /ee/administration/settings/rate_limit_on_projects_api.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/settings/rate_limit_on_users_api.html
+    to: /ee/administration/settings/rate_limit_on_users_api.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/settings/rate_limits_on_git_ssh_operations.html
+    to: /ee/administration/settings/rate_limits_on_git_ssh_operations.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/settings/rate_limits_on_raw_endpoints.html
+    to: /ee/administration/settings/rate_limits_on_raw_endpoints.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/settings/scim_setup.html
+    to: /ee/administration/settings/scim_setup.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/settings/security_and_compliance.html
+    to: /ee/administration/settings/security_and_compliance.html
+    remove_date: 2024-07-13
+  - from: /ee/user/admin_area/settings/sidekiq_job_limits.html
+    to: /ee/administration/settings/sidekiq_job_limits.html
+    remove_date: 2024-07-13
+  - from: /ee/user/admin_area/settings/sign_in_restrictions.html
+    to: /ee/administration/settings/sign_in_restrictions.html
+    remove_date: 2024-07-13
+  - from: /ee/user/admin_area/settings/sign_up_restrictions.html
+    to: /ee/administration/settings/sign_up_restrictions.html
+    remove_date: 2024-07-13
+  - from: /ee/user/admin_area/settings/slack_app.html
+    to: /ee/administration/settings/slack_app.html
+    remove_date: 2024-07-14
+  - from: /ee/user/admin_area/settings/terms.html
+    to: /ee/administration/settings/terms.html
+    remove_date: 2024-07-13
+  - from: /ee/user/admin_area/settings/terraform_limits.html
+    to: /ee/administration/settings/terraform_limits.html
+    remove_date: 2024-07-13
+  - from: /ee/user/admin_area/settings/third_party_offers.html
+    to: /ee/administration/settings/third_party_offers.html
+    remove_date: 2024-07-13
+  - from: /ee/user/admin_area/settings/usage_statistics.html
+    to: /ee/administration/settings/usage_statistics.html
+    remove_date: 2024-07-13
+  - from: /ee/user/admin_area/settings/user_and_ip_rate_limits.html
+    to: /ee/administration/settings/user_and_ip_rate_limits.html
+    remove_date: 2024-07-14
+  - from: /ee/user/admin_area/settings/visibility_and_access_controls.html
+    to: /ee/administration/settings/visibility_and_access_controls.html
+    remove_date: 2024-07-14
+  - from: /ee/user/admin_area/custom_project_templates.html
+    to: /ee/administration/custom_project_templates.html
+    remove_date: 2024-07-10
+  - from: /ee/user/admin_area/diff_limits.html
+    to: /ee/administration/diff_limits.html
+    remove_date: 2024-07-10
+  - from: /ee/user/admin_area/email_from_gitlab.html
+    to: /ee/administration/email_from_gitlab.html
+    remove_date: 2024-07-10
+  - from: /ee/user/admin_area/external_users.html
+    to: /ee/administration/external_users.html
+    remove_date: 2024-07-10
+  - from: /ee/user/admin_area/geo_sites.html
+    to: /ee/administration/geo_sites.html
+    remove_date: 2024-07-10
+  - from: /ee/user/admin_area/index.html
+    to: /ee/administration/admin_area.html
+    remove_date: 2024-07-11
+  - from: /ee/user/admin_area/
+    to: /ee/administration/admin_area.html
+    remove_date: 2024-07-11
+  - from: /ee/user/admin_area/license.html
+    to: /ee/administration/license.html
+    remove_date: 2024-07-11
+  - from: /ee/user/admin_area/license_file.html
+    to: /ee/administration/license_file.html
+    remove_date: 2024-07-11
+  - from: /ee/user/admin_area/merge_requests_approvals.html
+    to: /ee/administration/merge_requests_approvals.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/moderate_users.html
+    to: /ee/administration/moderate_users.html
+    remove_date: 2024-07-12
+  - from: /ee/user/admin_area/review_abuse_reports.html
+    to: /ee/administration/review_abuse_reports.html
+    remove_date: 2024-07-11
+  - from: /ee/user/admin_area/user_cohorts.html
+    to: /ee/administration/user_cohorts.html
+    remove_date: 2024-07-11
+  - from: /ee/user/application_security/generate_test_vulnerabilities/index.html
+    to: /ee/development/sec/generate_test_vulnerabilities.html
+    remove_date: 2024-08-01
+  - from: /ee/user/application_security/generate_test_vulnerabilities/
+    to: /ee/development/sec/generate_test_vulnerabilities.html
+    remove_date: 2024-08-01
+  - from: /ee/user/clusters/agent/gitops/flux.html
+    to: /ee/user/clusters/agent/gitops.html
+    remove_date: 2024-07-12
+  - from: /ee/user/clusters/agent/gitops/helm.html
+    to: /ee/user/clusters/agent/gitops.html
+    remove_date: 2024-07-22
+  - from: /ee/user/project/integrations/mlflow_client.html
+    to: /ee/user/project/ml/experiment_tracking/mlflow_client.html
+    remove_date: 2024-07-12
+  - from: /ee/user/project/repository/vscode.html
+    to: /ee/editor_extensions/visual_studio_code/index.html
+    remove_date: 2024-07-31
+  - from: /ee/user/project/service_desk.html
+    to: /ee/user/project/service_desk/index.html
+    remove_date: 2024-07-24
