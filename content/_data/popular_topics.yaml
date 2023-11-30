@@ -10,7 +10,7 @@ topics:
   - title: Back up and restore GitLab
     description: Back up and restore your self-managed GitLab instance
     icon: archive
-    url: /ee/raketasks/backup_restore.html
+    url: /ee/administration/backup_restore/index.html
   - title: GitLab groups
     description: Manage multiple projects at the same time
     icon: group
