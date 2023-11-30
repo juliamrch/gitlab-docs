@@ -729,8 +729,12 @@ sections:
                     docs:
                       - doc_title: Concurrency limiting
                         doc_url: 'ee/administration/gitaly/concurrency_limiting.html'
+                      - doc_title: Timeouts
+                        doc_url: 'ee/administration/settings/gitaly_timeouts.html'
                       - doc_title: TLS support
                         doc_url: 'ee/administration/gitaly/tls_support.html'
+                      - doc_title: Reference
+                        doc_url: 'ee/administration/gitaly/reference.html'
                   - doc_title: Configure Gitaly Cluster
                     doc_url: 'ee/administration/gitaly/praefect.html'
                   - doc_title: Monitoring
@@ -739,12 +743,8 @@ sections:
                     doc_url: 'ee/administration/gitaly/recovery.html'
                   - doc_title: Troubleshooting
                     doc_url: 'ee/administration/gitaly/troubleshooting.html'
-                  - doc_title: Gitaly reference
-                    doc_url: 'ee/administration/gitaly/reference.html'
                   - doc_title: Praefect Rake tasks
                     doc_url: 'ee/administration/raketasks/praefect.html'
-                  - doc_title: Gitaly timeouts
-                    doc_url: 'ee/administration/settings/gitaly_timeouts.html'
               - doc_title: Repository storage Rake tasks
                 doc_url: 'ee/administration/raketasks/storage.html'
               - doc_title: List repositories Rake task
