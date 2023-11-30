@@ -95,7 +95,7 @@ export default {
     <gl-form-select
       v-model="selectedVersion"
       :options="archiveOptions"
-      size="sm"
+      class="gl-max-w-20"
       @change="searchArchivedVersion()"
     />
   </div>
