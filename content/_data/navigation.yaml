@@ -1496,6 +1496,9 @@ sections:
                 doc_url: 'ee/user/project/git_attributes.html'
               - doc_title: Git LFS
                 doc_url: 'ee/topics/git/lfs/'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/topics/git/lfs/troubleshooting.html'
               - doc_title: Jupyter notebook files
                 doc_url: 'ee/user/project/repository/jupyter_notebooks/'
               - doc_title: Machine learning model experiments
