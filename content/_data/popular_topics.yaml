@@ -22,7 +22,7 @@ topics:
   - title: Visual Studio Code extension
     description: |
       Perform more of your day-to-day tasks from within VS Code
-    url: /ee/user/project/repository/vscode.html
+    url: /ee/editor_extensions/visual_studio_code/
   - title: Database settings
     description: Configure database settings for your Omnibus GitLab self-managed instance
     icon: table
