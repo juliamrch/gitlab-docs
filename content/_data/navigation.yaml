@@ -1436,8 +1436,6 @@ sections:
                 doc_url: 'ee/tutorials/make_first_git_commit/'
               - doc_title: 'Tutorial: Update Git commit messages'
                 doc_url: 'ee/tutorials/update_commit_messages/'
-              - doc_title: Concepts
-                doc_url: 'ee/topics/git/terminology.html'
               - doc_title: Installing Git
                 doc_url: 'ee/topics/git/how_to_install_git/'
               - doc_title: Command line Git
@@ -1455,8 +1453,6 @@ sections:
               - doc_title: Frequently used commands
                 doc_url: 'ee/topics/git/useful_git_commands.html'
                 docs:
-                  - doc_title: Git add
-                    doc_url: 'ee/topics/git/git_add.html'
                   - doc_title: Unstage
                     doc_url: 'ee/topics/git/unstage.html'
                   - doc_title: Git stash
