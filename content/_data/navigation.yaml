@@ -1436,6 +1436,8 @@ sections:
                 doc_url: 'ee/tutorials/make_first_git_commit/'
               - doc_title: 'Tutorial: Update Git commit messages'
                 doc_url: 'ee/tutorials/update_commit_messages/'
+              - doc_title: Get started
+                doc_url: 'ee/topics/git/get_started.html'
               - doc_title: Installing Git
                 doc_url: 'ee/topics/git/how_to_install_git/'
               - doc_title: Command line Git
