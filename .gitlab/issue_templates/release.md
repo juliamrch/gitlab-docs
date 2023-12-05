@@ -17,7 +17,7 @@ The following terms are used throughout this document:
 - **Stable branch**: This is the branch that matches the GitLab version being released. For example,
   for GitLab 16.0, the stable branch is `16.0`.
 
-### On the 21st of each month
+### On Monday the week of the release
 
 1. [ ] Cross-link to the main MR for the release post: `<add link here>`
    ([Need help finding the MR?](https://gitlab.com/gitlab-com/www-gitlab-com/-/merge_requests?scope=all&state=opened&label_name%5B%5D=release%20post&label_name%5B%5D=blog%20post))
@@ -28,12 +28,6 @@ The following terms are used throughout this document:
    ## :-1: What didn't go well this release?
    ## :chart_with_upwards_trend: What can we improve going forward?
    ```
-
-1. Check for the stable branches that correspond with the release:
-   - [ ] `gitlab`: <https://gitlab.com/gitlab-org/gitlab/-/branches?state=all&sort=updated_desc&search=stable-ee>
-   - [ ] `gitlab-runner`: <https://gitlab.com/gitlab-org/gitlab-runner/-/branches?state=all&sort=updated_desc&search=-stable>
-   - [ ] `omnibus-gitlab`: <https://gitlab.com/gitlab-org/omnibus-gitlab/-/branches?state=all&sort=updated_desc&search=-stable>
-   - [ ] `charts/gitlab`: <https://gitlab.com/gitlab-org/charts/gitlab/-/branches?state=all&sort=updated_desc&search=-stable> (Version number is 9 lower than `gitlab` release, so GitLab 16.X = Charts 7.X)
 
 1. [Create a stable branch and Docker image for the release](#create-a-stable-branch-and-docker-image-for-the-release).
 
@@ -74,14 +68,21 @@ The following terms are used throughout this document:
 
    In case the pipeline fails, see the [troubleshooting section](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-single-job-fails-when-creating-the-docs-stable-branch).
 
-
 You can continue onto the next process immediately, or wait for the release post.
 
-### On the 22nd, or the first business day after
+### On the Thursday of the release, or the day after
 
-After the release post is live on the 22nd, or the next Monday morning if the release post happens on a weekend:
+After the release post is live, or the day after:
 
-1. [ ] Verify that the [pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all) for the stable branch (filter by branch)
+1. Check that the stable branches that correspond with the release are present:
+   - [ ] `gitlab`: <https://gitlab.com/gitlab-org/gitlab/-/branches?state=all&sort=updated_desc&search=stable-ee>
+   - [ ] `gitlab-runner`: <https://gitlab.com/gitlab-org/gitlab-runner/-/branches?state=all&sort=updated_desc&search=-stable>
+   - [ ] `omnibus-gitlab`: <https://gitlab.com/gitlab-org/omnibus-gitlab/-/branches?state=all&sort=updated_desc&search=-stable>
+   - [ ] `charts/gitlab`: <https://gitlab.com/gitlab-org/charts/gitlab/-/branches?state=all&sort=updated_desc&search=-stable> (Version number is 9 lower than `gitlab` release, so GitLab 16.X = Charts 7.X)
+
+   If not, you cannot proceed to the next step, so you'll have to wait.
+1. [ ] Run a new pipeline targeting the docs stable branch after all upstream
+   stable branches have been created. Verify that the [pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all) for the stable branch (filter by branch)
    has passed and created a [Docker image](https://gitlab.com/gitlab-org/gitlab-docs/container_registry/631635?orderBy=NAME&sort=desc&search[]=)
    tagged with the release version. ([If it fails, how do I fix it?](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-single-job-fails-when-creating-the-docs-stable-branch))
    - To filter the list of pipelines to the stable branch, select the **Branch name** filter then manually input the stable branch's name. For example, "Branch name = 16.0".
@@ -104,7 +105,7 @@ After the release post is live on the 22nd, or the next Monday morning if the re
    :mega: The docs <version> release is complete. If you have any feedback about this release, add it to the retro thread in <this issue>.
    ```
 
-After the 22nd of each month:
+After the docs release is successful:
 
 1. [ ] Create a release issue for the next release, and assign it to the TW who completed the
    [release post structural check for the previous milestone](https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks).
