@@ -69,6 +69,8 @@ sections:
             doc_url: 'ee/user/free_push_limit.html'
           - doc_title: Read-only namespaces
             doc_url: 'ee/user/read_only_namespaces.html'
+          - doc_title: Storage
+            doc_url: 'ee/user/usage_quotas.html'
       - category_title: GitLab self-managed
         category_url: 'ee/subscriptions/self_managed/'
         docs:
@@ -82,8 +84,6 @@ sections:
         category_url: 'ee/subscriptions/customers_portal.html'
       - category_title: Quarterly reconciliation
         category_url: 'ee/subscriptions/quarterly_reconciliation.html'
-      - category_title: Storage
-        category_url: 'ee/user/usage_quotas.html'
       - category_title: Compute quota
         category_url: 'ee/ci/pipelines/cicd_minutes.html'
       - category_title: Features available to Starter and Bronze subscribers
