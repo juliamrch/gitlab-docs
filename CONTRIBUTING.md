@@ -33,7 +33,7 @@ When contributing:
 
 - Code, assign merge requests to a [code owner](CODEOWNERS) for review.
 - Global navigation updates, assign merge requests to the
-  [assigned technical writer](https://about.gitlab.com/handbook/product/ux/technical-writing/#assignments) for the
+  [assigned technical writer](https://handbook.gitlab.com/handbook/product/ux/technical-writing/#assignments) for the
   relevant group or project for review. At mention [Suzanne Selhorn](https://gitlab.com/sselhorn), Staff Technical Writer. 
 
 For any other updates, assign to any technical writer for review.
