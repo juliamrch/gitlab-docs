@@ -7,6 +7,59 @@ can see the list of rake tasks with:
 bundle exec rake -T
 ```
 
+## Clone the documentation repositories
+
+> **Note:** This is similar to
+> [`make clone-all-docs-projects`](setup.md#clone-all-documentation-repositories).
+> The Rake task is primarily used when building the site in CI/CD.
+
+The [`clone_repositories` rake task](../lib/tasks/build_site.rake) clones all the
+[documentation repositories](architecture.md):
+
+```shell
+bundle exec rake clone_repositories
+```
+
+The cloned locations are defined in [`nanoc.yaml` under `data_sources`](../nanoc.yaml).
+
+The task clones (with a depth of 1) either all the repositories or only one of them:
+
+- **All repositories:** When the task is run with no evironment variables set,
+  either locally or in a pipeline under `gitlab-docs`.
+- **One repository:** When the task is run with some specific environment
+  variables, usually when a review app is triggered in one of the
+  [upstream projects](#usage-of-clone_repositories-in-an-upstream-review-app).
+
+Available environment variables:
+
+- `REMOVE_BEFORE_CLONE` or `CI`: if either of them is set (the value doesn't matter),
+  the repository to be cloned is removed if it already exists. This is always
+  set in a pipeline since `CI` is set to `true` by default, and it makes sure we're
+  not reusing an old version of the docs in case we land on a runner that already
+  has a docs build.
+
+### Usage of `clone_repositories` in an upstream review app
+
+When you trigger a review app from an upstream project, only that project
+is cloned and built.
+
+The following process describes how this works:
+
+1. You trigger a [review app](https://docs.gitlab.com/ee/development/documentation/review_apps.html)
+   in an upstream project.
+1. The following variables are [set and passed](https://gitlab.com/gitlab-org/gitlab/-/blob/53233de16cafa6544ebe7bfbe41fd65e95645c8e/scripts/trigger-build.rb#L239-337)
+   on the `gitlab-docs` pipeline:
+   - `BRANCH_<project>` is set to the upstream project's branch name, where
+     `<project>` is one of `ee`, `omnibus`, `runner`, `charts`, `operator`.
+   - `CI_PIPELINE_SOURCE` is set to `trigger`.
+1. A minimal pipeline is run in `gitlab-docs` with two jobs:
+   - `compile_upstream_review_app`: builds the site by using the `clone_repositories`
+     Rake task with the environment variables above:
+     1. Iterate over the five products.
+     1. If `CI_PIPELINE_SOURCE` is set to `trigger`, **and** the `BRANCH_<project>` exists,
+        fetch the repository. Otherwise, skip it.
+   - `review`: deploys the artifacts (compiled site) from the previous job in a GCP bucket.
+
 ## Generate the feature flag tables
 
 The [feature flag tables](https://docs.gitlab.com/ee/user/feature_flags.html) are generated
@@ -21,6 +74,11 @@ bundle exec rake generate_feature_flags
 Do this any time you want fresh data from your GitLab checkout.
 
 Any time you rebuild the site using `nanoc`, the feature flags tables are populated with data.
+
+When this Rake task is run as part of an upstream review app,
+`TOP_UPSTREAM_SOURCE_PROJECT` is set to the upstream project's path, and it's skipped if
+it's not `'gitlab-org/gitlab'`. This is used in conjuction with
+[`clone_repositories`](#usage-of-clone_repositories-in-an-upstream-review-app).
 
 ## Clean up redirects
 
