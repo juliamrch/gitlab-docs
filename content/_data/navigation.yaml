@@ -1802,7 +1802,7 @@ sections:
           - doc_title: Variables
             doc_url: 'ee/ci/variables/'
             docs:
-              - doc_title: Predefined variables
+              - doc_title: Predefined CI/CD variables
                 doc_url: 'ee/ci/variables/predefined_variables.html'
               - doc_title: Where variables can be used
                 doc_url: 'ee/ci/variables/where_variables_can_be_used.html'
