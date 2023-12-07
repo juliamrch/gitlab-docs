@@ -1478,42 +1478,15 @@ sections:
                 docs:
                   - doc_title: Syntax and errors
                     doc_url: 'ee/user/project/codeowners/reference.html'
-              - doc_title: Snippets
-                doc_url: 'ee/user/snippets.html'
               - doc_title: Branches
                 doc_url: 'ee/user/project/repository/branches/'
-              - doc_title: Tags
-                doc_url: 'ee/user/project/repository/tags/'
-              - doc_title: Changelogs
-                doc_url: 'ee/user/project/changelogs.html'
-              - doc_title: Default branch
-                doc_url: 'ee/user/project/repository/branches/default.html'
+                docs:
+                  - doc_title: Default branch
+                    doc_url: 'ee/user/project/repository/branches/default.html'
+                  - doc_title: Protected branches
+                    doc_url: 'ee/user/project/protected_branches.html'
               - doc_title: Forks
                 doc_url: 'ee/user/project/repository/forking_workflow.html'
-              - doc_title: GeoJSON files
-                doc_url: 'ee/user/project/repository/geojson.html'
-              - doc_title: Git attributes
-                doc_url: 'ee/user/project/git_attributes.html'
-              - doc_title: Git LFS
-                doc_url: 'ee/topics/git/lfs/'
-                docs:
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/topics/git/lfs/troubleshooting.html'
-              - doc_title: Jupyter notebook files
-                doc_url: 'ee/user/project/repository/jupyter_notebooks/'
-              - doc_title: Machine learning model experiments
-                doc_url: 'ee/user/project/ml/experiment_tracking/'
-              - doc_title: Locked files
-                doc_url: 'ee/user/project/file_lock.html'
-              - doc_title: File Blame
-                doc_url: 'ee/user/project/repository/git_blame.html'
-              - doc_title: File History
-                doc_url: 'ee/user/project/repository/git_history.html'
-              - doc_title: Managing monorepos
-                doc_url: 'ee/user/project/repository/monorepos/'
-                docs:
-                  - doc_title: Observability
-                    doc_url: 'ee/user/project/repository/monorepos/observability.html'
               - doc_title: Mirroring
                 doc_url: 'ee/user/project/repository/mirror/'
                 docs:
@@ -1525,14 +1498,43 @@ sections:
                     doc_url: 'ee/user/project/repository/mirror/push.html'
                   - doc_title: Troubleshooting
                     doc_url: 'ee/user/project/repository/mirror/troubleshooting.html'
-              - doc_title: Protected branches
-                doc_url: 'ee/user/project/protected_branches.html'
-              - doc_title: Protected tags
-                doc_url: 'ee/user/project/protected_tags.html'
-              - doc_title: Push rules
-                doc_url: 'ee/user/project/repository/push_rules.html'
+              - doc_title: Managing monorepos
+                doc_url: 'ee/user/project/repository/monorepos/'
+                docs:
+                  - doc_title: Observability
+                    doc_url: 'ee/user/project/repository/monorepos/observability.html'
+              - doc_title: Git LFS
+                doc_url: 'ee/topics/git/lfs/'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/topics/git/lfs/troubleshooting.html'
               - doc_title: Reduce repository size
                 doc_url: 'ee/user/project/repository/reducing_the_repo_size_using_git.html'
+              - doc_title: Tags
+                doc_url: 'ee/user/project/repository/tags/'
+                docs:
+                  - doc_title: Protected tags
+                    doc_url: 'ee/user/project/protected_tags.html'
+              - doc_title: Changelogs
+                doc_url: 'ee/user/project/changelogs.html'
+              - doc_title: File Blame
+                doc_url: 'ee/user/project/repository/git_blame.html'
+              - doc_title: File History
+                doc_url: 'ee/user/project/repository/git_history.html'
+              - doc_title: Snippets
+                doc_url: 'ee/user/snippets.html'
+              - doc_title: GeoJSON files
+                doc_url: 'ee/user/project/repository/geojson.html'
+              - doc_title: Git attributes
+                doc_url: 'ee/user/project/git_attributes.html'
+              - doc_title: Locked files
+                doc_url: 'ee/user/project/file_lock.html'
+              - doc_title: Jupyter notebook files
+                doc_url: 'ee/user/project/repository/jupyter_notebooks/'
+              - doc_title: Machine learning model experiments
+                doc_url: 'ee/user/project/ml/experiment_tracking/'
+              - doc_title: Push rules
+                doc_url: 'ee/user/project/repository/push_rules.html'
               - doc_title: Signed commits
                 doc_url: 'ee/user/project/repository/signed_commits/'
                 docs:
@@ -1544,8 +1546,6 @@ sections:
                     doc_url: 'ee/user/project/repository/signed_commits/x509.html'
                   - doc_title: X.509 signatures Rake task
                     doc_url: 'ee/raketasks/x509_signatures.html'
-              - doc_title: Syntax highlighting
-                doc_url: 'ee/user/project/highlighting.html'
               - doc_title: Web Editor
                 doc_url: 'ee/user/project/repository/web_editor.html'
               - doc_title: Web IDE
