@@ -108,7 +108,7 @@ After the release post is live, or the day after:
 After the docs release is successful:
 
 1. [ ] Create a release issue for the next release, and assign it to the TW who completed the
-   [release post structural check for the previous milestone](https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks).
+   [release post structural check for the previous milestone](https://handbook.gitlab.com/handbook/marketing/blog/release-posts/managers/).
 1. [ ] **Major releases only.** Update
    [`OutdatedVersions.yml`](https://gitlab.com/gitlab-org/gitlab/-/blob/master/doc/.vale/gitlab/OutdatedVersions.yml)
    with the newly-outdated version.
@@ -119,7 +119,7 @@ After the docs release is successful:
 ## Helpful links
 
 - [Troubleshooting info](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#troubleshooting)
-- [List of upcoming assignees for overall release post](https://about.gitlab.com/handbook/marketing/blog/release-posts/managers/)
+- [List of upcoming assignees for overall release post](https://handbook.gitlab.com/handbook/marketing/blog/release-posts/managers/)
 - [Internal docs for handling the docs release](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md)
 
 /label ~"Technical Writing" ~"type::maintenance" ~"maintenance::refactor" ~"Category:Docs Site" ~release
