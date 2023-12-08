@@ -3783,7 +3783,7 @@ sections:
                 doc_url: 'ee/solutions/cloud/aws/gitlab_aws_partner_designations.html'
               - doc_title: GitLab AWS integrations index
                 doc_url: 'ee/solutions/cloud/aws/gitlab_aws_integration.html'
-              - doc_title: GitLab Instances on AWS EKS
+              - doc_title: GitLab Instances on AWS
                 doc_url: 'ee/solutions/cloud/aws/gitlab_instance_on_aws.html'
               - doc_title: Provision GitLab on a single EC2 instance in AWS
                 doc_url: 'ee/solutions/cloud/aws/gitlab_single_box_on_aws.html'
