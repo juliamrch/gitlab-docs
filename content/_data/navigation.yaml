@@ -912,6 +912,8 @@ sections:
             doc_url: 'ee/administration/settings/project_integration_management.html'
           - doc_title: Protected paths
             doc_url: 'ee/administration/settings/protected_paths.html'
+          - doc_title: Public security contact information
+            doc_url: 'ee/administration/settings/security_contact_information.html'
           - doc_title: Push event activities limit
             doc_url: 'ee/administration/settings/push_event_activities_limit.html'
           - doc_title: Rate limits
