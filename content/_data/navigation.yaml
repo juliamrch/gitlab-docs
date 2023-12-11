@@ -880,6 +880,9 @@ sections:
             doc_url: 'ee/administration/reporting/git_abuse_rate_limit.html'
           - doc_title: GitLab for Jira Cloud app
             doc_url: 'ee/administration/settings/jira_cloud_app.html'
+            docs:
+              - doc_title: Troubleshooting
+                doc_url: 'ee/administration/settings/jira_cloud_app_troubleshooting.html'
           - doc_title: GitLab for Slack app
             doc_url: 'ee/administration/settings/slack_app.html'
           - doc_title: GitLab Pages
