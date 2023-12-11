@@ -1505,6 +1505,8 @@ sections:
                 docs:
                   - doc_title: Observability
                     doc_url: 'ee/user/project/repository/monorepos/observability.html'
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/user/project/repository/monorepos/troubleshooting.html'
               - doc_title: Git LFS
                 doc_url: 'ee/topics/git/lfs/'
                 docs:
