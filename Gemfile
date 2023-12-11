@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'nanoc', '~> 4.12.18'
+gem 'nanoc', '~> 4.12.19'
 gem 'rake', '~> 13.1.0'
 
 group :nanoc do
