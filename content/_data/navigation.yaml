@@ -2450,6 +2450,9 @@ sections:
             doc_url: 'ee/user/project/integrations/github.html'
           - doc_title: GitLab for Slack app
             doc_url: 'ee/user/project/integrations/gitlab_slack_application.html'
+            docs:
+              - doc_title: Troubleshooting
+                doc_url: 'ee/user/project/integrations/gitlab_slack_app_troubleshooting.html'
           - doc_title: Gitpod
             doc_url: 'ee/integration/gitpod.html'
           - doc_title: Gmail actions
