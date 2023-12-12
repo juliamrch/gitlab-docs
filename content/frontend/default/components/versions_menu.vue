@@ -65,7 +65,7 @@ export default {
 <template>
   <gl-dropdown
     v-if="showMenu && activeVersion"
-    :text="activeVersion"
+    :text="`v${activeVersion}`"
     class="gl-mb-4 gl-md-mb-0 gl-md-mr-5 gl-md-ml-3 gl-display-flex"
     data-testid="versions-menu"
   >
