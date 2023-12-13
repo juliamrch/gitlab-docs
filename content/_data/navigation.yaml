@@ -3181,13 +3181,11 @@ sections:
                 doc_url: 'ee/development/code_owners/'
               - doc_title: Code Suggestions
                 doc_url: 'ee/development/code_suggestions/'
-              - doc_title: 'Create: Source Code backend'
+              - doc_title: 'Source Code Management'
                 doc_url: 'ee/development/backend/create_source_code_be/'
                 docs:
                   - doc_title: Gitaly touch points
                     doc_url: 'ee/development/backend/create_source_code_be/gitaly_touch_points.html'
-                  - doc_title: Source Code REST endpoints
-                    doc_url: 'ee/development/backend/create_source_code_be/rest_endpoints.html'
               - doc_title: Data science
                 doc_url: 'ee/development/data_science/'
                 docs:
