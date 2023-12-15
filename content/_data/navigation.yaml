@@ -2411,7 +2411,7 @@ sections:
             doc_url: 'ee/user/project/integrations/'
           - doc_title: Akismet
             doc_url: 'ee/integration/akismet.html'
-          - doc_title: Apple App Store
+          - doc_title: Apple App Store Connect
             doc_url: 'ee/user/project/integrations/apple_app_store.html'
           - doc_title: Arkose Protect
             doc_url: 'ee/integration/arkose.html'
