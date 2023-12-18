@@ -2482,6 +2482,8 @@ sections:
                     doc_url: 'ee/integration/jira/issues.html'
                   - doc_title: 'Tutorial: Create Jira credentials'
                     doc_url: 'ee/integration/jira/jira_server_configuration.html'
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/integration/jira/troubleshooting.html'
               - doc_title: Jira development panel
                 doc_url: 'ee/integration/jira/development_panel.html'
                 docs:
@@ -2492,8 +2494,6 @@ sections:
                     docs:
                       - doc_title: Troubleshooting
                         doc_url: 'ee/integration/jira/dvcs/troubleshooting.html'
-              - doc_title: Troubleshooting
-                doc_url: 'ee/integration/jira/troubleshooting.html'
           - doc_title: Kroki
             doc_url: 'ee/administration/integration/kroki.html'
           - doc_title: Mailgun
