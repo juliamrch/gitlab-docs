@@ -733,10 +733,10 @@ sections:
                         doc_url: 'ee/administration/settings/gitaly_timeouts.html'
                       - doc_title: TLS support
                         doc_url: 'ee/administration/gitaly/tls_support.html'
-                      - doc_title: Reference
-                        doc_url: 'ee/administration/gitaly/reference.html'
                   - doc_title: Configure Gitaly Cluster
                     doc_url: 'ee/administration/gitaly/praefect.html'
+                  - doc_title: Example configuration files
+                    doc_url: 'ee/administration/gitaly/reference.html'
                   - doc_title: Monitoring
                     doc_url: 'ee/administration/gitaly/monitoring.html'
                   - doc_title: Recovery options
