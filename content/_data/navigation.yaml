@@ -3188,6 +3188,8 @@ sections:
                 docs:
                   - doc_title: Gitaly touch points
                     doc_url: 'ee/development/backend/create_source_code_be/gitaly_touch_points.html'
+                  - doc_title: Push Rules development guidelines
+                    doc_url: 'ee/development/push_rules/'
               - doc_title: Data science
                 doc_url: 'ee/development/data_science/'
                 docs:
