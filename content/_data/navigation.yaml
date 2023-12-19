@@ -1457,19 +1457,16 @@ sections:
                 doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
               - doc_title: Undo options
                 doc_url: 'ee/topics/git/numerous_undo_possibilities_in_git/'
-              - doc_title: Frequently used commands
-                doc_url: 'ee/topics/git/useful_git_commands.html'
-                docs:
-                  - doc_title: Unstage
-                    doc_url: 'ee/topics/git/unstage.html'
-                  - doc_title: Git stash
-                    doc_url: 'ee/topics/git/stash.html'
-                  - doc_title: Push options
-                    doc_url: 'ee/user/project/push_options.html'
-                  - doc_title: Roll back commits
-                    doc_url: 'ee/topics/git/rollback_commits.html'
-                  - doc_title: Cherry-pick a commit
-                    doc_url: 'ee/topics/git/cherry_picking.html'
+              - doc_title: Unstage
+                doc_url: 'ee/topics/git/unstage.html'
+              - doc_title: Git stash
+                doc_url: 'ee/topics/git/stash.html'
+              - doc_title: Push options
+                doc_url: 'ee/user/project/push_options.html'
+              - doc_title: Roll back commits
+                doc_url: 'ee/topics/git/rollback_commits.html'
+              - doc_title: Cherry-pick a commit
+                doc_url: 'ee/topics/git/cherry_picking.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/topics/git/troubleshooting_git.html'
       - category_title: Manage your code
