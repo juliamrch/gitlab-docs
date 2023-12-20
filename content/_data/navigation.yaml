@@ -3425,6 +3425,8 @@ sections:
                 doc_url: 'ee/development/project_templates/'
               - doc_title: Import (Bitbucket Cloud)
                 doc_url: 'ee/development/bitbucket_cloud_importer.html'
+              - doc_title: Import (Bitbucket Server)
+                doc_url: 'ee/development/bitbucket_server_importer.html'
               - doc_title: Import (GitHub)
                 doc_url: 'ee/development/github_importer.html'
               - doc_title: Import (group migration by direct transfer)
