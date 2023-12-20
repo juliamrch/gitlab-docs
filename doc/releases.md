@@ -1,6 +1,6 @@
 # Monthly documentation releases
 
-When a new GitLab version is released on the 22nd, we release version-specific published
+When a new GitLab version is released on the third Thursday of the month, we release version-specific published
 documentation for the new version.
 
 The tasks described in this document cover the preparation steps and the publication steps. The
@@ -13,7 +13,7 @@ When you've completed the documentation release process:
   - The three most recent minor releases of the current major version. For example 13.9, 13.8, and
     13.7.
   - The most recent minor releases of the last two major versions. For example 12.10, and 11.11.
-- Documentation updates after the 22nd are for the next release.
+- Documentation updates after the third Thursday of the month are for the next release.
 
 Each documentation release:
 
@@ -45,15 +45,13 @@ To minimize problems during the documentation release process, use the following
   1. Create a stable branch and Docker image for the new version. For details, see "Create a stable
      branch and Docker image for the release" in the docs release issue.
 
-- Complete the publication steps on the 22nd of the month, after the release post is live:
+- Complete the publication steps on the third Thursday of the month, after the release post is live:
 
   1. [Create a release merge request](#create-release-merge-request) for the new version, which
      updates the versions list (`versions.json`) for the current documentation
      and adds the release to the Docker configuration.
 
   1. [Merge the release merge request and run the necessary Docker image builds](#merge-the-release-merge-request-and-run-the-docker-image-builds).
-
-  If the 22nd of the month falls on a weekend or public holiday, it's OK to complete these publication steps on the next working day.
 
 ### Optional. Test locally
 
@@ -173,7 +171,7 @@ When you create the stable branch in the `gitlab-docs` project, the `compile_pro
 
 This happens if stable branches have not been
 created for all the related projects. Some of the stable branches are
-created close to the 22nd, so you might need to run the pipeline of the
+created close to the third Thursday of the month, so you might need to run the pipeline of the
 stable branch one more time before the release.
 
 The error is similar to the following:
