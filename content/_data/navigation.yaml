@@ -1985,6 +1985,9 @@ sections:
                     doc_url: 'ee/user/application_security/dast/dast_troubleshooting.html'
               - doc_title: Authentication
                 doc_url: 'ee/user/application_security/dast/authentication.html'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/user/application_security/dast/authentication_troubleshooting.html'
               - doc_title: DAST API analyzer
                 doc_url: 'ee/user/application_security/dast_api/'
               - doc_title: Run DAST offline
