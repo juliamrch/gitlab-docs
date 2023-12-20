@@ -1116,6 +1116,41 @@ sections:
   - section_title: Use GitLab
     section_url: 'ee/user/'
     section_categories:
+      - category_title: Use Git
+        category_url: 'ee/topics/git/'
+        docs:
+          - doc_title: 'Tutorial: Make your first Git commit'
+            doc_url: 'ee/tutorials/make_first_git_commit/'
+          - doc_title: 'Tutorial: Update Git commit messages'
+            doc_url: 'ee/tutorials/update_commit_messages/'
+          - doc_title: Get started
+            doc_url: 'ee/topics/git/get_started.html'
+          - doc_title: Installing Git
+            doc_url: 'ee/topics/git/how_to_install_git/'
+          - doc_title: Command line Git
+            doc_url: 'ee/gitlab-basics/start-using-git.html'
+          - doc_title: Add file to repository
+            doc_url: 'ee/gitlab-basics/add-file.html'
+          - doc_title: Partial clone
+            doc_url: 'ee/topics/git/partial_clone.html'
+          - doc_title: Rebase and force-push
+            doc_url: 'ee/topics/git/git_rebase.html'
+          - doc_title: Feature branch workflow
+            doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
+          - doc_title: Undo options
+            doc_url: 'ee/topics/git/numerous_undo_possibilities_in_git/'
+          - doc_title: Unstage
+            doc_url: 'ee/topics/git/unstage.html'
+          - doc_title: Git stash
+            doc_url: 'ee/topics/git/stash.html'
+          - doc_title: Push options
+            doc_url: 'ee/user/project/push_options.html'
+          - doc_title: Roll back commits
+            doc_url: 'ee/topics/git/rollback_commits.html'
+          - doc_title: Cherry-pick a commit
+            doc_url: 'ee/topics/git/cherry_picking.html'
+          - doc_title: Troubleshooting
+            doc_url: 'ee/topics/git/troubleshooting_git.html'
       - category_title: Set up your organization
         category_url: 'ee/topics/set_up_organization.html'
         docs:
@@ -1434,41 +1469,6 @@ sections:
                 doc_url: 'ee/user/rich_text_editor.html'
           - doc_title: To-Do List
             doc_url: 'ee/user/todos.html'
-          - doc_title: Using Git
-            doc_url: 'ee/topics/git/'
-            docs:
-              - doc_title: 'Tutorial: Make your first Git commit'
-                doc_url: 'ee/tutorials/make_first_git_commit/'
-              - doc_title: 'Tutorial: Update Git commit messages'
-                doc_url: 'ee/tutorials/update_commit_messages/'
-              - doc_title: Get started
-                doc_url: 'ee/topics/git/get_started.html'
-              - doc_title: Installing Git
-                doc_url: 'ee/topics/git/how_to_install_git/'
-              - doc_title: Command line Git
-                doc_url: 'ee/gitlab-basics/start-using-git.html'
-              - doc_title: Add file to repository
-                doc_url: 'ee/gitlab-basics/add-file.html'
-              - doc_title: Partial clone
-                doc_url: 'ee/topics/git/partial_clone.html'
-              - doc_title: Rebase and force-push
-                doc_url: 'ee/topics/git/git_rebase.html'
-              - doc_title: Feature branch workflow
-                doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
-              - doc_title: Undo options
-                doc_url: 'ee/topics/git/numerous_undo_possibilities_in_git/'
-              - doc_title: Unstage
-                doc_url: 'ee/topics/git/unstage.html'
-              - doc_title: Git stash
-                doc_url: 'ee/topics/git/stash.html'
-              - doc_title: Push options
-                doc_url: 'ee/user/project/push_options.html'
-              - doc_title: Roll back commits
-                doc_url: 'ee/topics/git/rollback_commits.html'
-              - doc_title: Cherry-pick a commit
-                doc_url: 'ee/topics/git/cherry_picking.html'
-              - doc_title: Troubleshooting
-                doc_url: 'ee/topics/git/troubleshooting_git.html'
       - category_title: Manage your code
         category_url: 'ee/topics/manage_code.html'
         docs:
