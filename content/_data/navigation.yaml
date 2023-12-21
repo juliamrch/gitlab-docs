@@ -556,6 +556,8 @@ sections:
             doc_url: 'ee/integration/azure.html'
           - doc_title: Bitbucket Cloud
             doc_url: 'ee/integration/bitbucket.html'
+          - doc_title: ClickHouse
+            doc_url: 'ee/integration/clickhouse.html'
           - doc_title: DingTalk
             doc_url: 'ee/integration/ding_talk.html'
           - doc_title: Facebook
