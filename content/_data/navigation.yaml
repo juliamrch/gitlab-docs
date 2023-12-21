@@ -2193,8 +2193,10 @@ sections:
       - category_title: Monitor application performance
         category_url: 'ee/operations/'
         docs:
-          - doc_title: Error Tracking
+          - doc_title: Error tracking
             doc_url: 'ee/operations/error_tracking.html'
+          - doc_title: Distributed tracing
+            doc_url: 'ee/operations/tracing.html'
           - doc_title: Incident management
             doc_url: 'ee/operations/incident_management/'
             docs:
