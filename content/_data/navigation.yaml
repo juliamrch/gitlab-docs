@@ -1058,6 +1058,8 @@ sections:
             doc_url: 'ee/security/asset_proxy.html'
           - doc_title: Token overview
             doc_url: 'ee/security/token_overview.html'
+          - doc_title: Rotate secrets of third-party integrations
+            doc_url: 'ee/security/rotate_integrations_secrets.html'
           - doc_title: Respond to security incidents
             doc_url: 'ee/security/responding_to_security_incidents.html'
           - doc_title: Hardening
