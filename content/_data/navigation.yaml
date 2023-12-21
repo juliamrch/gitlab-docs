@@ -1749,6 +1749,8 @@ sections:
                 doc_url: 'ee/ci/runners/configure_runners.html'
               - doc_title: Scale a fleet of runners
                 doc_url: 'runner/fleet_scaling/'
+              - doc_title: Runner Fleet Dashboard
+                doc_url: 'ee/ci/runners/runner_fleet_dashboard.html'
           - doc_title: Pipelines
             doc_url: 'ee/ci/pipelines/'
             docs:
