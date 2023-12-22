@@ -33,7 +33,7 @@ For example:
 
 To minimize problems during the documentation release process, use the following timeline:
 
-- Complete the preparation steps between the 17th and the 20th of the month. **All** of the following steps
+- Complete the preparation steps in the week before the release. **All** of the following steps
   must be completed successfully before proceeding with the publication steps:
 
   1. If an issue was not already created for you by the TW that handled the last release,
