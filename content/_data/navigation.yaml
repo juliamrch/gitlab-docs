@@ -432,6 +432,8 @@ sections:
                 doc_url: 'omnibus/update/package_signatures.html'
               - doc_title: Downgrade
                 doc_url: 'ee/update/package/downgrade.html'
+              - doc_title: Troubleshooting
+                doc_url: 'ee/update/package/package_troubleshooting.html'
           - doc_title: Upgrade a self-compiled instance
             doc_url: 'ee/update/upgrading_from_source.html'
             docs:
