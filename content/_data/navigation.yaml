@@ -1991,6 +1991,8 @@ sections:
                 docs:
                   - doc_title: Troubleshooting
                     doc_url: 'ee/user/application_security/dast/dast_troubleshooting.html'
+              - doc_title: DAST on-demand scan
+                doc_url: 'ee/user/application_security/dast/on-demand_scan.html'
               - doc_title: Authentication
                 doc_url: 'ee/user/application_security/dast/authentication.html'
                 docs:
