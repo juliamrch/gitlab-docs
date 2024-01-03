@@ -779,6 +779,9 @@ sections:
                 doc_url: 'ee/administration/geo/replication/usage.html'
               - doc_title: Configure secondary proxying
                 doc_url: 'ee/administration/geo/secondary_proxy/'
+                docs:
+                  - doc_title: Secondary runners
+                    doc_url: 'ee/administration/geo/secondary_proxy/runners.html'
               - doc_title: Location-aware public URL
                 doc_url: 'ee/administration/geo/secondary_proxy/location_aware_external_url.html'
               - doc_title: Upgrading Geo sites
