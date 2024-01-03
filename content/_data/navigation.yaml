@@ -2995,6 +2995,8 @@ sections:
                 doc_url: 'ee/development/deprecation_guidelines/'
               - doc_title: EE features
                 doc_url: 'ee/development/ee_features.html'
+              - doc_title: Emails
+                doc_url: 'ee/development/emails.html'
               - doc_title: Experiments
                 doc_url: 'ee/development/experiment_guide/'
                 docs:
@@ -3038,6 +3040,8 @@ sections:
                     doc_url: 'ee/development/merge_request_concepts/performance.html'
               - doc_title: Merge request workflow
                 doc_url: 'ee/development/contributing/merge_request_workflow.html'
+              - doc_title: Reusing Abstractions
+                doc_url: 'ee/development/reusing_abstractions.html'
               - doc_title: Ruby upgrade guidelines
                 doc_url: 'ee/development/ruby_upgrade.html'
               - doc_title: Secure partner onboarding process
@@ -3257,6 +3261,8 @@ sections:
                     doc_url: 'ee/development/database/dbcheck-migrations-job.html'
                   - doc_title: Delete existing migrations
                     doc_url: 'ee/development/database/deleting_migrations.html'
+                  - doc_title: Enums
+                    doc_url: 'ee/development/database/creating_enums.html'
                   - doc_title: Foreign keys and associations
                     doc_url: 'ee/development/database/foreign_keys.html'
                   - doc_title: Introducing a new database migration version
