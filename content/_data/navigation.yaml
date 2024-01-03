@@ -676,6 +676,8 @@ sections:
                 doc_url: 'ee/administration/postgresql/pgbouncer.html'
               - doc_title: Replication and failover
                 doc_url: 'ee/administration/postgresql/replication_and_failover.html'
+              - doc_title: Troubleshooting
+                doc_url: 'ee/administration/postgresql/replication_and_failover_troubleshooting.html'
               - doc_title: Standalone packaged database
                 doc_url: 'ee/administration/postgresql/standalone.html'
               - doc_title: Upgrade external database
