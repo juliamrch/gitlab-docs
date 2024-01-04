@@ -768,3 +768,87 @@ redirects:
   - from: /ee/user/project/service_desk.html
     to: /ee/user/project/service_desk/index.html
     remove_date: 2024-07-24
+  - from: /ee/api/award_emoji.html
+    to: /ee/api/emoji_reactions.html
+    remove_date: 2024-09-20
+  - from: /ee/ci/large_repositories/index.html
+    to: /ee/user/project/repository/managing_large_repositories.html
+    remove_date: 2024-08-30
+  - from: /ee/ci/large_repositories/
+    to: /ee/user/project/repository/managing_large_repositories.html
+    remove_date: 2024-08-30
+  - from: /ee/topics/authentication/index.html
+    to: /ee/administration/auth/index.html
+    remove_date: 2024-09-26
+  - from: /ee/topics/authentication/
+    to: /ee/administration/auth/index.html
+    remove_date: 2024-09-26
+  - from: /ee/user/project/repository/managing_large_repositories.html
+    to: /ee/user/project/repository/monorepos/index.html
+    remove_date: 2024-09-17
+  - from: /ee/user/project/repository/ssh_signed_commits/index.html
+    to: /ee/user/project/repository/signed_commits/ssh.html
+    remove_date: 2024-09-01
+  - from: /ee/user/project/repository/ssh_signed_commits/
+    to: /ee/user/project/repository/signed_commits/ssh.html
+    remove_date: 2024-09-01
+  - from: /ee/user/project/repository/gpg_signed_commits/index.html
+    to: /ee/user/project/repository/signed_commits/gpg.html
+    remove_date: 2024-09-01
+  - from: /ee/user/project/repository/gpg_signed_commits/
+    to: /ee/user/project/repository/signed_commits/gpg.html
+    remove_date: 2024-09-01
+  - from: /ee/user/project/repository/x509_signed_commits/index.html
+    to: /ee/user/project/repository/signed_commits/x509.html
+    remove_date: 2024-09-01
+  - from: /ee/user/project/repository/x509_signed_commits/
+    to: /ee/user/project/repository/signed_commits/x509.html
+    remove_date: 2024-09-01
+  - from: /ee/user/award_emojis.html
+    to: /ee/user/emoji_reactions.html
+    remove_date: 2024-09-20
+  - from: /ee/user/analytics/contributor_statistics.html
+    to: /ee/user/analytics/contributor_analytics.html
+    remove_date: 2023-12-06
+  - from: /ee/development/activitypub/actor.html
+    to: /ee/development/activitypub/actors/index.html
+    remove_date: 2024-09-08
+  - from: /ee/development/documentation/alpha_beta.html
+    to: /ee/development/documentation/experiment_beta.html
+    remove_date: 2024-08-29
+  - from: /ee/development/fe_guide/design_anti_patterns.html
+    to: /ee/development/fe_guide/design_patterns.html
+    remove_date: 2024-09-07
+  - from: /ee/development/internal_analytics/internal_event_tracking/quick_start.html
+    to: /ee/development/internal_analytics/internal_event_instrumentation/quick_start.html
+    remove_date: 2024-09-27
+  - from: /ee/development/internal_analytics/internal_event_tracking/introduction.html
+    to: /ee/development/internal_analytics/internal_event_instrumentation/introduction.html
+    remove_date: 2024-09-27
+  - from: /ee/development/internal_analytics/internal_event_tracking/event_definition_guide.html
+    to: /ee/development/internal_analytics/internal_event_instrumentation/event_definition_guide.html
+    remove_date: 2024-09-27
+  - from: /ee/development/internal_analytics/internal_event_tracking/index.html
+    to: /ee/development/internal_analytics/internal_event_instrumentation/index.html
+    remove_date: 2024-09-27
+  - from: /ee/development/internal_analytics/internal_event_tracking/
+    to: /ee/development/internal_analytics/internal_event_instrumentation/index.html
+    remove_date: 2024-09-27
+  - from: /ee/development/internal_analytics/internal_event_tracking/migration.html
+    to: /ee/development/internal_analytics/internal_event_instrumentation/migration.html
+    remove_date: 2024-09-27
+  - from: /ee/development/internal_analytics/service_ping/review_guidelines.html
+    to: /ee/development/internal_analytics/review_guidelines.html
+    remove_date: 2024-09-29
+  - from: /ee/development/internal_analytics/snowplow/review_guidelines.html
+    to: /ee/development/internal_analytics/review_guidelines.html
+    remove_date: 2024-09-29
+  - from: /ee/development/ai_features.html
+    to: /ee/development/ai_features/index.html
+    remove_date: 2024-09-01
+  - from: /ee/administration/repository_storage_types.html
+    to: /ee/administration/repository_storage_paths.html
+    remove_date: 2024-08-29
+  - from: /ee/administration/geo/replication/version_specific_upgrades.html
+    to: /ee/update/index.html#version-specific-upgrading-instructions
+    remove_date: 2024-09-01
