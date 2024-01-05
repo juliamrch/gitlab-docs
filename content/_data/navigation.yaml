@@ -534,7 +534,7 @@ sections:
   - section_title: Administer
     section_url: 'ee/administration/'
     section_categories:
-      - category_title: Get started
+      - category_title: Getting started
         category_url: 'ee/administration/get_started.html'
       - category_title: All feature flags
         category_url: 'ee/user/feature_flags.html'
@@ -1132,7 +1132,7 @@ sections:
             doc_url: 'ee/tutorials/make_first_git_commit/'
           - doc_title: 'Tutorial: Update Git commit messages'
             doc_url: 'ee/tutorials/update_commit_messages/'
-          - doc_title: Get started
+          - doc_title: Getting started
             doc_url: 'ee/topics/git/get_started.html'
           - doc_title: Installing Git
             doc_url: 'ee/topics/git/how_to_install_git/'
@@ -1936,7 +1936,7 @@ sections:
         docs:
           - doc_title: Application security
             doc_url: 'ee/user/application_security/'
-          - doc_title: Get started
+          - doc_title: Getting started
             doc_url: 'ee/user/application_security/get-started-security.html'
           - doc_title: Security Configuration
             doc_url: 'ee/user/application_security/configuration/'
@@ -3667,7 +3667,7 @@ sections:
           - doc_title: Contribute to Omnibus GitLab
             doc_url: 'omnibus/development/'
             docs:
-              - doc_title: Get started
+              - doc_title: Getting started
                 doc_url: 'omnibus/development/contribute-to-omnibus-gitlab.html'
               - doc_title: Build locally
                 doc_url: 'omnibus/build/'
@@ -3794,7 +3794,7 @@ sections:
                 doc_url: 'ee/development/documentation/topic_types/reference.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/development/documentation/topic_types/troubleshooting.html'
-              - doc_title: Get started
+              - doc_title: Getting Started
                 doc_url: 'ee/development/documentation/topic_types/get_started.html'
               - doc_title: Tutorials
                 doc_url: 'ee/development/documentation/topic_types/tutorial.html'
