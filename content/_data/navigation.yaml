@@ -1016,6 +1016,9 @@ sections:
             docs:
               - doc_title: Back up GitLab
                 doc_url: 'ee/administration/backup_restore/backup_gitlab.html'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/administration/backup_restore/troubleshooting_backup_gitlab.html'
               - doc_title: Restore GitLab
                 doc_url: 'ee/administration/backup_restore/restore_gitlab.html'
               - doc_title: Migrate to a new server
