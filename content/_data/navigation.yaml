@@ -2211,6 +2211,8 @@ sections:
             doc_url: 'ee/operations/error_tracking.html'
           - doc_title: Distributed tracing
             doc_url: 'ee/operations/tracing.html'
+          - doc_title: Metrics
+            doc_url: 'ee/operations/metrics.html'
           - doc_title: Incident management
             doc_url: 'ee/operations/incident_management/'
             docs:
