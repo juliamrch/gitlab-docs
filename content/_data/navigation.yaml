@@ -1128,7 +1128,7 @@ sections:
   - section_title: Use GitLab
     section_url: 'ee/user/'
     section_categories:
-      - category_title: Use Git
+      - category_title: Learn Git
         category_url: 'ee/topics/git/'
         docs:
           - doc_title: 'Tutorial: Make your first Git commit'
