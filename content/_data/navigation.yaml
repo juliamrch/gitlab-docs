@@ -2311,6 +2311,8 @@ sections:
                 doc_url: 'ee/user/clusters/agent/user_access.html'
               - doc_title: Operational container scanning
                 doc_url: 'ee/user/clusters/agent/vulnerabilities.html'
+              - doc_title: Kubernetes integration glossary
+                doc_url: 'ee/user/clusters/agent/kas_glossary.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/user/clusters/agent/troubleshooting.html'
               - doc_title: Migrate to the agent for Kubernetes
