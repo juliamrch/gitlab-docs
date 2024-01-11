@@ -421,6 +421,9 @@ sections:
             doc_url: 'ee/update/plan_your_upgrade.html'
           - doc_title: Background migrations
             doc_url: 'ee/update/background_migrations.html'
+            docs:
+              - doc_title: Troubleshooting
+                doc_url: 'ee/update/background_migrations_troubleshooting.html'
           - doc_title: Upgrade a Linux package instance
             doc_url: 'ee/update/package/'
             docs:
