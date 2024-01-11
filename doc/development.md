@@ -229,12 +229,7 @@ To exclude a directory so the contents aren't published to the docs site:
 Badges can be added to headings to indicate product tier, offerings, or product feature status.
 You can read more about usage in the [style guide](https://docs.gitlab.com/ee/development/documentation/styleguide#product-tier-badges).
 
-Adding or changing a badge requires updating files outside of the GitLab Docs project.
-In all of the repos that contain docs, the badges must be specifically excluded from tests that validate anchor links
-and added to Vale rules for capitalization.
-
-Keep in mind that in our current state, changing a badge requires at least 7 MRs, and an
-additional 6 if you need to update the `html-lint` Docker image. Plan accordingly.
+Keep in mind that in our current state, changing or adding a badge requires updating files outside of the GitLab Docs project. Adding a new badge type requires an additional 6 MRs in order to update the `html-lint` Docker image. Plan accordingly.
 
 ### Changes in `gitlab-docs`
 
@@ -252,15 +247,3 @@ If adding a new badge _type_:
 1. Update the regular expression used to detect badges in `lib/gitlab/utils/markdown.rb`. This
 is used when testing the GitLab product UI for broken links.
 1. Update the tests for this file in `spec/lib/gitlab/utils/markdown_spec.rb`.
-
-### Changes in all supported products
-
-1. Update `doc/.vale/gitlab/BadgeCapitalization.yml`.
-1. If a new badge name is 5 or fewer characters long, it needs to be added as an exclusion
-to `doc/.vale/gitlab/Uppercase.yml`.
-
-Vale rules are copied across projects, so changes need to be made in each product
-repository (GitLab Runner, GitLab Charts, GDK, etc).
-
-Tip: You can find all of these by running `find . -name 'BadgeCapitalization.yml'` from
-the directory where your product repositories are located.
