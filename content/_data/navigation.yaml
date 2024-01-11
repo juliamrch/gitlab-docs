@@ -2451,6 +2451,8 @@ sections:
             doc_url: 'ee/integration/datadog.html'
           - doc_title: Diagrams.net
             doc_url: 'ee/administration/integration/diagrams_net.html'
+          - doc_title: Diffblue Cover
+            doc_url: 'ee/integration/diffblue_cover.html'
           - doc_title: Discord Notifications
             doc_url: 'ee/user/project/integrations/discord_notifications.html'
           - doc_title: Elasticsearch
