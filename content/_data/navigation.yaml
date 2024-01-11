@@ -1269,6 +1269,8 @@ sections:
                 docs:
                   - doc_title: Custom roles
                     doc_url: 'ee/user/custom_roles.html'
+                  - doc_title: Available custom permissions
+                    doc_url: 'ee/user/custom_roles/abilities.html'
               - doc_title: Personal access tokens
                 doc_url: 'ee/user/profile/personal_access_tokens.html'
               - doc_title: Profile preferences
