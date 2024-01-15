@@ -2343,10 +2343,8 @@ sections:
             doc_url: 'ee/user/group/devops_adoption/'
           - doc_title: DORA metrics
             doc_url: 'ee/user/analytics/dora_metrics.html'
-          - doc_title: Insights for projects
+          - doc_title: Insights
             doc_url: 'ee/user/project/insights/'
-          - doc_title: Insights for groups
-            doc_url: 'ee/user/group/insights/'
           - doc_title: Issue analytics
             doc_url: 'ee/user/group/issues_analytics/'
           - doc_title: Merge request analytics
