@@ -26,3 +26,9 @@ the following maintenance tasks on the GitLab Docs site:
 - Perform [maintenance](maintenance.md).
 - Run [Rake tasks](raketasks.md).
 - Review [analytics](analytics.md).
+
+## Report a problem
+
+- [Docs content](https://docs.gitlab.com/ee/development/documentation/)
+- [Docs website](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/?sort=created_date&state=opened&first_page_size=100)
+- [Docs website availability (infrastructure)](infrastructure.md)
