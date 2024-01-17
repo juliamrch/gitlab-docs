@@ -156,21 +156,22 @@ The `gitlab-docs` project has several tokens used to authenticate with the API f
 CI/CD pipelines. These tokens are stored in each project's CI/CD settings as
 [CI/CD variables](https://docs.gitlab.com/ee/ci/variables/#add-a-cicd-variable-to-a-project):
 
-- `DOCS_PROJECT_API_TOKEN` and `DOCS_TRIGGER_TOKEN`: Used by `gitlab`, `gitlab-runner`,
+- [`DOCS_PROJECT_API_TOKEN` and `DOCS_TRIGGER_TOKEN`](#project-tokens): Used by `gitlab`, `gitlab-runner`,
   `omnibus-gitlab`, `charts`, and `gitlab-operator` to create docs review apps.
 - `DELETE_ENVIRONMENTS_TOKEN`: Used by `gitlab-docs` to
   [delete stale review app environments](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/452c30caebd9db6604d34f1fd04ce19c38ff2273/.gitlab/ci/build-and-deploy.gitlab-ci.yml#L155-L169).
 
 In the event of a security issue, it might be necessary to immediately secure the project
 by regenerating the tokens, sometimes called "rotating" the tokens. You must be a
-maintainer in the relevant projects to rotate the tokens.
+maintainer in the relevant projects to rotate the tokens. It is safe to immediately revoke the current tokens,
+as they are only used for review apps or project maintenance.
 
 `DOCS_PROJECT_API_TOKEN`:
 
 1. In `gitlab-docs`, go to **Settings > Access Tokens**.
 1. In **Active project access tokens**, find the entry for `DOCS_PROJECT_API_TOKEN` and
-   select **Revoke**. You probably need to scroll the table to the right to reveal the option.
-1. Under **Add a project access token**, fill in the following values:
+   select **Revoke**.
+1. Select **Add new token**, and fill in the following values:
    - **Token name**: `DOCS_PROJECT_API_TOKEN`.
    - **Expiration date**: None.
    - **Select a role**: `Developer`.
@@ -178,21 +179,22 @@ maintainer in the relevant projects to rotate the tokens.
 1. Select **Create project access token**.
 1. After the token is created, go to **Your new project access token** at the top
    and copy the token value. It should start with `glpat-`.
-1. In `gitlab`, `gitlab-runner`, `omnibus-gitlab`, and `charts`, go to the
+1. In `gitlab`, `gitlab-runner`, `omnibus-gitlab`, `charts`, and `gitlab-operator`, go to the
    [CI/CD variables settings](https://docs.gitlab.com/ee/ci/variables/#add-a-cicd-variable-to-a-project),
-   select **Edit** for the `DOCS_PROJECT_API_TOKEN` CI/CD variable, and update the
-   value with the new token.
+   expand **Variables**, select **Edit** for the `DOCS_PROJECT_API_TOKEN` CI/CD variable, and update the
+   **Value** field with the new token.
 
 `DOCS_TRIGGER_TOKEN`:
 
-1. In `gitlab-docs`, go to **Settings > CI/CD** and expand **Pipeline triggers**.
+1. In `gitlab-docs`, go to **Settings > CI/CD** and expand **Pipeline trigger tokens**.
 1. In the token table, find the entry for `DOCS_TRIGGER_TOKEN` and select **Revoke** (delete icon).
-1. In **Description**, enter `DOCS_TRIGGER_TOKEN` then select **Add trigger**.
+1. Select **Add new token**. Under **Description**, fill in `DOCS_TRIGGER_TOKEN`.
+1. Select **Create pipeline trigger token**.
 1. After the token is created, copy the token value from the table.
 1. In `gitlab`, `gitlab-runner`, `omnibus-gitlab`, and `charts`, go to the
    [CI/CD variables settings](https://docs.gitlab.com/ee/ci/variables/#add-a-cicd-variable-to-a-project),
-   select **Edit** for the `DOCS_TRIGGER_TOKEN` CI/CD variable, and update the
-   value with the new token.
+   expand **Variables**, select **Edit** for the `DOCS_TRIGGER_TOKEN` CI/CD variable, and update the
+   **Value** field with the new token.
 
 `DELETE_ENVIRONMENTS_TOKEN`:
 
