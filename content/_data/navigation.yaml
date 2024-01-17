@@ -3204,6 +3204,8 @@ sections:
                     doc_url: 'ee/development/cicd/cicd_reference_documentation_guide.html'
                   - doc_title: Contribute to the CI/CD schema
                     doc_url: 'ee/development/cicd/schema.html'
+                  - doc_title: CI/CD component development
+                    doc_url: 'ee/development/cicd/components.html'
                   - doc_title: CI/CD template development
                     doc_url: 'ee/development/cicd/templates.html'
                   - doc_title: Pipeline Wizard
