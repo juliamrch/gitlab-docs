@@ -750,8 +750,10 @@ sections:
                     doc_url: 'ee/administration/gitaly/monitoring.html'
                   - doc_title: Recovery options
                     doc_url: 'ee/administration/gitaly/recovery.html'
-                  - doc_title: Troubleshooting
+                  - doc_title: Troubleshooting Gitaly
                     doc_url: 'ee/administration/gitaly/troubleshooting.html'
+                  - doc_title: Troubleshooting Gitaly Cluster
+                    doc_url: 'ee/administration/gitaly/troubleshooting_gitaly_cluster.html'
                   - doc_title: Praefect Rake tasks
                     doc_url: 'ee/administration/raketasks/praefect.html'
               - doc_title: Repository storage Rake tasks
