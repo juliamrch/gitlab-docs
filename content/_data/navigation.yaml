@@ -50,7 +50,7 @@ sections:
         category_url: 'ee/tutorials/secure_application.html'
       - category_title: Manage your infrastructure
         category_url: 'ee/tutorials/infrastructure.html'
-      - category_title: Develop with GitLab
+      - category_title: Extend with GitLab
         category_url: 'ee/tutorials/develop.html'
       - category_title: Find more tutorials
         category_url: 'ee/tutorials/more_tutorials.html'
@@ -2430,7 +2430,7 @@ sections:
             doc_url: 'ee/user/project/repository/code_suggestions/repository_xray.html'
       - category_title: Ask questions with Chat
         category_url: 'ee/user/gitlab_duo_chat.html'
-  - section_title: Develop
+  - section_title: Extend
     section_url: 'ee/api/'
     section_categories:
       - category_title: Integrations
