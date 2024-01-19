@@ -58,18 +58,6 @@ The following terms are used throughout this document:
    - A new `X.Y.Dockerfile` is created and automatically committed.
    - The new branch is pushed.
 
-   After the branch is created, the
-   [`image:docs-single` job](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/7fbb5e1313ebde811877044e87f444a0a283fed4/.gitlab/ci/docker-images.gitlab-ci.yml#L107-129)
-   runs and creates a new Docker image tagged with the name of the stable branch
-   (for example, see [the 15.6 release pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/702437095)).
-   When the job finishes, confirm the Docker image has been created. Go to the `registry` environment at
-   <https://gitlab.com/gitlab-org/gitlab-docs/-/environments/folders/registry> and confirm the image
-   is listed.
-
-   In case the pipeline fails, see the [troubleshooting section](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-single-job-fails-when-creating-the-docs-stable-branch).
-
-You can continue onto the next process immediately, or wait for the release post.
-
 ### On the Thursday of the release, or the day after
 
 After the release post is live, or the day after:
@@ -82,7 +70,13 @@ After the release post is live, or the day after:
 
    If not, you cannot proceed to the next step, so you'll have to wait.
 1. [ ] Run a new pipeline targeting the docs stable branch after all upstream
-   stable branches have been created. Verify that the [pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all) for the stable branch (filter by branch)
+   stable branches have been created. When the pipeline runs, the
+   [`image:docs-single` job](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/7fbb5e1313ebde811877044e87f444a0a283fed4/.gitlab/ci/docker-images.gitlab-ci.yml#L107-129)
+   builds a new Docker image tagged with the name of the stable branch containing
+   all the versioned documentation
+   (for example, see [the 15.6 release pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/702437095)).
+
+   Verify that the [pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all) for the stable branch (filter by branch)
    has passed and created a [Docker image](https://gitlab.com/gitlab-org/gitlab-docs/container_registry/631635?orderBy=NAME&sort=desc&search[]=)
    tagged with the release version. ([If it fails, how do I fix it?](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-single-job-fails-when-creating-the-docs-stable-branch))
    - To filter the list of pipelines to the stable branch, select the **Branch name** filter then manually input the stable branch's name. For example, "Branch name = 16.0".
