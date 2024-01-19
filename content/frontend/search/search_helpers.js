@@ -73,9 +73,9 @@ export const SEARCH_FILTERS = [
         id: 'user',
       },
       {
-        text: 'Developer (API) docs',
-        value: 'Develop',
-        id: 'develop',
+        text: 'Extension and API docs',
+        value: 'Extend',
+        id: 'extend',
       },
       {
         text: 'Contributor docs',
