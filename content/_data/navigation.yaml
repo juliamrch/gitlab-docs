@@ -2452,6 +2452,8 @@ sections:
             doc_url: 'ee/user/project/integrations/bamboo.html'
           - doc_title: AWS CodePipeline
             doc_url: 'ee/user/project/integrations/aws_codepipeline.html'
+          - doc_title: Beyond Identity
+            doc_url: 'ee/user/project/integrations/beyond_identity.html'
           - doc_title: Datadog
             doc_url: 'ee/integration/datadog.html'
           - doc_title: Diagrams.net
