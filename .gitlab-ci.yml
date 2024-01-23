@@ -27,6 +27,16 @@ variables:
   MARKDOWNLINT2_VERSION: '0.12.1'  # Version also set in package.json
   RUBY_VERSION: '3.2.3'
   ASDF_VERSION: '0.14.0'
+  ## --------------------------------------------------------------------------
+  ## Uncomment any of the following variables if you want to build the site
+  ## using another upstream branch. See
+  ## https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/raketasks.md#clone-an-upstream-branch-other-than-the-default
+  ## --------------------------------------------------------------------------
+  # BRANCH_EE: <gitlab-branch>
+  # BRANCH_OMNIBUS: <omnibus-branch>
+  # BRANCH_RUNNER: <runner-branch>
+  # BRANCH_CHARTS: <charts-branch>
+  # BRANCH_OPERATOR: <operator-branch>
 
 #
 # workflow:rules to prevent duplicate pipelines when pushing to a branch with an open MR.

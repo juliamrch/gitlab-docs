@@ -196,6 +196,7 @@ To add an additional set of product documentation to <https://docs.gitlab.com> f
    branch at all, you can omit this and the default branch will be always pulled.
 
 1. Edit ['lib/edit_on_gitlab.rb'](../lib/edit_on_gitlab.rb) and add the product and its attributes to the `PRODUCT_REPOS` object, then add 1-2 test cases in [`spec/lib/helpers/edit_on_gitlab_spec.rb`](../spec/lib/helpers/edit_on_gitlab_spec.rb).
+1. Edit [`.gitlab-ci.yml`](../.gitlab-ci.yml) and add the new `BRANCH_<slug>` variable under `variables`. For example, if the slug is named `foo`, the variable should be named `BRANCH_FOO`.
 1. Edit [`.test.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/test.gitlab-ci.yml) and add the new product to the following tests, following the same pattern as existing products:
 
    - `test_global_nav_links`
@@ -214,6 +215,7 @@ To add an additional set of product documentation to <https://docs.gitlab.com> f
 
    - Add the new product to the list in [`doc/index.md`](../doc/index.md).
    - Add the new product to the diagram in [`doc/architecture.md`](../doc/architecture.md).
+   - Add the new product environment variable (`BRANCH_<slug>`) in [`doc/raketasks.md`](../doc/raketasks.md#clone-an-upstream-branch-other-than-the-default).
 
 1. Add new whitespace test target to `markdownlint-whitespace-tests-gitlab` in `Makefile`.
 
