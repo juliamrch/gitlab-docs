@@ -37,6 +37,47 @@ Available environment variables:
   set in a pipeline since `CI` is set to `true` by default, and it makes sure we're
   not reusing an old version of the docs in case we land on a runner that already
   has a docs build.
+- `BRANCH_<slug>`: if you want to clone an upstream branch
+  [other than the default](#clone-an-upstream-branch-other-than-the-default).
+
+### Clone an upstream branch other than the default
+
+The
+[`clone_repositories` task](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/fd64306b4ba4efd4081ac96e7cf69756fef2ce2f/lib/tasks/build_site.rake#L10)
+clones the
+[default branch](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/fd64306b4ba4efd4081ac96e7cf69756fef2ce2f/lib/tasks/task_helpers.rb#L41)
+of an upstream project if the `BRANCH_<slug>` variable is not set.
+
+If you want to use another branch, you can use the `BRANCH_<slug>` environment
+variable for the following products:
+
+- `BRANCH_EE` for `gitlab-org/gitlab`
+- `BRANCH_OMNIBUS` for `gitlab-org/omnibus-gitlab`
+- `BRANCH_RUNNER` for `gitlab-org/gitlab-runner`
+- `BRANCH_CHARTS` for `gitlab-org/charts/gitlab`
+- `BRANCH_OPERATOR` for `gitlab-org/cloud-native/gitlab-operator`
+
+You can use those variables either locally or in a merge request:
+
+- The most common scenario is when you'd like to deploy a `gitlab-docs`
+  review app using an upstream branch that contains changes pertinent to that
+  `gitlab-docs` merge request:
+
+  1. In a `gitlab-docs` merge request, edit the `variables` section of
+     [`.gitlab-ci.yml`](../.gitlab-ci.yml), adding the `BRANCH_<slug>` variable
+     you want to pull the respective upstream branch for.
+  1. When you verify the merge request works the way you want, restore
+     `.gitlab-ci.yml` the way it was.
+
+- You can also use it locally by setting the variable before running the Rake task,
+  for example:
+
+  ```shell
+  BRANCH_EE=update-tier-badges bundle exec rake clone_repositories
+  ```
+
+  The above example fetches the default branches for all the upstream projects
+  except for `gitlab-org/gitlab`, which is set to `update-tier-badges`.
 
 ### Usage of `clone_repositories` in an upstream review app
 
@@ -49,8 +90,10 @@ The following process describes how this works:
    in an upstream project.
 1. The following variables are [set and passed](https://gitlab.com/gitlab-org/gitlab/-/blob/53233de16cafa6544ebe7bfbe41fd65e95645c8e/scripts/trigger-build.rb#L239-337)
    on the `gitlab-docs` pipeline:
-   - `BRANCH_<project>` is set to the upstream project's branch name, where
-     `<project>` is one of `ee`, `omnibus`, `runner`, `charts`, `operator`.
+   - `BRANCH_<slug>` is set to the upstream project's branch name, where
+     `<slug>` is one of `ee`, `omnibus`, `runner`, `charts`, `operator`. With this
+     variable set up, when the docs site is built, it fetches the
+     [respective upstream branch](#clone-an-upstream-branch-other-than-the-default).
    - `CI_PIPELINE_SOURCE` is set to `trigger`.
 1. A minimal pipeline is run in `gitlab-docs` with two jobs:
    - `compile_upstream_review_app`: builds the site by using the `clone_repositories`
