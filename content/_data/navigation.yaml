@@ -3327,7 +3327,16 @@ sections:
                   - doc_title: Swapping tables
                     doc_url: 'ee/development/database/swapping_tables.html'
                   - doc_title: Table partitioning
-                    doc_url: 'ee/development/database/table_partitioning.html'
+                    doc_url: 'ee/development/database/partitioning/'
+                    docs:
+                      - doc_title: Date range
+                        doc_url: 'ee/development/database/partitioning/date_range.html'
+                      - doc_title: Hash
+                        doc_url: 'ee/development/database/partitioning/hash.html'
+                      - doc_title: Int range
+                        doc_url: 'ee/development/database/partitioning/int_range.html'
+                      - doc_title: List
+                        doc_url: 'ee/development/database/partitioning/list.html'
                   - doc_title: Troubleshooting and debugging
                     doc_url: 'ee/development/database/database_debugging.html'
                   - doc_title: Understanding EXPLAIN plans
