@@ -852,3 +852,18 @@ redirects:
   - from: /ee/administration/geo/replication/version_specific_upgrades.html
     to: /ee/update/index.html#version-specific-upgrading-instructions
     remove_date: 2024-09-01
+  - from: /ee/development/internal_analytics/service_ping/implement.html
+    to: /ee/development/internal_analytics/metrics/metrics_instrumentation.html
+    remove_date: 2024-10-13
+  - from: /ee/development/internal_analytics/service_ping/metrics_instrumentation.html
+    to: /ee/development/internal_analytics/metrics/metrics_instrumentation.html
+    remove_date: 2024-10-13
+  - from: /ee/development/fe_guide/accessibility.html
+    to: /ee/development/fe_guide/accessibility/index.html
+    remove_date: 2024-10-12
+  - from: /ee/administration/raketasks/storage.html
+    to: /ee/administration/repository_storage_paths.html
+    remove_date: 2024-10-11
+  - from: /runner/examples/gitlab.html
+    to: /runner/register/index.html#register-a-runner-for-gitlab-community-edition-integration-tests
+    remove_date: 2024-10-16
