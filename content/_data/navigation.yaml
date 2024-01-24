@@ -2293,6 +2293,8 @@ sections:
                     doc_url: 'ee/user/clusters/agent/gitops/example_repository_structure.html'
                   - doc_title: 'Tutorial: Deploy an OCI artifact using Flux'
                     doc_url: 'ee/user/clusters/agent/gitops/flux_oci_tutorial.html'
+                  - doc_title: 'Migrate to Flux'
+                    doc_url: 'ee/user/clusters/agent/gitops/migrate_to_flux.html'
                   - doc_title: Manage Kubernetes secrets (deprecated)
                     doc_url: 'ee/user/clusters/agent/gitops/secrets_management.html'
                   - doc_title: Track cluster resources (deprecated)
