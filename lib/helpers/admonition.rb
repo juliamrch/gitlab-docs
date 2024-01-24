@@ -7,7 +7,8 @@ module Nanoc::Helpers
       'warning' => 'warning',
       'flag' => 'flag',
       'info' => 'info',
-      'disclaimer' => 'disclaimer'
+      'disclaimer' => 'disclaimer',
+      'details' => 'details'
     }.freeze
 
     GITLAB_SVGS_MAPPING = {
@@ -15,14 +16,23 @@ module Nanoc::Helpers
       'warning' => 'warning',
       'flag' => 'flag',
       'info' => 'tanuki',
-      'disclaimer' => 'review-warning'
+      'disclaimer' => 'review-warning',
+      'details' => ''
     }.freeze
 
     def admonition(kind, content)
       kind = kind.downcase
+      icon = GITLAB_SVGS_MAPPING[kind]
+
+      icon_html = if icon.nil? || icon.empty?
+                    ""
+                  else
+                    icon(GITLAB_SVGS_MAPPING[kind], 16, 'alert-icon')
+                  end
+
       %(<div class="mt-3 admonition-wrapper #{kind}">) +
         %(<div class="admonition admonition-non-dismissable alert alert-#{BOOTSTRAP_MAPPING[kind]}">) +
-        %(<div>#{icon(GITLAB_SVGS_MAPPING[kind], 16, 'alert-icon')}<div role="alert"><div class="alert-body">#{content}</div></div></div></div></div>)
+        %(<div>#{icon_html}<div role="alert"><div class="alert-body">#{content}</div></div></div></div></div>)
     end
 
     def legal_disclaimer
