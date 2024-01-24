@@ -173,14 +173,16 @@
   }
 
   .introduced-in {
-    border-left: 4px solid $theme-indigo-200;
+    color: $gray-700;
+    border-left: 2px solid $color-tanuki-light;
     padding-left: 0.75rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
 
-    p,
-    li,
-    a {
-      font-size: 0.875rem;
+    ul,
+    li {
+      margin: 0;
+      padding-bottom: 0;
+      line-height: 1.65rem;
     }
   }
 

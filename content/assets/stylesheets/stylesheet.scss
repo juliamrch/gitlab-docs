@@ -167,8 +167,33 @@ ol {
   }
 }
 
+.admonition {
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.admonition-non-dismissable {
+  position: relative;
+  padding-top: $gl-spacing-scale-5;
+  padding-bottom: $gl-spacing-scale-5;
+  padding-left: $gl-spacing-scale-9;
+
+  .alert-icon {
+    margin-top: $gl-spacing-scale-1;
+    position: absolute;
+    top: $gl-spacing-scale-5;
+    left: $gl-spacing-scale-5;
+    vertical-align: middle;
+  }
+
+  .alert-body {
+    @include gl-line-height-24;
+  }
+}
+
 // Pajamas alerts
-// https://gitlab-org.gitlab.io/gitlab-design/hosted/design-gitlab-specs/alerts-spec-previews/
+// https://design.gitlab.com/components/alert/
 .alert-note {
   background-color: $alert-note-bg;
   color: $alert-note-txt;
@@ -197,22 +222,6 @@ ol {
   border-radius: 5px;
 }
 
-.alert-info {
-  background-color: $alert-info-bg;
-  color: $alert-info-txt;
-  border: solid 1px $alert-info-border;
-  border-radius: 5px;
-  float: right;
-  width: 30%;
-  margin-left: 25px;
-
-  @media (max-width: $bp-sm) {
-    width: 100%;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-  }
-}
-
 .alert-danger {
   background-color: $alert-danger-bg;
   color: $alert-danger-txt;
@@ -236,6 +245,32 @@ ol {
 
 // End of Pajamas alerts
 
+// Custom alerts
+.alert-info {
+  background-color: $alert-info-bg;
+  color: $alert-info-txt;
+  border: solid 1px $alert-info-border;
+  border-radius: 5px;
+  float: right;
+  width: 30%;
+  margin-left: 2rem;
+
+  @media (max-width: $bp-sm) {
+    width: 100%;
+    margin: 0.25rem 0 1rem;
+    float: none;
+  }
+}
+
+.alert-details {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-left: 2px solid $color-tanuki-light;
+  padding: 0 0 0 0.75rem;
+  margin-bottom: 0;
+}
+
+// Sticky navbar
 body.has-archive-banner {
   .gl-alert.gl-alert-sticky {
     margin-top: 0;
@@ -495,31 +530,6 @@ p.result-snippet {
 
 .imageblock {
   margin: 1rem 0;
-}
-
-.admonition {
-  p {
-    margin-bottom: 0;
-  }
-}
-
-.admonition-non-dismissable {
-  position: relative;
-  padding-top: $gl-spacing-scale-5;
-  padding-bottom: $gl-spacing-scale-5;
-  padding-left: $gl-spacing-scale-9;
-
-  .alert-icon {
-    margin-top: $gl-spacing-scale-1;
-    position: absolute;
-    top: $gl-spacing-scale-5;
-    left: $gl-spacing-scale-5;
-    vertical-align: middle;
-  }
-
-  .alert-body {
-    @include gl-line-height-24;
-  }
 }
 
 .gl-tabs .gl-tabs-nav {

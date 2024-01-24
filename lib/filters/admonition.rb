@@ -10,7 +10,7 @@ class AdmonitionFilter < Nanoc::Filter
     doc = Nokogiri::HTML.fragment(content.dup)
     doc.css('p').each do |para|
       content = para.inner_html
-      match = content.match(%r{\A(?<type>NOTE|WARNING|FLAG|INFO|DISCLAIMER):\s?(?<content>.*)\Z}m)
+      match = content.match(%r{\A(?<type>NOTE|WARNING|FLAG|INFO|DISCLAIMER|DETAILS):\s?(?<content>.*)\Z}m)
       next unless match
 
       new_content = admonition(match[:type].downcase, match[:content])
