@@ -3518,8 +3518,6 @@ sections:
                   - doc_title: Service Ping
                     doc_url: 'ee/development/internal_analytics/service_ping/'
                     docs:
-                      - doc_title: Implement Service Ping
-                        doc_url: 'ee/development/internal_analytics/service_ping/implement.html'
                       - doc_title: Troubleshooting
                         doc_url: 'ee/development/internal_analytics/service_ping/troubleshooting.html'
                   - doc_title: Review guidelines
