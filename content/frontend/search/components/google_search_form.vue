@@ -145,6 +145,7 @@ export default {
       @keydown.arrow-down.prevent="keyboardNav"
       @keydown.arrow-up.prevent="keyboardNav"
       @keydown.escape="deactivate()"
+      @keydown.tab="deactivate()"
     >
       <form class="gl-relative">
         <gl-search-box-by-type
