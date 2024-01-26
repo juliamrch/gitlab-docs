@@ -4,7 +4,7 @@ title: GitLab Documentation
 <!-- Render the front page only if CI_PROJECT_NAME is gitlab-docs or is not set -->
 <% if ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil? %>
   <!-- Hero-->
-  <section class="hero text-center">
+  <section aria-labelledby="search-the-docs" class="hero text-center">
     <!-- Feedback Banner-->
     <%= render '/banner.*' %>
     <div class="container gl-mt-11">
@@ -12,7 +12,7 @@ title: GitLab Documentation
         <div class="col d-flex justify-content-center">
           <div class="card search gl-py-2">
             <div class="card-body">
-              <h5 class="card-title gl-pb-4">Search the docs</h5>
+              <h2 id="search-the-docs" class="card-title gl-pb-4">Search the docs</h2>
               <% if @item[:searchbar].nil? %>
                 <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
                   <% if @config[:search_backend] == "google" %>
@@ -45,7 +45,7 @@ title: GitLab Documentation
             <div class="card topic h-100">
               <div class="card-body">
                 <img class="card-img-top" src="<%= hero[:img] %>" alt="<%= hero[:alt] %>" aria-hidden="true" role="img">
-                <h5 class="card-title py-2 m-0"><%= hero[:title] %></h5>
+                <h3 class="card-title py-2 m-0"><%= hero[:title] %></h3>
                 <p class="card-text mb-2"><%= hero[:description] %></p>
                 <ul class="pl-0">
                   <% hero[:links].each do |link| %>
@@ -71,11 +71,11 @@ title: GitLab Documentation
   </section>
 
   <!-- Popular Topics-->
-  <section class="popular text-center">
+  <section aria-labelledby="popular-topics" class="popular text-center">
     <div class="container">
       <div class="row pt-7">
         <div class="col">
-          <h2 class="m-0 pb-4">
+          <h2 id="popular-topics" class="m-0 pb-4">
             Popular topics
           </h2>
         </div>
@@ -83,9 +83,9 @@ title: GitLab Documentation
       <% @items['/_data/popular_topics.yaml'][:developer].each do |topic| %>
         <div class="row">
           <div class="col-md-3 col-12">
-            <h5 class="align-top mt-0 text-left">
+            <h3 class="align-top mt-0 text-left">
               <%= topic[:title] %>
-            </h5>
+            </h3>
           </div>
           <div class="col-md-9 col-12">
             <ul class="text-left">
@@ -103,9 +103,9 @@ title: GitLab Documentation
       <% end %>
       <div class="row">
         <div class="col-md-3 col-12">
-          <h5 class="align-top mt-0 text-left">
+          <h3 class="align-top mt-0 text-left">
             Omnibus
-          </h5>
+          </h3>
         </div>
         <div class="col-md-9 col-12">
           <ul class="text-left">
@@ -127,9 +127,9 @@ title: GitLab Documentation
       </div>
       <div class="row pb-6">
         <div class="col-md-3 col-12">
-          <h5 class="align-top mt-0 text-left">
+          <h3 class="align-top mt-0 text-left">
             General <br class="d-none d-md-block">topics
-          </h5>
+          </h3>
         </div>
         <div class="col-md-9 col-12">
           <ul class="text-left">
@@ -153,14 +153,14 @@ title: GitLab Documentation
   </section>
 
   <!-- Self Managed-->
-  <section class="self-managed text-center py-6">
+  <section aria-labelledby="install-self-managed-gitlab" class="self-managed text-center py-6">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2>Install self-managed GitLab</h2>
+          <h2 id="install-self-managed-gitlab">Install self-managed GitLab</h2>
         </div>
         <div class="col-12 options">
-          <p>You’ve got options. <a href="/ee/install/install_methods.html">See them all <img src="/assets/images/collapse.svg" class="mt-n1" alt="" role="img" /></a></p>
+          <p>You’ve got options. <a href="/ee/install/install_methods.html">See them all <img src="/assets/images/collapse.svg" class="mt-n1" alt="" /></a></p>
         </div>
       </div>
 
@@ -168,43 +168,43 @@ title: GitLab Documentation
         <div class="col-md-6 col-12 py-3">
           <div class="card card-large h-100">
             <div class="card-body">
-              <img class="card-img-top" src="/assets/images/docs-omnibus.svg" alt="" role="img" />
-              <h5 class="card-title mb-0 pb-1">Install on Linux</h5>
+              <img class="card-img-top" src="/assets/images/docs-omnibus.svg" alt="" />
+              <h3 class="card-title mb-0 pb-1">Install on Linux</h3>
               <p class="card-text">The Omnibus package includes services and tools to install GitLab without laborious configuration.</p>
-              <a href="/omnibus/installation/" class="card-link">Use the Omnibus package <img src="/assets/images/collapse.svg" class="mt-n1" alt="" role="img" /></a>
+              <a href="/omnibus/installation/" class="card-link">Use the Omnibus package <img src="/assets/images/collapse.svg" class="mt-n1" alt="" /></a>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-12 py-3">
           <div class="card card-large h-100">
             <div class="card-body">
-              <img class="card-img-top" src="/assets/images/docs-charts.svg" alt="" role="img" />
-              <h5 class="card-title mb-0 pb-1">Install on Kubernetes</h5>
+              <img class="card-img-top" src="/assets/images/docs-charts.svg" alt="" />
+              <h3 class="card-title mb-0 pb-1">Install on Kubernetes</h3>
               <p class="card-text">If you're using cluster management, we recommend the Helm chart or the Operator for installing cloud-native GitLab.</p>
-              <a href="https://docs.gitlab.com/charts/" class="card-link">Use the Helm chart <img src="/assets/images/collapse.svg" class="mt-n1" alt="" role="img" /></a>
-              <a href="https://docs.gitlab.com/operator/" class="card-link">Use the Operator <img src="/assets/images/collapse.svg" class="mt-n1" alt="" role="img" /></a>
+              <a href="https://docs.gitlab.com/charts/" class="card-link">Use the Helm chart <img src="/assets/images/collapse.svg" class="mt-n1" alt="" /></a>
+              <a href="https://docs.gitlab.com/operator/" class="card-link">Use the Operator <img src="/assets/images/collapse.svg" class="mt-n1" alt="" /></a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row">
+      <ul class="row gl-list-style-none gl-mb-0 gl-pl-0">
         <% @items['/_data/landing.yaml'][:cards].each do |card| %>
-          <div class="col-lg-4 col-12 py-3">
+          <li class="col-lg-4 col-12 py-3">
             <div class="card transparent text-left h-100">
               <div class="p-3">
-                <h5 class="card-title">
-                  <img src="/assets/images/download.svg" class="mr-2" alt="" role="img" />
+                <h3 class="card-title">
+                  <img src="/assets/images/download.svg" class="mr-2" alt="" />
                   <a href="<%= card[:url] %>"><%= card[:title] %></a>
-                </h5>
+                </h3>
                 <p class="card-text pl-6">
                   <%= card[:description] %>
                 </p>
               </div>
             </div>
-          </div>
+          </li>
         <% end %>
-      </div>
+      </ul>
 
       <div class="row">
         <div class="col related pt-3">
@@ -217,11 +217,11 @@ title: GitLab Documentation
   </section>
 
   <!-- Reference -->
-  <section class="reference text-center py-5">
+  <section aria-labelledby="reference-architectures" class="reference text-center py-5">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-white pt-2 pb-0">
+          <h2 id="reference-architectures" class="text-white pt-2 pb-0">
             Reference architectures
           </h2>
         </div>
@@ -231,49 +231,49 @@ title: GitLab Documentation
           </p>
         </div>
       </div>
-      <div class="row">
+      <ul class="row gl-mb-0 gl-pl-0">
         <% @items['/_data/landing.yaml'][:referenceSmall].each do |ref| %>
-          <div class="col-md-3 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0">
+          <li class="col-md-3 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0">
             <div class="circle rounded-circle">
               <a class="text-white text-decoration-none" href="<%= ref[:url] %>">
                 <span class="d-block title pt-5"><%= ref[:title] %></span>
                 <span class="d-block sub-title mt-n3">users</span>
                 <span class="d-block">
-                  <img src="/assets/images/arrow-right.svg" alt="" role="img" />
+                  <img src="/assets/images/arrow-right.svg" alt="" />
                 </span>
               </a>
             </div>
-          </div>
+          </li>
         <% end %>
-      </div>
-      <div class="row pt-md-4 pb-5">
+      </ul>
+      <ul class="row pt-md-4 pb-5 gl-mb-0 gl-pl-0">
         <% @items['/_data/landing.yaml'][:referenceLarge].each do |ref| %>
-          <div class="col-md-4 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0 <%= ref[:class] %>">
+          <li class="col-md-4 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0 <%= ref[:class] %>">
             <div class="circle rounded-circle">
               <a class="text-white text-decoration-none" href="<%= ref[:url] %>">
                 <span class="d-block title pt-5"><%= ref[:title] %></span>
                 <span class="d-block sub-title mt-n3">users</span>
                 <span class="d-block">
-                  <img src="/assets/images/arrow-right.svg" alt="" role="img" />
+                  <img src="/assets/images/arrow-right.svg" alt="" />
                 </span>
               </a>
             </div>
-          </div>
+          </li>
         <% end %>
-      </div>
+      </ul>
     </div>
   </section>
 
   <!-- Support-->
-  <section class="support py-9">
+  <section aria-labelledby="get-support" class="support py-9">
     <div class="container">
       <div class="row">
         <div class="col d-flex justify-content-center">
           <div class="card text-center h-100">
             <div class="card-body">
-              <h5 class="card-title">
+              <h2 id="get-support" class="card-title">
                 Get support
-              </h5>
+              </h2>
               <p class="card-text mb-4 pb-2">
                 If you need additional help and you're on a paid tier, you can request support.
               </p>
@@ -291,7 +291,7 @@ title: GitLab Documentation
   <footer class="landing-footer d-xl-flex align-items-xl-center">
     <div class="container">
       <div class="row">
-        <div class="col d-xl-flex align-items-xl-center justify-content-xl-center">
+        <nav aria-label="Footer navigation" class="col d-xl-flex align-items-xl-center justify-content-xl-center">
           <a href="https://about.gitlab.com/company/">About GitLab</a>
           <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer">View page source</a>
           <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer">Edit in Web IDE</a>
@@ -304,7 +304,7 @@ title: GitLab Documentation
           <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer" class="ml-xl-3 no-attachment-icon mt-3 mt-xl-0 gl-hover-text-decoration-none!">
             <img src="./assets/images/by-sa.svg" alt="Creative Commons License"/>
           </a>
-        </div>
+        </nav>
       </div>
     </div>
   </footer>

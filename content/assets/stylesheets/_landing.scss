@@ -218,7 +218,7 @@
       color: $gds-purple-900;
     }
 
-    h5 {
+    h3 {
       font-weight: 500;
       font-size: 1.75rem;
       line-height: 2.125rem;
@@ -256,6 +256,7 @@
 
     a {
       color: $landing-gl-purple-500;
+      text-decoration: underline;
 
       &:hover {
         color: $landing-gl-purple-500;
@@ -402,7 +403,7 @@
       }
     }
 
-    h5 {
+    h2 {
       font-weight: 500;
       font-size: 2.5rem;
       line-height: 3.063rem;
