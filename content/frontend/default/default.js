@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           props: {
             tabTitles,
             tabContents,
+            responsive: false,
           },
         });
       },
