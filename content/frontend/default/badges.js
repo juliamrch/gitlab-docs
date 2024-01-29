@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
         );
     }
   };
-  sectionBadges.forEach(injectSectionBadge);
+  sectionBadges.forEach((badgeType) => injectSectionBadge(badgeType));
 
   /**
    * Handling for Markdown badges.
