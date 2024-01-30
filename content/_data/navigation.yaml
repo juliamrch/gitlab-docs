@@ -2002,7 +2002,7 @@ sections:
                     docs:
                       - doc_title: Requirements
                         doc_url: 'ee/user/application_security/dast/browser/configuration/requirements.html'
-                      - doc_title: Enabling the analyuzer
+                      - doc_title: Enabling the analyzer
                         doc_url: 'ee/user/application_security/dast/browser/configuration/enabling_the_analyzer.html'
                       - doc_title: Customizing analyzer settings
                         doc_url: 'ee/user/application_security/dast/browser/configuration/customize_settings.html'
