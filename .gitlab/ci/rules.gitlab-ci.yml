@@ -29,8 +29,9 @@ default:
     - bundle config set --local path 'vendor/bundle'  # Install dependencies into ./vendor/bundle
     - bundle install
     - node --version
+    - yarn set version 4.1.0
     - yarn --version
-    - yarn install --frozen-lockfile --cache-folder .yarn-cache
+    - yarn install --immutable
   cache:
     key:
       files:
@@ -38,19 +39,20 @@ default:
         - yarn.lock
     paths:
       - vendor/bundle
-      - .yarn-cache/
+      - ~/.yarn/berry/cache
 
 .yarn:
   before_script:
     - node --version
+    - yarn set version 4.1.0
     - yarn --version
-    - yarn install --frozen-lockfile --cache-folder .yarn-cache
+    - yarn install --immutable
   cache:
     key:
       files:
         - yarn.lock
     paths:
-      - .yarn-cache/
+      - ~/.yarn/berry/cache
 
 #
 # Retry a job automatically if it fails (2 times)

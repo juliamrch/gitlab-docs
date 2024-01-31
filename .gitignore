@@ -32,3 +32,12 @@ tmp/
 vendor/
 node_modules/
 coverage/
+
+# Yarn version 4
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

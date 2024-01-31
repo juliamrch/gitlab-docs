@@ -53,14 +53,16 @@ brakeman-sast:
       when: never
     - !reference [".security-rules", "rules"]
 
-nodejs-scan-sast:
-  extends:
-    - .sast-analyzer
-    - .security-scanning-overrides
-  rules:
-    - if: $SAST_DISABLED == 'true' || $SAST_DISABLED == '1' || $SAST_EXCLUDED_ANALYZERS =~ /nodejs-scan/
-      when: never
-    - !reference [".security-rules", "rules"]
+# Restore this job when https://gitlab.com/gitlab-org/gitlab/-/issues/431752 is resolved.
+#
+# nodejs-scan-sast:
+#   extends:
+#     - .sast-analyzer
+#     - .security-scanning-overrides
+#   rules:
+#     - if: $SAST_DISABLED == 'true' || $SAST_DISABLED == '1' || $SAST_EXCLUDED_ANALYZERS =~ /nodejs-scan/
+#       when: never
+#     - !reference [".security-rules", "rules"]
 
 semgrep-sast:
   extends:
