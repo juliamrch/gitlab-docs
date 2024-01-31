@@ -33,14 +33,18 @@ RUN apk add --no-cache \
     libxslt-dev \
     minify      \
     nodejs      \
+    npm         \
     openssl     \
     ruby-dev    \
     tar         \
     xz          \
     xz-dev      \
-    yarn        \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem update --silent --system \
+    # Add corepack for installing Yarn 4.x
+    # https://github.com/nodejs/corepack?tab=readme-ov-file#manual-installs
+    && npm uninstall -g yarn pnpm \
+    && npm install -g corepack@0.24.1 \
     && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
     && echo "Ruby: $(ruby --version)" \
     && echo "RubyGems: $(gem --version)" \
@@ -52,7 +56,7 @@ RUN apk add --no-cache \
 COPY . /source/
 WORKDIR /source
 
-RUN yarn install --frozen-lockfile                    \
+RUN yarn install --immutable                          \
     && yarn cache clean                               \
     && bundle config set --local path 'vendor/bundle' \
     && bundle install                                 \

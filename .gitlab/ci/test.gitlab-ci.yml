@@ -318,12 +318,3 @@ lint_dockerfiles:
   script:
     - apk add make
     - make hadolint-tests
-
-#
-# Untamper job overrides
-#
-untamper-my-lockfile:
-  rules:
-    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
-      changes:
-        - yarn.lock

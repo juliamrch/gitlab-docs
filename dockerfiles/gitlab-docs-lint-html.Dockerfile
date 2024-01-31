@@ -20,6 +20,7 @@ RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cac
     libxslt     \
     libxslt-dev \
     nodejs      \
+    npm         \
     openssl     \
     parallel    \
     ruby-dev    \
@@ -29,6 +30,10 @@ RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cac
     yarn        \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem update --silent --system \
+    # Add corepack for installing Yarn 4.x
+    # https://github.com/nodejs/corepack?tab=readme-ov-file#manual-installs
+    && npm uninstall -g yarn pnpm \
+    && npm install -g corepack@0.24.1 \
     && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
     && echo "Ruby: $(ruby --version)" \
     && echo "RubyGems: $(gem --version)" \
@@ -49,7 +54,7 @@ WORKDIR /tmp/gitlab-docs/
 
 # Install gitlab-docs dependencies
 RUN printf "\n\e[32mINFO: Installing Node.js and Ruby dependencies..\e[39m\n" \
-  && yarn install --frozen-lockfile \
+  && yarn install --immutable \
   && yarn cache clean --all \
   && bundle update --bundler \
   && bundle install

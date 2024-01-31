@@ -1,6 +1,4 @@
 include:
-  - project: gitlab-org/frontend/untamper-my-lockfile
-    file: templates/merge_request_pipelines.yml
   - template: Security/Dependency-Scanning.gitlab-ci.yml
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml

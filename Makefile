@@ -102,7 +102,7 @@ endif
 	@printf "\n$(INFO)INFO: Compiling CSS...$(END)\n"
 	@yarn compile:css
 	@printf "\n$(INFO)INFO: Compiling JavaScript...$(END)\n"
-	@ROLLUP_OPTIONS=--silent yarn compile:js
+	@yarn compile:js
 
 view: compile
 	@printf "\n$(INFO)INFO: Starting GitLab documentation site...$(END)\n"
@@ -138,6 +138,7 @@ setup-asdf: check-asdf
 install-asdf-dependencies:
 	@printf "\n$(INFO)INFO: Installing asdf dependencies...$(END)\n"
 	@asdf install
+	@corepack enable && asdf reshim nodejs
 
 install-ruby-dependencies:
 	@printf "\n$(INFO)INFO: Installing Ruby dependencies...$(END)\n"
@@ -145,7 +146,7 @@ install-ruby-dependencies:
 	@bundle install
 
 install-nodejs-dependencies:
-	@yarn install --frozen-lockfile --silent
+	@yarn install --immutable --silent
 
 setup: clean brew-bundle setup-asdf install-asdf-dependencies install-ruby-dependencies install-nodejs-dependencies
 

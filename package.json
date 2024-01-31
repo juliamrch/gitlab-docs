@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "public/index.js",
   "scripts": {
-    "compile:js": "rollup --config rollup.config.js $ROLLUP_OPTIONS",
+    "compile:js": "rollup --config rollup.config.js",
     "watch:js": "rollup --config rollup.config.js --watch",
     "compile:css": "node_modules/.bin/sass content/assets/stylesheets:public/assets/stylesheets/",
     "watch:css": "node_modules/.bin/sass --watch content/assets/stylesheets:public/assets/stylesheets/",
@@ -12,9 +12,6 @@
     "eslint": "eslint --max-warnings 0 --ext .js,.vue .",
     "prettier": "prettier --check '**/*.{js,vue,json}'",
     "prettier:fix": "prettier --write '**/*.{js,vue,json}'"
-  },
-  "resolutions": {
-    "glob/jackspeak": "2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.23.5",
@@ -78,5 +75,6 @@
     "pikaday": "^1.8.2",
     "v-click-outside": "^3.2.0",
     "vue": "^2.7.0"
-  }
+  },
+  "packageManager": "yarn@4.1.0"
 }
