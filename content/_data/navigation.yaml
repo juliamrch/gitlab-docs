@@ -1217,19 +1217,17 @@ sections:
           - doc_title: Compliance
             doc_url: 'ee/administration/compliance.html'
             docs:
-              - doc_title: Audit events
-                doc_url: 'ee/administration/audit_events.html'
+              - doc_title: Audit event reports
+                doc_url: 'ee/administration/audit_event_reports.html'
               - doc_title: Audit event types
-                doc_url: 'ee/administration/audit_event_streaming/audit_event_types.html'
+                doc_url: 'ee/administration/audit_event_types.html'
+              - doc_title: Audit event schema
+                doc_url: 'ee/administration/audit_event_schema.html'
               - doc_title: Audit event streaming
                 doc_url: 'ee/administration/audit_event_streaming/'
                 docs:
-                  - doc_title: Examples
-                    doc_url: 'ee/administration/audit_event_streaming/examples.html'
                   - doc_title: GraphQL API
                     doc_url: 'ee/administration/audit_event_streaming/graphql_api.html'
-              - doc_title: Audit reports
-                doc_url: 'ee/administration/audit_reports.html'
               - doc_title: Compliance frameworks
                 doc_url: 'ee/user/group/compliance_frameworks.html'
                 docs:
