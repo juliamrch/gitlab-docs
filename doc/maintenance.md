@@ -13,7 +13,7 @@ We use [GitLab Pages](https://about.gitlab.com/features/pages/) to build and
 host this website.
 
 The site is built and deployed automatically in GitLab CI/CD jobs.
-See [`.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab-ci.yml)
+See [`.gitlab-ci.yml`](../.gitlab-ci.yml)
 for the current configuration. The project has [scheduled pipelines](https://docs.gitlab.com/ee/user/project/pipelines/schedules.html)
 that build and deploy the site every hour.
 
@@ -50,7 +50,7 @@ DISABLE_CSP=1 make compile
 
 ### Add or update domains in the CSP header
 
-The CSP header and the allowed domains can be found in the [`csp.html`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/layouts/csp.html)
+The CSP header and the allowed domains can be found in the [`csp.html`](../layouts/csp.html)
 layout. Every time a new font or Javascript file is added, or maybe updated in
 case of a versioned file, you need to update the `csp.html` layout, otherwise
 it can cause the site to misbehave and be broken.
@@ -105,7 +105,7 @@ redirects to the path defined in the metadata:
 1. Next, it compiles all the markdown files into HTML. In this step, it first checks
    [if the `redirect_to` metadata is present](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/4fc73c9a5f1652cc2e0b284bfe1e937887a37183/Rules#L61),
    and if it is, the [redirect layout is used](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/4fc73c9a5f1652cc2e0b284bfe1e937887a37183/Rules#L105).
-1. The [redirect layout](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/layouts/redirect.html)
+1. The [redirect layout](../layouts/redirect.html)
    is a simple HTML page that essentially does two things:
    - It uses an [`http-equiv` meta tag](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/4fc73c9a5f1652cc2e0b284bfe1e937887a37183/layouts/redirect.html#L8)
      with the URL set to the one defined in the `redirect_to` metadata of the
@@ -134,7 +134,7 @@ that contains the redirect rules.
 We have a lot of redirects, so maintaining this plaintext file is cumbersome.
 Instead, we use a YAML file which is then converted into the `_redirects` file:
 
-1. The [`redirects.yaml` file](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/content/_data/redirects.yaml)
+1. The [`redirects.yaml` file](../content/_data/redirects.yaml)
    contains the redirect entries for the Docs site:
 
    | Entry          | Required               | Description |

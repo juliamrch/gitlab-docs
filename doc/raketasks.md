@@ -1,6 +1,6 @@
 # GitLab Docs rake tasks and scripts
 
-The GitLab Docs project has some raketasks that automate various things. You
+The GitLab Docs project has some Rake tasks that automate various things. You
 can see the list of rake tasks with:
 
 ```shell

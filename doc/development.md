@@ -2,7 +2,7 @@
 
 ## Linking to source files
 
-A helper called [`edit_on_gitlab`](/lib/helpers/edit_on_gitlab.rb) can be used
+A helper called [`edit_on_gitlab`](../lib/helpers/edit_on_gitlab.rb) can be used
 to link to a page's source file. We can link to both the simple editor and the
 web IDE. Here's how you can use it in a Nanoc layout:
 
@@ -84,7 +84,7 @@ You should replace `<bundle-name>` with whatever you'd like to call your
 bundle.
 
 Nanoc then builds and renders those links correctly according with what's
-defined in [`Rules`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/Rules).
+defined in [`Rules`](../Rules).
 
 ## Adding query strings to CTAs headed to about.gitlab.com/pricing
 
@@ -183,7 +183,7 @@ To add an additional set of product documentation to <https://docs.gitlab.com> f
       - `project_dir`: The repository of the product, relative to the `gitlab-docs` repository.
       - `content_dir`: The product's documentation directory. This is the same as the `content_dir` defined in `data_sources`.
 
-1. Edit [`lib/task_helpers.rb`](../lib/task_helpers.rb) and add the `<product_name>` to the `PRODUCTS` variable. For example:
+1. Edit [`lib/task_helpers.rb`](../lib/tasks/task_helpers.rb) and add the `<product_name>` to the `PRODUCTS` variable. For example:
 
    ```ruby
    PRODUCTS = %w[ee omnibus runner charts <product_name>].freeze
@@ -195,15 +195,15 @@ To add an additional set of product documentation to <https://docs.gitlab.com> f
    that takes care of that. Otherwise, if the product doesn't have a stable
    branch at all, you can omit this and the default branch will be always pulled.
 
-1. Edit ['lib/edit_on_gitlab.rb'](../lib/edit_on_gitlab.rb) and add the product and its attributes to the `PRODUCT_REPOS` object, then add 1-2 test cases in [`spec/lib/helpers/edit_on_gitlab_spec.rb`](../spec/lib/helpers/edit_on_gitlab_spec.rb).
+1. Edit ['lib/edit_on_gitlab.rb'](../lib/helpers/edit_on_gitlab.rb) and add the product and its attributes to the `PRODUCT_REPOS` object, then add 1-2 test cases in [`spec/lib/helpers/edit_on_gitlab_spec.rb`](../spec/lib/helpers/edit_on_gitlab_spec.rb).
 1. Edit [`.gitlab-ci.yml`](../.gitlab-ci.yml) and add the new `BRANCH_<slug>` variable under `variables`. For example, if the slug is named `foo`, the variable should be named `BRANCH_FOO`.
-1. Edit [`.test.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/test.gitlab-ci.yml) and add the new product to the following tests, following the same pattern as existing products:
+1. Edit [`.test.gitlab-ci.yml`](../.gitlab/ci/test.gitlab-ci.yml) and add the new product to the following tests, following the same pattern as existing products:
 
    - `test_global_nav_links`
    - `test_EOL_whitespace`
    - `test_unlinked_images`
 
-1. Edit [`scripts/normalize-links.sh`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/scripts/normalize-links.sh)
+1. Edit [`scripts/normalize-links.sh`](../scripts/normalize-links.sh)
    and add the new product to the `Relative URLs` and `Full URLs` sections.
 1. Edit the ['Makefile'](../Makefile):
 
@@ -223,7 +223,7 @@ To add an additional set of product documentation to <https://docs.gitlab.com> f
 
 To exclude a directory so the contents aren't published to the docs site:
 
-1. Edit [this `Rules` file](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/Rules).
+1. Edit [this `Rules` file](../Rules).
 1. Add an `ignore` line, like: `ignore '/ee/drawers/*.md'`.
 
 ## Update badges
