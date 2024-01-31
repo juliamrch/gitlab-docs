@@ -12,7 +12,7 @@ dependencies yourself. The dependencies are:
 To install Ruby using [`rbenv`](https://github.com/rbenv/rbenv):
 
 1. [Install `rbenv`](https://github.com/rbenv/rbenv#installation).
-1. Install the [supported version of Ruby](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.ruby-version):
+1. Install the [supported version of Ruby](../.ruby-version):
 
    ```shell
    rbenv install <supported-version>
@@ -34,7 +34,7 @@ Check your:
 To install Node.js using [`nvm`](https://github.com/nvm-sh/nvm):
 
 1. [Install `nvm`](https://github.com/nvm-sh/nvm#installation-and-update).
-1. Install the [supported version of Node.js](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.nvmrc):
+1. Install the [supported version of Node.js](../.nvmrc):
 
    ```shell
    nvm install <supported-version>

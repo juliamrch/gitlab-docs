@@ -20,7 +20,7 @@ which git && which make
 
 If they aren't installed, use Homebrew or your Linux distribution's package manager to install them.
 
-Homebrew is also useful for installing other packages you might be missing. To install Homebrew, follow the guide at [https://brew.sh](brew.sh).
+Homebrew is also useful for installing other packages you might be missing. To install Homebrew, follow the guide at <https://brew.sh>.
 
 To set up GitLab Docs:
 
@@ -44,7 +44,7 @@ An alternative to `make setup` is to follow [Advanced setup for GitLab Docs](adv
 ### Clone all documentation repositories
 
 To build the full GitLab documentation website locally, you must clone all the documentation projects that provide the
-Nanoc [data sources](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/nanoc.yaml). To clone all documentation
+Nanoc [data sources](../nanoc.yaml). To clone all documentation
 projects, run the following in the checkout of `gitlab-docs`:
 
 ```shell
@@ -232,8 +232,8 @@ You can clone all repositories:
 
 For more:
 
-- `make` targets, see: <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/Makefile>.
-- Rake tasks, see: <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/Rakefile>.
+- `make` targets, see: [`Makefile`](../Makefile).
+- Rake tasks, see: [`Rakefile`](../Rakefile).
 
 ### `realpath: No such file or directory @ rb_check_realpath_internal`
 

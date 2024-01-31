@@ -56,8 +56,8 @@ the GitLab Documentation website.
 
 GitLab Docs is built with a combination of external:
 
-- [JavaScript libraries](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/package.json).
-- [Ruby libraries](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/Gemfile).
+- [JavaScript libraries](../package.json).
+- [Ruby libraries](../Gemfile).
 
 ### SEO
 
@@ -87,25 +87,25 @@ The pipeline in the `gitlab-docs` project:
 The `gitlab-docs` project pipeline configuration is split into multiple files to
 improve maintainability:
 
-- [`.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab-ci.yml):
+- [`.gitlab-ci.yml`](../.gitlab-ci.yml):
   The base configuration file contains:
   - Global variables.
   - [`workflow:rules`](https://docs.gitlab.com/ee/ci/yaml/index.html#workflowrules)
     to limit which pipelines can run.
   - External templates imported with [`include`](https://docs.gitlab.com/ee/ci/yaml/index.html#include).
   - The other configuration files, also imported with `include`.
-- [`.gitlab/ci/build-and-deploy.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/build-and-deploy.gitlab-ci.yml):
+- [`.gitlab/ci/build-and-deploy.gitlab-ci.yml`](../.gitlab/ci/build-and-deploy.gitlab-ci.yml):
   The jobs that build the docs site before testing, and the jobs that deploy the site
   or review apps.
-- [`.gitlab/ci/docker-images.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/docker-images.gitlab-ci.yml):
+- [`.gitlab/ci/docker-images.gitlab-ci.yml`](../.gitlab/ci/docker-images.gitlab-ci.yml):
   The jobs that build and test docker images.
-- [`.gitlab/ci/rules.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/rules.gitlab-ci.yml):
+- [`.gitlab/ci/rules.gitlab-ci.yml`](../.gitlab/ci/rules.gitlab-ci.yml):
   The [`rules`](https://docs.gitlab.com/ee/ci/yaml/index.html#rules), [`cache`](https://docs.gitlab.com/ee/ci/yaml/index.html#cache)
   and other default configuration for most jobs in the pipeline.
-- [`.gitlab/ci/security.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/security.gitlab-ci.yml):
+- [`.gitlab/ci/security.gitlab-ci.yml`](../.gitlab/ci/security.gitlab-ci.yml):
   Extra configuration for security jobs to override their defaults and make them work
   better in the pipeline.
-- [`.gitlab/ci/test.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gitlab/ci/test.gitlab-ci.yml):
+- [`.gitlab/ci/test.gitlab-ci.yml`](../.gitlab/ci/test.gitlab-ci.yml):
   Code tests and jobs used for [`gitlab-docs` maintenance](https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks).
 
 ### Rebuild the docs site Docker images
@@ -191,4 +191,4 @@ If you don't specify `editor:`, the simple one is used by default.
 The docs site uses [Google Programmable Search](https://developers.google.com/custom-search)
 for its search function.
 
-Learn more in <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/search.md>.
+Learn more in [the docs search documentation](../doc/search.md).
