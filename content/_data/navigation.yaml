@@ -744,6 +744,8 @@ sections:
                         doc_url: 'ee/administration/settings/gitaly_timeouts.html'
                       - doc_title: TLS support
                         doc_url: 'ee/administration/gitaly/tls_support.html'
+                      - doc_title: Repository consistency checks
+                        doc_url: 'ee/administration/gitaly/consistency_checks.html'
                   - doc_title: Configure Gitaly Cluster
                     doc_url: 'ee/administration/gitaly/praefect.html'
                   - doc_title: Example configuration files
