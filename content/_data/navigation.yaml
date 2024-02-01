@@ -78,6 +78,8 @@ sections:
             doc_url: 'ee/administration/license.html'
       - category_title: GitLab Dedicated
         category_url: 'ee/subscriptions/gitlab_dedicated/'
+      - category_title: Subscription add-ons
+        category_url: 'ee/subscriptions/subscription-add-ons.html'
       - category_title: Community programs
         category_url: 'ee/subscriptions/community_programs.html'
       - category_title: Customers Portal
