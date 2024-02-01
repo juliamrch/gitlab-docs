@@ -5,7 +5,6 @@
     "content/assets/stylesheets/font-awesome.min.css"
   ],
   "rules": {
-    "declaration-block-semicolon-newline-after": null,
     "max-nesting-depth": 4,
     "rule-empty-line-before": null,
     "selector-max-compound-selectors": 4,
