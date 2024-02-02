@@ -27,7 +27,6 @@ RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cac
     tar         \
     xz          \
     xz-dev      \
-    yarn        \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem update --silent --system \
     # Add corepack for installing Yarn 4.x

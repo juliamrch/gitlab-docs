@@ -23,15 +23,19 @@ RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cac
     libxslt-dev \
     minify      \
     nodejs      \
+    npm         \
     openssl     \
     pngquant    \
     ruby-dev    \
     tar         \
     xz          \
     xz-dev      \
-    yarn        \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem update --silent --system \
+    # Add corepack for installing Yarn 4.x
+    # https://github.com/nodejs/corepack?tab=readme-ov-file#manual-installs
+    && npm uninstall -g yarn pnpm \
+    && npm install -g corepack@0.24.1 \
     && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
     && echo "Ruby: $(ruby --version)" \
     && echo "RubyGems: $(gem --version)" \
