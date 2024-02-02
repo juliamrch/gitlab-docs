@@ -981,11 +981,6 @@ sections:
           - doc_title: Visibility and access controls
             doc_url: 'ee/administration/settings/visibility_and_access_controls.html'
 
-      # GitLab Dedicated
-
-      - category_title: Configure GitLab Dedicated
-        category_url: 'ee/administration/dedicated/'
-
       # Maintain your install
 
       - category_title: Maintain your installation
@@ -1127,6 +1122,17 @@ sections:
             doc_url: 'ee/administration/user_cohorts.html'
           - doc_title: Rake tasks
             doc_url: 'ee/raketasks/user_management.html'
+
+
+      # GitLab Dedicated
+
+      - category_title: GitLab Dedicated
+        category_url: 'ee/administration/dedicated/'
+        docs:
+          - doc_title: Create your GitLab Dedicated instance
+            doc_url: 'ee/administration/dedicated/create_instance.html'
+          - doc_title: Configure your GitLab Dedicated instance
+            doc_url: 'ee/administration/dedicated/configure_instance.html'
 
   # USE GITLAB
 
