@@ -1323,6 +1323,8 @@ sections:
             doc_url: 'ee/user/project/use_project_as_go_package.html'
           - doc_title: 'Tutorial: Build a protected workflow for your project'
             doc_url: 'ee/tutorials/protected_workflow/'
+          - doc_title: Troubleshooting
+            doc_url: 'ee/user/project/troubleshooting.html'
           - doc_title: Badges
             doc_url: 'ee/user/project/badges.html'
           - doc_title: Code intelligence
