@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   scrollToQuery();
   activateKeyboardShortcut();
 
-  const { isHomepage } = document.querySelector('body').dataset;
-
   (() =>
     new Vue({
       el: '.js-google-search-form',
@@ -15,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
       render(createElement) {
         return createElement(GoogleSearchForm, {
           props: {
-            borderless: !isHomepage,
             numResults: 7,
           },
         });

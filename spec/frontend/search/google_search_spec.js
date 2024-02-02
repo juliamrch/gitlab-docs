@@ -47,7 +47,6 @@ describe('content/frontend/search/components/google_search_form.vue', () => {
     const componentData = {
       attachTo: createContainer(),
       propsData: {
-        borderless: true,
         numResults: 10,
       },
     };

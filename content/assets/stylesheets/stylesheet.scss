@@ -544,7 +544,10 @@ a.gl-tab-nav-item:hover {
 .gl-tab-nav-item-active:active,
 .gl-tab-nav-item-active:focus,
 .gl-tab-nav-item-active:focus:active {
-  box-shadow: inset 0 -2px 0 0 $theme-indigo-500, 0 0 0 1px #fff;
+  box-shadow: inset 0 -2px 0 0 $theme-indigo-500, 0 0 0 1px $gds-white;
+}
+.gl-tab-nav-item-active:focus-visible {
+  box-shadow: 0 0 0 1px $gds-white, 0 0 0 3px $blue-400;
 }
 .gl-tabs-nav li.nav-item {
   margin: 0;

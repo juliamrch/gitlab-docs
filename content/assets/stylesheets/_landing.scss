@@ -4,24 +4,112 @@
   font-size: $body-font-size;
   background-color: $landing-gl-gray-50;
 
-  // buttons, text and utilities
-  .btn-outline-primary {
-    transition: 0.3s all;
-    border-color: $landing-gl-purple-500;
-    color: $landing-gl-purple-500;
-
-    &:hover {
-      color: $gds-white;
-      background-color: $landing-gl-purple-500;
+  nav {
+    @media (min-width: $bp-md) {
+      height: $header-height;
     }
   }
 
-  // survey banner
-  .gl-alert.gl-alert-info {
-    margin-top: 0;
+  h1 {
+    font-size: 1.5rem;
+    @media (min-width: $bp-md) {
+      font-size: 2.25rem;
+      margin-bottom: 0.75rem;
+    }
   }
 
-  // cards
+  img {
+    display: inline;
+  }
+
+  // Tabs
+  .gl-tabs {
+    border-bottom: 0;
+  }
+  .gl-tabs-nav {
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .gl-tab-nav-item {
+      font-size: 1.5625rem;
+      line-height: 125%;
+      letter-spacing: -0.01563rem;
+      color: $gds-gray-900;
+      position: relative;
+      top: 4px;
+      padding: 1rem 0.75rem 1.25rem;
+    }
+
+    .gl-tab-nav-item-active,
+    .gl-tab-nav-item-active:active,
+    .gl-tab-nav-item-active:focus,
+    .gl-tab-nav-item-active:focus:active {
+      color: $theme-indigo-900;
+      font-weight: 600;
+      box-shadow: inset 0 -4px 0 0 $theme-indigo-500;
+    }
+    .gl-tab-nav-item-active:focus-visible {
+      box-shadow: 0 0 0 1px $gds-white, 0 0 0 3px $blue-400;
+    }
+    .gl-tab-nav-item:hover:not(.gl-tab-nav-item-active) {
+      box-shadow: inset 0 -4px 0 0 $landing-tabs-hover;
+    }
+  }
+  .gl-tab-content {
+    padding: 0;
+  }
+  .gl-tabs-nav {
+    border-width: 0 0 4px;
+  }
+
+  // Accordions
+  .gl-accordion-item {
+    margin-bottom: 0.55rem;
+    .gl-button-text {
+      position: relative;
+      left: -1.5rem;
+    }
+
+    .collapse {
+      margin-left: 0;
+      border-bottom: 1px solid $theme-indigo-100;
+    }
+  }
+  .gl-accordion-item-header {
+    border-bottom: 1px solid $theme-indigo-100;
+    padding-bottom: 0.55rem;
+
+    // Chevrons
+    button {
+      justify-content: left;
+      width: 100%;
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: none !important;
+      }
+      .gl-button-text {
+        color: $theme-indigo-900;
+        font-size: 1.125rem;
+      }
+    }
+    svg.gl-button-icon {
+      fill: $theme-indigo-500;
+      position: relative;
+      left: 95%;
+      transform: rotate(90deg);
+      height: 20px;
+      width: 20px;
+    }
+    button.not-collapsed {
+      font-weight: 600;
+      svg.gl-button-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  // Cards
   .card {
     box-shadow: 0 0.5rem 1.5rem -0.75rem $landing-gl-blue-1000;
     border-radius: 0.25rem;
@@ -50,208 +138,198 @@
     }
   }
 
-  // images
-  img {
-    display: inline;
+  /**
+   * PAGE SECTIONS
+   */
+  .search-hero {
+    background-color: $purple-900;
+
+    @media (min-width: $bp-md) {
+      height: 15.25rem;
+      background-repeat: no-repeat;
+      background-position: 95% -1rem;
+      padding: 1.5rem 0 1rem;
+      background-image: url("/assets/images/search-hero-bg.svg");
+    }
+
+    h1 {
+      font-weight: 600;
+    }
+
+    .quick-links {
+      @media (min-width: $bp-md) {
+        padding-bottom: 0;
+      }
+    }
+    .quick-links a {
+      font-size: 0.875rem;
+      @media (min-width: $bp-md) {
+        font-size: 1rem;
+      }
+  
+      /* Animate underline hover style */
+      background: linear-gradient(
+        to right,
+        $color-tanuki-light,
+        $color-tanuki-light
+        ),
+        linear-gradient(
+          to right,
+          $red-400,
+          $purple-400,
+          $blue-400
+      );
+      background-size: 100% 1px, 0 1px;
+      background-position: 100% 100%, 0 100%;
+      background-repeat: no-repeat;
+      transition: background-size 400ms;
+
+      &:hover {
+        text-decoration: none;
+        color: $gds-white;
+        background-size: 0 1px, 100% 1px;
+      }
+    }
+
+    /* Search form and results */
+    .search-form,
+    .gs-wrapper,
+    .js-google-search-form {
+      position: relative;
+    }
+    .js-google-search-form {
+      top: 0.25rem;
+    }
+
+    .js-google-search-form,
+    .search-form,
+    .gs-wrapper,
+    .gs-results {
+      width: 100%;
+      @media (min-width: $bp-md) {
+        width: 28rem;
+      }
+      @media (min-width: $bp-lg) {
+        width: 46rem;
+      }
+    }
+
+    // Larger search box
+    @media (min-width: $bp-lg) {
+      .gl-search-box-by-type-input-borderless,
+      .gl-search-box-by-type-input-borderless.gl-form-input {
+        padding: 0.75rem 4rem 0.75rem 2rem;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+      }
+      .gs-wrapper kbd {
+        @media (min-width: $bp-md) {
+          top: 0.5rem;
+          right: 0.6rem;
+          font-size: 0.75rem;
+          padding: 0.3rem 0.6rem;
+        }
+      }
+    }
+
+    .gl-search-box-by-type-input {
+      height: auto;
+      &:focus {
+        box-shadow: inset 0 0 0 1px $landing-gl-form-border, 0 0 0 1px #fff, 0 0 0 3px $blue-400;
+      }
+    }
+    .gs-results {
+      border: 1px solid $landing-gl-form-border;
+      border-width: 0 1px 1px;
+      font-size: 0.9rem;
+    }
+    // Lunr.js
+    .gl-search-box-by-click.input-group>.input-group-append {
+      background-color: transparent;
+    }
   }
 
-  // sections
-  .hero {
-    background-image: url('/assets/images/hero-bg.svg');
-    background-repeat: no-repeat;
-    background-attachment: inherit;
-    background-position: 50% 0.85rem;
+  .site-sections {
+    background: $gds-white url("/assets/images/gradient.svg");
+    background-position-y: bottom;
+    background-repeat: repeat-x;
 
-    @media (max-width: $bp-sm) {
-      background-image: url('/assets/images/hero-bg-mobile.svg');
+    @media screen and (min-width: 990px) {
+      padding: 2.5rem 0;
     }
 
-    .topic .card-body {
-      padding: 1.75rem 2.25rem 2.5rem;
+    h3
+    a {
+      color: $theme-indigo-700;
     }
 
-    .search {
-      background: $gds-white;
-      box-shadow: 0 0 0.125rem $landing-gl-black-50, 0 0.25rem 1.5rem $landing-gl-blue-950;
-      border-radius: 0.25rem;
-      width: 65%;
+    // Article grid
+    .site-section-inner {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
 
-      @media (max-width: $bp-md) {
-        width: 100%;
+      @media screen and (min-width: 990px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1.88rem 2rem;
+        padding: 2rem 0 0;
       }
 
-      .card-body {
-        min-height: 10rem;
-      }
-
-      .card-title {
-        font-size: 3rem;
-        line-height: 3.25rem;
-        font-weight: 700;
-        letter-spacing: -0.05rem;
-        color: $gds-purple-900;
-
-        @media (max-width: $bp-xs) {
-          font-size: 2rem;
+      @media screen and (min-width: 990px) {
+        h3 {
+          font-weight: 600;
+          font-size: 1.25rem;
+          line-height: 125%;
         }
-      }
-
-      .card-link {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-        color: $landing-gl-purple-500;
-      }
-
-      .search-form,
-      .gs-wrapper,
-      .gs-results {
-        @media (max-width: $bp-md) {
-          width: $search-md-width;
+        a {
+          background: url("/assets/images/chevron-lg-right.svg") no-repeat center right;
+          padding-right: 1.56rem;
         }
-        @media (min-width: $bp-md) {
-          width: $search-lg-width;
+        p {
+          margin-top: 0.5rem;
         }
-      }
-      .gl-search-box-by-type-input {
-        height: auto;
-        &:focus {
-          box-shadow: inset 0 0 0 1px $landing-gl-form-border, 0 0 0 1px #fff, 0 0 0 3px $blue-400;
-        }
-      }
-      .gs-results {
-        border: 1px solid $landing-gl-form-border;
-        border-width: 0 1px 1px;
-      }
-
-      // Lunr.js
-      .gl-search-box-by-click {
-        margin: 0 auto;
       }
     }
 
-    .oval {
-      @media (min-width: $bp-md) {
-        border-radius: 50%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-        width: 43.188rem;
-        height: 29rem;
-        background: $landing-gl-purple-50;
-        mix-blend-mode: multiply;
-        opacity: 0.24;
-        filter: blur(10.25rem);
-      }
-    }
+    .secondary-sections {
+      @media screen and (max-width: 989px) {
+        padding: 0.75rem 0;
+        line-height: 1.25rem;
 
-    .topic {
-      border: 0;
-
-      .card-img-top {
-        width: 4rem;
-        height: 4rem;
+        h3 {
+          font-size: 1.25rem;
+          font-weight: 500;
+        }
       }
 
-      .card-title {
-        font-weight: 500;
-        font-size: 1.75rem;
-        line-height: 2.125rem;
-        color: $gds-purple-900;
+      a {
+        color: $theme-indigo-700;
+        font-size: 0.875rem;
       }
 
-      .card-text {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 1rem;
-        line-height: 1.5rem;
-        color: $landing-gl-gray-500;
+      @media screen and (min-width: 990px) {
+        border-top: 1px solid $theme-indigo-100;
+        margin-top: 3.5rem;
+        padding-top: 3.5rem;
+        h3 {
+          font-weight: 600;
+        }
       }
 
       ul {
-        list-style: none;
-      }
-
-      li {
-        margin: 0;
-      }
-
-      a {
-        font-size: 0.875rem;
-        line-height: 1.5rem;
-        color: $landing-gl-purple-500;
-      }
-    }
-
-    h2 {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 2.5rem;
-      line-height: 3.063rem;
-      color: $gds-purple-900;
-    }
-
-    .btn:not(.gl-search-box-by-click-clear-button, .gl-search-box-by-click-search-button, .gl-search-box-by-type-clear, .gl-dismiss-btn) {
-      color: $gds-white;
-      background: $landing-gl-purple-500;
-      border: 1px solid $landing-gl-purple-600;
-      box-sizing: border-box;
-      border-radius: 4px;
-      padding: 1rem 1.5rem;
-
-      &:hover {
-        color: $landing-gl-purple-500;
-        background: $gds-white;
-      }
-    }
-  }
-
-
-  .popular {
-    background: $gds-white;
-    border: 1px solid $gray-50;
-
-    h2 {
-      font-weight: 500;
-      font-size: 2.5rem;
-      line-height: 3.063rem;
-      color: $gds-purple-900;
-    }
-
-    h3 {
-      font-weight: 500;
-      font-size: 1.75rem;
-      line-height: 2.125rem;
-      color: $gds-purple-900;
-    }
-
-    ul {
-      list-style: none;
-      li {
-        line-height: 1.313rem;
-        margin: 0.5rem;
-
-        &::before {
-          position: relative;
-          right: 0.2rem;
-          top: -0.125rem;
-          content: url('/assets/images/rectangle.svg');
+        @media screen and (max-width: 989px) {
+          display: block;
         }
-      }
-
-      a {
-        font-size: 0.875rem;
-        color: $landing-gl-purple-700;
+        grid-gap: 0.5rem 1.88rem;
       }
     }
   }
 
-  .self-managed {
+  section.self-managed {
     h2 {
-      font-weight: 500;
-      font-size: 2.5rem;
-      line-height: 3.063rem;
-      color: $gds-purple-900;
+      font-weight: 600;
+      color: $theme-indigo-900;
+      font-size: 2.25rem;
     }
 
     a {
@@ -415,9 +493,20 @@
       text-align: center;
       color: $landing-gl-gray-600;
     }
+
+    .btn-outline-primary {
+      transition: .3s all;
+      border-color: $landing-gl-purple-500;
+      color: $landing-gl-purple-500;
+
+      &:hover {
+        color: $gds-white;
+        background-color: $landing-gl-purple-500;
+      }
+    }
   }
 
-  // footer
+  // Footer
   .landing-footer {
     height: 3rem;
     background-color: $landing-gl-purple-550;
