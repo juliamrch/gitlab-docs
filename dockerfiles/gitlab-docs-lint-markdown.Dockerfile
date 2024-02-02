@@ -27,6 +27,7 @@ RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cac
     pngquant     \
     ruby         \
     tar          \
+    # We need Yarn version 1.x for global installs
     yarn         \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem update --silent --system \
@@ -45,13 +46,13 @@ RUN printf "\n\e[32mINFO: Installing Vale %s..\e[39m\n" "${VALE_VERSION}" \
   && echo "Vale: $(vale --version)" \
   && printf "\n"
 
-# Install markdownlint-cli
+# Install markdownlint-cli globally
 RUN printf "\n\e[32mINFO: Installing markdownlint-cli %s..\e[39m\n" "${MARKDOWNLINT_VERSION}" \
   && yarn global add markdownlint-cli@${MARKDOWNLINT_VERSION} && yarn cache clean \
   && echo "markdownlint-cli: $(markdownlint --version)" \
   && printf "\n"
 
-# Install markdownlint-cli2
+# Install markdownlint-cli2 globally
 RUN printf "\n\e[32mINFO: Installing markdownlint-cli2 %s..\e[39m\n" "${MARKDOWNLINT2_VERSION}" \
   && yarn global add markdownlint-cli2@${MARKDOWNLINT2_VERSION} && yarn cache clean \
   && markdownlint-cli2 | head -n 1 \
