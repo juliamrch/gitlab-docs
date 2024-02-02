@@ -22,10 +22,6 @@ export default {
     GlTooltip,
   },
   props: {
-    borderless: {
-      type: Boolean,
-      required: true,
-    },
     numResults: {
       type: Number,
       required: true,
@@ -141,7 +137,7 @@ export default {
   <div>
     <div
       v-click-outside="() => deactivate()"
-      class="gs-wrapper gl-m-auto gl-my-3 gl-md-mt-0 gl-md-mb-0"
+      class="gs-wrapper gl-my-3 gl-md-mt-0 gl-md-mb-0"
       @keydown.arrow-down.prevent="keyboardNav"
       @keydown.arrow-up.prevent="keyboardNav"
       @keydown.escape="deactivate()"
@@ -151,8 +147,8 @@ export default {
         <gl-search-box-by-type
           v-model="searchQuery"
           :is-loading="isLoading"
-          :borderless="borderless"
-          placeholder=""
+          :borderless="true"
+          placeholder="Search GitLab documentation"
           autocomplete="off"
           aria-label="Search"
           @focus="

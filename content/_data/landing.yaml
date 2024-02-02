@@ -1,72 +1,112 @@
-heros:
-  - title: Agile with GitLab
-    description: Manage your work with built-in agile features.
-    img: /assets/images/agile.svg
-    alt: agile
+quickLinks:
+  - title: Get started
+    url: '/ee/tutorials/'
+  - title: CI/CD reference
+    url: '/ee/ci/yaml/'
+  - title: SSH keys
+    url: '/ee/user/ssh.html'
+  - title: Personal access tokens
+    url: '/ee/user/profile/personal_access_tokens.html'
+  - title: Command line Git
+    url: '/ee/gitlab-basics/start-using-git.html'
+
+sectionTabs:
+  - title: Use GitLab
+    refs:
+      - '/ee/topics/git/index.md'
+      - '/ee/topics/set_up_organization.md'
+      - '/ee/user/project/organize_work_with_projects.md'
+      - '/ee/topics/plan_and_track.md'
+      - '/ee/topics/manage_code.md'
+      - '/ee/topics/build_your_application.md'
+      - '/ee/user/application_security/secure_your_application.md'
+      - '/ee/topics/release_your_application.md'
+      - '/ee/operations/index.md'
+      - '/runner/monitoring/index.md'
+      - '/ee/user/infrastructure/index.md'
+      - '/ee/user/analytics/index.md'
+      - '/ee/policy/experiment-beta-support.md'
+      - '/ee/user/version.md'
+  - title: Tutorials
+    refs:
+      - '/ee/tutorials/gitlab_navigation.md'
+      - '/ee/tutorials/learn_git.md'
+      - '/ee/tutorials/plan_and_track.md'
+      - '/ee/tutorials/build_application.md'
+      - '/ee/tutorials/secure_application.md'
+      - '/ee/tutorials/infrastructure.md'
+      - '/ee/tutorials/develop.md'
+  - title: Subscribe
+    refs:
+      - '/ee/subscriptions/choosing_subscription.md'
+      - '/ee/subscriptions/gitlab_com/index.md'
+      - '/ee/subscriptions/self_managed/index.md'
+      - '/ee/subscriptions/gitlab_dedicated/index.md'
+      - '/ee/subscriptions/community_programs.md'
+      - '/ee/subscriptions/customers_portal.md'
+      - '/ee/subscriptions/quarterly_reconciliation.md'
+      - '/ee/ci/pipelines/cicd_minutes.md'
+  - title: Install
+    refs:
+      - '/ee/install/requirements.md'
+      - '/ee/install/install_methods.md'
+      - '/ee/install/cloud_providers.md'
+      - '/ee/topics/offline/index.md'
+      - '/ee/administration/reference_architectures/index.md'
+      - '/ee/update/index.md'
+      - '/runner/install/index.md'
+      - '/runner/configuration/index.md'
+  - title: Administer
+    refs:
+      - '/ee/administration/get_started.md'
+      - '/ee/user/feature_flags.md'
+      - '/ee/administration/auth/index.md'
+      - '/ee/administration/configure.md'
+      - '/ee/administration/settings/index.md'
+      - '/ee/administration/dedicated/index.md'
+      - '/ee/administration/operations/index.md'
+      - '/ee/security/index.md'
+      - '/ee/user/profile/account/create_accounts.md'
+  - title: Extend
+    refs:
+      - '/ee/integration/index.md'
+      - '/ee/user/project/integrations/webhooks.md'
+      - '/ee/api/rest/index.md'
+      - '/ee/api/graphql/index.md'
+      - '/ee/api/oauth2.md'
+      - '/ee/editor_extensions/index.md'
+
+secondarySections:
+  - title: Contribute
     links:
-      - title: Issues
-        url: '/ee/user/project/issues/'
-      - title: Issue boards
-        url: '/ee/user/project/issue_board.html'
-      - title: Labels
-        url: '/ee/user/project/labels.html'
-  - title: CI/CD
-    description: Build, test, and deploy applications.
-    img: /assets/images/continuous-delivery.svg
-    alt: continuous-delivery
-    links:
-      - title: CI/CD YAML syntax reference
-        url: '/ee/ci/yaml/'
-      - title: Getting started
-        url: '/ee/ci/'
-      - title: CI/CD examples
-        url: '/ee/ci/examples/'
-      - title: GitLab Runner
-        url: '/runner/'
-  - title: Collaboration
-    description: Configure and develop your software applications.
-    img: /assets/images/collaberation.svg
-    alt: collaboration
-    links:
-      - title: Projects
-        url: '/ee/user/project/'
-      - title: Repositories
-        url: '/ee/user/project/repository/'
-      - title: Merge requests
-        url: '/ee/user/project/merge_requests/'
-  - title: Security
-    description: Scan your CI pipeline and streamline vulnerability management.
-    img: /assets/images/locked.svg
-    alt: locked
-    links:
-      - title: Secure your application
-        url: '/ee/user/application_security/'
-      - title: Vulnerability management
-        url: '/ee/user/application_security/vulnerability_report/'
-      - title: Offline environments
-        url: '/ee/user/application_security/offline_deployments/'
-  - title: Analytics
-    description: View reports and analysis of your team's work.
-    img: /assets/images/increase.svg
-    alt: increase
-    links:
-      - title: Value stream analytics
-        url: '/ee/user/group/value_stream_analytics/'
-      - title: Issue analytics
-        url: '/ee/user/group/issues_analytics/'
-      - title: Usage trends
-        url: '/ee/administration/analytics/usage_trends.html'
-  - title: Administration
-    description: Customize and configure your self-managed installation.
-    img: /assets/images/visibility.svg
-    alt: visibility
-    links:
-      - title: Admin area settings
-        url: '/ee/administration/settings/'
-      - title: Set up LDAP
-        url: '/ee/administration/auth/ldap/'
+      - title: GitLab
+        url: '/ee/development/contributing/'
       - title: GitLab Pages
-        url: '/ee/administration/pages/'
+        url: '/ee/development/pages/'
+      - title: GitLab Design System
+        url: 'https://design.gitlab.com/get-started/contributing'
+      - title: GitLab Runner
+        url: '/runner/development/'
+      - title: GitLab distribution
+        url: '/ee/development/distribution/'
+      - title: GitLab documentation
+        url: 'ee/development/documentation/'
+  - title: Solutions
+    links:
+      - title: Amazon Web Services
+        url: '/ee/solutions/cloud/aws/'
+
+selfManagedCards:
+  - title: Install with Docker
+    url: '/ee/install/docker.html'
+    description: GitLab maintains a set of official Docker images based on the Omnibus GitLab package.
+  - title: Compile from source
+    url: '/ee/install/installation.html'
+    description: If the Omnibus GitLab package isn't available for your distribution, you can install GitLab from source.
+  - title: Install from cloud provider
+    url: '/ee/install/cloud_providers.html'
+    description: Install directly from platforms like AWS, Azure, GCP, OpenShift, and DigitalOcean.
+
 referenceSmall:
   - title: '1,000'
     url: '/ee/administration/reference_architectures/1k_users.html'
@@ -86,13 +126,3 @@ referenceLarge:
   - title: '50,000'
     class: 'justify-content-md-start'
     url: '/ee/administration/reference_architectures/50k_users.html'
-cards:
-  - title: Install with Docker
-    url: '/ee/install/docker.html'
-    description: GitLab maintains a set of official Docker images based on the Omnibus GitLab package.
-  - title: Compile from source
-    url: '/ee/install/installation.html'
-    description: If the Omnibus GitLab package isn't available for your distribution, you can install GitLab from source.
-  - title: Install from cloud provider
-    url: '/ee/install/cloud_providers.html'
-    description: Install directly from platforms like AWS, Azure, GCP, OpenShift, and DigitalOcean.
