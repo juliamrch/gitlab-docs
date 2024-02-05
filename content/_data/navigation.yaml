@@ -1185,6 +1185,8 @@ sections:
             doc_url: 'ee/user/namespace/'
           - doc_title: Members
             doc_url: 'ee/user/project/members/'
+          - doc_title: Organization
+            doc_url: 'ee/user/organization/'
           - doc_title: Groups
             doc_url: 'ee/user/group/'
             docs:
