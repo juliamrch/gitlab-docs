@@ -3,12 +3,6 @@
  * See https://gitlab.com/gitlab-com/marketing/digital-experience/buyer-experience/-/issues/1618
  */
 
-// Prevent images from being auto-blocked by OneTrust.
-// See https://gitlab.com/gitlab-org/gitlab-docs/-/issues/1750
-document.querySelectorAll('img:not([src^="http"])').forEach(image => {
-  image.setAttribute('data-ot-ignore', '');
-});
-
 // Configuration for Google Tag Manager
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
