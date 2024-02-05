@@ -2006,6 +2006,8 @@ sections:
             docs:
               - doc_title: Automatic response to leaked secrets
                 doc_url: 'ee/user/application_security/secret_detection/automatic_response.html'
+              - doc_title: Pre-receive secret detection
+                doc_url: 'ee/user/application_security/secret_detection/pre_receive.html'
           - doc_title: Dynamic Application Security Testing (DAST)
             doc_url: 'ee/user/application_security/dast/'
             docs:
