@@ -1726,16 +1726,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gitlab/svgs@npm:^3.82.0":
-  version: 3.82.0
-  resolution: "@gitlab/svgs@npm:3.82.0"
-  checksum: 10c0/70d720571654d0fe727489f6c6d0a6d066f6dc00c7e2201b04494ffa2aff35d53aacb4198b70082917e2a1dbc8cbfa1ed3e51f1ba49701697803be6d6beb14ef
+"@gitlab/svgs@npm:^3.83.0":
+  version: 3.83.0
+  resolution: "@gitlab/svgs@npm:3.83.0"
+  checksum: 10c0/46869067c70d28ba64c850089f30edb2f49f7212098711eab872590f603f688d041752a80291365a2be66db5a1ea3f66564ddc3cb18df4f06a1d2aa65f622214
   languageName: node
   linkType: hard
 
-"@gitlab/ui@npm:^73.1.0":
-  version: 73.1.0
-  resolution: "@gitlab/ui@npm:73.1.0"
+"@gitlab/ui@npm:^73.3.1":
+  version: 73.3.1
+  resolution: "@gitlab/ui@npm:73.3.1"
   dependencies:
     "@floating-ui/dom": "npm:1.4.3"
     bootstrap-vue: "npm:2.23.1"
@@ -1752,7 +1752,7 @@ __metadata:
     pikaday: ^1.8.0
     tailwindcss: ^3
     vue: ^2.7.16
-  checksum: 10c0/989a39dd964b08e143b1a53f26dde7950876916c0da1edc165a92b6dea9c058f6dc31465a2b63c70a02c01455a54e00e2e84ac683712dd522ddf45e9e431a998
+  checksum: 10c0/604ec8824e314858d3c0b10c80bb8309e866c5a80da6658c78a449838e0e0eb4245ea8d0bcffcb4236cc66a587fe11d8b778ffead25f733e02d89071618076f3
   languageName: node
   linkType: hard
 
@@ -3909,15 +3909,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cose-base@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "cose-base@npm:2.2.0"
-  dependencies:
-    layout-base: "npm:^2.0.0"
-  checksum: 10c0/14b9f8100ac322a00777ffb1daeb3321af368bbc9cabe3103943361273baee2003202ffe38e4ab770960b600214224e9c196195a78d589521540aa694df7cdec
-  languageName: node
-  linkType: hard
-
 "cosmiconfig@npm:^9.0.0":
   version: 9.0.0
   resolution: "cosmiconfig@npm:9.0.0"
@@ -4050,18 +4041,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cytoscape-fcose@npm:^2.1.0":
-  version: 2.2.0
-  resolution: "cytoscape-fcose@npm:2.2.0"
-  dependencies:
-    cose-base: "npm:^2.2.0"
-  peerDependencies:
-    cytoscape: ^3.2.0
-  checksum: 10c0/ce472c9f85b9057e75c5685396f8e1f2468895e71b184913e05ad56dcf3092618fe59a1054f29cb0995051ba8ebe566ad0dd49a58d62845145624bd60cd44917
-  languageName: node
-  linkType: hard
-
-"cytoscape@npm:^3.23.0":
+"cytoscape@npm:^3.28.1":
   version: 3.28.1
   resolution: "cytoscape@npm:3.28.1"
   dependencies:
@@ -5712,8 +5692,8 @@ __metadata:
     "@gitlab/eslint-plugin": "npm:^19.4.0"
     "@gitlab/fonts": "npm:^1.3.0"
     "@gitlab/stylelint-config": "npm:^6.1.0"
-    "@gitlab/svgs": "npm:^3.82.0"
-    "@gitlab/ui": "npm:^73.1.0"
+    "@gitlab/svgs": "npm:^3.83.0"
+    "@gitlab/ui": "npm:^73.3.1"
     "@popperjs/core": "npm:^2.11.8"
     "@rollup/plugin-babel": "npm:^6.0.4"
     "@rollup/plugin-commonjs": "npm:^25.0.7"
@@ -5751,7 +5731,7 @@ __metadata:
     lunr: "npm:^2.3.9"
     markdownlint-cli: "npm:^0.39.0"
     markdownlint-cli2: "npm:^0.12.1"
-    mermaid: "npm:^10.7.0"
+    mermaid: "npm:^10.8.0"
     pikaday: "npm:^1.8.2"
     postcss: "npm:^8.4.33"
     prettier: "npm:^3.2.4"
@@ -7342,13 +7322,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"layout-base@npm:^2.0.0":
-  version: 2.0.1
-  resolution: "layout-base@npm:2.0.1"
-  checksum: 10c0/a44df9ef3cbff9916a10f616635e22b5787c89fa62b2fec6f99e8e6ee512c7cebd22668ce32dab5a83c934ba0a309c51a678aa0b40d70853de6c357893c0a88b
-  languageName: node
-  linkType: hard
-
 "leven@npm:^3.1.0":
   version: 3.1.0
   resolution: "leven@npm:3.1.0"
@@ -7773,16 +7746,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mermaid@npm:^10.7.0":
-  version: 10.7.0
-  resolution: "mermaid@npm:10.7.0"
+"mermaid@npm:^10.8.0":
+  version: 10.8.0
+  resolution: "mermaid@npm:10.8.0"
   dependencies:
     "@braintree/sanitize-url": "npm:^6.0.1"
     "@types/d3-scale": "npm:^4.0.3"
     "@types/d3-scale-chromatic": "npm:^3.0.0"
-    cytoscape: "npm:^3.23.0"
+    cytoscape: "npm:^3.28.1"
     cytoscape-cose-bilkent: "npm:^4.1.0"
-    cytoscape-fcose: "npm:^2.1.0"
     d3: "npm:^7.4.0"
     d3-sankey: "npm:^0.12.3"
     dagre-d3-es: "npm:7.0.10"
@@ -7797,7 +7769,7 @@ __metadata:
     ts-dedent: "npm:^2.2.0"
     uuid: "npm:^9.0.0"
     web-worker: "npm:^1.2.0"
-  checksum: 10c0/42f1c5653b7b8954ebfa0fd26b6172d4a5834c2f87fda38aff023ccba98f3ae014c74656df3a59e2150176b670d923cdde2293dbbc6718fd812317990f389634
+  checksum: 10c0/5ecf6dcb174ea891ed231ff8a2d0536dd72e32d2e80c3a793b373122cc903af81f59e4d2b262845a51749b80b5313a6d7ccff77cf803217e98b8d54f209f0f37
   languageName: node
   linkType: hard
 
