@@ -3,7 +3,7 @@
 ###############################################
 
 default:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/base:alpine-3.18-ruby-3.2.2-08fa6df8
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/base:alpine-3.19-ruby-3.2.3-a12f3fd8
   tags:
     - gitlab-org
 
@@ -29,7 +29,6 @@ default:
     - bundle config set --local path 'vendor/bundle'  # Install dependencies into ./vendor/bundle
     - bundle install
     - node --version
-    - yarn set version ${YARN_VERSION}
     - yarn --version
     - yarn install --immutable
   cache:
@@ -44,7 +43,6 @@ default:
 .yarn:
   before_script:
     - node --version
-    - yarn set version ${YARN_VERSION}
     - yarn --version
     - yarn install --immutable
   cache:
