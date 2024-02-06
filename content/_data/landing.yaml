@@ -42,6 +42,7 @@ sectionTabs:
       - '/ee/subscriptions/gitlab_com/index.md'
       - '/ee/subscriptions/self_managed/index.md'
       - '/ee/subscriptions/gitlab_dedicated/index.md'
+      - '/ee/subscriptions/subscription-add-ons.md'
       - '/ee/subscriptions/community_programs.md'
       - '/ee/subscriptions/customers_portal.md'
       - '/ee/subscriptions/quarterly_reconciliation.md'
