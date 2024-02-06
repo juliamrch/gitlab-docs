@@ -1226,6 +1226,8 @@ sections:
                 doc_url: 'ee/user/group/reporting/git_abuse_rate_limit.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/user/group/troubleshooting.html'
+          - doc_title: Sharing projects and groups
+            doc_url: 'ee/user/project/members/sharing_projects_groups.html'
           - doc_title: Compliance
             doc_url: 'ee/administration/compliance.html'
             docs:
