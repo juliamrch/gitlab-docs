@@ -3052,7 +3052,20 @@ sections:
         category_url: 'ee/development/contributing/'
         docs:
           - doc_title: 'Tutorial: Make a GitLab contribution'
-            doc_url: 'ee/development/contributing/first_contribution.html'
+            doc_url: 'ee/development/contributing/first_contribution/'
+            docs:
+              - doc_title: Contribute code with the Web IDE
+                doc_url: 'ee/development/contributing/first_contribution/contribute-web-ide.html'
+              - doc_title: Configure the Gitpod development environment
+                doc_url: 'ee/development/contributing/first_contribution/configure-dev-env-gitpod.html'
+              - doc_title: Contribute code with Gitpod
+                doc_url: 'ee/development/contributing/first_contribution/contribute-gitpod.html'
+              - doc_title: Configure the GDK development environment
+                doc_url: 'ee/development/contributing/first_contribution/configure-dev-env-gdk.html'
+              - doc_title: Contribute code with GDK
+                doc_url: 'ee/development/contributing/first_contribution/contribute-gdk.html'
+              - doc_title: Create a merge request
+                doc_url: 'ee/development/contributing/first_contribution/mr-review.html'
           - doc_title: Architecture
             doc_url: 'ee/development/architecture.html'
             docs:
