@@ -1,223 +1,228 @@
 ---
 title: GitLab Documentation
 ---
+<!-- Render the front page only if CI_PROJECT_NAME is gitlab-docs or is not set -->
+<!-- This allows link checking to not fail on pipelines that do not include a full site build -->
+<% if ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil? %>
 
-<!-- Search hero -->
-<section aria-labelledby="find-gitLab-answers-fast" class="search-hero gl-pt-4">
-  <div class="container">
-    <h1 id="find-gitLab-answers-fast" class="gl-text-white gl-my-3">Find GitLab answers fast.</h1>
-    <% if @config[:search_backend] == "google" %>
-      <div class="js-google-search-form gl-spinner-container">
-        <span aria-label="Loading" class="gl-spinner gl-spinner-light gl-spinner-md"></span>
-      </div>
-    <% elsif @config[:search_backend] == "lunr" %>
-      <div class="js-search-form gl-spinner-container">
-        <span aria-label="Loading" class="gl-spinner gl-spinner-light gl-spinner-md"></span>
-      </div>
-    <% end %>
-
-    <ul class="quick-links gl-pb-3 gl-pl-0 gl-mt-7 gl-list-style-none">
-      <% @items['/_data/landing.yaml'][:quickLinks].each do |link| %>
-        <li class="gl-mr-4 gl-mb-3 gl-display-inline-block">
-          <a href="<%= link[:url] %>" class="gl-md-pb-2 gl-text-white gl-display-inline-block gl-white-space-nowrap">
-            <%= link[:title] %>
-          </a>
-        </li>
+  <!-- Search hero -->
+  <section aria-labelledby="find-gitLab-answers-fast" class="search-hero gl-pt-4">
+    <div class="container">
+      <h1 id="find-gitLab-answers-fast" class="gl-text-white gl-my-3">Find GitLab answers fast.</h1>
+      <% if @config[:search_backend] == "google" %>
+        <div class="js-google-search-form gl-spinner-container">
+          <span aria-label="Loading" class="gl-spinner gl-spinner-light gl-spinner-md"></span>
+        </div>
+      <% elsif @config[:search_backend] == "lunr" %>
+        <div class="js-search-form gl-spinner-container">
+          <span aria-label="Loading" class="gl-spinner gl-spinner-light gl-spinner-md"></span>
+        </div>
       <% end %>
-    </ul>
-  </div>
-</section>
 
-<!-- Site sections -->
-<section class="site-sections gl-pt-6">
-  <div class="container">
-    <div class="featured-sections js-tabs">
-      <% @items['/_data/landing.yaml'][:sectionTabs].each_with_index do |tab, index| %>
-        <div data-section-title="<%= tab[:title] %>" class="site-section <% if index > 0 %>gl-display-none<% end %>">
-          <h2 class="gl-sr-only"><%= tab[:title] %></h2>
-          <ul class="site-section-inner gl-list-style-none gl-pl-0 gl-m-0 gl-pt-3 gl-pb-5">
-            <% if tab[:refs] %>
-              <% tab[:refs].each do |ref| %>
-                <% item = @items.find { |i| i.identifier == ref } %>
-                <% if item %>
-                  <li>
-                    <h3 class="gl-font-sm gl-font-weight-normal"><a href="<%= item.path %>"><%= item[:title] %></a></h3>
-                    <p class="gl-display-none gl-md-display-block gl-font-sm gl-text-gray-700 gl-line-height-20 gl-mb-0"><%= item[:description] %></p>
-                  </li>
+      <ul class="quick-links gl-pb-3 gl-pl-0 gl-mt-7 gl-list-style-none">
+        <% @items['/_data/landing.yaml'][:quickLinks].each do |link| %>
+          <li class="gl-mr-4 gl-mb-3 gl-display-inline-block">
+            <a href="<%= link[:url] %>" class="gl-md-pb-2 gl-text-white gl-display-inline-block gl-white-space-nowrap">
+              <%= link[:title] %>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Site sections -->
+  <section class="site-sections gl-pt-6">
+    <div class="container">
+      <div class="featured-sections js-tabs">
+        <% @items['/_data/landing.yaml'][:sectionTabs].each_with_index do |tab, index| %>
+          <div data-section-title="<%= tab[:title] %>" class="site-section <% if index > 0 %>gl-display-none<% end %>">
+            <h2 class="gl-sr-only"><%= tab[:title] %></h2>
+            <ul class="site-section-inner gl-list-style-none gl-pl-0 gl-m-0 gl-pt-3 gl-pb-5">
+              <% if tab[:refs] %>
+                <% tab[:refs].each do |ref| %>
+                  <% item = @items.find { |i| i.identifier == ref } %>
+                  <% if item %>
+                    <li>
+                      <h3 class="gl-font-sm gl-font-weight-normal"><a href="<%= item.path %>"><%= item[:title] %></a></h3>
+                      <p class="gl-display-none gl-md-display-block gl-font-sm gl-text-gray-700 gl-line-height-20 gl-mb-0"><%= item[:description] %></p>
+                    </li>
+                  <% end %>
                 <% end %>
               <% end %>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="secondary-sections gl-md-display-flex">
-      <% @items['/_data/landing.yaml'][:secondarySections].each do |section| %>
-        <div class="gl-mr-7">
-          <h3 class="gl-mb-4 gl-text-theme-indigo-900!"><%= section[:title] %></h3>
-          <ul class="gl-display-grid gl-grid-template-columns-2 gl-pl-0 gl-list-style-none">
-            <% section[:links].each do |link| %>
-              <li><a href="<%= link[:url] %>"><%= link[:title] %></a></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</section>
-
-<!-- Self Managed-->
-<section aria-labelledby="install-self-managed-gitlab" class="self-managed text-center py-6">
-  <div class="container">
-    <div class="row gl-text-left">
-      <div class="col-12">
-        <h2 id="install-self-managed-gitlab">Install self-managed GitLab</h2>
-      </div>
-      <div class="col-12 options">
-        <p>You’ve got options. <a href="/ee/install/install_methods.html">See them all <img src="/assets/images/collapse.svg" class="mt-n1" alt="" /></a></p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6 col-12 py-3">
-        <div class="card card-large h-100">
-          <div class="card-body">
-            <img class="card-img-top" src="/assets/images/docs-omnibus.svg" alt="" />
-            <h3 class="card-title mb-0 pb-1">Install on Linux</h3>
-            <p class="card-text">The Omnibus package includes services and tools to install GitLab without laborious configuration.</p>
-            <a href="/omnibus/installation/" class="card-link">Use the Omnibus package <img src="/assets/images/collapse.svg" class="mt-n1" alt="" /></a>
+            </ul>
           </div>
-        </div>
+        <% end %>
       </div>
-      <div class="col-md-6 col-12 py-3">
-        <div class="card card-large h-100">
-          <div class="card-body">
-            <img class="card-img-top" src="/assets/images/docs-charts.svg" alt="" />
-            <h3 class="card-title mb-0 pb-1">Install on Kubernetes</h3>
-            <p class="card-text">If you're using cluster management, we recommend the Helm chart or the Operator for installing cloud-native GitLab.</p>
-            <a href="https://docs.gitlab.com/charts/" class="card-link">Use the Helm chart <img src="/assets/images/collapse.svg" class="mt-n1" alt="" /></a>
-            <a href="https://docs.gitlab.com/operator/" class="card-link">Use the Operator <img src="/assets/images/collapse.svg" class="mt-n1" alt="" /></a>
+
+      <div class="secondary-sections gl-md-display-flex">
+        <% @items['/_data/landing.yaml'][:secondarySections].each do |section| %>
+          <div class="gl-mr-7">
+            <h3 class="gl-mb-4 gl-text-theme-indigo-900!"><%= section[:title] %></h3>
+            <ul class="gl-display-grid gl-grid-template-columns-2 gl-pl-0 gl-list-style-none">
+              <% section[:links].each do |link| %>
+                <li><a href="<%= link[:url] %>"><%= link[:title] %></a></li>
+              <% end %>
+            </ul>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
+  </section>
 
-    <ul class="row gl-list-style-none gl-mb-0 gl-pl-0">
-      <% @items['/_data/landing.yaml'][:selfManagedCards].each do |card| %>
-        <li class="col-lg-4 col-12 py-3">
-          <div class="card transparent text-left h-100">
-            <div class="p-3">
-              <h3 class="card-title">
-                <img src="/assets/images/download.svg" class="mr-2" alt="" />
-                <a href="<%= card[:url] %>"><%= card[:title] %></a>
-              </h3>
-              <p class="card-text pl-6">
-                <%= card[:description] %>
-              </p>
+  <!-- Self Managed-->
+  <section aria-labelledby="install-self-managed-gitlab" class="self-managed text-center py-6">
+    <div class="container">
+      <div class="row gl-text-left">
+        <div class="col-12">
+          <h2 id="install-self-managed-gitlab">Install self-managed GitLab</h2>
+        </div>
+        <div class="col-12 options">
+          <p>You’ve got options. <a href="/ee/install/install_methods.html">See them all <img src="/assets/images/collapse.svg" class="mt-n1" alt="" /></a></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-12 py-3">
+          <div class="card card-large h-100">
+            <div class="card-body">
+              <img class="card-img-top" src="/assets/images/docs-omnibus.svg" alt="" />
+              <h3 class="card-title mb-0 pb-1">Install on Linux</h3>
+              <p class="card-text">The Omnibus package includes services and tools to install GitLab without laborious configuration.</p>
+              <a href="/omnibus/installation/" class="card-link">Use the Omnibus package <img src="/assets/images/collapse.svg" class="mt-n1" alt="" /></a>
             </div>
           </div>
-        </li>
-      <% end %>
-    </ul>
+        </div>
+        <div class="col-md-6 col-12 py-3">
+          <div class="card card-large h-100">
+            <div class="card-body">
+              <img class="card-img-top" src="/assets/images/docs-charts.svg" alt="" />
+              <h3 class="card-title mb-0 pb-1">Install on Kubernetes</h3>
+              <p class="card-text">If you're using cluster management, we recommend the Helm chart or the Operator for installing cloud-native GitLab.</p>
+              <a href="https://docs.gitlab.com/charts/" class="card-link">Use the Helm chart <img src="/assets/images/collapse.svg" class="mt-n1" alt="" /></a>
+              <a href="https://docs.gitlab.com/operator/" class="card-link">Use the Operator <img src="/assets/images/collapse.svg" class="mt-n1" alt="" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div class="row">
-      <div class="col related pt-3">
-        <p>
-          <strong>Related topic:</strong> <a href="/runner/install/">Install GitLab Runner,</a> an application that works with GitLab CI/CD to run jobs in a pipeline.
-        </p>
+      <ul class="row gl-list-style-none gl-mb-0 gl-pl-0">
+        <% @items['/_data/landing.yaml'][:selfManagedCards].each do |card| %>
+          <li class="col-lg-4 col-12 py-3">
+            <div class="card transparent text-left h-100">
+              <div class="p-3">
+                <h3 class="card-title">
+                  <img src="/assets/images/download.svg" class="mr-2" alt="" />
+                  <a href="<%= card[:url] %>"><%= card[:title] %></a>
+                </h3>
+                <p class="card-text pl-6">
+                  <%= card[:description] %>
+                </p>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+
+      <div class="row">
+        <div class="col related pt-3">
+          <p>
+            <strong>Related topic:</strong> <a href="/runner/install/">Install GitLab Runner,</a> an application that works with GitLab CI/CD to run jobs in a pipeline.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Reference architectures -->
-<section aria-labelledby="reference-architectures" class="reference text-center py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h2 id="reference-architectures" class="text-white pt-2 pb-0">
-          Reference architectures
-        </h2>
+  <!-- Reference architectures -->
+  <section aria-labelledby="reference-architectures" class="reference text-center py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 id="reference-architectures" class="text-white pt-2 pb-0">
+            Reference architectures
+          </h2>
+        </div>
+        <div class="col-12 pb-2">
+          <p>
+            Scale your GitLab installation by using the recommended configurations.
+          </p>
+        </div>
       </div>
-      <div class="col-12 pb-2">
-        <p>
-          Scale your GitLab installation by using the recommended configurations.
-        </p>
-      </div>
+      <ul class="row gl-mb-0 gl-pl-0">
+        <% @items['/_data/landing.yaml'][:referenceSmall].each do |ref| %>
+          <li class="col-md-3 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0">
+            <div class="circle rounded-circle">
+              <a class="text-white text-decoration-none" href="<%= ref[:url] %>">
+                <span class="d-block title pt-5"><%= ref[:title] %></span>
+                <span class="d-block sub-title mt-n3">users</span>
+                <span class="d-block">
+                  <img src="/assets/images/arrow-right.svg" alt="" />
+                </span>
+              </a>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+      <ul class="row pt-md-4 pb-5 gl-mb-0 gl-pl-0">
+        <% @items['/_data/landing.yaml'][:referenceLarge].each do |ref| %>
+          <li class="col-md-4 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0 <%= ref[:class] %>">
+            <div class="circle rounded-circle">
+              <a class="text-white text-decoration-none" href="<%= ref[:url] %>">
+                <span class="d-block title pt-5"><%= ref[:title] %></span>
+                <span class="d-block sub-title mt-n3">users</span>
+                <span class="d-block">
+                  <img src="/assets/images/arrow-right.svg" alt="" />
+                </span>
+              </a>
+            </div>
+          </li>
+        <% end %>
+      </ul>
     </div>
-    <ul class="row gl-mb-0 gl-pl-0">
-      <% @items['/_data/landing.yaml'][:referenceSmall].each do |ref| %>
-        <li class="col-md-3 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0">
-          <div class="circle rounded-circle">
-            <a class="text-white text-decoration-none" href="<%= ref[:url] %>">
-              <span class="d-block title pt-5"><%= ref[:title] %></span>
-              <span class="d-block sub-title mt-n3">users</span>
-              <span class="d-block">
-                <img src="/assets/images/arrow-right.svg" alt="" />
-              </span>
-            </a>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-    <ul class="row pt-md-4 pb-5 gl-mb-0 gl-pl-0">
-      <% @items['/_data/landing.yaml'][:referenceLarge].each do |ref| %>
-        <li class="col-md-4 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0 <%= ref[:class] %>">
-          <div class="circle rounded-circle">
-            <a class="text-white text-decoration-none" href="<%= ref[:url] %>">
-              <span class="d-block title pt-5"><%= ref[:title] %></span>
-              <span class="d-block sub-title mt-n3">users</span>
-              <span class="d-block">
-                <img src="/assets/images/arrow-right.svg" alt="" />
-              </span>
-            </a>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</section>
+  </section>
 
-<!-- Support-->
-<section aria-labelledby="get-support" class="support py-9">
-  <div class="container">
-    <div class="row">
-      <div class="col d-flex justify-content-center">
-        <div class="card text-center h-100">
-          <div class="card-body">
-            <h2 id="get-support" class="card-title">Get support</h2>
-            <p class="card-text mb-4 pb-2">
-              If you need additional help and you're on a paid tier, you can request support.
-            </p>
-            <a href="https://about.gitlab.com/support/" class="btn btn-outline-primary">
-              Request support
-            </a>
+  <!-- Support-->
+  <section aria-labelledby="get-support" class="support py-9">
+    <div class="container">
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <h2 id="get-support" class="card-title">Get support</h2>
+              <p class="card-text mb-4 pb-2">
+                If you need additional help and you're on a paid tier, you can request support.
+              </p>
+              <a href="https://about.gitlab.com/support/" class="btn btn-outline-primary">
+                Request support
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer-->
-<footer class="landing-footer d-xl-flex align-items-xl-center">
-  <div class="container">
-    <div class="row">
-      <nav aria-label="Footer navigation" class="col d-xl-flex align-items-xl-center justify-content-xl-center">
-        <a href="https://about.gitlab.com/company/">About GitLab</a>
-        <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer">View page source</a>
-        <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer">Edit in Web IDE</a>
-        <a href="https://about.gitlab.com/privacy/">Privacy Statement</a>
-        <% if production? %>
-        <!-- OneTrust Cookies Settings button -->
-        <button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>
-        <% end %>
-        <a href="https://about.gitlab.com/community/contribute/">Please contribute</a>
-        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer" class="ml-xl-3 no-attachment-icon mt-3 mt-xl-0 gl-hover-text-decoration-none!">
-          <img src="./assets/images/by-sa.svg" alt="Creative Commons License"/>
-        </a>
-      </nav>
+  <!-- Footer-->
+  <footer class="landing-footer d-xl-flex align-items-xl-center">
+    <div class="container">
+      <div class="row">
+        <nav aria-label="Footer navigation" class="col d-xl-flex align-items-xl-center justify-content-xl-center">
+          <a href="https://about.gitlab.com/company/">About GitLab</a>
+          <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer">View page source</a>
+          <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer">Edit in Web IDE</a>
+          <a href="https://about.gitlab.com/privacy/">Privacy Statement</a>
+          <% if production? %>
+          <!-- OneTrust Cookies Settings button -->
+          <button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>
+          <% end %>
+          <a href="https://about.gitlab.com/community/contribute/">Please contribute</a>
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer" class="ml-xl-3 no-attachment-icon mt-3 mt-xl-0 gl-hover-text-decoration-none!">
+            <img src="./assets/images/by-sa.svg" alt="Creative Commons License"/>
+          </a>
+        </nav>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
+
+<% end %>
