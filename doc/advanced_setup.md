@@ -50,4 +50,20 @@ Check your Node.js version with `node -v`.
 
 ### Install Yarn
 
-Install [yarn](https://yarnpkg.com/en/docs/install), a package manager for the Node.js ecosystem.
+Install [Yarn](https://yarnpkg.com), a package manager for the Node.js ecosystem.
+
+#### Upgrade Yarn
+
+If you have Yarn 1.x installed globally, you must enable [Corepack](https://github.com/nodejs/corepack?tab=readme-ov-file#-corepack) to upgrade to Yarn 4.x in this project.
+
+```shell
+corepack enable
+```
+
+Corepack sets the version of Yarn specified in this project's [`package.json`](../package.json) file. You can verify the version you're using by running:
+
+```shell
+yarn --version
+```
+
+Corepack does not install globally, so this should not impact other projects where you may have different versions of Yarn.
