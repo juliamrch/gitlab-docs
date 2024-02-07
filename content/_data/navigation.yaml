@@ -2559,6 +2559,8 @@ sections:
                 doc_url: 'ee/user/project/integrations/redmine.html'
               - doc_title: YouTrack
                 doc_url: 'ee/user/project/integrations/youtrack.html'
+          - doc_title: GitGuardian
+            doc_url: 'ee/user/project/integrations/git_guardian.html'
           - doc_title: GitHub
             doc_url: 'ee/user/project/integrations/github.html'
           - doc_title: GitLab for Slack app
