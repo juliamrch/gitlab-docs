@@ -2107,7 +2107,7 @@ sections:
             docs:
               - doc_title: 'Tutorial: Perform fuzz testing in GitLab'
                 doc_url: 'ee/tutorials/fuzz_testing/'
-          - doc_title: Breach and Attack Simulation
+          - doc_title: Breach and Attack Simulation (deprecated)
             doc_url: 'ee/user/application_security/breach_and_attack_simulation/'
           - doc_title: Security Dashboard
             doc_url: 'ee/user/application_security/security_dashboard/'
