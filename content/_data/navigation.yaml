@@ -1813,6 +1813,9 @@ sections:
             docs:
               - doc_title: Choose when jobs run
                 doc_url: 'ee/ci/jobs/job_control.html'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/ci/jobs/job_troubleshooting.html'
               - doc_title: Access a terminal for a running job
                 doc_url: 'ee/ci/interactive_web_terminal/'
               - doc_title: Format scripts and job logs
