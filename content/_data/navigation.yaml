@@ -1645,6 +1645,8 @@ sections:
                 doc_url: 'ee/user/project/merge_requests/dependencies.html'
               - doc_title: AI in merge requests
                 doc_url: 'ee/user/project/merge_requests/ai_in_merge_requests.html'
+              - doc_title: Troubleshooting
+                doc_url: 'ee/user/project/merge_requests/merge_request_troubleshooting.html'
           - doc_title: Remote development
             doc_url: 'ee/user/project/remote_development/'
             docs:
