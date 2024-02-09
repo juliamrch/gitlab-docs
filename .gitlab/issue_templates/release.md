@@ -29,6 +29,19 @@ The following terms are used throughout this document:
    ## :chart_with_upwards_trend: What can we improve going forward?
    ```
 
+1. [ ] Add the version to be removed from the dropdown to the [docs archives](https://gitlab.com/gitlab-org/gitlab-docs-archives). This
+   would be the oldest version from the `last_minor` hash in
+   [`versions.json`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/content/versions.json#L5).
+
+   1. Edit [`archives.Dockerfile`](https://gitlab.com/gitlab-org/gitlab-docs-archives/-/blob/main/archives.Dockerfile)
+      and add a new line at the end of the file with the archived version. It should read like:
+
+      ```dockerfile
+      COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs/archives:<version> ${TARGET} ${TARGET}
+      ```
+
+    1. Create the merge request in `gitlab-org/gitlab-docs-archives` and merge it.
+
 1. [Create a stable branch and Docker image for the release](#create-a-stable-branch-and-docker-image-for-the-release).
 
 #### Create a stable branch and Docker image for the release
