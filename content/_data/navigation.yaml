@@ -1769,7 +1769,10 @@ sections:
                   - doc_title: Instance
                     doc_url: 'runner/executors/instance.html'
                   - doc_title: Kubernetes
-                    doc_url: 'runner/executors/kubernetes.html'
+                    doc_url: 'runner/executors/kubernetes/'
+                    docs:
+                      - doc_title: Troubleshooting
+                        doc_url: 'runner/executors/kubernetes/troubleshooting.html'
                   - doc_title: Shell
                     doc_url: 'runner/executors/shell.html'
                     docs:
