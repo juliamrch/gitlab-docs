@@ -1245,6 +1245,8 @@ sections:
               - doc_title: Compliance frameworks
                 doc_url: 'ee/user/group/compliance_frameworks.html'
                 docs:
+                  - doc_title: Compliance pipelines
+                    doc_url: 'ee/user/group/compliance_pipelines.html'
                   - doc_title: 'Tutorial: Create a compliance pipeline'
                     doc_url: 'ee/tutorials/compliance_pipeline/'
               - doc_title: Compliance center
