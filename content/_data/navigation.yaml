@@ -1793,6 +1793,18 @@ sections:
           - doc_title: Pipelines
             doc_url: 'ee/ci/pipelines/'
             docs:
+              - doc_title: Types of pipelines
+                doc_url: 'ee/ci/pipelines/pipeline_types.html'
+                docs:
+                  - doc_title: Merge request pipelines
+                    doc_url: 'ee/ci/pipelines/merge_request_pipelines.html'
+                    docs:
+                      - doc_title: Troubleshooting
+                        doc_url: 'ee/ci/pipelines/mr_pipeline_troubleshooting.html'
+                  - doc_title: Merged results pipelines
+                    doc_url: 'ee/ci/pipelines/merged_results_pipelines.html'
+                  - doc_title: Merge trains
+                    doc_url: 'ee/ci/pipelines/merge_trains.html'
               - doc_title: Scheduled pipelines
                 doc_url: 'ee/ci/pipelines/schedules.html'
               - doc_title: Trigger a pipeline
@@ -1809,12 +1821,6 @@ sections:
                 doc_url: 'ee/ci/directed_acyclic_graph/'
               - doc_title: Downstream pipelines
                 doc_url: 'ee/ci/pipelines/downstream_pipelines.html'
-              - doc_title: Merge request pipelines
-                doc_url: 'ee/ci/pipelines/merge_request_pipelines.html'
-              - doc_title: Merged results pipelines
-                doc_url: 'ee/ci/pipelines/merged_results_pipelines.html'
-              - doc_title: Merge trains
-                doc_url: 'ee/ci/pipelines/merge_trains.html'
           - doc_title: Jobs
             doc_url: 'ee/ci/jobs/'
             docs:
