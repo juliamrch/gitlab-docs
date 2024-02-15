@@ -1172,8 +1172,6 @@ sections:
             doc_url: 'ee/user/project/push_options.html'
           - doc_title: Roll back commits
             doc_url: 'ee/topics/git/rollback_commits.html'
-          - doc_title: Cherry-pick a commit
-            doc_url: 'ee/topics/git/cherry_picking.html'
           - doc_title: Troubleshooting
             doc_url: 'ee/topics/git/troubleshooting_git.html'
       - category_title: Set up your organization
