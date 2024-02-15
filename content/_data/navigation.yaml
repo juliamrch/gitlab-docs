@@ -2511,10 +2511,10 @@ sections:
       - category_title: Code Suggestions
         category_url: 'ee/user/project/repository/code_suggestions/'
         docs:
-          - doc_title: SaaS
-            doc_url: 'ee/user/project/repository/code_suggestions/saas.html'
-          - doc_title: Self-managed
-            doc_url: 'ee/user/project/repository/code_suggestions/self_managed.html'
+          - doc_title: Supported extensions and languages
+            doc_url: 'ee/user/project/repository/code_suggestions/supported_extensions.html'
+          - doc_title: Data usage
+            doc_url: 'ee/user/project/repository/code_suggestions/data.html'
           - doc_title: Troubleshooting
             doc_url: 'ee/user/project/repository/code_suggestions/troubleshooting.html'
           - doc_title: Repository X-Ray
