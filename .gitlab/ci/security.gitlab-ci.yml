@@ -31,17 +31,20 @@
 #
 # Dependency scanning job overrides
 #
-# Restore this job when https://gitlab.com/gitlab-org/gitlab/-/issues/431752 is resolved.
-#
-# gemnasium-dependency_scanning:
-#   extends:
-#     - .ds-analyzer
-#     - .cyclonedx-reports
-#     - .security-scanning-overrides
-#   rules:
-#     - if: $DEPENDENCY_SCANNING_DISABLED || $DS_EXCLUDED_ANALYZERS =~ /gemnasium([^-]|$)/
-#       when: never
-#     - !reference [".security-rules", "rules"]
+# Currently disabled with the DS_EXCLUDED_ANALYZERS variable in the CI/CD settings.
+# Remove this variable when https://gitlab.com/gitlab-org/gitlab/-/issues/431752 is resolved.
+
+gemnasium-dependency_scanning:
+  extends:
+    - .ds-analyzer
+    - .cyclonedx-reports
+    - .security-scanning-overrides
+  rules:
+    - if: $DEPENDENCY_SCANNING_DISABLED == 'true' || $DEPENDENCY_SCANNING_DISABLED == '1'
+      when: never
+    - if: $DS_EXCLUDED_ANALYZERS =~ /gemnasium([^-]|$)/
+      when: never
+    - !reference [".security-rules", "rules"]
 
 #
 # SAST job overrides
