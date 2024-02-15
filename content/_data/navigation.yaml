@@ -1718,11 +1718,6 @@ sections:
                 doc_url: 'ee/ci/yaml/inputs.html'
               - doc_title: Workflow examples
                 doc_url: 'ee/ci/yaml/workflow.html'
-              - doc_title: CI/CD components
-                doc_url: 'ee/ci/components/'
-                docs:
-                  - doc_title: CI/CD component examples
-                    doc_url: 'ee/ci/components/examples.html'
           - doc_title: Runners
             doc_url: 'runner/'
             docs:
@@ -1856,6 +1851,11 @@ sections:
                     doc_url: 'ee/ci/docker/using_kaniko.html'
                   - doc_title: 'Tutorial: Use Buildah in a rootless container on OpenShift'
                     doc_url: 'ee/ci/docker/buildah_rootless_tutorial.html'
+          - doc_title: CI/CD components
+            doc_url: 'ee/ci/components/'
+            docs:
+              - doc_title: CI/CD component examples
+                doc_url: 'ee/ci/components/examples.html'
           - doc_title: Variables
             doc_url: 'ee/ci/variables/'
             docs:
