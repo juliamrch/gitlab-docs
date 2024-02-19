@@ -3,51 +3,6 @@ redirects:
     to: /ee/:splat
   - from: /15.1/*
     to: https://archives.docs.gitlab.com/15.1/:splat
-  - from: /cookies-policy/
-    to: /cookies/
-    remove_date: 2023-12-11
-  - from: /ee/user/group/settings/import_export.html
-    to: /ee/user/group/import/index.html
-    remove_date: 2023-12-08
-  - from: /ee/user/project/merge_requests/commits.html
-    to: /ee/user/project/merge_requests/index.html
-    remove_date: 2023-12-12
-  - from: /ee/development/merge_request_diffs.html
-    to: /ee/development/merge_request_concepts/diffs/development.html
-    remove_date: 2024-01-10
-  - from: /ee/development/merge_request_performance_guidelines.html
-    to: /ee/development/merge_request_concepts/performance.html
-    remove_date: 2024-01-10
-  - from: /ee/development/diffs.html
-    to: /ee/development/merge_request_concepts/diffs/index.html
-    remove_date: 2024-01-10
-  - from: /ee/user/project/merge_requests/getting_started.html
-    to: /ee/user/project/merge_requests/index.html
-    remove_date: 2023-12-31
-  - from: /ee/user/project/import/svn.html
-    to: /ee/user/project/import/index.html#import-from-subversion
-    remove_date: 2023-12-15
-  - from: /ee/topics/git/feature_branch_development.html
-    to: /ee/topics/git/index.html
-    remove_date: 2023-12-31
-  - from: /charts/installation/operator.html
-    to: /operator/
-    remove_date: 2024-01-04
-  - from: /ee/development/contributing/community_roles.html
-    to: /ee/development/contributing/index.html
-    remove_date: 2024-02-08
-  - from: /ee/development/merge_request_application_and_rate_limit_guidelines.html
-    to: /ee/development/merge_request_concepts/rate_limits.html
-    remove_date: 2024-01-23
-  - from: /ee/development/approval_rules.html
-    to: /ee/development/merge_request_concepts/approval_rules.html
-    remove_date: 2024-01-23
-  - from: /ee/user/packages/package_registry/supported_hash_types.html
-    to: /ee/user/packages/package_registry/supported_functionality.html
-    remove_date: 2024-01-22
-  - from: /ee/topics/git/getting_started.html
-    to: /ee/tutorials/make_first_git_commit/index.html
-    remove_date: 2024-01-23
   - from: /ee/topics/git/tags.html
     to: /ee/user/project/repository/tags/index.html
     remove_date: 2024-02-27
@@ -807,9 +762,6 @@ redirects:
   - from: /ee/user/award_emojis.html
     to: /ee/user/emoji_reactions.html
     remove_date: 2024-09-20
-  - from: /ee/user/analytics/contributor_statistics.html
-    to: /ee/user/analytics/contributor_analytics.html
-    remove_date: 2023-12-06
   - from: /ee/development/activitypub/actor.html
     to: /ee/development/activitypub/actors/index.html
     remove_date: 2024-09-08
