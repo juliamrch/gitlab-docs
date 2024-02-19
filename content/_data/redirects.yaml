@@ -867,3 +867,36 @@ redirects:
   - from: /runner/examples/gitlab.html
     to: /runner/register/index.html#register-a-runner-for-gitlab-community-edition-integration-tests
     remove_date: 2024-10-16
+  - from: /ee/development/activitypub/actors/group.html
+    to: /ee/development/activitypub/actors/index.html
+    remove_date: 2024-10-22
+  - from: /ee/development/activitypub/actors/topic.html
+    to: /ee/development/activitypub/actors/index.html
+    remove_date: 2024-10-22
+  - from: /ee/development/activitypub/actors/project.html
+    to: /ee/development/activitypub/actors/index.html
+    remove_date: 2024-10-22
+  - from: /ee/development/activitypub/actors/user.html
+    to: /ee/development/activitypub/actors/index.html
+    remove_date: 2024-10-22
+  - from: /ee/ci/enable_or_disable_ci.html
+    to: /ee/ci/pipelines/settings.html#disable-gitlab-cicd-pipelines
+    remove_date: 2024-10-30
+  - from: /ee/ci/troubleshooting.html
+    to: /ee/ci/debugging.html
+    remove_date: 2024-11-01
+  - from: /ee/ci/yaml/gitlab_ci_yaml.html
+    to: /ee/ci/index.html#the-gitlab-ciyml-file
+    remove_date: 2024-10-30
+  - from: /ee/user/project/integrations/shimo.html
+    to: /ee/user/project/integrations/index.html
+    remove_date: 2024-11-13
+  - from: /ee/administration/raketasks/geo.html
+    to: /ee/update/deprecations.html#geo-housekeeping-rake-tasks
+    remove_date: 2024-11-06
+  - from: /ee/topics/git/git_add.html
+    to: /ee/gitlab-basics/add-file.html
+    remove_date: 2024-11-03
+  - from: /ee/topics/git/terminology.html
+    to: /ee/topics/git/get_started.html
+    remove_date: 2024-11-03
