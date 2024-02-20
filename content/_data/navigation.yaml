@@ -810,7 +810,7 @@ sections:
               - doc_title: Tuning Geo
                 doc_url: 'ee/administration/geo/replication/tuning.html'
               - doc_title: Rake tasks
-                doc_url: 'ee/administration/raketasks/geo.html'
+                doc_url: 'ee/update/deprecations.html#geo-housekeeping-rake-tasks'
               - doc_title: Disable Geo
                 doc_url: 'ee/administration/geo/replication/disable_geo.html'
               - doc_title: Removing a Geo site
