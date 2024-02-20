@@ -462,14 +462,6 @@
 
   .support {
     background: linear-gradient(180deg, $gds-white 0%, $landing-gl-white-500 100%);
-    background-image: url('/assets/images/support-bg.svg'), linear-gradient(180deg, $gds-white 0%, $landing-gl-white-500 100%);
-    background-repeat: no-repeat;
-    background-attachment: inherit;
-    background-position: 50% 60%;
-
-    @media (max-width: $bp-md) {
-      background-image: url('/assets/images/hero-bg-mobile.svg');
-    }
 
     .card {
       width: 65%;
@@ -478,6 +470,7 @@
 
       @media (max-width: $bp-md) {
         width: 100%;
+        height: auto;
       }
     }
 
