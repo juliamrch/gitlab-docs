@@ -146,7 +146,7 @@ install-ruby-dependencies:
 	@bundle install
 
 install-nodejs-dependencies:
-	@yarn install --immutable --silent
+	@yarn install --immutable
 
 setup: clean brew-bundle setup-asdf install-asdf-dependencies install-ruby-dependencies install-nodejs-dependencies
 
@@ -227,23 +227,23 @@ markdownlint-tests:
 
 markdownlint-whitespace-tests-gitlab:
 	@printf "\n$(INFO)INFO: Running markdownlint whitespace tests on GitLab project...$(END)\n"
-	@cd ../gitlab/doc && markdownlint-cli2-config "../../gitlab-docs/tasks/.markdownlint.yml" "**/*.md"
+	@cd ../gitlab/doc && yarn dlx --quiet markdownlint-cli2 --config "../../gitlab-docs/tasks/.markdownlint-cli2.yaml" "**/*.md"
 
 markdownlint-whitespace-tests-gitlab-runner:
 	@printf "\n$(INFO)INFO: Running markdownlint whitespace tests on GitLab Runner project...$(END)\n"
-	@cd ../gitlab-runner/docs && markdownlint-cli2-config "../../gitlab-docs/tasks/.markdownlint.yml" "**/*.md"
+	@cd ../gitlab-runner/docs && yarn dlx --quiet markdownlint-cli2 --config "../../gitlab-docs/tasks/.markdownlint-cli2.yaml" "**/*.md"
 
 markdownlint-whitespace-tests-omnibus-gitlab:
 	@printf "\n$(INFO)INFO: Running markdownlint whitespace tests on Omnibus GitLab project...$(END)\n"
-	@cd ../omnibus-gitlab/doc && markdownlint-cli2-config "../../gitlab-docs/tasks/.markdownlint.yml" "**/*.md"
+	@cd ../omnibus-gitlab/doc && yarn dlx --quiet markdownlint-cli2 --config "../../gitlab-docs/tasks/.markdownlint-cli2.yaml" "**/*.md"
 
 markdownlint-whitespace-tests-charts-gitlab:
 	@printf "\n$(INFO)INFO: Running markdownlint whitespace tests on GitLab Chart project...$(END)\n"
-	@cd ../charts-gitlab/doc && markdownlint-cli2-config "../../gitlab-docs/tasks/.markdownlint.yml" "**/*.md"
+	@cd ../charts-gitlab/doc && yarn dlx --quiet markdownlint-cli2 --config "../../gitlab-docs/tasks/.markdownlint-cli2.yaml" "**/*.md"
 
 markdownlint-whitespace-tests-gitlab-operator:
 	@printf "\n$(INFO)INFO: Running markdownlint whitespace tests on GitLab Operator project...$(END)\n"
-	@cd ../gitlab-operator/doc && markdownlint-cli2-config "../../gitlab-docs/tasks/.markdownlint.yml" "**/*.md"
+	@cd ../gitlab-operator/doc && yarn dlx --quiet markdownlint-cli2 --config "../../gitlab-docs/tasks/.markdownlint-cli2.yaml" "**/*.md"
 
 markdownlint-whitespace-tests: install-nodejs-dependencies
 	@$(MAKE) markdownlint-whitespace-tests-gitlab || true

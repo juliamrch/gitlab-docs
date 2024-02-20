@@ -279,7 +279,6 @@ test_EOL_whitespace:
     - bundle config set --local path 'vendor/bundle'  # Install dependencies into ./vendor/bundle
     - bundle install
     - bundle exec rake default
-    - yarn global add markdownlint-cli2
     - make markdownlint-whitespace-tests
 
 test_unlinked_images:

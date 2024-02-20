@@ -1,0 +1,5 @@
+---
+# Configuration for test_EOL_whitespace job
+config:
+  default: false
+  no-trailing-spaces: true
