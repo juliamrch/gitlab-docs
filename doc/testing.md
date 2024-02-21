@@ -1,7 +1,7 @@
 # Testing the GitLab Docs site
 
 Tests for the GitLab Docs site include tests for code and tests for links in content. For more information, see
-[Documentation testing](https://docs.gitlab.com/ee/development/documentation/testing.html).
+[Documentation testing](https://docs.gitlab.com/ee/development/documentation/testing/).
 
 Tests are run in `gitlab-docs` [CI/CD pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines), which is
 configured in the project's [`.gitlab-ci.yml`](../.gitlab-ci.yml) file.
