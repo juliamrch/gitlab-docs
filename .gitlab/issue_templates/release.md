@@ -105,7 +105,10 @@ After the release post is live, or the day after:
    1. [ ] When the `image:docs-latest` job is complete, run the `Build docs.gitlab.com every hour` scheduled pipeline.
 1. [ ] After the deployment completes, open `docs.gitlab.com` in a browser. Confirm
    both the latest version and the correct pre-release version are listed in the documentation version dropdown.
-1. [ ] Check all published versions of the docs to ensure they are visible and that their version menus have the latest versions.
+1. [ ] Check all versions of the docs in the version dropdown to ensure they are visible and that their version menus have the expected versions.
+   - Versions hosted on `docs.gitlab.com` should show the same version options as the pre-release site.
+   - Versions hosted on `archives.docs.gitlab.com` should only show their own version and a link back to the archives page.
+     - This applies to v15.6 and newer; older versions may have broken links in the dropdown. This will eventually be resolved as the older versions are phased out.
 1. [ ] Share the following message in the `#tw-team` channel:
 
    ```plaintext
