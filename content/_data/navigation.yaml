@@ -3112,6 +3112,11 @@ sections:
                 doc_url: 'ee/development/changelog.html'
               - doc_title: ChatOps on GitLab.com
                 doc_url: 'ee/development/chatops_on_gitlabcom.html'
+              - doc_title: Cloud Connector
+                doc_url: 'ee/development/cloud_connector/'
+                docs:
+                  - doc_title: Architecture
+                    doc_url: 'ee/development/cloud_connector/architecture.html'
               - doc_title: Code review guidelines
                 doc_url: 'ee/development/code_review.html'
               - doc_title: Danger bot
