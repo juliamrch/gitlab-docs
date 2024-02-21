@@ -6,8 +6,8 @@ TITLE_FILTER_REGEXP = /(#\s|#{BadgesFilter::BADGES_MARKDOWN_PATTERN})/.freeze
 preprocess do
   badges_filter = BadgesFilter.new
 
-  # Do not process Markdown files with an underscore prefix
-  @items.delete_if { |i| i.identifier.match?('/**/_*.md') }
+  # Do not process https://gitlab.com/gitlab-org/gitlab/-/blob/master/doc/architecture/blueprints/_template.md
+  @items.delete_if { |i| i.identifier.match?('/**/_template.md') }
 
   @items.each do |item|
     if item.identifier.to_s.end_with?(".md") && !item.binary?
