@@ -3950,7 +3950,12 @@ sections:
           - doc_title: Drawer content
             doc_url: 'ee/development/documentation/drawers.html'
           - doc_title: Testing
-            doc_url: 'ee/development/documentation/testing.html'
+            doc_url: 'ee/development/documentation/testing/'
+            docs:
+              - doc_title: markdownlint
+                doc_url: 'ee/development/documentation/testing/markdownlint.html'
+              - doc_title: Vale
+                doc_url: 'ee/development/documentation/testing/vale.html'
           - doc_title: Site architecture
             doc_url: 'ee/development/documentation/site_architecture/'
           - doc_title: Folder structure
