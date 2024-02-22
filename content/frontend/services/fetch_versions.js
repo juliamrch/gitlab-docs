@@ -55,8 +55,8 @@ const fetchArchiveImages = async (endpoint, versionRange) => {
   }
 };
 export async function getArchiveImages() {
-  const images = await fetchArchiveImages(DOCS_IMAGES_ENDPOINT_V1, '<15.5');
-  const newerImages = await fetchArchiveImages(DOCS_IMAGES_ENDPOINT_V2, '>=15.5');
+  const images = await fetchArchiveImages(DOCS_IMAGES_ENDPOINT_V1, '<15.6');
+  const newerImages = await fetchArchiveImages(DOCS_IMAGES_ENDPOINT_V2, '>=15.6');
   return (
     [...images, ...newerImages].sort((a, b) => compareVersions(a.name, b.name)).reverse() || []
   );
