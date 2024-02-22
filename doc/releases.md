@@ -125,12 +125,12 @@ To create the release merge request for the release:
    and edit the `test:image:docs-single:` job to change the `GITLAB_VERSION` variable.
    Set it to the version number of the release you're releasing.
 
-1. Commit and push to create the merge request. For example:
+1. Commit and push to create the merge request (but without running any `lefhook` tests). For example:
 
    ```shell
    git add .gitlab/ci/docker-images.gitlab-ci.yml content/versions.json latest.Dockerfile
    git commit -m "Docs release 15.0"
-   git push origin release-15-0
+   LEFTHOOK=0 git push origin release-15-0
    ```
 
 1. Create the merge request, then:
