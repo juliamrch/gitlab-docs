@@ -40,7 +40,7 @@ The following terms are used throughout this document:
       COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs/archives:<version> ${TARGET} ${TARGET}
       ```
 
-    1. Create the merge request in `gitlab-org/gitlab-docs-archives` and merge it.
+   1. Create the merge request in `gitlab-org/gitlab-docs-archives` and merge it.
 
 1. [Create a stable branch and Docker image for the release](#create-a-stable-branch-and-docker-image-for-the-release).
 
@@ -49,13 +49,21 @@ The following terms are used throughout this document:
 > Note: an [issue exists](https://gitlab.com/gitlab-org/release-tools/-/issues/533)
 > to create the stable branch automatically.
 
-1. [ ] In the root path of the `gitlab-docs` repository, update your local clone:
+1. [ ] In the root path of the `gitlab-docs` repository:
 
-   ```shell
-   make update
-   ```
+   - Update your local clone:
 
-1. Optional. To practice running the task and check the process, run the Rake task in dry run mode:
+     ```shell
+     make update
+     ```
+
+   - Install all project dependencies:
+
+     ```shell
+     make setup
+     ```
+
+1. [ ] To practice running the task and check the process, run the Rake task in dry run mode:
 
    ```shell
    DRY_RUN=true make create-stable-branch
