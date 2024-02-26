@@ -15,7 +15,7 @@ Search forms are built with [`search-box-by-type`](https://gitlab-org.gitlab.io/
 
 Visitors can see up to 10 results alongside forms on the homepage and interior pages. They can also choose "View all results" to run their query from the [advanced search page](https://docs.gitlab.com/search).
 
-The advanced search page includes up to 100 results. These are rendered alongside custom filters that use a [section metatag](../layouts/head.html#L19) to filter pages by navigation section.
+The advanced search page includes up to 100 results. These are rendered alongside custom filters that use a [section metatag (L19)](../layouts/head.html) to filter pages by navigation section.
 
 #### Vue components
 

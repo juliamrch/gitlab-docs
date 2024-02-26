@@ -3,13 +3,12 @@
 ###############################################
 
 #
-# Security templates included in ../../.gitlab-ci.yml:
+# Security scanner defaults are overridden below.
 #
-# - Security/Dependency-Scanning.gitlab-ci.yml
-# - Security/SAST.gitlab-ci.yml
-# - Security/Secret-Detection.gitlab-ci.yml
-#
-# Defaults are overridden below.
+include:
+  - template: Security/Dependency-Scanning.gitlab-ci.yml
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Security/Secret-Detection.gitlab-ci.yml
 
 #
 # Override Security scanning defaults to ensure specific scanners work in this pipeline
