@@ -44,7 +44,8 @@ product, and all together are pulled to generate the docs website:
 - [GitLab Chart](https://gitlab.com/gitlab-org/charts/gitlab/-/tree/master/doc)
 - [GitLab Operator](https://gitlab.com/gitlab-org/cloud-native/gitlab-operator/-/tree/master/doc)
 
-Learn more about [the docs folder structure](https://docs.gitlab.com/ee/development/documentation/site_architecture/folder_structure.html).
+If GitLab documentation contains `_index.md` files, these files are published as `index.html`. Learn more about
+[the docs folder structure](https://docs.gitlab.com/ee/development/documentation/site_architecture/folder_structure.html).
 
 ## Assets
 
