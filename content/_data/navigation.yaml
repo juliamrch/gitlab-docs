@@ -797,7 +797,7 @@ sections:
                 doc_url: 'ee/administration/geo/replication/upgrading_the_geo_sites.html'
               - doc_title: Using object storage
                 doc_url: 'ee/administration/geo/replication/object_storage.html'
-              - doc_title: Container Registry for a secondary site
+              - doc_title: Container registry for a secondary site
                 doc_url: 'ee/administration/geo/replication/container_registry.html'
               - doc_title: Geo for multiple servers
                 doc_url: 'ee/administration/geo/replication/multiple_servers.html'
@@ -854,7 +854,7 @@ sections:
           - doc_title: Packages
             doc_url: 'ee/administration/packages/'
             docs:
-              - doc_title: Container Registry
+              - doc_title: Container registry
                 doc_url: 'ee/administration/packages/container_registry.html'
               - doc_title: Dependency Proxy
                 doc_url: 'ee/administration/packages/dependency_proxy.html'
@@ -948,7 +948,7 @@ sections:
                 doc_url: 'ee/administration/settings/rate_limit_on_issues_creation.html'
               - doc_title: Note creation
                 doc_url: 'ee/administration/settings/rate_limit_on_notes_creation.html'
-              - doc_title: Package Registry
+              - doc_title: Package registry
                 doc_url: 'ee/administration/settings/package_registry_rate_limits.html'
               - doc_title: Pipeline creation
                 doc_url: 'ee/administration/settings/rate_limit_on_pipelines_creation.html'
@@ -2202,7 +2202,7 @@ sections:
           - doc_title: Packages & Registries
             doc_url: 'ee/user/packages/'
             docs:
-              - doc_title: Package Registry
+              - doc_title: Package registry
                 doc_url: 'ee/user/packages/package_registry/'
                 docs:
                   - doc_title: Supported package managers
@@ -2239,11 +2239,11 @@ sections:
                     doc_url: 'ee/user/packages/workflows/project_registry.html'
                   - doc_title: Monorepo workflows
                     doc_url: 'ee/user/packages/workflows/working_with_monorepos.html'
-                  - doc_title: Reduce Package Registry storage
+                  - doc_title: Reduce package registry storage
                     doc_url: 'ee/user/packages/package_registry/reduce_package_registry_storage.html'
                   - doc_title: Build packages
                     doc_url: 'ee/user/packages/workflows/build_packages.html'
-              - doc_title: Container Registry
+              - doc_title: Container registry
                 doc_url: 'ee/user/packages/container_registry/'
                 docs:
                   - doc_title: Authenticate
@@ -2252,13 +2252,13 @@ sections:
                     doc_url: 'ee/user/packages/container_registry/build_and_push_images.html'
                   - doc_title: Delete images
                     doc_url: 'ee/user/packages/container_registry/delete_container_registry_images.html'
-                  - doc_title: Reduce Container Registry storage
+                  - doc_title: Reduce container registry storage
                     doc_url: 'ee/user/packages/container_registry/reduce_container_registry_storage.html'
-                  - doc_title: Reduce Container Registry data transfers
+                  - doc_title: Reduce container registry data transfers
                     doc_url: 'ee/user/packages/container_registry/reduce_container_registry_data_transfer.html'
                   - doc_title: Troubleshooting
                     doc_url: 'ee/user/packages/container_registry/troubleshoot_container_registry.html'
-              - doc_title: Harbor Registry
+              - doc_title: Harbor registry
                 doc_url: 'ee/user/packages/harbor_container_registry/'
               - doc_title: Terraform module registry
                 doc_url: 'ee/user/packages/terraform_module_registry/'
@@ -2711,7 +2711,7 @@ sections:
                 doc_url: 'ee/api/packages/composer.html'
               - doc_title: Conan
                 doc_url: 'ee/api/packages/conan.html'
-              - doc_title: Container Registry
+              - doc_title: Container registry
                 doc_url: 'ee/api/container_registry.html'
               - doc_title: Custom attributes
                 doc_url: 'ee/api/custom_attributes.html'
@@ -2982,7 +2982,7 @@ sections:
                 doc_url: 'ee/api/system_hooks.html'
               - doc_title: Tags
                 doc_url: 'ee/api/tags.html'
-              - doc_title: Terraform Registry
+              - doc_title: Terraform registry
                 doc_url: 'ee/api/packages/terraform-modules.html'
               - doc_title: To-Do lists
                 doc_url: 'ee/api/todos.html'
