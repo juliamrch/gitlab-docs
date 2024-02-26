@@ -1,6 +1,22 @@
 ###############################################
-#              Test the website               #
+#              Test the code                  #
 ###############################################
+
+#
+# Imported tests:
+# - Check links in internal docs with Markdown Link Check
+# - Run danger review
+#
+include:
+  - component: gitlab.com/gitlab-org/technical-writing-group/markdown-link-check/lychee@0.2.0
+    inputs:
+      lychee-version: "0.14.3"
+    rules:
+      - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+  - project: 'gitlab-org/quality/pipeline-common'
+    file:
+      - '/ci/danger-review.yml'
 
 #
 # Test the links in the global nav for all MRs in `gitlab-docs`
