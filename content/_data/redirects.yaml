@@ -1,8 +1,6 @@
 redirects:
   - from: /ce/*
     to: /ee/:splat
-  - from: /15.1/*
-    to: https://archives.docs.gitlab.com/15.1/:splat
   - from: /ee/topics/git/tags.html
     to: /ee/user/project/repository/tags/index.html
     remove_date: 2024-02-27
