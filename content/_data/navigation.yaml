@@ -3080,7 +3080,9 @@ sections:
                 doc_url: 'ee/development/contributing/first_contribution/configure-dev-env-gitpod.html'
               - doc_title: Contribute code with Gitpod
                 doc_url: 'ee/development/contributing/first_contribution/contribute-gitpod.html'
-              - doc_title: Configure the GDK development environment
+              - doc_title: Configure GDK-in-a-box
+                doc_url: 'ee/development/contributing/first_contribution/configure-dev-env-gdk-in-a-box.html'
+              - doc_title: Install the GDK development environment
                 doc_url: 'ee/development/contributing/first_contribution/configure-dev-env-gdk.html'
               - doc_title: Contribute code with GDK
                 doc_url: 'ee/development/contributing/first_contribution/contribute-gdk.html'
