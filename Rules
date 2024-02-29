@@ -1,11 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-TITLE_FILTER_REGEXP = /(#\s|#{BadgesFilter::BADGES_MARKDOWN_PATTERN})/.freeze
-
 preprocess do
-  badges_filter = BadgesFilter.new
-
   # Do not process https://gitlab.com/gitlab-org/gitlab/-/blob/master/doc/architecture/blueprints/_template.md
   @items.delete_if { |i| i.identifier.match?('/**/_template.md') }
 
@@ -31,15 +27,10 @@ preprocess do
         end
       end
 
-      # We need to do some transformations for the title
-      # Let's extract and keep it first:
+      # Extract the heading and use it as a title, if necessary:
       raw_title = item.raw_content.match(/^[#] .*$/).to_s
-
-      # If we don't have a title in frontmatter, reuse the one we just fetch
-      item[:title] ||= raw_title.gsub(TITLE_FILTER_REGEXP, '')
-
-      # Run badges filter with title fragment
-      item[:title_badge] = badges_filter.run_from_markdown(raw_title.match(BadgesFilter::BADGES_MARKDOWN_PATTERN).to_s)
+      # If we don't have a title in frontmatter, reuse the one we just fetched
+      item[:title] ||= raw_title.gsub('# ', '')
     end
 
     if item.identifier.match?('/ee/architecture/**/*.md')
@@ -110,9 +101,6 @@ compile '/**/*.md' do
 
     filter :colorize_syntax,
            default_colorizer: :rouge
-
-    # GitLab price / tiers specific badges
-    filter :badges
 
     filter :md_to_html_ext
     filter :admonition
