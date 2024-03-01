@@ -1251,6 +1251,15 @@ sections:
                     doc_url: 'ee/tutorials/compliance_pipeline/'
               - doc_title: Compliance center
                 doc_url: 'ee/user/compliance/compliance_center/'
+                docs:
+                  - doc_title: Compliance standards adherence dashboard
+                    doc_url: 'ee/user/compliance/compliance_center/compliance_standards_adherence_dashboard.html'
+                  - doc_title: Compliance violations report
+                    doc_url: 'ee/user/compliance/compliance_center/compliance_violations_report.html'
+                  - doc_title: Compliance frameworks report
+                    doc_url: 'ee/user/compliance/compliance_center/compliance_frameworks_report.html'
+                  - doc_title: Compliance projects report
+                    doc_url: 'ee/user/compliance/compliance_center/compliance_projects_report.html'
               - doc_title: Compliance tools
                 doc_url: 'ee/user/compliance/'
                 docs:
