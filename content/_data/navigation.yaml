@@ -2534,6 +2534,8 @@ sections:
             doc_url: 'ee/user/project/repository/code_suggestions/repository_xray.html'
       - category_title: Ask questions with Chat
         category_url: 'ee/user/gitlab_duo_chat.html'
+      - category_title: GitLab Duo examples
+        category_url: 'ee/user/gitlab_duo_examples.html'
   - section_title: Extend
     section_url: 'ee/api/'
     section_categories:
