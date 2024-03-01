@@ -1165,7 +1165,7 @@ sections:
           - doc_title: Feature branch workflow
             doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
           - doc_title: Undo options
-            doc_url: 'ee/topics/git/numerous_undo_possibilities_in_git/'
+            doc_url: 'ee/topics/git/undo.html'
           - doc_title: Unstage
             doc_url: 'ee/topics/git/unstage.html'
           - doc_title: Git stash
