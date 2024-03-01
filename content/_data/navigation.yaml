@@ -2324,6 +2324,8 @@ sections:
             doc_url: 'ee/operations/tracing.html'
           - doc_title: Metrics
             doc_url: 'ee/operations/metrics.html'
+          - doc_title: Logs
+            doc_url: 'ee/operations/logs.html'
           - doc_title: Incident management
             doc_url: 'ee/operations/incident_management/'
             docs:
