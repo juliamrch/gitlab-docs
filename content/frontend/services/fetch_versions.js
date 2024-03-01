@@ -81,9 +81,15 @@ export async function getArchivesVersions() {
  * recent stable version are considered archived
  * versions.
  *
+ * Note that this will return false in an offline
+ * or air-gapped environment.
+ *
  * @returns Boolean
  */
-export async function isArchivedVersion(version) {
+export async function isOnlineArchivedVersion(version) {
   const onlineVersions = await getVersions();
-  return ![onlineVersions.next, onlineVersions.current].includes(version);
+  if (Object.keys(onlineVersions).length > 0) {
+    return ![onlineVersions.next, onlineVersions.current].includes(version);
+  }
+  return false;
 }

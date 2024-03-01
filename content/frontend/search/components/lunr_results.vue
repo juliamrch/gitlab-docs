@@ -76,7 +76,7 @@ export default {
         )}`;
       });
 
-      // Rewrite links to include the version prefix if this is the archives site.
+      // Rewrite links to include the version prefix if this is an archive site.
       if (isArchivesSite()) {
         this.rewriteResultLinks();
       }
@@ -90,7 +90,7 @@ export default {
       const pathPrefix = document.querySelector('meta[name="gitlab-docs-version"]').content;
       this.results = this.results.map((obj) => ({
         ...obj,
-        link: `https://archives.docs.gitlab.com/${pathPrefix}/${obj.ref}`,
+        link: `/${pathPrefix}/${obj.ref}`,
       }));
     },
   },

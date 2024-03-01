@@ -6,6 +6,7 @@ import { shallowMount } from '@vue/test-utils';
 import flushPromises from 'flush-promises';
 import VersionsMenu from '../../../../content/frontend/default/components/versions_menu.vue';
 import * as fetchVersions from '../../../../content/frontend/services/fetch_versions';
+import * as environment from '../../../../content/frontend/default/environment';
 import { mockVersions, mockArchiveVersions } from '../../__mocks__/versions_mock';
 import { setWindowPath, setVersionMetatag } from './helpers/versions_helper';
 
@@ -16,6 +17,7 @@ describe('component: Versions menu', () => {
     jest.clearAllMocks();
     jest.spyOn(fetchVersions, 'getVersions').mockReturnValue(mockVersions);
     jest.spyOn(fetchVersions, 'getArchivesVersions').mockReturnValue(mockArchiveVersions);
+    jest.spyOn(environment, 'isProduction').mockReturnValue(true);
   });
   afterEach(() => {
     document.querySelector('meta[name="gitlab-docs-version"]').remove();
@@ -72,12 +74,12 @@ describe('component: Versions menu', () => {
     });
   });
 
-  it('Generates correct menu links from an older version', async () => {
-    setWindowPath('/14.10/runner');
-    setVersionMetatag('14.10');
+  it('Generates correct menu links from an older version on docs.gitlab.com', async () => {
+    setWindowPath('/15.2/runner');
+    setVersionMetatag('15.2');
 
     const wrapper = shallowMount(VersionsMenu);
-    await wrapper.setData({ versions: mockVersions });
+    await wrapper.setData({ versions: mockVersions, archiveVersions: mockArchiveVersions });
 
     expect(wrapper.vm.getVersionPath('')).toBe('/runner');
     expect(wrapper.vm.getVersionPath(mockVersions.current)).toBe(`/${mockVersions.current}/runner`);
@@ -91,14 +93,14 @@ describe('component: Versions menu', () => {
   });
 
   it('Shows simplified menu on non-production sites', async () => {
+    jest.spyOn(environment, 'isProduction').mockReturnValue(false);
     setVersionMetatag('14.10');
     const wrapper = shallowMount(VersionsMenu);
-    await wrapper.setData({ versions: {} });
     expect(wrapper.find('[data-testid="versions-menu"] a:nth-child(2)').exists()).toBe(false);
   });
 });
 
-describe('isArchivedVersion', () => {
+describe('isOnlineArchivedVersion', () => {
   beforeEach(() => {
     global.fetch = jest.fn(() =>
       Promise.resolve({
@@ -108,19 +110,19 @@ describe('isArchivedVersion', () => {
   });
 
   it('Returns the correct value for the pre-release version', async () => {
-    const result = await fetchVersions.isArchivedVersion('15.3');
+    const result = await fetchVersions.isOnlineArchivedVersion('15.3');
     expect(result).toBe(false);
   });
 
   it('Returns the correct value for the current stable version', async () => {
-    const result = await fetchVersions.isArchivedVersion('15.2');
+    const result = await fetchVersions.isOnlineArchivedVersion('15.2');
     expect(result).toBe(false);
   });
 
   it('Returns the correct values for previous minor and major releases', async () => {
     const olderVersions = [...mockVersions.last_minor, mockVersions.last_minor];
     olderVersions.forEach(async (v) => {
-      const result = await fetchVersions.isArchivedVersion(v);
+      const result = await fetchVersions.isOnlineArchivedVersion(v);
       expect(result).toBe(true);
     });
   });
