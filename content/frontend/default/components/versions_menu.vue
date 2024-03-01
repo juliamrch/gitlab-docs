@@ -1,7 +1,7 @@
 <script>
 import { GlDropdown, GlDropdownItem, GlDropdownDivider } from '@gitlab/ui';
 import { getVersions, getArchivesVersions } from '../../services/fetch_versions';
-import { isGitLabHosted, isArchivesSite } from '../environment';
+import { isProduction } from '../environment';
 
 export default {
   components: {
@@ -24,9 +24,9 @@ export default {
     },
   },
   async created() {
-    // Only fetch version lists for the production site.
+    // Only fetch version lists for the production site, which includes the pre-release and latest stable versions.
     // Archives and self-hosted docs will only include one version, so they don't need this.
-    if (isGitLabHosted() && !isArchivesSite()) {
+    if (isProduction()) {
       try {
         this.versions = await getVersions();
         this.archiveVersions = await getArchivesVersions();

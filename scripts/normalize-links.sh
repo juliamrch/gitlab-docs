@@ -59,7 +59,7 @@ find "${INPUT}" -type f -name '*.html' -print0 | xargs -0 -n 2 -P 0 "$SED" -i \
                                                                     -e 's|href="/operator/|href="/'"$VER"'/operator/|g' \
                                                                     -e 's|="/assets/|="/'"$VER"'/assets/|g' \
                                                                     -e 's|="/frontend/|="/'"$VER"'/frontend/|g' \
-                                                                    -e 's|<a href="/">|<a href="/'"$VER"'/">|g' \
+                                                                    -e 's|href="/"|href="/'"$VER"'/"|g' \
 
 # shellcheck disable=2059
 printf "${COLOR_GREEN}INFO: Replacing relative URLs in $INPUT for CSS files...${COLOR_RESET}\n"
