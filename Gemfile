@@ -9,7 +9,7 @@ group :nanoc do
   gem 'nanoc-live'
 
   # custom kramdown dialect
-  gem 'gitlab_kramdown', '~> 0.27.0'
+  gem 'gitlab_kramdown', '~> 0.28.0'
 
   # Needed to generate Sitemap
   gem 'builder', '~> 3.2.4'
@@ -20,7 +20,7 @@ end
 
 group :test, :development do
   gem 'highline', '~> 3.0.1'
-  gem 'rspec', '~> 3.12.0'
+  gem 'rspec', '~> 3.13.0'
   gem 'rspec-parameterized', '~> 1.0.0'
   gem 'simplecov', '~> 0.22.0', require: false
   gem 'simplecov-cobertura', '~> 2.1.0', require: false
