@@ -27,10 +27,17 @@ preprocess do
         end
       end
 
-      # Extract the heading and use it as a title, if necessary:
-      raw_title = item.raw_content.match(/^[#] .*$/).to_s
-      # If we don't have a title in frontmatter, reuse the one we just fetched
-      item[:title] ||= raw_title.gsub('# ', '')
+      if item[:title]
+        # If title is set, assume that no level 1 heading is set
+        # Prepend the title as the level 1 heading
+        item.raw_content = "# #{item[:title]}\n\n#{item.raw_content}"
+      else
+        # If no title is set, assume that a level 1 heading is set
+        # Extract the heading and use it as a title
+        raw_title = item.raw_content.match(/^[#] .*$/).to_s
+        # If we don't have a title in frontmatter, reuse the one we just fetched
+        item[:title] = raw_title.gsub('# ', '')
+      end
     end
 
     if item.identifier.match?('/ee/architecture/**/*.md')
