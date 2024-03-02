@@ -3509,7 +3509,7 @@ sections:
                   - doc_title: Design patterns
                     doc_url: 'ee/development/fe_guide/design_patterns.html'
                   - doc_title: Event tracking
-                    doc_url: 'https://about.gitlab.com/handbook/product/analytics-instrumentation-guide/'
+                    doc_url: 'https://handbook.gitlab.com/handbook/product/analytics-instrumentation-guide/'
                     external_url: true
                   - doc_title: Emojis
                     doc_url: 'ee/development/fe_guide/emojis.html'
