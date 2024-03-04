@@ -61,7 +61,7 @@ dataSources.forEach((source) => {
       !nav.includes(path) &&
       // Exclude sections that are intentionally not in the nav.
       !path.includes('/architecture/blueprints') &&
-      !path.includes('/user/application_security/dast/checks/') &&
+      !path.includes('/user/application_security/dast/browser/checks/') &&
       !path.includes('/legal/') &&
       !path.includes('/drawers/') &&
       !path.includes('/adr/')

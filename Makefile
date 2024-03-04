@@ -260,7 +260,7 @@ check-global-navigation:
 	@printf "\n$(INFO)INFO: Checking global navigation...$(END)\n"
 	@scripts/check-navigation.sh
 
-check-pages-not-in-nav: install-nodejs-dependencies
+check-pages-not-in-nav:
 	@scripts/pages_not_in_nav.js | jq
 
 check-danger:
