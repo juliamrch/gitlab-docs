@@ -39,7 +39,7 @@ The feature flags available to you depend on:
 ## Ownership by group
 
 GitLab features are developed by
-[engineering groups](https://about.gitlab.com/handbook/product/categories/).
+[engineering groups](https://handbook.gitlab.com/handbook/product/categories/).
 
 <% all_ffs = feature_flags_yaml[:products].map { |_, ffs| ffs }.flatten %>
 <% ff_groups = all_ffs.group_by { |ff| ff[:group] || 'Not defined' }.sort_by { |group, _| group } %>
@@ -51,7 +51,7 @@ GitLab features are developed by
 
 ## Count by milestone
 
-GitLab features [are delivered](https://about.gitlab.com/handbook/engineering/releases/):
+GitLab features [are delivered](https://handbook.gitlab.com/handbook/engineering/releases/):
 
 - Continuously for GitLab SaaS.
 - Every month on the [release date](https://about.gitlab.com/releases/) for GitLab self-managed.
