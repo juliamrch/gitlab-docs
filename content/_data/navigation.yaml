@@ -1325,6 +1325,8 @@ sections:
             doc_url: 'ee/user/project/members/share_project_with_groups.html'
           - doc_title: Project features and permissions
             doc_url: 'ee/user/project/settings/project_features_permissions.html'
+          - doc_title: Project topics
+            doc_url: 'ee/user/project/project_topics.html'
           - doc_title: Project and group visibility
             doc_url: 'ee/user/public_access.html'
           - doc_title: Project access tokens
