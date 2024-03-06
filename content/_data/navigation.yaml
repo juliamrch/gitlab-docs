@@ -3319,6 +3319,8 @@ sections:
                     doc_url: 'ee/development/activitypub/actors/releases.html'
               - doc_title: Advanced search
                 doc_url: 'ee/development/advanced_search.html'
+              - doc_title: AI
+                doc_url: 'ee/development/ai_architecture.html'
               - doc_title: Application Settings
                 doc_url: 'ee/development/application_settings.html'
               - doc_title: Approval rules
