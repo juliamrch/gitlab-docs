@@ -1992,10 +1992,10 @@ sections:
       - category_title: Secure your application
         category_url: 'ee/user/application_security/secure_your_application.html'
         docs:
-          - doc_title: Application security
-            doc_url: 'ee/user/application_security/'
           - doc_title: Getting started
             doc_url: 'ee/user/application_security/get-started-security.html'
+          - doc_title: Application security
+            doc_url: 'ee/user/application_security/'
           - doc_title: Security Configuration
             doc_url: 'ee/user/application_security/configuration/'
           - doc_title: Container Scanning
