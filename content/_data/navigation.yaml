@@ -60,7 +60,7 @@ sections:
     section_categories:
       - category_title: Choose a subscription
         category_url: 'ee/subscriptions/choosing_subscription.html'
-      - category_title: GitLab SaaS
+      - category_title: GitLab.com
         category_url: 'ee/subscriptions/gitlab_com/'
         docs:
           - doc_title: Free user limit
