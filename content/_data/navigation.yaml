@@ -1794,6 +1794,8 @@ sections:
                     doc_url: 'runner/executors/virtualbox.html'
               - doc_title: Configure runners
                 doc_url: 'ee/ci/runners/configure_runners.html'
+              - doc_title: Long polling
+                doc_url: 'ee/ci/runners/long_polling.html'
               - doc_title: Scale a fleet of runners
                 doc_url: 'runner/fleet_scaling/'
               - doc_title: Runner Fleet Dashboard
