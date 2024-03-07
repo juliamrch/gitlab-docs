@@ -19,21 +19,22 @@ beforeEach(() => {
 });
 
 describe('content/frontend/default/components/archives_page.vue', () => {
-  it('Shows correct online versions', async () => {
+  it('Shows correct latest stable', async () => {
     const wrapper = shallowMount(ArchivesPage);
     await wrapper.setData({
-      onlineVersions: [...mockVersions.last_minor, ...mockVersions.last_major],
+      versions: mockVersions,
     });
 
-    expect(wrapper.find('[data-testid="online-version-15.1"]').exists()).toBe(true);
-    expect(wrapper.find('[data-testid="online-version-15.3"]').exists()).toBe(false);
+    expect(wrapper.find('[data-testid="current-stable-15.2"]').exists()).toBe(true);
+    expect(wrapper.find('[data-testid="current-stable-15.3"]').exists()).toBe(false);
   });
 
   it('Shows correct offline versions', async () => {
     const wrapper = shallowMount(ArchivesPage);
-    await wrapper.setData({ offlineVersions: mockArchiveImages });
+    await wrapper.setData({ archiveImages: mockArchiveImages });
 
     expect(wrapper.find('[data-testid="offline-version-14.9"]').exists()).toBe(true);
-    expect(wrapper.find('[data-testid="online-version-15.3"]').exists()).toBe(false);
+    expect(wrapper.find('[data-testid="offline-version-14.8"]').exists()).toBe(true);
+    expect(wrapper.find('[data-testid="offline-version-15.3"]').exists()).toBe(false);
   });
 });

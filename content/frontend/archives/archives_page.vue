@@ -9,20 +9,12 @@ export default {
   data() {
     return {
       versions: {},
-      onlineVersions: [],
-      offlineVersions: [],
+      archiveImages: [],
     };
   },
   async created() {
     this.versions = await getVersions();
-    this.onlineVersions = [...this.versions.last_minor, ...this.versions.last_major];
-
-    const archiveImages = await getArchiveImages();
-    this.offlineVersions = archiveImages.filter(
-      (archiveVersion) =>
-        archiveVersion.name !== this.versions.current &&
-        !this.onlineVersions.includes(archiveVersion.name),
-    );
+    this.archiveImages = await getArchiveImages();
   },
 };
 </script>
@@ -32,19 +24,23 @@ export default {
     <header-permalink text="Latest released version" />
     <p>
       The latest released stable version is
-      <a :href="`https://docs.gitlab.com/${versions.current}`">{{ versions.current }}</a
+      <a
+        :data-testid="`current-stable-${versions.current}`"
+        :href="`https://docs.gitlab.com/${versions.current}`"
+        >{{ versions.current }}</a
       >.
     </p>
 
     <header-permalink text="Previously released versions" />
-    <p>The following versions are available online:</p>
-    <ul>
-      <li v-for="v in onlineVersions" :key="v" :data-testid="`online-version-${v}`">
-        <a :href="`https://docs.gitlab.com/${v}`">{{ v }}</a>
-      </li>
-    </ul>
+    <p>
+      <a href="https://about.gitlab.com/support/statement-of-support/#version-support"
+        >Supported versions</a
+      >
+      of GitLab Docs are available online on the
+      <a href="https://archives.docs.gitlab.com">GitLab Docs Archives website</a>.
+    </p>
 
-    <div v-if="offlineVersions.length">
+    <div v-if="archiveImages.length">
       <header-permalink text="Offline archives" />
       <p>
         The following archives are available and can be browsed offline. You'll need to have
@@ -52,7 +48,7 @@ export default {
         installed to access them.
       </p>
 
-      <div v-for="o in offlineVersions" :key="o.name" :data-testid="`offline-version-${o.name}`">
+      <div v-for="o in archiveImages" :key="o.name" :data-testid="`offline-version-${o.name}`">
         <h3>{{ o.name }}</h3>
         <div class="highlight">
           <pre class="highlight shell">
