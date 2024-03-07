@@ -8,12 +8,13 @@ This page has links to online versions of the GitLab documentation.
 <!-- markdownlint-disable-next-line -->
 To browse a version that is not available online, see the [offline archives](#offline-archives).
 
-They're available for download so that you can browse through them locally.
+They're available for download so that you can browse through them locally, or [self-host](https://docs.gitlab.com/ee/administration/docs_self_host.html) them.
+
+Version-specific search was introduced in 15.6 for the [online archives](https://archives.docs.gitlab.com). Offline search also works in self-hosted environments as of 16.6.
 
 ## Default version
 
-The [default version](/) of this website
-is built from the documentation directories on the default branches of:
+The [default version](/) of this website is built from the documentation directories on the default branches of:
 
 - [GitLab](https://gitlab.com/gitlab-org/gitlab/-/tree/master/doc)
 - [Omnibus GitLab](https://gitlab.com/gitlab-org/omnibus-gitlab/-/tree/master/doc)
@@ -21,9 +22,7 @@ is built from the documentation directories on the default branches of:
 - [GitLab Charts](https://gitlab.com/gitlab-org/charts/gitlab/-/tree/master/doc)
 - [GitLab Operator](https://gitlab.com/gitlab-org/cloud-native/gitlab-operator/doc)
 
-All of these are brought together by the
-[GitLab Docs](https://gitlab.com/gitlab-org/gitlab-docs/) project, which regularly
-deploys this content to [docs.gitlab.com](https://docs.gitlab.com).
+All of these are brought together by the [GitLab Docs](https://gitlab.com/gitlab-org/gitlab-docs/) project, which regularly deploys this content to [docs.gitlab.com](https://docs.gitlab.com).
 
 <!-- Content below this section can be edited in content/frontend/default/components/archives_page.vue -->
 
