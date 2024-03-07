@@ -145,6 +145,8 @@ checks:
       - 'https:\/\/www\.hostgator\.com\/help\/.*'
       - 'https:\/\/help\.dreamhost\.com\/hc\/.*'
       - 'https:\/\/www\.bluehost\.com\/help\/.*'
+      - 'https:\/\/linux\.die\.net\/.*'
+      - 'https:\/\/docs\.google\.com\/.*'
       # Redirected links to ignore.
       - 'https:\/\/www\.jaegertracing\.io\/docs\/latest\/'
       - 'https:\/\/bit.ly\/.*'
