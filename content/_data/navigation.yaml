@@ -2803,6 +2803,8 @@ sections:
                 doc_url: 'ee/api/pages.html'
               - doc_title: Go Proxy
                 doc_url: 'ee/api/packages/go_proxy.html'
+              - doc_title: Google Cloud integration
+                doc_url: 'ee/api/google_cloud_integration.html'
               - doc_title: Group access tokens
                 doc_url: 'ee/api/group_access_tokens.html'
               - doc_title: Group activity analytics
