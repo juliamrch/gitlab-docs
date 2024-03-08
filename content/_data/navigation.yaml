@@ -2068,7 +2068,7 @@ sections:
                     doc_url: 'ee/user/application_security/dast/browser/checks/'
                   - doc_title: Troubleshooting
                     doc_url: 'ee/user/application_security/dast/browser/troubleshooting.html'
-              - doc_title: DAST proxy-based analyzer
+              - doc_title: DAST proxy-based analyzer (deprecated)
                 doc_url: 'ee/user/application_security/dast/proxy-based.html'
                 docs:
                   - doc_title: Troubleshooting
