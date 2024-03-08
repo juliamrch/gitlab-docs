@@ -1986,6 +1986,17 @@ sections:
             doc_url: 'ee/ci/chatops/'
           - doc_title: Mobile DevOps
             doc_url: 'ee/ci/mobile_devops.html'
+          - doc_title: Google Cloud integration
+            doc_url: 'ee/ci/gitlab_google_cloud_integration/'
+            docs:
+              - doc_title: Google IAM
+                doc_url: 'ee/integration/google_cloud_iam.html'
+              - doc_title: Google Artifact Registry
+                doc_url: 'ee/user/project/integrations/google_artifact_registry.html'
+              - doc_title: Provisioning runners
+                doc_url: 'ee/ci/runners/provision_runners_google_cloud.html'
+              - doc_title: 'Tutorial: Set up the Google Cloud integration'
+                doc_url: 'ee/tutorials/set_up_gitlab_google_integration/'
           - doc_title: External repository integrations
             doc_url: 'ee/ci/ci_cd_for_external_repos/'
             docs:
