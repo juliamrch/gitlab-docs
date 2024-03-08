@@ -32,6 +32,8 @@ sections:
     section_categories:
       - category_title: The DevSecOps platform
         category_url: 'ee/devsecops.html'
+      - category_title: Use of generative AI
+        category_url: 'ee/legal/use_generative_ai.html'
   - section_title: Tutorials
     section_url: 'ee/tutorials/'
     section_categories:
