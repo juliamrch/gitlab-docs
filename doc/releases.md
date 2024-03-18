@@ -59,11 +59,11 @@ Prerequisite:
 
 - Install Docker. To verify, run `which docker`.
 
-1. Build the image and run it. For example, for GitLab 15.0 documentation:
+1. Build the image and run it. For example, for GitLab 16.6 documentation:
 
    ```shell
-   docker build -t docs:15.0 -f 15.0.Dockerfile .
-   docker run -it --rm -p 4000:4000 docs:15.0
+   docker build -t docs:16.6 -f 16.6.Dockerfile . --build-arg VER=16.6 --build-arg SEARCH_BACKEND="lunr"
+   docker run -it --rm -p 4000:4000 docs:16.6
    ```
 
    If you get a permission error, try running the commands prefixed with `sudo`.
@@ -73,10 +73,12 @@ Prerequisite:
       - (MacOS) `dockerd` ([read more](https://docs.docker.com/config/daemon/#start-the-daemon-manually)).
       - (Linux) `sudo systemctl start docker` ([read more](https://docs.docker.com/config/daemon/systemd/#start-manually)).
 
-1. Visit `http://localhost:4000/15.0` to see if everything works correctly.
+1. Visit `http://localhost:4000/16.6/` to see if everything works correctly.
 1. Stop the Docker container:
    1. Identify the container's ID with `docker container ls`.
    1. Run `docker stop <container ID>`.
+
+If you run into problems using Docker on MacOS, see [MacOS Docker considerations](./development.md#macos-docker-considerations).
 
 ## Create release merge request
 

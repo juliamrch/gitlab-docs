@@ -127,12 +127,42 @@ done
 
 ### MacOS Docker considerations
 
-- Due to licensing restrictions, consider an alternative to Docker Desktop. There are several suggestions in [the handbook](https://about.gitlab.com/handbook/tools-and-tips/mac/#docker-desktop). Colima works well with the above script.
-- M1 Macs require an environment variable in order to run these images:
+Due to licensing restrictions, consider an alternative to Docker Desktop. There are several suggestions in [the handbook](https://handbook.gitlab.com/handbook/tools-and-tips/mac/#docker-desktop).
 
-  ```shell
-  export DOCKER_DEFAULT_PLATFORM=linux/amd64
-  ```
+Technical Writing team members have had success using Colima. You will likely need to increase the amount of memory and disk space available for Colima. You can do this by modifying the Colima config file (`colima start --edit`):
+
+```sh
+# Number of CPUs to be allocated to the virtual machine.
+# Default: 2
+cpu: 8
+
+# Size of the disk in GiB to be allocated to the virtual machine.
+# NOTE: changing this has no effect after the virtual machine has been created.
+# Default: 60
+disk: 120
+
+# Size of the memory in GiB to be allocated to the virtual machine.
+# Default: 2
+memory: 16
+```
+
+#### Troubleshooting Docker errors
+
+##### `make: *** [Makefile:248: ArrayType.o] Segmentation fault (core dumped)` when building the image
+
+Segfaults can occur when the environment runs out of resources. This can happen when building Ruby gems. Try increasing resources for Docker, and/or clearing up disk space with `docker system prune -af` and `docker system prune --volumes`.
+
+##### `[emerg] 21#21: io_setup() failed (38: Function not implemented)` when running Nginx
+
+This can be safely ignored. This comes up when running an image built on CI on your Mac and is due to hardware differences between the Linux and Mac environments.
+
+##### `WARNING: The requested image's platform (linux/amd64) does not match the detected host platform`
+
+This can be safely ignored, same reasons as above.
+
+#### `http://0.0.0.0:4000` is blocked (Chrome) or invalid (Safari) or does not redirect (Firefox)
+
+You need to use an address like `http://127.0.0.0.1:4000/16.8/` to view a Docker version locally. The trailing slash is required. Linux will redirect from `http://0.0.0.0:4000`, but MacOS does not and will show errors in the browser.
 
 ## Add a new product
 
