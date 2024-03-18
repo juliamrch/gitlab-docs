@@ -1966,6 +1966,9 @@ sections:
                 doc_url: 'ee/ci/testing/code_coverage.html'
               - doc_title: Code quality
                 doc_url: 'ee/ci/testing/code_quality.html'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/ci/testing/code_quality_troubleshooting.html'
               - doc_title: Fail fast testing
                 doc_url: 'ee/ci/testing/fail_fast_testing.html'
               - doc_title: Load performance testing
