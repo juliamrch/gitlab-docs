@@ -1178,7 +1178,7 @@ sections:
             doc_url: 'ee/topics/git/rollback_commits.html'
           - doc_title: Troubleshooting
             doc_url: 'ee/topics/git/troubleshooting_git.html'
-      - category_title: Set up your organization
+      - category_title: Manage your organization
         category_url: 'ee/topics/set_up_organization.html'
         docs:
           - doc_title: 'Tutorial: Set up your organization'
