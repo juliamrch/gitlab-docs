@@ -824,7 +824,7 @@ sections:
               - doc_title: Frequently asked questions
                 doc_url: 'ee/administration/geo/replication/faq.html'
               - doc_title: Troubleshooting
-                doc_url: 'ee/administration/geo/replication/troubleshooting.html'
+                doc_url: 'ee/administration/geo/replication/troubleshooting/'
               - doc_title: Validation tests
                 doc_url: 'ee/administration/geo/replication/geo_validation_tests.html'
               - doc_title: Geo Glossary
