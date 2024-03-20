@@ -2,19 +2,20 @@
 
 A new release of the Docs website is cut with each release of the GitLab product. Most of the site behaves the same way regardless of version, however there are a few features that are version-aware:
 
-- Search
 - Archived version banner
 - Versions dropdown
+- Survey banner
+- Search
 
 See the table below for expected behavior:
 
-| Version | Versions dropdown menu | Archived version banner | Search |
-| -------- | ----- | ------- | ------|
-| Pre-release | Shows the same options as docs.gitlab.com. Local links will not work; this is expected since you do not have all the versions available locally. | No banner | Google, non-prefixed result URLs |
-| Stable | Shows the same options as docs.gitlab.com. Local links will not work; this is expected since you do not have all the versions available locally. | No banner | Google, non-prefixed result URLs (1) |
-| Recent (last two minors before stable) | Shows the same options as docs.gitlab.com. Local links will not work; this is expected since you do not have all the versions available locally. | Banner (interior pages only) | Google, non-prefixed result URLs (1) |
-| Archive | Shows only the active version and a link back to docs.gitlab.com/archives  | Banner (interior pages only) | Lunr with prefixed URLs |
-| Offline archive | Shows only the active version and a link back to docs.gitlab.com/archives | No banner | Lunr with prefixed URLs |
+| Version | Versions dropdown menu | Archived version banner | Survey banner | Search |
+| -------- | ----- | ------- | ------- | ------|
+| Pre-release | Shows the same options as docs.gitlab.com. Local links will not work; this is expected since you do not have all the versions available locally. | No banner | Optional banner (interior pages only) | Google, non-prefixed result URLs |
+| Stable | Shows the same options as docs.gitlab.com. Local links will not work; this is expected since you do not have all the versions available locally. | No banner | No banner | Google, non-prefixed result URLs (1) |
+| Recent (last two minors before stable) | Shows the same options as docs.gitlab.com. Local links will not work; this is expected since you do not have all the versions available locally. | Banner (interior pages only) | No banner |Google, non-prefixed result URLs (1) |
+| Archive | Shows only the active version and a link back to docs.gitlab.com/archives  | Banner (interior pages only) | No banner | Lunr with prefixed URLs |
+| Offline archive | Shows only the active version and a link back to docs.gitlab.com/archives | No banner | No banner | Lunr with prefixed URLs |
 
 1. There is an [open issue](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/1674) to adjust this behavior.
 
