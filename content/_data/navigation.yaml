@@ -585,6 +585,9 @@ sections:
             doc_url: 'ee/administration/auth/jwt.html'
           - doc_title: Kerberos
             doc_url: 'ee/integration/kerberos.html'
+            docs:
+              - doc_title: Troubleshooting
+                doc_url: 'ee/integration/kerberos_troubleshooting.html'
           - doc_title: LDAP
             doc_url: 'ee/administration/auth/ldap/'
             docs:
