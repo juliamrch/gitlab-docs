@@ -2050,13 +2050,16 @@ sections:
                 doc_url: 'ee/user/application_security/sast/troubleshooting.html'
           - doc_title: Infrastructure as Code (IaC) Scanning
             doc_url: 'ee/user/application_security/iac_scanning/'
-          - doc_title: Secret Detection
+          - doc_title: Secret detection
             doc_url: 'ee/user/application_security/secret_detection/'
             docs:
-              - doc_title: Automatic response to leaked secrets
-                doc_url: 'ee/user/application_security/secret_detection/automatic_response.html'
+              - doc_title: Pipeline secret detection
+                doc_url: 'ee/user/application_security/secret_detection/pipeline/'
+                docs:
+                  - doc_title: Automatic response to leaked secrets
+                    doc_url: 'ee/user/application_security/secret_detection/automatic_response.html'
               - doc_title: Pre-receive secret detection
-                doc_url: 'ee/user/application_security/secret_detection/pre_receive.html'
+                doc_url: 'ee/user/application_security/secret_detection/pre_receive/'
           - doc_title: Dynamic Application Security Testing (DAST)
             doc_url: 'ee/user/application_security/dast/'
             docs:
