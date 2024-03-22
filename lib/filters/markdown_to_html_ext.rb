@@ -12,6 +12,10 @@ module Nanoc::Filters
           result.gsub!(%r{\.md}, '.html') # Replace the extension if link is internal
         end
 
+        if %r{_index.html}.match?(result) # If linking to _index.html
+          result.gsub!('_index', 'index') # Replace _index with index
+        end
+
         result
       end
     end
