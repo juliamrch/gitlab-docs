@@ -2114,6 +2114,8 @@ sections:
                         doc_url: 'ee/user/application_security/dast_api/configuration/variables.html'
                       - doc_title: Offline configuration
                         doc_url: 'ee/user/application_security/dast_api/configuration/offline_configuration.html'
+                  - doc_title: Vulnerability checks
+                    doc_url: 'ee/user/application_security/dast_api/checks/'
                   - doc_title: Performance
                     doc_url: 'ee/user/application_security/dast_api/performance.html'
                   - doc_title: Troubleshooting
