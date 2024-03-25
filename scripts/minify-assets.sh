@@ -37,7 +37,7 @@ fi
 
 # Minify assets
 printf "${COLOR_GREEN}INFO: Minifying all assets...${COLOR_RESET}\n"
-if $MINIFY_BIN "${MINIFY_FLAGS[@]}" --match="\.html$|\.css$|\.json|\.svg$" -o "${DEST}" "${SOURCE}"; then
+if $MINIFY_BIN "${MINIFY_FLAGS[@]}" --match='*.html' '*.css' '*.json' '*.svg' -o "${DEST}" "${SOURCE}"; then
   printf "${COLOR_GREEN}INFO: Assets minified!${COLOR_RESET}\n"
   # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
   SIZE_BEFORE_MINIFY=$(du -sh "$SOURCE" | awk '{print $1}')
