@@ -639,6 +639,8 @@ sections:
                 doc_url: 'ee/administration/secure_files.html'
               - doc_title: External pipeline validation
                 doc_url: 'ee/administration/external_pipeline_validation.html'
+          - doc_title: ClickHouse for analytics
+            doc_url: 'ee/administration/analytics.html'
           - doc_title: Consul
             doc_url: 'ee/administration/consul.html'
           - doc_title: Environment variables
