@@ -1747,7 +1747,7 @@ sections:
                 doc_url: 'ee/tutorials/create_register_first_runner/'
               - doc_title: 'Tutorial: Automate runner creation and registration'
                 doc_url: 'ee/tutorials/automate_runner_creation/'
-              - doc_title: Runner SaaS
+              - doc_title: GitLab-hosted runners
                 doc_url: 'ee/ci/runners/'
                 docs:
                   - doc_title: Linux
