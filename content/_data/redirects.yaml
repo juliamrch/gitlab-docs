@@ -859,12 +859,6 @@ redirects:
   - from: /ee/ci/components/catalog.html
     to: /ee/ci/components/#cicd-catalog
     remove_date: 2024-11-24
-  - from: /ee/user/project/settings/index.html
-    to: /ee/user/project/working_with_projects.html
-    remove_date: 2024-11-28
-  - from: /ee/user/project/settings/
-    to: /ee/user/project/working_with_projects.html
-    remove_date: 2024-11-28
   - from: /ee/administration/audit_events.html
     to: /ee/administration/audit_event_reports.html
     remove_date: 2024-12-21
