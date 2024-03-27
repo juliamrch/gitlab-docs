@@ -18,7 +18,7 @@ module Nanoc::Helpers
 
     def icon(icon_name, size = nil, css_class = nil)
       unless known_sprites.include?(icon_name)
-        exception = ArgumentError.new("#{icon_name} is not a known icon in @gitlab-org/gitlab-svg")
+        exception = ArgumentError.new("#{icon_name} is not a known icon in @gitlab-org/gitlab-svg. Contact the Technical Writing team for assistance.")
         raise exception
       end
 
