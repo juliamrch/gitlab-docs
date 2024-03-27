@@ -32,7 +32,7 @@ RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cac
     # Add corepack for installing Yarn 4.x
     # https://github.com/nodejs/corepack?tab=readme-ov-file#manual-installs
     && npm uninstall -g yarn pnpm \
-    && npm install -g corepack@0.24.1 \
+    && npm install -g corepack@0.26.0 \
     && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
     && echo "Ruby: $(ruby --version)" \
     && echo "RubyGems: $(gem --version)" \
