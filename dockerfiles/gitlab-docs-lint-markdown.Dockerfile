@@ -5,9 +5,8 @@ ARG ALPINE_VERSION
 
 FROM alpine:${ALPINE_VERSION}
 
-# Values for VALE_VERSION, MARKDOWNLINT_VERSION, and MARKDOWNLINT2_VERSION are defined in .gitlab-ci.yml
+# Values for VALE_VERSION and MARKDOWNLINT2_VERSION are defined in .gitlab-ci.yml
 ARG VALE_VERSION
-ARG MARKDOWNLINT_VERSION
 ARG MARKDOWNLINT2_VERSION
 
 # Install dependencies
@@ -44,12 +43,6 @@ RUN printf "\n\e[32mINFO: Installing Vale %s..\e[39m\n" "${VALE_VERSION}" \
   && tar -xvzf vale_${VALE_VERSION}_Linux_64-bit.tar.gz -C bin \
   && rm vale_${VALE_VERSION}_Linux_64-bit.tar.gz \
   && echo "Vale: $(vale --version)" \
-  && printf "\n"
-
-# Install markdownlint-cli globally
-RUN printf "\n\e[32mINFO: Installing markdownlint-cli %s..\e[39m\n" "${MARKDOWNLINT_VERSION}" \
-  && yarn global add markdownlint-cli@${MARKDOWNLINT_VERSION} && yarn cache clean \
-  && echo "markdownlint-cli: $(markdownlint --version)" \
   && printf "\n"
 
 # Install markdownlint-cli2 globally
