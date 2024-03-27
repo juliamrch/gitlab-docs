@@ -369,6 +369,8 @@ sections:
                 doc_url: 'operator/operator_upgrades.html'
               - doc_title: Ingress in OpenShift
                 doc_url: 'operator/openshift_ingress.html'
+              - doc_title: OpenShift support
+                doc_url: 'ee/install/openshift_and_gitlab/'
               - doc_title: RedHat-certified images
                 doc_url: 'operator/certified_images.html'
               - doc_title: Security context constraints
@@ -379,6 +381,9 @@ sections:
 
           - doc_title: Docker
             doc_url: 'ee/install/docker.html'
+            docs:
+              - doc_title: Troubleshooting
+                doc_url: 'ee/install/docker_troubleshooting.html'
           - doc_title: Self-compiled (source)
             doc_url: 'ee/install/installation.html'
             docs:
@@ -1414,6 +1419,8 @@ sections:
       - category_title: Plan and track work
         category_url: 'ee/topics/plan_and_track.html'
         docs:
+          - doc_title: 'Tutorial: Use GitLab to facilitate Scrum'
+            doc_url: 'ee/tutorials/scrum_events/'
           - doc_title: Labels
             doc_url: 'ee/user/project/labels.html'
           - doc_title: Iterations
@@ -1606,6 +1613,8 @@ sections:
                     doc_url: 'ee/user/project/repository/signed_commits/x509.html'
                   - doc_title: X.509 signatures Rake task
                     doc_url: 'ee/raketasks/x509_signatures.html'
+              - doc_title: Syntax highlighting
+                doc_url: 'ee/user/project/highlighting.html'
               - doc_title: Web Editor
                 doc_url: 'ee/user/project/repository/web_editor.html'
               - doc_title: Web IDE
@@ -1642,6 +1651,8 @@ sections:
                 docs:
                   - doc_title: Suggestions
                     doc_url: 'ee/user/project/merge_requests/reviews/suggestions.html'
+                  - doc_title: Suggested Reviewers data usage
+                    doc_url: 'ee/user/project/merge_requests/reviews/data_usage.html'
               - doc_title: Merge request widgets
                 doc_url: 'ee/user/project/merge_requests/widgets.html'
               - doc_title: Merge methods
@@ -2019,6 +2030,9 @@ sections:
             doc_url: 'ee/user/application_security/get-started-security.html'
           - doc_title: Application security
             doc_url: 'ee/user/application_security/'
+            docs:
+              - doc_title: Troubleshooting
+                doc_url: 'ee/user/application_security/troubleshooting_application_security.html'
           - doc_title: Security Configuration
             doc_url: 'ee/user/application_security/configuration/'
           - doc_title: Container Scanning
