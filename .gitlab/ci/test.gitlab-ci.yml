@@ -22,7 +22,7 @@ include:
 # Test the links in the global nav for all MRs in `gitlab-docs`
 #
 test_global_nav_links:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.19-ruby-3.2.3-eee6c4c0
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.19-ruby-3.2.3-a5032206
   extends:
     - .rules_site_tests
     - .bundle
@@ -286,7 +286,7 @@ test_EOL_whitespace:
     - .rules_chores
     - .bundle
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.19-ruby-3.2.3-eee6c4c0
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.19-ruby-3.2.3-a5032206
   needs: []
   before_script: []
   dependencies: []
@@ -302,7 +302,7 @@ test_unlinked_images:
     - .rules_chores
     - .bundle
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.19-ruby-3.2.3-eee6c4c0
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.19-ruby-3.2.3-a5032206
   needs: []
   before_script: []
   dependencies: []
