@@ -30,9 +30,6 @@ include:
 #
 # Dependency scanning job overrides
 #
-# Currently disabled with the DS_EXCLUDED_ANALYZERS variable in the CI/CD settings.
-# Remove this variable when https://gitlab.com/gitlab-org/gitlab/-/issues/431752 is resolved.
-
 gemnasium-dependency_scanning:
   extends:
     - .ds-analyzer
