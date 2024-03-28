@@ -1762,13 +1762,13 @@ sections:
                 doc_url: 'ee/ci/runners/'
                 docs:
                   - doc_title: Linux
-                    doc_url: 'ee/ci/runners/saas/linux_saas_runner.html'
+                    doc_url: 'ee/ci/runners/hosted_runners/linux.html'
                   - doc_title: GPU
-                    doc_url: 'ee/ci/runners/saas/gpu_saas_runner.html'
+                    doc_url: 'ee/ci/runners/hosted_runners/gpu_enabled.html'
                   - doc_title: macOS
-                    doc_url: 'ee/ci/runners/saas/macos_saas_runner.html'
+                    doc_url: 'ee/ci/runners/hosted_runners/macos.html'
                   - doc_title: Windows
-                    doc_url: 'ee/ci/runners/saas/windows_saas_runner.html'
+                    doc_url: 'ee/ci/runners/hosted_runners/windows.html'
               - doc_title: Manage runners
                 doc_url: 'ee/ci/runners/runners_scope.html'
               - doc_title: Register a runner
