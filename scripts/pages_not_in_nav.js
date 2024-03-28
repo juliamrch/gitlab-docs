@@ -59,12 +59,17 @@ dataSources.forEach((source) => {
     if (
       // Include pages that are not in the nav.
       !nav.includes(path) &&
-      // Exclude sections that are intentionally not in the nav.
-      !path.includes('/architecture/blueprints') &&
-      !path.includes('/user/application_security/dast/browser/checks/') &&
+      // Exclude sections that are intentionally not in the nav. Don't add a leading `/` if path is at the root of the site.
+      // For example, `ee/development/` and not `/ee/development/`.
+      !path.includes('/architecture/') &&
+      !path.match(/\/user\/application_security\/dast\/browser\/checks\/\w+/) &&
+      !path.match(/\/user\/application_security\/dast_api\/checks\/\w+/) &&
       !path.includes('/legal/') &&
       !path.includes('/drawers/') &&
-      !path.includes('/adr/')
+      !path.includes('/adr/') &&
+      !path.includes('charts/development/') &&
+      !path.includes('ee/development/') &&
+      !path.includes('omnibus/development/')
     ) {
       lostPages.push({
         url: `https://docs.gitlab.com/${path}`,
