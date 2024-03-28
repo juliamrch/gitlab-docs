@@ -1,6 +1,6 @@
 # GitLab Docs Workspace Docker image
 
-FROM debian:12.2-slim
+FROM debian:12.5-slim
 
 ARG ASDF_VERSION
 

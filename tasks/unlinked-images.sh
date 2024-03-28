@@ -8,7 +8,7 @@ if [[ -z "$1" ]]; then
 fi
 
 for FILE in $(git ls-files ./"$1"/**/*.png ./"$1"/**/*.gif ./"$1"/**/*.jpg); do
-  if ! git grep "$(basename "$FILE")" > /dev/null; then echo "Unlinked file: $FILE"; unlinked_files+=1; fi
+  if ! git grep "$(basename "$FILE")" > /dev/null; then echo "Unlinked file: $FILE"; unlinked_files=$((unlinked_files+1)); fi
 done
 
 if [[ $unlinked_files -gt 0 ]]; then

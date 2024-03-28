@@ -1,4 +1,4 @@
-FROM nginx:1.23.1-alpine
+FROM nginx:1.25.4-alpine
 
 ENV TARGET=/usr/share/nginx/html
 

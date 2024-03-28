@@ -14,7 +14,7 @@ variables:
   BUNDLE_PATH__SYSTEM: 'false'
   GIT_DEPTH: '20'
   ALPINE_VERSION: '3.19'
-  VALE_VERSION: '3.0.7'
+  VALE_VERSION: '3.3.1'
   MARKDOWNLINT2_VERSION: '0.12.1'  # Version also set in package.json
   RUBY_VERSION: '3.2.3'
   ASDF_VERSION: '0.14.0'
