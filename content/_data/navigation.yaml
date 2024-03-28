@@ -2359,47 +2359,6 @@ sections:
                 doc_url: 'ee/user/project/pages/redirects.html'
               - doc_title: Settings
                 doc_url: 'ee/user/project/pages/introduction.html'
-      - category_title: Monitor application performance
-        category_url: 'ee/operations/'
-        docs:
-          - doc_title: Error tracking
-            doc_url: 'ee/operations/error_tracking.html'
-          - doc_title: Distributed tracing
-            doc_url: 'ee/operations/tracing.html'
-          - doc_title: Metrics
-            doc_url: 'ee/operations/metrics.html'
-          - doc_title: Logs
-            doc_url: 'ee/operations/logs.html'
-          - doc_title: Incident management
-            doc_url: 'ee/operations/incident_management/'
-            docs:
-              - doc_title: Alerts
-                doc_url: 'ee/operations/incident_management/alerts.html'
-                docs:
-                  - doc_title: Integrations
-                    doc_url: 'ee/operations/incident_management/integrations.html'
-              - doc_title: Incidents
-                doc_url: 'ee/operations/incident_management/incidents.html'
-                docs:
-                  - doc_title: Manage incidents
-                    doc_url: 'ee/operations/incident_management/manage_incidents.html'
-                  - doc_title: Timeline events
-                    doc_url: 'ee/operations/incident_management/incident_timeline_events.html'
-                  - doc_title: Linked resources
-                    doc_url: 'ee/operations/incident_management/linked_resources.html'
-                  - doc_title: Incident management for Slack
-                    doc_url: 'ee/operations/incident_management/slack.html'
-              - doc_title: On-call schedules
-                doc_url: 'ee/operations/incident_management/oncall_schedules.html'
-                docs:
-                  - doc_title: Escalation policies
-                    doc_url: 'ee/operations/incident_management/escalation_policies.html'
-                  - doc_title: Paging and notifications
-                    doc_url: 'ee/operations/incident_management/paging.html'
-              - doc_title: Status page
-                doc_url: 'ee/operations/incident_management/status_page.html'
-      - category_title: Monitor runner performance
-        category_url: 'runner/monitoring/'
       - category_title: Manage your infrastructure
         category_url: 'ee/user/infrastructure/'
         docs:
@@ -2474,6 +2433,47 @@ sections:
                 doc_url: 'ee/user/infrastructure/clusters/migrate_to_gitlab_agent.html'
           - doc_title: Runbooks
             doc_url: 'ee/user/project/clusters/runbooks/'
+      - category_title: Monitor application performance
+        category_url: 'ee/operations/'
+        docs:
+          - doc_title: Error tracking
+            doc_url: 'ee/operations/error_tracking.html'
+          - doc_title: Distributed tracing
+            doc_url: 'ee/operations/tracing.html'
+          - doc_title: Metrics
+            doc_url: 'ee/operations/metrics.html'
+          - doc_title: Logs
+            doc_url: 'ee/operations/logs.html'
+          - doc_title: Incident management
+            doc_url: 'ee/operations/incident_management/'
+            docs:
+              - doc_title: Alerts
+                doc_url: 'ee/operations/incident_management/alerts.html'
+                docs:
+                  - doc_title: Integrations
+                    doc_url: 'ee/operations/incident_management/integrations.html'
+              - doc_title: Incidents
+                doc_url: 'ee/operations/incident_management/incidents.html'
+                docs:
+                  - doc_title: Manage incidents
+                    doc_url: 'ee/operations/incident_management/manage_incidents.html'
+                  - doc_title: Timeline events
+                    doc_url: 'ee/operations/incident_management/incident_timeline_events.html'
+                  - doc_title: Linked resources
+                    doc_url: 'ee/operations/incident_management/linked_resources.html'
+                  - doc_title: Incident management for Slack
+                    doc_url: 'ee/operations/incident_management/slack.html'
+              - doc_title: On-call schedules
+                doc_url: 'ee/operations/incident_management/oncall_schedules.html'
+                docs:
+                  - doc_title: Escalation policies
+                    doc_url: 'ee/operations/incident_management/escalation_policies.html'
+                  - doc_title: Paging and notifications
+                    doc_url: 'ee/operations/incident_management/paging.html'
+              - doc_title: Status page
+                doc_url: 'ee/operations/incident_management/status_page.html'
+      - category_title: Monitor runner performance
+        category_url: 'runner/monitoring/'
       - category_title: Analyze GitLab usage
         category_url: 'ee/user/analytics/'
         docs:
