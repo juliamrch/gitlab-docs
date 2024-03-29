@@ -1454,10 +1454,6 @@ sections:
                 doc_url: 'ee/user/project/issues/due_dates.html'
               - doc_title: Emoji reactions
                 doc_url: 'ee/user/emoji_reactions.html'
-              - doc_title: Issue boards
-                doc_url: 'ee/user/project/issue_board.html'
-              - doc_title: 'Tutorial: Set up issue boards for team hand-off'
-                doc_url: 'ee/tutorials/boards_for_teams/'
               - doc_title: 'Tutorial: Set up a project for issue triage'
                 doc_url: 'ee/tutorials/issue_triage/'
               - doc_title: 'Tutorial: Set up a project for idea management'
@@ -1481,6 +1477,11 @@ sections:
                 doc_url: 'ee/user/project/issues/issue_weight.html'
               - doc_title: Zoom meetings in issues
                 doc_url: 'ee/user/project/issues/associate_zoom_meeting.html'
+          - doc_title: Issue boards
+            doc_url: 'ee/user/project/issue_board.html'
+            docs:
+              - doc_title: 'Tutorial: Set up issue boards for team hand-off'
+                doc_url: 'ee/tutorials/boards_for_teams/'
           - doc_title: Comments and threads
             doc_url: 'ee/user/discussions/'
           - doc_title: Tasks
