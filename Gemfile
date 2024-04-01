@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'nanoc', '~> 4.12.19'
+gem 'nanoc', '~> 4.12.20'
 gem 'rake', '~> 13.1.0'
 
 group :nanoc do
@@ -27,9 +27,9 @@ group :test, :development do
   gem 'pry-byebug', '~> 3.10.1', require: false
   gem 'gitlab-styles', '~> 11.0.0', require: false
   gem "webrick", "~> 1.8", ">= 1.8.1"
-  gem 'json_schemer', '~> 2.1', '>= 2.1.1', require: false
+  gem 'json_schemer', '~> 2.2', '>= 2.2.1', require: false
 end
 
 group :development, :danger do
-  gem 'gitlab-dangerfiles', '~> 4.6.0', require: false
+  gem 'gitlab-dangerfiles', '~> 4.7.0', require: false
 end
