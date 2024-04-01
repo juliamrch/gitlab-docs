@@ -960,6 +960,8 @@ sections:
                 doc_url: 'ee/administration/settings/incident_management_rate_limits.html'
               - doc_title: Issue creation
                 doc_url: 'ee/administration/settings/rate_limit_on_issues_creation.html'
+              - doc_title: Members API
+                doc_url: 'ee/administration/settings/rate_limit_on_members_api.html'
               - doc_title: Note creation
                 doc_url: 'ee/administration/settings/rate_limit_on_notes_creation.html'
               - doc_title: Package registry
@@ -1053,6 +1055,17 @@ sections:
             doc_url: 'ee/administration/restart_gitlab.html'
           - doc_title: Troubleshooting
             doc_url: 'ee/administration/troubleshooting/'
+            docs:
+              - doc_title: Apps for a testing environment
+                doc_url: 'ee/administration/troubleshooting/test_environments.html'
+              - doc_title: Diagnostics tools
+                doc_url: 'ee/administration/troubleshooting/diagnostics_tools.html'
+              - doc_title: GitLab Rails console cheat sheet
+                doc_url: 'ee/administration/troubleshooting/gitlab_rails_cheat_sheet.html'
+              - doc_title: Linux cheat sheet
+                doc_url: 'ee/administration/troubleshooting/linux_cheat_sheet.html'
+              - doc_title: PostgreSQL
+                doc_url: 'ee/administration/troubleshooting/postgresql.html'
       # New - secure (renamed existing topic)
 
       - category_title: Secure your installation
