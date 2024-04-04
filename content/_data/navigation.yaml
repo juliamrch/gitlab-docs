@@ -835,6 +835,9 @@ sections:
                 doc_url: 'ee/administration/geo/replication/faq.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/administration/geo/replication/troubleshooting/'
+                docs:
+                  - doc_title: Synchronization
+                    doc_url: 'ee/administration/geo/replication/troubleshooting/synchronization.html'
               - doc_title: Validation tests
                 doc_url: 'ee/administration/geo/replication/geo_validation_tests.html'
               - doc_title: Geo Glossary
