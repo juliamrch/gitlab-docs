@@ -836,6 +836,8 @@ sections:
               - doc_title: Troubleshooting
                 doc_url: 'ee/administration/geo/replication/troubleshooting/'
                 docs:
+                  - doc_title: Replication
+                    doc_url: 'ee/administration/geo/replication/troubleshooting/replication.html'
                   - doc_title: Synchronization
                     doc_url: 'ee/administration/geo/replication/troubleshooting/synchronization.html'
               - doc_title: Validation tests
