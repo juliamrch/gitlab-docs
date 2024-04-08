@@ -455,6 +455,8 @@ sections:
                 doc_url: 'ee/update/patch_versions.html'
               - doc_title: Change from Community Edition to Enterprise Edition
                 doc_url: 'ee/update/upgrading_from_ce_to_ee.html'
+          - doc_title: GitLab 17 changes
+            doc_url: 'ee/update/versions/gitlab_17_changes.html'
           - doc_title: GitLab 16 changes
             doc_url: 'ee/update/versions/gitlab_16_changes.html'
           - doc_title: GitLab 15 changes
