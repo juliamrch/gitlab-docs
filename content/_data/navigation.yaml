@@ -2649,6 +2649,8 @@ sections:
                 doc_url: 'ee/user/project/integrations/custom_issue_tracker.html'
               - doc_title: Engineering Workflow Management (EWM)
                 doc_url: 'ee/user/project/integrations/ewm.html'
+              - doc_title: Phorge
+                doc_url: 'ee/user/project/integrations/phorge.html'
               - doc_title: Redmine
                 doc_url: 'ee/user/project/integrations/redmine.html'
               - doc_title: YouTrack
