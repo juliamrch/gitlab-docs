@@ -842,6 +842,8 @@ sections:
                     doc_url: 'ee/administration/geo/replication/troubleshooting/replication.html'
                   - doc_title: Synchronization
                     doc_url: 'ee/administration/geo/replication/troubleshooting/synchronization.html'
+                  - doc_title: Failover
+                    doc_url: 'ee/administration/geo/replication/troubleshooting/failover.html'
               - doc_title: Validation tests
                 doc_url: 'ee/administration/geo/replication/geo_validation_tests.html'
               - doc_title: Geo Glossary
