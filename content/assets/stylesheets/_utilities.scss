@@ -76,3 +76,32 @@
     width: 70%;
   }
 }
+
+.gl-top-0 {
+  top: 0;
+}
+
+.gl-absolute {
+  position: absolute;
+}
+.gl-relative {
+  position: relative;
+}
+.gl-sticky {
+  position: sticky;
+}
+.gl-lg-sticky {
+  @media (min-width: $bp-lg) {
+    position: sticky;
+  }
+}
+.gl-md-sticky {
+  @media (min-width: $bp-md) {
+    position: sticky;
+  }
+}
+.gl-sm-sticky {
+  @media (min-width: $bp-sm) {
+    position: sticky;
+  }
+}
