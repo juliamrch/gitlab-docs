@@ -1198,8 +1198,6 @@ sections:
             doc_url: 'ee/topics/git/git_rebase.html'
           - doc_title: Feature branch workflow
             doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
-          - doc_title: Stash changes
-            doc_url: 'ee/topics/git/stash.html'
           - doc_title: Undo changes
             doc_url: 'ee/topics/git/undo.html'
           - doc_title: Unstage files
