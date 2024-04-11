@@ -2031,8 +2031,8 @@ sections:
             docs:
               - doc_title: Google IAM
                 doc_url: 'ee/integration/google_cloud_iam.html'
-              - doc_title: Google Artifact Registry
-                doc_url: 'ee/user/project/integrations/google_artifact_registry.html'
+              - doc_title: Google Artifact Management
+                doc_url: 'ee/user/project/integrations/google_artifact_management.html'
               - doc_title: Provisioning runners
                 doc_url: 'ee/ci/runners/provision_runners_google_cloud.html'
               - doc_title: 'Tutorial: Set up the Google Cloud integration'
