@@ -1204,8 +1204,6 @@ sections:
             doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
           - doc_title: Undo changes
             doc_url: 'ee/topics/git/undo.html'
-          - doc_title: Unstage files
-            doc_url: 'ee/topics/git/unstage.html'
           - doc_title: Push options
             doc_url: 'ee/user/project/push_options.html'
           - doc_title: Troubleshooting
