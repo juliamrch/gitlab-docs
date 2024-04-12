@@ -16,6 +16,7 @@ variables:
   ALPINE_VERSION: '3.19'
   VALE_VERSION: '3.4.1'
   MARKDOWNLINT2_VERSION: '0.13.0'  # Version also set in package.json
+  LYCHEE_VERSION: '0.14.3'
   RUBY_VERSION: '3.2.3'
   ASDF_VERSION: '0.14.0'
   ## --------------------------------------------------------------------------

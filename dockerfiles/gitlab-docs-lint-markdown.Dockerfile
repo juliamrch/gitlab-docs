@@ -5,34 +5,16 @@ ARG ALPINE_VERSION
 
 FROM alpine:${ALPINE_VERSION}
 
-# Values for VALE_VERSION and MARKDOWNLINT2_VERSION are defined in .gitlab-ci.yml
+# Values for VALE_VERSION,  MARKDOWNLINT2_VERSION, and LYCHEE_VERSION are defined in .gitlab-ci.yml
 ARG VALE_VERSION
 ARG MARKDOWNLINT2_VERSION
+ARG LYCHEE_VERSION
 
 # Install dependencies
-RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cache \
-    bash         \
-    build-base   \
-    curl         \
-    git          \
-    gnupg        \
-    grep         \
-    libc6-compat \
-    libcurl      \
-    libxslt      \
-    libxslt-dev  \
-    nodejs       \
-    openssl      \
-    pngquant     \
-    ruby         \
-    tar          \
-    # We need Yarn version 1.x for global installs
-    yarn         \
-    && echo 'gem: --no-document' >> /etc/gemrc \
-    && gem update --silent --system \
+RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" \
+    && apk update && apk upgrade --no-cache && apk add --no-cache bash git nodejs yarn \
     && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
-    && echo "Ruby: $(ruby --version)" \
-    && echo "RubyGems: $(gem --version)" \
+    && echo "Git: $(git --version)" \
     && echo "Node.js: $(node --version)" \
     && echo "Yarn: $(yarn --version)" \
     && printf "\n"
@@ -50,3 +32,10 @@ RUN printf "\n\e[32mINFO: Installing markdownlint-cli2 %s..\e[39m\n" "${MARKDOWN
   && yarn global add markdownlint-cli2@${MARKDOWNLINT2_VERSION} && yarn cache clean \
   && markdownlint-cli2 | head -n 1 \
   && printf "\n"
+
+# Install Lychee
+RUN printf "\n\e[32mINFO: Installing Lychee %s..\e[39m\n" "${LYCHEE_VERSION}" \
+  && wget --quiet https://github.com/lycheeverse/lychee/releases/download/v${LYCHEE_VERSION}/lychee-v${LYCHEE_VERSION}-x86_64-unknown-linux-musl.tar.gz \
+  && tar -xvzf lychee-v${LYCHEE_VERSION}-x86_64-unknown-linux-musl.tar.gz -C bin \
+  && rm lychee-v${LYCHEE_VERSION}-x86_64-unknown-linux-musl.tar.gz \
+  && echo "Lychee: $(lychee --version)"
