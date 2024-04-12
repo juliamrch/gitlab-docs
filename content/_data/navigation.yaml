@@ -1353,48 +1353,31 @@ sections:
             doc_url: 'ee/user/project/'
           - doc_title: Manage projects
             doc_url: 'ee/user/project/working_with_projects.html'
-          - doc_title: Migrate projects
-            doc_url: 'ee/user/project/settings/migrate_projects.html'
-          - doc_title: Share projects
-            doc_url: 'ee/user/project/members/share_project_with_groups.html'
-          - doc_title: Project features and permissions
-            doc_url: 'ee/user/project/settings/project_features_permissions.html'
-          - doc_title: Project topics
-            doc_url: 'ee/user/project/project_topics.html'
-          - doc_title: Project and group visibility
+          - doc_title: Project visibility
             doc_url: 'ee/user/public_access.html'
-          - doc_title: Project access tokens
-            doc_url: 'ee/user/project/settings/project_access_tokens.html'
-          - doc_title: Reserved project and group names
-            doc_url: 'ee/user/reserved_names.html'
-          - doc_title: Search
-            doc_url: 'ee/user/search/'
-            docs:
-              - doc_title: Advanced search
-                doc_url: 'ee/user/search/advanced_search.html'
-              - doc_title: Exact code search
-                doc_url: 'ee/user/search/exact_code_search.html'
-              - doc_title: Command palette
-                doc_url: 'ee/user/search/command_palette.html'
-              - doc_title: File finder
-                doc_url: 'ee/user/project/repository/file_finder.html'
-          - doc_title: Use a project as a Go package
-            doc_url: 'ee/user/project/use_project_as_go_package.html'
-          - doc_title: 'Tutorial: Build a protected workflow for your project'
-            doc_url: 'ee/tutorials/protected_workflow/'
-          - doc_title: Troubleshooting
-            doc_url: 'ee/user/project/troubleshooting.html'
-          - doc_title: Badges
-            doc_url: 'ee/user/project/badges.html'
-          - doc_title: Code intelligence
-            doc_url: 'ee/user/project/code_intelligence.html'
+          - doc_title: Project settings
+            doc_url: 'ee/user/project/settings/'
           - doc_title: Description templates
             doc_url: 'ee/user/project/description_templates.html'
+          - doc_title: Project access tokens
+            doc_url: 'ee/user/project/settings/project_access_tokens.html'
           - doc_title: Deploy keys
             doc_url: 'ee/user/project/deploy_keys/'
           - doc_title: Deploy tokens
             doc_url: 'ee/user/project/deploy_tokens/'
-          - doc_title: Import and migrate groups and projects
+          - doc_title: Share projects
+            doc_url: 'ee/user/project/members/share_project_with_groups.html'
+          - doc_title: Reserved project and group names
+            doc_url: 'ee/user/reserved_names.html'
+          - doc_title: Search
+            doc_url: 'ee/user/search/'
+          - doc_title: Badges
+            doc_url: 'ee/user/project/badges.html'
+          - doc_title: Code intelligence
+            doc_url: 'ee/user/project/code_intelligence.html'
+          - doc_title: File finder
+            doc_url: 'ee/user/project/repository/file_finder.html'
+          - doc_title: Migrate projects by using file exports
             doc_url: 'ee/user/project/import/'
             docs:
               - doc_title: Bitbucket Cloud
@@ -1437,7 +1420,23 @@ sections:
                 doc_url: 'ee/user/project/import/tfvc.html'
           - doc_title: System notes
             doc_url: 'ee/user/project/system_notes.html'
-
+          - doc_title: Transfer a project to another namespace
+            doc_url: 'ee/user/project/settings/migrate_projects.html'
+          - doc_title: Project topics
+            doc_url: 'ee/user/project/project_topics.html'
+            docs:
+              - doc_title: Advanced search
+                doc_url: 'ee/user/search/advanced_search.html'
+              - doc_title: Exact code search
+                doc_url: 'ee/user/search/exact_code_search.html'
+              - doc_title: Command palette
+                doc_url: 'ee/user/search/command_palette.html'
+          - doc_title: Use a project as a Go package
+            doc_url: 'ee/user/project/use_project_as_go_package.html'
+          - doc_title: 'Tutorial: Build a protected workflow for your project'
+            doc_url: 'ee/tutorials/protected_workflow/'
+          - doc_title: Troubleshooting
+            doc_url: 'ee/user/project/troubleshooting.html'
       - category_title: Plan and track work
         category_url: 'ee/topics/plan_and_track.html'
         docs:
