@@ -12,7 +12,7 @@ ARG LYCHEE_VERSION
 
 # Install dependencies
 RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" \
-    && apk update && apk upgrade --no-cache && apk add --no-cache bash git nodejs yarn \
+    && apk update && apk upgrade --no-cache && apk add --no-cache bash git make nodejs yarn \
     && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
     && echo "Git: $(git --version)" \
     && echo "Node.js: $(node --version)" \
