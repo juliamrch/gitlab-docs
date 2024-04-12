@@ -73,13 +73,14 @@ image:docs-lint-markdown:
   stage: build-images
   needs: ["test:image:docs-lint-markdown"]
   variables:
-    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-markdown:alpine-$ALPINE_VERSION-vale-$VALE_VERSION-markdownlint2-$MARKDOWNLINT2_VERSION
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-markdown:alpine-$ALPINE_VERSION-vale-$VALE_VERSION-markdownlint2-$MARKDOWNLINT2_VERSION-lychee-$LYCHEE_VERSION
     DOCKERFILE: dockerfiles/gitlab-docs-lint-markdown.Dockerfile
   script:
     - docker buildx build
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
              --build-arg VALE_VERSION=${VALE_VERSION}
              --build-arg MARKDOWNLINT2_VERSION=${MARKDOWNLINT2_VERSION}
+             --build-arg LYCHEE_VERSION=${LYCHEE_VERSION}
              --tag $IMAGE_NAME
              --file $DOCKERFILE .
              --push
@@ -102,6 +103,7 @@ test:image:docs-lint-markdown:
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
              --build-arg VALE_VERSION=${VALE_VERSION}
              --build-arg MARKDOWNLINT2_VERSION=${MARKDOWNLINT2_VERSION}
+             --build-arg LYCHEE_VERSION=${LYCHEE_VERSION}
              --file $DOCKERFILE .
 
 #
