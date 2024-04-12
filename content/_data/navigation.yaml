@@ -838,11 +838,15 @@ sections:
               - doc_title: Troubleshooting
                 doc_url: 'ee/administration/geo/replication/troubleshooting/'
                 docs:
-                  - doc_title: Replication
+                  - doc_title: Common errors
+                    doc_url: 'ee/administration/geo/replication/troubleshooting/common.html'
+                  - doc_title: Client and HTTP response code errors
+                    doc_url: 'ee/administration/geo/replication/troubleshooting/client_http.html'
+                  - doc_title: Replication errors
                     doc_url: 'ee/administration/geo/replication/troubleshooting/replication.html'
-                  - doc_title: Synchronization
+                  - doc_title: Synchronization errors
                     doc_url: 'ee/administration/geo/replication/troubleshooting/synchronization.html'
-                  - doc_title: Failover
+                  - doc_title: Failover errors
                     doc_url: 'ee/administration/geo/replication/troubleshooting/failover.html'
               - doc_title: Validation tests
                 doc_url: 'ee/administration/geo/replication/geo_validation_tests.html'
