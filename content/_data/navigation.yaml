@@ -3499,6 +3499,8 @@ sections:
                         doc_url: 'ee/development/database/loose_foreign_keys.html'
                       - doc_title: Migrations for multiple databases
                         doc_url: 'ee/development/database/migrations_for_multiple_databases.html'
+                  - doc_title: NOT NULL constraints
+                    doc_url: 'ee/development/database/not_null_constraints.html'
                   - doc_title: Ordering table columns
                     doc_url: 'ee/development/database/ordering_table_columns.html'
                   - doc_title: Pagination guidelines
@@ -3514,6 +3516,8 @@ sections:
                     doc_url: 'ee/development/database/post_deployment_migrations.html'
                   - doc_title: Query comments with Marginalia
                     doc_url: 'ee/development/database/database_query_comments.html'
+                  - doc_title: Query performance guidelines
+                    doc_url: 'ee/development/database/query_performance.html'
                   - doc_title: Query Recorder
                     doc_url: 'ee/development/database/query_recorder.html'
                   - doc_title: Single Table Inheritance
