@@ -56,14 +56,14 @@ There are a few ways to tell whether a pipeline is from an upstream project:
   `untamper-my-lockfile`.
 - The **deploy** stage contains the `review` job.
 
-## Error: `ArgumentError: <icon name> is not a known icon in @gitlab-org/gitlab-svg`
+## Warning: `WARN: <icon name> is not a known icon in @gitlab-org/gitlab-svg`
 
 When a new icon is added to the [`gitlab-svgs` library](https://gitlab.com/gitlab-org/gitlab-svgs)
 and we use it immediately in the documentation, the `docs-lint links` job
-in the upstream projects fails with an error like:
+in the upstream projects will include a warning like:
 
 ```plaintext
-ArgumentError: <icon name> is not a known icon in @gitlab-org/gitlab-svg
+WARN: '<icon name>' is not a known icon in @gitlab-org/gitlab-svg. Contact the Technical Writing team for assistance.
 ```
 
 This error happens when the `lint-html` image has an older version of `@gitlab/svgs`
