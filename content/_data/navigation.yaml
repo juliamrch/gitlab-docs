@@ -1771,6 +1771,8 @@ sections:
                 doc_url: 'ee/ci/yaml/inputs.html'
               - doc_title: Workflow examples
                 doc_url: 'ee/ci/yaml/workflow.html'
+              - doc_title: Steps
+                doc_url: 'ee/ci/steps/'
           - doc_title: Runners
             doc_url: 'runner/'
             docs:
