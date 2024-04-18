@@ -1872,9 +1872,11 @@ sections:
           - doc_title: Jobs
             doc_url: 'ee/ci/jobs/'
             docs:
-              - doc_title: Choose when jobs run
+              - doc_title: Control how jobs run
                 doc_url: 'ee/ci/jobs/job_control.html'
                 docs:
+                  - doc_title: Specify when jobs run with rules
+                    doc_url: 'ee/ci/jobs/job_rules.html'
                   - doc_title: Troubleshooting
                     doc_url: 'ee/ci/jobs/job_troubleshooting.html'
               - doc_title: Access a terminal for a running job
