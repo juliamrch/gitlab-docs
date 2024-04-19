@@ -15,7 +15,7 @@ Terminology:
 The following terms are used throughout this document:
 
 - **Stable branch**: This is the branch that matches the GitLab version being released. For example,
-  for GitLab 16.0, the stable branch is `16.0`.
+  for GitLab 17.2, the stable branch is `17.2`.
 
 ### On Monday the week of the release
 
@@ -87,7 +87,7 @@ After the release post is live, or the day after:
    - [ ] `gitlab`: <https://gitlab.com/gitlab-org/gitlab/-/branches?state=all&sort=updated_desc&search=stable-ee>
    - [ ] `gitlab-runner`: <https://gitlab.com/gitlab-org/gitlab-runner/-/branches?state=all&sort=updated_desc&search=-stable>
    - [ ] `omnibus-gitlab`: <https://gitlab.com/gitlab-org/omnibus-gitlab/-/branches?state=all&sort=updated_desc&search=-stable>
-   - [ ] `charts/gitlab`: <https://gitlab.com/gitlab-org/charts/gitlab/-/branches?state=all&sort=updated_desc&search=-stable> (Version number is 9 lower than `gitlab` release, so GitLab 16.X = Charts 7.X)
+   - [ ] `charts/gitlab`: <https://gitlab.com/gitlab-org/charts/gitlab/-/branches?state=all&sort=updated_desc&search=-stable> (Version number is 9 lower than `gitlab` release, so GitLab 17.X = Charts 8.X)
 
    If not, you cannot proceed to the next step, so you'll have to wait.
 1. [ ] Run a new pipeline targeting the docs stable branch after all upstream
@@ -100,7 +100,7 @@ After the release post is live, or the day after:
    Verify that the [pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines?page=1&scope=all) for the stable branch (filter by branch)
    has passed and created a [Docker image](https://gitlab.com/gitlab-org/gitlab-docs/container_registry/631635?orderBy=NAME&sort=desc&search[]=)
    tagged with the release version. ([If it fails, how do I fix it?](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/releases.md#imagedocs-single-job-fails-when-creating-the-docs-stable-branch))
-   - To filter the list of pipelines to the stable branch, select the **Branch name** filter then manually input the stable branch's name. For example, "Branch name = 16.0".
+   - To filter the list of pipelines to the stable branch, select the **Branch name** filter then manually input the stable branch's name. For example, "Branch name = 17.2".
 1. Create a docs.gitlab.com release merge request, which updates the version dropdown menu for all online versions, updates the archives list, and adds the release to the Docker configuration:
 
    1. [ ] In the root path of the `gitlab-docs` repository, update your local clone:
@@ -112,63 +112,65 @@ After the release post is live, or the day after:
    1. [ ] Create a branch `release-X-Y`. For example:
 
       ```shell
-      git checkout -b release-15-0
+      git checkout -b release-17-2
       ```
 
-   1. [ ] Edit `content/versions.json` and update the lists of versions to reflect the new release in the Versions menu:
+   1. [ ] In `content/versions.json`, update the lists of versions to reflect the new release in the Versions menu:
 
-      - Set `next` to the version number of the next release. For example, if you're releasing `15.2`, set `next` to `15.3`.
-      - Set `current` to the version number of the release you're releasing. For example, if you're releasing `15.2`, set
-      `current` to `15.2`.
+      - Set `next` to the version number of the next release. For example, if you're releasing `17.2`, set `next` to `17.3`.
+      - Set `current` to the version number of the release you're releasing. For example, if you're releasing `17.2`, set
+      `current` to `17.2`.
       - Set `last_minor` to the last two most recent minor releases. For example, if you're
-      releasing `15.2`, set `last_minor` to `15.1` and `15.0`.
+      releasing `17.2`, set `last_minor` to `17.1` and `17.0`.
       - Ensure `last_major` is set to the two most recent major versions. Do not include the current major version.
-      For example, if you're releasing `15.2`, ensure `last_major` is `14.10` and `13.12`.
+      For example, if you're releasing `17.2`, ensure `last_major` are `16.11` and `15.11`.
 
-      As a complete example, the `content/versions.json` file for the `15.2` release is:
+      As a complete example, the `content/versions.json` file for the `17.2` release is:
 
       ```json
       [
         {
-          "next": "15.3",
-          "current": "15.2",
-          "last_minor": ["15.1", "15.0"],
-          "last_major": ["14.10", "13.12"]
+          "next": "17.3",
+          "current": "17.2",
+          "last_minor": ["17.1", "17.0"],
+          "last_major": ["16.11", "15.11"]
         }
       ]
       ```
 
-   1. [ ] Edit `latest.Dockerfile` by removing the oldest version, and then adding the newest version to the top of the list.
+   1. [ ] In `latest.Dockerfile`, remove the oldest version, then add the newest version to the top of the list.
 
-   1. [ ] Open [`.gitlab/ci/docker-images.gitlab-ci.yml`](../.gitlab/ci/docker-images.gitlab-ci.yml)
-      and edit the `test:image:docs-single:` job to change the `GITLAB_VERSION` variable.
-      Set it to the version number of the release you're releasing.
+   1. [ ] In [`.gitlab/ci/docker-images.gitlab-ci.yml`](../.gitlab/ci/docker-images.gitlab-ci.yml),
+      under the `test:image:docs-single:` job, change the `GITLAB_VERSION` variable
+      to the version number of the release you're releasing.
 
    1. [ ] Commit and push to create the merge request (but without running any `lefhook` tests). For example:
 
       ```shell
       git add .gitlab/ci/docker-images.gitlab-ci.yml content/versions.json latest.Dockerfile
-      git commit -m "Docs release 15.0"
-      LEFTHOOK=0 git push origin release-15-0
+      git commit -m "Docs release 17.2"
+      LEFTHOOK=0 git push origin release-17-2
       ```
 
    1. [ ] Create the merge request, then:
       - Add the `~release` label.
       - Mark the merge request as **Draft**.
       - Verify that the **Changes** tab includes the following files:
-      - `.gitlab/ci/docker-images.gitlab-ci.yml`
-      - `content/versions.json`
-      - `latest.Dockerfile`
+        - `.gitlab/ci/docker-images.gitlab-ci.yml`
+        - `content/versions.json`
+        - `latest.Dockerfile`
 1. Deploy the versions:
    1. [ ] Mark the docs release merge request as ready, and merge it.
    1. [ ] Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)
       and run the `Build Docker images manually` pipeline.
    1. [ ] In the scheduled pipeline you just started, wait for the `test:image:docs-latest` job to finish, then manually run the `image:docs-latest`
       job that builds the `:latest` Docker image.
-   1. [ ] When the `image:docs-latest` job is complete, run the `Build docs.gitlab.com every hour` scheduled pipeline.
+   1. [ ] When the `image:docs-latest` job is complete,
+      go back to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules)
+      and run the `Build docs.gitlab.com every hour` scheduled pipeline.
 1. [ ] After the deployment completes, open `docs.gitlab.com` in a browser. Confirm
    both the latest version and the correct pre-release version are listed in the documentation version dropdown.
-1. [ ] Check all versions of the docs in the version dropdown to ensure they are visible and that their version menus have the expected versions.
+1. [ ] Check the version dropdown list to ensure all versions of the docs are visible and their version menus have the expected versions.
    - Versions hosted on `docs.gitlab.com` should show the same version options as the pre-release site.
    - Versions hosted on `archives.docs.gitlab.com` should only show their own version and a link back to the archives page.
      - This applies to v15.6 and newer; older versions may have broken links in the dropdown. This will eventually be resolved as the older versions are phased out.
@@ -178,7 +180,7 @@ After the release post is live, or the day after:
    :mega: The docs <version> release is complete. If you have any feedback about this release, add it to the retro thread in <this issue>.
    ```
 
-After the docs release is successful:
+After the docs release is complete:
 
 1. [ ] Create a release issue for the next release, and assign it to the TW who completed the
    [release post structural check for the current milestone](https://handbook.gitlab.com/handbook/marketing/blog/release-posts/managers/).
