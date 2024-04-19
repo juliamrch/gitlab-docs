@@ -7,6 +7,6 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # Get all the archive static HTML and put it into place
 # Include the versions found in 'content/versions.json' under "current" and "last_minor"
+COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:16.11 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:16.10 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:16.9 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:16.8 ${TARGET} ${TARGET}
