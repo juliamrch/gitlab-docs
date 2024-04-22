@@ -689,6 +689,8 @@ sections:
                 doc_url: 'ee/administration/postgresql/standalone.html'
               - doc_title: Upgrade external database
                 doc_url: 'ee/administration/postgresql/external_upgrade.html'
+              - doc_title: Upgrading operating systems for PostgreSQL
+                doc_url: 'ee/administration/postgresql/upgrading_os.html'
           - doc_title: Labels
             doc_url: 'ee/administration/labels.html'
           - doc_title: Load balancer
