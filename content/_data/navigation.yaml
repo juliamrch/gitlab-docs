@@ -1186,20 +1186,25 @@ sections:
       - category_title: Learn Git
         category_url: 'ee/topics/git/'
         docs:
-          - doc_title: 'Tutorial: Make your first Git commit'
-            doc_url: 'ee/tutorials/make_first_git_commit/'
-          - doc_title: 'Tutorial: Update Git commit messages'
-            doc_url: 'ee/tutorials/update_commit_messages/'
-          - doc_title: Get started with Git
+          - doc_title: Getting started
             doc_url: 'ee/topics/git/get_started.html'
           - doc_title: Install and configure Git
             doc_url: 'ee/topics/git/how_to_install_git/'
+          - doc_title: 'Tutorial: Make your first Git commit'
+            doc_url: 'ee/tutorials/make_first_git_commit/'
+          - doc_title: 'Clone a Git repository'
+            doc_url: 'ee/topics/git/clone.html'
+            docs:
+              - doc_title: Use partial clones to reduce clone size
+                doc_url: 'ee/topics/git/partial_clone.html'
+          - doc_title: Create a Git branch
+            doc_url: 'ee/topics/git/branch.html'
           - doc_title: Add files and make changes
             doc_url: 'ee/gitlab-basics/add-file.html'
+          - doc_title: 'Tutorial: Update Git commit messages'
+            doc_url: 'ee/tutorials/update_commit_messages/'
           - doc_title: Use additional Git commands
             doc_url: 'ee/gitlab-basics/start-using-git.html'
-          - doc_title: Use partial clones to reduce clone size
-            doc_url: 'ee/topics/git/partial_clone.html'
           - doc_title: Rebase and force-push
             doc_url: 'ee/topics/git/git_rebase.html'
           - doc_title: Feature branch workflow
