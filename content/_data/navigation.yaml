@@ -2548,8 +2548,6 @@ sections:
           - doc_title: Metrics
             doc_url: 'ee/administration/monitoring/'
             docs:
-              - doc_title: Configure GitLab
-                doc_url: 'ee/administration/monitoring/performance/gitlab_configuration.html'
               - doc_title: Configure Grafana
                 doc_url: 'ee/administration/monitoring/performance/grafana_configuration.html'
               - doc_title: GitHub imports
