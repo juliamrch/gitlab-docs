@@ -1721,6 +1721,8 @@ sections:
                     doc_url: 'ee/user/workspace/configuration.html'
                   - doc_title: GitLab agent configuration
                     doc_url: 'ee/user/workspace/gitlab_agent_configuration.html'
+                  - doc_title: 'Tutorial: Set up the GitLab workspaces proxy'
+                    doc_url: 'ee/user/workspace/set_up_workspaces_proxy.html'
                   - doc_title: 'Tutorial: Create a custom workspace image that supports arbitrary user IDs'
                     doc_url: 'ee/user/workspace/create_image.html'
       - category_title: Use CI/CD to build your application
