@@ -2435,12 +2435,6 @@ sections:
                     doc_url: 'ee/user/clusters/agent/gitops/flux_oci_tutorial.html'
                   - doc_title: 'Migrate to Flux'
                     doc_url: 'ee/user/clusters/agent/gitops/migrate_to_flux.html'
-                  - doc_title: Manage Kubernetes secrets (deprecated)
-                    doc_url: 'ee/user/clusters/agent/gitops/secrets_management.html'
-                  - doc_title: Track cluster resources (deprecated)
-                    doc_url: 'ee/user/infrastructure/clusters/deploy/inventory_object.html'
-                  - doc_title: Using GitOps with the agent for Kubernetes (deprecated)
-                    doc_url: 'ee/user/clusters/agent/gitops/agent.html'
               - doc_title: Use GitLab CI/CD
                 doc_url: 'ee/user/clusters/agent/ci_cd_workflow.html'
                 docs:
