@@ -969,6 +969,8 @@ sections:
             docs:
               - doc_title: Deprecated API
                 doc_url: 'ee/administration/settings/deprecated_api_rate_limits.html'
+              - doc_title: Git HTTP
+                doc_url: 'ee/administration/settings/git_http_rate_limits.html'
               - doc_title: Git LFS
                 doc_url: 'ee/administration/settings/git_lfs_rate_limits.html'
               - doc_title: Git SSH operations
