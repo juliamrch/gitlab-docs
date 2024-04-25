@@ -1563,6 +1563,8 @@ sections:
       - category_title: Manage your code
         category_url: 'ee/topics/manage_code.html'
         docs:
+          - doc_title: Getting started
+            doc_url: 'ee/user/get_started/get_started_managing_code.html'
           - doc_title: Repositories
             doc_url: 'ee/user/project/repository/'
             docs:
