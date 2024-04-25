@@ -13,10 +13,10 @@ quickLinks:
 sectionTabs:
   - title: Use GitLab
     refs:
-      - '/ee/topics/git/index.md'
       - '/ee/topics/set_up_organization.md'
       - '/ee/user/project/organize_work_with_projects.md'
       - '/ee/topics/plan_and_track.md'
+      - '/ee/topics/git/index.md'
       - '/ee/topics/manage_code.md'
       - '/ee/topics/build_your_application.md'
       - '/ee/user/application_security/secure_your_application.md'
