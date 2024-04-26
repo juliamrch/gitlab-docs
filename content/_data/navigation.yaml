@@ -1746,14 +1746,16 @@ sections:
                 docs:
                   - doc_title: Migrate from Bamboo
                     doc_url: 'ee/ci/migration/bamboo.html'
+                  - doc_title: Migrate from CircleCI
+                    doc_url: 'ee/ci/migration/circleci.html'
                   - doc_title: Migrate from GitHub actions
                     doc_url: 'ee/ci/migration/github_actions.html'
                   - doc_title: Migrate from Jenkins
                     doc_url: 'ee/ci/migration/jenkins.html'
                   - doc_title: Migrate a Maven build from Jenkins
                     doc_url: 'ee/ci/migration/examples/jenkins-maven.html'
-                  - doc_title: Migrate from CircleCI
-                    doc_url: 'ee/ci/migration/circleci.html'
+                  - doc_title: Migrate from TeamCity
+                    doc_url: 'ee/ci/migration/teamcity.html'
               - doc_title: CI/CD examples
                 doc_url: 'ee/ci/examples/'
                 docs:
