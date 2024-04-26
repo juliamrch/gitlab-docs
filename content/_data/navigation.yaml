@@ -1348,8 +1348,17 @@ sections:
             doc_url: 'ee/user/reserved_names.html'
           - doc_title: Search
             doc_url: 'ee/user/search/'
+            docs:
+              - doc_title: Advanced search
+                doc_url: 'ee/user/search/advanced_search.html'
+              - doc_title: Exact code search
+                doc_url: 'ee/user/search/exact_code_search.html'
+              - doc_title: Command palette
+                doc_url: 'ee/user/search/command_palette.html'
           - doc_title: Badges
             doc_url: 'ee/user/project/badges.html'
+          - doc_title: Project topics
+            doc_url: 'ee/user/project/project_topics.html'
           - doc_title: Code intelligence
             doc_url: 'ee/user/project/code_intelligence.html'
           - doc_title: File finder
@@ -1399,15 +1408,6 @@ sections:
             doc_url: 'ee/user/project/system_notes.html'
           - doc_title: Transfer a project to another namespace
             doc_url: 'ee/user/project/settings/migrate_projects.html'
-          - doc_title: Project topics
-            doc_url: 'ee/user/project/project_topics.html'
-            docs:
-              - doc_title: Advanced search
-                doc_url: 'ee/user/search/advanced_search.html'
-              - doc_title: Exact code search
-                doc_url: 'ee/user/search/exact_code_search.html'
-              - doc_title: Command palette
-                doc_url: 'ee/user/search/command_palette.html'
           - doc_title: Use a project as a Go package
             doc_url: 'ee/user/project/use_project_as_go_package.html'
           - doc_title: 'Tutorial: Build a protected workflow for your project'
