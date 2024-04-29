@@ -2405,6 +2405,8 @@ sections:
       - category_title: Manage your infrastructure
         category_url: 'ee/user/infrastructure/'
         docs:
+          - doc_title: Getting started
+            doc_url: 'ee/user/get_started/get_started_managing_infrastructure.html'
           - doc_title: Infrastructure as Code
             doc_url: 'ee/user/infrastructure/iac/'
             docs:
