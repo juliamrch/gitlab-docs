@@ -1326,6 +1326,8 @@ sections:
       - category_title: Organize work with projects
         category_url: 'ee/user/project/organize_work_with_projects.html'
         docs:
+          - doc_title: Getting started
+            doc_url: 'ee/user/get_started/get_started_projects.html'
           - doc_title: Create a project
             doc_url: 'ee/user/project/'
           - doc_title: Manage projects
