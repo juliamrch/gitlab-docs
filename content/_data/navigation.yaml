@@ -2167,30 +2167,30 @@ sections:
                 docs:
                   - doc_title: Troubleshooting
                     doc_url: 'ee/user/application_security/dast/authentication_troubleshooting.html'
-              - doc_title: DAST API analyzer
-                doc_url: 'ee/user/application_security/dast_api/'
+              - doc_title: API security testing
+                doc_url: 'ee/user/application_security/api_security_testing/'
                 docs:
                   - doc_title: Configuration
-                    doc_url: 'ee/user/application_security/dast_api/configuration/'
+                    doc_url: 'ee/user/application_security/api_security_testing/configuration/'
                     docs:
                       - doc_title: Requirements
-                        doc_url: 'ee/user/application_security/dast_api/configuration/requirements.html'
+                        doc_url: 'ee/user/application_security/api_security_testing/configuration/requirements.html'
                       - doc_title: Enabling the analyzer
-                        doc_url: 'ee/user/application_security/dast_api/configuration/enabling_the_analyzer.html'
+                        doc_url: 'ee/user/application_security/api_security_testing/configuration/enabling_the_analyzer.html'
                       - doc_title: Customizing analyzer settings
-                        doc_url: 'ee/user/application_security/dast_api/configuration/customizing_analyzer_settings.html'
+                        doc_url: 'ee/user/application_security/api_security_testing/configuration/customizing_analyzer_settings.html'
                       - doc_title: Overriding analyzer jobs
-                        doc_url: 'ee/user/application_security/dast_api/configuration/overriding_analyzer_jobs.html'
+                        doc_url: 'ee/user/application_security/api_security_testing/configuration/overriding_analyzer_jobs.html'
                       - doc_title: Available CI/CD variables
-                        doc_url: 'ee/user/application_security/dast_api/configuration/variables.html'
+                        doc_url: 'ee/user/application_security/api_security_testing/configuration/variables.html'
                       - doc_title: Offline configuration
-                        doc_url: 'ee/user/application_security/dast_api/configuration/offline_configuration.html'
+                        doc_url: 'ee/user/application_security/api_security_testing/configuration/offline_configuration.html'
                   - doc_title: Vulnerability checks
-                    doc_url: 'ee/user/application_security/dast_api/checks/'
+                    doc_url: 'ee/user/application_security/api_security_testing/checks/'
                   - doc_title: Performance
-                    doc_url: 'ee/user/application_security/dast_api/performance.html'
+                    doc_url: 'ee/user/application_security/api_security_testing/performance.html'
                   - doc_title: Troubleshooting
-                    doc_url: 'ee/user/application_security/dast_api/troubleshooting.html'
+                    doc_url: 'ee/user/application_security/api_security_testing/troubleshooting.html'
               - doc_title: Run DAST offline
                 doc_url: 'ee/user/application_security/dast/run_dast_offline.html'
           - doc_title: API Security
