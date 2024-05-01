@@ -14,9 +14,9 @@ include:
     rules:
       - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-  - project: 'gitlab-org/quality/pipeline-common'
-    file:
-      - '/ci/danger-review.yml'
+  - component: gitlab.com/gitlab-org/components/danger-review/danger-review@~latest
+    inputs:
+      job_image: "ruby:3.2"
 
 #
 # Test the links in the global nav for all MRs in `gitlab-docs`
