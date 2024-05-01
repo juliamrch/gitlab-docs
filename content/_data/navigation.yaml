@@ -1699,6 +1699,8 @@ sections:
                         doc_url: 'ee/user/project/merge_requests/approvals/settings.html'
                   - doc_title: Versions
                     doc_url: 'ee/user/project/merge_requests/versions.html'
+                  - doc_title: 'Tutorial: Review a merge request'
+                    doc_url: 'ee/tutorials/reviews/'
               - doc_title: Workflows
                 doc_url: 'ee/user/project/merge_requests/authorization_for_merge_requests.html'
                 docs:
