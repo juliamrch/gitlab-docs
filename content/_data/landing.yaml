@@ -7,7 +7,7 @@ quickLinks:
     url: '/ee/user/ssh.html'
   - title: Personal access tokens
     url: '/ee/user/profile/personal_access_tokens.html'
-  - title: Command line Git
+  - title: Common Git commands
     url: '/ee/gitlab-basics/start-using-git.html'
 
 sectionTabs:
