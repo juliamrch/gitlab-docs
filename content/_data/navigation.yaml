@@ -1710,7 +1710,7 @@ sections:
                       - doc_title: Squash and merge
                         doc_url: 'ee/user/project/merge_requests/squash_and_merge.html'
                   - doc_title: Auto-merge
-                    doc_url: 'ee/user/project/merge_requests/merge_when_pipeline_succeeds.html'
+                    doc_url: 'ee/user/project/merge_requests/auto_merge.html'
                   - doc_title: Collaborate across forks
                     doc_url: 'ee/user/project/merge_requests/allow_collaboration.html'
                   - doc_title: Merge conflicts
