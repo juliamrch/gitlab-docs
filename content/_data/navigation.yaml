@@ -2626,6 +2626,8 @@ sections:
   - section_title: Extend
     section_url: 'ee/api/'
     section_categories:
+      - category_title: Getting started
+        category_url: 'ee/api/get_started/get_started_extending.html'
       - category_title: Integrations
         category_url: 'ee/integration/'
         docs:
