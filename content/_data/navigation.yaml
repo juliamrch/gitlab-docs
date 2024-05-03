@@ -768,6 +768,8 @@ sections:
                         doc_url: 'ee/administration/gitaly/consistency_checks.html'
                   - doc_title: Configure Gitaly Cluster
                     doc_url: 'ee/administration/gitaly/praefect.html'
+                  - doc_title: Bundle URIs
+                    doc_url: 'ee/administration/gitaly/bundle_uris.html'
                   - doc_title: Example configuration files
                     doc_url: 'ee/administration/gitaly/reference.html'
                   - doc_title: Monitoring
