@@ -73,6 +73,10 @@ To test that the CSP header works as expected, you can visit
 
 ## Project tokens
 
+The `gitlab-docs` project uses several project access tokens.
+
+### Review apps
+
 The `gitlab-docs` project has two access tokens used for review apps. If you change
 or delete these tokens, review apps will stop working:
 
@@ -86,6 +90,14 @@ or delete these tokens, review apps will stop working:
 All projects that have documentation review apps use these tokens when running the
 [`trigger-build` script](https://gitlab.com/gitlab-org/gitlab/-/blob/b09be454102f4d53ec7963aef8a625daf8ef6acc/scripts/trigger-build#L207)
 to deploy a review app.
+
+### Danger bot
+
+The `gitlab-docs` project has the `DANGER_GITLAB_API_TOKEN` project access token set, which is set as a CI/CD variable
+for the <https://gitlab.com/gitlab-org/components/danger-review> component. This component adds comments to merge
+requests based on Danger configuration.
+
+If not set, Danger comments aren't added to merge requests.
 
 ## Redirects
 
@@ -160,13 +172,19 @@ CI/CD pipelines. These tokens are stored in each project's CI/CD settings as
   `omnibus-gitlab`, `charts`, and `gitlab-operator` to create docs review apps.
 - `DELETE_ENVIRONMENTS_TOKEN`: Used by `gitlab-docs` to
   [delete stale review app environments](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/452c30caebd9db6604d34f1fd04ce19c38ff2273/.gitlab/ci/build-and-deploy.gitlab-ci.yml#L155-L169).
+- `DANGER_GITLAB_API_TOKEN`: Used by `gitlab-docs` to generate Danger bot comments in merge requests.
 
 In the event of a security issue, it might be necessary to immediately secure the project
 by regenerating the tokens, sometimes called "rotating" the tokens. You must be a
 maintainer in the relevant projects to rotate the tokens. It is safe to immediately revoke the current tokens,
 as they are only used for review apps or project maintenance.
 
-`DOCS_PROJECT_API_TOKEN`:
+In all cases, do not change any other settings for the CI/CD variables. They must remain
+masked, but not protected. Additionally, do not save the token values anywhere else.
+
+### Regenerate `DOCS_PROJECT_API_TOKEN`
+
+To regenerate `DOCS_PROJECT_API_TOKEN`:
 
 1. In `gitlab-docs`, go to **Settings > Access Tokens**.
 1. In **Active project access tokens**, find the entry for `DOCS_PROJECT_API_TOKEN` and
@@ -184,7 +202,9 @@ as they are only used for review apps or project maintenance.
    expand **Variables**, select **Edit** for the `DOCS_PROJECT_API_TOKEN` CI/CD variable, and update the
    **Value** field with the new token.
 
-`DOCS_TRIGGER_TOKEN`:
+### Rengenerate `DOCS_TRIGGER_TOKEN`
+
+To regenerate `DOCS_TRIGGER_TOKEN`:
 
 1. In `gitlab-docs`, go to **Settings > CI/CD** and expand **Pipeline trigger tokens**.
 1. In the token table, find the entry for `DOCS_TRIGGER_TOKEN` and select **Revoke** (delete icon).
@@ -196,10 +216,27 @@ as they are only used for review apps or project maintenance.
    expand **Variables**, select **Edit** for the `DOCS_TRIGGER_TOKEN` CI/CD variable, and update the
    **Value** field with the new token.
 
-`DELETE_ENVIRONMENTS_TOKEN`:
+### Regenerate `DELETE_ENVIRONMENTS_TOKEN`
 
-Follow the steps for rotating the `DOCS_PROJECT_API_TOKEN`, except use `DELETE_ENVIRONMENTS_TOKEN` as the
-token name and update the CI/CD variable in the `gitlab-docs` project only.
+To regenerate `DELETE_ENVIRONMENTS_TOKEN`, follow the steps for rotating the `DOCS_PROJECT_API_TOKEN`, except use
+`DELETE_ENVIRONMENTS_TOKEN` as the token name and update the CI/CD variable in the `gitlab-docs` project only.
 
-In all cases, do not change any other settings for the CI/CD variables. They must remain
-masked, but not protected. Additionally, do not save the token values anywhere else.
+### Regenerate `DANGER_GITLAB_API_TOKEN`
+
+To regenerate `DANGER_GITLAB_API_TOKEN`:
+
+1. In `gitlab-docs`, go to **Settings > Access Tokens**.
+1. In **Active project access tokens**, find the entry for `DANGER_GITLAB_API_TOKEN` and
+   select **Revoke**.
+1. Select **Add new token**, and fill in the following values:
+   - **Token name**: `DANGER_GITLAB_API_TOKEN`.
+   - **Expiration date**: End of the year.
+   - **Select a role**: `Developer`.
+   - **Select scopes**: `api`.
+   - **Description** : `DANGER_GITLAB_API_TOKEN`.
+1. Select **Create project access token**.
+1. After the token is created, go to **Your new project access token** at the top
+   and copy the token value. It should start with `glpat-`.
+1. In `gitlab-docs`, go to the [CI/CD variables settings](https://docs.gitlab.com/ee/ci/variables/#add-a-cicd-variable-to-a-project),
+   expand **Variables**, select **Edit** for the `DANGER_GITLAB_API_TOKEN` CI/CD variable, and update the
+   **Value** field with the new token.
