@@ -871,3 +871,39 @@ redirects:
   - from: /ee/topics/git/useful_git_commands.html
     to: /ee/topics/git/index.html
     remove_date: 2024-12-19
+  - from: /ee/install/aws/gitlab_sre_for_aws.html
+    to: /ee/solutions/cloud/aws/gitaly_sre_for_aws.html
+    remove_date: 2024-12-31
+  - from: /ee/install/aws/gitlab_hybrid_on_aws.html
+    to: /ee/solutions/cloud/aws/gitlab_instance_on_aws.html
+    remove_date: 2024-12-31
+  - from: /ee/install/aws/manual_install_aws.html
+    to: /ee/install/aws/index.html
+    remove_date: 2024-12-31
+  - from: /ee/install/aws/eks_clusters_aws.html
+    to: /ee/solutions/cloud/aws/index.html
+    remove_date: 2024-12-31
+  - from: /ee/development/database/table_partitioning.html
+    to: /ee/development/database/partitioning/index.html
+    remove_date: 2025-01-16
+  - from: /ee/user/group/insights/index.html
+    to: /ee/user/project/insights/index.html
+    remove_date: 2025-01-20
+  - from: /ee/user/group/insights/
+    to: /ee/user/project/insights/index.html
+    remove_date: 2025-01-20
+  - from: /ee/user/clusters/agent/kas_glossary.html
+    to: /ee/user/clusters/agent/index.html#kubernetes-integration-glossary
+    remove_date: 2025-01-17
+  - from: /ee/user/analytics/issue_analytics.html
+    to: /ee/user/group/issues_analytics/index.html
+    remove_date: 2025-01-05
+  - from: /ee/administration/monitoring/performance/gitlab_configuration.html
+    to: /ee/administration/monitoring/prometheus/index.html
+    remove_date: 2021-02-22
+  - from: /ee/administration/audit_event_streaming/audit_event_types.html
+    to: /ee/administration/audit_event_types.html
+    remove_date: 2024-12-22
+  - from: /runner/executors/kubernetes.html
+    to: /runner/executors/kubernetes/index.html
+    remove_date: 2025-01-08
