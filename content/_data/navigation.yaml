@@ -2614,8 +2614,10 @@ sections:
   - section_title: GitLab Duo
     section_url: 'ee/user/ai_features.html'
     section_categories:
-      - category_title: Enable and disable GitLab Duo features
+      - category_title: Control GitLab Duo availability
         category_url: 'ee/user/ai_features_enable.html'
+      - category_title: GitLab Duo examples
+        category_url: 'ee/user/gitlab_duo_examples.html'
       - category_title: Code Suggestions
         category_url: 'ee/user/project/repository/code_suggestions/'
         docs:
@@ -2629,8 +2631,6 @@ sections:
             doc_url: 'ee/user/project/repository/code_suggestions/repository_xray.html'
       - category_title: Ask questions with Chat
         category_url: 'ee/user/gitlab_duo_chat.html'
-      - category_title: GitLab Duo examples
-        category_url: 'ee/user/gitlab_duo_examples.html'
   - section_title: Extend
     section_url: 'ee/api/'
     section_categories:
