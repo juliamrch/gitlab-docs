@@ -571,10 +571,6 @@ sections:
             doc_url: 'ee/integration/bitbucket.html'
           - doc_title: ClickHouse
             doc_url: 'ee/integration/clickhouse.html'
-          - doc_title: DingTalk
-            doc_url: 'ee/integration/ding_talk.html'
-          - doc_title: Facebook
-            doc_url: 'ee/integration/facebook.html'
           - doc_title: Generic OAuth2
             doc_url: 'ee/integration/oauth2_generic.html'
           - doc_title: GitHub
@@ -622,8 +618,6 @@ sections:
             doc_url: 'ee/administration/auth/smartcard.html'
           - doc_title: Test OIDC/OAuth in GitLab
             doc_url: 'ee/administration/auth/test_oidc_oauth.html'
-          - doc_title: Twitter
-            doc_url: 'ee/integration/twitter.html'
           - doc_title: Vault
             doc_url: 'ee/integration/vault.html'
 
