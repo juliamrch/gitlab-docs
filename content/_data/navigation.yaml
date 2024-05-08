@@ -2262,6 +2262,8 @@ sections:
       - category_title: Deploy and release your application
         category_url: 'ee/topics/release_your_application.html'
         docs:
+          - doc_title: Getting started
+            doc_url: 'ee/user/get_started/get_started_deploy_release.html'
           - doc_title: Environments and deployments
             doc_url: 'ee/ci/environments/'
             docs:
@@ -2281,8 +2283,9 @@ sections:
                 doc_url: 'ee/ci/environments/incremental_rollouts.html'
               - doc_title: Deploy to AWS
                 doc_url: 'ee/ci/cloud_deployment/'
-              - doc_title: Deploy to Amazon ECS
-                doc_url: 'ee/ci/cloud_deployment/ecs/deploy_to_aws_ecs.html'
+                docs:
+                  - doc_title: Deploy to Amazon ECS
+                    doc_url: 'ee/ci/cloud_deployment/ecs/deploy_to_aws_ecs.html'
               - doc_title: Deploy to Heroku
                 doc_url: 'ee/ci/cloud_deployment/heroku.html'
               - doc_title: External deployment tools
