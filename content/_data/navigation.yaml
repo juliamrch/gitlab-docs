@@ -1694,6 +1694,8 @@ sections:
                         doc_url: 'ee/user/project/merge_requests/approvals/settings.html'
                   - doc_title: Versions
                     doc_url: 'ee/user/project/merge_requests/versions.html'
+                  - doc_title: Manage merge requests
+                    doc_url: 'ee/user/project/merge_requests/manage.html'
                   - doc_title: 'Tutorial: Review a merge request'
                     doc_url: 'ee/tutorials/reviews/'
               - doc_title: Workflows
@@ -2131,6 +2133,10 @@ sections:
               - doc_title: DAST browser-based analyzer
                 doc_url: 'ee/user/application_security/dast/browser/'
                 docs:
+                  - doc_title: Migrating from the DAST version 4 browser-based analyzer to DAST version 5
+                    doc_url: 'ee/user/application_security/dast/browser_based_4_to_5_migration_guide.html'
+                  - doc_title: Migrating from the DAST proxy-based analyzer to DAST version 5
+                    doc_url: 'ee/user/application_security/dast/proxy_based_to_browser_based_migration_guide.html'
                   - doc_title: Configuration
                     doc_url: 'ee/user/application_security/dast/browser/configuration/'
                     docs:
