@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const getDateByVersion = (milestone) => {
     const release = GITLAB_RELEASE_DATES.find((item) => item.version === milestone);
     return release
-      ? new Date(release.date).toLocaleString('default', {
+      ? new Date(release.date).toLocaleString('en-US', {
           month: 'short',
           year: 'numeric',
         })
