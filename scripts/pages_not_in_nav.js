@@ -63,7 +63,7 @@ dataSources.forEach((source) => {
       // For example, `ee/development/` and not `/ee/development/`.
       !path.includes('/architecture/') &&
       !path.match(/\/user\/application_security\/dast\/browser\/checks\/\w+/) &&
-      !path.match(/\/user\/application_security\/dast_api\/checks\/\w+/) &&
+      !path.match(/\/user\/application_security\/api_security_testing\/checks\/\w+/) &&
       !path.includes('/legal/') &&
       !path.includes('/drawers/') &&
       !path.includes('/adr/') &&
