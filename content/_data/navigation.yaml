@@ -3712,9 +3712,12 @@ sections:
                 doc_url: 'ee/development/bitbucket_server_importer.html'
               - doc_title: Import (GitHub)
                 doc_url: 'ee/development/github_importer.html'
-              - doc_title: Import (group migration by direct transfer)
+              - doc_title: Import (Migration by direct transfer)
                 doc_url: 'ee/development/bulk_import.html'
-              - doc_title: Import (project import by file export)
+                docs:
+                  - doc_title: Add relations to direct transfer importer
+                    doc_url: 'ee/development/bulk_imports/contributing.html'
+              - doc_title: Import (Migration by file export)
                 doc_url: 'ee/development/import_export.html'
               - doc_title: Import (test project)
                 doc_url: 'ee/development/import_project.html'
