@@ -2852,7 +2852,7 @@ sections:
                 doc_url: 'ee/api/emoji_reactions.html'
               - doc_title: Environments
                 doc_url: 'ee/api/environments.html'
-              - doc_title: Epics
+              - doc_title: Epics (deprecated)
                 doc_url: 'ee/api/epics.html'
               - doc_title: Error tracking
                 doc_url: 'ee/api/error_tracking.html'
