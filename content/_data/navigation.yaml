@@ -2609,6 +2609,8 @@ sections:
     section_categories:
       - category_title: Control GitLab Duo availability
         category_url: 'ee/user/ai_features_enable.html'
+      - category_title: GitLab Duo Experiments
+        category_url: 'ee/user/ai_experiments.html'
       - category_title: GitLab Duo examples
         category_url: 'ee/user/gitlab_duo_examples.html'
       - category_title: Code Suggestions
