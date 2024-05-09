@@ -1354,7 +1354,7 @@ sections:
             doc_url: 'ee/user/project/code_intelligence.html'
           - doc_title: File finder
             doc_url: 'ee/user/project/repository/file_finder.html'
-          - doc_title: Migrate projects by using file exports
+          - doc_title: Import and migrate
             doc_url: 'ee/user/project/import/'
             docs:
               - doc_title: Bitbucket Cloud
