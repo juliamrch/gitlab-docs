@@ -6,9 +6,9 @@
 # Security scanner defaults are overridden below.
 #
 include:
-  - template: Security/Dependency-Scanning.gitlab-ci.yml
-  - template: Security/SAST.gitlab-ci.yml
-  - template: Security/Secret-Detection.gitlab-ci.yml
+  - template: Jobs/Dependency-Scanning.gitlab-ci.yml
+  - template: Jobs/SAST.gitlab-ci.yml
+  - template: Jobs/Secret-Detection.gitlab-ci.yml
 
 #
 # Override Security scanning defaults to ensure specific scanners work in this pipeline
@@ -45,24 +45,6 @@ gemnasium-dependency_scanning:
 #
 # SAST job overrides
 #
-brakeman-sast:
-  extends:
-    - .sast-analyzer
-    - .security-scanning-overrides
-  rules:
-    - if: $SAST_DISABLED == 'true' || $SAST_DISABLED == '1' || $SAST_EXCLUDED_ANALYZERS =~ /brakeman/
-      when: never
-    - !reference [".security-rules", "rules"]
-
-nodejs-scan-sast:
- extends:
-   - .sast-analyzer
-   - .security-scanning-overrides
- rules:
-   - if: $SAST_DISABLED == 'true' || $SAST_DISABLED == '1' || $SAST_EXCLUDED_ANALYZERS =~ /nodejs-scan/
-     when: never
-   - !reference [".security-rules", "rules"]
-
 semgrep-sast:
   extends:
     - .sast-analyzer
