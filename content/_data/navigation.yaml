@@ -2616,13 +2616,13 @@ sections:
         category_url: 'ee/user/ai_experiments.html'
       - category_title: GitLab Duo examples
         category_url: 'ee/user/gitlab_duo_examples.html'
+      - category_title: GitLab Duo data usage
+        category_url: 'ee/user/ai_data_usage.html'
       - category_title: Code Suggestions
         category_url: 'ee/user/project/repository/code_suggestions/'
         docs:
           - doc_title: Supported extensions and languages
             doc_url: 'ee/user/project/repository/code_suggestions/supported_extensions.html'
-          - doc_title: Data usage
-            doc_url: 'ee/user/project/repository/code_suggestions/data.html'
           - doc_title: Troubleshooting
             doc_url: 'ee/user/project/repository/code_suggestions/troubleshooting.html'
           - doc_title: Repository X-Ray
