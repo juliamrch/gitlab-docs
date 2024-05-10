@@ -2629,6 +2629,11 @@ sections:
             doc_url: 'ee/user/project/repository/code_suggestions/repository_xray.html'
       - category_title: Ask questions with Chat
         category_url: 'ee/user/gitlab_duo_chat.html'
+        docs:
+          - doc_title: Control Duo Chat availability
+            doc_url: 'ee/user/gitlab_duo_chat_enable.html'
+          - doc_title: Duo Chat troubleshooting
+            doc_url: 'ee/user/gitlab_duo_chat_troubleshooting.html'
   - section_title: Extend
     section_url: 'ee/api/'
     section_categories:
