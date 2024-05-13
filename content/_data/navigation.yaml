@@ -1047,6 +1047,8 @@ sections:
                     doc_url: 'ee/administration/backup_restore/troubleshooting_backup_gitlab.html'
               - doc_title: Restore GitLab
                 doc_url: 'ee/administration/backup_restore/restore_gitlab.html'
+              - doc_title: Back up and restore with gitlab-backup-cli
+                doc_url: 'ee/administration/backup_restore/backup_cli.html'
               - doc_title: Migrate to a new server
                 doc_url: 'ee/administration/backup_restore/migrate_to_new_server.html'
               - doc_title: Back up and restore large reference architectures
