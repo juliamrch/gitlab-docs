@@ -783,14 +783,16 @@ sections:
               - doc_title: Setting up Geo
                 doc_url: 'ee/administration/geo/setup/'
                 docs:
+                  - doc_title: Set up Geo for multiple nodes
+                    doc_url: 'ee/administration/geo/replication/multiple_servers.html'
+                  - doc_title: Database replication
+                    doc_url: 'ee/administration/geo/setup/database.html'
+                  - doc_title: External PostgreSQL instances
+                    doc_url: 'ee/administration/geo/setup/external_database.html'
                   - doc_title: Set up Geo for two single-node sites
                     doc_url: 'ee/administration/geo/setup/two_single_node_sites.html'
                   - doc_title: Set up Geo for two single-node sites (with external PostgreSQL services)
                     doc_url: 'ee/administration/geo/setup/two_single_node_external_services.html'
-              - doc_title: Database replication
-                doc_url: 'ee/administration/geo/setup/database.html'
-              - doc_title: External PostgreSQL instances
-                doc_url: 'ee/administration/geo/setup/external_database.html'
               - doc_title: Configuration
                 doc_url: 'ee/administration/geo/replication/configuration.html'
               - doc_title: Using a Geo site
@@ -808,8 +810,6 @@ sections:
                 doc_url: 'ee/administration/geo/replication/object_storage.html'
               - doc_title: Container registry for a secondary site
                 doc_url: 'ee/administration/geo/replication/container_registry.html'
-              - doc_title: Geo for multiple servers
-                doc_url: 'ee/administration/geo/replication/multiple_servers.html'
               - doc_title: Geo security review
                 doc_url: 'ee/administration/geo/replication/security_review.html'
               - doc_title: Location-aware Git remote URLs
