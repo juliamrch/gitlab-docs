@@ -2632,6 +2632,8 @@ sections:
       - category_title: Ask questions with Chat
         category_url: 'ee/user/gitlab_duo_chat.html'
         docs:
+          - doc_title: Duo Chat examples
+            doc_url: 'ee/user/gitlab_duo_chat_examples.html'
           - doc_title: Control Duo Chat availability
             doc_url: 'ee/user/gitlab_duo_chat_enable.html'
           - doc_title: Duo Chat troubleshooting
