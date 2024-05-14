@@ -20,7 +20,7 @@ preprocess do
         # If the provided path is in Markdown
         if item[:redirect_to].to_s.match(/.md/)
           # If it's not a full URL
-          unless item[:redirect_to].to_s.match(/^http/)
+          unless item[:redirect_to].to_s.match(/^https?:\/\//)
             # Correct it to HTML
             item[:redirect_to] = item[:redirect_to].gsub!(/\.md/, '.html')
           end

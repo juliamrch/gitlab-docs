@@ -8,7 +8,7 @@ module Nanoc::Filters
     # { }`.html` files since that's what Nanoc actually serves.
     def run(content, _params = {})
       content.gsub(%r{href="(\S*.md\S*)"}) do |result| # Fetch all links in the HTML Document
-        if %r{^href="http}.match(result).nil? # Check if link is internal
+        if %r{^href="https?://}.match(result).nil? # Check if link is internal
           result.gsub!(%r{\.md}, '.html') # Replace the extension if link is internal
         end
 
