@@ -21,7 +21,7 @@ sections:
       - category_title: Storage usage quota
         category_url: 'ee/user/usage_quotas.html'
       - category_title: CI/CD minutes quota
-        category_url: 'ee/ci/pipelines/cicd_minutes.html'
+        category_url: 'ee/ci/pipelines/compute_minutes.html'
       - category_title: Free user limit
         category_url: 'ee/user/free_user_limit.html'
       - category_title: Read-only namespaces
