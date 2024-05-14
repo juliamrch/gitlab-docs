@@ -47,7 +47,7 @@ sectionTabs:
       - '/ee/subscriptions/community_programs.md'
       - '/ee/subscriptions/customers_portal.md'
       - '/ee/subscriptions/quarterly_reconciliation.md'
-      - '/ee/ci/pipelines/cicd_minutes.md'
+      - '/ee/ci/pipelines/compute_minutes.md'
   - title: Install
     refs:
       - '/ee/install/requirements.md'

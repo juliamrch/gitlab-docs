@@ -82,7 +82,7 @@ sections:
       - category_title: Quarterly reconciliation
         category_url: 'ee/subscriptions/quarterly_reconciliation.html'
       - category_title: Compute quota
-        category_url: 'ee/ci/pipelines/cicd_minutes.html'
+        category_url: 'ee/ci/pipelines/compute_minutes.html'
       - category_title: Features available to Starter and Bronze subscribers
         category_url: 'ee/subscriptions/bronze_starter.html'
 
