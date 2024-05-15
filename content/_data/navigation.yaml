@@ -4055,6 +4055,8 @@ sections:
             doc_url: 'ee/development/documentation/styleguide/'
           - doc_title: Recommended word list
             doc_url: 'ee/development/documentation/styleguide/word_list.html'
+          - doc_title: Product availability details
+            doc_url: 'ee/development/documentation/styleguide/availability_details.html'
           - doc_title: Topic types
             doc_url: 'ee/development/documentation/topic_types/'
             docs:
