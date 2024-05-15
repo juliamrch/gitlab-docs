@@ -2485,6 +2485,11 @@ sections:
         docs:
           - doc_title: Error tracking
             doc_url: 'ee/operations/error_tracking.html'
+            docs:
+              - doc_title: Integrated error tracking
+                doc_url: 'ee/operations/integrated_error_tracking.html'
+              - doc_title: Sentry error tracking
+                doc_url: 'ee/operations/sentry_error_tracking.html'
           - doc_title: Distributed tracing
             doc_url: 'ee/operations/tracing.html'
           - doc_title: Metrics
