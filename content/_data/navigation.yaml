@@ -2612,7 +2612,7 @@ sections:
             doc_url: 'ee/tutorials/website_project_with_analytics/'
           - doc_title: 'Tutorial: Set up product analytics in a GitLab Pages website project'
             doc_url: 'ee/tutorials/product_analytics_onboarding_website_project/'
-      - category_title: Experiment, Beta, GA support
+      - category_title: Experiment, beta, and GA support
         category_url: 'ee/policy/experiment-beta-support.html'
       - category_title: Find your GitLab version
         category_url: 'ee/user/version.html'
@@ -2621,7 +2621,7 @@ sections:
     section_categories:
       - category_title: Control GitLab Duo availability
         category_url: 'ee/user/ai_features_enable.html'
-      - category_title: GitLab Duo Experiments
+      - category_title: GitLab Duo experiments
         category_url: 'ee/user/ai_experiments.html'
       - category_title: GitLab Duo examples
         category_url: 'ee/user/gitlab_duo_examples.html'
@@ -4085,7 +4085,7 @@ sections:
             doc_url: 'ee/development/documentation/versions.html'
           - doc_title: Document feature flags
             doc_url: 'ee/development/documentation/feature_flags.html'
-          - doc_title: Document Experiment and Beta features
+          - doc_title: Document experiment and beta features
             doc_url: 'ee/development/documentation/experiment_beta.html'
           - doc_title: Metadata
             doc_url: 'ee/development/documentation/metadata.html'
