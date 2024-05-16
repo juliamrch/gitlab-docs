@@ -1460,6 +1460,8 @@ sections:
                     doc_url: 'ee/user/project/service_desk/configure.html'
                   - doc_title: Use Service Desk
                     doc_url: 'ee/user/project/service_desk/using_service_desk.html'
+                  - doc_title: External participants
+                    doc_url: 'ee/user/project/service_desk/external_participants.html'
                   - doc_title: Rake tasks
                     doc_url: 'ee/administration/raketasks/service_desk_email.html'
               - doc_title: Sorting and ordering issue lists
