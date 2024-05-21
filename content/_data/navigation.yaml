@@ -1244,11 +1244,8 @@ sections:
                     doc_url: 'ee/administration/audit_event_types.html'
                   - doc_title: Audit event schema
                     doc_url: 'ee/administration/audit_event_schema.html'
-              - doc_title: Audit event streaming for top-level groups
-                doc_url: 'ee/user/compliance/audit_event_streaming.html'
-                docs:
-                  - doc_title: GraphQL API
-                    doc_url: 'ee/administration/audit_event_streaming/graphql_api.html'
+                  - doc_title: Audit event streaming for top-level groups
+                    doc_url: 'ee/user/compliance/audit_event_streaming.html'
               - doc_title: Compliance frameworks
                 doc_url: 'ee/user/group/compliance_frameworks.html'
                 docs:
@@ -3160,6 +3157,11 @@ sections:
             doc_url: 'ee/api/graphql/getting_started.html'
           - doc_title: GraphQL API resources
             doc_url: 'ee/api/graphql/reference/'
+            docs:
+              - doc_title: Audit event streaming for instances
+                doc_url: 'ee/api/graphql/audit_event_streaming_instances.html'
+              - doc_title: Audit event streaming for top-level groups
+                doc_url: 'ee/api/graphql/audit_event_streaming_groups.html'
           - doc_title: Create audit report (example)
             doc_url: 'ee/api/graphql/audit_report.html'
           - doc_title: Identify issue boards (example)
