@@ -907,3 +907,546 @@ redirects:
   - from: /runner/executors/kubernetes.html
     to: /runner/executors/kubernetes/index.html
     remove_date: 2025-01-08
+  - from: /ee/development/documentation/testing.html
+    to: /ee/development/documentation/testing/index.html
+    remove_date: 2025-02-19
+  - from: /ee/development/contributing/first_contribution.html
+    to: /ee/development/contributing/first_contribution/index.html
+    remove_date: 2025-02-05
+  - from: /ee/user/application_security/dast/browser_based_troubleshooting.html
+    to: /ee/user/application_security/dast/browser/troubleshooting.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.102.html
+    to: /ee/user/application_security/dast/browser/checks/798.102.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.55.html
+    to: /ee/user/application_security/dast/browser/checks/798.55.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.30.html
+    to: /ee/user/application_security/dast/browser/checks/798.30.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.61.html
+    to: /ee/user/application_security/dast/browser/checks/798.61.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.92.html
+    to: /ee/user/application_security/dast/browser/checks/798.92.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.82.html
+    to: /ee/user/application_security/dast/browser/checks/798.82.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.20.html
+    to: /ee/user/application_security/dast/browser/checks/798.20.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.14.html
+    to: /ee/user/application_security/dast/browser/checks/798.14.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/16.9.html
+    to: /ee/user/application_security/dast/browser/checks/16.9.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.112.html
+    to: /ee/user/application_security/dast/browser/checks/798.112.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.126.html
+    to: /ee/user/application_security/dast/browser/checks/798.126.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/598.1.html
+    to: /ee/user/application_security/dast/browser/checks/598.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.106.html
+    to: /ee/user/application_security/dast/browser/checks/798.106.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.65.html
+    to: /ee/user/application_security/dast/browser/checks/798.65.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.34.html
+    to: /ee/user/application_security/dast/browser/checks/798.34.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.96.html
+    to: /ee/user/application_security/dast/browser/checks/798.96.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.41.html
+    to: /ee/user/application_security/dast/browser/checks/798.41.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.10.html
+    to: /ee/user/application_security/dast/browser/checks/798.10.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.86.html
+    to: /ee/user/application_security/dast/browser/checks/798.86.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.24.html
+    to: /ee/user/application_security/dast/browser/checks/798.24.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.75.html
+    to: /ee/user/application_security/dast/browser/checks/798.75.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.4.html
+    to: /ee/user/application_security/dast/browser/checks/798.4.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.122.html
+    to: /ee/user/application_security/dast/browser/checks/798.122.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.116.html
+    to: /ee/user/application_security/dast/browser/checks/798.116.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.107.html
+    to: /ee/user/application_security/dast/browser/checks/798.107.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/829.1.html
+    to: /ee/user/application_security/dast/browser/checks/829.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.64.html
+    to: /ee/user/application_security/dast/browser/checks/798.64.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.35.html
+    to: /ee/user/application_security/dast/browser/checks/798.35.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.97.html
+    to: /ee/user/application_security/dast/browser/checks/798.97.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.50.html
+    to: /ee/user/application_security/dast/browser/checks/798.50.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.40.html
+    to: /ee/user/application_security/dast/browser/checks/798.40.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.11.html
+    to: /ee/user/application_security/dast/browser/checks/798.11.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.87.html
+    to: /ee/user/application_security/dast/browser/checks/798.87.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.25.html
+    to: /ee/user/application_security/dast/browser/checks/798.25.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.5.html
+    to: /ee/user/application_security/dast/browser/checks/798.5.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.74.html
+    to: /ee/user/application_security/dast/browser/checks/798.74.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.123.html
+    to: /ee/user/application_security/dast/browser/checks/798.123.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.117.html
+    to: /ee/user/application_security/dast/browser/checks/798.117.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/917.1.html
+    to: /ee/user/application_security/dast/browser/checks/917.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.103.html
+    to: /ee/user/application_security/dast/browser/checks/798.103.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.54.html
+    to: /ee/user/application_security/dast/browser/checks/798.54.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.31.html
+    to: /ee/user/application_security/dast/browser/checks/798.31.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.60.html
+    to: /ee/user/application_security/dast/browser/checks/798.60.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.93.html
+    to: /ee/user/application_security/dast/browser/checks/798.93.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.83.html
+    to: /ee/user/application_security/dast/browser/checks/798.83.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.70.html
+    to: /ee/user/application_security/dast/browser/checks/798.70.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.1.html
+    to: /ee/user/application_security/dast/browser/checks/798.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.21.html
+    to: /ee/user/application_security/dast/browser/checks/798.21.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.15.html
+    to: /ee/user/application_security/dast/browser/checks/798.15.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.44.html
+    to: /ee/user/application_security/dast/browser/checks/798.44.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/16.8.html
+    to: /ee/user/application_security/dast/browser/checks/16.8.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.113.html
+    to: /ee/user/application_security/dast/browser/checks/798.113.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.127.html
+    to: /ee/user/application_security/dast/browser/checks/798.127.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/94.3.html
+    to: /ee/user/application_security/dast/browser/checks/94.3.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.98.html
+    to: /ee/user/application_security/dast/browser/checks/798.98.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.108.html
+    to: /ee/user/application_security/dast/browser/checks/798.108.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.118.html
+    to: /ee/user/application_security/dast/browser/checks/798.118.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/16.3.html
+    to: /ee/user/application_security/dast/browser/checks/16.3.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/22.1.html
+    to: /ee/user/application_security/dast/browser/checks/22.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.88.html
+    to: /ee/user/application_security/dast/browser/checks/798.88.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.128.html
+    to: /ee/user/application_security/dast/browser/checks/798.128.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/16.7.html
+    to: /ee/user/application_security/dast/browser/checks/16.7.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/78.1.html
+    to: /ee/user/application_security/dast/browser/checks/78.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/209.1.html
+    to: /ee/user/application_security/dast/browser/checks/209.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/16.6.html
+    to: /ee/user/application_security/dast/browser/checks/16.6.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/74.1.html
+    to: /ee/user/application_security/dast/browser/checks/74.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/94.2.html
+    to: /ee/user/application_security/dast/browser/checks/94.2.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.99.html
+    to: /ee/user/application_security/dast/browser/checks/798.99.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/614.1.html
+    to: /ee/user/application_security/dast/browser/checks/614.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/359.2.html
+    to: /ee/user/application_security/dast/browser/checks/359.2.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.109.html
+    to: /ee/user/application_security/dast/browser/checks/798.109.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.119.html
+    to: /ee/user/application_security/dast/browser/checks/798.119.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/287.1.html
+    to: /ee/user/application_security/dast/browser/checks/287.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/16.2.html
+    to: /ee/user/application_security/dast/browser/checks/16.2.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.89.html
+    to: /ee/user/application_security/dast/browser/checks/798.89.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/209.2.html
+    to: /ee/user/application_security/dast/browser/checks/209.2.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/98.1.html
+    to: /ee/user/application_security/dast/browser/checks/98.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.59.html
+    to: /ee/user/application_security/dast/browser/checks/798.59.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/601.1.html
+    to: /ee/user/application_security/dast/browser/checks/601.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/16.5.html
+    to: /ee/user/application_security/dast/browser/checks/16.5.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.18.html
+    to: /ee/user/application_security/dast/browser/checks/798.18.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.49.html
+    to: /ee/user/application_security/dast/browser/checks/798.49.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/94.1.html
+    to: /ee/user/application_security/dast/browser/checks/94.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.69.html
+    to: /ee/user/application_security/dast/browser/checks/798.69.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/1004.1.html
+    to: /ee/user/application_security/dast/browser/checks/1004.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.38.html
+    to: /ee/user/application_security/dast/browser/checks/798.38.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/359.1.html
+    to: /ee/user/application_security/dast/browser/checks/359.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/16.1.html
+    to: /ee/user/application_security/dast/browser/checks/16.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/287.2.html
+    to: /ee/user/application_security/dast/browser/checks/287.2.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.28.html
+    to: /ee/user/application_security/dast/browser/checks/798.28.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/index.html
+    to: /ee/user/application_security/dast/browser/checks/index.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/
+    to: /ee/user/application_security/dast/browser/checks/index.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.8.html
+    to: /ee/user/application_security/dast/browser/checks/798.8.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.68.html
+    to: /ee/user/application_security/dast/browser/checks/798.68.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.39.html
+    to: /ee/user/application_security/dast/browser/checks/798.39.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/548.1.html
+    to: /ee/user/application_security/dast/browser/checks/548.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/319.1.html
+    to: /ee/user/application_security/dast/browser/checks/319.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.29.html
+    to: /ee/user/application_security/dast/browser/checks/798.29.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.9.html
+    to: /ee/user/application_security/dast/browser/checks/798.9.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.78.html
+    to: /ee/user/application_security/dast/browser/checks/798.78.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.58.html
+    to: /ee/user/application_security/dast/browser/checks/798.58.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/94.4.html
+    to: /ee/user/application_security/dast/browser/checks/94.3.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/16.4.html
+    to: /ee/user/application_security/dast/browser/checks/16.4.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/1336.1.html
+    to: /ee/user/application_security/dast/browser/checks/1336.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.19.html
+    to: /ee/user/application_security/dast/browser/checks/798.19.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.48.html
+    to: /ee/user/application_security/dast/browser/checks/798.48.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/829.2.html
+    to: /ee/user/application_security/dast/browser/checks/829.2.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.104.html
+    to: /ee/user/application_security/dast/browser/checks/798.104.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.94.html
+    to: /ee/user/application_security/dast/browser/checks/798.94.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.36.html
+    to: /ee/user/application_security/dast/browser/checks/798.36.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.67.html
+    to: /ee/user/application_security/dast/browser/checks/798.67.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.53.html
+    to: /ee/user/application_security/dast/browser/checks/798.53.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.12.html
+    to: /ee/user/application_security/dast/browser/checks/798.12.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.43.html
+    to: /ee/user/application_security/dast/browser/checks/798.43.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.6.html
+    to: /ee/user/application_security/dast/browser/checks/798.6.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.77.html
+    to: /ee/user/application_security/dast/browser/checks/798.77.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.26.html
+    to: /ee/user/application_security/dast/browser/checks/798.26.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.84.html
+    to: /ee/user/application_security/dast/browser/checks/798.84.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.120.html
+    to: /ee/user/application_security/dast/browser/checks/798.120.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.114.html
+    to: /ee/user/application_security/dast/browser/checks/798.114.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/918.1.html
+    to: /ee/user/application_security/dast/browser/checks/918.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/200.1.html
+    to: /ee/user/application_security/dast/browser/checks/200.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.100.html
+    to: /ee/user/application_security/dast/browser/checks/798.100.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/611.1.html
+    to: /ee/user/application_security/dast/browser/checks/611.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.57.html
+    to: /ee/user/application_security/dast/browser/checks/798.57.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/16.10.html
+    to: /ee/user/application_security/dast/browser/checks/16.10.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.90.html
+    to: /ee/user/application_security/dast/browser/checks/798.90.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.63.html
+    to: /ee/user/application_security/dast/browser/checks/798.63.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.32.html
+    to: /ee/user/application_security/dast/browser/checks/798.32.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.22.html
+    to: /ee/user/application_security/dast/browser/checks/798.22.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.2.html
+    to: /ee/user/application_security/dast/browser/checks/798.2.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.80.html
+    to: /ee/user/application_security/dast/browser/checks/798.80.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.47.html
+    to: /ee/user/application_security/dast/browser/checks/798.47.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.16.html
+    to: /ee/user/application_security/dast/browser/checks/798.16.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/113.1.html
+    to: /ee/user/application_security/dast/browser/checks/113.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.110.html
+    to: /ee/user/application_security/dast/browser/checks/798.110.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/693.1.html
+    to: /ee/user/application_security/dast/browser/checks/693.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/943.1.html
+    to: /ee/user/application_security/dast/browser/checks/943.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/598.3.html
+    to: /ee/user/application_security/dast/browser/checks/598.3.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.124.html
+    to: /ee/user/application_security/dast/browser/checks/798.124.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.101.html
+    to: /ee/user/application_security/dast/browser/checks/798.101.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.56.html
+    to: /ee/user/application_security/dast/browser/checks/798.56.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/16.11.html
+    to: /ee/user/application_security/dast/browser/checks/16.11.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.91.html
+    to: /ee/user/application_security/dast/browser/checks/798.91.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.62.html
+    to: /ee/user/application_security/dast/browser/checks/798.62.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.33.html
+    to: /ee/user/application_security/dast/browser/checks/798.33.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/89.1.html
+    to: /ee/user/application_security/dast/browser/checks/89.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.23.html
+    to: /ee/user/application_security/dast/browser/checks/798.23.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.3.html
+    to: /ee/user/application_security/dast/browser/checks/798.3.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.72.html
+    to: /ee/user/application_security/dast/browser/checks/798.72.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.81.html
+    to: /ee/user/application_security/dast/browser/checks/798.81.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/352.1.html
+    to: /ee/user/application_security/dast/browser/checks/352.1.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.46.html
+    to: /ee/user/application_security/dast/browser/checks/798.46.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.17.html
+    to: /ee/user/application_security/dast/browser/checks/798.17.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.111.html
+    to: /ee/user/application_security/dast/browser/checks/798.111.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/598.2.html
+    to: /ee/user/application_security/dast/browser/checks/598.2.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.125.html
+    to: /ee/user/application_security/dast/browser/checks/798.125.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.105.html
+    to: /ee/user/application_security/dast/browser/checks/798.105.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.95.html
+    to: /ee/user/application_security/dast/browser/checks/798.95.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.37.html
+    to: /ee/user/application_security/dast/browser/checks/798.37.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.66.html
+    to: /ee/user/application_security/dast/browser/checks/798.66.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.52.html
+    to: /ee/user/application_security/dast/browser/checks/798.52.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.13.html
+    to: /ee/user/application_security/dast/browser/checks/798.13.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.42.html
+    to: /ee/user/application_security/dast/browser/checks/798.42.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.7.html
+    to: /ee/user/application_security/dast/browser/checks/798.7.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.27.html
+    to: /ee/user/application_security/dast/browser/checks/798.27.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.121.html
+    to: /ee/user/application_security/dast/browser/checks/798.121.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/checks/798.115.html
+    to: /ee/user/application_security/dast/browser/checks/798.115.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/dast/browser_based.html
+    to: /ee/user/application_security/dast/browser/index.html
+    remove_date: 2025-02-16
+  - from: /ee/user/application_security/secret_detection/pre_receive.html
+    to: /ee/user/application_security/secret_detection/pre_receive/index.html
+    remove_date: 2025-02-14
+  - from: /ee/user/project/repository/code_suggestions/self_managed.html
+    to: /ee/user/project/repository/code_suggestions/index.html
+    remove_date: 2025-02-15
+  - from: /ee/user/project/repository/code_suggestions/self_managed_prior_versions.html
+    to: /ee/user/project/repository/code_suggestions/index.html
+    remove_date: 2025-02-15
+  - from: /ee/user/project/repository/code_suggestions/saas.html
+    to: /ee/user/project/repository/code_suggestions/index.html
+    remove_date: 2025-02-15
+  - from: /ee/architecture/blueprints/cells/application-deployment.html
+    to: /ee/architecture/blueprints/cells/infrastructure/deployments.html
+    remove_date: 2025-02-16
+  - from: /ee/architecture/blueprints/cells/deployment-architecture.html
+    to: /ee/architecture/blueprints/cells/rejected/deployment-architecture.html
+    remove_date: 2025-02-16
+  - from: /ee/topics/git/numerous_undo_possibilities_in_git/index.html
+    to: /ee/topics/git/undo.html
+    remove_date: 2025-02-20
+  - from: /ee/topics/git/numerous_undo_possibilities_in_git/
+    to: /ee/topics/git/undo.html
+    remove_date: 2025-02-20
+  - from: /ee/topics/git/cherry_picking.html
+    to: /ee/user/project/merge_requests/cherry_pick_changes.html
+    remove_date: 2025-02-14
