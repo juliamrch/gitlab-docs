@@ -2780,6 +2780,8 @@ sections:
             doc_url: 'ee/user/project/integrations/servicenow.html'
           - doc_title: Slack slash commands
             doc_url: 'ee/user/project/integrations/slack_slash_commands.html'
+          - doc_title: Snowflake
+            doc_url: 'ee/integration/snowflake.html'
           - doc_title: Sourcegraph
             doc_url: 'ee/integration/sourcegraph.html'
           - doc_title: Squash TM
