@@ -2778,6 +2778,8 @@ sections:
             doc_url: 'ee/integration/recaptcha.html'
           - doc_title: ServiceNow
             doc_url: 'ee/user/project/integrations/servicenow.html'
+          - doc_title: Slack notifications (deprecated)
+            doc_url: 'ee/user/project/integrations/slack.html'
           - doc_title: Slack slash commands
             doc_url: 'ee/user/project/integrations/slack_slash_commands.html'
           - doc_title: Snowflake
