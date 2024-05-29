@@ -1,4 +1,4 @@
-ruby 3.2.3
-nodejs 20.12.1
+ruby 3.2.4
+nodejs 20.14.0
 shellcheck 0.10.0
 minify 2.20.19
