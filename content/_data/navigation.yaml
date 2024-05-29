@@ -631,10 +631,13 @@ sections:
             doc_url: 'ee/administration/admin_area.html'
           - doc_title: Application cache interval
             doc_url: 'ee/administration/application_settings_cache.html'
-          - doc_title: Audit events administration
-            doc_url: 'ee/administration/audit_event_reports.html'
-          - doc_title: Audit event streaming for instances
-            doc_url: 'ee/administration/audit_event_streaming/'
+          - doc_title: Compliance
+            doc_url: 'ee/administration/compliance.html'
+            docs:
+              - doc_title: Audit events administration
+                doc_url: 'ee/administration/audit_event_reports.html'
+              - doc_title: Audit event streaming for instances
+                doc_url: 'ee/administration/audit_event_streaming/'
           - doc_title: CI/CD
             doc_url: 'ee/administration/cicd.html'
             docs:
@@ -1238,15 +1241,15 @@ sections:
           - doc_title: Sharing projects and groups
             doc_url: 'ee/user/project/members/sharing_projects_groups.html'
           - doc_title: Compliance
-            doc_url: 'ee/administration/compliance.html'
+            doc_url: 'ee/user/compliance/'
             docs:
               - doc_title: Audit events
                 doc_url: 'ee/user/compliance/audit_events.html'
                 docs:
                   - doc_title: Audit event types
-                    doc_url: 'ee/administration/audit_event_types.html'
+                    doc_url: 'ee/user/compliance/audit_event_types.html'
                   - doc_title: Audit event schema
-                    doc_url: 'ee/administration/audit_event_schema.html'
+                    doc_url: 'ee/user/compliance/audit_event_schema.html'
                   - doc_title: Audit event streaming for top-level groups
                     doc_url: 'ee/user/compliance/audit_event_streaming.html'
               - doc_title: Compliance frameworks
@@ -1267,18 +1270,15 @@ sections:
                     doc_url: 'ee/user/compliance/compliance_center/compliance_frameworks_report.html'
                   - doc_title: Compliance projects report
                     doc_url: 'ee/user/compliance/compliance_center/compliance_projects_report.html'
-              - doc_title: Compliance tools
-                doc_url: 'ee/user/compliance/'
+              - doc_title: License scanning of CycloneDX files
+                doc_url: 'ee/user/compliance/license_scanning_of_cyclonedx_files/'
+              - doc_title: License approval policies
+                doc_url: 'ee/user/compliance/license_approval_policies.html'
+              - doc_title: License list (deprecated)
+                doc_url: 'ee/user/compliance/license_list.html'
                 docs:
-                  - doc_title: License scanning of CycloneDX files
-                    doc_url: 'ee/user/compliance/license_scanning_of_cyclonedx_files/'
-                  - doc_title: License approval policies
-                    doc_url: 'ee/user/compliance/license_approval_policies.html'
-                  - doc_title: License list (deprecated)
-                    doc_url: 'ee/user/compliance/license_list.html'
-                    docs:
-                      - doc_title: SPDX license list import
-                        doc_url: 'ee/raketasks/spdx.html'
+                  - doc_title: SPDX license list import
+                    doc_url: 'ee/raketasks/spdx.html'
           - doc_title: Enterprise users
             doc_url: 'ee/user/enterprise_user/'
           - doc_title: Service accounts
