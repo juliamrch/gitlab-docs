@@ -1180,6 +1180,16 @@ sections:
           - doc_title: Configure your GitLab Dedicated instance
             doc_url: 'ee/administration/dedicated/configure_instance.html'
 
+      # Self-hosted large language model
+
+      - category_title: Self-hosted large language model
+        category_url: 'ee/administration/self_hosted_models/'
+        docs:
+          - doc_title: Configure your GitLab Duo features
+            doc_url: 'ee/administration/self_hosted_models/configure_duo_features.html'
+          - doc_title: Set up your self-hosted model deployment infrastructure
+            doc_url: 'ee/administration/self_hosted_models/install_infrastructure.html'
+
   # USE GITLAB
 
   - section_title: Use GitLab
