@@ -1791,6 +1791,8 @@ sections:
                 doc_url: 'ee/ci/yaml/workflow.html'
               - doc_title: Steps
                 doc_url: 'ee/ci/steps/'
+              - doc_title: 'Tutorial: Set up CI/CD steps'
+                doc_url: 'ee/tutorials/setup_steps/'
           - doc_title: Runners
             doc_url: 'runner/'
             docs:
