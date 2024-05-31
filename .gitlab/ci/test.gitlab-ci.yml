@@ -22,7 +22,7 @@ include:
 # Test the links in the global nav for all MRs in `gitlab-docs`
 #
 test_global_nav_links:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.19-ruby-3.2.3-acbeb4ef
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.20-ruby-3.2.4-d338fdf3
   extends:
     - .rules_site_tests
     - .bundle
@@ -217,7 +217,7 @@ shellcheck:
   needs: []
   when: manual
   extends:
-    - .rules_site_tests
+    - .rules_chores
   script:
     - git clone --depth=1 $REPO_URL
     - lychee --config lychee.toml --include-fragments $DOCS_PATH
@@ -265,7 +265,7 @@ test_EOL_whitespace:
     - .rules_chores
     - .bundle
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.19-ruby-3.2.3-acbeb4ef
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.20-ruby-3.2.4-d338fdf3
   needs: []
   before_script: []
   dependencies: []
@@ -281,7 +281,7 @@ test_unlinked_images:
     - .rules_chores
     - .bundle
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.19-ruby-3.2.3-acbeb4ef
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.20-ruby-3.2.4-d338fdf3
   needs: []
   before_script: []
   dependencies: []
