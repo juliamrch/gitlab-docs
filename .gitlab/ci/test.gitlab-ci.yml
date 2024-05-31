@@ -209,64 +209,53 @@ shellcheck:
     - make shellcheck-tests
 
 #
-# Check for broken external links from the GitLab project
+# Check for broken external links as part of manual chores
 #
+.external-links-shared-config:
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-markdown:alpine-3.20-vale-3.4.2-markdownlint2-0.13.0-lychee-0.15.1
+  stage: test
+  needs: []
+  when: manual
+  extends:
+    - .rules_site_tests
+  script:
+    - git clone --depth=1 $REPO_URL
+    - lychee --config lychee.toml --include-fragments $DOCS_PATH
+
 test_external_links_gitlab:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-markdown:alpine-3.20-vale-3.4.2-markdownlint2-0.13.0-lychee-0.15.1
   extends:
-    - .rules_chores
-  stage: test
-  script:
-    - git clone --depth=1 https://gitlab.com/gitlab-org/gitlab.git
-    - lychee --config lychee.toml --include-fragments gitlab/doc/**/*.md
+    - .external-links-shared-config
+  variables:
+    REPO_URL: "https://gitlab.com/gitlab-org/gitlab.git"
+    DOCS_PATH: "gitlab/doc/**/*.md"
 
-#
-# Check for broken external links from the Omnibus GitLab project
-#
 test_external_links_omnibus_gitlab:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-markdown:alpine-3.20-vale-3.4.2-markdownlint2-0.13.0-lychee-0.15.1
   extends:
-    - .rules_chores
-  stage: test
-  script:
-    - git clone --depth=1 https://gitlab.com/gitlab-org/omnibus-gitlab.git
-    - lychee --config lychee.toml --include-fragments omnibus-gitlab/doc/**/*.md
+    - .external-links-shared-config
+  variables:
+    REPO_URL: "https://gitlab.com/gitlab-org/omnibus-gitlab.git"
+    DOCS_PATH: "omnibus-gitlab/doc/**/*.md"
 
-#
-# Check for broken external links from the GitLab Runner project
-#
 test_external_links_gitlab_runner:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-markdown:alpine-3.20-vale-3.4.2-markdownlint2-0.13.0-lychee-0.15.1
   extends:
-    - .rules_chores
-  stage: test
-  script:
-    - git clone --depth=1 https://gitlab.com/gitlab-org/gitlab-runner.git
-    - lychee --config lychee.toml --include-fragments gitlab-runner/docs/**/*.md
+    - .external-links-shared-config
+  variables:
+    REPO_URL: "https://gitlab.com/gitlab-org/gitlab-runner.git"
+    DOCS_PATH: "gitlab-runner/docs/**/*.md"
 
-#
-# Check for broken external links from the GitLab Chart project
-#
 test_external_links_charts:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-markdown:alpine-3.20-vale-3.4.2-markdownlint2-0.13.0-lychee-0.15.1
   extends:
-    - .rules_chores
-  stage: test
-  script:
-    - git clone --depth=1 https://gitlab.com/gitlab-org/charts/gitlab.git ../charts-gitlab
-    - lychee --config lychee.toml --include-fragments ../charts-gitlab/doc/**/*.md
+    - .external-links-shared-config
+  variables:
+    REPO_URL: "https://gitlab.com/gitlab-org/charts/gitlab.git ../charts-gitlab"
+    DOCS_PATH: "../charts-gitlab/doc/**/*.md"
 
-#
-# Check for broken external links from the GitLab Operator project
-#
 test_external_links_operator:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-markdown:alpine-3.20-vale-3.4.2-markdownlint2-0.13.0-lychee-0.15.1
   extends:
-    - .rules_chores
-  stage: test
-  script:
-    - git clone --depth=1 https://gitlab.com/gitlab-org/cloud-native/gitlab-operator.git
-    - lychee --config lychee.toml --include-fragments gitlab-operator/doc/**/*.md
+    - .external-links-shared-config
+  variables:
+    REPO_URL: "https://gitlab.com/gitlab-org/cloud-native/gitlab-operator.git"
+    DOCS_PATH: "gitlab-operator/doc/**/*.md"
 
 #
 # Run markdownlint to find EOL whitespace to clean up
