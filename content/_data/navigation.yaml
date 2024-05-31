@@ -3304,6 +3304,8 @@ sections:
                 doc_url: 'ee/development/fips_compliance.html'
               - doc_title: Framework - DeclarativePolicy
                 doc_url: 'ee/development/policies.html'
+              - doc_title: GitLab Dedicated features
+                doc_url: 'ee/development/enabling_features_on_dedicated.html'
               - doc_title: Issues workflow
                 doc_url: 'ee/development/contributing/issue_workflow.html'
               - doc_title: Labels
