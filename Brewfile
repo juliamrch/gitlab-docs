@@ -1,6 +1,7 @@
 # Install on all OSes
 brew "hadolint"
 brew "jq"
+brew "lychee"
 brew "openssl@1.1", link: :force
 brew "parallel"
 brew "yamllint"

@@ -1,6 +1,7 @@
 root: true
 extends:
   - 'plugin:@gitlab/default'
+  - 'plugin:toml/standard'
 env:
   jest: true
 parserOptions:
@@ -19,3 +20,10 @@ rules:
     # https://github.com/import-js/eslint-plugin-import/issues/2883
     - ignore:
         - 'glob'
+# For linting lychee.toml
+overrides:
+  - files:
+      - '*.toml'
+    rules:
+      '@gitlab/vue-no-data-toggle': 0
+      '@gitlab/vue-prefer-dollar-scopedslots': 0

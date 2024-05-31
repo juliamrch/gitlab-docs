@@ -1,0 +1,32 @@
+# For all options, see <https://lychee.cli.rs/usage/config/>
+
+# Accept 200 (OK) and 403 (Forbidden) responses as valid
+accept = [
+  "200",
+  "403"
+]
+
+# Exclude links
+exclude = [
+  # Exclude internal links
+  'file:///',
+  # Exclude links from these domains
+  'https://admin.google.com',
+  'https://advisories.gitlab.com',
+  'https://auth0.com/auth/login',
+  'https://dashboards.gitlab.com',
+  'https://docs.google.com',
+  'https://drive.google.com',
+  'https://www.youtube.com',
+  'https://www.youtube-nocookie.com',
+  'https://youtu.be'
+]
+
+# Don't check any links to private addresses
+exclude_all_private = true
+
+# Avoid rate limits by limiting concurrency of checks
+max_concurrency = 4
+
+# Redirected links can eventually become broken links
+max_redirects = 0
