@@ -2652,10 +2652,10 @@ sections:
             doc_url: 'ee/user/project/repository/code_suggestions/troubleshooting.html'
           - doc_title: Repository X-Ray
             doc_url: 'ee/user/project/repository/code_suggestions/repository_xray.html'
-      - category_title: Ask questions with Chat
+      - category_title: GitLab Duo Chat
         category_url: 'ee/user/gitlab_duo_chat.html'
         docs:
-          - doc_title: Duo Chat examples
+          - doc_title: Ask Duo Chat
             doc_url: 'ee/user/gitlab_duo_chat_examples.html'
           - doc_title: Control Duo Chat availability
             doc_url: 'ee/user/gitlab_duo_chat_enable.html'
