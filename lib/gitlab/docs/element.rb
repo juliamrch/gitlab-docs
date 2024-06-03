@@ -5,6 +5,12 @@ require 'cgi'
 module Gitlab
   module Docs
     class Element
+      def self.decode(name)
+        return if name.to_s.empty?
+
+        CGI.unescape(name)
+      end
+
       def initialize(name, attributes)
         @name = name
         @attributes = attributes
@@ -24,12 +30,6 @@ module Gitlab
 
       def id
         @id ||= attribute('id')&.downcase
-      end
-
-      def self.decode(name)
-        return if name.to_s.empty?
-
-        CGI.unescape(name)
       end
 
       private

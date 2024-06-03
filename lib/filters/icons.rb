@@ -16,9 +16,9 @@
 class IconsFilter < Nanoc::Filter
   identifier :icons
 
-  ICON_PATTERN = %r{\{\s*([\w-]+)\s*(?:,\s*(\d+))?\s*(?:,\s*([\w-]+))?\s*\}}.freeze
-  ICON_HTML_PATTERN = %r{<strong>#{ICON_PATTERN}</strong>}.freeze
-  ICON_MARKDOWN_PATTERN = %r{\*\*#{ICON_PATTERN}\*\*}.freeze
+  ICON_PATTERN = %r{\{\s*([\w-]+)\s*(?:,\s*(\d+))?\s*(?:,\s*([\w-]+))?\s*\}}
+  ICON_HTML_PATTERN = %r{<strong>#{ICON_PATTERN}</strong>}
+  ICON_MARKDOWN_PATTERN = %r{\*\*#{ICON_PATTERN}\*\*}
 
   def run(content, _params = {})
     content.gsub(ICON_HTML_PATTERN) { generate(Regexp.last_match(1), Regexp.last_match(2), Regexp.last_match(3)) }

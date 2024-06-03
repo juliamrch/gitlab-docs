@@ -6,6 +6,14 @@ module Gitlab
       attr_reader :file
       attr_accessor :hrefs, :ids
 
+      def self.build(path)
+        if path.end_with?('.html')
+          new(path)
+        else
+          new(File.join(path, 'index.html'))
+        end
+      end
+
       def initialize(file)
         @file = file
         @hrefs = Set.new
@@ -34,14 +42,6 @@ module Gitlab
 
       def has_anchor?(name)
         @ids.include?(Docs::Element.decode(name))
-      end
-
-      def self.build(path)
-        if path.end_with?('.html')
-          new(path)
-        else
-          new(File.join(path, 'index.html'))
-        end
       end
     end
   end

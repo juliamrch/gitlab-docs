@@ -3,8 +3,8 @@
 class TabsFilter < Nanoc::Filter
   identifier :tabs
 
-  TABSET_PATTERN = %r{<p>::Tabs</p>(?<tabs_wrapper>.*?)<p>::EndTabs</p>}mx.freeze
-  TAB_TITLE_PATTERN = %r{<p>:::TabTitle\s(?<tab_title>.*?)</p>}mx.freeze
+  TABSET_PATTERN = %r{<p>::Tabs</p>(?<tabs_wrapper>.*?)<p>::EndTabs</p>}mx
+  TAB_TITLE_PATTERN = %r{<p>:::TabTitle\s(?<tab_title>.*?)</p>}mx
 
   def run(content, _params = {})
     new_content = content.gsub(TAB_TITLE_PATTERN) { generate_titles(Regexp.last_match[:tab_title]) }
