@@ -2,7 +2,7 @@
 
 module Nanoc::Helpers
   module VersionsDropdown
-    STABLE_VERSIONS_REGEX = %r{^\d{1,2}\.\d{1,2}$}.freeze
+    STABLE_VERSIONS_REGEX = %r{^\d{1,2}\.\d{1,2}$}
 
     #
     # Returns the site version using the branch or tag from the CI build.

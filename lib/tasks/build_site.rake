@@ -89,7 +89,7 @@ task :generate_feature_flags do
     feature_flags[:products][key] = []
 
     Dir.glob(path).each do |feature_flag_yaml|
-      feature_flags[:products][key] << YAML.safe_load(File.read(feature_flag_yaml))
+      feature_flags[:products][key] << YAML.safe_load_file(feature_flag_yaml)
     end
   end
 

@@ -10,10 +10,14 @@ class TaskHelpers
   include Nanoc::Helpers::Generic
 
   PRODUCTS = %w[ee omnibus runner charts operator].freeze
-  VERSION_FORMAT = %r{^(?<major>\d{1,2})\.(?<minor>\d{1,2})$}.freeze
+  VERSION_FORMAT = %r{^(?<major>\d{1,2})\.(?<minor>\d{1,2})$}
   COLOR_CODE_RESET = "\e[0m"
   COLOR_CODE_RED = "\e[31m"
   COLOR_CODE_GREEN = "\e[32m"
+
+  def self.info(slug, message)
+    puts "#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): #{message} #{TaskHelpers::COLOR_CODE_RESET}"
+  end
 
   def config
     # Parse the config file and create a hash.
@@ -129,10 +133,6 @@ class TaskHelpers
     url_encoded_path = repo.sub('https://gitlab.com/', '').sub('.git', '').gsub('/', '%2F')
 
     `curl --silent https://gitlab.com/api/v4/projects/#{url_encoded_path} | jq --raw-output .default_branch`.tr("\n", '')
-  end
-
-  def self.info(slug, message)
-    puts "#{TaskHelpers::COLOR_CODE_GREEN}INFO: (#{slug}): #{message} #{TaskHelpers::COLOR_CODE_RESET}"
   end
 
   def current_milestone(release_date = Date.today.strftime("%Y-%m"))

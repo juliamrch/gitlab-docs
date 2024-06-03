@@ -25,7 +25,7 @@ group :test, :development do
   gem 'simplecov', '~> 0.22.0', require: false
   gem 'simplecov-cobertura', '~> 2.1.0', require: false
   gem 'pry-byebug', '~> 3.10.1', require: false
-  gem 'gitlab-styles', '~> 11.0.0', require: false
+  gem 'gitlab-styles', '~> 12.0.1', require: false
   gem 'webrick', '~> 1.8', '>= 1.8.1'
   gem 'json_schemer', '~> 2.3', require: false
 end

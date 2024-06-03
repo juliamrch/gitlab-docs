@@ -118,7 +118,7 @@ namespace :docs do
       # YAML entries for the Docs site redirects.
       #
       files_to_be_deleted.each do |filename|
-        frontmatter = YAML.safe_load(File.read(filename))
+        frontmatter = YAML.safe_load_file(filename)
 
         # Skip if remove_date is not found in the frontmatter
         next unless frontmatter.has_key?('remove_date')
