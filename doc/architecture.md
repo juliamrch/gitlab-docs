@@ -91,23 +91,64 @@ improve maintainability:
 - [`.gitlab-ci.yml`](../.gitlab-ci.yml):
   The base configuration file contains:
   - Global variables.
-  - [`workflow:rules`](https://docs.gitlab.com/ee/ci/yaml/index.html#workflowrules)
-    to limit which pipelines can run.
+  - [`workflow`](#pipeline-names-and-rules) to limit which pipelines can run and
+    the name for each pipeline.
   - External templates imported with [`include`](https://docs.gitlab.com/ee/ci/yaml/index.html#include).
   - The other configuration files, also imported with `include`.
+- [`.gitlab/ci/rules.gitlab-ci.yml`](../.gitlab/ci/rules.gitlab-ci.yml):
+  The [`rules`](https://docs.gitlab.com/ee/ci/yaml/index.html#rules), [`cache`](https://docs.gitlab.com/ee/ci/yaml/index.html#cache)
+  and other default configuration for most jobs in the pipeline.
 - [`.gitlab/ci/build-and-deploy.gitlab-ci.yml`](../.gitlab/ci/build-and-deploy.gitlab-ci.yml):
   The jobs that build the docs site before testing, and the jobs that deploy the site
   or review apps.
 - [`.gitlab/ci/docker-images.gitlab-ci.yml`](../.gitlab/ci/docker-images.gitlab-ci.yml):
   The jobs that build and test docker images.
-- [`.gitlab/ci/rules.gitlab-ci.yml`](../.gitlab/ci/rules.gitlab-ci.yml):
-  The [`rules`](https://docs.gitlab.com/ee/ci/yaml/index.html#rules), [`cache`](https://docs.gitlab.com/ee/ci/yaml/index.html#cache)
-  and other default configuration for most jobs in the pipeline.
 - [`.gitlab/ci/security.gitlab-ci.yml`](../.gitlab/ci/security.gitlab-ci.yml):
   Extra configuration for security jobs to override their defaults and make them work
   better in the pipeline.
 - [`.gitlab/ci/test.gitlab-ci.yml`](../.gitlab/ci/test.gitlab-ci.yml):
   Code tests and jobs used for [`gitlab-docs` maintenance](https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks).
+
+#### Pipeline names and rules
+
+The [`workflow:rules`](https://docs.gitlab.com/ee/ci/yaml/index.html#workflowrules)
+section of the configuration is designed to make it easier to configure the rules
+for specific jobs. These rules work with the with job-specific SSoT rules in `.gitlab/ci/rules.gitlab-ci.yml`.
+
+The `workflow:name` variable of `DOCS_PROJECT_PIPELINE_TYPE` is redefined for every
+pipeline type. For example:
+
+```yaml
+workflow:
+  name: '$DOCS_PROJECT_PIPELINE_TYPE'
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      variables:
+        DOCS_PROJECT_PIPELINE_TYPE: "MR pipeline: branch $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"
+        SEARCH_BACKEND: 'lunr'
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE_SCHEDULE_TYPE == "chores"'
+      variables:
+        DOCS_PROJECT_PIPELINE_TYPE: "Cleanup chores pipeline"
+```
+
+In these cases, if the pipeline is:
+
+- A merge request pipeline, the pipeline name starts with `MR pipeline`.
+- A scheduled pipeline and `$PIPELINE_SCHEDULE_TYPE` has a value of `chores` (defined
+  in the pipeline schedule settings), the pipeline name is `Cleanup chores pipeline`.
+
+Then in `.gitlab/ci/rules.gitlab-ci.yml`, we can reuse the pipeline names for simple
+and understandable SSoT job rules. For example:
+
+```yaml
+.rules_dev:
+  rules:
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE =~ /^MR pipeline.*/'
+    - if: '$DOCS_PROJECT_PIPELINE_TYPE == "Cleanup chores pipeline"'
+```
+
+With this configuration, any job with `extends: .rules_dev` added to it can run for
+MR pipelines and Cleanup chores pipelines.
 
 ### Rebuild the docs site Docker images
 
