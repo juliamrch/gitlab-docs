@@ -649,6 +649,8 @@ sections:
             doc_url: 'ee/administration/analytics.html'
           - doc_title: Consul
             doc_url: 'ee/administration/consul.html'
+          - doc_title: Cron
+            doc_url: 'ee/topics/cron/'
           - doc_title: Environment variables
             doc_url: 'ee/administration/environment_variables.html'
           - doc_title: File hooks
@@ -886,6 +888,8 @@ sections:
             docs:
               - doc_title: Container registry
                 doc_url: 'ee/administration/packages/container_registry.html'
+              - doc_title: 'Container registry metadata database'
+                doc_url: 'ee/administration/packages/container_registry_metadata_database.html'
               - doc_title: Dependency Proxy
                 doc_url: 'ee/administration/packages/dependency_proxy.html'
           - doc_title: Web terminals
@@ -2015,6 +2019,8 @@ sections:
                     doc_url: 'ee/topics/autodevops/cicd_variables.html'
                   - doc_title: Multiple Kubernetes clusters
                     doc_url: 'ee/topics/autodevops/multiple_clusters_auto_devops.html'
+              - doc_title: Canary deployments
+                doc_url: 'ee/user/project/canary_deployments.html'
               - doc_title: Upgrade PostgreSQL
                 doc_url: 'ee/topics/autodevops/upgrading_postgresql.html'
               - doc_title: Prepare for deployment
@@ -2935,6 +2941,9 @@ sections:
                 doc_url: 'ee/api/group_repository_storage_moves.html'
               - doc_title: Groups
                 doc_url: 'ee/api/groups.html'
+                docs:
+                  - doc_title: Rate limit
+                    doc_url: 'ee/administration/settings/rate_limit_on_groups_api.html'
               - doc_title: Helm
                 doc_url: 'ee/api/packages/helm.html'
               - doc_title: Import
