@@ -3513,6 +3513,8 @@ sections:
                 docs:
                   - doc_title: Model registry
                     doc_url: 'ee/development/data_science/model_registry/'
+              - doc_title: Data Seeder
+                doc_url: 'ee/development/data_seeder.html'
               - doc_title: Database
                 doc_url: 'ee/development/database/'
                 docs:
