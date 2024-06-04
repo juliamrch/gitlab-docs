@@ -2665,6 +2665,8 @@ sections:
             doc_url: 'ee/user/gitlab_duo_chat_examples.html'
           - doc_title: Control Duo Chat availability
             doc_url: 'ee/user/gitlab_duo_chat_enable.html'
+          - doc_title: Duo Chat best practices
+            doc_url: 'ee/user/gitlab_duo_chat/best_practices.html'
           - doc_title: Duo Chat troubleshooting
             doc_url: 'ee/user/gitlab_duo_chat_troubleshooting.html'
   - section_title: Extend
