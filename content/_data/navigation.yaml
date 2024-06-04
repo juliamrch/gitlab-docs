@@ -3588,6 +3588,8 @@ sections:
                     doc_url: 'ee/development/database/post_deployment_migrations.html'
                   - doc_title: Query comments with Marginalia
                     doc_url: 'ee/development/database/database_query_comments.html'
+                  - doc_title: Query count limits
+                    doc_url: 'ee/development/database/query_count_limits.html'
                   - doc_title: Query performance guidelines
                     doc_url: 'ee/development/database/query_performance.html'
                   - doc_title: Query Recorder
