@@ -2814,6 +2814,8 @@ sections:
             doc_url: 'ee/user/project/integrations/unify_circuit.html'
           - doc_title: Webex Teams
             doc_url: 'ee/user/project/integrations/webex_teams.html'
+          - doc_title: Zoekt
+            doc_url: 'ee/integration/exact_code_search/zoekt.html'
       - category_title: Webhooks
         category_url: 'ee/user/project/integrations/webhooks.html'
         docs:
