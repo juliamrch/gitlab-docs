@@ -3,7 +3,7 @@
 ###############################################
 
 default:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/base:alpine-3.20-ruby-3.2.4-d338fdf3
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/base:alpine-3.20-ruby-3.2.4-c26749eb
   tags:
     - gitlab-org
 
