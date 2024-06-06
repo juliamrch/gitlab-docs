@@ -1373,8 +1373,6 @@ sections:
             doc_url: 'ee/user/project/project_topics.html'
           - doc_title: Code intelligence
             doc_url: 'ee/user/project/code_intelligence.html'
-          - doc_title: File finder
-            doc_url: 'ee/user/project/repository/file_finder.html'
           - doc_title: Import and migrate
             doc_url: 'ee/user/project/import/'
             docs:
@@ -1603,6 +1601,21 @@ sections:
                     doc_url: 'ee/user/project/repository/branches/default.html'
                   - doc_title: Protected branches
                     doc_url: 'ee/user/project/protected_branches.html'
+              - doc_title: File management
+                doc_url: 'ee/user/project/repository/files/'
+                docs:
+                  - doc_title: File Blame
+                    doc_url: 'ee/user/project/repository/git_blame.html'
+                  - doc_title: File History
+                    doc_url: 'ee/user/project/repository/git_history.html'
+                  - doc_title: GeoJSON files
+                    doc_url: 'ee/user/project/repository/geojson.html'
+                  - doc_title: Git attributes
+                    doc_url: 'ee/user/project/git_attributes.html'
+                  - doc_title: Jupyter notebook files
+                    doc_url: 'ee/user/project/repository/jupyter_notebooks/'
+                  - doc_title: Syntax highlighting
+                    doc_url: 'ee/user/project/highlighting.html'
               - doc_title: Forks
                 doc_url: 'ee/user/project/repository/forking_workflow.html'
               - doc_title: Mirroring
@@ -1637,20 +1650,10 @@ sections:
                     doc_url: 'ee/user/project/protected_tags.html'
               - doc_title: Changelogs
                 doc_url: 'ee/user/project/changelogs.html'
-              - doc_title: File Blame
-                doc_url: 'ee/user/project/repository/git_blame.html'
-              - doc_title: File History
-                doc_url: 'ee/user/project/repository/git_history.html'
               - doc_title: Snippets
                 doc_url: 'ee/user/snippets.html'
-              - doc_title: GeoJSON files
-                doc_url: 'ee/user/project/repository/geojson.html'
-              - doc_title: Git attributes
-                doc_url: 'ee/user/project/git_attributes.html'
               - doc_title: Locked files
                 doc_url: 'ee/user/project/file_lock.html'
-              - doc_title: Jupyter notebook files
-                doc_url: 'ee/user/project/repository/jupyter_notebooks/'
               - doc_title: Machine learning model experiments
                 doc_url: 'ee/user/project/ml/experiment_tracking/'
                 docs:
@@ -1669,8 +1672,6 @@ sections:
                     doc_url: 'ee/user/project/repository/signed_commits/x509.html'
                   - doc_title: X.509 signatures Rake task
                     doc_url: 'ee/raketasks/x509_signatures.html'
-              - doc_title: Syntax highlighting
-                doc_url: 'ee/user/project/highlighting.html'
               - doc_title: Web Editor
                 doc_url: 'ee/user/project/repository/web_editor.html'
               - doc_title: Web IDE
