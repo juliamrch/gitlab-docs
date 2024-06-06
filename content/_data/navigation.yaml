@@ -1397,6 +1397,13 @@ sections:
                     doc_url: 'ee/administration/raketasks/github_import.html'
               - doc_title: GitLab (direct transfer)
                 doc_url: 'ee/user/group/import/'
+                docs:
+                  - doc_title: Migrate groups and projects
+                    doc_url: 'ee/user/group/import/direct_transfer_migrations.html'
+                  - doc_title: Migrated items
+                    doc_url: 'ee/user/group/import/migrated_items.html'
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/user/group/import/troubleshooting.html'
               - doc_title: GitLab (file export)
                 doc_url: 'ee/user/project/settings/import_export.html'
                 docs:
