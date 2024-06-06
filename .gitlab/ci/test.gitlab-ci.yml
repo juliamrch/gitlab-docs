@@ -283,13 +283,13 @@ test_unlinked_images:
     - .rules_chores
     - .bundle
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.20-ruby-3.2.4-d338fdf3
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-markdown:alpine-3.20-vale-3.4.2-markdownlint2-0.13.0-lychee-0.15.1
   needs: []
   before_script: []
   dependencies: []
   script:
-    - apk add jq
-    - bundle config set --local path 'vendor/bundle'  # Install dependencies into ./vendor/bundle
+    - apk add build-base curl jq libffi-dev ruby-dev
+    - gem install bundler --no-document
     - bundle install
     - bundle exec rake default
     - cp tasks/unlinked-images.sh ../gitlab/unlinked-images.sh
