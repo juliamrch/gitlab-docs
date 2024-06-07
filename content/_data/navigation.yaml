@@ -3084,6 +3084,8 @@ sections:
                 doc_url: 'ee/api/protected_environments.html'
               - doc_title: Group-level protected environments
                 doc_url: 'ee/api/group_protected_environments.html'
+              - doc_title: Protected packages
+                doc_url: 'ee/api/project_packages_protection_rules.html'
               - doc_title: Protected tags
                 doc_url: 'ee/api/protected_tags.html'
               - doc_title: PyPI
