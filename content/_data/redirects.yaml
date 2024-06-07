@@ -1450,3 +1450,27 @@ redirects:
   - from: /ee/topics/git/cherry_picking.html
     to: /ee/user/project/merge_requests/cherry_pick_changes.html
     remove_date: 2025-02-14
+  - from: /ee/ci/runners/saas/linux_saas_runner.html
+    to: /ee/ci/runners/hosted_runners/linux.html
+    remove_date: 2025-03-01
+  - from: /ee/ci/runners/saas/gpu_saas_runner.html
+    to: /ee/ci/runners/hosted_runners/gpu_enabled.html
+    remove_date: 2025-03-01
+  - from: /ee/ci/runners/saas/macos_saas_runner.html
+    to: /ee/ci/runners/hosted_runners/macos.html
+    remove_date: 2025-03-01
+  - from: /ee/ci/runners/saas/windows_saas_runner.html
+    to: /ee/ci/runners/hosted_runners/windows.html
+    remove_date: 2025-03-01
+  - from: /ee/architecture/blueprints/new_diffs/index.html
+    to: /ee/architecture/blueprints/rapid_diffs/index.html
+    remove_date: 2025-03-06
+  - from: /ee/architecture/blueprints/new_diffs/
+    to: /ee/architecture/blueprints/rapid_diffs/index.html
+    remove_date: 2025-03-06
+  - from: /ee/architecture/blueprints/new_diffs/features.html
+    to: /ee/architecture/blueprints/rapid_diffs/features.html
+    remove_date: 2025-03-06
+  - from: /ee/topics/data_seeder.html
+    to: /ee/development/data_seeder.html
+    remove_date: 2025-03-03
