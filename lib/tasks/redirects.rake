@@ -31,7 +31,7 @@ namespace :docs do
   task :clean_redirects do
     redirects_yaml = "#{task_helpers.project_root}/content/_data/redirects.yaml"
     today = Time.now.utc.to_date
-    mr_description = "Monthly cleanup of docs redirects.</br><p>See https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks</p></br></hr></br><p>_Created automatically: https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/raketasks.md#clean-up-redirects_</p>"
+    mr_description = "Monthly cleanup of docs redirects.</br><p>See https://about.gitlab.com/handbook/product/ux/technical-writing/#regularly-scheduled-tasks</p></br></hr></br><p><em>Created automatically: https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/doc/raketasks.md#clean-up-redirects</em></p>"
     redirects_branch = "docs-clean-redirects-#{today}"
     commit_message = "Update docs redirects #{today}"
 
