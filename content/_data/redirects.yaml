@@ -1423,8 +1423,8 @@ redirects:
   - from: /ee/user/application_security/dast/browser_based.html
     to: /ee/user/application_security/dast/browser/index.html
     remove_date: 2025-02-16
-  - from: /ee/user/application_security/secret_detection/pre_receive.html
-    to: /ee/user/application_security/secret_detection/pre_receive/index.html
+  - from: /ee/user/application_security/secret_detection/secret_push_protection.html
+    to: /ee/user/application_security/secret_detection/secret_push_protection/index.html
     remove_date: 2025-02-14
   - from: /ee/user/project/repository/code_suggestions/self_managed.html
     to: /ee/user/project/repository/code_suggestions/index.html
