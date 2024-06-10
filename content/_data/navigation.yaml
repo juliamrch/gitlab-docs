@@ -2149,10 +2149,15 @@ sections:
               - doc_title: Pipeline secret detection
                 doc_url: 'ee/user/application_security/secret_detection/pipeline/'
                 docs:
+                  - doc_title: Detected secrets
+                    doc_url: 'ee/user/application_security/secret_detection/pipeline/detected_secrets.html'
                   - doc_title: Automatic response to leaked secrets
                     doc_url: 'ee/user/application_security/secret_detection/automatic_response.html'
               - doc_title: Secret push protection
                 doc_url: 'ee/user/application_security/secret_detection/secret_push_protection/'
+                docs:
+                  - doc_title: Detected secrets
+                    doc_url: 'ee/user/application_security/secret_detection/secret_push_protection/detected_secrets.html'
           - doc_title: Dynamic Application Security Testing (DAST)
             doc_url: 'ee/user/application_security/dast/'
             docs:
