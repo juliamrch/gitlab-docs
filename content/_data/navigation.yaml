@@ -1706,7 +1706,7 @@ sections:
                   - doc_title: Suggestions
                     doc_url: 'ee/user/project/merge_requests/reviews/suggestions.html'
                   - doc_title: GitLab Duo in merge requests
-                    doc_url: 'ee/user/project/merge_requests/ai_in_merge_requests.html'
+                    doc_url: 'ee/user/project/merge_requests/duo_in_merge_requests.html'
                   - doc_title: Approvals
                     doc_url: 'ee/user/project/merge_requests/approvals/'
                     docs:
@@ -2647,16 +2647,16 @@ sections:
       - category_title: Find your GitLab version
         category_url: 'ee/user/version.html'
   - section_title: GitLab Duo
-    section_url: 'ee/user/ai_features.html'
+    section_url: 'ee/user/gitlab_duo/'
     section_categories:
       - category_title: Control GitLab Duo availability
-        category_url: 'ee/user/ai_features_enable.html'
+        category_url: 'ee/user/gitlab_duo/turn_on_off.html'
       - category_title: GitLab Duo experiments
-        category_url: 'ee/user/ai_experiments.html'
-      - category_title: GitLab Duo examples
-        category_url: 'ee/user/gitlab_duo_examples.html'
+        category_url: 'ee/user/gitlab_duo/experiments.html'
+      - category_title: GitLab Duo use cases
+        category_url: 'ee/user/gitlab_duo/use_cases.html'
       - category_title: GitLab Duo data usage
-        category_url: 'ee/user/ai_data_usage.html'
+        category_url: 'ee/user/gitlab_duo/data_usage.html'
       - category_title: Code Suggestions
         category_url: 'ee/user/project/repository/code_suggestions/'
         docs:
@@ -2667,16 +2667,16 @@ sections:
           - doc_title: Repository X-Ray
             doc_url: 'ee/user/project/repository/code_suggestions/repository_xray.html'
       - category_title: GitLab Duo Chat
-        category_url: 'ee/user/gitlab_duo_chat.html'
+        category_url: 'ee/user/gitlab_duo_chat/'
         docs:
           - doc_title: Ask Duo Chat
-            doc_url: 'ee/user/gitlab_duo_chat_examples.html'
+            doc_url: 'ee/user/gitlab_duo_chat/examples.html'
           - doc_title: Control Duo Chat availability
-            doc_url: 'ee/user/gitlab_duo_chat_enable.html'
+            doc_url: 'ee/user/gitlab_duo_chat/turn_on_off.html'
           - doc_title: Duo Chat best practices
             doc_url: 'ee/user/gitlab_duo_chat/best_practices.html'
           - doc_title: Duo Chat troubleshooting
-            doc_url: 'ee/user/gitlab_duo_chat_troubleshooting.html'
+            doc_url: 'ee/user/gitlab_duo_chat/troubleshooting.html'
   - section_title: Extend
     section_url: 'ee/api/'
     section_categories:
