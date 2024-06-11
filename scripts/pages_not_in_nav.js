@@ -42,40 +42,46 @@ const getPageData = (filename) => {
 const lostPages = [];
 dataSources.forEach((source) => {
   glob.sync(`${source.content_dir}/**/*.md`).forEach((filename) => {
-    const pageData = getPageData(filename);
-    if (pageData.isRedirect || pageData.isDeprecated) {
-      return;
-    }
+    try {
+      const pageData = getPageData(filename);
+      if (pageData.isRedirect || pageData.isDeprecated) {
+        return;
+      }
 
-    // Convert the markdown filepath into a string that matches the URL path on the website.
-    const path =
-      source.items_root.replaceAll('/', '') +
-      filename
-        .replace(source.content_dir, '')
-        .replace(source, '')
-        .replace('index.md', '')
-        .replace('.md', '.html');
+      // Convert the markdown filepath into a string that matches the URL path on the website.
+      const path =
+        source.items_root.replaceAll('/', '') +
+        filename
+          .replace(source.content_dir, '')
+          .replace(source, '')
+          .replace('index.md', '')
+          .replace('.md', '.html');
 
-    if (
-      // Include pages that are not in the nav.
-      !nav.includes(path) &&
-      // Exclude sections that are intentionally not in the nav. Don't add a leading `/` if path is at the root of the site.
-      // For example, `ee/development/` and not `/ee/development/`.
-      !path.includes('/architecture/') &&
-      !path.match(/\/user\/application_security\/dast\/browser\/checks\/\w+/) &&
-      !path.match(/\/user\/application_security\/api_security_testing\/checks\/\w+/) &&
-      !path.includes('/legal/') &&
-      !path.includes('/drawers/') &&
-      !path.includes('/adr/') &&
-      !path.includes('charts/development/') &&
-      !path.includes('ee/development/') &&
-      !path.includes('omnibus/development/')
-    ) {
-      lostPages.push({
-        url: `https://docs.gitlab.com/${path}`,
-        stage: pageData.stage,
-        group: pageData.group,
-      });
+      if (
+        // Include pages that are not in the nav.
+        !nav.includes(path) &&
+        // Exclude sections that are intentionally not in the nav. Don't add a leading `/` if path is at the root of the site.
+        // For example, `ee/development/` and not `/ee/development/`.
+        !path.includes('/architecture/') &&
+        !path.match(/\/user\/application_security\/dast\/browser\/checks\/\w+/) &&
+        !path.match(/\/user\/application_security\/api_security_testing\/checks\/\w+/) &&
+        !path.includes('/legal/') &&
+        !path.includes('/drawers/') &&
+        !path.includes('/adr/') &&
+        !path.includes('charts/development/') &&
+        !path.includes('ee/development/') &&
+        !path.includes('omnibus/development/')
+      ) {
+        lostPages.push({
+          url: `https://docs.gitlab.com/${path}`,
+          stage: pageData.stage,
+          group: pageData.group,
+        });
+      }
+    } catch (error) {
+      console.error(
+        `ERROR: skipping '${filename}' because of error: '${error}'\nFix '${filename}' and try again.\n`,
+      );
     }
   });
 });
