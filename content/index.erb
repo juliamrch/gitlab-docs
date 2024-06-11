@@ -42,7 +42,7 @@ title: GitLab Documentation
               <% if tab[:refs] %>
                 <% tab[:refs].each do |ref| %>
                   <% item = @items.find { |i| i.identifier == ref } %>
-                  <% if item %>
+                  <% unless item[:title].empty? %>
                     <li>
                       <h3 class="gl-font-sm gl-font-weight-normal"><a href="<%= item.path %>"><%= item[:title] %></a></h3>
                       <p class="gl-display-none gl-md-display-block gl-font-sm gl-text-gray-700 gl-line-height-20 gl-mb-0"><%= item[:description] %></p>
