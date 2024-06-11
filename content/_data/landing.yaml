@@ -13,7 +13,7 @@ quickLinks:
 sectionTabs:
   - title: Use GitLab
     refs:
-      - '/ee/user/ai_features.md'
+      - '/ee/user/gitlab_duo/index.md'
       - '/ee/topics/set_up_organization.md'
       - '/ee/user/project/organize_work_with_projects.md'
       - '/ee/topics/plan_and_track.md'
