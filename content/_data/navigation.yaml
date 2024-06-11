@@ -651,6 +651,8 @@ sections:
             doc_url: 'ee/administration/consul.html'
           - doc_title: Cron
             doc_url: 'ee/topics/cron/'
+          - doc_title: Custom HTML header tags
+            doc_url: 'ee/administration/custom_html_header_tags.html'
           - doc_title: Environment variables
             doc_url: 'ee/administration/environment_variables.html'
           - doc_title: File hooks
@@ -1604,6 +1606,8 @@ sections:
               - doc_title: File management
                 doc_url: 'ee/user/project/repository/files/'
                 docs:
+                  - doc_title: Explain code
+                    doc_url: 'ee/user/project/repository/code_explain.html'
                   - doc_title: File Blame
                     doc_url: 'ee/user/project/repository/git_blame.html'
                   - doc_title: File History
@@ -1670,6 +1674,8 @@ sections:
                     doc_url: 'ee/user/project/repository/signed_commits/ssh.html'
                   - doc_title: Sign commits and tags with X.509
                     doc_url: 'ee/user/project/repository/signed_commits/x509.html'
+                  - doc_title: Signed commits from the GitLab UI
+                    doc_url: 'ee/user/project/repository/signed_commits/web_commits.html'
                   - doc_title: X.509 signatures Rake task
                     doc_url: 'ee/raketasks/x509_signatures.html'
               - doc_title: Web Editor
@@ -1886,6 +1892,8 @@ sections:
                 doc_url: 'ee/ci/runners/long_polling.html'
               - doc_title: Scale a fleet of runners
                 doc_url: 'runner/fleet_scaling/'
+              - doc_title: Fleeting library
+                doc_url: 'runner/fleet_scaling/fleeting.html'
               - doc_title: Runner Fleet Dashboard
                 doc_url: 'ee/ci/runners/runner_fleet_dashboard.html'
           - doc_title: Pipelines
@@ -2356,6 +2364,8 @@ sections:
                     doc_url: 'ee/user/packages/container_registry/build_and_push_images.html'
                   - doc_title: Delete images
                     doc_url: 'ee/user/packages/container_registry/delete_container_registry_images.html'
+                  - doc_title: Protected container repositories
+                    doc_url: 'ee/user/packages/container_registry/container_protection_rules.html'
                   - doc_title: Reduce container registry storage
                     doc_url: 'ee/user/packages/container_registry/reduce_container_registry_storage.html'
                   - doc_title: Reduce container registry data transfers
