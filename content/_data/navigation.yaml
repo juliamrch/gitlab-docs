@@ -2145,8 +2145,11 @@ sections:
                 doc_url: 'ee/user/application_security/sast/rules.html'
               - doc_title: Customize rulesets
                 doc_url: 'ee/user/application_security/sast/customize_rulesets.html'
-              - doc_title: SAST Analyzers
+              - doc_title: SAST analyzers
                 doc_url: 'ee/user/application_security/sast/analyzers.html'
+                docs:
+                  - doc_title: GitLab Advanced SAST analyzer
+                    doc_url: 'ee/user/application_security/sast/gitlab_advanced_sast.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/user/application_security/sast/troubleshooting.html'
           - doc_title: Infrastructure as Code (IaC) Scanning
