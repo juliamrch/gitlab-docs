@@ -23,6 +23,7 @@ class IntroducedInFilter < Nanoc::Filter
       # ...followed by "GitLab"
       next unless content.match?(%r{(<a href="[^"]+">)?(
         introduced|
+        added|
         enabled|
         (re)?moved|
         changed|
