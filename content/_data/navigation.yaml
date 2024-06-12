@@ -193,6 +193,8 @@ sections:
               - doc_title: Install
                 doc_url: 'charts/installation/'
                 docs:
+                  - doc_title: Verify CNG images
+                    doc_url: 'charts/installation/verify_cng_images.html'
                   - doc_title: Test the GitLab chart on GKE or EKS
                     doc_url: 'charts/quickstart/'
                   - doc_title: Install prerequisites
@@ -280,8 +282,14 @@ sections:
                         doc_url: 'charts/advanced/custom-images/'
                       - doc_title: External database
                         doc_url: 'charts/advanced/external-db/'
+                        docs:
+                          - doc_title: Set up external PostgreSQL database
+                            doc_url: 'charts/advanced/external-db/external-omnibus-psql.html'
                       - doc_title: External Gitaly
                         doc_url: 'charts/advanced/external-gitaly/'
+                        docs:
+                          - doc_title: Set up external Gitaly
+                            doc_url: 'charts/advanced/external-gitaly/external-omnibus-gitaly.html'
                       - doc_title: External GitLab Pages
                         doc_url: 'charts/advanced/external-gitlab-pages/'
                       - doc_title: External Mattermost
@@ -290,8 +298,20 @@ sections:
                         doc_url: 'charts/advanced/external-nginx/'
                       - doc_title: External object storage
                         doc_url: 'charts/advanced/external-object-storage/'
+                        docs:
+                          - doc_title: Configure MinIO
+                            doc_url: 'charts/advanced/external-object-storage/minio.html'
+                          - doc_title: Configure Workload Identity Federation
+                            doc_url: 'charts/advanced/external-object-storage/gke-workload-identity.html'
+                          - doc_title: Configure Azure MinIO gateway
+                            doc_url: 'charts/advanced/external-object-storage/azure-minio-gateway.html'
+                          - doc_title: Configure IAM roles for AWS
+                            doc_url: 'charts/advanced/external-object-storage/aws-iam-roles.html'
                       - doc_title: External Redis
                         doc_url: 'charts/advanced/external-redis/'
+                        docs:
+                          - doc_title: Set up external Redis
+                            doc_url: 'charts/advanced/external-redis/external-omnibus-redis.html'
                       - doc_title: FIPS-compliant images
                         doc_url: 'charts/advanced/fips/'
                       - doc_title: Geo
