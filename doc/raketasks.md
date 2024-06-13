@@ -174,18 +174,18 @@ Run this command to check for pages that are missing from the global navigation:
 make check-pages-not-in-nav
 ```
 
-This invokes a [Node.js script](../scripts/pages_not_in_nav.js) that outputs JSON containing matching page URL paths and the associated Section and Group to the console.
+This invokes a [Node.js script](../scripts/pages_not_in_nav.js) that outputs a list containing URL paths for pages
+that aren't in the global navigation. The script excludes:
 
-Before running the script, you may want to run `make update-all-docs-projects` to pull down the latest content from each source project.
+- [Redirected pages](https://docs.gitlab.com/ee/development/documentation/redirects.html).
+- Pages for [deprecated pages or removed features](https://docs.gitlab.com/ee/development/documentation/versions.html#deprecations-and-removals).
+- Pages with `ignore_in_report: true` in their metadata.
 
-You can use `jq` on the command line to extract specific fields. For example, to return a list of only URLs:
+To see the details of excluded pages, run the script with the `VERBOSE` environment variable set to `true`. For example:
 
 ```shell
-make check-pages-not-in-nav | jq '.[] | .url'
+VERBOSE=true make check-pages-not-in-nav
 ```
 
-The script intentionally omits:
-
-- Sections referenced in the ["Pages you don’t need to add"](https://docs.gitlab.com/ee/development/documentation/site_architecture/global_nav.html#pages-you-dont-need-to-add) section of our docs.
-- Redirects.
-- Markdown files that are not compiled to HTML pages (see the `ignore` paths in Nanoc's [Rules](../Rules) file).
+Before running the script, you might want to run `make update-all-docs-projects` to pull down the latest content from
+each source project.

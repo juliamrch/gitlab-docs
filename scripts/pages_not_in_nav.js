@@ -10,7 +10,6 @@
 const fs = require('fs');
 const glob = require('glob');
 const yaml = require('js-yaml');
-const fm = require('front-matter');
 
 // Load site data sources from nanoc config.
 const nanocConfig = yaml.load(fs.readFileSync('nanoc.yaml', 'utf8'));
@@ -33,18 +32,37 @@ const getPageData = (filename) => {
     filename,
     isRedirect: contents.includes('redirect_to'),
     isDeprecated: title.includes('(deprecated)') || title.includes('(removed)'),
-    stage: fm(contents).attributes.stage,
-    group: fm(contents).attributes.group,
+    isIgnored: contents.includes('ignore_in_report'),
   };
 };
 
 // Loop through each data source's markdown files.
-const lostPages = [];
+const infoPrefix = '\x1b[32mINFO:\x1b[0m';
+const warnPrefix = '\x1b[33mWARN:\x1b[0m';
+const errorPrefix = '\x1b[31mERROR:\x1b[0m';
+const italicsText = '\u001b[3m';
+const resetText = '\x1b[0m';
+
 dataSources.forEach((source) => {
   glob.sync(`${source.content_dir}/**/*.md`).forEach((filename) => {
     try {
       const pageData = getPageData(filename);
-      if (pageData.isRedirect || pageData.isDeprecated) {
+      if (pageData.isRedirect) {
+        if (process.env.VERBOSE) {
+          console.info(`${infoPrefix} skipping redirected page: ${filename}.`);
+        }
+        return;
+      }
+      if (pageData.isDeprecated) {
+        if (process.env.VERBOSE) {
+          console.info(`${infoPrefix} skipping deprecated page: ${filename}.`);
+        }
+        return;
+      }
+      if (pageData.isIgnored) {
+        if (process.env.VERBOSE) {
+          console.info(`${infoPrefix} skipping ignored page:    ${filename}.`);
+        }
         return;
       }
 
@@ -72,19 +90,14 @@ dataSources.forEach((source) => {
         !path.includes('ee/development/') &&
         !path.includes('omnibus/development/')
       ) {
-        lostPages.push({
-          url: `https://docs.gitlab.com/${path}`,
-          stage: pageData.stage,
-          group: pageData.group,
-        });
+        console.warn(
+          `${warnPrefix} page at ${italicsText}https://docs.gitlab.com/${path}${resetText} is missing from global navigation!`,
+        );
       }
     } catch (error) {
       console.error(
-        `ERROR: skipping '${filename}' because of error: '${error}'\nFix '${filename}' and try again.\n`,
+        `${errorPrefix} skipping '${filename}' because of error: '${error}'\nFix '${filename}' and try again.\n`,
       );
     }
   });
 });
-
-// Return results as JSON.
-console.log(JSON.stringify(lostPages));
