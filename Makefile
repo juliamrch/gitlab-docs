@@ -261,7 +261,8 @@ check-global-navigation:
 	@scripts/check-navigation.sh
 
 check-pages-not-in-nav:
-	@scripts/pages_not_in_nav.js | jq
+	@printf "\n$(INFO)INFO: Checking for pages missing from global navigation...$(END)\n"
+	@scripts/pages_not_in_nav.js
 
 check-danger:
 	@printf "\n$(INFO)INFO: Checking for Danger errors and warnings...$(END)\n"
