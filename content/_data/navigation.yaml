@@ -1146,6 +1146,8 @@ sections:
                 doc_url: 'ee/security/hardening_configuration_recommendations.html'
               - doc_title: Operating system recommendations
                 doc_url: 'ee/security/hardening_operating_system_recommendations.html'
+              - doc_title: NIST 800-53 compliance
+                doc_url: 'ee/security/hardening_nist_800_53.html'
       - category_title: Administer users
         category_url: 'ee/user/profile/account/create_accounts.html'
         docs:
