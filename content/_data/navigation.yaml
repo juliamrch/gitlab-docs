@@ -1904,8 +1904,10 @@ sections:
                 doc_url: 'runner/fleet_scaling/'
               - doc_title: Fleeting library
                 doc_url: 'runner/fleet_scaling/fleeting.html'
-              - doc_title: Runner Fleet Dashboard
+              - doc_title: Runner fleet dashboard
                 doc_url: 'ee/ci/runners/runner_fleet_dashboard.html'
+              - doc_title: Runner fleet dashboard for groups
+                doc_url: 'ee/ci/runners/runner_fleet_dashboard_groups.html'
           - doc_title: Pipelines
             doc_url: 'ee/ci/pipelines/'
             docs:
