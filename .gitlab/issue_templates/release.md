@@ -20,8 +20,8 @@ The following terms are used throughout this document:
 ### On Monday the week of the release
 
 1. [ ] Cross-link to the main MR for the release post: `<add link here>`
-   ([Need help finding the MR?](https://gitlab.com/gitlab-com/www-gitlab-com/-/merge_requests?scope=all&state=opened&label_name%5B%5D=release%20post&label_name%5B%5D=blog%20post))
-1. [ ] In this issue, create separate _threads_ for the retrospective, and add items as they appear:
+   ([Need help finding the MR?](https://gitlab.com/gitlab-com/www-gitlab-com/-/merge_requests?scope=all&state=opened&label_name%5B%5D=release%20post&label_name%5B%5D=release))
+1. [ ] In this issue, create separate **threads** for the retrospective, and add items as they appear:
 
    ```markdown
    ## :+1: What went well this release?
@@ -45,9 +45,6 @@ The following terms are used throughout this document:
 1. [Create a stable branch and Docker image for the release](#create-a-stable-branch-and-docker-image-for-the-release).
 
 #### Create a stable branch and Docker image for the release
-
-> Note: an [issue exists](https://gitlab.com/gitlab-org/release-tools/-/issues/533)
-> to create the stable branch automatically.
 
 1. [ ] In the root path of the `gitlab-docs` repository:
 
@@ -78,6 +75,7 @@ The following terms are used throughout this document:
    - A branch `X.Y` for the release is created.
    - A new `X.Y.Dockerfile` is created and automatically committed.
    - The new branch is pushed.
+   - Do not create an MR for this step. This file is only used when a stable branch pipeline is run.
 
 ### On the Thursday of the release, or the day after
 
