@@ -220,7 +220,8 @@ shellcheck:
     - .rules_chores
   script:
     - git clone --depth=1 $REPO_URL
-    - lychee --config lychee.toml --include-fragments $DOCS_PATH
+    # Only check https and http links. Don't check links to local files or mailto links
+    - lychee --config lychee.toml --include-fragments --scheme https --scheme http $DOCS_PATH
 
 test_external_links_gitlab:
   extends:

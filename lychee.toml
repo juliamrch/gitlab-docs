@@ -8,8 +8,6 @@ accept = [
 
 # Exclude links
 exclude = [
-  # Exclude internal links
-  'file:///',
   # Exclude links from these domains
   'https://admin.google.com',
   'https://advisories.gitlab.com',
