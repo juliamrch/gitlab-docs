@@ -3310,6 +3310,8 @@ sections:
                 docs:
                   - doc_title: Duo Chat
                     doc_url: 'ee/development/ai_features/duo_chat.html'
+                  - doc_title: Embeddings
+                    doc_url: 'ee/development/ai_features/embeddings.html'
                   - doc_title: Working with prompts
                     doc_url: 'ee/development/ai_features/prompts.html'
                   - doc_title: Glossary
