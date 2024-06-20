@@ -235,6 +235,8 @@ sections:
                 docs:
                   - doc_title: Globals
                     doc_url: 'charts/charts/globals.html'
+                  - doc_title: certmanager-issuer chart
+                    doc_url: 'charts/charts/certmanager-issuer/'
                   - doc_title: GitLab subcharts
                     doc_url: 'charts/charts/gitlab/'
                     docs:
@@ -264,17 +266,26 @@ sections:
                         doc_url: 'charts/charts/gitlab/toolbox/'
                       - doc_title: Webservice chart
                         doc_url: 'charts/charts/gitlab/webservice/'
+                  - doc_title: HAProxy chart
+                    doc_url: 'charts/charts/haproxy/'
                   - doc_title: Minio chart
                     doc_url: 'charts/charts/minio/'
-                  - doc_title: Nginx chart
+                  - doc_title: NGINX chart
                     doc_url: 'charts/charts/nginx/'
+                    docs:
+                      - doc_title: NGINX chart fork
+                        doc_url: 'charts/charts/nginx/fork.html'
                   - doc_title: Registry chart
                     doc_url: 'charts/charts/registry/'
                     docs:
                       - doc_title: Metadata database
                         doc_url: 'charts/charts/registry/metadata_database.html'
+                  - doc_title: Traefik chart
+                    doc_url: 'charts/charts/traefik/'
                   - doc_title: Zoekt chart
                     doc_url: 'charts/charts/gitlab/gitlab-zoekt/'
+                  - doc_title: shared-secrets job
+                    doc_url: 'charts/charts/shared-secrets.html'
                   - doc_title: Advanced
                     doc_url: 'charts/advanced/'
                     docs:
