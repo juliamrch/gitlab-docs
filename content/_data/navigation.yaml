@@ -1201,7 +1201,6 @@ sections:
           - doc_title: Rake tasks
             doc_url: 'ee/raketasks/user_management.html'
 
-
       # GitLab Dedicated
 
       - category_title: GitLab Dedicated
@@ -1762,6 +1761,8 @@ sections:
                     doc_url: 'ee/user/project/merge_requests/cherry_pick_changes.html'
                   - doc_title: Reverting changes
                     doc_url: 'ee/user/project/merge_requests/revert_changes.html'
+                  - doc_title: Stacked diffs
+                    doc_url: 'ee/user/project/merge_requests/stacked_diffs.html'
               - doc_title: Export merge requests to CSV
                 doc_url: 'ee/user/project/merge_requests/csv_export.html'
               - doc_title: Troubleshooting
