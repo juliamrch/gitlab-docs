@@ -4240,6 +4240,11 @@ sections:
                 doc_url: 'ee/solutions/cloud/aws/gitlab_single_box_on_aws.html'
               - doc_title: SRE considerations for Gitaly on AWS
                 doc_url: 'ee/solutions/cloud/aws/gitaly_sre_for_aws.html'
+      - category_title: Coding Languages and Frameworks
+        category_url: 'ee/solutions/languages/'
+        docs:
+          - doc_title: Solutions Index for Rust
+            doc_url: 'ee/solutions/languages/rust/'
 
   - section_title: About
     section_url: 'ee/devsecops.html'
