@@ -1585,9 +1585,6 @@ sections:
             doc_url: 'ee/tutorials/make_first_git_commit/'
           - doc_title: 'Clone a repository to your local machine'
             doc_url: 'ee/topics/git/clone.html'
-            docs:
-              - doc_title: Use partial clones to reduce clone size
-                doc_url: 'ee/topics/git/partial_clone.html'
           - doc_title: Create a branch for your changes
             doc_url: 'ee/topics/git/branch.html'
           - doc_title: Add files and make changes
