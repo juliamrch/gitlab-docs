@@ -8,6 +8,8 @@ accept = [
 
 # Exclude links
 exclude = [
+  # Exclude anchor link at: <https://gitlab.com/gitlab-org/gitlab-docs/-/blob/01b865952a0e9176d5a11c718e32165d93b5b5f5/content/archives/index.md#L9>
+  '#offline-archives',
   # Exclude links from these domains
   'https://admin.google.com',
   'https://advisories.gitlab.com',
