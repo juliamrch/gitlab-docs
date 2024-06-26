@@ -1596,10 +1596,6 @@ sections:
             doc_url: 'ee/gitlab-basics/start-using-git.html'
           - doc_title: Rebase and force-push
             doc_url: 'ee/topics/git/git_rebase.html'
-          - doc_title: Feature branch workflow
-            doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
-          - doc_title: Push options
-            doc_url: 'ee/user/project/push_options.html'
           - doc_title: Troubleshooting
             doc_url: 'ee/topics/git/troubleshooting_git.html'
       - category_title: Manage your code
