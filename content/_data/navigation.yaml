@@ -1568,8 +1568,6 @@ sections:
             docs:
               - doc_title: AsciiDoc
                 doc_url: 'ee/user/asciidoc.html'
-              - doc_title: CSV files
-                doc_url: 'ee/user/project/repository/csv.html'
               - doc_title: Rich text editor
                 doc_url: 'ee/user/rich_text_editor.html'
           - doc_title: To-Do List
@@ -1622,16 +1620,18 @@ sections:
               - doc_title: File management
                 doc_url: 'ee/user/project/repository/files/'
                 docs:
+                  - doc_title: CSV files
+                    doc_url: 'ee/user/project/repository/files/csv.html'
                   - doc_title: Explain code
                     doc_url: 'ee/user/project/repository/code_explain.html'
                   - doc_title: File Blame
-                    doc_url: 'ee/user/project/repository/git_blame.html'
+                    doc_url: 'ee/user/project/repository/files/git_blame.html'
                   - doc_title: File History
-                    doc_url: 'ee/user/project/repository/git_history.html'
+                    doc_url: 'ee/user/project/repository/files/git_history.html'
                   - doc_title: GeoJSON files
                     doc_url: 'ee/user/project/repository/files/geojson.html'
                   - doc_title: Git attributes
-                    doc_url: 'ee/user/project/git_attributes.html'
+                    doc_url: 'ee/user/project/repository/files/git_attributes.html'
                   - doc_title: Jupyter notebook files
                     doc_url: 'ee/user/project/repository/files/jupyter_notebooks/'
                   - doc_title: Syntax highlighting
