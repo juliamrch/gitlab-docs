@@ -1639,7 +1639,7 @@ sections:
                   - doc_title: Jupyter notebook files
                     doc_url: 'ee/user/project/repository/files/jupyter_notebooks/'
                   - doc_title: Syntax highlighting
-                    doc_url: 'ee/user/project/highlighting.html'
+                    doc_url: 'ee/user/project/repository/files/highlighting.html'
               - doc_title: Forks
                 doc_url: 'ee/user/project/repository/forking_workflow.html'
               - doc_title: Mirroring
