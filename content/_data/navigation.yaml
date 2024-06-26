@@ -577,37 +577,8 @@ sections:
       - category_title: Authentication and authorization
         category_url: 'ee/administration/auth/'
         docs:
-          - doc_title: AliCloud
-            doc_url: 'ee/integration/alicloud.html'
-          - doc_title: Atlassian
-            doc_url: 'ee/administration/auth/atlassian.html'
-          - doc_title: Atlassian Crowd (deprecated)
-            doc_url: 'ee/administration/auth/crowd.html'
-          - doc_title: Auth0
-            doc_url: 'ee/integration/auth0.html'
-          - doc_title: AWS Cognito
-            doc_url: 'ee/administration/auth/cognito.html'
-          - doc_title: Azure
-            doc_url: 'ee/integration/azure.html'
-          - doc_title: Bitbucket Cloud
-            doc_url: 'ee/integration/bitbucket.html'
           - doc_title: ClickHouse
             doc_url: 'ee/integration/clickhouse.html'
-          - doc_title: Generic OAuth2
-            doc_url: 'ee/integration/oauth2_generic.html'
-          - doc_title: GitHub
-            doc_url: 'ee/integration/github.html'
-          - doc_title: GitLab.com
-            doc_url: 'ee/integration/gitlab.html'
-          - doc_title: Google
-            doc_url: 'ee/integration/google.html'
-          - doc_title: JWT
-            doc_url: 'ee/administration/auth/jwt.html'
-          - doc_title: Kerberos
-            doc_url: 'ee/integration/kerberos.html'
-            docs:
-              - doc_title: Troubleshooting
-                doc_url: 'ee/integration/kerberos_troubleshooting.html'
           - doc_title: LDAP
             doc_url: 'ee/administration/auth/ldap/'
             docs:
@@ -623,19 +594,49 @@ sections:
             doc_url: 'ee/integration/oauth_provider.html'
           - doc_title: OmniAuth
             doc_url: 'ee/integration/omniauth.html'
+            docs:
+              - doc_title: AliCloud
+                doc_url: 'ee/integration/alicloud.html'
+              - doc_title: Atlassian
+                doc_url: 'ee/administration/auth/atlassian.html'
+              - doc_title: Atlassian Crowd (deprecated)
+                doc_url: 'ee/administration/auth/crowd.html'
+              - doc_title: Auth0
+                doc_url: 'ee/integration/auth0.html'
+              - doc_title: AWS Cognito
+                doc_url: 'ee/administration/auth/cognito.html'
+              - doc_title: Azure
+                doc_url: 'ee/integration/azure.html'
+              - doc_title: Bitbucket Cloud
+                doc_url: 'ee/integration/bitbucket.html'
+              - doc_title: Generic OAuth2
+                doc_url: 'ee/integration/oauth2_generic.html'
+              - doc_title: GitHub
+                doc_url: 'ee/integration/github.html'
+              - doc_title: GitLab.com
+                doc_url: 'ee/integration/gitlab.html'
+              - doc_title: Google
+                doc_url: 'ee/integration/google.html'
+              - doc_title: JWT
+                doc_url: 'ee/administration/auth/jwt.html'
+              - doc_title: Kerberos
+                doc_url: 'ee/integration/kerberos.html'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/integration/kerberos_troubleshooting.html'
+              - doc_title: OpenID Connect OmniAuth
+                doc_url: 'ee/administration/auth/oidc.html'
+              - doc_title: Salesforce
+                doc_url: 'ee/integration/salesforce.html'
+              - doc_title: SAML
+                doc_url: 'ee/integration/saml.html'
+                docs:
+                  - doc_title: Configure SCIM
+                    doc_url: 'ee/administration/settings/scim_setup.html'
+              - doc_title: Shibboleth
+                doc_url: 'ee/integration/shibboleth.html'
           - doc_title: OpenID Connect identity
             doc_url: 'ee/integration/openid_connect_provider.html'
-          - doc_title: OpenID Connect OmniAuth
-            doc_url: 'ee/administration/auth/oidc.html'
-          - doc_title: Salesforce
-            doc_url: 'ee/integration/salesforce.html'
-          - doc_title: SAML
-            doc_url: 'ee/integration/saml.html'
-            docs:
-              - doc_title: Configure SCIM
-                doc_url: 'ee/administration/settings/scim_setup.html'
-          - doc_title: Shibboleth
-            doc_url: 'ee/integration/shibboleth.html'
           - doc_title: Smartcard
             doc_url: 'ee/administration/auth/smartcard.html'
           - doc_title: Test OIDC/OAuth in GitLab
