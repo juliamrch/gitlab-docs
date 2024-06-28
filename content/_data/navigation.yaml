@@ -4167,7 +4167,7 @@ sections:
                 doc_url: 'ee/development/documentation/topic_types/reference.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/development/documentation/topic_types/troubleshooting.html'
-              - doc_title: Getting Started
+              - doc_title: Getting started
                 doc_url: 'ee/development/documentation/topic_types/get_started.html'
               - doc_title: Tutorials
                 doc_url: 'ee/development/documentation/topic_types/tutorial.html'
