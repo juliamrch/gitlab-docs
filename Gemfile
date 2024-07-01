@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'nanoc', '~> 4.12.21'
+gem 'nanoc', '~> 4.13.0'
 gem 'rake', '~> 13.2.1'
 
 group :nanoc do
@@ -12,7 +12,7 @@ group :nanoc do
   gem 'gitlab_kramdown', '~> 0.28.0'
 
   # Needed to generate Sitemap
-  gem 'builder', '~> 3.2.4'
+  gem 'builder', '~> 3.3.0'
 
   # Needed to compile SCSS
   gem 'sass', '3.7.4'
@@ -31,5 +31,5 @@ group :test, :development do
 end
 
 group :development, :danger do
-  gem 'gitlab-dangerfiles', '~> 4.7.0', require: false
+  gem 'gitlab-dangerfiles', '~> 4.8.0', require: false
 end
