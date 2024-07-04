@@ -2322,6 +2322,8 @@ sections:
                 doc_url: 'ee/user/application_security/policies/scan-result-policies.html'
               - doc_title: 'Tutorial: Set up a merge request approval policy'
                 doc_url: 'ee/tutorials/scan_result_policy/'
+              - doc_title: Pipeline execution policy
+                doc_url: 'ee/user/application_security/policies/pipeline_execution_policies.html'
           - doc_title: Security scanner integration
             doc_url: 'ee/development/integrations/secure.html'
           - doc_title: Secure and Govern glossary
