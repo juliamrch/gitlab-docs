@@ -1548,6 +1548,8 @@ sections:
                 doc_url: 'ee/user/group/epics/linked_epics.html'
               - doc_title: Epic boards
                 doc_url: 'ee/user/group/epics/epic_boards.html'
+              - doc_title: Test a new look for epics
+                doc_url: 'ee/user/group/epics/epic_work_items.html'
           - doc_title: Roadmaps
             doc_url: 'ee/user/group/roadmap/'
           - doc_title: Planning hierarchies
