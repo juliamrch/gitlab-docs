@@ -1947,6 +1947,9 @@ sections:
                 doc_url: 'ee/ci/directed_acyclic_graph/'
               - doc_title: Downstream pipelines
                 doc_url: 'ee/ci/pipelines/downstream_pipelines.html'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/ci/pipelines/downstream_pipelines_troubleshooting.html'
           - doc_title: Jobs
             doc_url: 'ee/ci/jobs/'
             docs:
