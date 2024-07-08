@@ -3718,6 +3718,8 @@ sections:
                         doc_url: 'ee/development/fe_guide/registry_architecture.html'
                       - doc_title: Source editor
                         doc_url: 'ee/development/fe_guide/source_editor.html'
+                      - doc_title: Storybook
+                        doc_url: 'ee/development/fe_guide/storybook.html'
                       - doc_title: Widgets
                         doc_url: 'ee/development/fe_guide/widgets.html'
                   - doc_title: Dark mode
