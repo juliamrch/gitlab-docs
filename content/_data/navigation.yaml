@@ -2118,6 +2118,8 @@ sections:
                 doc_url: 'ee/ci/runners/provision_runners_google_cloud.html'
               - doc_title: 'Tutorial: Set up the Google Cloud integration'
                 doc_url: 'ee/tutorials/set_up_gitlab_google_integration/'
+              - doc_title: 'Tutorial: Create a GitLab pipeline to push to Google Artifact Registry'
+                doc_url: 'ee/tutorials/create_gitlab_pipeline_push_to_google_artifact_registry/'
           - doc_title: External repository integrations
             doc_url: 'ee/ci/ci_cd_for_external_repos/'
             docs:
