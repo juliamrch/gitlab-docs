@@ -2604,28 +2604,20 @@ sections:
       - category_title: Analyze GitLab usage
         category_url: 'ee/user/analytics/'
         docs:
-          - doc_title: Analytics dashboards
-            doc_url: 'ee/user/analytics/analytics_dashboards.html'
-          - doc_title: CI/CD analytics
-            doc_url: 'ee/user/analytics/ci_cd_analytics.html'
-          - doc_title: Code review analytics
-            doc_url: 'ee/user/analytics/code_review_analytics.html'
-          - doc_title: Contribution analytics
-            doc_url: 'ee/user/group/contribution_analytics/'
-          - doc_title: Contributor analytics
-            doc_url: 'ee/user/analytics/contributor_analytics.html'
+          - doc_title: Value streams dashboard
+            doc_url: 'ee/user/analytics/value_streams_dashboard.html'
+          - doc_title: Value stream analytics
+            doc_url: 'ee/user/group/value_stream_analytics/'
           - doc_title: DevOps adoption by instance
             doc_url: 'ee/administration/analytics/dev_ops_reports.html'
           - doc_title: DevOps adoption by group
             doc_url: 'ee/user/group/devops_adoption/'
-          - doc_title: DORA metrics
-            doc_url: 'ee/user/analytics/dora_metrics.html'
+          - doc_title: Instance-level analytics
+            doc_url: 'ee/administration/analytics/'
+          - doc_title: Usage trends
+            doc_url: 'ee/administration/analytics/usage_trends.html'
           - doc_title: Insights
             doc_url: 'ee/user/project/insights/'
-          - doc_title: Issue analytics
-            doc_url: 'ee/user/group/issues_analytics/'
-          - doc_title: Merge request analytics
-            doc_url: 'ee/user/analytics/merge_request_analytics.html'
           - doc_title: Product analytics
             doc_url: 'ee/user/product_analytics/'
             docs:
@@ -2634,20 +2626,28 @@ sections:
                 docs:
                   - doc_title: Browser SDK
                     doc_url: 'ee/user/product_analytics/instrumentation/browser_sdk.html'
+          - doc_title: Analytics dashboards
+            doc_url: 'ee/user/analytics/analytics_dashboards.html'
+          - doc_title: Issue analytics
+            doc_url: 'ee/user/group/issues_analytics/'
+          - doc_title: Merge request analytics
+            doc_url: 'ee/user/analytics/merge_request_analytics.html'
           - doc_title: Productivity analytics
             doc_url: 'ee/user/analytics/productivity_analytics.html'
+          - doc_title: Code review analytics
+            doc_url: 'ee/user/analytics/code_review_analytics.html'
+          - doc_title: Contribution analytics
+            doc_url: 'ee/user/group/contribution_analytics/'
+          - doc_title: Contributor analytics
+            doc_url: 'ee/user/analytics/contributor_analytics.html'
           - doc_title: Repository analytics for projects
             doc_url: 'ee/user/analytics/repository_analytics.html'
           - doc_title: Repository analytics for groups
             doc_url: 'ee/user/group/repositories_analytics/'
-          - doc_title: Usage trends
-            doc_url: 'ee/administration/analytics/usage_trends.html'
-          - doc_title: Value stream analytics
-            doc_url: 'ee/user/group/value_stream_analytics/'
-          - doc_title: Value streams dashboard
-            doc_url: 'ee/user/analytics/value_streams_dashboard.html'
-          - doc_title: Instance-level analytics
-            doc_url: 'ee/administration/analytics/'
+          - doc_title: CI/CD analytics
+            doc_url: 'ee/user/analytics/ci_cd_analytics.html'
+          - doc_title: DORA metrics
+            doc_url: 'ee/user/analytics/dora_metrics.html'
           - doc_title: Metrics
             doc_url: 'ee/administration/monitoring/'
             docs:
