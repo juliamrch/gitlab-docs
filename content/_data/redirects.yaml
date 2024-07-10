@@ -1474,3 +1474,15 @@ redirects:
   - from: /ee/topics/data_seeder.html
     to: /ee/development/data_seeder.html
     remove_date: 2025-03-03
+  - from: /ee/user/project/settings/project_features_permissions.html
+    to: /ee/user/project/working_with_projects.html
+    remove_date: 2025-03-28
+  - from: /ee/user/project/integrations/google_artifact_registry.html
+    to: /ee/user/project/integrations/google_artifact_management.html
+    remove_date: 2025-04-03
+  - from: /ee/administration/geo/replication/troubleshooting.html
+    to: /ee/administration/geo/replication/troubleshooting/index.html
+    remove_date: 2025-03-19
+  - from: /ee/topics/git/lfs/migrate_to_git_lfs.html
+    to: /ee/topics/git/lfs/index.html
+    remove_date: 2025-03-28
