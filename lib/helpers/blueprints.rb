@@ -9,6 +9,10 @@ module Nanoc::Helpers
         blueprint_creation_date(i)
       end
 
+      blueprints.reject! do |blueprint|
+        !blueprint[:redirect_to].nil?
+      end
+
       blueprints.reverse
     end
 
