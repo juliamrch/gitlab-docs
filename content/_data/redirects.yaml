@@ -1486,3 +1486,6 @@ redirects:
   - from: /ee/topics/git/lfs/migrate_to_git_lfs.html
     to: /ee/topics/git/lfs/index.html
     remove_date: 2025-03-28
+  - from: /ee/topics/git/rollback_commits.html
+    to: /ee/topics/git/undo.html
+    remove_date: 2025-04-10
