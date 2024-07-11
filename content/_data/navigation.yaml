@@ -1354,6 +1354,9 @@ sections:
                 doc_url: 'ee/user/profile/account/delete_account.html'
           - doc_title: SSH keys
             doc_url: 'ee/user/ssh.html'
+            docs:
+              - doc_title: Troubleshooting
+                doc_url: 'ee/user/ssh_troubleshooting.html'
           - doc_title: GitLab.com settings
             doc_url: 'ee/user/gitlab_com/'
       - category_title: Organize work with projects
