@@ -2561,6 +2561,8 @@ sections:
       - category_title: Monitor application performance
         category_url: 'ee/operations/'
         docs:
+          - doc_title: "Tutorial: Use GitLab Observability with a Ruby on Rails application"
+            doc_url: 'ee/tutorials/observability/observability_rails_tutorial.html'
           - doc_title: Error tracking
             doc_url: 'ee/operations/error_tracking.html'
             docs:
