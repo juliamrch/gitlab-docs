@@ -20,6 +20,7 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
         <gl-icon-stub
           name="chevron-right"
           size="16"
+          variant="current"
         />
         On this page
       </a>
