@@ -7,21 +7,31 @@
 */
 
 @mixin gl-mt-0 {
-  margin-top: 0;
+  & {
+    margin-top: 0;
+  }
 }
 
 @mixin gl-mt-5 {
-  margin-top: $gl-spacing-scale-5;
+  & {
+    margin-top: $gl-spacing-scale-5;
+  }
 }
 
 @mixin gl-mt-6 {
-  margin-top: $gl-spacing-scale-6;
+  & {
+    margin-top: $gl-spacing-scale-6;
+  }
 }
 
 @mixin gl-mb-0 {
-  margin-bottom: 0;
+  & {
+    margin-bottom: 0;
+  }
 }
 
 @mixin gl-mb-3 {
-  margin-bottom: $gl-spacing-scale-3;
+  & {
+    margin-bottom: $gl-spacing-scale-3;
+  }
 }

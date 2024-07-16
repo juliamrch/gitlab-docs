@@ -166,23 +166,25 @@
       @media (min-width: $bp-md) {
         font-size: 1rem;
       }
-  
+
       /* Animate underline hover style */
-      background: linear-gradient(
-        to right,
-        $color-tanuki-light,
-        $color-tanuki-light
-        ),
-        linear-gradient(
+      & {
+        background: linear-gradient(
           to right,
-          $red-400,
-          $purple-400,
-          $blue-400
-      );
-      background-size: 100% 1px, 0 1px;
-      background-position: 100% 100%, 0 100%;
-      background-repeat: no-repeat;
-      transition: background-size 400ms;
+          $color-tanuki-light,
+          $color-tanuki-light
+          ),
+          linear-gradient(
+            to right,
+            $red-400,
+            $purple-400,
+            $blue-400
+        );
+        background-size: 100% 1px, 0 1px;
+        background-position: 100% 100%, 0 100%;
+        background-repeat: no-repeat;
+        transition: background-size 400ms;
+      }
 
       &:hover {
         text-decoration: none;
@@ -320,7 +322,10 @@
         @media screen and (max-width: 989px) {
           display: block;
         }
-        grid-gap: 0.5rem 1.88rem;
+
+        & {
+          grid-gap: 0.5rem 1.88rem;
+        }
       }
     }
   }
