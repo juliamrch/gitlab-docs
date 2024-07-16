@@ -203,10 +203,12 @@
     }
   }
 
-  @include gl-font-size-markdown;
-  @include gl-line-height-24;
-  @include gl-font-regular;
-  @include gl-font-weight-normal;
+  & {
+    @include gl-font-size-markdown;
+    @include gl-line-height-24;
+    @include gl-font-regular;
+    @include gl-font-weight-normal;
+  }
 
 
   h1,

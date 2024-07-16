@@ -1,11 +1,14 @@
 @import 'variables';
 
 .footer {
+  & {
+    border-color: $gds-gray-100;
+  }
+
   img {
     border: transparent;
   }
 
-  border-color: $gds-gray-100;
   a {
     color: $footer-gray-500;
     border-bottom: 0;

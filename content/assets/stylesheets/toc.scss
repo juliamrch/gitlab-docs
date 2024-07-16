@@ -71,11 +71,11 @@ $nav-link-font-size: 0.875rem;
   }
 
   a {
-    @include toc-nav-link;
-
     display: block;
     padding: 0 1rem 0.5rem;
     line-height: 1rem;
+
+    @include toc-nav-link;
   }
 
   ul,
