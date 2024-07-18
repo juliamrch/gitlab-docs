@@ -24,7 +24,6 @@ sectionTabs:
       - '/ee/topics/release_your_application.md'
       - '/ee/user/infrastructure/index.md'
       - '/ee/operations/index.md'
-      - '/runner/monitoring/index.md'
       - '/ee/user/analytics/index.md'
       - '/ee/policy/experiment-beta-support.md'
       - '/ee/user/version.md'
