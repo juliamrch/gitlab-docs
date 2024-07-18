@@ -2201,6 +2201,9 @@ sections:
                     doc_url: 'ee/user/application_security/secret_detection/secret_push_protection/detected_secrets.html'
               - doc_title: Client-side secret detection
                 doc_url: 'ee/user/application_security/secret_detection/client/'
+                docs:
+                  - doc_title: Detected secrets
+                    doc_url: 'ee/user/application_security/secret_detection/client/detected_secrets.html'
           - doc_title: Dynamic Application Security Testing (DAST)
             doc_url: 'ee/user/application_security/dast/'
             docs:
