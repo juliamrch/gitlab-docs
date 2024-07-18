@@ -1950,6 +1950,8 @@ sections:
                     doc_url: 'runner/executors/virtualbox.html'
               - doc_title: Configure runners
                 doc_url: 'ee/ci/runners/configure_runners.html'
+              - doc_title: Monitor runner performance
+                doc_url: 'runner/monitoring/'
               - doc_title: Long polling
                 doc_url: 'ee/ci/runners/long_polling.html'
               - doc_title: Scale a fleet of runners
@@ -2647,8 +2649,6 @@ sections:
                     doc_url: 'ee/operations/incident_management/paging.html'
               - doc_title: Status page
                 doc_url: 'ee/operations/incident_management/status_page.html'
-      - category_title: Monitor runner performance
-        category_url: 'runner/monitoring/'
       - category_title: Analyze GitLab usage
         category_url: 'ee/user/analytics/'
         docs:
