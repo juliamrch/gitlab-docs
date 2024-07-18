@@ -1462,8 +1462,13 @@ sections:
         docs:
           - doc_title: 'Getting started'
             doc_url: 'ee/user/get_started/get_started_planning_work.html'
-          - doc_title: 'Tutorial: Use GitLab to facilitate Scrum'
+          - doc_title: 'Tutorial: Use GitLab for Scrum'
             doc_url: 'ee/tutorials/scrum_events/'
+            docs:
+              - doc_title: 'Stand-ups, retrospectives, and velocity'
+                doc_url: 'ee/tutorials/scrum_events/standups_retrospectives_velocity.html'
+          - doc_title: 'Tutorial: Use GitLab for Kanban'
+            doc_url: 'ee/tutorials/kanban/'
           - doc_title: Labels
             doc_url: 'ee/user/project/labels.html'
           - doc_title: Iterations
