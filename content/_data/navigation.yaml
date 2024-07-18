@@ -1114,6 +1114,40 @@ sections:
                 doc_url: 'ee/administration/troubleshooting/linux_cheat_sheet.html'
               - doc_title: PostgreSQL
                 doc_url: 'ee/administration/troubleshooting/postgresql.html'
+      - category_title: Monitor your installation
+        category_url: 'ee/administration/monitoring/'
+        docs:
+          - doc_title: Performance monitoring
+            doc_url: 'ee/administration/monitoring/performance/'
+          - doc_title: Prometheus
+            doc_url: 'ee/administration/monitoring/prometheus/'
+          - doc_title: Configure Grafana
+            doc_url: 'ee/administration/monitoring/performance/grafana_configuration.html'
+          - doc_title: Performance bar
+            doc_url: 'ee/administration/monitoring/performance/performance_bar.html'
+          - doc_title: GitHub imports
+            doc_url: 'ee/administration/monitoring/github_imports.html'
+          - doc_title: GitLab exporter
+            doc_url: 'ee/administration/monitoring/prometheus/gitlab_exporter.html'
+          - doc_title: GitLab Prometheus metrics
+            doc_url: 'ee/administration/monitoring/prometheus/gitlab_metrics.html'
+          - doc_title: IP allowlist endpoints
+            doc_url: 'ee/administration/monitoring/ip_allowlist.html'
+          - doc_title: Node exporter
+            doc_url: 'ee/administration/monitoring/prometheus/node_exporter.html'
+          - doc_title: PGBouncer exporter
+            doc_url: 'ee/administration/monitoring/prometheus/pgbouncer_exporter.html'
+          - doc_title: PostgreSQL server exporter
+            doc_url: 'ee/administration/monitoring/prometheus/postgres_exporter.html'
+          - doc_title: Redis exporter
+            doc_url: 'ee/administration/monitoring/prometheus/redis_exporter.html'
+          - doc_title: Registry exporter
+            doc_url: 'ee/administration/monitoring/prometheus/registry_exporter.html'
+          - doc_title: Usage statistics
+            doc_url: 'ee/administration/settings/usage_statistics.html'
+          - doc_title: Web exporter
+            doc_url: 'ee/administration/monitoring/prometheus/web_exporter.html'
+
       # New - secure (renamed existing topic)
 
       - category_title: Secure your installation
@@ -2567,7 +2601,7 @@ sections:
                 doc_url: 'ee/user/infrastructure/clusters/migrate_to_gitlab_agent.html'
           - doc_title: Runbooks
             doc_url: 'ee/user/project/clusters/runbooks/'
-      - category_title: Monitor application performance
+      - category_title: Monitor your application
         category_url: 'ee/operations/'
         docs:
           - doc_title: "Tutorial: Use GitLab Observability with a Ruby on Rails application"
@@ -2662,39 +2696,6 @@ sections:
             doc_url: 'ee/user/analytics/ci_cd_analytics.html'
           - doc_title: DORA metrics
             doc_url: 'ee/user/analytics/dora_metrics.html'
-          - doc_title: Metrics
-            doc_url: 'ee/administration/monitoring/'
-            docs:
-              - doc_title: Configure Grafana
-                doc_url: 'ee/administration/monitoring/performance/grafana_configuration.html'
-              - doc_title: GitHub imports
-                doc_url: 'ee/administration/monitoring/github_imports.html'
-              - doc_title: GitLab exporter
-                doc_url: 'ee/administration/monitoring/prometheus/gitlab_exporter.html'
-              - doc_title: GitLab Prometheus metrics
-                doc_url: 'ee/administration/monitoring/prometheus/gitlab_metrics.html'
-              - doc_title: IP allowlist endpoints
-                doc_url: 'ee/administration/monitoring/ip_allowlist.html'
-              - doc_title: Node exporter
-                doc_url: 'ee/administration/monitoring/prometheus/node_exporter.html'
-              - doc_title: PGBouncer exporter
-                doc_url: 'ee/administration/monitoring/prometheus/pgbouncer_exporter.html'
-              - doc_title: PostgreSQL server exporter
-                doc_url: 'ee/administration/monitoring/prometheus/postgres_exporter.html'
-              - doc_title: Prometheus
-                doc_url: 'ee/administration/monitoring/prometheus/'
-              - doc_title: Performance bar
-                doc_url: 'ee/administration/monitoring/performance/performance_bar.html'
-              - doc_title: Performance monitoring
-                doc_url: 'ee/administration/monitoring/performance/'
-              - doc_title: Redis exporter
-                doc_url: 'ee/administration/monitoring/prometheus/redis_exporter.html'
-              - doc_title: Registry exporter
-                doc_url: 'ee/administration/monitoring/prometheus/registry_exporter.html'
-              - doc_title: Usage statistics
-                doc_url: 'ee/administration/settings/usage_statistics.html'
-              - doc_title: Web exporter
-                doc_url: 'ee/administration/monitoring/prometheus/web_exporter.html'
           - doc_title: 'Tutorial: Set up an analytics-powered project'
             doc_url: 'ee/tutorials/website_project_with_analytics/'
           - doc_title: 'Tutorial: Set up product analytics in a GitLab Pages website project'
