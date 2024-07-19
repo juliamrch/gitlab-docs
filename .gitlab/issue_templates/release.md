@@ -82,7 +82,7 @@ The following terms are used throughout this document:
 
 After the release post is live, or the day after:
 
-1. Check that the stable branches that correspond with the release are present:
+1. Check that the stable branches that correspond with the release are present. It's OK if the branch pipeline is failing for non-docs reasons:
 
    - [ ] `gitlab`: <https://gitlab.com/gitlab-org/gitlab/-/branches?state=all&sort=updated_desc&search=stable-ee>
    - [ ] `gitlab-runner`: <https://gitlab.com/gitlab-org/gitlab-runner/-/branches?state=all&sort=updated_desc&search=-stable>
