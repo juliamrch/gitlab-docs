@@ -1059,6 +1059,8 @@ sections:
                 doc_url: 'ee/administration/raketasks/maintenance.html'
               - doc_title: Integrity check Rake task
                 doc_url: 'ee/administration/raketasks/check.html'
+              - doc_title: Access token Rake tasks
+                doc_url: 'ee/administration/raketasks/tokens/'
           - doc_title: Activate GitLab EE with license
             doc_url: 'ee/administration/license_file.html'
           - doc_title: Fast SSH key lookup
