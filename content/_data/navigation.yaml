@@ -1777,6 +1777,8 @@ sections:
                     doc_url: 'ee/user/project/merge_requests/reviews/suggestions.html'
                   - doc_title: GitLab Duo in merge requests
                     doc_url: 'ee/user/project/merge_requests/duo_in_merge_requests.html'
+                  - doc_title: Suggested Reviewers data usage
+                    doc_url: 'ee/user/project/merge_requests/reviews/data_usage.html'
                   - doc_title: Approvals
                     doc_url: 'ee/user/project/merge_requests/approvals/'
                     docs:
