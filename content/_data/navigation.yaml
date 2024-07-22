@@ -1459,6 +1459,8 @@ sections:
                 docs:
                   - doc_title: GitHub import Rake task
                     doc_url: 'ee/administration/raketasks/github_import.html'
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/user/project/import/troubleshooting_github_import.html'
               - doc_title: GitLab (direct transfer)
                 doc_url: 'ee/user/group/import/'
                 docs:
