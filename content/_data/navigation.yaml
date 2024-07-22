@@ -789,6 +789,8 @@ sections:
                         doc_url: 'ee/administration/gitaly/consistency_checks.html'
                   - doc_title: Configure Gitaly Cluster
                     doc_url: 'ee/administration/gitaly/praefect.html'
+                  - doc_title: Gitaly on Kubernetes
+                    doc_url: 'ee/administration/gitaly/kubernetes.html'
                   - doc_title: Bundle URIs
                     doc_url: 'ee/administration/gitaly/bundle_uris.html'
                   - doc_title: Example configuration files
@@ -1257,6 +1259,8 @@ sections:
             doc_url: 'ee/administration/self_hosted_models/configure_duo_features.html'
           - doc_title: Set up your self-hosted model deployment infrastructure
             doc_url: 'ee/administration/self_hosted_models/install_infrastructure.html'
+          - doc_title: Set up a self-hosted large language model with LiteLLM
+            doc_url: 'ee/administration/self_hosted_models/litellm_proxy_setup.html'
 
   # USE GITLAB
 
@@ -2237,6 +2241,8 @@ sections:
                     doc_url: 'ee/user/application_security/secret_detection/pipeline/detected_secrets.html'
                   - doc_title: Automatic response to leaked secrets
                     doc_url: 'ee/user/application_security/secret_detection/automatic_response.html'
+                  - doc_title: Customize rulesets
+                    doc_url: 'ee/user/application_security/secret_detection/pipeline/customize_rulesets.html'
               - doc_title: Secret push protection
                 doc_url: 'ee/user/application_security/secret_detection/secret_push_protection/'
                 docs:
@@ -2940,6 +2946,8 @@ sections:
                 doc_url: 'ee/api/packages/conan.html'
               - doc_title: Container registry
                 doc_url: 'ee/api/container_registry.html'
+              - doc_title: Container registry protection rules
+                doc_url: 'ee/api/project_container_registry_protection_rules.html'
               - doc_title: Custom attributes
                 doc_url: 'ee/api/custom_attributes.html'
               - doc_title: Dashboard annotations
@@ -2994,6 +3002,8 @@ sections:
                 doc_url: 'ee/api/geo_nodes.html'
               - doc_title: Geo sites
                 doc_url: 'ee/api/geo_sites.html'
+              - doc_title: GitLab Duo Chat completions
+                doc_url: 'ee/api/chat.html'
               - doc_title: GitLab Pages
                 doc_url: 'ee/api/pages.html'
               - doc_title: Go Proxy
