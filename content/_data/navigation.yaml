@@ -1229,6 +1229,8 @@ sections:
             doc_url: 'ee/administration/auditor_users.html'
           - doc_title: External users
             doc_url: 'ee/administration/external_users.html'
+          - doc_title: Guest users
+            doc_url: 'ee/administration/guest_users.html'
           - doc_title: Configure the Libravatar service
             doc_url: 'ee/administration/libravatar.html'
           - doc_title: Broadcast messages
