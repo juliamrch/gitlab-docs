@@ -1397,6 +1397,9 @@ sections:
                 doc_url: 'ee/user/profile/user_passwords.html'
               - doc_title: Two-factor authentication
                 doc_url: 'ee/user/profile/account/two_factor_authentication.html'
+                docs:
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/user/profile/account/two_factor_authentication_troubleshooting.html'
               - doc_title: Report abuse
                 doc_url: 'ee/user/report_abuse.html'
               - doc_title: Delete account
