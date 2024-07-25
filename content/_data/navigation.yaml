@@ -2250,8 +2250,8 @@ sections:
                     doc_url: 'ee/user/application_security/secret_detection/pipeline/detected_secrets.html'
                   - doc_title: Automatic response to leaked secrets
                     doc_url: 'ee/user/application_security/secret_detection/automatic_response.html'
-                  - doc_title: Customize rulesets
-                    doc_url: 'ee/user/application_security/secret_detection/pipeline/customize_rulesets.html'
+                  - doc_title: Custom rulesets schema
+                    doc_url: 'ee/user/application_security/secret_detection/pipeline/custom_rulesets_schema.html'
               - doc_title: Secret push protection
                 doc_url: 'ee/user/application_security/secret_detection/secret_push_protection/'
                 docs:
