@@ -805,8 +805,6 @@ sections:
                     doc_url: 'ee/administration/gitaly/troubleshooting_gitaly_cluster.html'
                   - doc_title: Praefect Rake tasks
                     doc_url: 'ee/administration/raketasks/praefect.html'
-              - doc_title: List repositories Rake task
-                doc_url: 'ee/raketasks/list_repos.html'
           - doc_title: Object storage
             doc_url: 'ee/administration/object_storage.html'
           - doc_title: Merge request diffs storage
