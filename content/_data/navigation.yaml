@@ -2868,6 +2868,8 @@ sections:
             doc_url: 'ee/administration/integration/mailgun.html'
           - doc_title: Marketplace partners
             doc_url: 'ee/integration/partner_marketplace.html'
+          - doc_title: Matrix notifications
+            doc_url: 'ee/user/project/integrations/matrix.html'
           - doc_title: Mattermost notifications
             doc_url: 'ee/user/project/integrations/mattermost.html'
           - doc_title: Mattermost slash commands
