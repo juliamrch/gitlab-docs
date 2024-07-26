@@ -3257,8 +3257,6 @@ sections:
                 doc_url: 'ee/api/group_level_variables.html'
               - doc_title: Version
                 doc_url: 'ee/api/version.html'
-              - doc_title: Visual Review discussions (deprecated)
-                doc_url: 'ee/api/visual_review_discussions.html'
               - doc_title: Vulnerabilities
                 doc_url: 'ee/api/vulnerabilities.html'
               - doc_title: Vulnerability export
