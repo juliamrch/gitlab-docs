@@ -1498,3 +1498,18 @@ redirects:
   - from: /ee/topics/git/stash.html
     to: /ee/gitlab-basics/add-file.html
     remove_date: 2025-04-11
+  - from: /ee/user/clusters/agent/gitops/agent.html
+    to: /ee/user/clusters/agent/gitops.html
+    remove_date: 2025-04-25
+  - from: /ee/user/clusters/agent/gitops/secrets_management.html
+    to: /ee/user/clusters/agent/gitops.html
+    remove_date: 2025-04-25
+  - from: /ee/user/infrastructure/clusters/deploy/inventory_object.html
+    to: /ee/user/clusters/agent/gitops.html
+    remove_date: 2025-04-25
+  - from: /ee/raketasks/list_repos.html
+    to: /ee/administration/operations/moving_repositories.html
+    remove_date: 2025-04-16
+  - from: /ee/api/visual_review_discussions.html
+    to: /ee/api/api_resources.html
+    remove_date: 2025-04-24
