@@ -1666,6 +1666,8 @@ sections:
                 docs:
                   - doc_title: Syntax and errors
                     doc_url: 'ee/user/project/codeowners/reference.html'
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/user/project/codeowners/troubleshooting.html'
               - doc_title: Branches
                 doc_url: 'ee/user/project/repository/branches/'
                 docs:
