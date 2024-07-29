@@ -1637,20 +1637,22 @@ sections:
             doc_url: 'ee/topics/git/how_to_install_git/'
           - doc_title: 'Tutorial: Create your first commit'
             doc_url: 'ee/tutorials/make_first_git_commit/'
-          - doc_title: 'Clone a repository to your local machine'
+          - doc_title: Clone a repository to your local machine
             doc_url: 'ee/topics/git/clone.html'
           - doc_title: Create a branch for your changes
             doc_url: 'ee/topics/git/branch.html'
-          - doc_title: Add files and make changes
+          - doc_title: Add files to your branch
             doc_url: 'ee/gitlab-basics/add-file.html'
+          - doc_title: Stash changes for later
+            doc_url: 'ee/topics/git/stash.html'
           - doc_title: Undo changes
             doc_url: 'ee/topics/git/undo.html'
           - doc_title: 'Tutorial: Update Git commit messages'
             doc_url: 'ee/tutorials/update_commit_messages/'
+          - doc_title: Rebase to address merge conflicts
+            doc_url: 'ee/topics/git/git_rebase.html'
           - doc_title: Common Git commands
             doc_url: 'ee/gitlab-basics/start-using-git.html'
-          - doc_title: Rebase and force-push
-            doc_url: 'ee/topics/git/git_rebase.html'
           - doc_title: Troubleshooting
             doc_url: 'ee/topics/git/troubleshooting_git.html'
       - category_title: Manage your code
