@@ -4213,17 +4213,23 @@ sections:
         docs:
           - doc_title: Style guide
             doc_url: 'ee/development/documentation/styleguide/'
-          - doc_title: Recommended word list
-            doc_url: 'ee/development/documentation/styleguide/word_list.html'
-          - doc_title: Product availability details
-            doc_url: 'ee/development/documentation/styleguide/availability_details.html'
             docs:
+              - doc_title: Recommended word list
+                doc_url: 'ee/development/documentation/styleguide/word_list.html'
+              - doc_title: Product availability details
+                doc_url: 'ee/development/documentation/styleguide/availability_details.html'
               - doc_title: Product versions
                 doc_url: 'ee/development/documentation/versions.html'
               - doc_title: Feature flags
                 doc_url: 'ee/development/documentation/feature_flags.html'
               - doc_title: Experiment and beta features
                 doc_url: 'ee/development/documentation/experiment_beta.html'
+              - doc_title: Metadata
+                doc_url: 'ee/development/documentation/metadata.html'
+              - doc_title: GraphQL
+                doc_url: 'ee/development/documentation/graphql_styleguide.html'
+              - doc_title: REST API
+                doc_url: 'ee/development/documentation/restful_api_styleguide.html'
           - doc_title: Topic types
             doc_url: 'ee/development/documentation/topic_types/'
             docs:
@@ -4243,16 +4249,10 @@ sections:
                 doc_url: 'ee/development/documentation/topic_types/tutorial.html'
               - doc_title: Glossaries
                 doc_url: 'ee/development/documentation/topic_types/glossary.html'
-          - doc_title: Metadata
-            doc_url: 'ee/development/documentation/metadata.html'
-          - doc_title: Global navigation
-            doc_url: 'ee/development/documentation/site_architecture/global_nav.html'
-          - doc_title: /help
-            doc_url: 'ee/development/documentation/help.html'
           - doc_title: Workflow
             doc_url: 'ee/development/documentation/workflow.html'
-          - doc_title: Backport documentation changes
-            doc_url: 'ee/development/documentation/backporting.html'
+          - doc_title: /help
+            doc_url: 'ee/development/documentation/help.html'
           - doc_title: Drawer content
             doc_url: 'ee/development/documentation/drawers.html'
           - doc_title: Testing
@@ -4264,20 +4264,21 @@ sections:
                 doc_url: 'ee/development/documentation/testing/vale.html'
           - doc_title: Site architecture
             doc_url: 'ee/development/documentation/site_architecture/'
-          - doc_title: Folder structure
-            doc_url: 'ee/development/documentation/site_architecture/folder_structure.html'
-          - doc_title: Deployment process
-            doc_url: 'ee/development/documentation/site_architecture/deployment_process.html'
-          - doc_title: Automation
-            doc_url: 'ee/development/documentation/site_architecture/automation.html'
-          - doc_title: Documentation review apps
-            doc_url: 'ee/development/documentation/review_apps.html'
+            docs:
+              - doc_title: Global navigation
+                doc_url: 'ee/development/documentation/site_architecture/global_nav.html'
+              - doc_title: Folder structure
+                doc_url: 'ee/development/documentation/site_architecture/folder_structure.html'
+              - doc_title: Deployment process
+                doc_url: 'ee/development/documentation/site_architecture/deployment_process.html'
+              - doc_title: Documentation review apps
+                doc_url: 'ee/development/documentation/review_apps.html'
+              - doc_title: Automation
+                doc_url: 'ee/development/documentation/site_architecture/automation.html'
+          - doc_title: Backport documentation changes
+            doc_url: 'ee/development/documentation/backporting.html'
           - doc_title: Redirects
             doc_url: 'ee/development/documentation/redirects.html'
-          - doc_title: Create a GraphQL example page
-            doc_url: 'ee/development/documentation/graphql_styleguide.html'
-          - doc_title: Documenting REST API resources
-            doc_url: 'ee/development/documentation/restful_api_styleguide.html'
       # End of contribute to docs
 
   # End of development documentation
