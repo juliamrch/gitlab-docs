@@ -1631,7 +1631,7 @@ sections:
       - category_title: Learn Git
         category_url: 'ee/topics/git/'
         docs:
-          - doc_title: Get started
+          - doc_title: Getting started
             doc_url: 'ee/topics/git/get_started.html'
           - doc_title: Install Git
             doc_url: 'ee/topics/git/how_to_install_git/'
