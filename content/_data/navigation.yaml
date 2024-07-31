@@ -2393,7 +2393,7 @@ sections:
             doc_url: 'ee/user/application_security/policies/'
             docs:
               - doc_title: Scan execution policies
-                doc_url: 'ee/user/application_security/policies/scan-execution-policies.html'
+                doc_url: 'ee/user/application_security/policies/scan_execution_policies.html'
               - doc_title: 'Tutorial: Set up a scan execution policy'
                 doc_url: 'ee/tutorials/scan_execution_policy/'
               - doc_title: Merge request approval policies
