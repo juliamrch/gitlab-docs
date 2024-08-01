@@ -19,7 +19,7 @@ group :nanoc do
 end
 
 group :test, :development do
-  gem 'highline', '~> 3.0.1'
+  gem 'highline', '~> 3.1.0'
   gem 'rspec', '~> 3.13.0'
   gem 'rspec-parameterized', '~> 1.0.2'
   gem 'simplecov', '~> 0.22.0', require: false
