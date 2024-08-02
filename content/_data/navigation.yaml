@@ -4223,12 +4223,12 @@ sections:
                 doc_url: 'ee/development/documentation/styleguide/word_list.html'
               - doc_title: Product availability details
                 doc_url: 'ee/development/documentation/styleguide/availability_details.html'
-              - doc_title: Product versions
-                doc_url: 'ee/development/documentation/versions.html'
               - doc_title: Feature flags
                 doc_url: 'ee/development/documentation/feature_flags.html'
               - doc_title: Experiment and beta features
                 doc_url: 'ee/development/documentation/experiment_beta.html'
+              - doc_title: Deprecations and removals
+                doc_url: 'ee/development/documentation/styleguide/deprecations_and_removals.html'
               - doc_title: Metadata
                 doc_url: 'ee/development/documentation/metadata.html'
               - doc_title: GraphQL
