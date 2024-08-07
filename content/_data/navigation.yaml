@@ -1256,6 +1256,8 @@ sections:
             doc_url: 'ee/administration/dedicated/create_instance.html'
           - doc_title: Configure your GitLab Dedicated instance
             doc_url: 'ee/administration/dedicated/configure_instance.html'
+          - doc_title: Hosted runners for GitLab Dedicated
+            doc_url: 'ee/administration/dedicated/hosted_runners.html'
 
       # Self-hosted large language model
 
