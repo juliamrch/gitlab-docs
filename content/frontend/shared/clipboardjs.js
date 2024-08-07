@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
   }
 
   function hideTooltip(btn) {
-    setTimeout(function hide() {
+    setTimeout(() => {
       $(btn).tooltip('hide');
     }, 1000);
   }
