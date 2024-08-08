@@ -21,7 +21,7 @@
     name: review/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
     url: https://$CI_COMMIT_REF_SLUG$REVIEW_SLUG.docs.gitlab-review.app
     on_stop: review_stop
-    auto_stop_in: 30 days
+    auto_stop_in: 2 weeks
   rules:
     - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
       when: manual
